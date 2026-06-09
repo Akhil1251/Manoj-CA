@@ -90,7 +90,7 @@ export default function HomePage() {
   return (
     <div className="relative w-full">
       {/* 1. HERO SECTION WITH CLEAR HIGH-VISIBILITY BACKGROUND VIDEOS */}
-      <section className="relative min-h-[92vh] flex items-center justify-center overflow-hidden">
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">
           <video
             key={theme}
@@ -117,7 +117,7 @@ export default function HomePage() {
             <span className="px-3 py-1 rounded-full text-[9px] font-bold bg-indigo-600/80 text-white border border-white/20 mb-5 inline-block uppercase tracking-[0.2em]">
               ✨ Certified Advisory Panel
             </span>
-            <h1 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight text-white mb-4 leading-snug">
+            <h1 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight text-white mb-4 leading-snug max-w-[20ch]">
               {t.heroTitle}
             </h1>
             <p className="text-xs sm:text-sm text-slate-200 max-w-lg leading-relaxed mb-8 font-medium">

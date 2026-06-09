@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useApp } from "@/context/AppContext";
@@ -13,6 +13,16 @@ export const Navbar: React.FC = () => {
   const pathname = usePathname();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isLangDropdownOpen, setIsLangDropdownOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => setScrolled(window.scrollY > 20);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const isHome = pathname === "/";
+  const isTransparent = isHome && !scrolled;
 
   const navLinks = [
     { href: "/", label: t.navHome },
@@ -46,7 +56,7 @@ export const Navbar: React.FC = () => {
   };
 
   return (
-    <header className="sticky top-0 z-[999] w-full border-b border-slate-200/50 dark:border-slate-800/50 bg-white/70 dark:bg-slate-950/70 backdrop-blur-md transition-colors duration-300">
+    <header className={`${isHome ? "fixed" : "sticky"} top-0 z-[999] w-full transition-all duration-300 ${isTransparent ? "border-b border-transparent bg-transparent" : "border-b border-slate-200/50 dark:border-slate-800/50 bg-white/80 dark:bg-slate-950/80 backdrop-blur-md shadow-sm"}`}>
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
@@ -54,8 +64,8 @@ export const Navbar: React.FC = () => {
             <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-indigo-600 text-white font-bold text-lg shadow-md shadow-indigo-600/20">
               M
             </span>
-            <span className="font-extrabold tracking-wider text-slate-800 dark:text-white text-xl">
-              MANOJ <span className="text-indigo-600 dark:text-indigo-400">CA</span>
+            <span className={`font-extrabold tracking-wider text-xl transition-colors ${isTransparent ? "text-white" : "text-slate-800 dark:text-white"}`}>
+              MANOJ <span className={isTransparent ? "text-indigo-300" : "text-indigo-600 dark:text-indigo-400"}>CA</span>
             </span>
           </Link>
 
@@ -67,10 +77,10 @@ export const Navbar: React.FC = () => {
                 <Link
                   key={link.href}
                   href={link.href}
-                  className={`text-[12px] xl:text-[13px] whitespace-nowrap font-bold tracking-wide transition-colors hover:text-indigo-600 dark:hover:text-indigo-400 ${
-                    isActive
-                      ? "text-indigo-600 dark:text-indigo-400 font-extrabold"
-                      : "text-slate-600 dark:text-white"
+                  className={`text-[12px] xl:text-[13px] whitespace-nowrap font-bold tracking-wide transition-colors ${
+                    isTransparent
+                      ? isActive ? "text-white font-extrabold" : "text-slate-200 hover:text-white"
+                      : isActive ? "text-indigo-600 dark:text-indigo-400 font-extrabold" : "text-slate-600 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-indigo-400"
                   }`}
                 >
                   {link.label}
@@ -85,9 +95,13 @@ export const Navbar: React.FC = () => {
             <div className="relative">
               <button
                 onClick={() => setIsLangDropdownOpen(!isLangDropdownOpen)}
-                className="flex items-center gap-1 px-2.5 py-1.5 rounded-lg border border-slate-200 dark:border-slate-800 text-slate-700 dark:text-slate-350 hover:bg-slate-100 dark:hover:bg-slate-900 transition text-xs font-bold"
+                className={`flex items-center gap-1 px-2.5 py-1.5 rounded-lg border transition text-xs font-bold ${
+                  isTransparent
+                    ? "border-white/20 text-white hover:bg-white/10"
+                    : "border-slate-200 dark:border-slate-800 text-slate-700 dark:text-slate-350 hover:bg-slate-100 dark:hover:bg-slate-900"
+                }`}
               >
-                <Globe className="h-4 w-4 text-indigo-500" />
+                <Globe className={`h-4 w-4 ${isTransparent ? "text-white" : "text-indigo-500"}`} />
                 <span>{languagesList.find((l) => l.code === language)?.name.split(" ")[0]}</span>
               </button>
               <AnimatePresence>
@@ -119,13 +133,17 @@ export const Navbar: React.FC = () => {
             {/* Theme Toggle */}
             <button
               onClick={toggleTheme}
-              className="p-2 rounded-lg border border-slate-200 dark:border-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-900 transition"
+              className={`p-2 rounded-lg border transition ${
+                isTransparent 
+                  ? "border-white/20 text-white hover:bg-white/10" 
+                  : "border-slate-200 dark:border-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-900"
+              }`}
               aria-label={t.themeToggle}
             >
               {theme === "dark" ? (
-                <Sun className="h-4 w-4 text-amber-400" />
+                <Sun className={`h-4 w-4 ${isTransparent ? "text-white" : "text-amber-400"}`} />
               ) : (
-                <Moon className="h-4 w-4 text-indigo-650" />
+                <Moon className={`h-4 w-4 ${isTransparent ? "text-white" : "text-indigo-650"}`} />
               )}
             </button>
 
@@ -143,21 +161,29 @@ export const Navbar: React.FC = () => {
             {/* Quick mobile theme toggle */}
             <button
               onClick={toggleTheme}
-              className="p-1.8 rounded-lg border border-slate-200 dark:border-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-900 transition"
+              className={`p-2 rounded-lg border transition ${
+                isTransparent 
+                  ? "border-white/20 text-white hover:bg-white/10" 
+                  : "border-slate-200 dark:border-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-900"
+              }`}
             >
               {theme === "dark" ? (
-                <Sun className="h-4 w-4 text-amber-400" />
+                <Sun className={`h-4 w-4 ${isTransparent ? "text-white" : "text-amber-400"}`} />
               ) : (
-                <Moon className="h-4 w-4 text-indigo-600" />
+                <Moon className={`h-4 w-4 ${isTransparent ? "text-white" : "text-indigo-600"}`} />
               )}
             </button>
 
             {/* Mobile Lang Button shortcut */}
             <button
               onClick={() => setIsMobileMenuOpen(true)}
-              className="p-1.8 rounded-lg border border-slate-200 dark:border-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-900 transition"
+              className={`p-2 rounded-lg border transition ${
+                isTransparent 
+                  ? "border-white/20 text-white hover:bg-white/10" 
+                  : "border-slate-200 dark:border-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-900"
+              }`}
             >
-              <Menu className="h-4.5 w-4.5" />
+              <Menu className="h-5 w-5" />
             </button>
           </div>
         </div>
