@@ -145,7 +145,7 @@ export default function ToolsPage() {
               <div className="space-y-5">
                 <div>
                   <label className="block text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400 mb-2">
-                    Annual Gross Income (â‚¹)
+                    Annual Gross Income (₹)
                   </label>
                   <input
                     type="number"
@@ -156,7 +156,7 @@ export default function ToolsPage() {
                 </div>
                 <div>
                   <label className="block text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400 mb-2">
-                    Eligible Deductions (â‚¹) - e.g. 80C, 80D
+                    Eligible Deductions (₹) - e.g. 80C, 80D
                   </label>
                   <input
                     type="number"
@@ -180,7 +180,7 @@ export default function ToolsPage() {
                       Old Regime Tax
                     </span>
                     <span className="text-xl sm:text-2xl font-extrabold text-slate-900 dark:text-white block mt-1">
-                      â‚¹{taxResult.oldTax.toLocaleString()}
+                      ₹{taxResult.oldTax.toLocaleString()}
                     </span>
                   </div>
                   <div className="p-4 rounded-xl bg-amber-600/10 border border-amber-500/20">
@@ -188,7 +188,7 @@ export default function ToolsPage() {
                       New Regime Tax
                     </span>
                     <span className="text-xl sm:text-2xl font-extrabold text-amber-600 dark:text-amber-400 block mt-1">
-                      â‚¹{taxResult.newTax.toLocaleString()}
+                      ₹{taxResult.newTax.toLocaleString()}
                     </span>
                   </div>
                 </div>
@@ -204,7 +204,7 @@ export default function ToolsPage() {
               <div className="space-y-5">
                 <div>
                   <label className="block text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400 mb-2">
-                    Net Price of Service/Product (â‚¹)
+                    Net Price of Service/Product (₹)
                   </label>
                   <input
                     type="number"
@@ -243,7 +243,7 @@ export default function ToolsPage() {
                       CGST (Half)
                     </span>
                     <span className="text-base sm:text-lg font-extrabold text-slate-900 dark:text-white block mt-1">
-                      â‚¹{gstResult.cgst.toLocaleString()}
+                      ₹{gstResult.cgst.toLocaleString()}
                     </span>
                   </div>
                   <div className="p-3.5 rounded-xl bg-slate-100/50 dark:bg-slate-900/50 border border-slate-200/50 dark:border-slate-850">
@@ -251,7 +251,7 @@ export default function ToolsPage() {
                       SGST (Half)
                     </span>
                     <span className="text-base sm:text-lg font-extrabold text-slate-900 dark:text-white block mt-1">
-                      â‚¹{gstResult.sgst.toLocaleString()}
+                      ₹{gstResult.sgst.toLocaleString()}
                     </span>
                   </div>
                   <div className="p-3.5 rounded-xl bg-amber-600/10 border border-amber-500/20">
@@ -259,7 +259,7 @@ export default function ToolsPage() {
                       Gross Total
                     </span>
                     <span className="text-base sm:text-lg font-extrabold text-amber-600 dark:text-amber-400 block mt-1">
-                      â‚¹{gstResult.total.toLocaleString()}
+                      ₹{gstResult.total.toLocaleString()}
                     </span>
                   </div>
                 </div>
@@ -275,7 +275,7 @@ export default function ToolsPage() {
               <div className="space-y-5">
                 <div>
                   <label className="block text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400 mb-2">
-                    Monthly Investment (â‚¹)
+                    Monthly Investment (₹)
                   </label>
                   <input
                     type="number"
@@ -323,7 +323,7 @@ export default function ToolsPage() {
                       Invested
                     </span>
                     <span className="text-xs sm:text-sm font-extrabold text-slate-900 dark:text-white block mt-1">
-                      â‚¹{sipResult.invested.toLocaleString()}
+                      ₹{sipResult.invested.toLocaleString()}
                     </span>
                   </div>
                   <div className="p-3.5 rounded-xl bg-slate-100/50 dark:bg-slate-900/50 border border-slate-200/50 dark:border-slate-850">
@@ -331,7 +331,7 @@ export default function ToolsPage() {
                       Wealth Gained
                     </span>
                     <span className="text-xs sm:text-sm font-extrabold text-emerald-500 block mt-1">
-                      â‚¹{sipResult.gain.toLocaleString()}
+                      ₹{sipResult.gain.toLocaleString()}
                     </span>
                   </div>
                   <div className="p-3.5 rounded-xl bg-amber-600/10 border border-amber-500/20">
@@ -339,7 +339,7 @@ export default function ToolsPage() {
                       Future Value
                     </span>
                     <span className="text-xs sm:text-sm font-extrabold text-amber-600 dark:text-amber-400 block mt-1">
-                      â‚¹{sipResult.total.toLocaleString()}
+                      ₹{sipResult.total.toLocaleString()}
                     </span>
                   </div>
                 </div>
@@ -355,7 +355,7 @@ export default function ToolsPage() {
               <div className="space-y-5">
                 <div>
                   <label className="block text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400 mb-2">
-                    Principal Amount (â‚¹)
+                    Principal Amount (₹)
                   </label>
                   <input
                     type="number"
@@ -403,7 +403,7 @@ export default function ToolsPage() {
                       Monthly EMI
                     </span>
                     <span className="text-xs sm:text-sm font-extrabold text-amber-600 dark:text-amber-400 block mt-1">
-                      â‚¹{emiResult.emi.toLocaleString()}
+                      ₹{emiResult.emi.toLocaleString()}
                     </span>
                   </div>
                   <div className="p-3.5 rounded-xl bg-slate-100/50 dark:bg-slate-900/50 border border-slate-200/50 dark:border-slate-850">
@@ -411,7 +411,7 @@ export default function ToolsPage() {
                       Total Interest
                     </span>
                     <span className="text-xs sm:text-sm font-extrabold text-slate-900 dark:text-white block mt-1">
-                      â‚¹{emiResult.totalInterest.toLocaleString()}
+                      ₹{emiResult.totalInterest.toLocaleString()}
                     </span>
                   </div>
                   <div className="p-3.5 rounded-xl bg-slate-100/50 dark:bg-slate-900/50 border border-slate-200/50 dark:border-slate-850">
@@ -419,7 +419,7 @@ export default function ToolsPage() {
                       Total Payable
                     </span>
                     <span className="text-xs sm:text-sm font-extrabold text-slate-900 dark:text-white block mt-1">
-                      â‚¹{emiResult.totalPayable.toLocaleString()}
+                      ₹{emiResult.totalPayable.toLocaleString()}
                     </span>
                   </div>
                 </div>
@@ -439,7 +439,7 @@ export default function ToolsPage() {
                 Why Compare Regimes?
               </h4>
               <p className="text-xs text-slate-500 dark:text-slate-400 leading-relaxed mb-4">
-                "Meet Ananya, a marketing consultant earning â‚¹12 Lakhs. She has a housing loan (Section 24) and invests in PPF (Section 80C). Unsure which scheme to choose, she paid â‚¹25,000 extra tax last year by choosing the wrong regime without mathematical simulation."
+                "Meet Ananya, a marketing consultant earning ₹12 Lakhs. She has a housing loan (Section 24) and invests in PPF (Section 80C). Unsure which scheme to choose, she paid ₹25,000 extra tax last year by choosing the wrong regime without mathematical simulation."
               </p>
               <div className="p-4 rounded-xl bg-amber-600/5 border border-amber-500/10 text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
                 <strong>Our Solution:</strong> By running automated parameters, we evaluate your specific insurance policies, home loans, and standard deductions to select the optimal regime, saving significant liquid assets.
@@ -490,7 +490,7 @@ export default function ToolsPage() {
                 Long-Term Liability Trap
               </h4>
               <p className="text-xs text-slate-500 dark:text-slate-400 leading-relaxed mb-4">
-                "Meet Shalini, who took a 20-year home loan of â‚¹50 Lakhs. She did not evaluate the total interest payout over the tenure, which ended up being more than the principal amount itself."
+                "Meet Shalini, who took a 20-year home loan of ₹50 Lakhs. She did not evaluate the total interest payout over the tenure, which ended up being more than the principal amount itself."
               </p>
               <div className="p-4 rounded-xl bg-amber-600/5 border border-amber-500/10 text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
                 <strong>Our Solution:</strong> We advise clients on pre-payment schemes and loan restructuring options that reduce total interest outflow by up to 40% with minor monthly changes.

@@ -5,14 +5,252 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useApp } from "@/context/AppContext";
 import { Language } from "@/context/translations";
-import { Menu, X, Globe, Sun, Moon, MapPin, Clock, Phone } from "lucide-react";
+import { Menu, X, Globe, Sun, Moon, MapPin, Clock, Phone, Calculator } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+
+const dropdownConfigs: Record<
+  string,
+  {
+    columns: {
+      title: string;
+      links: { label: string; href: string }[];
+    }[];
+    image: {
+      src: string;
+      tag: string;
+      title: string;
+    };
+    banner: {
+      text: string;
+      btnText: string;
+      btnHref: string;
+    };
+  }
+> = {
+  services: {
+    columns: [
+      {
+        title: "Advisory & Corporate",
+        links: [
+          { label: "Turnaround Consulting", href: "/services#turnaround" },
+          { label: "Strategic Planning", href: "/services#strategic" },
+          { label: "Business Planning & Strategy", href: "/services#execution" },
+        ],
+      },
+      {
+        title: "Wealth & Markets",
+        links: [
+          { label: "Bonds & Commodities", href: "/services#bonds" },
+          { label: "Trades & Stocks", href: "/services#trades" },
+          { label: "Financial Projections", href: "/services#projections" },
+        ],
+      },
+      {
+        title: "Audits & Compliance",
+        links: [
+          { label: "Audit & Assurance", href: "/services#audit" },
+          { label: "International FEMA", href: "/services#international" },
+          { label: "GST & ITC Advisory", href: "/services#audit" },
+        ],
+      },
+      {
+        title: "Resources & Portal",
+        links: [
+          { label: "Income Tax Calculator", href: "/tools" },
+          { label: "GST Estimator Tool", href: "/tools" },
+          { label: "Pricing Wizard", href: "/pricing" },
+          { label: "FAQ Center", href: "/faq" },
+        ],
+      },
+    ],
+    image: {
+      src: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=300&q=80",
+      tag: "Featured",
+      title: "Expert Audit & Advisory",
+    },
+    banner: {
+      text: "Cost Calculator — Estimate your setup and filing compliance costs dynamically.",
+      btnText: "Learn More",
+      btnHref: "/tools",
+    },
+  },
+  tools: {
+    columns: [
+      {
+        title: "Direct Taxation",
+        links: [
+          { label: "Income Tax Calculator", href: "/tools" },
+          { label: "Advance Tax Estimator", href: "/tools" },
+          { label: "Capital Gains Planner", href: "/tools" },
+        ],
+      },
+      {
+        title: "Indirect Taxation",
+        links: [
+          { label: "GST Estimator Tool", href: "/tools" },
+          { label: "Composition Scheme Check", href: "/tools" },
+        ],
+      },
+      {
+        title: "Corporate Calculators",
+        links: [
+          { label: "Payroll & EPF Estimator", href: "/tools" },
+          { label: "Gratuity Calculator", href: "/tools" },
+        ],
+      },
+      {
+        title: "Pricing Packages",
+        links: [
+          { label: "View Pricing Wizard", href: "/pricing" },
+          { label: "Request Custom Quote", href: "/contact" },
+        ],
+      },
+    ],
+    image: {
+      src: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=300&q=80",
+      tag: "Calculators",
+      title: "GST & Income Tax Tools",
+    },
+    banner: {
+      text: "Need custom corporate structuring or audit projections?",
+      btnText: "Book Free Consultation",
+      btnHref: "/contact",
+    },
+  },
+  about: {
+    columns: [
+      {
+        title: "Firm Profile",
+        links: [
+          { label: "Our Story & Vision", href: "/about" },
+          { label: "Managing Partner Message", href: "/about" },
+        ],
+      },
+      {
+        title: "Our Team",
+        links: [
+          { label: "Principal Partners", href: "/about" },
+          { label: "Tax Specialists", href: "/about" },
+        ],
+      },
+      {
+        title: "Accreditations",
+        links: [
+          { label: "ICAI Fellowship Records", href: "/about" },
+          { label: "ISO 27001 Data Security", href: "/about" },
+        ],
+      },
+      {
+        title: "Quick Links",
+        links: [
+          { label: "Careers Page", href: "/careers" },
+          { label: "FAQ Center", href: "/faq" },
+        ],
+      },
+    ],
+    image: {
+      src: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=300&q=80",
+      tag: "Accreditation",
+      title: "Fellowship ICAI Members",
+    },
+    banner: {
+      text: "Fully registered Practicing Chartered Accountants fellowship since 2012.",
+      btnText: "Read Profile",
+      btnHref: "/about",
+    },
+  },
+  knowledge: {
+    columns: [
+      {
+        title: "Tax Alerts",
+        links: [
+          { label: "CBDT Tax Notifications", href: "/knowledge" },
+          { label: "GST Council Circulars", href: "/knowledge" },
+        ],
+      },
+      {
+        title: "Insights",
+        links: [
+          { label: "Tax Planning Guides", href: "/knowledge" },
+          { label: "Annual Union Budget Highlights", href: "/knowledge" },
+        ],
+      },
+      {
+        title: "Multimedia",
+        links: [
+          { label: "Video Compliance Guides", href: "/knowledge" },
+          { label: "Compliance Podcasts", href: "/knowledge" },
+        ],
+      },
+      {
+        title: "Downloads",
+        links: [
+          { label: "Important Statutory Forms", href: "/knowledge" },
+          { label: "Compliance Calendar PDF", href: "/knowledge" },
+        ],
+      },
+    ],
+    image: {
+      src: "https://images.unsplash.com/photo-1506784983877-45594efa4cbe?auto=format&fit=crop&w=300&q=80",
+      tag: "Daily Alerts",
+      title: "Latest Compliance Updates",
+    },
+    banner: {
+      text: "Stay informed of latest regulatory changes. Subscribed to newsletter?",
+      btnText: "Browse FAQ",
+      btnHref: "/faq",
+    },
+  },
+  clients: {
+    columns: [
+      {
+        title: "Industry Portfolios",
+        links: [
+          { label: "E-commerce & Retail", href: "/clients" },
+          { label: "Manufacturing & Logistics", href: "/clients" },
+        ],
+      },
+      {
+        title: "Case Histories",
+        links: [
+          { label: "Tax Litigation Success", href: "/clients" },
+          { label: "Corporate Restructuring", href: "/clients" },
+        ],
+      },
+      {
+        title: "Client Operations",
+        links: [
+          { label: "Secure Client Portal", href: "/clients" },
+          { label: "Submit Compliance Ticket", href: "/contact" },
+        ],
+      },
+      {
+        title: "Credentials",
+        links: [
+          { label: "Client Reviews", href: "/clients" },
+          { label: "Security Accreditations", href: "/about" },
+        ],
+      },
+    ],
+    image: {
+      src: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=300&q=80",
+      tag: "Success Cases",
+      title: "Corporate Restructuring",
+    },
+    banner: {
+      text: "Empowering corporate growth with complete tax confidentiality.",
+      btnText: "View Portfolio",
+      btnHref: "/clients",
+    },
+  },
+};
 
 export const Navbar: React.FC = () => {
   const { language, theme, setLanguage, toggleTheme, t } = useApp();
   const pathname = usePathname();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isLangDropdownOpen, setIsLangDropdownOpen] = useState(false);
+  const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const [scrolled, setScrolled] = useState(false);
   const [isHidden, setIsHidden] = useState(false);
   const [lastScrollY, setLastScrollY] = useState(0);
@@ -21,7 +259,7 @@ export const Navbar: React.FC = () => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
       setScrolled(currentScrollY > 20);
-      
+
       if (currentScrollY > lastScrollY && currentScrollY > 100) {
         setIsHidden(true);
       } else {
@@ -39,12 +277,12 @@ export const Navbar: React.FC = () => {
 
   const navLinks = [
     { href: "/", label: t.navHome },
-    { href: "/tools", label: t.navTools },
-    { href: "/services", label: t.navServices },
-    { href: "/about", label: t.navAbout },
+    { href: "/tools", label: t.navTools, key: "tools" },
+    { href: "/services", label: t.navServices, key: "services" },
+    { href: "/about", label: t.navAbout, key: "about" },
     { href: "/contact", label: t.navContact },
-    { href: "/knowledge", label: t.navKnowledge },
-    { href: "/clients", label: t.navClients },
+    { href: "/knowledge", label: t.navKnowledge, key: "knowledge" },
+    { href: "/clients", label: t.navClients, key: "clients" },
     { href: "/pricing", label: t.navPricing },
     { href: "/careers", label: t.navCareers },
     { href: "/faq", label: t.navFaq },
@@ -69,7 +307,7 @@ export const Navbar: React.FC = () => {
   };
 
   return (
-    <header className={`${isHome ? "fixed" : "sticky"} top-0 z-[999] w-full transition-all duration-300 ${isHidden ? "-translate-y-full" : "translate-y-0"}`}>
+    <header className={`${isHome ? "fixed" : "sticky"} z-[999] w-full transition-all duration-300 ${isHidden ? "-top-48" : "top-0"}`}>
       {/* Top Tier: Logo & Contact Info */}
       <div className={`transition-all duration-300 border-b border-white/10 dark:border-white/5 ${isTransparent ? "bg-transparent text-white" : "bg-white dark:bg-slate-950 text-slate-800 dark:text-white shadow-sm"}`}>
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -118,24 +356,36 @@ export const Navbar: React.FC = () => {
       </div>
 
       {/* Bottom Tier: Navigation & Social Icons (Hidden on Mobile) */}
-      <div className="hidden lg:block mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className={`transition-all duration-300 ${isTransparent ? "bg-amber-600/95 backdrop-blur-md" : "bg-amber-600"} shadow-lg px-6`}>
+      <div 
+        className="hidden lg:block mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10"
+        onMouseLeave={() => setActiveDropdown(null)}
+      >
+        <div className={`transition-all duration-300 ${isTransparent ? "bg-amber-600/95 backdrop-blur-md" : "bg-amber-600"} shadow-lg px-6 relative`}>
           <div className="flex h-[52px] items-center justify-between">
             {/* Desktop Navigation Links */}
-            <nav className="flex items-center gap-3 xl:gap-5 flex-wrap md:flex-nowrap">
+            <nav className="flex items-center gap-3 xl:gap-5 h-full">
               {navLinks.map((link) => {
                 const isActive = pathname === link.href;
+                const hasDropdown = !!link.key;
                 return (
-                  <Link
+                  <div
                     key={link.href}
-                    href={link.href}
-                    className={`flex items-center gap-1 text-[12px] xl:text-[13px] lowercase leading-tight font-bold transition-colors hover:text-white ${
-                      isActive ? "text-white/60" : "text-white"
-                    }`}
+                    className="relative flex items-center h-full"
+                    onMouseEnter={() => {
+                      if (hasDropdown) setActiveDropdown(link.key || null);
+                      else setActiveDropdown(null);
+                    }}
                   >
-                    <span className="text-center">{link.label}</span>
-                    <span className="text-[8px] opacity-60 mt-0.5 shrink-0">▼</span>
-                  </Link>
+                    <Link
+                      href={link.href}
+                      className={`flex items-center gap-1 text-[11px] xl:text-[12px] lowercase leading-tight font-bold transition-colors hover:text-white h-full ${
+                        isActive ? "text-white/60" : "text-white"
+                      }`}
+                    >
+                      <span className="text-center">{link.label}</span>
+                      {hasDropdown && <span className="text-[7px] opacity-60 mt-0.5 shrink-0">▼</span>}
+                    </Link>
+                  </div>
                 );
               })}
             </nav>
@@ -153,7 +403,7 @@ export const Navbar: React.FC = () => {
                   <path fillRule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z" clipRule="evenodd" />
                 </svg>
               </div>
-              
+
               {/* Language Dropdown */}
               <div className="relative">
                 <button
@@ -196,6 +446,89 @@ export const Navbar: React.FC = () => {
             </div>
           </div>
         </div>
+
+        {/* Dynamic Mega Dropdowns */}
+        <AnimatePresence>
+          {activeDropdown && dropdownConfigs[activeDropdown] && (() => {
+            const config = dropdownConfigs[activeDropdown];
+            return (
+              <motion.div
+                initial={{ opacity: 0, y: 15 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: 15 }}
+                transition={{ duration: 0.3 }}
+                className="absolute left-6 right-6 top-full bg-white dark:bg-[#120412] border border-slate-200/60 dark:border-slate-800/60 shadow-2xl rounded-b-md z-[1000] overflow-hidden text-left"
+                onMouseEnter={() => setActiveDropdown(activeDropdown)}
+              >
+                <div className="p-8 grid grid-cols-5 gap-8">
+                  {config.columns.map((col, idx) => (
+                    <div key={idx} className="space-y-4">
+                      <h4 className="text-xs font-black uppercase tracking-widest text-[#210821] dark:text-[#9e8055] border-b border-slate-100 dark:border-slate-800/50 pb-2">
+                        {col.title}
+                      </h4>
+                      <ul className="space-y-2.5 text-xs">
+                        {col.links.map((link, lIdx) => (
+                          <li key={lIdx}>
+                            <Link
+                              href={link.href}
+                              onClick={() => setActiveDropdown(null)}
+                              className="text-slate-600 dark:text-slate-200 hover:text-[#9e8055] dark:hover:text-[#9e8055] transition-colors block font-bold lowercase"
+                            >
+                              {link.label}
+                            </Link>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  ))}
+                  
+                  {/* Column 5: Featured Image Card */}
+                  <div className="space-y-4">
+                    <h4 className="text-xs font-black uppercase tracking-widest text-[#210821] dark:text-[#9e8055] border-b border-slate-100 dark:border-slate-800/50 pb-2">
+                      Spotlight
+                    </h4>
+                    <div className="relative h-36 rounded-lg overflow-hidden shadow-sm group border border-slate-200/40 dark:border-slate-800/40">
+                      <img
+                        src={config.image.src}
+                        alt={config.image.title}
+                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-[#210821]/90 via-[#210821]/40 to-transparent flex flex-col justify-end p-3">
+                        <span className="text-[8px] font-black uppercase text-[#9e8055] tracking-widest">
+                          {config.image.tag}
+                        </span>
+                        <h5 className="text-white text-[10px] font-bold leading-tight mt-0.5">
+                          {config.image.title}
+                        </h5>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Unified Theme Banner */}
+                <div className="bg-[#9e8055] text-white py-3.5 px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+                  <div className="flex items-center gap-3.5">
+                    <div className="w-9 h-9 bg-slate-900/20 rounded-md flex items-center justify-center border border-white/10 shrink-0">
+                      <Calculator className="w-5 h-5 text-white" />
+                    </div>
+                    <div className="text-left leading-tight">
+                      <span className="text-[12px] font-bold tracking-tight block">
+                        {config.banner.text}
+                      </span>
+                    </div>
+                  </div>
+                  <Link
+                    href={config.banner.btnHref}
+                    onClick={() => setActiveDropdown(null)}
+                    className="px-5 py-2 bg-[#210821] hover:bg-[#110311] text-white text-[10px] font-bold uppercase tracking-wider rounded-full shadow-sm transition-all"
+                  >
+                    {config.banner.btnText}
+                  </Link>
+                </div>
+              </motion.div>
+            );
+          })()}
+        </AnimatePresence>
       </div>
 
       {/* Mobile Menu Overlay Drawer */}

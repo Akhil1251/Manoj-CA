@@ -248,7 +248,7 @@ export const Footer: React.FC = () => {
             </form>
             {subscribed && (
               <span className="text-[11px] font-bold text-emerald-500 mt-2 block animate-pulse">
-                âœ“ Success! Check your inbox soon.
+                ✓ Success! Check your inbox soon.
               </span>
             )}
           </div>

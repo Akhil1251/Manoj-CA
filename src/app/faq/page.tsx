@@ -38,7 +38,7 @@ export default function FAQPage() {
     {
       category: "gst",
       question: "What is the threshold limit for mandatory GST registration?",
-      answer: "For service providers, GST registration is mandatory if annual turnover crosses â‚¹20 Lakhs (â‚¹10 Lakhs for special hill states). For goods suppliers, the threshold limit is â‚¹40 Lakhs."
+      answer: "For service providers, GST registration is mandatory if annual turnover crosses ₹20 Lakhs (₹10 Lakhs for special hill states). For goods suppliers, the threshold limit is ₹40 Lakhs."
     }
   ];
 

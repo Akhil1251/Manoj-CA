@@ -25,6 +25,25 @@ export default function ServicesPage() {
   const [selectedService, setSelectedService] = useState(1); // Default to Bonds & Commodities to match screenshot selection
   const [expandedAccordion, setExpandedAccordion] = useState<number | null>(0);
 
+  React.useEffect(() => {
+    const handleHashChange = () => {
+      const hash = window.location.hash.replace("#", "");
+      if (hash) {
+        const foundIndex = servicesList.findIndex((s) => s.id === hash);
+        if (foundIndex !== -1) {
+          setSelectedService(foundIndex);
+          const element = document.getElementById("services-content");
+          if (element) {
+            element.scrollIntoView({ behavior: "smooth" });
+          }
+        }
+      }
+    };
+    handleHashChange();
+    window.addEventListener("hashchange", handleHashChange);
+    return () => window.removeEventListener("hashchange", handleHashChange);
+  }, []);
+
   const servicesList = [
     {
       id: "turnaround",
@@ -132,25 +151,53 @@ export default function ServicesPage() {
           {/* LEFT COLUMN - SIDEBAR */}
           <div className="lg:col-span-3 space-y-8">
             
-            {/* Service Menu */}
+            {/* Service Menu (Mobile Accordion / Desktop Sidebar) */}
             <div className="bg-white dark:bg-[#180618] border border-slate-200/60 dark:border-slate-800/60 rounded-md overflow-hidden shadow-sm">
               {servicesList.map((service, idx) => {
                 const isSelected = selectedService === idx;
                 return (
-                  <button
-                    key={idx}
-                    onClick={() => setSelectedService(idx)}
-                    className={`w-full text-left py-3.5 px-5 text-[13px] font-bold border-b border-slate-100 dark:border-slate-800/40 transition-all duration-300 flex items-center justify-between border-l-4 ${
-                      isSelected
-                        ? "border-l-[#9e8055] bg-slate-50 dark:bg-[#250d25]/45 text-[#9e8055]"
-                        : "border-l-transparent text-slate-700 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-900/60"
-                    }`}
-                  >
-                    <span>{service.title}</span>
-                    <ChevronRight className={`w-3.5 h-3.5 transition-transform duration-300 ${
-                      isSelected ? "translate-x-0.5 text-[#9e8055]" : "opacity-30"
-                    }`} />
-                  </button>
+                  <div key={idx} className="border-b border-slate-100 dark:border-slate-850/30 last:border-b-0">
+                    <button
+                      onClick={() => setSelectedService(idx)}
+                      className={`w-full text-left py-3.5 px-5 text-[13px] font-bold transition-all duration-300 flex items-center justify-between border-l-4 ${
+                        isSelected
+                          ? "border-l-[#9e8055] bg-slate-50 dark:bg-[#250d25]/45 text-[#9e8055]"
+                          : "border-l-transparent text-slate-700 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-900/60"
+                      }`}
+                    >
+                      <span>{service.title}</span>
+                      <ChevronRight className={`w-3.5 h-3.5 transition-transform duration-300 ${
+                        isSelected ? "rotate-90 text-[#9e8055]" : "opacity-30"
+                      }`} />
+                    </button>
+                    
+                    {/* Inline Content on Mobile only */}
+                    <AnimatePresence initial={false}>
+                      {isSelected && (
+                        <motion.div
+                          initial={{ height: 0, opacity: 0 }}
+                          animate={{ height: "auto", opacity: 1 }}
+                          exit={{ height: 0, opacity: 0 }}
+                          transition={{ duration: 0.25 }}
+                          className="lg:hidden overflow-hidden bg-slate-50/60 dark:bg-[#1f0a1f]/35 border-t border-slate-100 dark:border-slate-850/30"
+                        >
+                          <div className="p-5 space-y-3.5 text-left text-xs leading-relaxed">
+                            <h4 className="font-extrabold text-[#210821] dark:text-[#9e8055]">
+                              {service.subtitle}
+                            </h4>
+                            <p className="text-slate-600 dark:text-slate-300 font-normal">
+                              {service.intro}
+                            </p>
+                            {service.bodyExtra && (
+                              <p className="text-slate-600 dark:text-slate-300 font-normal">
+                                {service.bodyExtra}
+                              </p>
+                            )}
+                          </div>
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
+                  </div>
                 );
               })}
             </div>
@@ -216,15 +263,15 @@ export default function ServicesPage() {
           </div>
 
           {/* RIGHT COLUMN - CONTENT AREA */}
-          <div className="lg:col-span-9 space-y-12">
+          <div id="services-content" className="lg:col-span-9 space-y-12">
             
-            {/* Service Header & Text Content */}
+            {/* Service Header & Text Content (Hidden on Mobile, shown on Desktop) */}
             <motion.div
               key={selectedService}
               initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
-              className="space-y-6 text-left"
+              className="hidden lg:block space-y-6 text-left"
             >
               <h2 className="text-2xl sm:text-3xl font-extrabold text-[#210821] dark:text-white tracking-tight leading-snug">
                 {servicesList[selectedService].title}

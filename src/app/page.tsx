@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import { useApp } from "@/context/AppContext";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import {
   ShieldAlert,
   ArrowRight,
@@ -33,6 +33,7 @@ import {
 
 export default function HomePage() {
   const { t, theme } = useApp();
+  const [activeStep, setActiveStep] = useState(0);
 
   const problemsList = [
     { id: "freelancer", title: t.p1Title, problem: t.p1Problem, solution: t.p1Solution, icon: Users, category: "Freelancer" },
@@ -486,65 +487,111 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 7. OUR ADVISORY JOURNEY */}
-      <section className="py-24 bg-slate-50 dark:bg-slate-900 text-slate-900 dark:text-white border-t border-slate-200 dark:border-slate-800 transition-colors duration-300">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-           <div className="text-center mb-16">
-              <span className="inline-flex px-3 py-1 rounded-full bg-slate-200 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 text-amber-600 dark:text-amber-400 font-bold text-xs uppercase tracking-widest items-center gap-2 mb-4">
-                <Award className="h-4 w-4" /> How We Work
+      {/* 7. OUR ADVISORY JOURNEY - INTERACTIVE TIMELINE */}
+      <section className="py-24 bg-slate-50 dark:bg-[#120412]/50 border-t border-b border-slate-200/50 dark:border-slate-800/50 transition-colors duration-300">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+           <div className="mb-16">
+              <span className="text-xs font-bold bg-[#9e8055]/10 text-[#9e8055] px-3.5 py-1.5 rounded-full border border-[#9e8055]/20 uppercase tracking-widest">
+                Journey Process
               </span>
-              <h2 className="text-4xl font-extrabold mb-5">Our Advisory Journey</h2>
-              <p className="text-slate-600 dark:text-slate-400 max-w-2xl mx-auto text-lg">We execute an agile, 4-step compliance and strategic growth blueprint tailored directly to your operational scale.</p>
+              <h2 className="text-3xl sm:text-4xl font-extrabold text-[#210821] dark:text-white mt-4 mb-4">
+                Our Advisory Journey
+              </h2>
+              <p className="text-slate-500 dark:text-slate-400 max-w-xl mx-auto text-sm leading-relaxed font-normal">
+                We execute an agile, 4-step compliance and strategic growth blueprint tailored directly to your operational scale.
+              </p>
            </div>
 
-           {/* Running Light Path Animation */}
-           <div className="relative mb-20 hidden md:block px-10">
-              <div className="absolute top-1/2 left-10 right-10 h-1 bg-slate-200 dark:bg-slate-800 -translate-y-1/2 rounded-full"></div>
-              {/* The glowing runner */}
-              <motion.div 
-                 animate={{ left: ["0%", "100%", "0%"] }} 
-                 transition={{ repeat: Infinity, duration: 8, ease: "linear" }}
-                 className="absolute top-1/2 h-1.5 w-32 bg-amber-500 rounded-full blur-[2px] shadow-[0_0_15px_rgba(99,102,241,1)] -translate-y-1/2 z-0"
-              ></motion.div>
-
-              <div className="grid grid-cols-4 gap-4 relative z-10">
-                {[
-                  { num: "01", title: "ASSESSMENT", icon: FileCheck },
-                  { num: "02", title: "STRATEGY", icon: Calculator },
-                  { num: "03", title: "EXECUTION", icon: Building },
-                  { num: "04", title: "COMPLIANCE", icon: ShieldAlert },
-                ].map((step, i) => (
-                   <div key={i} className="flex flex-col items-center">
-                      <div className="h-16 w-16 rounded-2xl bg-white dark:bg-slate-950 border-2 border-amber-100 dark:border-amber-500/30 flex items-center justify-center mb-4 shadow-xl shadow-amber-500/10 relative">
-                         <div className="absolute -inset-1 bg-amber-500/20 rounded-2xl blur opacity-0 hover:opacity-100 transition-opacity"></div>
-                         <step.icon className="h-7 w-7 text-amber-600 dark:text-amber-400 relative z-10" />
-                      </div>
-                      <span className="text-amber-600 dark:text-amber-400 font-extrabold text-lg mb-1">{step.num}</span>
-                      <h3 className="font-bold text-sm tracking-widest uppercase">{step.title}</h3>
-                   </div>
-                ))}
-              </div>
-           </div>
-
-           {/* Content Details */}
-           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-               {[
-                 {title: "Deep Assessment", desc: "We audit your financial history, current tax structures, and industry position."},
-                 {title: "Custom Strategy", desc: "We formulate specialized tax-saving strategies and robust compliance templates."},
-                 {title: "Seamless Execution", desc: "Our team implements the frameworks, securing required registrations and filings."},
-               ].map((step, i) => (
+            {/* Interactive Timeline Bar */}
+            <div className="relative mb-16 max-w-4xl mx-auto px-0">
+               {/* Background Gold-tinted Line */}
+               <div className="absolute top-[28px] left-[12.5%] right-[12.5%] h-[2px] bg-[#9e8055]/30 dark:bg-[#9e8055]/20 -translate-y-1/2" />
+               
+               {/* Dynamic Filling Gold Line */}
+               <div className="absolute top-[28px] left-[12.5%] right-[12.5%] h-[2px] -translate-y-1/2 overflow-hidden">
                  <motion.div 
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: i * 0.1 }}
-                    key={i} 
-                    className="p-8 rounded-[2rem] bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 shadow-xl hover:-translate-y-2 transition-transform"
-                 >
-                    <h3 className="font-bold text-xl mb-3">0{i+1}. {step.title}</h3>
-                    <p className="text-slate-600 dark:text-slate-400 leading-relaxed">{step.desc}</p>
-                 </motion.div>
-               ))}
+                    className="h-full bg-[#9e8055] origin-left"
+                    animate={{ width: `${(activeStep / 3) * 100}%` }}
+                    transition={{ type: "spring", stiffness: 80, damping: 15 }}
+                 />
+               </div>
+
+               <div className="grid grid-cols-4 relative z-10">
+                 {[
+                   { num: "01", title: "ASSESSMENT", icon: FileCheck, detailTitle: "Deep Diagnostic Assessment", desc: "We perform a comprehensive audit of your financial records, historical filing patterns, and corporate entities. This allows us to identify structural exposure risks, missed tax credits, and optimization opportunities." },
+                   { num: "02", title: "STRATEGY", icon: Calculator, detailTitle: "Bespoke Financial Strategy", desc: "We design legal tax mitigation plans, asset-protection frameworks, and direct/indirect tax strategies. We customize corporate structuring models to minimize future tax liabilities and secure investment compliance." },
+                   { num: "03", title: "EXECUTION", icon: Building, detailTitle: "Seamless Implementation", desc: "Our team takes over the paperwork. We set up accounting integrations, file required GST/IT registrations, draft family trust deeds, and establish reliable workflows to operationalize your new structures." },
+                   { num: "04", title: "COMPLIANCE", icon: ShieldAlert, detailTitle: "Active Audits & Advisory", desc: "We provide ongoing audit-preparedness, statutory filings, regular GST reconciliation checks, and direct notice representation before regulatory benches to keep your business fully audit-proof." }
+                 ].map((step, i) => {
+                   const Icon = step.icon;
+                   const isActive = activeStep === i;
+                   const isCompleted = i <= activeStep;
+                   return (
+                      <button 
+                        key={i} 
+                        onClick={() => setActiveStep(i)}
+                        className="flex flex-col items-center focus:outline-none group cursor-pointer"
+                      >
+                         {/* Circle/Squircle Badge */}
+                         <motion.div 
+                           animate={{ 
+                             scale: isActive ? 1.08 : 1.0,
+                           }}
+                           transition={{ duration: 0.2 }}
+                           className={`h-14 w-14 rounded-[18px] flex items-center justify-center mb-4 transition-all duration-300 relative ${
+                             isActive 
+                               ? "bg-[#210821] dark:bg-[#321232] border-2 border-[#9e8055] text-white shadow-[0_0_20px_rgba(158,128,85,0.35)] ring-4 ring-[#9e8055]/10" 
+                               : "bg-white dark:bg-[#1a0b1a] border-2 border-[#9e8055]/50 hover:border-[#9e8055] text-[#9e8055]"
+                           }`}
+                         >
+                            <Icon className={`h-6 w-6 transition-colors duration-300 ${
+                              isActive 
+                                ? "text-white" 
+                                : "text-[#9e8055]"
+                            }`} />
+                         </motion.div>
+                         <span className={`text-[10px] font-black tracking-wider transition-colors duration-300 ${
+                           isActive ? "text-[#9e8055]" : "text-slate-400 dark:text-slate-500"
+                         }`}>{step.num}</span>
+                         <h3 className={`font-extrabold text-[10px] sm:text-[11px] tracking-widest uppercase transition-colors duration-300 mt-1 ${
+                           isActive ? "text-[#210821] dark:text-[#9e8055]" : "text-slate-400 dark:text-slate-500 group-hover:text-slate-650 dark:group-hover:text-slate-350"
+                         }`}>{step.title}</h3>
+                      </button>
+                   );
+                 })}
+               </div>
+            </div>
+
+           {/* Content Details Display Area */}
+           <div className="max-w-3xl mx-auto min-h-[150px] px-4">
+             <AnimatePresence mode="wait">
+               <motion.div
+                 key={activeStep}
+                 initial={{ opacity: 0, y: 10 }}
+                 animate={{ opacity: 1, y: 0 }}
+                 exit={{ opacity: 0, y: -10 }}
+                 transition={{ duration: 0.25 }}
+                 className="p-8 sm:p-10 rounded-[24px] bg-white dark:bg-[#160716] border border-slate-100 dark:border-slate-800/80 shadow-[0_8px_30px_rgb(0,0,0,0.04)] dark:shadow-[0_8px_30px_rgb(0,0,0,0.2)] text-left relative overflow-hidden max-w-2xl mx-auto"
+               >
+                 <div className="absolute top-0 right-0 w-32 h-32 bg-[#9e8055]/3 rounded-full blur-2xl pointer-events-none" />
+                 <h3 className="font-extrabold text-xl text-[#210821] dark:text-white mb-3 tracking-tight">
+                   0{activeStep + 1}. {[
+                     "Deep Diagnostic Assessment",
+                     "Bespoke Financial Strategy",
+                     "Seamless Implementation",
+                     "Active Audits & Advisory"
+                   ][activeStep]}
+                 </h3>
+                 <p className="text-sm text-slate-600 dark:text-slate-300 leading-relaxed font-normal">
+                   {[
+                     "We perform a comprehensive audit of your financial records, historical filing patterns, and corporate entities. This allows us to identify structural exposure risks, missed tax credits, and optimization opportunities.",
+                     "We design legal tax mitigation plans, asset-protection frameworks, and direct/indirect tax strategies. We customize corporate structuring models to minimize future tax liabilities and secure investment compliance.",
+                     "Our team takes over the paperwork. We set up accounting integrations, file required GST/IT registrations, draft family trust deeds, and establish reliable workflows to operationalize your new structures.",
+                     "We provide ongoing audit-preparedness, statutory filings, regular GST reconciliation checks, and direct notice representation before regulatory benches to keep your business fully audit-proof."
+                   ][activeStep]}
+                 </p>
+               </motion.div>
+             </AnimatePresence>
            </div>
         </div>
       </section>
@@ -624,12 +671,12 @@ export default function HomePage() {
                        {[
                          {date: "09 JUN", type: "GST", title: "GST Council Proposes Restructuring of Tax Slabs", desc: "The GST Council has initiated discussions to rationalise tax slabs, potentially..."},
                          {date: "08 JUN", type: "Income Tax", title: "CBDT Issues Clarification on Capital Gains Taxation", desc: "New circular resolves ambiguities regarding indexation benefits for properties..."},
-                         {date: "07 JUN", type: "Compliance", title: "New E-invoicing Deadlines Announced for Small Businesses", desc: "Taxpayers with turnover exceeding â‚¹2 Crores must adopt compulsory e-invoicing..."},
+                         {date: "07 JUN", type: "Compliance", title: "New E-invoicing Deadlines Announced for Small Businesses", desc: "Taxpayers with turnover exceeding ₹2 Crores must adopt compulsory e-invoicing..."},
                          {date: "05 JUN", type: "MCA", title: "MCA Extends Due Date for Filing Annual Returns", desc: "A grace period of 30 days is announced for corporate filings due to portal upgrades..."},
                          // Duplicate for infinite scroll
                          {date: "09 JUN", type: "GST", title: "GST Council Proposes Restructuring of Tax Slabs", desc: "The GST Council has initiated discussions to rationalise tax slabs, potentially..."},
                          {date: "08 JUN", type: "Income Tax", title: "CBDT Issues Clarification on Capital Gains Taxation", desc: "New circular resolves ambiguities regarding indexation benefits for properties..."},
-                         {date: "07 JUN", type: "Compliance", title: "New E-invoicing Deadlines Announced for Small Businesses", desc: "Taxpayers with turnover exceeding â‚¹2 Crores must adopt compulsory e-invoicing..."},
+                         {date: "07 JUN", type: "Compliance", title: "New E-invoicing Deadlines Announced for Small Businesses", desc: "Taxpayers with turnover exceeding ₹2 Crores must adopt compulsory e-invoicing..."},
                          {date: "05 JUN", type: "MCA", title: "MCA Extends Due Date for Filing Annual Returns", desc: "A grace period of 30 days is announced for corporate filings due to portal upgrades..."},
                        ].map((news, i) => (
                          <div key={i} className="flex gap-5 p-5 rounded-2xl bg-slate-50 dark:bg-slate-900/40 hover:bg-slate-100 dark:hover:bg-slate-800/80 transition-colors mx-4 shadow-sm border border-slate-100 dark:border-slate-800">

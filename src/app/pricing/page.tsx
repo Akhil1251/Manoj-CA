@@ -40,7 +40,7 @@ export default function PricingPage() {
   const packages = [
     {
       name: "Starter Compliance",
-      price: "â‚¹2,499",
+      price: "₹2,499",
       period: "per month",
       desc: "Perfect for independent freelancers, creators, and single-owner consultants.",
       features: [
@@ -53,7 +53,7 @@ export default function PricingPage() {
     },
     {
       name: "Growth Professional",
-      price: "â‚¹5,999",
+      price: "₹5,999",
       period: "per month",
       desc: "Ideal for growing LLPs, private companies, and active retail traders.",
       features: [
@@ -137,10 +137,10 @@ export default function PricingPage() {
               </label>
               <div className="grid grid-cols-1 sm:grid-cols-4 gap-3">
                 {[
-                  { id: "under_20l", label: "Under â‚¹20 Lakhs" },
-                  { id: "20l_1cr", label: "â‚¹20L - â‚¹1 Crore" },
-                  { id: "1cr_5cr", label: "â‚¹1Cr - â‚¹5 Crore" },
-                  { id: "above_5cr", label: "Above â‚¹5 Crore" }
+                  { id: "under_20l", label: "Under ₹20 Lakhs" },
+                  { id: "20l_1cr", label: "₹20L - ₹1 Crore" },
+                  { id: "1cr_5cr", label: "₹1Cr - ₹5 Crore" },
+                  { id: "above_5cr", label: "Above ₹5 Crore" }
                 ].map((item) => (
                   <button
                     key={item.id}
@@ -215,7 +215,7 @@ export default function PricingPage() {
                 Estimated Subscription
               </span>
               <div className="text-4xl sm:text-5xl font-extrabold text-slate-900 dark:text-white my-6">
-                â‚¹{estimatedPrice.toLocaleString()}{" "}
+                ₹{estimatedPrice.toLocaleString()}{" "}
                 <span className="text-xs text-slate-400 dark:text-slate-500 font-semibold block mt-1">
                   per month (GST extra)
                 </span>
@@ -227,7 +227,7 @@ export default function PricingPage() {
 
             <button
               onClick={() => {
-                window.location.href = `/contact?query=Estimated plan rate calculated: â‚¹${estimatedPrice} for ${entityType}`;
+                window.location.href = `/contact?query=Estimated plan rate calculated: ₹${estimatedPrice} for ${entityType}`;
               }}
               className="w-full h-11 bg-amber-600 hover:bg-amber-500 text-white rounded-xl font-bold transition flex items-center justify-center gap-2 shadow-lg shadow-amber-600/15"
             >

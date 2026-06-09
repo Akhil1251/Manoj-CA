@@ -33,15 +33,15 @@ export default function ClientsPage() {
   const caseStudies = [
     {
       company: "Metatech Solutions (Software Export)",
-      challenge: "Metatech was hit with a retroactive â‚¹35 Lakhs GST demand on export services due to incorrect filing of their Letter of Undertaking.",
-      impact: "We represented them at appellate levels, proved the export status via FIRC (Foreign Inward Remittance Certificate), and got the complete â‚¹35L demand dropped.",
-      metrics: "â‚¹35L Saved | 100% Compliance Recovery"
+      challenge: "Metatech was hit with a retroactive ₹35 Lakhs GST demand on export services due to incorrect filing of their Letter of Undertaking.",
+      impact: "We represented them at appellate levels, proved the export status via FIRC (Foreign Inward Remittance Certificate), and got the complete ₹35L demand dropped.",
+      metrics: "₹35L Saved | 100% Compliance Recovery"
     },
     {
       company: "Apex Warehousing & Logistics",
-      challenge: "Apex discovered that â‚¹24 Lakhs of their Input Tax Credit was mismatched because their primary subcontractors were not uploading GSTR-1 bills.",
-      impact: "We deployed our digital reconciliation ledger, traced defaulting subcontractors, and recovered â‚¹21.8 Lakhs in blocked credit inside two months.",
-      metrics: "â‚¹21.8L Recovered | 90% ITC reconciled"
+      challenge: "Apex discovered that ₹24 Lakhs of their Input Tax Credit was mismatched because their primary subcontractors were not uploading GSTR-1 bills.",
+      impact: "We deployed our digital reconciliation ledger, traced defaulting subcontractors, and recovered ₹21.8 Lakhs in blocked credit inside two months.",
+      metrics: "₹21.8L Recovered | 90% ITC reconciled"
     }
   ];
 
@@ -52,7 +52,7 @@ export default function ClientsPage() {
       title: "Founder, Apex Logistics"
     },
     {
-      quote: "As a freelance game developer, export taxation was a nightmare. Manoj CA set up my zero-rated GST registration and helped me save over â‚¹8 Lakhs in tax using presumptive schemes.",
+      quote: "As a freelance game developer, export taxation was a nightmare. Manoj CA set up my zero-rated GST registration and helped me save over ₹8 Lakhs in tax using presumptive schemes.",
       name: "Rohan Verma",
       title: "Independent Developer"
     }

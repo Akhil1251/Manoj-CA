@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import React, { useState } from "react";
 import { useApp } from "@/context/AppContext";
@@ -108,10 +108,10 @@ export default function ContactPage() {
                   onChange={(e) => setFormData({ ...formData, turnover: e.target.value })}
                   className="w-full h-11 px-3.5 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 text-sm focus:ring-1 focus:ring-amber-500 outline-none"
                 >
-                  <option value="under_20l">Under â‚¹20 Lakhs (GST Exempt Limit)</option>
-                  <option value="20l_1cr">â‚¹20 Lakhs - â‚¹1 Crore</option>
-                  <option value="1cr_5cr">â‚¹1 Crore - â‚¹5 Crore (Tax Audit Threshold)</option>
-                  <option value="above_5cr">Above â‚¹5 Crore</option>
+                  <option value="under_20l">Under ₹20 Lakhs (GST Exempt Limit)</option>
+                  <option value="20l_1cr">₹20 Lakhs - ₹1 Crore</option>
+                  <option value="1cr_5cr">₹1 Crore - ₹5 Crore (Tax Audit Threshold)</option>
+                  <option value="above_5cr">Above ₹5 Crore</option>
                 </select>
               </div>
 
@@ -206,7 +206,7 @@ export default function ContactPage() {
               </strong>
               Monday - Saturday: 09:30 AM - 06:30 PM (IST)
               <span className="block mt-1 font-semibold text-amber-500">
-                âš ï¸ Extended hours active during filing season.
+                ⚠️ Extended hours active during filing season.
               </span>
             </div>
           </div>
