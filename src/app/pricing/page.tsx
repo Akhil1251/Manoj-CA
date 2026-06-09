@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import React, { useState, useEffect } from "react";
 import { Calculator, Check, ArrowRight, HelpCircle } from "lucide-react";
@@ -40,7 +40,7 @@ export default function PricingPage() {
   const packages = [
     {
       name: "Starter Compliance",
-      price: "₹2,499",
+      price: "â‚¹2,499",
       period: "per month",
       desc: "Perfect for independent freelancers, creators, and single-owner consultants.",
       features: [
@@ -53,7 +53,7 @@ export default function PricingPage() {
     },
     {
       name: "Growth Professional",
-      price: "₹5,999",
+      price: "â‚¹5,999",
       period: "per month",
       desc: "Ideal for growing LLPs, private companies, and active retail traders.",
       features: [
@@ -83,8 +83,8 @@ export default function PricingPage() {
     <div className="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       {/* Title */}
       <div className="text-center mb-16">
-        <span className="text-xs font-bold bg-indigo-500/10 text-indigo-600 dark:text-indigo-400 px-3.5 py-1.5 rounded-full border border-indigo-500/20 uppercase tracking-widest">
-          💳 Transparent Fees
+        <span className="text-xs font-bold bg-amber-500/10 text-amber-600 dark:text-amber-400 px-3.5 py-1.5 rounded-full border border-amber-500/20 uppercase tracking-widest">
+          ðŸ’³ Transparent Fees
         </span>
         <h1 className="text-3xl sm:text-5xl font-extrabold text-slate-900 dark:text-white mt-4 mb-4">
           Estimate Your Compliance Cost
@@ -99,7 +99,7 @@ export default function PricingPage() {
         {/* Left Column: Interactive Wizard */}
         <div className="lg:col-span-8 glass-premium p-6 sm:p-10 rounded-3xl border border-slate-200/50 dark:border-slate-800/50">
           <h2 className="text-xl font-extrabold text-slate-900 dark:text-white mb-6 flex items-center gap-2">
-            <Calculator className="h-5 w-5 text-indigo-500" /> Interactive Cost Estimator
+            <Calculator className="h-5 w-5 text-amber-500" /> Interactive Cost Estimator
           </h2>
 
           <div className="space-y-6">
@@ -120,7 +120,7 @@ export default function PricingPage() {
                     onClick={() => setEntityType(item.id)}
                     className={`h-11 rounded-xl text-xs font-bold border transition ${
                       entityType === item.id
-                        ? "bg-indigo-600 border-indigo-600 text-white"
+                        ? "bg-amber-600 border-amber-600 text-white"
                         : "border-slate-200 dark:border-slate-800 text-slate-700 dark:text-slate-355 hover:bg-slate-50 dark:hover:bg-slate-900"
                     }`}
                   >
@@ -137,17 +137,17 @@ export default function PricingPage() {
               </label>
               <div className="grid grid-cols-1 sm:grid-cols-4 gap-3">
                 {[
-                  { id: "under_20l", label: "Under ₹20 Lakhs" },
-                  { id: "20l_1cr", label: "₹20L - ₹1 Crore" },
-                  { id: "1cr_5cr", label: "₹1Cr - ₹5 Crore" },
-                  { id: "above_5cr", label: "Above ₹5 Crore" }
+                  { id: "under_20l", label: "Under â‚¹20 Lakhs" },
+                  { id: "20l_1cr", label: "â‚¹20L - â‚¹1 Crore" },
+                  { id: "1cr_5cr", label: "â‚¹1Cr - â‚¹5 Crore" },
+                  { id: "above_5cr", label: "Above â‚¹5 Crore" }
                 ].map((item) => (
                   <button
                     key={item.id}
                     onClick={() => setTurnover(item.id)}
                     className={`h-11 rounded-xl text-xs font-bold border transition ${
                       turnover === item.id
-                        ? "bg-indigo-600 border-indigo-600 text-white"
+                        ? "bg-amber-600 border-amber-600 text-white"
                         : "border-slate-200 dark:border-slate-800 text-slate-700 dark:text-slate-355 hover:bg-slate-50 dark:hover:bg-slate-900"
                     }`}
                   >
@@ -162,7 +162,7 @@ export default function PricingPage() {
               {/* Transactions Slider */}
               <div>
                 <label className="block text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400 mb-3">
-                  3. Monthly Bank Transactions: <span className="text-indigo-500 font-extrabold">{transactions}+</span>
+                  3. Monthly Bank Transactions: <span className="text-amber-500 font-extrabold">{transactions}+</span>
                 </label>
                 <input
                   type="range"
@@ -185,7 +185,7 @@ export default function PricingPage() {
                     onClick={() => setNeedGst(true)}
                     className={`flex-1 h-11 rounded-xl text-xs font-bold border transition ${
                       needGst
-                        ? "bg-indigo-600 border-indigo-600 text-white"
+                        ? "bg-amber-600 border-amber-600 text-white"
                         : "border-slate-200 dark:border-slate-800 text-slate-700 dark:text-slate-355 hover:bg-slate-50 dark:hover:bg-slate-900"
                     }`}
                   >
@@ -195,7 +195,7 @@ export default function PricingPage() {
                     onClick={() => setNeedGst(false)}
                     className={`flex-1 h-11 rounded-xl text-xs font-bold border transition ${
                       !needGst
-                        ? "bg-indigo-600 border-indigo-600 text-white"
+                        ? "bg-amber-600 border-amber-600 text-white"
                         : "border-slate-200 dark:border-slate-800 text-slate-700 dark:text-slate-355 hover:bg-slate-50 dark:hover:bg-slate-900"
                     }`}
                   >
@@ -209,13 +209,13 @@ export default function PricingPage() {
 
         {/* Right Column: Dynamic Quote Result */}
         <div className="lg:col-span-4 flex">
-          <div className="w-full glass-premium p-6 sm:p-8 rounded-3xl border border-indigo-500/20 bg-indigo-600/5 dark:bg-indigo-950/20 text-center flex flex-col justify-between">
+          <div className="w-full glass-premium p-6 sm:p-8 rounded-3xl border border-amber-500/20 bg-amber-600/5 dark:bg-amber-950/20 text-center flex flex-col justify-between">
             <div>
-              <span className="text-[10px] font-bold text-indigo-500 dark:text-indigo-400 uppercase tracking-widest block mb-1">
+              <span className="text-[10px] font-bold text-amber-500 dark:text-amber-400 uppercase tracking-widest block mb-1">
                 Estimated Subscription
               </span>
               <div className="text-4xl sm:text-5xl font-extrabold text-slate-900 dark:text-white my-6">
-                ₹{estimatedPrice.toLocaleString()}{" "}
+                â‚¹{estimatedPrice.toLocaleString()}{" "}
                 <span className="text-xs text-slate-400 dark:text-slate-500 font-semibold block mt-1">
                   per month (GST extra)
                 </span>
@@ -227,9 +227,9 @@ export default function PricingPage() {
 
             <button
               onClick={() => {
-                window.location.href = `/contact?query=Estimated plan rate calculated: ₹${estimatedPrice} for ${entityType}`;
+                window.location.href = `/contact?query=Estimated plan rate calculated: â‚¹${estimatedPrice} for ${entityType}`;
               }}
-              className="w-full h-11 bg-indigo-600 hover:bg-indigo-500 text-white rounded-xl font-bold transition flex items-center justify-center gap-2 shadow-lg shadow-indigo-600/15"
+              className="w-full h-11 bg-amber-600 hover:bg-amber-500 text-white rounded-xl font-bold transition flex items-center justify-center gap-2 shadow-lg shadow-amber-600/15"
             >
               Request Custom Proposal <ArrowRight className="h-4 w-4" />
             </button>
@@ -254,12 +254,12 @@ export default function PricingPage() {
                 transition={{ delay: idx * 0.05 }}
                 className={`glass p-6 sm:p-8 rounded-3xl border flex flex-col justify-between relative ${
                   isFeatured
-                    ? "border-indigo-500/50 bg-indigo-600/[0.02] ring-1 ring-indigo-500/10 shadow-xl"
+                    ? "border-amber-500/50 bg-amber-600/[0.02] ring-1 ring-amber-500/10 shadow-xl"
                     : "border-slate-200/50 dark:border-slate-800/50"
                 }`}
               >
                 {isFeatured && (
-                  <span className="absolute -top-3.5 left-1/2 -translate-x-1/2 px-3 py-1 rounded-full text-[9px] font-extrabold uppercase tracking-widest bg-indigo-600 text-white shadow">
+                  <span className="absolute -top-3.5 left-1/2 -translate-x-1/2 px-3 py-1 rounded-full text-[9px] font-extrabold uppercase tracking-widest bg-amber-600 text-white shadow">
                     Most Popular
                   </span>
                 )}
@@ -283,7 +283,7 @@ export default function PricingPage() {
                     <ul className="space-y-3">
                       {pkg.features.map((feature, fIdx) => (
                         <li key={fIdx} className="flex gap-2.5 items-start text-xs sm:text-sm text-slate-500 dark:text-slate-400 font-medium">
-                          <Check className="h-4.5 w-4.5 text-indigo-500 shrink-0 mt-0.5" />
+                          <Check className="h-4.5 w-4.5 text-amber-500 shrink-0 mt-0.5" />
                           <span>{feature}</span>
                         </li>
                       ))}
@@ -298,7 +298,7 @@ export default function PricingPage() {
                     }}
                     className={`w-full h-10 rounded-xl text-xs font-bold transition ${
                       isFeatured
-                        ? "bg-indigo-600 hover:bg-indigo-500 text-white"
+                        ? "bg-amber-600 hover:bg-amber-500 text-white"
                         : "border border-slate-200 dark:border-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-900"
                     }`}
                   >

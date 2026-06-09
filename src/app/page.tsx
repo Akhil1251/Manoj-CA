@@ -22,7 +22,13 @@ import {
   Check,
   Star,
   Building,
-  HeartHandshake
+  HeartHandshake,
+  Plane,
+  Briefcase,
+  ShoppingCart,
+  Landmark,
+  Leaf,
+  Truck
 } from "lucide-react";
 
 export default function HomePage() {
@@ -87,6 +93,39 @@ export default function HomePage() {
     { task: "Statutory Tax Audit Report (Section 44AB)", date: "30th September 2026", status: "Upcoming" }
   ];
 
+  const industriesList = [
+    {
+      title: "Travel and Aviation Consulting",
+      desc: "Providing specialized tax advisory, regulatory compliance, and audit support for airlines, travel agencies, and hospitality operators.",
+      icon: Plane
+    },
+    {
+      title: "Business Services Consulting",
+      desc: "Tailored accounting, corporate structuring, and payroll solutions for service-oriented firms and professional consultancies.",
+      icon: Briefcase
+    },
+    {
+      title: "Consumer Products Consulting",
+      desc: "Assisting retail, e-commerce, and FMCG companies with supply chain tax optimizations, inventory audits, and GST compliance.",
+      icon: ShoppingCart
+    },
+    {
+      title: "Financial Services Consulting",
+      desc: "Expert financial advisory, internal audits, and risk assessment for banking, insurance, fintech, and investment companies.",
+      icon: Landmark
+    },
+    {
+      title: "Energy and Environment Consulting",
+      desc: "Navigating carbon credit taxation, regulatory audits, and structured finance projects for green energy and utility initiatives.",
+      icon: Leaf
+    },
+    {
+      title: "Surface Transport & Logistics Consulting",
+      desc: "Financial strategies, GST optimization on freight services, and operating cost audits for logistics, warehousing, and shipping providers.",
+      icon: Truck
+    }
+  ];
+
   return (
     <div className="relative w-full">
       {/* 1. HERO SECTION WITH CLEAR HIGH-VISIBILITY BACKGROUND VIDEOS */}
@@ -98,12 +137,10 @@ export default function HomePage() {
             loop
             muted
             playsInline
-            className="w-full h-full object-cover opacity-85 dark:opacity-75 transition-opacity duration-1000"
+            className="w-full h-full object-cover opacity-100 transition-opacity duration-1000"
           >
             <source src={theme === "dark" ? "/Hero1.mp4" : "/Hero.mp4"} type="video/mp4" />
           </video>
-          {/* Overlay to blend video bounds with site backdrop */}
-          <div className="absolute inset-0 bg-slate-900/40 dark:bg-slate-950/60" />
         </div>
 
         {/* Hero Content - Transparent and Left Aligned */}
@@ -114,7 +151,7 @@ export default function HomePage() {
             transition={{ duration: 0.8 }}
             className="max-w-2xl text-left"
           >
-            <span className="px-3 py-1 rounded-full text-[9px] font-bold bg-indigo-600/80 text-white border border-white/20 mb-5 inline-block uppercase tracking-[0.2em]">
+            <span className="px-3 py-1 rounded-full text-[9px] font-bold bg-amber-600/80 text-white border border-white/20 mb-5 inline-block uppercase tracking-[0.2em]">
               ✨ Certified Advisory Panel
             </span>
             <h1 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight text-white mb-4 leading-snug max-w-[20ch]">
@@ -126,7 +163,7 @@ export default function HomePage() {
             <div className="flex flex-col sm:flex-row gap-3 justify-start items-center">
               <Link
                 href="/contact"
-                className="w-full sm:w-auto h-10 inline-flex items-center justify-center px-6 rounded-xl bg-indigo-600 text-white font-bold text-[11px] uppercase tracking-wider shadow-lg hover:bg-indigo-500 transition-transform hover:-translate-y-0.5"
+                className="w-full sm:w-auto h-10 inline-flex items-center justify-center px-6 rounded-xl bg-amber-600 text-white font-bold text-[11px] uppercase tracking-wider shadow-lg hover:bg-amber-500 transition-transform hover:-translate-y-0.5"
               >
                 {t.heroCTA}
               </Link>
@@ -141,11 +178,45 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* NEW INDUSTRIES SECTION */}
+      <section className="py-20 bg-white dark:bg-[#180618] border-b border-slate-100 dark:border-slate-800/30">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-[#210821] dark:text-white tracking-tight lowercase">
+              industries
+            </h2>
+            <div className="w-10 h-[3px] bg-[#9e8055] mx-auto mt-2 rounded" />
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-12">
+            {industriesList.map((item, idx) => {
+              const IconComponent = item.icon;
+              return (
+                <div key={idx} className="flex items-start gap-4 group">
+                  <div className="flex-shrink-0 w-14 h-14 rounded-full bg-[#1b071b] border border-[#9e8055]/20 flex items-center justify-center shadow-md transition-all duration-300 group-hover:border-[#9e8055]/50 group-hover:scale-105">
+                    <IconComponent className="w-6 h-6 text-white" />
+                  </div>
+                  <div className="flex-grow pt-1">
+                    <h3 className="text-base font-bold text-slate-900 dark:text-white tracking-tight leading-snug">
+                      {item.title}
+                    </h3>
+                    <div className="w-10 h-[2px] bg-[#9e8055] mt-1 mb-2.5" />
+                    <p className="text-xs text-slate-500 dark:text-slate-400 leading-relaxed font-normal">
+                      {item.desc}
+                    </p>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
       {/* 2. ACCREDITATIONS & TRUST BADGES SECTION */}
       <section className="py-12 bg-slate-50 dark:bg-slate-900 border-b border-slate-200/50 dark:border-slate-800/50 text-center">
         <div className="max-w-7xl mx-auto px-4 grid grid-cols-2 md:grid-cols-4 gap-6 items-center">
           <div className="flex flex-col items-center gap-1.5">
-            <span className="text-indigo-600 dark:text-indigo-400 font-extrabold text-lg flex items-center gap-1">
+            <span className="text-amber-600 dark:text-amber-400 font-extrabold text-lg flex items-center gap-1">
               ICAI
             </span>
             <span className="text-[10px] uppercase font-bold text-slate-400 dark:text-slate-500 tracking-wider">
@@ -184,7 +255,7 @@ export default function HomePage() {
       {/* 3. DUE DATE COMPLIANCE CALENDAR TRACKER */}
       <section className="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-10">
-          <span className="text-xs font-bold uppercase tracking-widest text-indigo-500">
+          <span className="text-xs font-bold uppercase tracking-widest text-amber-500">
             Filing Deadlines
           </span>
           <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white mt-1">
@@ -202,7 +273,7 @@ export default function HomePage() {
                 <span className={`px-2 py-0.5 rounded text-[8px] font-extrabold uppercase tracking-wider inline-block mb-3.5 ${
                   item.status === "Critical"
                     ? "bg-rose-500/10 text-rose-500"
-                    : "bg-indigo-500/10 text-indigo-500"
+                    : "bg-amber-500/10 text-amber-500"
                 }`}>
                   {item.status}
                 </span>
@@ -211,7 +282,7 @@ export default function HomePage() {
                 </h3>
               </div>
               <div className="mt-4 pt-3 border-t border-slate-100 dark:border-slate-800 flex items-center gap-2 text-xs font-bold text-slate-400">
-                <CalendarDays className="h-4 w-4 text-indigo-500" />
+                <CalendarDays className="h-4 w-4 text-amber-500" />
                 <span>{item.date}</span>
               </div>
             </div>
@@ -222,7 +293,7 @@ export default function HomePage() {
       {/* 4. THE 8-9 CORE PROBLEMS CA SOLVES SECTION */}
       <section className="py-20 relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-t border-slate-200/50 dark:border-slate-800/50">
         <div className="text-center mb-16">
-          <span className="text-xs font-bold uppercase tracking-widest text-indigo-500">
+          <span className="text-xs font-bold uppercase tracking-widest text-amber-500">
             Real Cases, Real Success
           </span>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white mt-2 mb-4">
@@ -248,10 +319,10 @@ export default function HomePage() {
               >
                 <div>
                   <div className="flex items-center justify-between mb-5">
-                    <span className="px-2.5 py-1 rounded-md text-[10px] font-extrabold uppercase tracking-wider bg-indigo-500/10 text-indigo-600 dark:text-indigo-400">
+                    <span className="px-2.5 py-1 rounded-md text-[10px] font-extrabold uppercase tracking-wider bg-amber-500/10 text-amber-600 dark:text-amber-400">
                       {item.category}
                     </span>
-                    <Icon className="h-6 w-6 text-indigo-500 dark:text-indigo-400 group-hover:scale-110 transition-transform" />
+                    <Icon className="h-6 w-6 text-amber-500 dark:text-amber-400 group-hover:scale-110 transition-transform" />
                   </div>
                   <h3 className="text-lg font-bold text-slate-900 dark:text-white mb-3">
                     {item.title}
@@ -277,7 +348,7 @@ export default function HomePage() {
                   </div>
                   <Link
                     href={`/problems/${item.id}`}
-                    className="inline-flex items-center gap-1.5 text-[11px] font-extrabold uppercase tracking-widest text-indigo-600 dark:text-indigo-400 group"
+                    className="inline-flex items-center gap-1.5 text-[11px] font-extrabold uppercase tracking-widest text-amber-600 dark:text-amber-400 group"
                   >
                     Explore Case Details <ArrowRight className="h-3 w-3 group-hover:translate-x-1 transition-transform" />
                   </Link>
@@ -292,7 +363,7 @@ export default function HomePage() {
       <section className="py-24 bg-slate-100/50 dark:bg-slate-950/40 border-t border-slate-200/50 dark:border-slate-800/50 overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-20">
-            <span className="text-xs font-bold uppercase tracking-widest text-indigo-500">
+            <span className="text-xs font-bold uppercase tracking-widest text-amber-500">
               Specialized Solutions
             </span>
             <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white mt-3">
@@ -326,7 +397,7 @@ export default function HomePage() {
                     </p>
                     <Link
                       href={section.href}
-                      className="inline-flex h-12 items-center justify-center px-8 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-bold text-sm uppercase tracking-wider shadow-xl shadow-indigo-500/20 transition-all hover:-translate-y-1"
+                      className="inline-flex h-12 items-center justify-center px-8 rounded-xl bg-amber-600 hover:bg-amber-500 text-white font-bold text-sm uppercase tracking-wider shadow-xl shadow-amber-500/20 transition-all hover:-translate-y-1"
                     >
                       {section.cta} <ArrowRight className="ml-2 h-4 w-4" />
                     </Link>
@@ -341,7 +412,7 @@ export default function HomePage() {
                     className="flex-1 w-full relative"
                   >
                     {/* Decorative backdrop element */}
-                    <div className="absolute -inset-4 bg-gradient-to-tr from-indigo-500/20 to-purple-500/20 rounded-3xl blur-2xl -z-10" />
+                    <div className="absolute -inset-4 bg-gradient-to-tr from-amber-500/20 to-purple-500/20 rounded-3xl blur-2xl -z-10" />
                     <div className="relative rounded-3xl overflow-hidden shadow-2xl border border-white/20 dark:border-white/10 group aspect-[4/3] bg-slate-200 dark:bg-slate-800">
                       <img 
                         src={section.image} 
@@ -371,7 +442,7 @@ export default function HomePage() {
             viewport={{ once: true }}
             className="space-y-6 bg-white/80 dark:bg-slate-950/80 backdrop-blur-xl p-8 sm:p-12 rounded-[2rem] border border-slate-200 dark:border-slate-800 shadow-2xl relative"
           >
-             <motion.div animate={{ y: [0, -10, 0] }} transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }} className="absolute -top-6 -right-6 h-20 w-20 bg-indigo-500/20 rounded-full blur-2xl"></motion.div>
+             <motion.div animate={{ y: [0, -10, 0] }} transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }} className="absolute -top-6 -right-6 h-20 w-20 bg-amber-500/20 rounded-full blur-2xl"></motion.div>
              <div className="flex items-center gap-5 relative z-10">
                 <div className="bg-amber-100 dark:bg-amber-500/20 p-4 rounded-2xl">
                    <ShieldAlert className="h-8 w-8 text-amber-600 dark:text-amber-500" />
@@ -379,7 +450,7 @@ export default function HomePage() {
                 <div>
                    <h3 className="font-extrabold text-xl mb-1">Practising ICAI Member</h3>
                    <p className="text-sm font-semibold text-slate-600 dark:text-slate-400 flex items-center gap-2">
-                     <TrendingUp className="h-4 w-4 text-indigo-500 dark:text-indigo-400" /> 15+ years of trust.
+                     <TrendingUp className="h-4 w-4 text-amber-500 dark:text-amber-400" /> 15+ years of trust.
                    </p>
                 </div>
              </div>
@@ -399,11 +470,11 @@ export default function HomePage() {
              whileInView={{ opacity: 1, x: 0 }}
              viewport={{ once: true }}
           >
-            <span className="inline-flex px-3 py-1 rounded-full bg-indigo-100 dark:bg-indigo-500/10 text-indigo-700 dark:text-indigo-400 border border-indigo-200 dark:border-indigo-500/20 font-bold text-xs uppercase tracking-widest items-center gap-2 mb-6">
+            <span className="inline-flex px-3 py-1 rounded-full bg-amber-100 dark:bg-amber-500/10 text-amber-700 dark:text-amber-400 border border-amber-200 dark:border-amber-500/20 font-bold text-xs uppercase tracking-widest items-center gap-2 mb-6">
               <TrendingUp className="h-4 w-4" /> Precision & Growth
             </span>
             <h2 className="text-4xl sm:text-5xl font-extrabold mb-6 leading-tight">
-              Not Just Accountants.<br/>We Are <span className="text-indigo-600 dark:text-indigo-400">Strategic Partners.</span>
+              Not Just Accountants.<br/>We Are <span className="text-amber-600 dark:text-amber-400">Strategic Partners.</span>
             </h2>
             <p className="text-slate-600 dark:text-slate-400 leading-relaxed mb-10 text-lg">
               We move beyond traditional number crunching. Whether you are a startup securing funding or an enterprise navigating complex GST frameworks, our personalized solutions drive actual business growth.
@@ -419,7 +490,7 @@ export default function HomePage() {
       <section className="py-24 bg-slate-50 dark:bg-slate-900 text-slate-900 dark:text-white border-t border-slate-200 dark:border-slate-800 transition-colors duration-300">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
            <div className="text-center mb-16">
-              <span className="inline-flex px-3 py-1 rounded-full bg-slate-200 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 text-indigo-600 dark:text-indigo-400 font-bold text-xs uppercase tracking-widest items-center gap-2 mb-4">
+              <span className="inline-flex px-3 py-1 rounded-full bg-slate-200 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 text-amber-600 dark:text-amber-400 font-bold text-xs uppercase tracking-widest items-center gap-2 mb-4">
                 <Award className="h-4 w-4" /> How We Work
               </span>
               <h2 className="text-4xl font-extrabold mb-5">Our Advisory Journey</h2>
@@ -433,7 +504,7 @@ export default function HomePage() {
               <motion.div 
                  animate={{ left: ["0%", "100%", "0%"] }} 
                  transition={{ repeat: Infinity, duration: 8, ease: "linear" }}
-                 className="absolute top-1/2 h-1.5 w-32 bg-indigo-500 rounded-full blur-[2px] shadow-[0_0_15px_rgba(99,102,241,1)] -translate-y-1/2 z-0"
+                 className="absolute top-1/2 h-1.5 w-32 bg-amber-500 rounded-full blur-[2px] shadow-[0_0_15px_rgba(99,102,241,1)] -translate-y-1/2 z-0"
               ></motion.div>
 
               <div className="grid grid-cols-4 gap-4 relative z-10">
@@ -444,11 +515,11 @@ export default function HomePage() {
                   { num: "04", title: "COMPLIANCE", icon: ShieldAlert },
                 ].map((step, i) => (
                    <div key={i} className="flex flex-col items-center">
-                      <div className="h-16 w-16 rounded-2xl bg-white dark:bg-slate-950 border-2 border-indigo-100 dark:border-indigo-500/30 flex items-center justify-center mb-4 shadow-xl shadow-indigo-500/10 relative">
-                         <div className="absolute -inset-1 bg-indigo-500/20 rounded-2xl blur opacity-0 hover:opacity-100 transition-opacity"></div>
-                         <step.icon className="h-7 w-7 text-indigo-600 dark:text-indigo-400 relative z-10" />
+                      <div className="h-16 w-16 rounded-2xl bg-white dark:bg-slate-950 border-2 border-amber-100 dark:border-amber-500/30 flex items-center justify-center mb-4 shadow-xl shadow-amber-500/10 relative">
+                         <div className="absolute -inset-1 bg-amber-500/20 rounded-2xl blur opacity-0 hover:opacity-100 transition-opacity"></div>
+                         <step.icon className="h-7 w-7 text-amber-600 dark:text-amber-400 relative z-10" />
                       </div>
-                      <span className="text-indigo-600 dark:text-indigo-400 font-extrabold text-lg mb-1">{step.num}</span>
+                      <span className="text-amber-600 dark:text-amber-400 font-extrabold text-lg mb-1">{step.num}</span>
                       <h3 className="font-bold text-sm tracking-widest uppercase">{step.title}</h3>
                    </div>
                 ))}
@@ -538,7 +609,7 @@ export default function HomePage() {
               {/* Left Column: Vertical Ticker */}
               <div>
                  <h3 className="text-2xl font-extrabold flex items-center gap-3 mb-8">
-                   <FileSpreadsheet className="h-6 w-6 text-indigo-600 dark:text-indigo-500" /> Live Tax & GST News
+                   <FileSpreadsheet className="h-6 w-6 text-amber-600 dark:text-amber-500" /> Live Tax & GST News
                  </h3>
                  <div className="relative h-[480px] overflow-hidden rounded-3xl bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 shadow-inner p-2">
                     {/* Fade Edges Vertical */}
@@ -553,12 +624,12 @@ export default function HomePage() {
                        {[
                          {date: "09 JUN", type: "GST", title: "GST Council Proposes Restructuring of Tax Slabs", desc: "The GST Council has initiated discussions to rationalise tax slabs, potentially..."},
                          {date: "08 JUN", type: "Income Tax", title: "CBDT Issues Clarification on Capital Gains Taxation", desc: "New circular resolves ambiguities regarding indexation benefits for properties..."},
-                         {date: "07 JUN", type: "Compliance", title: "New E-invoicing Deadlines Announced for Small Businesses", desc: "Taxpayers with turnover exceeding ₹2 Crores must adopt compulsory e-invoicing..."},
+                         {date: "07 JUN", type: "Compliance", title: "New E-invoicing Deadlines Announced for Small Businesses", desc: "Taxpayers with turnover exceeding â‚¹2 Crores must adopt compulsory e-invoicing..."},
                          {date: "05 JUN", type: "MCA", title: "MCA Extends Due Date for Filing Annual Returns", desc: "A grace period of 30 days is announced for corporate filings due to portal upgrades..."},
                          // Duplicate for infinite scroll
                          {date: "09 JUN", type: "GST", title: "GST Council Proposes Restructuring of Tax Slabs", desc: "The GST Council has initiated discussions to rationalise tax slabs, potentially..."},
                          {date: "08 JUN", type: "Income Tax", title: "CBDT Issues Clarification on Capital Gains Taxation", desc: "New circular resolves ambiguities regarding indexation benefits for properties..."},
-                         {date: "07 JUN", type: "Compliance", title: "New E-invoicing Deadlines Announced for Small Businesses", desc: "Taxpayers with turnover exceeding ₹2 Crores must adopt compulsory e-invoicing..."},
+                         {date: "07 JUN", type: "Compliance", title: "New E-invoicing Deadlines Announced for Small Businesses", desc: "Taxpayers with turnover exceeding â‚¹2 Crores must adopt compulsory e-invoicing..."},
                          {date: "05 JUN", type: "MCA", title: "MCA Extends Due Date for Filing Annual Returns", desc: "A grace period of 30 days is announced for corporate filings due to portal upgrades..."},
                        ].map((news, i) => (
                          <div key={i} className="flex gap-5 p-5 rounded-2xl bg-slate-50 dark:bg-slate-900/40 hover:bg-slate-100 dark:hover:bg-slate-800/80 transition-colors mx-4 shadow-sm border border-slate-100 dark:border-slate-800">
@@ -610,7 +681,7 @@ export default function HomePage() {
       {/* 7. QUICK CONSULTATION BOOKING WIDGET */}
       <section className="py-20 max-w-3xl mx-auto px-4 sm:px-6 text-center">
         <div className="glass-premium p-8 sm:p-12 rounded-3xl border border-slate-200/60 dark:border-slate-800/60 relative overflow-hidden">
-          <div className="absolute top-0 right-0 w-32 h-32 bg-indigo-500/10 rounded-full blur-2xl" />
+          <div className="absolute top-0 right-0 w-32 h-32 bg-amber-500/10 rounded-full blur-2xl" />
           <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white mb-3">
             Ready to Secure Your Financial Health?
           </h2>
@@ -619,7 +690,7 @@ export default function HomePage() {
           </p>
           <Link
             href="/contact"
-            className="inline-flex h-12 items-center justify-center px-8 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-semibold shadow-lg shadow-indigo-600/15 transition"
+            className="inline-flex h-12 items-center justify-center px-8 rounded-xl bg-amber-600 hover:bg-amber-500 text-white font-semibold shadow-lg shadow-amber-600/15 transition"
           >
             Schedule Free Strategy Call
           </Link>

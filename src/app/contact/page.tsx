@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import React, { useState } from "react";
 import { useApp } from "@/context/AppContext";
@@ -26,8 +26,8 @@ export default function ContactPage() {
     <div className="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       {/* Title */}
       <div className="text-center mb-16">
-        <span className="text-xs font-bold bg-indigo-500/10 text-indigo-600 dark:text-indigo-400 px-3.5 py-1.5 rounded-full border border-indigo-500/20 uppercase tracking-widest">
-          📞 Let's Connect
+        <span className="text-xs font-bold bg-amber-500/10 text-amber-600 dark:text-amber-400 px-3.5 py-1.5 rounded-full border border-amber-500/20 uppercase tracking-widest">
+          ðŸ“ž Let's Connect
         </span>
         <h1 className="text-3xl sm:text-5xl font-extrabold text-slate-900 dark:text-white mt-4 mb-4">
           Book a Free Consultation
@@ -52,7 +52,7 @@ export default function ContactPage() {
                     required
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                    className="w-full h-11 px-3.5 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 text-sm focus:ring-1 focus:ring-indigo-500 outline-none"
+                    className="w-full h-11 px-3.5 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 text-sm focus:ring-1 focus:ring-amber-500 outline-none"
                     placeholder="e.g. Ramesh Kumar"
                   />
                 </div>
@@ -65,7 +65,7 @@ export default function ContactPage() {
                     required
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                    className="w-full h-11 px-3.5 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 text-sm focus:ring-1 focus:ring-indigo-500 outline-none"
+                    className="w-full h-11 px-3.5 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 text-sm focus:ring-1 focus:ring-amber-500 outline-none"
                     placeholder="name@company.com"
                   />
                 </div>
@@ -81,7 +81,7 @@ export default function ContactPage() {
                     required
                     value={formData.phone}
                     onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                    className="w-full h-11 px-3.5 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 text-sm focus:ring-1 focus:ring-indigo-500 outline-none"
+                    className="w-full h-11 px-3.5 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 text-sm focus:ring-1 focus:ring-amber-500 outline-none"
                     placeholder="+91 98765 XXXXX"
                   />
                 </div>
@@ -93,7 +93,7 @@ export default function ContactPage() {
                     type="text"
                     value={formData.company}
                     onChange={(e) => setFormData({ ...formData, company: e.target.value })}
-                    className="w-full h-11 px-3.5 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 text-sm focus:ring-1 focus:ring-indigo-500 outline-none"
+                    className="w-full h-11 px-3.5 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 text-sm focus:ring-1 focus:ring-amber-500 outline-none"
                     placeholder="e.g. FinTech Pvt Ltd"
                   />
                 </div>
@@ -106,12 +106,12 @@ export default function ContactPage() {
                 <select
                   value={formData.turnover}
                   onChange={(e) => setFormData({ ...formData, turnover: e.target.value })}
-                  className="w-full h-11 px-3.5 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 text-sm focus:ring-1 focus:ring-indigo-500 outline-none"
+                  className="w-full h-11 px-3.5 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 text-sm focus:ring-1 focus:ring-amber-500 outline-none"
                 >
-                  <option value="under_20l">Under ₹20 Lakhs (GST Exempt Limit)</option>
-                  <option value="20l_1cr">₹20 Lakhs - ₹1 Crore</option>
-                  <option value="1cr_5cr">₹1 Crore - ₹5 Crore (Tax Audit Threshold)</option>
-                  <option value="above_5cr">Above ₹5 Crore</option>
+                  <option value="under_20l">Under â‚¹20 Lakhs (GST Exempt Limit)</option>
+                  <option value="20l_1cr">â‚¹20 Lakhs - â‚¹1 Crore</option>
+                  <option value="1cr_5cr">â‚¹1 Crore - â‚¹5 Crore (Tax Audit Threshold)</option>
+                  <option value="above_5cr">Above â‚¹5 Crore</option>
                 </select>
               </div>
 
@@ -124,14 +124,14 @@ export default function ContactPage() {
                   rows={4}
                   value={formData.query}
                   onChange={(e) => setFormData({ ...formData, query: e.target.value })}
-                  className="w-full p-3.5 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 text-sm focus:ring-1 focus:ring-indigo-500 outline-none resize-none"
+                  className="w-full p-3.5 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 text-sm focus:ring-1 focus:ring-amber-500 outline-none resize-none"
                   placeholder="Tell us what challenge you are facing (e.g. got income tax notice, vendor not uploading GST invoice...)"
                 />
               </div>
 
               <button
                 type="submit"
-                className="w-full h-12 bg-indigo-600 hover:bg-indigo-500 text-white rounded-xl font-bold shadow-lg shadow-indigo-600/15 transition flex items-center justify-center gap-2"
+                className="w-full h-12 bg-amber-600 hover:bg-amber-500 text-white rounded-xl font-bold shadow-lg shadow-amber-600/15 transition flex items-center justify-center gap-2"
               >
                 <Calendar className="h-4.5 w-4.5" /> Book Consultation Slot
               </button>
@@ -153,7 +153,7 @@ export default function ContactPage() {
               </p>
               <button
                 onClick={() => setSubmitted(false)}
-                className="text-xs font-extrabold uppercase tracking-widest text-indigo-600 dark:text-indigo-400 hover:underline"
+                className="text-xs font-extrabold uppercase tracking-widest text-amber-600 dark:text-amber-400 hover:underline"
               >
                 Submit another request
               </button>
@@ -169,7 +169,7 @@ export default function ContactPage() {
               Corporate Office Coordinates
             </h3>
             <div className="flex gap-4 items-start text-xs sm:text-sm text-slate-500 dark:text-slate-400">
-              <MapPin className="h-5 w-5 text-indigo-500 shrink-0" />
+              <MapPin className="h-5 w-5 text-amber-500 shrink-0" />
               <div>
                 <strong className="block text-slate-700 dark:text-slate-350 font-bold mb-1">
                   Mumbai Headquarters
@@ -178,7 +178,7 @@ export default function ContactPage() {
               </div>
             </div>
             <div className="flex gap-4 items-start text-xs sm:text-sm text-slate-500 dark:text-slate-400">
-              <Mail className="h-5 w-5 text-indigo-500 shrink-0" />
+              <Mail className="h-5 w-5 text-amber-500 shrink-0" />
               <div>
                 <strong className="block text-slate-700 dark:text-slate-350 font-bold mb-1">
                   Client Support & Inquiries
@@ -187,7 +187,7 @@ export default function ContactPage() {
               </div>
             </div>
             <div className="flex gap-4 items-start text-xs sm:text-sm text-slate-500 dark:text-slate-400">
-              <Phone className="h-5 w-5 text-indigo-500 shrink-0" />
+              <Phone className="h-5 w-5 text-amber-500 shrink-0" />
               <div>
                 <strong className="block text-slate-700 dark:text-slate-350 font-bold mb-1">
                   Direct Line
@@ -199,14 +199,14 @@ export default function ContactPage() {
 
           {/* Operating hours */}
           <div className="glass p-6 rounded-3xl border border-slate-200/50 dark:border-slate-800/50 flex gap-4 items-start">
-            <Clock className="h-5 w-5 text-indigo-500 shrink-0" />
+            <Clock className="h-5 w-5 text-amber-500 shrink-0" />
             <div className="text-xs sm:text-sm text-slate-500 dark:text-slate-450">
               <strong className="block text-slate-700 dark:text-slate-350 font-bold mb-1">
                 Consultation Hours
               </strong>
               Monday - Saturday: 09:30 AM - 06:30 PM (IST)
               <span className="block mt-1 font-semibold text-amber-500">
-                ⚠️ Extended hours active during filing season.
+                âš ï¸ Extended hours active during filing season.
               </span>
             </div>
           </div>
@@ -215,12 +215,12 @@ export default function ContactPage() {
           <div className="glass h-48 rounded-3xl border border-slate-200/50 dark:border-slate-800/50 overflow-hidden relative flex items-center justify-center">
             <div className="absolute inset-0 bg-slate-200 dark:bg-slate-900 opacity-20 bg-grid-slate-900/[0.1] z-0" />
             <div className="text-center z-10 p-4">
-              <Landmark className="h-8 w-8 text-indigo-500 mx-auto mb-2 animate-float" />
+              <Landmark className="h-8 w-8 text-amber-500 mx-auto mb-2 animate-float" />
               <span className="text-xs font-bold text-slate-700 dark:text-slate-300 block">
                 Bandra Kurla Complex Map Grid
               </span>
               <span className="text-[10px] text-slate-400 dark:text-slate-500 mt-1 block">
-                GPS: 19.0607° N, 72.8634° E
+                GPS: 19.0607Â° N, 72.8634Â° E
               </span>
             </div>
           </div>

@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import React, { useState } from "react";
 import { Search, ChevronDown, ChevronUp, HelpCircle } from "lucide-react";
@@ -38,7 +38,7 @@ export default function FAQPage() {
     {
       category: "gst",
       question: "What is the threshold limit for mandatory GST registration?",
-      answer: "For service providers, GST registration is mandatory if annual turnover crosses ₹20 Lakhs (₹10 Lakhs for special hill states). For goods suppliers, the threshold limit is ₹40 Lakhs."
+      answer: "For service providers, GST registration is mandatory if annual turnover crosses â‚¹20 Lakhs (â‚¹10 Lakhs for special hill states). For goods suppliers, the threshold limit is â‚¹40 Lakhs."
     }
   ];
 
@@ -54,8 +54,8 @@ export default function FAQPage() {
     <div className="py-16 max-w-4xl mx-auto px-4 sm:px-6">
       {/* Title */}
       <div className="text-center mb-12">
-        <span className="text-xs font-bold bg-indigo-500/10 text-indigo-600 dark:text-indigo-400 px-3.5 py-1.5 rounded-full border border-indigo-500/20 uppercase tracking-widest">
-          ❓ FAQ Center
+        <span className="text-xs font-bold bg-amber-500/10 text-amber-600 dark:text-amber-400 px-3.5 py-1.5 rounded-full border border-amber-500/20 uppercase tracking-widest">
+          â“ FAQ Center
         </span>
         <h1 className="text-3xl sm:text-5xl font-extrabold text-slate-900 dark:text-white mt-4 mb-4">
           Frequently Answered Queries
@@ -72,7 +72,7 @@ export default function FAQPage() {
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
           placeholder="Search questions or answers..."
-          className="w-full h-12 pl-12 pr-4 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 text-sm focus:ring-1 focus:ring-indigo-500 outline-none"
+          className="w-full h-12 pl-12 pr-4 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 text-sm focus:ring-1 focus:ring-amber-500 outline-none"
         />
         <Search className="absolute left-4 top-4 h-5 w-5 text-slate-400" />
       </div>
@@ -92,7 +92,7 @@ export default function FAQPage() {
                   className="w-full text-left p-5 flex items-center justify-between gap-4 font-bold text-sm sm:text-base text-slate-900 dark:text-white hover:bg-slate-100/50 dark:hover:bg-slate-900/50 transition-colors"
                 >
                   <span className="flex items-center gap-2">
-                    <HelpCircle className="h-4.5 w-4.5 text-indigo-500 shrink-0" />
+                    <HelpCircle className="h-4.5 w-4.5 text-amber-500 shrink-0" />
                     {faq.question}
                   </span>
                   {isOpen ? <ChevronUp className="h-5 w-5" /> : <ChevronDown className="h-5 w-5" />}

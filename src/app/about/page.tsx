@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import React from "react";
 import { useApp } from "@/context/AppContext";
@@ -32,8 +32,8 @@ export default function AboutPage() {
       title: "Our Vision",
       desc: "To be the preferred business advisory and compliance platform for entrepreneurs, SMEs, corporates, housing societies, and individuals by delivering trusted expertise, innovative solutions, and long-term value creation.",
       icon: Globe,
-      color: "text-indigo-500",
-      bg: "bg-indigo-500/10"
+      color: "text-amber-500",
+      bg: "bg-amber-500/10"
     },
     {
       title: "Our Values",
@@ -110,12 +110,12 @@ export default function AboutPage() {
       {/* 1. HERO SECTION */}
       <section className="relative py-20 lg:py-28 overflow-hidden bg-slate-50 dark:bg-slate-900 border-b border-slate-200/50 dark:border-slate-800/50">
         <div className="absolute inset-0 z-0">
-          <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-indigo-500/10 rounded-full blur-3xl" />
+          <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-amber-500/10 rounded-full blur-3xl" />
           <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-blue-500/10 rounded-full blur-3xl" />
         </div>
         
         <div className="relative z-10 max-w-5xl mx-auto px-4 text-center sm:px-6 lg:px-8">
-          <span className="inline-block py-1 px-3 rounded-full bg-indigo-100 dark:bg-indigo-500/20 text-indigo-700 dark:text-indigo-300 text-xs font-bold uppercase tracking-widest mb-6">
+          <span className="inline-block py-1 px-3 rounded-full bg-amber-100 dark:bg-amber-500/20 text-amber-700 dark:text-amber-300 text-xs font-bold uppercase tracking-widest mb-6">
             Welcome to ConsultAvenuee
           </span>
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 dark:text-white tracking-tight mb-8">
@@ -144,7 +144,7 @@ export default function AboutPage() {
             </div>
             <div className="mt-10 flex gap-4">
                <div className="flex items-center gap-3">
-                 <div className="h-12 w-12 rounded-full bg-indigo-100 dark:bg-indigo-900/50 flex items-center justify-center text-indigo-600 dark:text-indigo-400">
+                 <div className="h-12 w-12 rounded-full bg-amber-100 dark:bg-amber-900/50 flex items-center justify-center text-amber-600 dark:text-amber-400">
                     <Users className="h-6 w-6" />
                  </div>
                  <div>
@@ -191,7 +191,7 @@ export default function AboutPage() {
             {/* What We Do */}
             <div>
               <div className="mb-8">
-                <span className="text-indigo-600 dark:text-indigo-400 font-bold tracking-widest uppercase text-xs">Our Services</span>
+                <span className="text-amber-600 dark:text-amber-400 font-bold tracking-widest uppercase text-xs">Our Services</span>
                 <h2 className="text-3xl font-extrabold text-slate-900 dark:text-white mt-2">What We Do</h2>
                 <p className="text-slate-600 dark:text-slate-400 mt-4">
                   Our objective is to simplify business operations by providing end-to-end professional support through a single, reliable platform.
@@ -200,7 +200,7 @@ export default function AboutPage() {
               <ul className="space-y-4">
                 {whatWeDo.map((item, idx) => (
                   <li key={idx} className="flex items-start gap-3">
-                    <CheckCircle2 className="h-5 w-5 text-indigo-500 shrink-0 mt-0.5" />
+                    <CheckCircle2 className="h-5 w-5 text-amber-500 shrink-0 mt-0.5" />
                     <span className="text-slate-700 dark:text-slate-300 font-medium">{item}</span>
                   </li>
                 ))}
@@ -210,7 +210,7 @@ export default function AboutPage() {
             {/* Why Choose Us */}
             <div>
               <div className="mb-8">
-                <span className="text-indigo-600 dark:text-indigo-400 font-bold tracking-widest uppercase text-xs">Our Differentiator</span>
+                <span className="text-amber-600 dark:text-amber-400 font-bold tracking-widest uppercase text-xs">Our Differentiator</span>
                 <h2 className="text-3xl font-extrabold text-slate-900 dark:text-white mt-2">Why Clients Trust Us</h2>
                 <p className="text-slate-600 dark:text-slate-400 mt-4">
                   Our professionals work closely with clients to understand their requirements and deliver practical, business-oriented solutions that create measurable value.
@@ -219,7 +219,7 @@ export default function AboutPage() {
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {whyChooseUs.map((item, idx) => (
                   <div key={idx} className="glass-premium p-4 rounded-xl border border-slate-200/50 dark:border-slate-800/50 flex items-center gap-3">
-                    <Award className="h-5 w-5 text-indigo-500" />
+                    <Award className="h-5 w-5 text-amber-500" />
                     <span className="text-sm font-semibold text-slate-800 dark:text-slate-200">{item}</span>
                   </div>
                 ))}
@@ -233,7 +233,7 @@ export default function AboutPage() {
       {/* 4. FOUNDER SECTION */}
       <section className="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="glass-premium rounded-3xl border border-slate-200/50 dark:border-slate-800/50 overflow-hidden relative">
-          <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-indigo-600/5 rounded-full blur-3xl" />
+          <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-amber-600/5 rounded-full blur-3xl" />
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-0 relative z-10">
             <div className="lg:col-span-5 bg-slate-200 dark:bg-slate-800 relative min-h-[400px]">
               {/* Fallback image for the founder if image isn't available */}
@@ -245,7 +245,7 @@ export default function AboutPage() {
               <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent flex items-end p-8">
                 <div>
                   <h3 className="text-2xl font-extrabold text-white">Manoj Kumar Keshri</h3>
-                  <p className="text-indigo-300 font-bold text-sm tracking-wider uppercase mt-1">Founder & Chairman</p>
+                  <p className="text-amber-300 font-bold text-sm tracking-wider uppercase mt-1">Founder & Chairman</p>
                   <p className="text-slate-300 text-xs mt-1">FCA, CS (I), Mini-MBA</p>
                 </div>
               </div>
@@ -274,7 +274,7 @@ export default function AboutPage() {
       <section className="py-20 bg-slate-50 dark:bg-slate-900/30 border-t border-slate-200/50 dark:border-slate-800/50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <span className="text-xs font-bold uppercase tracking-widest text-indigo-500">
+            <span className="text-xs font-bold uppercase tracking-widest text-amber-500">
               Expert Leadership
             </span>
             <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white mt-3">
@@ -297,7 +297,7 @@ export default function AboutPage() {
               >
                 <div className="mb-6">
                   {/* Initial Avatar */}
-                  <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-indigo-500 to-purple-600 text-white font-extrabold text-2xl flex items-center justify-center shadow-lg shadow-indigo-500/30 mb-5">
+                  <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-amber-500 to-purple-600 text-white font-extrabold text-2xl flex items-center justify-center shadow-lg shadow-amber-500/30 mb-5">
                     {member.name.split(" ")[0][0]}
                     {member.name.split(" ")[1] ? member.name.split(" ")[1][0] : ""}
                   </div>
@@ -307,7 +307,7 @@ export default function AboutPage() {
                   <div className="text-xs font-bold text-slate-500 dark:text-slate-500 mb-2 mt-1">
                     {member.credentials}
                   </div>
-                  <span className="inline-block px-3 py-1 rounded-md bg-indigo-50 dark:bg-indigo-500/10 text-indigo-700 dark:text-indigo-400 text-[11px] font-bold uppercase tracking-widest mb-4">
+                  <span className="inline-block px-3 py-1 rounded-md bg-amber-50 dark:bg-amber-500/10 text-amber-700 dark:text-amber-400 text-[11px] font-bold uppercase tracking-widest mb-4">
                     {member.role}
                   </span>
                   <p className="text-sm text-slate-600 dark:text-slate-400 leading-relaxed font-medium">
@@ -334,7 +334,7 @@ export default function AboutPage() {
         </p>
         <Link
           href="/contact"
-          className="inline-flex h-14 items-center justify-center px-10 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-bold text-sm uppercase tracking-widest shadow-xl shadow-indigo-600/20 transition-transform hover:-translate-y-1"
+          className="inline-flex h-14 items-center justify-center px-10 rounded-xl bg-amber-600 hover:bg-amber-500 text-white font-bold text-sm uppercase tracking-widest shadow-xl shadow-amber-600/20 transition-transform hover:-translate-y-1"
         >
           Schedule a Consultation
         </Link>

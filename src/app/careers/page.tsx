@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import React, { useState } from "react";
 import { Briefcase, Send, CheckCircle, GraduationCap, Clock, Award } from "lucide-react";
@@ -45,8 +45,8 @@ export default function CareersPage() {
     <div className="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       {/* Title */}
       <div className="text-center mb-16">
-        <span className="text-xs font-bold bg-indigo-500/10 text-indigo-600 dark:text-indigo-400 px-3.5 py-1.5 rounded-full border border-indigo-500/20 uppercase tracking-widest">
-          💼 Join Our Team
+        <span className="text-xs font-bold bg-amber-500/10 text-amber-600 dark:text-amber-400 px-3.5 py-1.5 rounded-full border border-amber-500/20 uppercase tracking-widest">
+          ðŸ’¼ Join Our Team
         </span>
         <h1 className="text-3xl sm:text-5xl font-extrabold text-slate-900 dark:text-white mt-4 mb-4">
           Build Your Financial Advisory Career
@@ -70,7 +70,7 @@ export default function CareersPage() {
               <h3 className="text-base sm:text-lg font-bold text-slate-900 dark:text-white">
                 {job.title}
               </h3>
-              <div className="flex gap-4 text-xs font-bold text-indigo-600 dark:text-indigo-400 uppercase tracking-wider">
+              <div className="flex gap-4 text-xs font-bold text-amber-600 dark:text-amber-400 uppercase tracking-wider">
                 <span className="flex items-center gap-1">
                   <Clock className="h-3.5 w-3.5" /> {job.type}
                 </span>
@@ -101,7 +101,7 @@ export default function CareersPage() {
                   required
                   value={formData.name}
                   onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                  className="w-full h-11 px-3.5 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 text-sm focus:ring-1 focus:ring-indigo-500 outline-none"
+                  className="w-full h-11 px-3.5 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 text-sm focus:ring-1 focus:ring-amber-500 outline-none"
                   placeholder="e.g. Radhika Iyer"
                 />
               </div>
@@ -116,7 +116,7 @@ export default function CareersPage() {
                     required
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                    className="w-full h-11 px-3.5 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 text-sm focus:ring-1 focus:ring-indigo-500 outline-none"
+                    className="w-full h-11 px-3.5 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 text-sm focus:ring-1 focus:ring-amber-500 outline-none"
                     placeholder="name@email.com"
                   />
                 </div>
@@ -129,7 +129,7 @@ export default function CareersPage() {
                     required
                     value={formData.phone}
                     onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                    className="w-full h-11 px-3.5 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 text-sm focus:ring-1 focus:ring-indigo-500 outline-none"
+                    className="w-full h-11 px-3.5 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 text-sm focus:ring-1 focus:ring-amber-500 outline-none"
                     placeholder="+91 98765 XXXXX"
                   />
                 </div>
@@ -143,7 +143,7 @@ export default function CareersPage() {
                   <select
                     value={formData.position}
                     onChange={(e) => setFormData({ ...formData, position: e.target.value })}
-                    className="w-full h-11 px-3.5 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 text-sm focus:ring-1 focus:ring-indigo-500 outline-none"
+                    className="w-full h-11 px-3.5 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 text-sm focus:ring-1 focus:ring-amber-500 outline-none"
                   >
                     <option value="associate_ca">Chartered Accountant (Associate)</option>
                     <option value="article_assistant">Article Assistant (ICAI)</option>
@@ -157,7 +157,7 @@ export default function CareersPage() {
                   <select
                     value={formData.qualification}
                     onChange={(e) => setFormData({ ...formData, qualification: e.target.value })}
-                    className="w-full h-11 px-3.5 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 text-sm focus:ring-1 focus:ring-indigo-500 outline-none"
+                    className="w-full h-11 px-3.5 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 text-sm focus:ring-1 focus:ring-amber-500 outline-none"
                   >
                     <option value="ca_final">CA Completed</option>
                     <option value="ipcc_both">IPCC Both Groups Cleared</option>
@@ -175,14 +175,14 @@ export default function CareersPage() {
                   rows={4}
                   value={formData.coverLetter}
                   onChange={(e) => setFormData({ ...formData, coverLetter: e.target.value })}
-                  className="w-full p-3.5 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 text-sm focus:ring-1 focus:ring-indigo-500 outline-none resize-none"
+                  className="w-full p-3.5 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 text-sm focus:ring-1 focus:ring-amber-500 outline-none resize-none"
                   placeholder="Outline your background, audit exposures, or training details..."
                 />
               </div>
 
               <button
                 type="submit"
-                className="w-full h-11 bg-indigo-600 hover:bg-indigo-500 text-white rounded-xl font-bold transition flex items-center justify-center gap-2"
+                className="w-full h-11 bg-amber-600 hover:bg-amber-500 text-white rounded-xl font-bold transition flex items-center justify-center gap-2"
               >
                 <Send className="h-4.5 w-4.5" /> Submit Job Application
               </button>
@@ -204,7 +204,7 @@ export default function CareersPage() {
               </p>
               <button
                 onClick={() => setSubmitted(false)}
-                className="text-xs font-extrabold uppercase tracking-widest text-indigo-600 dark:text-indigo-400 hover:underline"
+                className="text-xs font-extrabold uppercase tracking-widest text-amber-600 dark:text-amber-400 hover:underline"
               >
                 Apply for another opening
               </button>

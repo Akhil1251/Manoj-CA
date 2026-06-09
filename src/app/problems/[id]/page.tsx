@@ -197,7 +197,7 @@ export default function ProblemDetailPage() {
     return (
       <div className="py-20 text-center text-slate-500 max-w-xl mx-auto px-4">
         <h1 className="text-2xl font-bold mb-4">Case Scenario Not Found</h1>
-        <Link href="/" className="text-indigo-500 hover:underline flex items-center justify-center gap-1">
+        <Link href="/" className="text-amber-500 hover:underline flex items-center justify-center gap-1">
           <ArrowLeft className="h-4 w-4" /> Back to Home
         </Link>
       </div>
@@ -206,14 +206,14 @@ export default function ProblemDetailPage() {
 
   return (
     <div className="py-16 max-w-5xl mx-auto px-4 sm:px-6">
-      <Link href="/" className="text-indigo-500 hover:underline flex items-center gap-2 mb-8 text-xs font-bold uppercase tracking-wider">
+      <Link href="/" className="text-amber-500 hover:underline flex items-center gap-2 mb-8 text-xs font-bold uppercase tracking-wider">
         <ArrowLeft className="h-4 w-4" /> Back to Home Scenarios
       </Link>
 
       <div className="space-y-10">
         {/* Header Section */}
         <div>
-          <span className="px-3.5 py-1.5 rounded-full text-xs font-bold bg-indigo-500/10 text-indigo-600 dark:text-indigo-400 border border-indigo-500/20 uppercase tracking-widest">
+          <span className="px-3.5 py-1.5 rounded-full text-xs font-bold bg-amber-500/10 text-amber-600 dark:text-amber-400 border border-amber-500/20 uppercase tracking-widest">
             {currentCase.category}
           </span>
           <h1 className="text-3xl sm:text-5xl font-extrabold text-slate-900 dark:text-white mt-4 mb-4">
@@ -239,7 +239,7 @@ export default function ProblemDetailPage() {
 
             <div className="glass-premium p-6 sm:p-8 rounded-3xl border border-slate-200/50 dark:border-slate-800/50">
               <h2 className="text-lg font-bold text-slate-900 dark:text-white mb-4 flex items-center gap-2">
-                <Settings className="h-5 w-5 text-indigo-500" /> Detailed Action Steps We Took
+                <Settings className="h-5 w-5 text-amber-500" /> Detailed Action Steps We Took
               </h2>
               <ul className="space-y-3.5">
                 {currentCase.stepsTaken.map((step, idx) => (
@@ -257,7 +257,7 @@ export default function ProblemDetailPage() {
             {/* Legal Framework */}
             <div className="glass p-5 rounded-2xl border border-slate-200/50 dark:border-slate-800/50">
               <h3 className="text-xs font-bold text-slate-900 dark:text-white uppercase tracking-widest mb-3 flex items-center gap-1.5">
-                <Scale className="h-4 w-4 text-indigo-500" /> Legal Framework
+                <Scale className="h-4 w-4 text-amber-500" /> Legal Framework
               </h3>
               <ul className="space-y-3.5">
                 {currentCase.legalSections.map((sec, idx) => (
@@ -271,7 +271,7 @@ export default function ProblemDetailPage() {
             {/* Documents needed */}
             <div className="glass p-5 rounded-2xl border border-slate-200/50 dark:border-slate-800/50">
               <h3 className="text-xs font-bold text-slate-900 dark:text-white uppercase tracking-widest mb-3 flex items-center gap-1.5">
-                <FileText className="h-4 w-4 text-indigo-500" /> Documents Evaluated
+                <FileText className="h-4 w-4 text-amber-500" /> Documents Evaluated
               </h3>
               <ul className="space-y-2.5">
                 {currentCase.documentsNeeded.map((doc, idx) => (
@@ -283,9 +283,9 @@ export default function ProblemDetailPage() {
             </div>
 
             {/* Outcome Badge */}
-            <div className="p-5 rounded-2xl bg-indigo-600/5 dark:bg-indigo-950/20 border border-indigo-500/20">
-              <h3 className="text-xs font-bold text-indigo-600 dark:text-indigo-400 uppercase tracking-widest mb-2 flex items-center gap-1.5">
-                <Award className="h-4 w-4 text-indigo-500" /> Case Outcome
+            <div className="p-5 rounded-2xl bg-amber-600/5 dark:bg-amber-950/20 border border-amber-500/20">
+              <h3 className="text-xs font-bold text-amber-600 dark:text-amber-400 uppercase tracking-widest mb-2 flex items-center gap-1.5">
+                <Award className="h-4 w-4 text-amber-500" /> Case Outcome
               </h3>
               <p className="text-xs sm:text-sm text-slate-900 dark:text-white font-bold leading-relaxed">
                 {currentCase.outcome}
@@ -304,7 +304,7 @@ export default function ProblemDetailPage() {
           </p>
           <Link
             href={`/contact?query=Enquiry about case: ${currentCase.title}`}
-            className="inline-flex h-11 items-center justify-center px-6 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-semibold text-xs uppercase tracking-wider shadow-lg shadow-indigo-600/15"
+            className="inline-flex h-11 items-center justify-center px-6 rounded-xl bg-amber-600 hover:bg-amber-500 text-white font-semibold text-xs uppercase tracking-wider shadow-lg shadow-amber-600/15"
           >
             Request Case Audit
           </Link>

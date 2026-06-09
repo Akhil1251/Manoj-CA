@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import React, { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
@@ -32,7 +32,7 @@ export const IntroLoader: React.FC<IntroLoaderProps> = ({ onComplete }) => {
   return (
     <div className="fixed inset-0 z-[9999] flex flex-col items-center justify-center bg-slate-950 text-white overflow-hidden">
       {/* Background glowing particles/circles */}
-      <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-indigo-600/20 rounded-full blur-[120px] animate-pulse-glow" />
+      <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-amber-600/20 rounded-full blur-[120px] animate-pulse-glow" />
       <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-purple-600/20 rounded-full blur-[120px] animate-pulse-glow" />
 
       {/* Main 3D loader visual */}
@@ -40,7 +40,7 @@ export const IntroLoader: React.FC<IntroLoaderProps> = ({ onComplete }) => {
         {/* Animated 3D geometric sphere simulation */}
         <div className="relative w-40 h-40 mb-10 flex items-center justify-center perspective-1000">
           <motion.div
-            className="absolute w-36 h-36 border-4 border-indigo-500/30 rounded-full"
+            className="absolute w-36 h-36 border-4 border-amber-500/30 rounded-full"
             style={{ transformStyle: "preserve-3d" }}
             animate={{ rotateX: 360, rotateY: 180 }}
             transition={{ duration: 6, repeat: Infinity, ease: "linear" }}
@@ -56,7 +56,7 @@ export const IntroLoader: React.FC<IntroLoaderProps> = ({ onComplete }) => {
             animate={{ rotateZ: 360 }}
             transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
           >
-            <span className="text-xl font-bold tracking-wider text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-indigo-400">
+            <span className="text-xl font-bold tracking-wider text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-amber-400">
               MV
             </span>
           </motion.div>
@@ -67,7 +67,7 @@ export const IntroLoader: React.FC<IntroLoaderProps> = ({ onComplete }) => {
           initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2 }}
-          className="text-3xl font-extrabold tracking-widest bg-clip-text text-transparent bg-gradient-to-r from-white via-indigo-200 to-purple-300 mb-2"
+          className="text-3xl font-extrabold tracking-widest bg-clip-text text-transparent bg-gradient-to-r from-white via-amber-200 to-purple-300 mb-2"
         >
           MANOJ CA
         </motion.h1>
@@ -75,7 +75,7 @@ export const IntroLoader: React.FC<IntroLoaderProps> = ({ onComplete }) => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 0.6 }}
           transition={{ delay: 0.4 }}
-          className="text-xs uppercase tracking-[0.25em] text-indigo-300 font-medium mb-8"
+          className="text-xs uppercase tracking-[0.25em] text-amber-300 font-medium mb-8"
         >
           Premium Financial Advisory
         </motion.p>
@@ -83,7 +83,7 @@ export const IntroLoader: React.FC<IntroLoaderProps> = ({ onComplete }) => {
         {/* Progress bar container */}
         <div className="w-64 h-1.5 bg-slate-800 rounded-full overflow-hidden relative mb-2">
           <motion.div
-            className="h-full bg-gradient-to-r from-cyan-400 via-indigo-500 to-purple-500"
+            className="h-full bg-gradient-to-r from-cyan-400 via-amber-500 to-purple-500"
             initial={{ width: 0 }}
             animate={{ width: `${progress}%` }}
             transition={{ duration: 0.1 }}

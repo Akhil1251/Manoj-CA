@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import React, { useState } from "react";
 import { useApp } from "@/context/AppContext";
@@ -100,8 +100,8 @@ export default function ToolsPage() {
     <div className="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       {/* Title */}
       <div className="text-center mb-12">
-        <span className="text-xs font-bold bg-indigo-500/10 text-indigo-600 dark:text-indigo-400 px-3.5 py-1.5 rounded-full border border-indigo-500/20 uppercase tracking-widest">
-          📊 Calculators & Scenarios
+        <span className="text-xs font-bold bg-amber-500/10 text-amber-600 dark:text-amber-400 px-3.5 py-1.5 rounded-full border border-amber-500/20 uppercase tracking-widest">
+          ðŸ“Š Calculators & Scenarios
         </span>
         <h1 className="text-3xl sm:text-5xl font-extrabold text-slate-900 dark:text-white mt-4 mb-4">
           Financial Advisory Tools
@@ -124,8 +124,8 @@ export default function ToolsPage() {
             onClick={() => setActiveTab(tab.id as ToolType)}
             className={`py-3.5 px-4 font-bold text-sm border-b-2 transition-colors duration-200 ${
               activeTab === tab.id
-                ? "border-indigo-600 text-indigo-600 dark:border-indigo-400 dark:text-indigo-400"
-                : "border-transparent text-slate-500 dark:text-slate-400 hover:text-indigo-600"
+                ? "border-amber-600 text-amber-600 dark:border-amber-400 dark:text-amber-400"
+                : "border-transparent text-slate-500 dark:text-slate-400 hover:text-amber-600"
             }`}
           >
             {tab.label}
@@ -145,29 +145,29 @@ export default function ToolsPage() {
               <div className="space-y-5">
                 <div>
                   <label className="block text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400 mb-2">
-                    Annual Gross Income (₹)
+                    Annual Gross Income (â‚¹)
                   </label>
                   <input
                     type="number"
                     value={income}
                     onChange={(e) => setIncome(Number(e.target.value))}
-                    className="w-full h-11 px-3.5 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 text-sm focus:ring-1 focus:ring-indigo-500 outline-none"
+                    className="w-full h-11 px-3.5 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 text-sm focus:ring-1 focus:ring-amber-500 outline-none"
                   />
                 </div>
                 <div>
                   <label className="block text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400 mb-2">
-                    Eligible Deductions (₹) - e.g. 80C, 80D
+                    Eligible Deductions (â‚¹) - e.g. 80C, 80D
                   </label>
                   <input
                     type="number"
                     value={deductions}
                     onChange={(e) => setDeductions(Number(e.target.value))}
-                    className="w-full h-11 px-3.5 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 text-sm focus:ring-1 focus:ring-indigo-500 outline-none"
+                    className="w-full h-11 px-3.5 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 text-sm focus:ring-1 focus:ring-amber-500 outline-none"
                   />
                 </div>
                 <button
                   onClick={calculateTax}
-                  className="w-full h-11 bg-indigo-600 hover:bg-indigo-500 text-white rounded-xl font-bold transition flex items-center justify-center gap-2"
+                  className="w-full h-11 bg-amber-600 hover:bg-amber-500 text-white rounded-xl font-bold transition flex items-center justify-center gap-2"
                 >
                   <Calculator className="h-4.5 w-4.5" /> Calculate Tax Slabs
                 </button>
@@ -180,15 +180,15 @@ export default function ToolsPage() {
                       Old Regime Tax
                     </span>
                     <span className="text-xl sm:text-2xl font-extrabold text-slate-900 dark:text-white block mt-1">
-                      ₹{taxResult.oldTax.toLocaleString()}
+                      â‚¹{taxResult.oldTax.toLocaleString()}
                     </span>
                   </div>
-                  <div className="p-4 rounded-xl bg-indigo-600/10 border border-indigo-500/20">
-                    <span className="text-[10px] uppercase font-bold text-indigo-500 tracking-wider">
+                  <div className="p-4 rounded-xl bg-amber-600/10 border border-amber-500/20">
+                    <span className="text-[10px] uppercase font-bold text-amber-500 tracking-wider">
                       New Regime Tax
                     </span>
-                    <span className="text-xl sm:text-2xl font-extrabold text-indigo-600 dark:text-indigo-400 block mt-1">
-                      ₹{taxResult.newTax.toLocaleString()}
+                    <span className="text-xl sm:text-2xl font-extrabold text-amber-600 dark:text-amber-400 block mt-1">
+                      â‚¹{taxResult.newTax.toLocaleString()}
                     </span>
                   </div>
                 </div>
@@ -204,13 +204,13 @@ export default function ToolsPage() {
               <div className="space-y-5">
                 <div>
                   <label className="block text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400 mb-2">
-                    Net Price of Service/Product (₹)
+                    Net Price of Service/Product (â‚¹)
                   </label>
                   <input
                     type="number"
                     value={netPrice}
                     onChange={(e) => setNetPrice(Number(e.target.value))}
-                    className="w-full h-11 px-3.5 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 text-sm focus:ring-1 focus:ring-indigo-500 outline-none"
+                    className="w-full h-11 px-3.5 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 text-sm focus:ring-1 focus:ring-amber-500 outline-none"
                   />
                 </div>
                 <div>
@@ -220,7 +220,7 @@ export default function ToolsPage() {
                   <select
                     value={gstRate}
                     onChange={(e) => setGstRate(Number(e.target.value))}
-                    className="w-full h-11 px-3.5 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 text-sm focus:ring-1 focus:ring-indigo-500 outline-none"
+                    className="w-full h-11 px-3.5 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 text-sm focus:ring-1 focus:ring-amber-500 outline-none"
                   >
                     <option value={5}>5% (Basic Essentials)</option>
                     <option value={12}>12% (Standard goods/services)</option>
@@ -230,7 +230,7 @@ export default function ToolsPage() {
                 </div>
                 <button
                   onClick={calculateGst}
-                  className="w-full h-11 bg-indigo-600 hover:bg-indigo-500 text-white rounded-xl font-bold transition flex items-center justify-center gap-2"
+                  className="w-full h-11 bg-amber-600 hover:bg-amber-500 text-white rounded-xl font-bold transition flex items-center justify-center gap-2"
                 >
                   <Calculator className="h-4.5 w-4.5" /> Calculate GST Breakdown
                 </button>
@@ -243,7 +243,7 @@ export default function ToolsPage() {
                       CGST (Half)
                     </span>
                     <span className="text-base sm:text-lg font-extrabold text-slate-900 dark:text-white block mt-1">
-                      ₹{gstResult.cgst.toLocaleString()}
+                      â‚¹{gstResult.cgst.toLocaleString()}
                     </span>
                   </div>
                   <div className="p-3.5 rounded-xl bg-slate-100/50 dark:bg-slate-900/50 border border-slate-200/50 dark:border-slate-850">
@@ -251,15 +251,15 @@ export default function ToolsPage() {
                       SGST (Half)
                     </span>
                     <span className="text-base sm:text-lg font-extrabold text-slate-900 dark:text-white block mt-1">
-                      ₹{gstResult.sgst.toLocaleString()}
+                      â‚¹{gstResult.sgst.toLocaleString()}
                     </span>
                   </div>
-                  <div className="p-3.5 rounded-xl bg-indigo-600/10 border border-indigo-500/20">
-                    <span className="text-[9px] uppercase font-bold text-indigo-500 tracking-wider">
+                  <div className="p-3.5 rounded-xl bg-amber-600/10 border border-amber-500/20">
+                    <span className="text-[9px] uppercase font-bold text-amber-500 tracking-wider">
                       Gross Total
                     </span>
-                    <span className="text-base sm:text-lg font-extrabold text-indigo-600 dark:text-indigo-400 block mt-1">
-                      ₹{gstResult.total.toLocaleString()}
+                    <span className="text-base sm:text-lg font-extrabold text-amber-600 dark:text-amber-400 block mt-1">
+                      â‚¹{gstResult.total.toLocaleString()}
                     </span>
                   </div>
                 </div>
@@ -275,13 +275,13 @@ export default function ToolsPage() {
               <div className="space-y-5">
                 <div>
                   <label className="block text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400 mb-2">
-                    Monthly Investment (₹)
+                    Monthly Investment (â‚¹)
                   </label>
                   <input
                     type="number"
                     value={monthlyInvest}
                     onChange={(e) => setMonthlyInvest(Number(e.target.value))}
-                    className="w-full h-11 px-3.5 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 text-sm focus:ring-1 focus:ring-indigo-500 outline-none"
+                    className="w-full h-11 px-3.5 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 text-sm focus:ring-1 focus:ring-amber-500 outline-none"
                   />
                 </div>
                 <div className="grid grid-cols-2 gap-4">
@@ -293,7 +293,7 @@ export default function ToolsPage() {
                       type="number"
                       value={returnRate}
                       onChange={(e) => setReturnRate(Number(e.target.value))}
-                      className="w-full h-11 px-3.5 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 text-sm focus:ring-1 focus:ring-indigo-500 outline-none"
+                      className="w-full h-11 px-3.5 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 text-sm focus:ring-1 focus:ring-amber-500 outline-none"
                     />
                   </div>
                   <div>
@@ -304,13 +304,13 @@ export default function ToolsPage() {
                       type="number"
                       value={years}
                       onChange={(e) => setYears(Number(e.target.value))}
-                      className="w-full h-11 px-3.5 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 text-sm focus:ring-1 focus:ring-indigo-500 outline-none"
+                      className="w-full h-11 px-3.5 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 text-sm focus:ring-1 focus:ring-amber-500 outline-none"
                     />
                   </div>
                 </div>
                 <button
                   onClick={calculateSip}
-                  className="w-full h-11 bg-indigo-600 hover:bg-indigo-500 text-white rounded-xl font-bold transition flex items-center justify-center gap-2"
+                  className="w-full h-11 bg-amber-600 hover:bg-amber-500 text-white rounded-xl font-bold transition flex items-center justify-center gap-2"
                 >
                   <Calculator className="h-4.5 w-4.5" /> Project Future Wealth
                 </button>
@@ -323,7 +323,7 @@ export default function ToolsPage() {
                       Invested
                     </span>
                     <span className="text-xs sm:text-sm font-extrabold text-slate-900 dark:text-white block mt-1">
-                      ₹{sipResult.invested.toLocaleString()}
+                      â‚¹{sipResult.invested.toLocaleString()}
                     </span>
                   </div>
                   <div className="p-3.5 rounded-xl bg-slate-100/50 dark:bg-slate-900/50 border border-slate-200/50 dark:border-slate-850">
@@ -331,15 +331,15 @@ export default function ToolsPage() {
                       Wealth Gained
                     </span>
                     <span className="text-xs sm:text-sm font-extrabold text-emerald-500 block mt-1">
-                      ₹{sipResult.gain.toLocaleString()}
+                      â‚¹{sipResult.gain.toLocaleString()}
                     </span>
                   </div>
-                  <div className="p-3.5 rounded-xl bg-indigo-600/10 border border-indigo-500/20">
-                    <span className="text-[9px] uppercase font-bold text-indigo-500 tracking-wider">
+                  <div className="p-3.5 rounded-xl bg-amber-600/10 border border-amber-500/20">
+                    <span className="text-[9px] uppercase font-bold text-amber-500 tracking-wider">
                       Future Value
                     </span>
-                    <span className="text-xs sm:text-sm font-extrabold text-indigo-600 dark:text-indigo-400 block mt-1">
-                      ₹{sipResult.total.toLocaleString()}
+                    <span className="text-xs sm:text-sm font-extrabold text-amber-600 dark:text-amber-400 block mt-1">
+                      â‚¹{sipResult.total.toLocaleString()}
                     </span>
                   </div>
                 </div>
@@ -355,13 +355,13 @@ export default function ToolsPage() {
               <div className="space-y-5">
                 <div>
                   <label className="block text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400 mb-2">
-                    Principal Amount (₹)
+                    Principal Amount (â‚¹)
                   </label>
                   <input
                     type="number"
                     value={principal}
                     onChange={(e) => setPrincipal(Number(e.target.value))}
-                    className="w-full h-11 px-3.5 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 text-sm focus:ring-1 focus:ring-indigo-500 outline-none"
+                    className="w-full h-11 px-3.5 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 text-sm focus:ring-1 focus:ring-amber-500 outline-none"
                   />
                 </div>
                 <div className="grid grid-cols-2 gap-4">
@@ -373,7 +373,7 @@ export default function ToolsPage() {
                       type="number"
                       value={interestRate}
                       onChange={(e) => setInterestRate(Number(e.target.value))}
-                      className="w-full h-11 px-3.5 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 text-sm focus:ring-1 focus:ring-indigo-500 outline-none"
+                      className="w-full h-11 px-3.5 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 text-sm focus:ring-1 focus:ring-amber-500 outline-none"
                     />
                   </div>
                   <div>
@@ -384,13 +384,13 @@ export default function ToolsPage() {
                       type="number"
                       value={tenure}
                       onChange={(e) => setTenure(Number(e.target.value))}
-                      className="w-full h-11 px-3.5 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 text-sm focus:ring-1 focus:ring-indigo-500 outline-none"
+                      className="w-full h-11 px-3.5 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 text-sm focus:ring-1 focus:ring-amber-500 outline-none"
                     />
                   </div>
                 </div>
                 <button
                   onClick={calculateEmi}
-                  className="w-full h-11 bg-indigo-600 hover:bg-indigo-500 text-white rounded-xl font-bold transition flex items-center justify-center gap-2"
+                  className="w-full h-11 bg-amber-600 hover:bg-amber-500 text-white rounded-xl font-bold transition flex items-center justify-center gap-2"
                 >
                   <Calculator className="h-4.5 w-4.5" /> Estimate Monthly EMI
                 </button>
@@ -398,12 +398,12 @@ export default function ToolsPage() {
 
               {emiResult && (
                 <div className="mt-8 pt-6 border-t border-slate-200 dark:border-slate-800 grid grid-cols-3 gap-2 sm:gap-4">
-                  <div className="p-3.5 rounded-xl bg-indigo-600/10 border border-indigo-500/20">
-                    <span className="text-[9px] uppercase font-bold text-indigo-500 tracking-wider">
+                  <div className="p-3.5 rounded-xl bg-amber-600/10 border border-amber-500/20">
+                    <span className="text-[9px] uppercase font-bold text-amber-500 tracking-wider">
                       Monthly EMI
                     </span>
-                    <span className="text-xs sm:text-sm font-extrabold text-indigo-600 dark:text-indigo-400 block mt-1">
-                      ₹{emiResult.emi.toLocaleString()}
+                    <span className="text-xs sm:text-sm font-extrabold text-amber-600 dark:text-amber-400 block mt-1">
+                      â‚¹{emiResult.emi.toLocaleString()}
                     </span>
                   </div>
                   <div className="p-3.5 rounded-xl bg-slate-100/50 dark:bg-slate-900/50 border border-slate-200/50 dark:border-slate-850">
@@ -411,7 +411,7 @@ export default function ToolsPage() {
                       Total Interest
                     </span>
                     <span className="text-xs sm:text-sm font-extrabold text-slate-900 dark:text-white block mt-1">
-                      ₹{emiResult.totalInterest.toLocaleString()}
+                      â‚¹{emiResult.totalInterest.toLocaleString()}
                     </span>
                   </div>
                   <div className="p-3.5 rounded-xl bg-slate-100/50 dark:bg-slate-900/50 border border-slate-200/50 dark:border-slate-850">
@@ -419,7 +419,7 @@ export default function ToolsPage() {
                       Total Payable
                     </span>
                     <span className="text-xs sm:text-sm font-extrabold text-slate-900 dark:text-white block mt-1">
-                      ₹{emiResult.totalPayable.toLocaleString()}
+                      â‚¹{emiResult.totalPayable.toLocaleString()}
                     </span>
                   </div>
                 </div>
@@ -439,9 +439,9 @@ export default function ToolsPage() {
                 Why Compare Regimes?
               </h4>
               <p className="text-xs text-slate-500 dark:text-slate-400 leading-relaxed mb-4">
-                "Meet Ananya, a marketing consultant earning ₹12 Lakhs. She has a housing loan (Section 24) and invests in PPF (Section 80C). Unsure which scheme to choose, she paid ₹25,000 extra tax last year by choosing the wrong regime without mathematical simulation."
+                "Meet Ananya, a marketing consultant earning â‚¹12 Lakhs. She has a housing loan (Section 24) and invests in PPF (Section 80C). Unsure which scheme to choose, she paid â‚¹25,000 extra tax last year by choosing the wrong regime without mathematical simulation."
               </p>
-              <div className="p-4 rounded-xl bg-indigo-600/5 border border-indigo-500/10 text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+              <div className="p-4 rounded-xl bg-amber-600/5 border border-amber-500/10 text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
                 <strong>Our Solution:</strong> By running automated parameters, we evaluate your specific insurance policies, home loans, and standard deductions to select the optimal regime, saving significant liquid assets.
               </div>
             </div>
@@ -458,7 +458,7 @@ export default function ToolsPage() {
               <p className="text-xs text-slate-500 dark:text-slate-400 leading-relaxed mb-4">
                 "Meet Kabir, who imports spare parts and resells them. He charged a flat price to customers without factoring in the 18% GST rate correctly, leading to notices for unpaid taxes and penalties from his regional GST department."
               </p>
-              <div className="p-4 rounded-xl bg-indigo-600/5 border border-indigo-500/10 text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+              <div className="p-4 rounded-xl bg-amber-600/5 border border-amber-500/10 text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
                 <strong>Our Solution:</strong> We build transparent invoicing compliance rules, separating CGST/SGST/IGST dynamically so businesses avoid audit penalties and recover complete input tax credits.
               </div>
             </div>
@@ -475,7 +475,7 @@ export default function ToolsPage() {
               <p className="text-xs text-slate-500 dark:text-slate-400 leading-relaxed mb-4">
                 "Meet Dr. Sanjay, who kept his surplus income in a traditional savings bank account yielding 3% interest, unaware that inflation of 6% was actively eroding his wealth year on year."
               </p>
-              <div className="p-4 rounded-xl bg-indigo-600/5 border border-indigo-500/10 text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+              <div className="p-4 rounded-xl bg-amber-600/5 border border-amber-500/10 text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
                 <strong>Our Solution:</strong> We structure wealth planning through disciplined systematic investing in tax-sheltered mutual funds (ELSS) and dynamic bond systems to maintain capital purchasing power.
               </div>
             </div>
@@ -490,9 +490,9 @@ export default function ToolsPage() {
                 Long-Term Liability Trap
               </h4>
               <p className="text-xs text-slate-500 dark:text-slate-400 leading-relaxed mb-4">
-                "Meet Shalini, who took a 20-year home loan of ₹50 Lakhs. She did not evaluate the total interest payout over the tenure, which ended up being more than the principal amount itself."
+                "Meet Shalini, who took a 20-year home loan of â‚¹50 Lakhs. She did not evaluate the total interest payout over the tenure, which ended up being more than the principal amount itself."
               </p>
-              <div className="p-4 rounded-xl bg-indigo-600/5 border border-indigo-500/10 text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+              <div className="p-4 rounded-xl bg-amber-600/5 border border-amber-500/10 text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
                 <strong>Our Solution:</strong> We advise clients on pre-payment schemes and loan restructuring options that reduce total interest outflow by up to 40% with minor monthly changes.
               </div>
             </div>

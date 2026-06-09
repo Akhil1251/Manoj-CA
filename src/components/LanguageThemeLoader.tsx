@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import React from "react";
 import { motion, AnimatePresence } from "framer-motion";
@@ -43,10 +43,10 @@ export const LanguageThemeLoader: React.FC<LanguageThemeLoaderProps> = ({ isVisi
             {/* Inner Video Simulation Pulse */}
             <div className="absolute inset-4 rounded-full bg-slate-900 border border-slate-800 flex flex-col items-center justify-center overflow-hidden shadow-inner">
               {/* Virtual scanning line */}
-              <div className="absolute inset-0 bg-gradient-to-b from-indigo-500/0 via-indigo-500/10 to-indigo-500/0 h-10 w-full animate-bounce" />
+              <div className="absolute inset-0 bg-gradient-to-b from-amber-500/0 via-amber-500/10 to-amber-500/0 h-10 w-full animate-bounce" />
               
-              <div className="relative w-8 h-8 rounded-full border border-indigo-500/30 flex items-center justify-center">
-                <div className="w-4 h-4 rounded-full bg-indigo-500 animate-ping" />
+              <div className="relative w-8 h-8 rounded-full border border-amber-500/30 flex items-center justify-center">
+                <div className="w-4 h-4 rounded-full bg-amber-500 animate-ping" />
               </div>
             </div>
           </div>
@@ -61,7 +61,7 @@ export const LanguageThemeLoader: React.FC<LanguageThemeLoaderProps> = ({ isVisi
             <h3 className="text-md font-bold text-white tracking-widest uppercase">
               Updating Workspace
             </h3>
-            <p className="text-xs text-indigo-400 mt-1.5 font-medium animate-pulse">
+            <p className="text-xs text-amber-400 mt-1.5 font-medium animate-pulse">
               Re-calculating taxation variables...
             </p>
           </motion.div>

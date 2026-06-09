@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import React, { useState } from "react";
 import { Search, Calendar, User, ArrowRight, Tag } from "lucide-react";
@@ -70,8 +70,8 @@ export default function KnowledgePage() {
     <div className="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       {/* Title */}
       <div className="text-center mb-12">
-        <span className="text-xs font-bold bg-indigo-500/10 text-indigo-600 dark:text-indigo-400 px-3.5 py-1.5 rounded-full border border-indigo-500/20 uppercase tracking-widest">
-          📖 Regulatory Knowledge Hub
+        <span className="text-xs font-bold bg-amber-500/10 text-amber-600 dark:text-amber-400 px-3.5 py-1.5 rounded-full border border-amber-500/20 uppercase tracking-widest">
+          ðŸ“– Regulatory Knowledge Hub
         </span>
         <h1 className="text-3xl sm:text-5xl font-extrabold text-slate-900 dark:text-white mt-4 mb-4">
           Tax Insights & Regulatory Alerts
@@ -91,7 +91,7 @@ export default function KnowledgePage() {
               onClick={() => setActiveCategory(cat.id)}
               className={`px-4.5 py-2 text-xs font-bold rounded-full border transition-all ${
                 activeCategory === cat.id
-                  ? "bg-indigo-600 border-indigo-600 text-white shadow-md shadow-indigo-600/10"
+                  ? "bg-amber-600 border-amber-600 text-white shadow-md shadow-amber-600/10"
                   : "bg-white dark:bg-slate-900 border-slate-200 dark:border-slate-800 text-slate-700 dark:text-slate-400 hover:border-slate-300"
               }`}
             >
@@ -107,7 +107,7 @@ export default function KnowledgePage() {
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
             placeholder="Search articles..."
-            className="w-full h-10 pl-10 pr-4 rounded-full border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 text-xs focus:ring-1 focus:ring-indigo-500 outline-none"
+            className="w-full h-10 pl-10 pr-4 rounded-full border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 text-xs focus:ring-1 focus:ring-amber-500 outline-none"
           />
           <Search className="absolute left-3.5 top-3 h-4 w-4 text-slate-400" />
         </div>
@@ -125,11 +125,11 @@ export default function KnowledgePage() {
               className="glass-premium p-6 rounded-2xl border border-slate-200/50 dark:border-slate-800/50 hover-3d flex flex-col justify-between"
             >
               <div>
-                <div className="flex items-center gap-2 mb-4 text-[10px] font-bold text-indigo-500 dark:text-indigo-400 uppercase tracking-widest">
+                <div className="flex items-center gap-2 mb-4 text-[10px] font-bold text-amber-500 dark:text-amber-400 uppercase tracking-widest">
                   <Tag className="h-3 w-3" />
                   <span>{categories.find((c) => c.id === article.category)?.label}</span>
                 </div>
-                <h3 className="text-base sm:text-lg font-bold text-slate-900 dark:text-white mb-2 leading-snug hover:text-indigo-600 transition-colors">
+                <h3 className="text-base sm:text-lg font-bold text-slate-900 dark:text-white mb-2 leading-snug hover:text-amber-600 transition-colors">
                   {article.title}
                 </h3>
                 <p className="text-xs sm:text-sm text-slate-500 dark:text-slate-400 leading-relaxed mb-6 font-medium">

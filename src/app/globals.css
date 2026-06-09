@@ -1,5 +1,18 @@
 @import "tailwindcss";
 
+@theme {
+  --color-amber-100: #ebdcc9;
+  --color-amber-300: #c9b08f;
+  --color-amber-400: #b59873;
+  --color-amber-500: #9e8055;
+  --color-amber-600: #9e8055;
+  --color-amber-700: #826843;
+  --color-slate-700: #422342;
+  --color-slate-800: #210821;
+  --color-slate-900: #210821;
+  --color-slate-950: #140514;
+}
+
 @variant dark (&:where(.dark, .dark *));
 
 @layer base {
@@ -8,14 +21,14 @@
     --foreground: #0f172a;
     --card: #ffffff;
     --card-foreground: #0f172a;
-    --primary: #6366f1;
+    --primary: #f59e0b;
     --primary-foreground: #ffffff;
     --muted: #f1f5f9;
     --muted-foreground: #64748b;
     --border: #e2e8f0;
     --accent: #a855f7;
     --accent-foreground: #ffffff;
-    --glow: rgba(99, 102, 241, 0.15);
+    --glow: rgba(245, 158, 11, 0.15);
   }
 
   .dark {
@@ -23,14 +36,14 @@
     --foreground: #f3f4f6;
     --card: #111827;
     --card-foreground: #f3f4f6;
-    --primary: #818cf8;
+    --primary: #fbbf24;
     --primary-foreground: #0f172a;
     --muted: #1f2937;
     --muted-foreground: #9ca3af;
     --border: #374151;
     --accent: #c084fc;
     --accent-foreground: #0f172a;
-    --glow: rgba(129, 140, 248, 0.25);
+    --glow: rgba(251, 191, 36, 0.25);
   }
 
   body {

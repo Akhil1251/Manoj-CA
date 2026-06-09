@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import React, { useState } from "react";
 import { User, Quote, CheckCircle, TrendingUp, HelpCircle } from "lucide-react";
@@ -33,15 +33,15 @@ export default function ClientsPage() {
   const caseStudies = [
     {
       company: "Metatech Solutions (Software Export)",
-      challenge: "Metatech was hit with a retroactive ₹35 Lakhs GST demand on export services due to incorrect filing of their Letter of Undertaking.",
-      impact: "We represented them at appellate levels, proved the export status via FIRC (Foreign Inward Remittance Certificate), and got the complete ₹35L demand dropped.",
-      metrics: "₹35L Saved | 100% Compliance Recovery"
+      challenge: "Metatech was hit with a retroactive â‚¹35 Lakhs GST demand on export services due to incorrect filing of their Letter of Undertaking.",
+      impact: "We represented them at appellate levels, proved the export status via FIRC (Foreign Inward Remittance Certificate), and got the complete â‚¹35L demand dropped.",
+      metrics: "â‚¹35L Saved | 100% Compliance Recovery"
     },
     {
       company: "Apex Warehousing & Logistics",
-      challenge: "Apex discovered that ₹24 Lakhs of their Input Tax Credit was mismatched because their primary subcontractors were not uploading GSTR-1 bills.",
-      impact: "We deployed our digital reconciliation ledger, traced defaulting subcontractors, and recovered ₹21.8 Lakhs in blocked credit inside two months.",
-      metrics: "₹21.8L Recovered | 90% ITC reconciled"
+      challenge: "Apex discovered that â‚¹24 Lakhs of their Input Tax Credit was mismatched because their primary subcontractors were not uploading GSTR-1 bills.",
+      impact: "We deployed our digital reconciliation ledger, traced defaulting subcontractors, and recovered â‚¹21.8 Lakhs in blocked credit inside two months.",
+      metrics: "â‚¹21.8L Recovered | 90% ITC reconciled"
     }
   ];
 
@@ -52,7 +52,7 @@ export default function ClientsPage() {
       title: "Founder, Apex Logistics"
     },
     {
-      quote: "As a freelance game developer, export taxation was a nightmare. Manoj CA set up my zero-rated GST registration and helped me save over ₹8 Lakhs in tax using presumptive schemes.",
+      quote: "As a freelance game developer, export taxation was a nightmare. Manoj CA set up my zero-rated GST registration and helped me save over â‚¹8 Lakhs in tax using presumptive schemes.",
       name: "Rohan Verma",
       title: "Independent Developer"
     }
@@ -62,8 +62,8 @@ export default function ClientsPage() {
     <div className="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       {/* Title */}
       <div className="text-center mb-16">
-        <span className="text-xs font-bold bg-indigo-500/10 text-indigo-600 dark:text-indigo-400 px-3.5 py-1.5 rounded-full border border-indigo-500/20 uppercase tracking-widest">
-          🤝 Clients & Case Studies
+        <span className="text-xs font-bold bg-amber-500/10 text-amber-600 dark:text-amber-400 px-3.5 py-1.5 rounded-full border border-amber-500/20 uppercase tracking-widest">
+          ðŸ¤ Clients & Case Studies
         </span>
         <h1 className="text-3xl sm:text-5xl font-extrabold text-slate-900 dark:text-white mt-4 mb-4">
           Trusted Financial Success Stories
@@ -86,7 +86,7 @@ export default function ClientsPage() {
             >
               <div>
                 <h3 className="text-base sm:text-lg font-bold text-slate-900 dark:text-white mb-3 flex items-center gap-2">
-                  <span className="h-2 w-2 rounded-full bg-indigo-500" /> {seg.segment}
+                  <span className="h-2 w-2 rounded-full bg-amber-500" /> {seg.segment}
                 </h3>
                 <div className="mb-4">
                   <span className="text-[10px] font-bold text-rose-500 dark:text-rose-450 uppercase tracking-widest block mb-1">
@@ -139,8 +139,8 @@ export default function ClientsPage() {
       </div>
 
       {/* Testimonials Slider */}
-      <div className="bg-indigo-600/5 dark:bg-indigo-950/20 rounded-3xl border border-indigo-500/10 dark:border-indigo-500/20 p-8 sm:p-12 text-center max-w-3xl mx-auto">
-        <Quote className="h-10 w-10 text-indigo-500 mx-auto mb-6 opacity-60" />
+      <div className="bg-amber-600/5 dark:bg-amber-950/20 rounded-3xl border border-amber-500/10 dark:border-amber-500/20 p-8 sm:p-12 text-center max-w-3xl mx-auto">
+        <Quote className="h-10 w-10 text-amber-500 mx-auto mb-6 opacity-60" />
         <p className="text-base sm:text-lg text-slate-700 dark:text-slate-200 leading-relaxed italic font-medium mb-6">
           "{testimonials[activeTestimonial].quote}"
         </p>
@@ -158,7 +158,7 @@ export default function ClientsPage() {
               key={idx}
               onClick={() => setActiveTestimonial(idx)}
               className={`h-2.5 w-2.5 rounded-full transition-all ${
-                activeTestimonial === idx ? "bg-indigo-600 w-6" : "bg-slate-300 dark:bg-slate-700"
+                activeTestimonial === idx ? "bg-amber-600 w-6" : "bg-slate-300 dark:bg-slate-700"
               }`}
             />
           ))}
