@@ -7,6 +7,7 @@ import { useApp } from "@/context/AppContext";
 import { Language } from "@/context/translations";
 import { Menu, X, Globe, Sun, Moon, MapPin, Clock, Phone, Calculator } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import { servicesData } from "@/data/servicesData";
 
 const dropdownConfigs: Record<
   string,
@@ -30,43 +31,50 @@ const dropdownConfigs: Record<
   services: {
     columns: [
       {
-        title: "Advisory & Corporate",
+        title: "Housing Society",
         links: [
-          { label: "Turnaround Consulting", href: "/services#turnaround" },
-          { label: "Strategic Planning", href: "/services#strategic" },
-          { label: "Business Planning & Strategy", href: "/services#execution" },
+          { label: "Co-operative Society", href: "/services/cooperative-housing-society-registration" },
+          { label: "Election & Committee", href: "/services/society-election-planning" },
+          { label: "Compliance & Secretarial", href: "/services/agm-general-body-meeting-compliance" },
+          { label: "Taxation & Accounting", href: "/services/society-gst-compliance" },
+          { label: "Redevelopment Advisory", href: "/services/preliminary-redevelopment-assessment" },
+          { label: "Docs & Certificates", href: "/services/noc-flat-transfer" },
         ],
       },
       {
-        title: "Wealth & Markets",
+        title: "Business Advisory",
         links: [
-          { label: "Bonds & Commodities", href: "/services#bonds" },
-          { label: "Trades & Stocks", href: "/services#trades" },
-          { label: "Financial Projections", href: "/services#projections" },
+          { label: "Company Formation", href: "/services/private-limited-company-registration" },
+          { label: "LLP Registration", href: "/services/llp-registration" },
+          { label: "Partnership Firm Setup", href: "/services/partnership-firm-registration" },
+          { label: "Trust Registration", href: "/services/trust-registration" },
+          { label: "Startup India Setup", href: "/services/startup-india-registration" },
+          { label: "MSME & Registrations", href: "/services/msme-udyam-registration" },
         ],
       },
       {
-        title: "Audits & Compliance",
+        title: "Tax & Litigation",
         links: [
-          { label: "Audit & Assurance", href: "/services#audit" },
-          { label: "International FEMA", href: "/services#international" },
-          { label: "GST & ITC Advisory", href: "/services#audit" },
+          { label: "Income Tax & Auditing", href: "/services/income-tax-returns" },
+          { label: "GST & Regulatory", href: "/services/gst-registration-returns" },
+          { label: "Tax Litigation Support", href: "/services/conferencing-senior-tax-counsels-litigation-support" },
+          { label: "Virtual CFO Services", href: "/services/virtual-cfo-services" },
         ],
       },
       {
-        title: "Resources & Portal",
+        title: "NRI & Senior Citizen",
         links: [
-          { label: "Income Tax Calculator", href: "/tools" },
-          { label: "GST Estimator Tool", href: "/tools" },
-          { label: "Pricing Wizard", href: "/pricing" },
-          { label: "FAQ Center", href: "/faq" },
+          { label: "NRI Taxation", href: "/services/nri-taxation-services" },
+          { label: "NRI Property Management", href: "/services/nri-property-management-services" },
+          { label: "NRI Legal Services", href: "/services/nri-legal-services" },
+          { label: "Senior Citizen Advisory", href: "/services/health-insurance-claims-support" },
         ],
       },
     ],
     image: {
       src: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=300&q=80",
       tag: "Featured",
-      title: "Expert Audit & Advisory",
+      title: "Expert Housing Society Compliance",
     },
     banner: {
       text: "Cost Calculator — Estimate your setup and filing compliance costs dynamically.",
@@ -308,8 +316,7 @@ export const Navbar: React.FC = () => {
 
   return (
     <header className={`${isHome ? "fixed" : "sticky"} z-[999] w-full transition-all duration-300 ${isHidden ? "-top-48" : "top-0"}`}>
-      {/* Top Tier: Logo & Contact Info */}
-      <div className={`transition-all duration-300 border-b border-white/10 dark:border-white/5 ${isTransparent ? "bg-transparent text-white" : "bg-white dark:bg-slate-950 text-slate-800 dark:text-white shadow-sm"}`}>
+      <div className={`transition-all duration-300 ${isTransparent ? "bg-transparent text-white pt-3 lg:pt-4" : "border-b border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-950 text-slate-800 dark:text-white shadow-sm"}`}>
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center py-4 lg:py-5">
             {/* Logo */}
@@ -355,12 +362,11 @@ export const Navbar: React.FC = () => {
         </div>
       </div>
 
-      {/* Bottom Tier: Navigation & Social Icons (Hidden on Mobile) */}
       <div 
-        className="hidden lg:block mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10"
+        className={`hidden lg:block mx-auto max-w-7xl relative z-10 ${isTransparent ? "mt-4 lg:mt-5" : ""}`}
         onMouseLeave={() => setActiveDropdown(null)}
       >
-        <div className={`transition-all duration-300 ${isTransparent ? "bg-amber-600/95 backdrop-blur-md" : "bg-amber-600"} shadow-lg px-6 relative`}>
+        <div className={`transition-all duration-300 ${isTransparent ? "bg-[#9b7c4f]/80 border-y border-black/10" : "bg-[#d5b68a]"} shadow-lg px-4 sm:px-6 lg:px-8 relative`}>
           <div className="flex h-[64px] items-center justify-between">
             {/* Desktop Navigation Links */}
             <nav className="flex items-center gap-3 xl:gap-5 h-full">
@@ -460,50 +466,132 @@ export const Navbar: React.FC = () => {
                 className="absolute left-6 right-6 top-full bg-white dark:bg-[#120412] border border-slate-200/60 dark:border-slate-800/60 shadow-2xl rounded-b-md z-[1000] overflow-hidden text-left"
                 onMouseEnter={() => setActiveDropdown(activeDropdown)}
               >
-                <div className="p-8 grid grid-cols-5 gap-8">
-                  {config.columns.map((col, idx) => (
-                    <div key={idx} className="space-y-4">
-                      <h4 className="text-xs font-black uppercase tracking-widest text-[#210821] dark:text-[#c79d62] border-b border-slate-100 dark:border-slate-800/50 pb-2">
-                        {col.title}
-                      </h4>
-                      <ul className="space-y-2.5 text-xs">
-                        {col.links.map((link, lIdx) => (
-                          <li key={lIdx}>
-                            <Link
-                              href={link.href}
-                              onClick={() => setActiveDropdown(null)}
-                              className="text-slate-600 dark:text-slate-200 hover:text-[#c79d62] dark:hover:text-[#c79d62] transition-colors block font-bold lowercase"
-                            >
-                              {link.label}
-                            </Link>
-                          </li>
+                {activeDropdown === "services" ? (
+                  (() => {
+                    const columns = [
+                      {
+                        title: "Housing Society",
+                        subServices: servicesData.find(t => t.id === "society-management")?.subServices || []
+                      },
+                      {
+                        title: "Business Advisory",
+                        subServices: servicesData.find(t => t.id === "compliance-business-advisory")?.subServices || []
+                      },
+                      {
+                        title: "Tax & Litigation",
+                        subServices: servicesData.find(t => t.id === "taxation-regulatory-litigation")?.subServices || []
+                      },
+                      {
+                        title: "NRI & Senior Citizen",
+                        subServices: [
+                          ...(servicesData.find(t => t.id === "nri-services")?.subServices || []),
+                          ...(servicesData.find(t => t.id === "senior-citizen-advisory")?.subServices || [])
+                        ]
+                      }
+                    ];
+                    
+                    return (
+                      <div className="p-8 grid grid-cols-5 gap-8">
+                        {columns.map((col, idx) => (
+                          <div key={idx} className="space-y-5">
+                            <h4 className="text-sm font-black uppercase tracking-widest text-[#210821] dark:text-[#c79d62] border-b-2 border-[#c79d62]/30 dark:border-slate-800/50 pb-2.5">
+                              {col.title}
+                            </h4>
+                            <div className="max-h-[320px] overflow-y-auto pr-1 space-y-3 scrollbar-thin scrollbar-thumb-amber-500 scrollbar-track-transparent">
+                              {col.subServices.map((sub, sIdx) => (
+                                <div key={sIdx} className="group/sub relative text-left">
+                                  <span className="text-[11px] font-extrabold tracking-wide text-slate-800 dark:text-white/90 block leading-snug cursor-pointer group-hover/sub:text-[#c79d62] transition-colors capitalize flex items-center justify-between">
+                                    {sub.title}
+                                    <svg className="w-3 h-3 text-slate-400 group-hover/sub:text-[#c79d62] transition-transform duration-200 group-hover/sub:rotate-180 shrink-0 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}><path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" /></svg>
+                                  </span>
+                                  <ul className="hidden group-hover/sub:block space-y-1.5 pl-3 mt-1.5 border-l-2 border-[#c79d62]/25 animate-in fade-in slide-in-from-top-1 duration-200">
+                                    {sub.subSubServices.map((subSub) => (
+                                      <li key={subSub.slug}>
+                                        <Link
+                                          href={`/services/${subSub.slug}`}
+                                          onClick={() => setActiveDropdown(null)}
+                                          className="text-[11px] font-semibold text-slate-500 dark:text-slate-400 hover:text-[#c79d62] dark:hover:text-[#c79d62] transition-colors block leading-snug capitalize py-0.5"
+                                        >
+                                          {subSub.title}
+                                        </Link>
+                                      </li>
+                                    ))}
+                                  </ul>
+                                </div>
+                              ))}
+                            </div>
+                          </div>
                         ))}
-                      </ul>
-                    </div>
-                  ))}
-                  
-                  {/* Column 5: Featured Image Card */}
-                  <div className="space-y-4">
-                    <h4 className="text-xs font-black uppercase tracking-widest text-[#210821] dark:text-[#c79d62] border-b border-slate-100 dark:border-slate-800/50 pb-2">
-                      Spotlight
-                    </h4>
-                    <div className="relative h-36 rounded-lg overflow-hidden shadow-sm group border border-slate-200/40 dark:border-slate-800/40">
-                      <img
-                        src={config.image.src}
-                        alt={config.image.title}
-                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-[#210821]/90 via-[#210821]/40 to-transparent flex flex-col justify-end p-3">
-                        <span className="text-[8px] font-black uppercase text-[#c79d62] tracking-widest">
-                          {config.image.tag}
-                        </span>
-                        <h5 className="text-white text-[10px] font-bold leading-tight mt-0.5">
-                          {config.image.title}
-                        </h5>
+                        
+                        {/* Spotlight column */}
+                        <div className="space-y-5">
+                          <h4 className="text-sm font-black uppercase tracking-widest text-[#210821] dark:text-[#c79d62] border-b-2 border-[#c79d62]/30 dark:border-slate-800/50 pb-2.5">
+                            Spotlight
+                          </h4>
+                          <div className="relative h-40 rounded-lg overflow-hidden shadow-sm group border border-slate-200/40 dark:border-slate-800/40">
+                            <img
+                              src={config.image.src}
+                              alt={config.image.title}
+                              className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                            />
+                            <div className="absolute inset-0 bg-gradient-to-t from-[#210821]/90 via-[#210821]/40 to-transparent flex flex-col justify-end p-3">
+                              <span className="text-[9px] font-black uppercase text-[#c79d62] tracking-widest">
+                                {config.image.tag}
+                              </span>
+                              <h5 className="text-white text-[11px] font-bold leading-tight mt-0.5">
+                                {config.image.title}
+                              </h5>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    );
+                  })()
+                ) : (
+                  <div className="p-8 grid grid-cols-5 gap-8">
+                    {config.columns.map((col, idx) => (
+                      <div key={idx} className="space-y-4">
+                        <h4 className="text-xs font-black uppercase tracking-widest text-[#210821] dark:text-[#c79d62] border-b border-slate-100 dark:border-slate-800/50 pb-2">
+                          {col.title}
+                        </h4>
+                        <ul className="space-y-2.5 text-xs">
+                          {col.links.map((link, lIdx) => (
+                            <li key={lIdx}>
+                              <Link
+                                href={link.href}
+                                onClick={() => setActiveDropdown(null)}
+                                className="text-slate-600 dark:text-slate-200 hover:text-[#c79d62] dark:hover:text-[#c79d62] transition-colors block font-bold lowercase"
+                              >
+                                {link.label}
+                              </Link>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    ))}
+                    
+                    <div className="space-y-4">
+                      <h4 className="text-xs font-black uppercase tracking-widest text-[#210821] dark:text-[#c79d62] border-b border-slate-100 dark:border-slate-800/50 pb-2">
+                        Spotlight
+                      </h4>
+                      <div className="relative h-36 rounded-lg overflow-hidden shadow-sm group border border-slate-200/40 dark:border-slate-800/40">
+                        <img
+                          src={config.image.src}
+                          alt={config.image.title}
+                          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-[#210821]/90 via-[#210821]/40 to-transparent flex flex-col justify-end p-3">
+                          <span className="text-[8px] font-black uppercase text-[#c79d62] tracking-widest">
+                            {config.image.tag}
+                          </span>
+                          <h5 className="text-white text-[10px] font-bold leading-tight mt-0.5">
+                            {config.image.title}
+                          </h5>
+                        </div>
                       </div>
                     </div>
                   </div>
-                </div>
+                )}
 
                 {/* Unified Theme Banner */}
                 <div className="bg-[#c79d62] text-white py-3.5 px-8 flex flex-col sm:flex-row items-center justify-between gap-4">

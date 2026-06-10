@@ -34,18 +34,6 @@ import {
 export default function HomePage() {
   const { t, theme } = useApp();
   const [activeStep, setActiveStep] = useState(0);
-  const videoRef = useRef<HTMLVideoElement>(null);
-  const [isPlaying, setIsPlaying] = useState(true);
-
-  const togglePlay = () => {
-    if (!videoRef.current) return;
-    if (isPlaying) {
-      videoRef.current.pause();
-    } else {
-      videoRef.current.play();
-    }
-    setIsPlaying(!isPlaying);
-  };
 
   const problemsList = [
     { id: "freelancer", title: t.p1Title, problem: t.p1Problem, solution: t.p1Solution, icon: Users, category: "Freelancer" },
@@ -145,7 +133,6 @@ export default function HomePage() {
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">
           <video
-            ref={videoRef}
             key={theme}
             autoPlay
             loop
@@ -156,11 +143,10 @@ export default function HomePage() {
             <source src={theme === "dark" ? "/Hero1.mp4" : "/Hero.mp4"} type="video/mp4" />
           </video>
           {/* Subtle dark tint to improve contrast for white text */}
-          <div className="absolute inset-0 bg-black/30 pointer-events-none" />
+          <div className="absolute inset-0 bg-black/50 pointer-events-none" />
         </div>
 
-        {/* Hero Content - Centered Slider Layout */}
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full flex flex-col items-center justify-center text-center">
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full flex flex-col items-center justify-center text-center pt-28 lg:pt-36">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -168,37 +154,21 @@ export default function HomePage() {
             className="flex flex-col items-center max-w-3xl"
           >
             {/* Main Title */}
-            <h1 className="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-white mb-2 leading-none select-none">
-              Video slider
+            <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white mb-2 leading-none select-none">
+              Precision Taxation & Advisory
             </h1>
 
-            {/* Play/Pause Button Overlay */}
-            <button
-              onClick={togglePlay}
-              className="w-16 h-16 sm:w-20 sm:h-20 my-5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center text-white hover:scale-105 hover:bg-white/20 transition-all duration-300 shadow-xl focus:outline-none cursor-pointer group"
-              aria-label={isPlaying ? "Pause video" : "Play video"}
-            >
-              {isPlaying ? (
-                <div className="flex gap-2">
-                  <div className="w-[5px] h-6 bg-white rounded-full group-hover:bg-amber-100 transition-colors" />
-                  <div className="w-[5px] h-6 bg-white rounded-full group-hover:bg-amber-100 transition-colors" />
-                </div>
-              ) : (
-                <svg className="w-6 h-6 text-white translate-x-0.5 transition-transform" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M8 5v14l11-7z" />
-                </svg>
-              )}
-            </button>
+
 
             {/* Subtitle */}
-            <p className="text-sm sm:text-lg lg:text-xl text-slate-100 max-w-2xl leading-relaxed mb-8 font-medium">
-              Challenging established thinking, achieving sustainable advantage
+            <p className="text-xs sm:text-sm lg:text-base text-slate-100 max-w-xl leading-relaxed mb-8 font-medium">
+              Compliance, auditing, and strategic growth simplified for your business.
             </p>
 
             {/* CTA Button */}
             <Link
               href="/services"
-              className="h-12 inline-flex items-center justify-center px-10 bg-[#0e0616] hover:bg-[#1b0a2a] text-white font-bold text-xs uppercase tracking-widest transition-all hover:scale-105 shadow-2xl border border-white/5"
+              className="h-12 inline-flex items-center justify-center px-10 bg-[#c79d62] hover:bg-[#b58c53] text-white font-bold text-xs uppercase tracking-widest transition-all hover:scale-105 shadow-2xl border border-white/5 rounded-md"
             >
               our services
             </Link>
