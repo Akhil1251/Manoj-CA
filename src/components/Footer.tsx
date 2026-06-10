@@ -106,7 +106,7 @@ export const Footer: React.FC = () => {
   return (
     <>
       {/* Dynamic Gold Pre-Footer Banner with Animated Connecting Nodes */}
-      <div className="w-full bg-[#9e8055] py-8 text-white relative overflow-hidden flex items-center min-h-[90px]">
+      <div className="w-full bg-[#c79d62] py-8 text-white relative overflow-hidden flex items-center min-h-[90px]">
         <canvas
           ref={canvasRef}
           className="absolute inset-0 w-full h-full pointer-events-none z-0"
@@ -120,7 +120,7 @@ export const Footer: React.FC = () => {
             className="flex items-center gap-2 px-6 py-3 bg-[#110311] hover:bg-[#1f091f] text-white text-xs font-bold uppercase tracking-wider rounded-md shadow-md transition-all duration-300 transform hover:-translate-y-0.5"
           >
             Get A Quote
-            <ChevronRight className="w-4 h-4 text-[#9e8055]" />
+            <ChevronRight className="w-4 h-4 text-[#c79d62]" />
           </Link>
         </div>
       </div>

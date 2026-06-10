@@ -361,7 +361,7 @@ export const Navbar: React.FC = () => {
         onMouseLeave={() => setActiveDropdown(null)}
       >
         <div className={`transition-all duration-300 ${isTransparent ? "bg-amber-600/95 backdrop-blur-md" : "bg-amber-600"} shadow-lg px-6 relative`}>
-          <div className="flex h-[52px] items-center justify-between">
+          <div className="flex h-[64px] items-center justify-between">
             {/* Desktop Navigation Links */}
             <nav className="flex items-center gap-3 xl:gap-5 h-full">
               {navLinks.map((link) => {
@@ -378,7 +378,7 @@ export const Navbar: React.FC = () => {
                   >
                     <Link
                       href={link.href}
-                      className={`flex items-center gap-1 text-[11px] xl:text-[12px] lowercase leading-tight font-bold transition-colors hover:text-white h-full ${
+                      className={`flex items-center gap-1 text-sm leading-tight font-bold transition-colors hover:text-white h-full ${
                         isActive ? "text-white/60" : "text-white"
                       }`}
                     >
@@ -463,7 +463,7 @@ export const Navbar: React.FC = () => {
                 <div className="p-8 grid grid-cols-5 gap-8">
                   {config.columns.map((col, idx) => (
                     <div key={idx} className="space-y-4">
-                      <h4 className="text-xs font-black uppercase tracking-widest text-[#210821] dark:text-[#9e8055] border-b border-slate-100 dark:border-slate-800/50 pb-2">
+                      <h4 className="text-xs font-black uppercase tracking-widest text-[#210821] dark:text-[#c79d62] border-b border-slate-100 dark:border-slate-800/50 pb-2">
                         {col.title}
                       </h4>
                       <ul className="space-y-2.5 text-xs">
@@ -472,7 +472,7 @@ export const Navbar: React.FC = () => {
                             <Link
                               href={link.href}
                               onClick={() => setActiveDropdown(null)}
-                              className="text-slate-600 dark:text-slate-200 hover:text-[#9e8055] dark:hover:text-[#9e8055] transition-colors block font-bold lowercase"
+                              className="text-slate-600 dark:text-slate-200 hover:text-[#c79d62] dark:hover:text-[#c79d62] transition-colors block font-bold lowercase"
                             >
                               {link.label}
                             </Link>
@@ -484,7 +484,7 @@ export const Navbar: React.FC = () => {
                   
                   {/* Column 5: Featured Image Card */}
                   <div className="space-y-4">
-                    <h4 className="text-xs font-black uppercase tracking-widest text-[#210821] dark:text-[#9e8055] border-b border-slate-100 dark:border-slate-800/50 pb-2">
+                    <h4 className="text-xs font-black uppercase tracking-widest text-[#210821] dark:text-[#c79d62] border-b border-slate-100 dark:border-slate-800/50 pb-2">
                       Spotlight
                     </h4>
                     <div className="relative h-36 rounded-lg overflow-hidden shadow-sm group border border-slate-200/40 dark:border-slate-800/40">
@@ -494,7 +494,7 @@ export const Navbar: React.FC = () => {
                         className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-[#210821]/90 via-[#210821]/40 to-transparent flex flex-col justify-end p-3">
-                        <span className="text-[8px] font-black uppercase text-[#9e8055] tracking-widest">
+                        <span className="text-[8px] font-black uppercase text-[#c79d62] tracking-widest">
                           {config.image.tag}
                         </span>
                         <h5 className="text-white text-[10px] font-bold leading-tight mt-0.5">
@@ -506,7 +506,7 @@ export const Navbar: React.FC = () => {
                 </div>
 
                 {/* Unified Theme Banner */}
-                <div className="bg-[#9e8055] text-white py-3.5 px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+                <div className="bg-[#c79d62] text-white py-3.5 px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
                   <div className="flex items-center gap-3.5">
                     <div className="w-9 h-9 bg-slate-900/20 rounded-md flex items-center justify-center border border-white/10 shrink-0">
                       <Calculator className="w-5 h-5 text-white" />

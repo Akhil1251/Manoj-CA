@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import Link from "next/link";
 import { useApp } from "@/context/AppContext";
 import { motion, AnimatePresence } from "framer-motion";
@@ -34,6 +34,18 @@ import {
 export default function HomePage() {
   const { t, theme } = useApp();
   const [activeStep, setActiveStep] = useState(0);
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const [isPlaying, setIsPlaying] = useState(true);
+
+  const togglePlay = () => {
+    if (!videoRef.current) return;
+    if (isPlaying) {
+      videoRef.current.pause();
+    } else {
+      videoRef.current.play();
+    }
+    setIsPlaying(!isPlaying);
+  };
 
   const problemsList = [
     { id: "freelancer", title: t.p1Title, problem: t.p1Problem, solution: t.p1Solution, icon: Users, category: "Freelancer" },
@@ -133,6 +145,7 @@ export default function HomePage() {
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">
           <video
+            ref={videoRef}
             key={theme}
             autoPlay
             loop
@@ -142,39 +155,53 @@ export default function HomePage() {
           >
             <source src={theme === "dark" ? "/Hero1.mp4" : "/Hero.mp4"} type="video/mp4" />
           </video>
+          {/* Subtle dark tint to improve contrast for white text */}
+          <div className="absolute inset-0 bg-black/30 pointer-events-none" />
         </div>
 
-        {/* Hero Content - Transparent and Left Aligned */}
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full flex items-center">
+        {/* Hero Content - Centered Slider Layout */}
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full flex flex-col items-center justify-center text-center">
           <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            animate={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="max-w-2xl text-left"
+            className="flex flex-col items-center max-w-3xl"
           >
-            <span className="px-3 py-1 rounded-full text-[9px] font-bold bg-amber-600/80 text-white border border-white/20 mb-5 inline-block uppercase tracking-[0.2em]">
-              ✨ Certified Advisory Panel
-            </span>
-            <h1 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight text-white mb-4 leading-snug max-w-[20ch]">
-              {t.heroTitle}
+            {/* Main Title */}
+            <h1 className="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-white mb-2 leading-none select-none">
+              Video slider
             </h1>
-            <p className="text-xs sm:text-sm text-slate-200 max-w-lg leading-relaxed mb-8 font-medium">
-              {t.heroSubtitle}
+
+            {/* Play/Pause Button Overlay */}
+            <button
+              onClick={togglePlay}
+              className="w-16 h-16 sm:w-20 sm:h-20 my-5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center text-white hover:scale-105 hover:bg-white/20 transition-all duration-300 shadow-xl focus:outline-none cursor-pointer group"
+              aria-label={isPlaying ? "Pause video" : "Play video"}
+            >
+              {isPlaying ? (
+                <div className="flex gap-2">
+                  <div className="w-[5px] h-6 bg-white rounded-full group-hover:bg-amber-100 transition-colors" />
+                  <div className="w-[5px] h-6 bg-white rounded-full group-hover:bg-amber-100 transition-colors" />
+                </div>
+              ) : (
+                <svg className="w-6 h-6 text-white translate-x-0.5 transition-transform" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M8 5v14l11-7z" />
+                </svg>
+              )}
+            </button>
+
+            {/* Subtitle */}
+            <p className="text-sm sm:text-lg lg:text-xl text-slate-100 max-w-2xl leading-relaxed mb-8 font-medium">
+              Challenging established thinking, achieving sustainable advantage
             </p>
-            <div className="flex flex-col sm:flex-row gap-3 justify-start items-center">
-              <Link
-                href="/contact"
-                className="w-full sm:w-auto h-10 inline-flex items-center justify-center px-6 rounded-xl bg-amber-600 text-white font-bold text-[11px] uppercase tracking-wider shadow-lg hover:bg-amber-500 transition-transform hover:-translate-y-0.5"
-              >
-                {t.heroCTA}
-              </Link>
-              <Link
-                href="/tools"
-                className="w-full sm:w-auto h-10 inline-flex items-center justify-center px-6 rounded-xl border border-white/30 bg-white/10 backdrop-blur-sm text-white font-bold text-[11px] uppercase tracking-wider hover:bg-white/20 transition-transform hover:-translate-y-0.5"
-              >
-                {t.heroCTASecondary}
-              </Link>
-            </div>
+
+            {/* CTA Button */}
+            <Link
+              href="/services"
+              className="h-12 inline-flex items-center justify-center px-10 bg-[#0e0616] hover:bg-[#1b0a2a] text-white font-bold text-xs uppercase tracking-widest transition-all hover:scale-105 shadow-2xl border border-white/5"
+            >
+              our services
+            </Link>
           </motion.div>
         </div>
       </section>
@@ -186,7 +213,7 @@ export default function HomePage() {
             <h2 className="text-3xl sm:text-4xl font-extrabold text-[#210821] dark:text-white tracking-tight lowercase">
               industries
             </h2>
-            <div className="w-10 h-[3px] bg-[#9e8055] mx-auto mt-2 rounded" />
+            <div className="w-10 h-[3px] bg-[#c79d62] mx-auto mt-2 rounded" />
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-12">
@@ -194,14 +221,14 @@ export default function HomePage() {
               const IconComponent = item.icon;
               return (
                 <div key={idx} className="flex items-start gap-4 group">
-                  <div className="flex-shrink-0 w-14 h-14 rounded-full bg-[#1b071b] border border-[#9e8055]/20 flex items-center justify-center shadow-md transition-all duration-300 group-hover:border-[#9e8055]/50 group-hover:scale-105">
+                  <div className="flex-shrink-0 w-14 h-14 rounded-full bg-[#1b071b] border border-[#c79d62]/20 flex items-center justify-center shadow-md transition-all duration-300 group-hover:border-[#c79d62]/50 group-hover:scale-105">
                     <IconComponent className="w-6 h-6 text-white" />
                   </div>
                   <div className="flex-grow pt-1">
                     <h3 className="text-base font-bold text-slate-900 dark:text-white tracking-tight leading-snug">
                       {item.title}
                     </h3>
-                    <div className="w-10 h-[2px] bg-[#9e8055] mt-1 mb-2.5" />
+                    <div className="w-10 h-[2px] bg-[#c79d62] mt-1 mb-2.5" />
                     <p className="text-xs text-slate-500 dark:text-slate-400 leading-relaxed font-normal">
                       {item.desc}
                     </p>
@@ -491,7 +518,7 @@ export default function HomePage() {
       <section className="py-24 bg-slate-50 dark:bg-[#120412]/50 border-t border-b border-slate-200/50 dark:border-slate-800/50 transition-colors duration-300">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
            <div className="mb-16">
-              <span className="text-xs font-bold bg-[#9e8055]/10 text-[#9e8055] px-3.5 py-1.5 rounded-full border border-[#9e8055]/20 uppercase tracking-widest">
+              <span className="text-xs font-bold bg-[#c79d62]/10 text-[#c79d62] px-3.5 py-1.5 rounded-full border border-[#c79d62]/20 uppercase tracking-widest">
                 Journey Process
               </span>
               <h2 className="text-3xl sm:text-4xl font-extrabold text-[#210821] dark:text-white mt-4 mb-4">
@@ -505,12 +532,12 @@ export default function HomePage() {
             {/* Interactive Timeline Bar */}
             <div className="relative mb-16 max-w-4xl mx-auto px-0">
                {/* Background Gold-tinted Line */}
-               <div className="absolute top-[28px] left-[12.5%] right-[12.5%] h-[2px] bg-[#9e8055]/30 dark:bg-[#9e8055]/20 -translate-y-1/2" />
+               <div className="absolute top-[28px] left-[12.5%] right-[12.5%] h-[2px] bg-[#c79d62]/30 dark:bg-[#c79d62]/20 -translate-y-1/2" />
                
                {/* Dynamic Filling Gold Line */}
                <div className="absolute top-[28px] left-[12.5%] right-[12.5%] h-[2px] -translate-y-1/2 overflow-hidden">
                  <motion.div 
-                    className="h-full bg-[#9e8055] origin-left"
+                    className="h-full bg-[#c79d62] origin-left"
                     animate={{ width: `${(activeStep / 3) * 100}%` }}
                     transition={{ type: "spring", stiffness: 80, damping: 15 }}
                  />
@@ -540,21 +567,21 @@ export default function HomePage() {
                            transition={{ duration: 0.2 }}
                            className={`h-14 w-14 rounded-[18px] flex items-center justify-center mb-4 transition-all duration-300 relative ${
                              isActive 
-                               ? "bg-[#210821] dark:bg-[#321232] border-2 border-[#9e8055] text-white shadow-[0_0_20px_rgba(158,128,85,0.35)] ring-4 ring-[#9e8055]/10" 
-                               : "bg-white dark:bg-[#1a0b1a] border-2 border-[#9e8055]/50 hover:border-[#9e8055] text-[#9e8055]"
+                               ? "bg-[#210821] dark:bg-[#321232] border-2 border-[#c79d62] text-white shadow-[0_0_20px_rgba(158,128,85,0.35)] ring-4 ring-[#c79d62]/10" 
+                               : "bg-white dark:bg-[#1a0b1a] border-2 border-[#c79d62]/50 hover:border-[#c79d62] text-[#c79d62]"
                            }`}
                          >
                             <Icon className={`h-6 w-6 transition-colors duration-300 ${
                               isActive 
                                 ? "text-white" 
-                                : "text-[#9e8055]"
+                                : "text-[#c79d62]"
                             }`} />
                          </motion.div>
                          <span className={`text-[10px] font-black tracking-wider transition-colors duration-300 ${
-                           isActive ? "text-[#9e8055]" : "text-slate-400 dark:text-slate-500"
+                           isActive ? "text-[#c79d62]" : "text-slate-400 dark:text-slate-500"
                          }`}>{step.num}</span>
                          <h3 className={`font-extrabold text-[10px] sm:text-[11px] tracking-widest uppercase transition-colors duration-300 mt-1 ${
-                           isActive ? "text-[#210821] dark:text-[#9e8055]" : "text-slate-400 dark:text-slate-500 group-hover:text-slate-650 dark:group-hover:text-slate-350"
+                           isActive ? "text-[#210821] dark:text-[#c79d62]" : "text-slate-400 dark:text-slate-500 group-hover:text-slate-650 dark:group-hover:text-slate-350"
                          }`}>{step.title}</h3>
                       </button>
                    );
@@ -573,7 +600,7 @@ export default function HomePage() {
                  transition={{ duration: 0.25 }}
                  className="p-8 sm:p-10 rounded-[24px] bg-white dark:bg-[#160716] border border-slate-100 dark:border-slate-800/80 shadow-[0_8px_30px_rgb(0,0,0,0.04)] dark:shadow-[0_8px_30px_rgb(0,0,0,0.2)] text-left relative overflow-hidden max-w-2xl mx-auto"
                >
-                 <div className="absolute top-0 right-0 w-32 h-32 bg-[#9e8055]/3 rounded-full blur-2xl pointer-events-none" />
+                 <div className="absolute top-0 right-0 w-32 h-32 bg-[#c79d62]/3 rounded-full blur-2xl pointer-events-none" />
                  <h3 className="font-extrabold text-xl text-[#210821] dark:text-white mb-3 tracking-tight">
                    0{activeStep + 1}. {[
                      "Deep Diagnostic Assessment",
@@ -596,53 +623,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 8. INDUSTRIES WE SERVE - Infinite Marquee */}
-      <section className="py-24 bg-white dark:bg-slate-950 text-slate-900 dark:text-white overflow-hidden transition-colors duration-300">
-         <div className="text-center max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 mb-16">
-            <h2 className="text-4xl font-extrabold mb-5">Industries We Serve</h2>
-            <p className="text-slate-600 dark:text-slate-400 text-lg">Specialized expertise across diverse industry sectors. We tailor our financial and tax strategies to meet your unique market demands.</p>
-         </div>
 
-         {/* Infinite Running Marquee */}
-         <div className="flex overflow-hidden relative w-full">
-            {/* Fade Edges */}
-            <div className="absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-white dark:from-slate-950 to-transparent z-10 pointer-events-none"></div>
-            <div className="absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-white dark:from-slate-950 to-transparent z-10 pointer-events-none"></div>
-            
-            <motion.div 
-               animate={{ x: ["0%", "-50%"] }}
-               transition={{ repeat: Infinity, ease: "linear", duration: 30 }}
-               className="flex gap-6 w-max items-center"
-            >
-               {[
-                 {title: "Manufacturing", desc: "Audit, GST compliance, and tax planning optimized for capital-intensive enterprises.", icon: TrendingUp},
-                 {title: "IT & Software", desc: "Tax advisory, transfer pricing, and compliance specifically designed for global technology companies.", icon: Calculator},
-                 {title: "Real Estate", desc: "Strategic GST on construction, capital gains structuring, and strict RERA compliance advisory.", icon: Building},
-                 {title: "Healthcare", desc: "Tailored tax planning and strict compliance frameworks for hospitals, clinics, and healthcare providers.", icon: HeartHandshake},
-                 {title: "Retail & E-commerce", desc: "Multi-state GST filing, precise inventory valuation, and highly automated compliance for retail scale.", icon: BookOpen},
-                 {title: "Banking & Finance", desc: "Uncompromising regulatory compliance, internal tax audits, and rigorous financial reporting for NBFCs.", icon: ShieldAlert},
-                 // Duplicate for infinite loop
-                 {title: "Manufacturing", desc: "Audit, GST compliance, and tax planning optimized for capital-intensive enterprises.", icon: TrendingUp},
-                 {title: "IT & Software", desc: "Tax advisory, transfer pricing, and compliance specifically designed for global technology companies.", icon: Calculator},
-                 {title: "Real Estate", desc: "Strategic GST on construction, capital gains structuring, and strict RERA compliance advisory.", icon: Building},
-                 {title: "Healthcare", desc: "Tailored tax planning and strict compliance frameworks for hospitals, clinics, and healthcare providers.", icon: HeartHandshake},
-                 {title: "Retail & E-commerce", desc: "Multi-state GST filing, precise inventory valuation, and highly automated compliance for retail scale.", icon: BookOpen},
-                 {title: "Banking & Finance", desc: "Uncompromising regulatory compliance, internal tax audits, and rigorous financial reporting for NBFCs.", icon: ShieldAlert},
-               ].map((ind, i) => (
-                 <div 
-                    key={i} 
-                    className="w-[350px] shrink-0 p-8 rounded-[2rem] text-left border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900/40 hover:bg-white dark:hover:bg-slate-800/80 transition-colors shadow-lg"
-                 >
-                    <div className="h-16 w-16 bg-white dark:bg-slate-900 rounded-2xl flex items-center justify-center mb-6 border border-slate-200 dark:border-slate-700 shadow-sm">
-                      <ind.icon className="h-8 w-8 text-blue-600 dark:text-blue-500" />
-                    </div>
-                    <h3 className="font-extrabold text-xl mb-3">{ind.title}</h3>
-                    <p className="text-slate-600 dark:text-slate-400 text-sm leading-relaxed font-medium">{ind.desc}</p>
-                 </div>
-               ))}
-            </motion.div>
-         </div>
-      </section>
 
       {/* 9. STAY AHEAD OF DEADLINES - Auto Scrolling Ticker */}
       <section className="py-24 bg-slate-50 dark:bg-slate-900 text-slate-900 dark:text-white border-t border-slate-200 dark:border-slate-800 transition-colors duration-300">
