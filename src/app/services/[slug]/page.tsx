@@ -33,6 +33,7 @@ export default function ServiceDetailPage() {
   let parentCategoryTitle = "";
   let parentCategoryId = "";
   let parentSubId = "";
+  let parentSubService: any = null;
 
   for (const tab of servicesData) {
     for (const sub of tab.subServices) {
@@ -42,6 +43,7 @@ export default function ServiceDetailPage() {
         parentCategoryTitle = tab.title;
         parentCategoryId = tab.id;
         parentSubId = sub.id;
+        parentSubService = sub;
         break;
       }
     }
@@ -54,6 +56,9 @@ export default function ServiceDetailPage() {
   // Document checklist checking state
   const [checkedDocs, setCheckedDocs] = useState<Record<number, boolean>>({});
 
+  // Active FAQ state
+  const [activeFaq, setActiveFaq] = useState<number | null>(null);
+
   // Expanded directory nodes
   const [openCategory, setOpenCategory] = useState<string | null>(parentCategoryId);
   const [openSub, setOpenSub] = useState<string | null>(parentSubId);
@@ -62,6 +67,7 @@ export default function ServiceDetailPage() {
   useEffect(() => {
     setCheckedDocs({});
     setActiveStep(0);
+    setActiveFaq(null);
   }, [slug]);
 
   if (!foundService) {
@@ -86,48 +92,184 @@ export default function ServiceDetailPage() {
   const checkedCount = Object.values(checkedDocs).filter(Boolean).length;
   const readinessPercentage = checklist.length > 0 ? Math.round((checkedCount / checklist.length) * 100) : 0;
 
-  const toggleCheck = (idx: number) => {
-    setCheckedDocs((prev) => ({
-      ...prev,
-      [idx]: !prev[idx],
-    }));
+  const subSubCustomContent: Record<string, {
+    title: string;
+    summary: string;
+  }> = {
+    "cooperative-housing-society-registration": {
+      title: "Co-operative Housing society registration",
+      summary: "Establishing a Cooperative Housing Society involves organizing the promoter body, drafting the society's bye-laws, and preparing the necessary registration forms. We coordinate directly with the Registrar of Cooperative Societies, verify compliance with local statutory rules, and follow up to secure the registration certificate efficiently."
+    },
+    "builder-handover-assistance": {
+      title: "Builder Handover Assistance",
+      summary: "Managing the transition of assets and records from the developer to the housing society. We assist the Managing Committee in collecting structural designs, fire approvals, lift certificates, and municipal files, while auditing the builder's accounts, verifying flat allotment registers, and reviewing outstanding statutory obligations."
+    },
+    "first-general-body-meeting-gbm": {
+      title: "First General Body Meeting (GBM)",
+      summary: "The First General Body Meeting is the foundation of the society's self-governance. We help organize the meeting within the statutory timeframe, draft the formal notice and agenda, record and document resolutions, and guide the members in constituting the first Managing Committee and selecting its office bearers."
+    },
+    "society-election-planning": {
+      title: "Society Election Planning",
+      summary: "We assist societies in planning and organizing the entire election process, including election timelines, statutory requirements, member communication, and procedural compliance to ensure a seamless election experience"
+    },
+    "election-officer-coordination": {
+      title: "Election Officer Coordination",
+      summary: "Our team coordinates with authorized Election Officers and relevant authorities, facilitating the election process in accordance with applicable cooperative housing society regulations and election guidelines."
+    },
+    "voter-list-preparation": {
+      title: "Voter List Preparation",
+      summary: "A valid and accurate voter list is essential for fair elections. We assist in preparing, verifying, updating, and finalizing voter lists based on membership records and statutory requirements."
+    },
+    "election-documentation": {
+      title: "Election Documentation",
+      summary: "We prepare and manage all election-related documentation, including notices, nomination forms, scrutiny records, withdrawal forms, election proceedings, resolutions, and statutory records required during and after the election process."
+    },
+    "managing-committee-formation": {
+      title: "Managing Committee Formation",
+      summary: "Following the election process, we assist in the constitution of the Managing Committee, allocation of office bearers, preparation of committee records, and completion of post-election compliance requirements."
+    },
+    "agm-general-body-meeting-compliance": {
+      title: "AGM & General Body Meeting Compliance",
+      summary: "Annual General Meetings (AGMs) and Special General Body Meetings (SGBMs) require strict adherence to cooperative bye-laws. We assist the Managing Committee in drafting notices, preparing annual activity reports, compiling budgets, recording minutes, and documenting all general body resolutions."
+    },
+    "committee-meeting-compliance": {
+      title: "Committee Meeting Compliance",
+      summary: "Managing Committee meetings drive the day-to-day decisions of a housing society. We provide administrative support to draft monthly notices and agendas, record discussions, draft committee resolutions, and verify that decisions align with the society's bye-laws."
+    },
+    "maintenance-of-statutory-registers": {
+      title: "Maintenance of Statutory Registers",
+      summary: "Housing societies are legally mandated to maintain comprehensive registers of their members, assets, and transactions. We assist in auditing, updating, and maintaining critical records, including the Register of Members (I Register), the Register of Share Transfers (J Register), Nomination Registers, and Tenant Logs."
+    },
+    "statutory-audit-coordination-rectification": {
+      title: "Statutory Audit Coordination & Audit Rectification Services",
+      summary: "Addressing observations raised in the statutory audit is a vital governance duty. We coordinate with authorized auditors to complete the annual audit, prepare responses for auditor objections, and draft the Form O Audit Rectification Report for approval and submission to the Registrar."
+    },
+    "annual-compliance-calendar-management": {
+      title: "Annual Compliance Calendar Management",
+      summary: "We establish a structured calendar to track and manage the society's annual compliance deadlines. Our team handles the compilation and filing of the Annual Return (Form Y) with the Registrar, tracks audit due dates, and sends automated reminders for recurring compliance events."
+    },
+    "society-gst-compliance": {
+      title: "GST Compliance Services",
+      summary: "GST registration and filing are required for housing societies meeting specific collection thresholds. We manage the compilation of maintenance collection logs, reconcile input tax credit (ITC) against vendor invoices, and prepare monthly, quarterly, and annual GST returns."
+    },
+    "society-tds-compliance": {
+      title: "TDS Compliance Services",
+      summary: "Societies must deduct and deposit Tax Deducted at Source (TDS) on commercial vendor payments. We review contract agreements, compute TDS deductions, execute challan payments, and file quarterly TDS returns (Form 26Q) while generating Form 16A certificates."
+    },
+    "society-income-tax-compliance": {
+      title: "Income Tax Compliance Services",
+      summary: "Cooperative societies must comply with annual income tax filing regulations. We evaluate taxable receipts (such as mobile tower rentals, bank FD interest, and commercial incomes) under tax provisions, compute liability, and file the annual Income Tax Returns."
+    },
+    "society-internal-audit-book-review": {
+      title: "Internal Audit & Book Review Services",
+      summary: "Internal audits provide an independent health check of the society's financial transactions. We conduct periodic ledger reviews, verify maintenance collections, analyze bank reconciliations, check vendor invoices, and provide recommendations to strengthen financial controls."
+    },
+    "society-monthly-accounting-review": {
+      title: "Monthly Accounting Review & Monitoring",
+      summary: "Regular monitoring maintains financial discipline and transparent reporting. We verify monthly bookkeeping logs, track member maintenance collection status, reconcile bank accounts, and analyze budget variances to help the committee manage funds effectively."
+    },
+    "preliminary-redevelopment-assessment": {
+      title: "Preliminary Redevelopment Assessment",
+      summary: "Evaluating redevelopment feasibility is the first step in a major building project. We review land cards, conveyance deeds, structural audit reports, and local development rules to assess the building's redevelopment potential and compile initial feasibility checklists."
+    },
+    "redevelopment-compliance-review": {
+      title: "Compliance Review",
+      summary: "Redevelopment projects must align with strict statutory guidelines. We audit society registers, resolutions, and meeting minutes to ensure all procedural requirements (such as government directives) are fully satisfied."
+    },
+    "member-communication-support": {
+      title: "Member Communication Support",
+      summary: "Transparency is key to a successful redevelopment project. We support committees in organizing general body updates, preparing informational presentations on developer offers, and maintaining a structured log of member queries and consents."
+    },
+    "redevelopment-documentation-assistance": {
+      title: "Documentation Assistance",
+      summary: "We manage and catalog the extensive paperwork generated during a redevelopment project. Our team reviews developer bids, compiles project management consultant (PMC) tenders, drafts meeting notices, and updates member registries."
+    },
+    "redevelopment-financial-evaluation-support": {
+      title: "Financial Evaluation Support",
+      summary: "Reviewing commercial bids helps members make informed decisions. We prepare comparative sheets comparing corpus fund offers, shifting rents, bank guarantee terms, and commercial terms proposed by competing developers."
+    },
+    "noc-flat-transfer": {
+      title: "NOC for Flat Transfer",
+      summary: "We assist the society in processing No Objection Certificates (NOCs) for flat transfers. Our team verifies the transferor's membership files, checks outstanding maintenance collections, and prepares the legal NOC for flat registration."
+    },
+    "noc-sale-flat": {
+      title: "NOC for Sale of Flat",
+      summary: "Flat sale transactions require clean society records. We audit member ledger balances to verify no dues remain, draft the clearance certificates, and support the documentation required to execute property sales smoothly."
+    },
+    "noc-home-loans": {
+      title: "NOC for Home Loans",
+      summary: "Lenders require specific society NOCs before approving home loans. We verify property ownership files and share folio entries to draft mortgage confirmations and bank-approved NOC formats."
+    },
+    "noc-passport-verification": {
+      title: "NOC for Passport Verification",
+      summary: "We draft official residence and occupancy confirmations required by passport authorities, verifying membership registers, flat registries, and utility invoice files to confirm applicant details."
+    },
+    "membership-transfer-documentation": {
+      title: "Membership Transfer Documentation",
+      summary: "Admitting a new member requires processing statutory transfer packets. We prepare the transfer forms (such as Form 20A/20B), verify stamp duty payments, and update the society's member books."
+    },
+    "share-certificate-documentation": {
+      title: "Share Certificate Documentation",
+      summary: "We assist in updating and endorsing share certificates to reflect membership changes. This includes recording transfer folio numbers, printing certificates, and cross-matching entries against the member books."
+    },
+    "society-certificates-confirmations": {
+      title: "Society Certificates & Confirmations",
+      summary: "We prepare various certifications requested by members, banks, or government departments. This includes drafting no-dues confirmations, occupancy letters, and maintenance payout summaries."
+    },
+    "duplicate-share-certificate-assistance": {
+      title: "Duplicate Share Certificate Assistance",
+      summary: "Obtaining duplicate share certificates requires following a structured procedure. We guide members in preparing indemnity bonds, drafting newspaper advertisements, filing reports, and securing committee approvals."
+    }
   };
 
-  // ----------------------------------------------------
-  // SUB-COMPONENTS FOR FLEXIBLE SECTION LAYOUTS
-  // ----------------------------------------------------
+  const renderSubSubContent = () => {
+    const data = subSubCustomContent[slug];
+    const title = data ? data.title : foundService!.title;
+    const content = data ? data.summary : (foundService!.longDesc || foundService!.shortDesc);
+
+    return (
+      <motion.div
+        initial={{ opacity: 0, y: 10 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5 }}
+        className="space-y-4 text-left"
+      >
+        <div className="border-b border-slate-200 dark:border-slate-800/80 pb-3">
+          <h2 className="text-xl sm:text-2.5xl font-black text-[#210821] dark:text-white tracking-tight max-w-none">
+            {title}
+          </h2>
+        </div>
+        <p className="text-sm sm:text-base text-slate-655 dark:text-slate-350 leading-relaxed font-semibold whitespace-pre-line text-justify">
+          {content}
+        </p>
+      </motion.div>
+    );
+  };
 
   const renderHeroHeader = () => (
-    <motion.div 
-      initial={{ opacity: 0, y: 20 }}
+    <motion.div
+      initial={{ opacity: 0, y: 10 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
-      className="relative h-72 sm:h-[400px] rounded-[2rem] overflow-hidden border border-slate-200/50 dark:border-slate-800/50 shadow-2xl group"
+      className="py-6 flex flex-col justify-center text-left space-y-3 sm:space-y-4"
     >
-      <img
-        src={foundService!.image}
-        alt={foundService!.title}
-        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-      />
-      <div className="absolute inset-0 bg-gradient-to-t from-[#120412] via-slate-950/45 to-transparent" />
-      <div className="absolute inset-0 bg-gradient-to-r from-[#120412]/90 via-[#120412]/30 to-transparent" />
-      
-      <div className="absolute inset-0 flex flex-col justify-end p-8 sm:p-12 space-y-3 sm:space-y-4">
+      <div className="flex flex-col justify-center space-y-3 sm:space-y-4">
         <span className="text-xs font-black uppercase text-[#c79d62] tracking-widest bg-[#c79d62]/10 backdrop-blur-md px-3.5 py-1.5 rounded-full self-start border border-[#c79d62]/30">
           {parentCategoryTitle}
         </span>
-        <h1 className="text-2xl sm:text-4xl font-black text-white tracking-tight leading-tight max-w-2xl drop-shadow-md">
-          {foundService!.title}
+        <h1 className="text-xl sm:text-3.5xl font-black text-[#210821] dark:text-white tracking-tight leading-tight max-w-none">
+          {parentSubService ? parentSubService.title : foundService!.title}
         </h1>
-        <p className="text-xs sm:text-sm text-slate-200/90 leading-relaxed font-semibold max-w-xl drop-shadow-sm">
-          {foundService!.shortDesc}
+        <p className="text-sm sm:text-base text-slate-550 dark:text-slate-400 leading-relaxed font-medium max-w-none whitespace-pre-line text-justify">
+          {parentSubService ? parentSubService.description : foundService!.shortDesc}
         </p>
       </div>
     </motion.div>
   );
 
   const renderComparisonMatrix = (accentColor: string) => (
-    <motion.div 
+    <motion.div
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       viewport={{ once: true }}
@@ -176,7 +318,7 @@ export default function ServiceDetailPage() {
   );
 
   const renderVisualDataChart = (isRadial: boolean) => (
-    <motion.div 
+    <motion.div
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       viewport={{ once: true }}
@@ -267,7 +409,7 @@ export default function ServiceDetailPage() {
   );
 
   const renderTimelineRoadmap = () => (
-    <motion.div 
+    <motion.div
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       viewport={{ once: true }}
@@ -283,47 +425,43 @@ export default function ServiceDetailPage() {
       </div>
 
       <div className="relative mb-12 max-w-4xl mx-auto px-0">
-         <div className="absolute top-[28px] left-[12.5%] right-[12.5%] h-[2px] bg-[#c79d62]/30 dark:bg-[#c79d62]/20 -translate-y-1/2" />
-         <div className="absolute top-[28px] left-[12.5%] right-[12.5%] h-[2px] -translate-y-1/2 overflow-hidden">
-            <motion.div 
-              className="h-full bg-[#c79d62] origin-left"
-              animate={{ width: `${(activeStep / 3) * 100}%` }}
-              transition={{ type: "spring", stiffness: 80, damping: 15 }}
-            />
-         </div>
+        <div className="absolute top-[28px] left-[12.5%] right-[12.5%] h-[2px] bg-[#c79d62]/30 dark:bg-[#c79d62]/20 -translate-y-1/2" />
+        <div className="absolute top-[28px] left-[12.5%] right-[12.5%] h-[2px] -translate-y-1/2 overflow-hidden">
+          <motion.div
+            className="h-full bg-[#c79d62] origin-left"
+            animate={{ width: `${(activeStep / 3) * 100}%` }}
+            transition={{ type: "spring", stiffness: 80, damping: 15 }}
+          />
+        </div>
 
-         <div className="grid grid-cols-4 relative z-10">
-           {steps.map((step, i) => {
-             const isActive = activeStep === i;
-             return (
-                <button 
-                  key={i} 
-                  onClick={() => setActiveStep(i)}
-                  className="flex flex-col items-center focus:outline-none group cursor-pointer"
+        <div className="grid grid-cols-4 relative z-10">
+          {steps.map((step, i) => {
+            const isActive = activeStep === i;
+            return (
+              <button
+                key={i}
+                onClick={() => setActiveStep(i)}
+                className="flex flex-col items-center focus:outline-none group cursor-pointer"
+              >
+                <motion.div
+                  animate={{ scale: isActive ? 1.08 : 1.0 }}
+                  transition={{ duration: 0.2 }}
+                  className={`h-14 w-14 rounded-[18px] flex items-center justify-center mb-4 transition-all duration-300 relative ${isActive
+                    ? "bg-[#210821] dark:bg-[#321232] border-2 border-[#c79d62] text-white shadow-[0_0_20px_rgba(158,128,85,0.35)] ring-4 ring-[#c79d62]/10"
+                    : "bg-white dark:bg-[#1a0b1a] border-2 border-[#c79d62]/50 hover:border-[#c79d62] text-[#c79d62]"
+                    }`}
                 >
-                   <motion.div 
-                     animate={{ scale: isActive ? 1.08 : 1.0 }}
-                     transition={{ duration: 0.2 }}
-                     className={`h-14 w-14 rounded-[18px] flex items-center justify-center mb-4 transition-all duration-300 relative ${
-                       isActive 
-                         ? "bg-[#210821] dark:bg-[#321232] border-2 border-[#c79d62] text-white shadow-[0_0_20px_rgba(158,128,85,0.35)] ring-4 ring-[#c79d62]/10" 
-                         : "bg-white dark:bg-[#1a0b1a] border-2 border-[#c79d62]/50 hover:border-[#c79d62] text-[#c79d62]"
-                     }`}
-                   >
-                      <Briefcase className={`h-5 w-5 transition-colors duration-300 ${
-                        isActive ? "text-white" : "text-[#c79d62]"
-                      }`} />
-                   </motion.div>
-                   <span className={`text-[10px] font-black tracking-wider transition-colors duration-300 ${
-                     isActive ? "text-[#c79d62]" : "text-slate-400 dark:text-slate-500"
-                   }`}>{step.num}</span>
-                   <h3 className={`font-extrabold text-[9px] sm:text-[11px] tracking-widest uppercase transition-colors duration-300 mt-1 max-w-[90px] text-center ${
-                     isActive ? "text-[#210821] dark:text-[#c79d62]" : "text-slate-400 dark:text-slate-500 group-hover:text-[#c79d62]"
-                   }`}>{step.title}</h3>
-                </button>
-             );
-           })}
-         </div>
+                  <Briefcase className={`h-5 w-5 transition-colors duration-300 ${isActive ? "text-white" : "text-[#c79d62]"
+                    }`} />
+                </motion.div>
+                <span className={`text-[10px] font-black tracking-wider transition-colors duration-300 ${isActive ? "text-[#c79d62]" : "text-slate-400 dark:text-slate-500"
+                  }`}>{step.num}</span>
+                <h3 className={`font-extrabold text-[9px] sm:text-[11px] tracking-widest uppercase transition-colors duration-300 mt-1 max-w-[90px] text-center ${isActive ? "text-[#210821] dark:text-[#c79d62]" : "text-slate-400 dark:text-slate-500 group-hover:text-[#c79d62]"
+                  }`}>{step.title}</h3>
+              </button>
+            );
+          })}
+        </div>
       </div>
 
       <div className="max-w-3xl mx-auto min-h-[140px] px-0">
@@ -347,14 +485,14 @@ export default function ServiceDetailPage() {
                 </p>
               </div>
               <div className="md:col-span-4 rounded-xl overflow-hidden h-24 sm:h-28 border border-slate-200/50 dark:border-slate-800">
-                <img 
+                <img
                   src={
                     activeStep === 0 ? "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=400&q=80" :
-                    activeStep === 1 ? "https://images.unsplash.com/photo-1450133064473-71024230f91b?auto=format&fit=crop&w=400&q=80" :
-                    activeStep === 2 ? "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=400&q=80" :
-                    "https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=400&q=80"
+                      activeStep === 1 ? "https://images.unsplash.com/photo-1450133064473-71024230f91b?auto=format&fit=crop&w=400&q=80" :
+                        activeStep === 2 ? "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=400&q=80" :
+                          "https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=400&q=80"
                   }
-                  alt="Stage Illustration" 
+                  alt="Stage Illustration"
                   className="w-full h-full object-cover"
                 />
               </div>
@@ -367,7 +505,7 @@ export default function ServiceDetailPage() {
 
   const renderDocumentChecklist = () => (
     checklist.length > 0 && (
-      <motion.div 
+      <motion.div
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
@@ -383,7 +521,7 @@ export default function ServiceDetailPage() {
               Select the documents you have on hand to verify your compliance readiness level:
             </p>
           </div>
-          
+
           <div className="flex items-center gap-3 bg-slate-50 dark:bg-slate-900/50 px-4 py-2.5 rounded-2xl border border-slate-200/50 dark:border-slate-800">
             <div className="relative w-10 h-10 flex items-center justify-center shrink-0">
               <svg className="w-full h-full transform -rotate-90" viewBox="0 0 36 36">
@@ -417,19 +555,141 @@ export default function ServiceDetailPage() {
               <button
                 key={idx}
                 onClick={() => toggleCheck(idx)}
-                className={`flex items-center gap-3.5 p-4 rounded-xl text-left border transition-all duration-300 cursor-pointer ${
-                  isChecked
-                    ? "bg-[#c79d62]/5 border-[#c79d62] text-[#c79d62] shadow-[0_4px_20px_rgba(199,157,98,0.05)]"
-                    : "bg-slate-50/50 dark:bg-slate-900/20 border-slate-200/60 dark:border-slate-800/60 text-slate-600 dark:text-slate-350 hover:bg-slate-50 dark:hover:bg-slate-900/40"
-                }`}
+                className={`flex items-center gap-3.5 p-4 rounded-xl text-left border transition-all duration-300 cursor-pointer ${isChecked
+                  ? "bg-[#c79d62]/5 border-[#c79d62] text-[#c79d62] shadow-[0_4px_20px_rgba(199,157,98,0.05)]"
+                  : "bg-slate-50/50 dark:bg-slate-900/20 border-slate-200/60 dark:border-slate-800/60 text-slate-600 dark:text-slate-350 hover:bg-slate-50 dark:hover:bg-slate-900/40"
+                  }`}
               >
-                <div className={`w-5 h-5 rounded-md flex items-center justify-center border shrink-0 transition-colors ${
-                  isChecked ? "bg-[#c79d62] border-[#c79d62] text-white" : "border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-950"
-                }`}>
+                <div className={`w-5 h-5 rounded-md flex items-center justify-center border shrink-0 transition-colors ${isChecked ? "bg-[#c79d62] border-[#c79d62] text-white" : "border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-950"
+                  }`}>
                   {isChecked && <Check className="w-3.5 h-3.5 stroke-[3]" />}
                 </div>
                 <span className="text-xs font-semibold leading-snug">{doc}</span>
               </button>
+            );
+          })}
+        </div>
+      </motion.div>
+    )
+  );
+
+  const renderDetailedSections = () => (
+    foundService!.sections && foundService!.sections.length > 0 && (
+      <div className="space-y-12 text-left relative pl-8 sm:pl-12 border-l-2 border-[#c79d62]/20 dark:border-slate-800 ml-4 py-4">
+        {/* Timeline Path Line */}
+        <div className="absolute left-[-2px] top-0 bottom-0 w-[2px] bg-gradient-to-b from-[#c79d62] via-[#c79d62]/50 to-transparent" />
+
+        {foundService!.sections.map((section, idx) => (
+          <motion.div
+            key={idx}
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: idx * 0.05 }}
+            className="relative group"
+          >
+            {/* Timeline Node Circle */}
+            <div className="absolute left-[-42px] sm:left-[-50px] top-4 w-6 h-6 rounded-full bg-white dark:bg-[#120412] border-4 border-[#c79d62]/30 group-hover:border-[#c79d62] flex items-center justify-center transition-all duration-300 shadow-sm z-10">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#c79d62] group-hover:scale-125 transition-transform" />
+            </div>
+
+            {/* Content Card */}
+            <div className="bg-white dark:bg-[#180618] border border-slate-200/60 dark:border-slate-800/60 rounded-3xl p-6 sm:p-8 shadow-sm hover:shadow-xl transition-all duration-300 hover:border-[#c79d62]/60 grid grid-cols-1 md:grid-cols-12 gap-6 items-center">
+              {/* Text Area */}
+              <div className="md:col-span-7 space-y-3">
+                <span className="text-[10px] font-black uppercase text-[#c79d62] tracking-widest">
+                  Phase 0{idx + 1}
+                </span>
+                <h4 className="text-base sm:text-lg font-black text-[#210821] dark:text-white group-hover:text-[#c79d62] transition-colors leading-tight">
+                  {section.title}
+                </h4>
+                <p className="text-xs sm:text-sm text-slate-550 dark:text-slate-400 leading-relaxed font-semibold">
+                  {section.content}
+                </p>
+              </div>
+
+              {/* Image Area */}
+              <div className="md:col-span-5 rounded-2xl overflow-hidden h-44 border border-slate-200/50 dark:border-slate-800 shadow-inner relative">
+                <img
+                  src={section.image}
+                  alt={section.title}
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-[#c79d62]/5 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none" />
+              </div>
+            </div>
+          </motion.div>
+        ))}
+      </div>
+    )
+  );
+
+  const renderFeatures = () => (
+    foundService!.features && foundService!.features.length > 0 && (
+      <motion.div
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+        className="bg-white dark:bg-[#180618] border border-slate-100 dark:border-slate-800 p-8 rounded-3xl shadow-sm text-left space-y-6"
+      >
+        <div className="border-b border-slate-100 dark:border-slate-800/80 pb-5">
+          <h3 className="text-lg font-black text-[#210821] dark:text-white tracking-tight flex items-center gap-2">
+            What Our Service Includes
+          </h3>
+          <p className="text-xs text-slate-400 mt-1">
+            We provide comprehensive assistance with the following:
+          </p>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          {foundService!.features.map((feat, idx) => (
+            <div key={idx} className="flex items-start gap-3 p-3 rounded-xl bg-slate-50/50 dark:bg-slate-900/10 border border-slate-200/40 dark:border-slate-800/40">
+              <Check className="w-4 h-4 text-[#c79d62] shrink-0 mt-0.5" />
+              <span className="text-xs font-semibold text-slate-700 dark:text-slate-300 leading-relaxed">{feat}</span>
+            </div>
+          ))}
+        </div>
+      </motion.div>
+    )
+  );
+
+  const renderFAQs = () => (
+    foundService!.faqs && foundService!.faqs.length > 0 && (
+      <motion.div
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+        className="bg-white dark:bg-[#180618] border border-slate-100 dark:border-slate-800 p-8 rounded-3xl shadow-sm space-y-6 text-left"
+      >
+        <div className="border-b border-slate-100 dark:border-slate-800/80 pb-5">
+          <h3 className="text-lg font-black text-[#210821] dark:text-white tracking-tight flex items-center gap-2">
+            Frequently Asked Questions
+          </h3>
+          <p className="text-xs text-slate-400 mt-1">
+            Common answers to registration, handover, and compliance policies:
+          </p>
+        </div>
+
+        <div className="space-y-4">
+          {foundService!.faqs.map((faq, idx) => {
+            const isOpen = activeFaq === idx;
+            return (
+              <div
+                key={idx}
+                className="border border-slate-200/60 dark:border-slate-800/60 rounded-2xl overflow-hidden bg-slate-50/50 dark:bg-slate-900/10"
+              >
+                <button
+                  onClick={() => setActiveFaq(isOpen ? null : idx)}
+                  className="w-full text-left p-5 flex items-center justify-between gap-4 font-bold text-sm text-[#210821] dark:text-white hover:bg-slate-100/50 dark:hover:bg-slate-900/20 transition-colors cursor-pointer"
+                >
+                  <span>{faq.question}</span>
+                  <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${isOpen ? "rotate-180" : ""}`} />
+                </button>
+                {isOpen && (
+                  <div className="p-5 border-t border-slate-200/60 dark:border-slate-800/60 bg-white dark:bg-[#1c081c] text-xs sm:text-sm text-slate-550 dark:text-slate-400 leading-relaxed font-semibold">
+                    {faq.answer}
+                  </div>
+                )}
+              </div>
             );
           })}
         </div>
@@ -448,6 +708,8 @@ export default function ServiceDetailPage() {
         return (
           <>
             {renderHeroHeader()}
+            {renderSubSubContent()}
+            {renderDetailedSections()}
             {renderComparisonMatrix("#c79d62")}
             {renderTimelineRoadmap()}
             {renderVisualDataChart(true)}
@@ -460,6 +722,8 @@ export default function ServiceDetailPage() {
         return (
           <>
             {renderHeroHeader()}
+            {renderSubSubContent()}
+            {renderDetailedSections()}
             {renderVisualDataChart(false)}
             {renderComparisonMatrix("#110311")}
             {renderDocumentChecklist()}
@@ -472,6 +736,8 @@ export default function ServiceDetailPage() {
         return (
           <>
             {renderHeroHeader()}
+            {renderSubSubContent()}
+            {renderDetailedSections()}
             {renderTimelineRoadmap()}
             {renderDocumentChecklist()}
             {renderVisualDataChart(true)}
@@ -486,6 +752,8 @@ export default function ServiceDetailPage() {
         return (
           <>
             {renderHeroHeader()}
+            {renderSubSubContent()}
+            {renderDetailedSections()}
             {renderComparisonMatrix("#c79d62")}
             {renderDocumentChecklist()}
             {renderVisualDataChart(false)}
@@ -498,56 +766,55 @@ export default function ServiceDetailPage() {
   return (
     <div className="bg-[#fcfcfc] dark:bg-[#120412] min-h-screen text-slate-800 dark:text-slate-200 transition-colors duration-300 py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
+
         {/* Content Layout Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start text-left">
-          
+
           {/* LEFT COLUMN - SERVICE CONTENT */}
           <div className="lg:col-span-9 space-y-12">
             {renderCategoryLayout()}
+            {renderFeatures()}
+            {renderFAQs()}
           </div>
 
           {/* RIGHT COLUMN - SIDEBAR WIDGETS (STICKY) */}
           <div className="lg:col-span-3 space-y-8 lg:sticky lg:top-28">
-            
+
             {/* Interactive Services Directory Tree with fixed inner scroll box */}
-            <div className="bg-white dark:bg-[#180618] border border-slate-200/60 dark:border-slate-800/60 rounded-2xl p-5 shadow-sm space-y-4">
-              <h4 className="text-xs font-black uppercase tracking-widest text-[#210821] dark:text-[#c79d62] border-b border-slate-100 dark:border-slate-800/50 pb-2">
+            <div className="bg-white dark:bg-[#180618] border border-slate-200/60 dark:border-slate-800/60 rounded-2xl p-6 shadow-sm space-y-5">
+              <h4 className="text-sm font-black uppercase tracking-widest text-[#210821] dark:text-[#c79d62] border-b border-slate-100 dark:border-slate-800/50 pb-2">
                 Services Directory
               </h4>
-              
-              {/* Box list height limit and scroll up effect within the box */}
-              <div className="max-h-[350px] overflow-y-auto pr-1 space-y-2.5 scrollbar-thin scrollbar-thumb-amber-500 scrollbar-track-transparent">
+
+              <div className="space-y-3 max-h-[calc(100vh-320px)] overflow-y-auto pr-1 scrollbar-thin scrollbar-thumb-amber-500 scrollbar-track-transparent">
                 {servicesData.map((tab) => {
                   const isCatOpen = openCategory === tab.id;
                   return (
-                    <div key={tab.id} className="space-y-1.5">
+                    <div key={tab.id} className="space-y-2">
                       <button
                         onClick={() => setOpenCategory(isCatOpen ? null : tab.id)}
-                        className={`w-full flex items-center justify-between text-[11px] font-black uppercase tracking-wider py-1.5 transition-colors text-left focus:outline-none cursor-pointer ${
-                          isCatOpen ? "text-[#c79d62]" : "text-slate-700 dark:text-slate-355 hover:text-[#c79d62]"
-                        }`}
+                        className={`w-full flex items-center justify-between text-[13px] font-black uppercase tracking-wider py-2 transition-colors text-left focus:outline-none cursor-pointer ${isCatOpen ? "text-[#c79d62]" : "text-slate-700 dark:text-slate-355 hover:text-[#c79d62]"
+                          }`}
                       >
                         <span>{tab.title}</span>
                         <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-200 ${isCatOpen ? "rotate-180" : ""}`} />
                       </button>
-                      
+
                       {isCatOpen && (
-                        <div className="pl-3 border-l border-slate-100 dark:border-slate-800/80 space-y-2 py-1">
+                        <div className="pl-3 border-l border-slate-100 dark:border-slate-800/80 space-y-2.5 py-1.5">
                           {tab.subServices.map((sub) => {
                             const isSubOpen = openSub === sub.id;
                             return (
-                              <div key={sub.id} className="space-y-1">
+                              <div key={sub.id} className="space-y-1.5">
                                 <button
                                   onClick={() => setOpenSub(isSubOpen ? null : sub.id)}
-                                  className={`w-full flex items-center justify-between text-[10px] font-extrabold py-1 transition-colors text-left focus:outline-none cursor-pointer ${
-                                    isSubOpen ? "text-[#c79d62]" : "text-slate-650 dark:text-slate-400 hover:text-[#c79d62]"
-                                  }`}
+                                  className={`w-full flex items-center justify-between text-[12px] font-extrabold py-1.5 transition-colors text-left focus:outline-none cursor-pointer ${isSubOpen ? "text-[#c79d62]" : "text-slate-650 dark:text-slate-400 hover:text-[#c79d62]"
+                                    }`}
                                 >
                                   <span>{sub.title}</span>
                                   <ChevronDown className={`w-3 h-3 transition-transform duration-200 ${isSubOpen ? "rotate-180" : ""}`} />
                                 </button>
-                                
+
                                 {isSubOpen && (
                                   <div className="pl-3 border-l border-[#c79d62]/30 space-y-1 py-1">
                                     {sub.subSubServices.map((subSub) => {
@@ -556,11 +823,10 @@ export default function ServiceDetailPage() {
                                         <Link
                                           key={subSub.slug}
                                           href={`/services/${subSub.slug}`}
-                                          className={`block text-[9px] font-bold py-1 transition-colors text-left ${
-                                            isCurrent
-                                              ? "text-[#c79d62] font-black"
-                                              : "text-slate-500 dark:text-slate-500 hover:text-[#c79d62]"
-                                          }`}
+                                          className={`block text-[11px] font-bold py-1 transition-colors text-left ${isCurrent
+                                            ? "text-[#c79d62] font-black"
+                                            : "text-slate-500 dark:text-slate-500 hover:text-[#c79d62]"
+                                            }`}
                                         >
                                           {subSub.title}
                                         </Link>

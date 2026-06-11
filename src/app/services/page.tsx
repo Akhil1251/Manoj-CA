@@ -62,6 +62,12 @@ export default function ServicesPage() {
               {currentTabData.title} offerings
             </h2>
 
+            {currentTabData.description && (
+              <p className="text-sm text-slate-500 dark:text-slate-400 mb-8 -mt-4 leading-relaxed max-w-3xl font-medium">
+                {currentTabData.description}
+              </p>
+            )}
+
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {currentTabData.subServices.map((subService) => {
                 const isExpanded = expandedSubService === subService.id;
