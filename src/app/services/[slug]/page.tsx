@@ -92,6 +92,13 @@ export default function ServiceDetailPage() {
   const checkedCount = Object.values(checkedDocs).filter(Boolean).length;
   const readinessPercentage = checklist.length > 0 ? Math.round((checkedCount / checklist.length) * 100) : 0;
 
+  const toggleCheck = (idx: number) => {
+    setCheckedDocs((prev) => ({
+      ...prev,
+      [idx]: !prev[idx],
+    }));
+  };
+
   const subSubCustomContent: Record<string, {
     title: string;
     summary: string;
