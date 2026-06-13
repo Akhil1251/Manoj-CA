@@ -72,11 +72,10 @@ export default function ServicesPage() {
               {currentTabData.subServices.map((subService) => {
                 const isExpanded = expandedSubService === subService.id;
                 return (
-                  <div
+                  <Link
                     key={subService.id}
-                    onMouseLeave={() => setExpandedSubService(null)}
-                    onClick={() => handleSubServiceClick(subService.id)}
-                    className="relative p-6 rounded-2xl bg-white dark:bg-[#180618] border border-slate-100 dark:border-slate-800/80 hover:shadow-md transition-all duration-300 flex flex-col justify-between cursor-pointer"
+                    href={`/services/${subService.id}`}
+                    className="relative p-6 rounded-2xl bg-white dark:bg-[#180618] border border-slate-100 dark:border-slate-800/80 hover:shadow-md hover:border-[#c79d62]/50 transition-all duration-300 flex flex-col justify-between cursor-pointer group"
                   >
                     <div>
                       {/* Badge and Title */}
@@ -87,25 +86,10 @@ export default function ServicesPage() {
                               {subService.badge}
                             </span>
                           )}
-                          <h3
-                            onMouseEnter={(e) => {
-                              e.stopPropagation();
-                              setExpandedSubService(subService.id);
-                            }}
-                            className="font-extrabold text-lg text-[#210821] dark:text-white leading-tight hover:text-[#c79d62] transition-colors"
-                          >
+                          <h3 className="font-extrabold text-lg text-[#210821] dark:text-white leading-tight group-hover:text-[#c79d62] transition-colors">
                             {subService.title}
                           </h3>
                         </div>
-                        {/* Price with Dotted Line Effect */}
-                        {subService.price && (
-                          <div className="flex items-center gap-2 flex-grow justify-end">
-                            <span className="hidden sm:inline border-b border-dotted border-slate-200 dark:border-slate-700 flex-grow max-w-[50px]"></span>
-                            <span className="text-[#c79d62] font-black text-sm shrink-0">
-                              {subService.price}
-                            </span>
-                          </div>
-                        )}
                       </div>
 
                       {/* Description */}
@@ -114,46 +98,13 @@ export default function ServicesPage() {
                       </p>
                     </div>
 
-                    {/* Expand/Collapse Button for dropdown list */}
                     <div className="border-t border-slate-100 dark:border-slate-800/60 pt-4 mt-auto">
-                      <button
-                        onClick={() => handleSubServiceClick(subService.id)}
-                        className="w-full flex items-center justify-between text-xs font-bold text-[#c79d62] hover:text-[#7f6642] transition-colors focus:outline-none"
-                      >
-                        <span>View Registered Programs ({subService.subSubServices.length})</span>
-                        <ChevronDown className={`w-4 h-4 transition-transform duration-300 ${isExpanded ? "rotate-180" : ""
-                          }`} />
-                      </button>
-
-                      {/* Dropdown Lists representing sub-sub-services (Positioned absolutely as overlay) */}
-                      <AnimatePresence initial={false}>
-                        {isExpanded && (
-                          <motion.div
-                            initial={{ height: 0, opacity: 0 }}
-                            animate={{ height: "auto", opacity: 1 }}
-                            exit={{ height: 0, opacity: 0 }}
-                            transition={{ duration: 0.2 }}
-                            className="absolute z-50 left-0 right-0 top-[95%] bg-white dark:bg-[#1f091f] border border-slate-200 dark:border-slate-800 shadow-2xl rounded-xl overflow-hidden text-left"
-                          >
-                            <div className="py-2.5 px-3.5 space-y-1.5">
-                              {subService.subSubServices.map((subSub) => (
-                                <Link
-                                  key={subSub.slug}
-                                  href={`/services/${subSub.slug}`}
-                                  className="group/item flex items-center justify-between py-2 px-2.5 text-xs text-slate-600 dark:text-white hover:text-[#c79d62] dark:hover:text-[#c79d62] hover:bg-slate-50 dark:hover:bg-[#120412] rounded-lg transition-all"
-                                >
-                                  <span className="font-semibold transition-colors group-hover/item:translate-x-0.5">
-                                    {subSub.title}
-                                  </span>
-                                  <ChevronRight className="w-3.5 h-3.5 opacity-0 group-hover/item:opacity-100 transition-all text-[#c79d62]" />
-                                </Link>
-                              ))}
-                            </div>
-                          </motion.div>
-                        )}
-                      </AnimatePresence>
+                      <div className="w-full flex items-center justify-between text-xs font-bold text-[#c79d62] transition-colors">
+                        <span>Read More</span>
+                        <ChevronRight className="w-4 h-4 opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all duration-300" />
+                      </div>
                     </div>
-                  </div>
+                  </Link>
                 );
               })}
             </div>

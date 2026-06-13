@@ -82,7 +82,7 @@ export default function ContactPage() {
                     value={formData.phone}
                     onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                     className="w-full h-11 px-3.5 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 text-sm focus:ring-1 focus:ring-amber-500 outline-none"
-                    placeholder="+91 98765 XXXXX"
+                    placeholder="+91 90761 XXXXX"
                   />
                 </div>
                 <div>
@@ -174,7 +174,7 @@ export default function ContactPage() {
                 <strong className="block text-slate-700 dark:text-slate-350 font-bold mb-1">
                   Mumbai Headquarters
                 </strong>
-                Suite 402, FinHeights Plaza, Bandra Kurla Complex (BKC), Mumbai, 400051, India
+                Hubtown Solaris one, Unit-1205, Andheri (E), Mumbai-400069
               </div>
             </div>
             <div className="flex gap-4 items-start text-xs sm:text-sm text-slate-500 dark:text-slate-400">
@@ -183,7 +183,7 @@ export default function ContactPage() {
                 <strong className="block text-slate-700 dark:text-slate-350 font-bold mb-1">
                   Client Support & Inquiries
                 </strong>
-                advisor@manojca.com
+                <a href="mailto:info@consultavenuee.com" className="hover:text-amber-500 transition-colors">info@consultavenuee.com</a>
               </div>
             </div>
             <div className="flex gap-4 items-start text-xs sm:text-sm text-slate-500 dark:text-slate-400">
@@ -192,7 +192,7 @@ export default function ContactPage() {
                 <strong className="block text-slate-700 dark:text-slate-350 font-bold mb-1">
                   Direct Line
                 </strong>
-                +91 98765 43210
+                <a href="tel:+919076111021" className="hover:text-amber-500 transition-colors">9076111021</a> / <a href="tel:+919076111813" className="hover:text-amber-500 transition-colors">9076111813</a>
               </div>
             </div>
           </div>
@@ -217,10 +217,10 @@ export default function ContactPage() {
             <div className="text-center z-10 p-4">
               <Landmark className="h-8 w-8 text-amber-500 mx-auto mb-2 animate-float" />
               <span className="text-xs font-bold text-slate-700 dark:text-slate-300 block">
-                Bandra Kurla Complex Map Grid
+                Andheri (E) Map Grid
               </span>
               <span className="text-[10px] text-slate-400 dark:text-slate-500 mt-1 block">
-                GPS: 19.0607Â° N, 72.8634Â° E
+                GPS: 19.1171° N, 72.8503° E
               </span>
             </div>
           </div>

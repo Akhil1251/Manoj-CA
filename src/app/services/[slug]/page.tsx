@@ -28,7 +28,7 @@ export default function ServiceDetailPage() {
   const router = useRouter();
   const slug = params?.slug as string;
 
-  // Search for the sub-sub-service in the database
+  // Search for the service in the database
   let foundService: SubSubService | null = null;
   let parentCategoryTitle = "";
   let parentCategoryId = "";
@@ -37,7 +37,45 @@ export default function ServiceDetailPage() {
 
   for (const tab of servicesData) {
     for (const sub of tab.subServices) {
-      const match = sub.subSubServices.find((s) => s.slug === slug);
+      if (sub.id === slug) {
+        // Treat the subService as the single page and combine its subSubServices
+        const combinedSections: any[] = sub.sections ? [...sub.sections] : [];
+        const combinedFeatures: any[] = sub.features ? [...sub.features] : [];
+        const combinedChecklist: any[] = sub.checklist ? [...sub.checklist] : [];
+
+        if (sub.subSubServices) {
+          sub.subSubServices.forEach(sss => {
+            if (sss.sections) combinedSections.push(...sss.sections);
+            if (sss.features) combinedFeatures.push(...sss.features);
+            if (sss.checklist) combinedChecklist.push(...sss.checklist);
+          });
+        }
+
+        // Use the first subSubService for chartData, timeline, etc. if available
+        const firstSSS = sub.subSubServices ? (sub.subSubServices[0] || {} as any) : {} as any;
+
+        foundService = {
+          slug: sub.id,
+          title: sub.title,
+          shortDesc: sub.description,
+          longDesc: sub.longDesc || (firstSSS.shortDesc ? `${firstSSS.shortDesc}\n\n${firstSSS.longDesc}` : sub.description),
+          image: firstSSS.image || "",
+          timelineSteps: firstSSS.timelineSteps || [],
+          sections: combinedSections,
+          comparison: firstSSS.comparison || [],
+          checklist: combinedChecklist,
+          chartData: sub.chartData || firstSSS.chartData || [],
+          faqs: sub.faqs || firstSSS.faqs || [],
+          features: combinedFeatures
+        };
+        parentCategoryTitle = tab.title;
+        parentCategoryId = tab.id;
+        parentSubId = sub.id;
+        parentSubService = sub;
+        break;
+      }
+
+      const match = sub.subSubServices ? sub.subSubServices.find((s) => s.slug === slug) : null;
       if (match) {
         foundService = match;
         parentCategoryTitle = tab.title;
@@ -259,18 +297,33 @@ export default function ServiceDetailPage() {
       initial={{ opacity: 0, y: 10 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
-      className="py-6 flex flex-col justify-center text-left space-y-3 sm:space-y-4"
+      className="py-6 flex flex-col justify-center text-center space-y-3 sm:space-y-4 items-center"
     >
-      <div className="flex flex-col justify-center space-y-3 sm:space-y-4">
-        <span className="text-xs font-black uppercase text-[#c79d62] tracking-widest bg-[#c79d62]/10 backdrop-blur-md px-3.5 py-1.5 rounded-full self-start border border-[#c79d62]/30">
+      <div className="flex flex-col justify-center items-center space-y-3 sm:space-y-4 max-w-4xl mx-auto">
+        <Link href="/services" className="text-base sm:text-lg font-black uppercase text-[#c79d62] tracking-widest hover:text-[#e0b576] transition-colors">
           {parentCategoryTitle}
-        </span>
-        <h1 className="text-xl sm:text-3.5xl font-black text-[#210821] dark:text-white tracking-tight leading-tight max-w-none">
-          {parentSubService ? parentSubService.title : foundService!.title}
-        </h1>
-        <p className="text-sm sm:text-base text-slate-550 dark:text-slate-400 leading-relaxed font-medium max-w-none whitespace-pre-line text-justify">
-          {parentSubService ? parentSubService.description : foundService!.shortDesc}
-        </p>
+        </Link>
+        {parentCategoryId === "society-management" ? (
+          <>
+            <h1 className="text-xl sm:text-3.5xl font-black text-[#210821] dark:text-white tracking-tight leading-tight max-w-none">
+              Your Trusted Partner for Housing Society Management & Compliance
+            </h1>
+            <p className="text-sm sm:text-base text-slate-550 dark:text-slate-400 leading-relaxed font-medium max-w-none whitespace-pre-line text-center">
+              Focus on your community while we handle society compliance, governance, taxation, audits, documentation, and regulatory requirements with professional expertise.
+            </p>
+          </>
+        ) : (
+          <div className="w-full flex flex-col space-y-4 text-left">
+            <h1 className="text-xl sm:text-3.5xl font-black text-[#210821] dark:text-white tracking-tight leading-tight max-w-none">
+              {parentSubService ? parentSubService.title : foundService!.title}
+            </h1>
+            <div className="w-full text-left">
+              <p className="text-sm sm:text-base text-slate-655 dark:text-slate-400 leading-relaxed font-semibold max-w-none whitespace-pre-line">
+                {parentSubService ? parentSubService.description : ('description' in foundService! ? foundService.description : foundService.shortDesc)}
+              </p>
+            </div>
+          </div>
+        )}
       </div>
     </motion.div>
   );
@@ -580,59 +633,121 @@ export default function ServiceDetailPage() {
     )
   );
 
-  const renderDetailedSections = () => (
-    foundService!.sections && foundService!.sections.length > 0 && (
-      <div className="space-y-12 text-left relative pl-8 sm:pl-12 border-l-2 border-[#c79d62]/20 dark:border-slate-800 ml-4 py-4">
-        {/* Timeline Path Line */}
-        <div className="absolute left-[-2px] top-0 bottom-0 w-[2px] bg-gradient-to-b from-[#c79d62] via-[#c79d62]/50 to-transparent" />
+  const renderDetailedSections = () => {
+    const isGrouped = parentCategoryId === "society-management" && parentSubService?.subSubServices;
 
-        {foundService!.sections.map((section, idx) => (
-          <motion.div
-            key={idx}
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: idx * 0.05 }}
-            className="relative group"
-          >
-            {/* Timeline Node Circle */}
-            <div className="absolute left-[-42px] sm:left-[-50px] top-4 w-6 h-6 rounded-full bg-white dark:bg-[#120412] border-4 border-[#c79d62]/30 group-hover:border-[#c79d62] flex items-center justify-center transition-all duration-300 shadow-sm z-10">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#c79d62] group-hover:scale-125 transition-transform" />
-            </div>
+    return (
+      <div className="space-y-16">
+        {isGrouped ? (
+          parentSubService.subSubServices.map((subSub: any, groupIdx: number) => {
+            return (
+              <div key={groupIdx} id={subSub.slug} className="space-y-8 scroll-mt-24">
+                {/* Heading for this sub-service group */}
+                <div className="border-b border-slate-200 dark:border-slate-800/80 pb-3 text-left">
+                  <h3 className="text-xl sm:text-2xl font-black text-[#210821] dark:text-white tracking-tight">
+                    {subSub.title}
+                  </h3>
+                  {subSub.shortDesc && (
+                    <p className="text-sm text-slate-550 dark:text-slate-400 font-semibold mt-1">
+                      {subSub.shortDesc}
+                    </p>
+                  )}
+                </div>
 
-            {/* Content Card */}
-            <div className="bg-white dark:bg-[#180618] border border-slate-200/60 dark:border-slate-800/60 rounded-3xl p-6 sm:p-8 shadow-sm hover:shadow-xl transition-all duration-300 hover:border-[#c79d62]/60 grid grid-cols-1 md:grid-cols-12 gap-6 items-center">
-              {/* Text Area */}
-              <div className="md:col-span-7 space-y-3">
-                <span className="text-[10px] font-black uppercase text-[#c79d62] tracking-widest">
-                  Phase 0{idx + 1}
-                </span>
-                <h4 className="text-base sm:text-lg font-black text-[#210821] dark:text-white group-hover:text-[#c79d62] transition-colors leading-tight">
-                  {section.title}
-                </h4>
-                <p className="text-xs sm:text-sm text-slate-550 dark:text-slate-400 leading-relaxed font-semibold">
-                  {section.content}
-                </p>
+                <div className="space-y-3 text-left relative pl-8 sm:pl-12 ml-4 py-4">
+                  <motion.div
+                    initial={{ scaleY: 0 }}
+                    whileInView={{ scaleY: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 1.5, ease: "easeInOut" }}
+                    className="absolute left-0 top-10 bottom-12 w-[2px] bg-gradient-to-b from-[#c79d62] via-[#c79d62]/50 to-transparent origin-top"
+                  />
+                  {subSub.sections.map((section: any, idx: number) => (
+                    <motion.div
+                      key={idx}
+                      initial={{ opacity: 0, x: -20 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.5, delay: idx * 0.1 }}
+                      className="relative group"
+                    >
+                      <div className="absolute left-[-43px] sm:left-[-59px] top-3 w-6 h-6 rounded-full bg-white dark:bg-[#120412] border-4 border-[#c79d62]/30 group-hover:border-[#c79d62] flex items-center justify-center transition-all duration-300 shadow-sm z-10">
+                        <span className="w-1.5 h-1.5 rounded-full bg-[#c79d62] group-hover:scale-125 transition-transform" />
+                      </div>
+                      <div className="bg-white dark:bg-[#180618] border border-slate-200/60 dark:border-slate-800/60 rounded-2xl p-4 shadow-sm hover:shadow-xl transition-all duration-300 hover:border-[#c79d62]/60">
+                        <div className="space-y-2">
+                          <span className="text-[10px] font-black uppercase text-[#c79d62] tracking-widest">
+                            Phase 0{idx + 1}
+                          </span>
+                          <h4 className="text-sm sm:text-base font-black text-[#210821] dark:text-white group-hover:text-[#c79d62] transition-colors leading-tight">
+                            {section.title}
+                          </h4>
+                          {section.content && (
+                            <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-350 leading-relaxed font-semibold whitespace-pre-line mt-1">
+                              {section.content}
+                            </p>
+                          )}
+                        </div>
+                      </div>
+                    </motion.div>
+                  ))}
+                </div>
               </div>
-
-              {/* Image Area */}
-              <div className="md:col-span-5 rounded-2xl overflow-hidden h-44 border border-slate-200/50 dark:border-slate-800 shadow-inner relative">
-                <img
-                  src={section.image}
-                  alt={section.title}
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-[#c79d62]/5 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none" />
-              </div>
+            );
+          })
+        ) : (
+          foundService!.sections && foundService!.sections.length > 0 && (
+            <div className="space-y-3 text-left relative pl-8 sm:pl-12 ml-4 py-4 mt-6">
+              <motion.div
+                initial={{ scaleY: 0 }}
+                whileInView={{ scaleY: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 1.5, ease: "easeInOut" }}
+                className="absolute left-0 top-10 bottom-12 w-[2px] bg-gradient-to-b from-[#c79d62] via-[#c79d62]/50 to-transparent origin-top"
+              />
+              {foundService!.sections.map((section: any, idx: number) => (
+                <motion.div
+                  key={idx}
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: idx * 0.1 }}
+                  className="relative group"
+                >
+                  <div className="absolute left-[-43px] sm:left-[-59px] top-3 w-6 h-6 rounded-full bg-white dark:bg-[#120412] border-4 border-[#c79d62]/30 group-hover:border-[#c79d62] flex items-center justify-center transition-all duration-300 shadow-sm z-10">
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#c79d62] group-hover:scale-125 transition-transform" />
+                  </div>
+                  <div className="bg-white dark:bg-[#180618] border border-slate-200/60 dark:border-slate-800/60 rounded-2xl p-4 shadow-sm hover:shadow-xl transition-all duration-300 hover:border-[#c79d62]/60">
+                    <div className="space-y-2">
+                      <span className="text-[10px] font-black uppercase text-[#c79d62] tracking-widest">
+                        Phase 0{idx + 1}
+                      </span>
+                      <h4 className="text-sm sm:text-base font-black text-[#210821] dark:text-white group-hover:text-[#c79d62] transition-colors leading-tight">
+                        {section.title}
+                      </h4>
+                      {section.content && (
+                        <div className="text-xs sm:text-sm text-slate-600 dark:text-slate-350 leading-relaxed font-semibold mt-1">
+                          {renderFormattedText(section.content)}
+                        </div>
+                      )}
+                    </div>
+                  </div>
+                </motion.div>
+              ))}
             </div>
-          </motion.div>
-        ))}
+          )
+        )}
       </div>
-    )
-  );
+    );
+  };
 
-  const renderFeatures = () => (
-    foundService!.features && foundService!.features.length > 0 && (
+  const renderFeatures = () => {
+    const isGrouped = parentCategoryId === "society-management" && parentSubService?.subSubServices;
+
+    if (isGrouped) return null;
+    if (!foundService!.features || foundService!.features.length === 0) return null;
+
+    return (
       <motion.div
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
@@ -641,23 +756,44 @@ export default function ServiceDetailPage() {
       >
         <div className="border-b border-slate-100 dark:border-slate-800/80 pb-5">
           <h3 className="text-lg font-black text-[#210821] dark:text-white tracking-tight flex items-center gap-2">
-            What Our Service Includes
+            Our Services Include
           </h3>
-          <p className="text-xs text-slate-400 mt-1">
-            We provide comprehensive assistance with the following:
-          </p>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          {foundService!.features.map((feat, idx) => (
-            <div key={idx} className="flex items-start gap-3 p-3 rounded-xl bg-slate-50/50 dark:bg-slate-900/10 border border-slate-200/40 dark:border-slate-800/40">
-              <Check className="w-4 h-4 text-[#c79d62] shrink-0 mt-0.5" />
-              <span className="text-xs font-semibold text-slate-700 dark:text-slate-300 leading-relaxed">{feat}</span>
+
+        <div className="space-y-8">
+          {isGrouped ? (
+            parentSubService.subSubServices.map((subSub: any, groupIdx: number) => {
+              if (!subSub.features || subSub.features.length === 0) return null;
+              return (
+                <div key={groupIdx} className="space-y-4">
+                  <h4 className="text-base font-extrabold text-[#210821] dark:text-white border-l-4 border-[#c79d62] pl-3">
+                    {subSub.title}
+                  </h4>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    {subSub.features.map((feat: string, idx: number) => (
+                      <div key={idx} className="flex items-start gap-3 p-3 rounded-xl bg-slate-50/50 dark:bg-slate-900/10 border border-slate-200/40 dark:border-slate-800/40">
+                        <Check className="w-4 h-4 text-[#c79d62] shrink-0 mt-0.5" />
+                        <span className="text-xs font-semibold text-slate-700 dark:text-slate-300 leading-relaxed">{feat}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              );
+            })
+          ) : (
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              {foundService!.features?.map((feat, idx) => (
+                <div key={idx} className="flex items-start gap-3 p-3 rounded-xl bg-slate-50/50 dark:bg-slate-900/10 border border-slate-200/40 dark:border-slate-800/40">
+                  <Check className="w-4 h-4 text-[#c79d62] shrink-0 mt-0.5" />
+                  <span className="text-xs font-semibold text-slate-700 dark:text-slate-300 leading-relaxed">{feat}</span>
+                </div>
+              ))}
             </div>
-          ))}
+          )}
         </div>
       </motion.div>
-    )
-  );
+    );
+  };
 
   const renderFAQs = () => (
     foundService!.faqs && foundService!.faqs.length > 0 && (
@@ -704,23 +840,52 @@ export default function ServiceDetailPage() {
     )
   );
 
-  // ----------------------------------------------------
-  // RENDER DYNAMIC LAYOUT CATEGORIES
-  // ----------------------------------------------------
+  const renderFormattedText = (text: string) => {
+    return text.split('\n').map((line, idx) => {
+      if (line.trim() === '') return <br key={idx} />;
+      if (line.startsWith('### ')) {
+        return (
+          <h3 key={idx} className="text-lg sm:text-xl font-extrabold text-[#210821] dark:text-white tracking-tight mt-6 mb-2">
+            {line.replace('### ', '')}
+          </h3>
+        );
+      }
+      
+      const parts = line.split(/(\*\*.*?\*\*)/g);
+      return (
+        <p key={idx} className="text-sm sm:text-base text-slate-550 dark:text-slate-400 font-medium leading-relaxed text-left">
+          {parts.map((part, pIdx) => {
+            if (part.startsWith('**') && part.endsWith('**')) {
+              return <strong key={pIdx} className="font-extrabold text-[#210821] dark:text-white">{part.slice(2, -2)}</strong>;
+            }
+            return part;
+          })}
+        </p>
+      );
+    });
+  };
 
   const renderCategoryLayout = () => {
     switch (parentCategoryId) {
       // 1. Housing Society Management -> Layout Type A
       case "society-management":
+        const isGroupedLayout = parentSubService && parentSubService.subSubServices && parentSubService.subSubServices.length > 0;
         return (
           <>
             {renderHeroHeader()}
-            {renderSubSubContent()}
+            {isGroupedLayout ? renderSubSubContent() : (
+              <div className="max-w-4xl mx-auto px-4 sm:px-6 mt-12 mb-12 flex flex-col space-y-4 text-left">
+                <h2 className="text-2xl sm:text-3xl font-black text-[#210821] dark:text-white tracking-tight leading-tight mb-2">
+                  {foundService!.title}
+                </h2>
+                {foundService!.longDesc && (
+                  <div className="text-left w-full space-y-1">
+                    {renderFormattedText(foundService!.longDesc)}
+                  </div>
+                )}
+              </div>
+            )}
             {renderDetailedSections()}
-            {renderComparisonMatrix("#c79d62")}
-            {renderTimelineRoadmap()}
-            {renderVisualDataChart(true)}
-            {renderDocumentChecklist()}
           </>
         );
 
@@ -798,14 +963,17 @@ export default function ServiceDetailPage() {
                   const isCatOpen = openCategory === tab.id;
                   return (
                     <div key={tab.id} className="space-y-2">
-                      <button
-                        onClick={() => setOpenCategory(isCatOpen ? null : tab.id)}
-                        className={`w-full flex items-center justify-between text-[13px] font-black uppercase tracking-wider py-2 transition-colors text-left focus:outline-none cursor-pointer ${isCatOpen ? "text-[#c79d62]" : "text-slate-700 dark:text-slate-355 hover:text-[#c79d62]"
-                          }`}
-                      >
-                        <span>{tab.title}</span>
-                        <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-200 ${isCatOpen ? "rotate-180" : ""}`} />
-                      </button>
+                      <div className="w-full flex items-center justify-between text-[13px] font-black uppercase tracking-wider py-2 transition-colors text-left">
+                        <Link href="/services" className={`flex-grow ${isCatOpen ? "text-[#c79d62]" : "text-slate-700 dark:text-slate-355 hover:text-[#c79d62]"}`}>
+                          {tab.title}
+                        </Link>
+                        <button
+                          onClick={() => setOpenCategory(isCatOpen ? null : tab.id)}
+                          className={`p-1 focus:outline-none cursor-pointer ${isCatOpen ? "text-[#c79d62]" : "text-slate-700 dark:text-slate-355 hover:text-[#c79d62]"}`}
+                        >
+                          <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-200 ${isCatOpen ? "rotate-180" : ""}`} />
+                        </button>
+                      </div>
 
                       {isCatOpen && (
                         <div className="pl-3 border-l border-slate-100 dark:border-slate-800/80 space-y-2.5 py-1.5">
@@ -813,34 +981,12 @@ export default function ServiceDetailPage() {
                             const isSubOpen = openSub === sub.id;
                             return (
                               <div key={sub.id} className="space-y-1.5">
-                                <button
-                                  onClick={() => setOpenSub(isSubOpen ? null : sub.id)}
-                                  className={`w-full flex items-center justify-between text-[12px] font-extrabold py-1.5 transition-colors text-left focus:outline-none cursor-pointer ${isSubOpen ? "text-[#c79d62]" : "text-slate-650 dark:text-slate-400 hover:text-[#c79d62]"
-                                    }`}
+                                <Link
+                                  href={`/services/${sub.id}`}
+                                  className={`w-full flex items-center justify-between text-[12px] font-extrabold py-1.5 transition-colors text-left focus:outline-none cursor-pointer ${sub.id === slug || (parentSubService && parentSubService.id === sub.id) ? "text-[#c79d62]" : "text-slate-650 dark:text-slate-400 hover:text-[#c79d62]"}`}
                                 >
                                   <span>{sub.title}</span>
-                                  <ChevronDown className={`w-3 h-3 transition-transform duration-200 ${isSubOpen ? "rotate-180" : ""}`} />
-                                </button>
-
-                                {isSubOpen && (
-                                  <div className="pl-3 border-l border-[#c79d62]/30 space-y-1 py-1">
-                                    {sub.subSubServices.map((subSub) => {
-                                      const isCurrent = subSub.slug === slug;
-                                      return (
-                                        <Link
-                                          key={subSub.slug}
-                                          href={`/services/${subSub.slug}`}
-                                          className={`block text-[11px] font-bold py-1 transition-colors text-left ${isCurrent
-                                            ? "text-[#c79d62] font-black"
-                                            : "text-slate-500 dark:text-slate-500 hover:text-[#c79d62]"
-                                            }`}
-                                        >
-                                          {subSub.title}
-                                        </Link>
-                                      );
-                                    })}
-                                  </div>
-                                )}
+                                </Link>
                               </div>
                             );
                           })}

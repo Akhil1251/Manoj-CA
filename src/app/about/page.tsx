@@ -1,344 +1,158 @@
-﻿"use client";
+"use client";
 
 import React from "react";
-import { useApp } from "@/context/AppContext";
-import { 
-  ShieldCheck, 
-  Target, 
-  HeartHandshake, 
-  Briefcase, 
-  Building, 
-  Globe, 
-  Users,
-  CheckCircle2,
-  TrendingUp,
-  Award
-} from "lucide-react";
-import { motion } from "framer-motion";
-import Link from "next/link";
 
 export default function AboutPage() {
-  const { t } = useApp();
-
-  const values = [
+  const sections = [
     {
-      title: "Our Mission",
-      desc: "To be a trusted partner in our clients' growth journey by delivering high-quality advisory, compliance, taxation, and business support services. We strive to provide innovative, practical, and cost-effective solutions while upholding the highest standards of professionalism, ethics, and integrity.",
-      icon: Target,
-      color: "text-blue-500",
-      bg: "bg-blue-500/10"
+      title: "Who we are?",
+      content: (
+        <>
+          <p className="mb-3">
+            ConsultAvenuee is a "Business Advisory, Compliance & Growth Partner" serving Startups, SMEs, Corporates, NRIs, Housing Societies, and Senior Citizens. Backed by a team of experienced Chartered Accountants, Company Secretaries, Legal Professionals, and Business Advisors, we provide comprehensive solutions that help businesses start, grow, and remain compliant.
+          </p>
+          <p className="mb-3">
+            Founded with the vision of making professional advisory services accessible and affordable, we act as your trusted Advisor and Compliance Partner, delivering personalized solutions tailored to your unique business requirements.
+          </p>
+          <p>
+            At ConsultAvenuee, we believe in building long-term relationships. Our success is closely linked to the success of our clients, and we are committed to creating lasting value through trusted partnerships.
+          </p>
+        </>
+      ),
+      // Team meeting / Advisory
+      image: "https://images.unsplash.com/photo-1556761175-4b46a572b786?auto=format&fit=crop&w=800&q=80"
     },
     {
-      title: "Our Vision",
-      desc: "To be the preferred business advisory and compliance platform for entrepreneurs, SMEs, corporates, housing societies, and individuals by delivering trusted expertise, innovative solutions, and long-term value creation.",
-      icon: Globe,
-      color: "text-amber-500",
-      bg: "bg-amber-500/10"
+      title: "What We do.",
+      content: (
+        <>
+          <p className="mb-3">We offer a comprehensive range of advisory, compliance, taxation, and business support services, including:</p>
+          <ol className="list-decimal pl-5 mb-3 space-y-1 font-medium text-slate-700 dark:text-slate-200">
+            <li>Housing Society Management & Compliance</li>
+            <li>NRI SERVICES</li>
+            <li>Senior Citizen Advisory Services</li>
+            <li>Compliance & Business Advisory</li>
+            <li>Taxation, Regulatory compliances & Litigation</li>
+          </ol>
+          <p>Our objective is to simplify business operations by providing end-to-end professional support through a single, reliable platform.</p>
+        </>
+      ),
+      // Calculator and Financial Documents
+      image: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=800&q=80"
     },
     {
-      title: "Our Values",
-      desc: "We are committed to maintaining integrity in our efforts, excellence in our services, and fulfilling our commitments to our clients. We adhere to the philosophy of mutual respect in all our dealings with clients and stakeholders.",
-      icon: HeartHandshake,
-      color: "text-rose-500",
-      bg: "bg-rose-500/10"
-    }
-  ];
-
-  const whatWeDo = [
-    "Business Registrations",
-    "Cooperative Housing Society Management & Compliance",
-    "Taxation & GST",
-    "Corporate Compliance & Secretarial Services",
-    "Government Registrations",
-    "HR & Labour Law Compliances",
-    "Senior Citizen Advisory Services",
-    "NRI Services",
-    "Virtual CFO (vCFO) Services"
-  ];
-
-  const whyChooseUs = [
-    "Experienced Team of Professionals",
-    "Personalized Advisory Approach",
-    "Dedicated Professional Support",
-    "Cost-Effective Solutions",
-    "Timely Compliance Management",
-    "End-to-End Business Support",
-    "Transparent & Ethical Practices",
-    "Strong Governance Focus"
-  ];
-
-  const team = [
-    {
-      name: "Shobhit Gupta",
-      credentials: "CA, CMA (USA)",
-      role: "Taxation & Advisory Professional",
-      desc: "Over 15 years of post-qualification experience in domestic and international taxation. Having worked with EY and multinational organizations across Europe, the Middle East, North Africa, and Asia-Pacific, he brings a strong global perspective to tax and business advisory services including Corporate Tax, Transfer Pricing, and BEPS.",
-      exp: "15+ Years"
+      title: "Why to Choose Us?",
+      content: (
+        <>
+          <ul className="list-disc pl-5 mb-3 space-y-1 font-medium text-slate-700 dark:text-slate-200">
+            <li>Experienced Team of Professionals</li>
+            <li>Personalized Advisory Approach</li>
+            <li>Dedicated Professional Support</li>
+            <li>Cost-Effective Solutions</li>
+            <li>Timely Compliance Management</li>
+            <li>End-to-End Business Support</li>
+          </ul>
+          <p>Our professionals work closely with clients to understand their requirements and deliver practical, business-oriented solutions that create measurable value.</p>
+        </>
+      ),
+      // Business Consulting Meeting
+      image: "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=800&q=80"
     },
     {
-      name: "Pradosh Kumar Roy",
-      credentials: "CA (Inter), PGDFM, DIM",
-      role: "Finance, Taxation & Compliance Advisor",
-      desc: "Over 25 years of experience in accounting, taxation, statutory compliance, and business advisory. He possesses extensive expertise in GST, Income Tax, EPFO, ESIC, and MCA compliances, helping businesses strengthen governance and improve operational efficiency.",
-      exp: "25+ Years"
+      title: "Why Clients Trust Us",
+      content: (
+        <>
+          <ul className="list-disc pl-5 mb-3 space-y-1 font-medium text-slate-700 dark:text-slate-200">
+            <li>Client-Centric Approach</li>
+            <li>Transparent & Ethical Practices</li>
+            <li>Cost & Time Efficiency</li>
+            <li>Continuous Professional Support</li>
+            <li>Expertise Across Industries</li>
+            <li>Strong Governance & Compliance Focus</li>
+          </ul>
+          <p>ConsultAvenuee is a complete end to end solutions provider and is professionally managed. This platform represents a combination of specialized skills, which are geared to offer quality advisory services and personalized proactive services. The Professionals associates at Consultavenuee.com adopt a customer-centric approach which helps to understand the exact client requirements and providing them with the most effective solutions</p>
+        </>
+      ),
+      // Financial Analysis on Laptop
+      image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=800&q=80"
     },
     {
-      name: "Asim Bhaumick",
-      credentials: "M. Com, ICWAI, PGDFM, DIM",
-      role: "Labour Law & Statutory Compliance Advisor",
-      desc: "Over 25 years of experience in Accounting, Taxation, Labour Laws, and Statutory Compliance. He provides advisory services enabling businesses in Education, Healthcare, Hospitality, and Travel sectors to operate efficiently while maintaining strong governance standards.",
-      exp: "25+ Years"
+      title: "OUR MISSION",
+      content: (
+        <p>To be a trusted partner in our clients' growth journey by delivering high-quality advisory, compliance, taxation, and business support services. We strive to provide innovative, practical, and cost-effective solutions while upholding the highest standards of professionalism, ethics, and integrity</p>
+      ),
+      // Digital charts / Business growth
+      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80"
     },
     {
-      name: "Sudhir Gupta",
-      credentials: "B. Com, G.D.C.A.",
-      role: "Co-operative Housing Society Advisor",
-      desc: "Over 16 years of experience in society formation, handover processes, governance, elections, deemed conveyance, and redevelopment matters. He provides practical guidance to help housing societies strengthen governance and ensure regulatory compliance.",
-      exp: "16+ Years"
+      title: "OUR VISION",
+      content: (
+        <p>To be the preferred business advisory and compliance platform for entrepreneurs, SMEs, corporates, housing societies, and individuals by delivering trusted expertise, innovative solutions, and long-term value creation.</p>
+      ),
+      // Modern Corporate Building
+      image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=800&q=80"
     },
     {
-      name: "Gauri Ghadi",
-      credentials: "B. Com",
-      role: "Accounts & Taxation Professional",
-      desc: "Over 10 years of expertise in accounting, financial reporting, GST and TDS compliance, and Income Tax Return filing. Her commitment to accuracy and timely execution helps clients maintain strong financial and regulatory compliance standards.",
-      exp: "10+ Years"
+      title: "OUR VALUES",
+      content: (
+        <p>We are committed in maintaining integrity in our efforts, excellence in our services, commitments to our clients and Committed to the philosophy of mutual respect in all our dealings with clients, and all our stakeholders.</p>
+      ),
+      // Team hands stacked (Unity/Integrity)
+      image: "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=800&q=80"
     }
   ];
 
   return (
-    <div className="w-full">
-      {/* 1. HERO SECTION */}
-      <section className="relative py-20 lg:py-28 overflow-hidden bg-slate-50 dark:bg-slate-900 border-b border-slate-200/50 dark:border-slate-800/50">
-        <div className="absolute inset-0 z-0">
-          <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-amber-500/10 rounded-full blur-3xl" />
-          <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-blue-500/10 rounded-full blur-3xl" />
-        </div>
+    <div className="w-full bg-[#f8f9fa] dark:bg-slate-950 min-h-screen pb-24">
+      {/* HEADER SECTION */}
+      <div className="text-center pt-12 pb-12 px-4">
+        <h3 className="text-amber-600 font-bold tracking-widest uppercase mb-4 text-sm">About us</h3>
+        <h1 className="text-3xl md:text-4xl font-extrabold text-[#0a1930] dark:text-white">
+          Welcome to Consultavenuee.com
+        </h1>
+      </div>
+
+      {/* TIMELINE SECTION */}
+      <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
         
-        <div className="relative z-10 max-w-5xl mx-auto px-4 text-center sm:px-6 lg:px-8">
-          <span className="inline-block py-1 px-3 rounded-full bg-amber-100 dark:bg-amber-500/20 text-amber-700 dark:text-amber-300 text-xs font-bold uppercase tracking-widest mb-6">
-            Welcome to ConsultAvenuee
-          </span>
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 dark:text-white tracking-tight mb-8">
-            Your Business Advisory, Compliance <br className="hidden sm:block" /> & Growth Partner
-          </h1>
-          <p className="text-lg sm:text-xl text-slate-600 dark:text-slate-400 max-w-3xl mx-auto leading-relaxed">
-            Backed by a team of experienced Chartered Accountants, Company Secretaries, Legal Professionals, and Business Advisors, we provide comprehensive solutions that help businesses start, grow, and remain compliant.
-          </p>
-        </div>
-      </section>
+        {/* The Vertical Line (Visible only on desktop) */}
+        <div className="absolute left-1/2 top-0 bottom-0 w-px bg-slate-300 dark:bg-slate-700 transform -translate-x-1/2 hidden md:block"></div>
 
-      {/* 2. WHO WE ARE */}
-      <section className="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          <div>
-            <h2 className="text-3xl font-extrabold text-slate-900 dark:text-white mb-6">
-              Who We Are
-            </h2>
-            <div className="space-y-6 text-slate-600 dark:text-slate-400 leading-relaxed text-lg">
-              <p>
-                ConsultAvenuee serves Startups, SMEs, Corporates, NRIs, Housing Societies, and Senior Citizens. Founded with the vision of making professional advisory services accessible and affordable, we act as your trusted Advisor and Compliance Partner, delivering personalized solutions tailored to your unique business requirements.
-              </p>
-              <p>
-                At ConsultAvenuee, we believe in building long-term relationships. Our success is closely linked to the success of our clients, and we are committed to creating lasting value through trusted partnerships.
-              </p>
-            </div>
-            <div className="mt-10 flex gap-4">
-               <div className="flex items-center gap-3">
-                 <div className="h-12 w-12 rounded-full bg-amber-100 dark:bg-amber-900/50 flex items-center justify-center text-amber-600 dark:text-amber-400">
-                    <Users className="h-6 w-6" />
-                 </div>
-                 <div>
-                   <div className="font-bold text-slate-900 dark:text-white text-xl">Client-Centric</div>
-                   <div className="text-xs text-slate-500 uppercase tracking-wider font-semibold">Approach</div>
-                 </div>
-               </div>
-               <div className="flex items-center gap-3 ml-8">
-                 <div className="h-12 w-12 rounded-full bg-emerald-100 dark:bg-emerald-900/50 flex items-center justify-center text-emerald-600 dark:text-emerald-400">
-                    <ShieldCheck className="h-6 w-6" />
-                 </div>
-                 <div>
-                   <div className="font-bold text-slate-900 dark:text-white text-xl">Ethical</div>
-                   <div className="text-xs text-slate-500 uppercase tracking-wider font-semibold">Practices</div>
-                 </div>
-               </div>
-            </div>
-          </div>
-          
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-            {values.map((item, idx) => {
-              const Icon = item.icon;
-              return (
-                <div key={idx} className={`glass p-8 rounded-2xl border border-slate-200/60 dark:border-slate-800/60 ${idx === 2 ? 'sm:col-span-2' : ''}`}>
-                  <div className={`h-12 w-12 rounded-xl ${item.bg} ${item.color} flex items-center justify-center mb-6`}>
-                    <Icon className="h-6 w-6" />
+        <div className="space-y-16">
+          {sections.map((sec, idx) => {
+            const isEven = idx % 2 !== 0;
+
+            return (
+              <div key={idx} className={`relative flex flex-col items-stretch w-full ${isEven ? 'md:flex-row-reverse' : 'md:flex-row'}`}>
+                
+                {/* Timeline Square Marker */}
+                <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-3 h-3 bg-[#c29b62] hidden md:block z-10 shadow-[0_0_0_4px_#f8f9fa] dark:shadow-[0_0_0_4px_#020617]" />
+                
+                {/* Content Side */}
+                <div className={`w-full md:w-1/2 flex flex-col justify-center ${isEven ? 'md:pl-16' : 'md:pr-16'} mb-6 md:mb-0 z-20`}>
+                  <div className="bg-white dark:bg-slate-900 p-6 md:p-8 shadow-[0_15px_50px_-15px_rgba(0,0,0,0.1)] dark:shadow-none dark:border dark:border-slate-800 h-full flex flex-col justify-center">
+                    <h2 className="text-xl md:text-2xl font-bold mb-4 text-[#0a1930] dark:text-white">{sec.title}</h2>
+                    <div className="text-slate-600 dark:text-slate-300 text-sm leading-relaxed">
+                      {sec.content}
+                    </div>
                   </div>
-                  <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-3">{item.title}</h3>
-                  <p className="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
-                    {item.desc}
-                  </p>
                 </div>
-              );
-            })}
-          </div>
-        </div>
-      </section>
 
-      {/* 3. WHAT WE DO & WHY CHOOSE US */}
-      <section className="py-20 bg-slate-50 dark:bg-slate-900/50 border-y border-slate-200/50 dark:border-slate-800/50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
-            
-            {/* What We Do */}
-            <div>
-              <div className="mb-8">
-                <span className="text-amber-600 dark:text-amber-400 font-bold tracking-widest uppercase text-xs">Our Services</span>
-                <h2 className="text-3xl font-extrabold text-slate-900 dark:text-white mt-2">What We Do</h2>
-                <p className="text-slate-600 dark:text-slate-400 mt-4">
-                  Our objective is to simplify business operations by providing end-to-end professional support through a single, reliable platform.
-                </p>
-              </div>
-              <ul className="space-y-4">
-                {whatWeDo.map((item, idx) => (
-                  <li key={idx} className="flex items-start gap-3">
-                    <CheckCircle2 className="h-5 w-5 text-amber-500 shrink-0 mt-0.5" />
-                    <span className="text-slate-700 dark:text-slate-300 font-medium">{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            {/* Why Choose Us */}
-            <div>
-              <div className="mb-8">
-                <span className="text-amber-600 dark:text-amber-400 font-bold tracking-widest uppercase text-xs">Our Differentiator</span>
-                <h2 className="text-3xl font-extrabold text-slate-900 dark:text-white mt-2">Why Clients Trust Us</h2>
-                <p className="text-slate-600 dark:text-slate-400 mt-4">
-                  Our professionals work closely with clients to understand their requirements and deliver practical, business-oriented solutions that create measurable value.
-                </p>
-              </div>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                {whyChooseUs.map((item, idx) => (
-                  <div key={idx} className="glass-premium p-4 rounded-xl border border-slate-200/50 dark:border-slate-800/50 flex items-center gap-3">
-                    <Award className="h-5 w-5 text-amber-500" />
-                    <span className="text-sm font-semibold text-slate-800 dark:text-slate-200">{item}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-          </div>
-        </div>
-      </section>
-
-      {/* 4. FOUNDER SECTION */}
-      <section className="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="glass-premium rounded-3xl border border-slate-200/50 dark:border-slate-800/50 overflow-hidden relative">
-          <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-amber-600/5 rounded-full blur-3xl" />
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-0 relative z-10">
-            <div className="lg:col-span-5 bg-slate-200 dark:bg-slate-800 relative min-h-[400px]">
-              {/* Fallback image for the founder if image isn't available */}
-              <img 
-                src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=800&q=80" 
-                alt="Manoj Kumar Keshri"
-                className="absolute inset-0 w-full h-full object-cover"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent flex items-end p-8">
-                <div>
-                  <h3 className="text-2xl font-extrabold text-white">Manoj Kumar Keshri</h3>
-                  <p className="text-amber-300 font-bold text-sm tracking-wider uppercase mt-1">Founder & Chairman</p>
-                  <p className="text-slate-300 text-xs mt-1">FCA, CS (I), Mini-MBA</p>
+                {/* Image Side */}
+                <div className={`w-full md:w-1/2 flex ${isEven ? 'md:pr-16' : 'md:pl-16'} z-10`}>
+                  <img 
+                    src={sec.image} 
+                    alt={sec.title} 
+                    className="w-full h-full min-h-[250px] object-cover shadow-lg"
+                  />
                 </div>
+
               </div>
-            </div>
-            <div className="lg:col-span-7 p-8 lg:p-12 xl:p-16 flex flex-col justify-center">
-              <h2 className="text-3xl font-extrabold text-slate-900 dark:text-white mb-6">
-                About Our Founder
-              </h2>
-              <div className="space-y-6 text-slate-600 dark:text-slate-400 leading-relaxed">
-                <p>
-                  <strong>Manoj Kumar Keshri</strong> is a seasoned business advisor with over <strong>34+ years</strong> of professional experience. He advises Co-operative Housing Societies, SMEs, Start-ups, Traders, Freelancers, NRIs, HNIs, Senior Citizens, and business enterprises across the Real Estate, FMCG, Hospitality, Healthcare, Media, and Sports sectors.
-                </p>
-                <p>
-                  Known for his practical approach and commitment to client success, he continues to guide businesses and institutions through an evolving regulatory and business landscape. His expertise in governance, regulatory compliance, and strategic advisory has helped organizations build strong foundations for sustainable growth and long-term success.
-                </p>
-                <p>
-                  At ConsultAvenuee, he leads the firm's vision of delivering integrated advisory, compliance, taxation, and governance solutions, empowering clients to navigate an increasingly complex business and regulatory environment with confidence.
-                </p>
-              </div>
-            </div>
-          </div>
+            );
+          })}
         </div>
-      </section>
+      </div>
 
-      {/* 5. LEADERSHIP TEAM */}
-      <section className="py-20 bg-slate-50 dark:bg-slate-900/30 border-t border-slate-200/50 dark:border-slate-800/50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <span className="text-xs font-bold uppercase tracking-widest text-amber-500">
-              Expert Leadership
-            </span>
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white mt-3">
-              Meet Our Senior Professionals
-            </h2>
-            <p className="text-slate-600 dark:text-slate-400 mt-4 max-w-2xl mx-auto">
-              A professionally managed platform representing a combination of specialized skills geared to offer quality advisory and personalized proactive services.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {team.map((member, idx) => (
-              <motion.div
-                key={idx}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: idx * 0.1 }}
-                className="glass-premium p-8 rounded-3xl border border-slate-200/60 dark:border-slate-800/60 relative flex flex-col hover-3d"
-              >
-                <div className="mb-6">
-                  {/* Initial Avatar */}
-                  <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-amber-500 to-purple-600 text-white font-extrabold text-2xl flex items-center justify-center shadow-lg shadow-amber-500/30 mb-5">
-                    {member.name.split(" ")[0][0]}
-                    {member.name.split(" ")[1] ? member.name.split(" ")[1][0] : ""}
-                  </div>
-                  <h3 className="text-xl font-extrabold text-slate-900 dark:text-white">
-                    {member.name}
-                  </h3>
-                  <div className="text-xs font-bold text-slate-500 dark:text-slate-500 mb-2 mt-1">
-                    {member.credentials}
-                  </div>
-                  <span className="inline-block px-3 py-1 rounded-md bg-amber-50 dark:bg-amber-500/10 text-amber-700 dark:text-amber-400 text-[11px] font-bold uppercase tracking-widest mb-4">
-                    {member.role}
-                  </span>
-                  <p className="text-sm text-slate-600 dark:text-slate-400 leading-relaxed font-medium">
-                    {member.desc}
-                  </p>
-                </div>
-                <div className="mt-auto pt-5 border-t border-slate-200/50 dark:border-slate-800/50 flex justify-between items-center">
-                   <span className="text-xs font-extrabold text-slate-400 dark:text-slate-500 uppercase tracking-widest">Experience</span>
-                   <span className="text-sm font-bold text-slate-900 dark:text-white">{member.exp}</span>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* 6. CTA SECTION */}
-      <section className="py-24 max-w-4xl mx-auto px-4 sm:px-6 text-center">
-        <h2 className="text-3xl font-extrabold text-slate-900 dark:text-white mb-6">
-          Ready to Elevate Your Business?
-        </h2>
-        <p className="text-lg text-slate-600 dark:text-slate-400 mb-10 leading-relaxed">
-          Partner with ConsultAvenuee for trusted expertise, innovative solutions, and long-term value creation. Let's navigate the complex business and regulatory environment together.
-        </p>
-        <Link
-          href="/contact"
-          className="inline-flex h-14 items-center justify-center px-10 rounded-xl bg-amber-600 hover:bg-amber-500 text-white font-bold text-sm uppercase tracking-widest shadow-xl shadow-amber-600/20 transition-transform hover:-translate-y-1"
-        >
-          Schedule a Consultation
-        </Link>
-      </section>
     </div>
   );
 }

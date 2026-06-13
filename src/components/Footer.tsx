@@ -146,20 +146,26 @@ export const Footer: React.FC = () => {
           {/* Brand & Mission */}
           <div className="flex flex-col gap-4">
             <Link href="/" className="flex items-center">
-              <img src={theme === "dark" ? "/White_Logo-removebg-preview.png" : "/logo.png"} alt="Manoj CA" className={`w-auto object-contain transition-all origin-left ${theme === "dark" ? "h-12 scale-110" : "h-10"}`} />
+              <img src={theme === "dark" ? "/White_Logo-removebg-preview.png" : "/logo.png"} alt="ConsultAvenuee" className={`w-auto object-contain transition-all origin-left ${theme === "dark" ? "h-16" : "h-14"}`} />
             </Link>
             <p className="text-sm leading-relaxed text-slate-500 dark:text-slate-400">
               Premium Financial Advisory & Chartered Accountancy. We simplify complex regulatory frameworks to secure your legacy and grow your business.
             </p>
-            <div className="flex flex-col gap-2.5 text-xs font-semibold text-slate-500 dark:text-slate-400">
-              <span className="flex items-center gap-2">
-                <MapPin className="h-3.5 w-3.5 text-amber-500" /> Suite 402, FinHeights Plaza, Mumbai, India
+            <div className="flex flex-col gap-3 text-xs font-semibold text-slate-500 dark:text-slate-400">
+              <span className="flex items-start gap-2">
+                <MapPin className="h-4 w-4 text-amber-500 shrink-0 mt-0.5" /> 
+                <span>Hubtown Solaris one, Unit-1205, Andheri (E), Mumbai-400069</span>
+              </span>
+              <span className="flex items-start gap-2">
+                <Phone className="h-4 w-4 text-amber-500 shrink-0 mt-0.5" /> 
+                <div className="flex flex-col">
+                  <a href="tel:+919076111021" className="hover:text-amber-500 transition-colors">9076111021</a>
+                  <a href="tel:+919076111813" className="hover:text-amber-500 transition-colors">9076111813</a>
+                </div>
               </span>
               <span className="flex items-center gap-2">
-                <Phone className="h-3.5 w-3.5 text-amber-500" /> +91 98765 43210
-              </span>
-              <span className="flex items-center gap-2">
-                <Mail className="h-3.5 w-3.5 text-amber-500" /> advisor@manojca.com
+                <Mail className="h-4 w-4 text-amber-500 shrink-0" /> 
+                <a href="mailto:info@consultavenuee.com" className="hover:text-amber-500 transition-colors">info@consultavenuee.com</a>
               </span>
             </div>
           </div>
@@ -209,11 +215,7 @@ export const Footer: React.FC = () => {
                   GST Estimator Tool
                 </Link>
               </li>
-              <li>
-                <Link href="/pricing" className="hover:text-amber-500 transition-colors">
-                  Pricing Package Wizard
-                </Link>
-              </li>
+
               <li>
                 <Link href="/faq" className="hover:text-amber-500 transition-colors flex items-center gap-1">
                   <HelpCircle className="h-3.5 w-3.5 text-slate-400" /> {t.navFaq}
@@ -257,7 +259,7 @@ export const Footer: React.FC = () => {
         {/* Footer bottom */}
         <div className="pt-8 border-t border-slate-200/50 dark:border-slate-800/50 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-400 font-semibold gap-4">
           <span>
-            © {new Date().getFullYear()} Manoj CA Associates. All rights reserved.
+            © {new Date().getFullYear()} ConsultAvenuee. All rights reserved.
           </span>
           <div className="flex gap-6">
             <Link href="/careers" className="hover:text-amber-500 transition-colors flex items-center gap-1">

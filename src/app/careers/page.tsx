@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import React, { useState } from "react";
 import { Briefcase, Send, CheckCircle, GraduationCap, Clock, Award } from "lucide-react";
@@ -130,7 +130,7 @@ export default function CareersPage() {
                     value={formData.phone}
                     onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                     className="w-full h-11 px-3.5 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 text-sm focus:ring-1 focus:ring-amber-500 outline-none"
-                    placeholder="+91 98765 XXXXX"
+                    placeholder="+91 90761 XXXXX"
                   />
                 </div>
               </div>
