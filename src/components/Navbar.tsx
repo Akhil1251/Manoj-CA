@@ -5,7 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useApp } from "@/context/AppContext";
 import { Language } from "@/context/translations";
-import { Menu, X, Globe, Sun, Moon, MapPin, Clock, Phone, Calculator, Mail } from "lucide-react";
+import { Menu, X, Globe, Sun, Moon, MapPin, Clock, Phone, Calculator, Mail, ChevronRight } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { servicesData } from "@/data/servicesData";
 import BookConsultationModal from "@/components/BookConsultationModal";
@@ -15,7 +15,7 @@ const dropdownConfigs: Record<
   {
     columns: {
       title: string;
-      links: { label: string; href: string }[];
+      links: { label: string; href: string; subLinks?: { label: string; href: string }[] }[];
     }[];
     image: {
       src: string;
@@ -43,14 +43,43 @@ const dropdownConfigs: Record<
         ],
       },
       {
-        title: "Business Advisory",
+        title: "Business Formation, Registration & Compliance",
         links: [
-          { label: "Company Formation", href: "/services/company-formation" },
-          { label: "LLP Registration", href: "/services/company-formation#llp-registration" },
-          { label: "Partnership Firm Setup", href: "/services/company-formation#partnership-firm-registration" },
-          { label: "Trust Registration", href: "/services/company-formation#trust-registration" },
-          { label: "Startup India Setup", href: "/services/startup-india-registration" },
-          { label: "MSME & Registrations", href: "/services/msme-udyam-registration" },
+          {
+            label: "Company Formation", href: "/services/company-formation", subLinks: [
+              { label: "Private Limited Company Registration", href: "/services/company-formation#private-limited-company" },
+              { label: "LLP Registration", href: "/services/company-formation#llp-registration" },
+              { label: "Partnership Firm Registration", href: "/services/company-formation#partnership-firm-registration" },
+              { label: "Public Limited Company Registration", href: "/services/company-formation#public-limited-company-registration" },
+              { label: "Trust Registration", href: "/services/company-formation#trust-registration" },
+              { label: "Indian Subsidiary for Foreign Entrepreneurs", href: "/services/company-formation#indian-subsidiary-foreign-entrepreneurs" }
+            ]
+          },
+          {
+            label: "Registrations", href: "/services/registrations", subLinks: [
+              { label: "Professional Tax Registration & Returns", href: "/services/registrations#professional-tax" },
+              { label: "Shop & Establishment Registration", href: "/services/registrations#shop-establishment" },
+              { label: "Startup India Registration", href: "/services/startup-india-registration" },
+              { label: "MSME/Udyam Registration", href: "/services/msme-udyam-registration" },
+              { label: "PF Registration", href: "/services/registrations#pf-registration" },
+              { label: "ESIC Registration", href: "/services/registrations#esic-registration" },
+              { label: "Trade License", href: "/services/trade-license" },
+              { label: "NGO Darpan Registration", href: "/services/registrations#ngo-darpan" },
+              { label: "Trademark Registration", href: "/services/registrations#trademark" },
+              { label: "Import Export Code (IEC)", href: "/services/registrations#iec" },
+              { label: "ISO Certification", href: "/services/registrations#iso" },
+              { label: "FSSAI Registration", href: "/services/fssai-registration" }
+            ]
+          },
+          {
+            label: "Corporate Compliance & Secretarial Services", href: "/services/corporate-compliance", subLinks: [
+              { label: "MCA Annual Compliance", href: "/services/corporate-compliance#mca-annual" },
+              { label: "ROC Filings", href: "/services/corporate-compliance#roc-filings" },
+              { label: "Maintenance of Statutory Registers & Records", href: "/services/corporate-compliance#statutory-registers" },
+              { label: "AGM & EGM, BM Compliance, Minutes & Resolutions", href: "/services/corporate-compliance#agm-egm" }
+            ]
+          },
+          { label: "Virtual CFO (VCFO) Services", href: "/services/virtual-cfo-services" },
         ],
       },
       {
@@ -525,10 +554,29 @@ export const Navbar: React.FC = () => {
                                     <Link
                                       href={`/services/${sub.id}`}
                                       onClick={() => setActiveDropdown(null)}
-                                      className="text-[11px] font-extrabold tracking-wide text-slate-800 dark:text-white/90 block leading-snug cursor-pointer hover:text-[#c79d62] transition-colors capitalize flex items-center justify-between py-1"
+                                      className="text-[11px] font-extrabold tracking-wide text-slate-800 dark:text-white/90 leading-snug cursor-pointer hover:text-[#c79d62] transition-colors capitalize flex items-center justify-between py-1 w-full"
                                     >
-                                      {sub.title}
+                                      <span>{sub.title}</span>
+                                      {sub.subSubServices && sub.subSubServices.length > 0 && col.id !== "society-management" && sub.title !== "GST" && <ChevronRight className="w-3.5 h-3.5 shrink-0 ml-2 opacity-60 transition-transform duration-200 group-hover/sub:rotate-90" />}
                                     </Link>
+                                    
+                                    {sub.subSubServices && sub.subSubServices.length > 0 && col.id !== "society-management" && sub.title !== "GST" && (
+                                      <div className="hidden group-hover/sub:block mt-1 animate-in slide-in-from-top-1 duration-200">
+                                        <ul className="space-y-2.5 text-xs border-l-2 border-[#c79d62]/30 pl-3 pb-2 pt-1">
+                                          {sub.subSubServices.map((subsub: any, ssIdx: number) => (
+                                            <li key={ssIdx}>
+                                              <Link
+                                                href={['company-formation', 'registrations', 'corporate-compliance', 'income-tax', 'litigation-support'].includes(sub.id) ? `/services/${sub.id}#${subsub.slug}` : `/services/${subsub.slug}`}
+                                                onClick={() => setActiveDropdown(null)}
+                                                className="text-slate-600 dark:text-slate-200 hover:text-[#c79d62] transition-colors block capitalize font-bold leading-tight"
+                                              >
+                                                {subsub.title}
+                                              </Link>
+                                            </li>
+                                          ))}
+                                        </ul>
+                                      </div>
+                                    )}
                                   </div>
                                 ))}
                               </div>
@@ -568,14 +616,31 @@ export const Navbar: React.FC = () => {
                           </h4>
                           <ul className="space-y-2.5 text-xs">
                             {col.links.map((link, lIdx) => (
-                              <li key={lIdx}>
+                              <li key={lIdx} className="relative group/sub">
                                 <Link
                                   href={link.href}
-                                  onClick={() => setActiveDropdown(null)}
-                                  className="text-slate-600 dark:text-slate-200 hover:text-[#c79d62] dark:hover:text-[#c79d62] transition-colors block font-bold lowercase"
+                                  onClick={(e) => {
+                                    if (link.subLinks) e.preventDefault();
+                                    else setActiveDropdown(null);
+                                  }}
+                                  className="text-slate-600 dark:text-slate-200 hover:text-[#c79d62] dark:hover:text-[#c79d62] transition-colors block font-bold capitalize flex items-center justify-between w-full"
                                 >
-                                  {link.label}
+                                  <span>{link.label}</span>
+                                  {link.subLinks && <ChevronRight className="w-3.5 h-3.5 opacity-60" />}
                                 </Link>
+                                {link.subLinks && (
+                                  <div className="absolute left-full top-0 ml-2 w-64 opacity-0 invisible group-hover/sub:opacity-100 group-hover/sub:visible transition-all duration-200 bg-white dark:bg-[#0a122a] border border-slate-100 dark:border-slate-800 rounded-lg shadow-xl p-3 z-50">
+                                    <ul className="space-y-2 text-xs">
+                                      {link.subLinks.map((sub, sIdx) => (
+                                        <li key={sIdx}>
+                                          <Link href={sub.href} onClick={() => setActiveDropdown(null)} className="text-slate-600 dark:text-slate-200 hover:text-[#c79d62] transition-colors block capitalize font-medium leading-snug">
+                                            {sub.label}
+                                          </Link>
+                                        </li>
+                                      ))}
+                                    </ul>
+                                  </div>
+                                )}
                               </li>
                             ))}
                           </ul>
