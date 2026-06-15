@@ -334,7 +334,7 @@ export default function ServiceDetailPage() {
               Focus on your community while we handle society compliance, governance, taxation, audits, documentation, and regulatory requirements with professional expertise.
             </p>
           </>
-        ) : parentCategoryId === "compliance-business-advisory" ? (
+        ) : (parentCategoryId === "compliance-business-advisory" || parentCategoryId === "taxation-regulatory-litigation") ? (
           <>
             {parentCategoryDescription && (
               <p className="text-sm sm:text-base text-slate-550 dark:text-slate-400 leading-relaxed font-medium max-w-none whitespace-pre-line text-center mb-6">
@@ -995,12 +995,7 @@ export default function ServiceDetailPage() {
         return (
           <>
             {renderHeroHeader()}
-            {renderSubSubContent()}
             {renderDetailedSections()}
-            {renderTimelineRoadmap()}
-            {renderDocumentChecklist()}
-            {renderVisualDataChart(true)}
-            {renderComparisonMatrix("#c79d62")}
           </>
         );
 

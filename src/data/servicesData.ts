@@ -2480,7 +2480,78 @@ Partner with ConsultAvenuee's Virtual CFO team to gain expert financial insights
         description: "Professional GST registration, return filing, and compliance services for businesses, startups, and MSMEs to ensure hassle-free tax compliance.",
         longDesc: "Professional GST registration, return filing, and compliance services for businesses, startups, and MSMEs to ensure hassle-free tax compliance.",
         subSubServices: [
-          { slug: "gst-registration-returns", title: "GST Registration & Returns" }
+          { slug: "gst-registration-returns", title: "GST Registration & Returns", sections: [
+                {
+                                "title": "Goods and Services Tax (GST) Return Filing",
+                                "content": "Goods and Services Tax (GST) is a comprehensive indirect tax levied on the supply of goods and services across India. Every registered taxpayer under GST is required to file periodic GST returns containing details of sales, purchases, tax liability, and Input Tax Credit (ITC) claimed.\n\nGST return filing is a critical compliance requirement that enables tax authorities to assess tax liability and monitor adherence to GST regulations.\n\nAt ConsultAvenuee, we provide end-to-end GST compliance services including GST registration, return filing, GST reconciliations, ITC verification, notice handling, annual return filing, and advisory support."
+                },
+                {
+                                "title": "What is a GST Return?",
+                                "content": "A GST Return is a statement filed with the GST authorities containing details of:\n\u2022 Outward supplies (sales)\n\u2022 Inward supplies (purchases)\n\u2022 Output GST liability\n\u2022 Input Tax Credit (ITC) claimed\n\u2022 Tax payments made\n\u2022 Other prescribed information\n\nGST returns are filed electronically through the GST Portal and form the basis for determining tax liability and eligibility for Input Tax Credit."
+                },
+                {
+                                "title": "Benefits of GST Compliance",
+                                "content": "Proper GST compliance helps businesses:\n\u2022 Claim eligible Input Tax Credit (ITC)\n\u2022 Avoid penalties and late fees\n\u2022 Improve business credibility\n\u2022 Maintain smooth vendor and customer relationships\n\u2022 Reduce the risk of notices and assessments\n\u2022 Ensure uninterrupted business operations"
+                },
+                {
+                                "title": "Types of GST Returns",
+                                "content": "Different GST return forms are prescribed depending upon the category of taxpayer.\n\n**GST Return | Applicable To | Frequency**\nGSTR-1 | Details of Outward Supplies | Monthly / Quarterly\nGSTR-3B | Summary Return and Tax Payment | Monthly / Quarterly\nCMP-08 | Composition Scheme Taxpayers | Quarterly\nGSTR-4 | Composition Taxpayers | Annually\nGSTR-5 | Non-Resident Taxable Persons | Monthly\nGSTR-5A | OIDAR Service Providers | Monthly\nGSTR-6 | Input Service Distributors (ISD) | Monthly\nGSTR-7 | GST TDS Deductors | Monthly\nGSTR-8 | E-Commerce Operators Collecting TCS | Monthly\nGSTR-9 | Annual Return | Annually\nGSTR-9C | Reconciliation Statement (where applicable) | Annually\nGSTR-10 | Final Return after Cancellation of Registration | One-Time\nGSTR-11 | UIN Holders (Embassies, UN Bodies, etc.) | As Applicable\n\n**Common GST Returns Filed by Businesses**\nThe following GST returns are most commonly filed:\n\u2022 GSTR-1 \u2013 Details of outward supplies\n\u2022 GSTR-3B \u2013 Monthly/Quarterly summary return\n\u2022 CMP-08 \u2013 Composition Scheme tax payment statement\n\u2022 GSTR-4 \u2013 Annual return for composition taxpayers\n\u2022 GSTR-9 \u2013 Annual GST return\n\u2022 GSTR-9C \u2013 Reconciliation statement, where applicable\n\u2022 GSTR-10 \u2013 Final return upon cancellation of registration"
+                },
+                {
+                                "title": "GST Return Filing Process",
+                                "content": "**Step 1:** Collection of Sales Data\n**Step 2:** Reconciliation of Purchases\n**Step 3:** Tax Liability Computation\n**Step 4:** Filing of GST Returns\n**Step 5:** Payment of GST Liability\n**Step 6:** Annual Compliance"
+                },
+                {
+                                "title": "Understanding CGST, SGST and IGST",
+                                "content": "**Central Goods and Services Tax (CGST)**\nCGST is levied by the Central Government on intra-state supplies of goods and services.\n\n**State Goods and Services Tax (SGST)**\nSGST is levied by the respective State Government on intra-state supplies.\nRevenue collected under SGST is retained by the concerned State Government.\n\n**Integrated Goods and Services Tax (IGST)**\nIGST applies to inter-state supplies of goods and services and facilitates seamless flow of Input Tax Credit across states."
+                },
+                {
+                                "title": "HSN Code and SAC Code under GST",
+                                "content": "**What is HSN Code?**\nHSN (Harmonized System of Nomenclature) is an internationally accepted system developed by the World Customs Organization (WCO) for classification of goods.\nHSN codes help businesses:\n\u2022 Classify goods uniformly\n\u2022 Determine applicable GST rates\n\u2022 Simplify invoicing\n\u2022 Improve GST compliance\n\u2022 Facilitate international trade\nHSN code requirements are prescribed under GST laws and may vary based on turnover, nature of supplies, and applicable government notifications.\n\n**What is SAC Code?**\nSAC (Services Accounting Code) is used for classification of services under GST.\nThe SAC system helps in:\n\u2022 Accurate invoicing\n\u2022 Proper tax classification\n\u2022 Determination of GST rates\n\u2022 Correct GST return filing\n\u2022 Regulatory compliance"
+                },
+                {
+                                "title": "Common GST Rates on Services",
+                                "content": "Services are generally taxable at:\n\u2022 0%\n\u2022 5%\n\u2022 12%\n\u2022 18%\n\u2022 28%\nWhere no specific rate is prescribed and the service is not exempt, GST is generally levied at 18%."
+                },
+                {
+                                "title": "Consequences of Non-Compliance",
+                                "content": "Failure to comply with GST provisions may result in:\n\u2022 Late filing fees\n\u2022 Interest on delayed tax payment\n\u2022 Restriction or denial of Input Tax Credit\n\u2022 GST notices and departmental scrutiny\n\u2022 Penalties under GST law\n\u2022 Suspension or cancellation of GST registration in serious cases\n\nTimely filing and reconciliation help businesses avoid these consequences."
+                },
+                {
+                                "title": "Documents Required for GST Return Filing",
+                                "content": "\u2022 GST Registration Certificate\n\u2022 GSTIN Details\n\u2022 Sales Register\n\u2022 Purchase Register\n\u2022 Tax Invoices\n\u2022 Debit Notes and Credit Notes\n\u2022 E-Way Bill Details (if applicable)\n\u2022 Input Tax Credit Records\n\u2022 Previous GST Returns\n\u2022 Bank Statements (if required)"
+                }
+], faqs: [
+                {
+                                "question": "GST Registration & Returns FAQs",
+                                "answer": "",
+                                "isHeading": true
+                },
+                {
+                                "question": "Is GST return filing mandatory?",
+                                "answer": "Yes. Every registered taxpayer is required to file applicable GST returns within the prescribed due dates, even in certain cases where there are no transactions."
+                },
+                {
+                                "question": "What happens if GST returns are filed late?",
+                                "answer": "Late filing may attract late fees, interest, and compliance notices from the GST Department."
+                },
+                {
+                                "question": "Can GST returns be revised?",
+                                "answer": "GST returns generally cannot be revised. Errors are corrected through amendments in subsequent returns, subject to GST provisions."
+                },
+                {
+                                "question": "Can Input Tax Credit be claimed without supplier compliance?",
+                                "answer": "Input Tax Credit is subject to fulfilment of prescribed conditions under GST law, including reporting by suppliers."
+                },
+                {
+                                "question": "Do businesses with no transactions need to file GST returns?",
+                                "answer": "Yes. Registered taxpayers may be required to file Nil Returns where no business transactions have occurred during the tax period."
+                },
+                {
+                                "question": "How can ConsultAvenuee help?",
+                                "answer": "Our GST experts assist with registration, return filing, ITC reconciliation, annual compliance, notice handling, GST refunds, and end-to-end GST advisory services."
+                }
+] }
         ]
       },
       {
@@ -2491,8 +2562,34 @@ Partner with ConsultAvenuee's Virtual CFO team to gain expert financial insights
         description: "Expert litigation support for tax matters, including case documentation, paper book preparation, and coordination with senior tax counsels.",
         longDesc: "Expert litigation support for tax matters, including case documentation, paper book preparation, and coordination with senior tax counsels.",
         subSubServices: [
-          { slug: "conferencing-senior-tax-counsels-litigation-support", title: "Conferencing with Senior Tax Counsels & Litigation Support" },
-          { slug: "preparation-of-paper-books-case-records", title: "Preparation of Paper Books & Case Records" }
+          { slug: "conferencing-senior-tax-counsels-litigation-support", title: "Conferencing with Senior Tax Counsels & Litigation Support", sections: [
+                {
+                                "title": "Conferencing with Senior Tax Counsels & Litigation Support",
+                                "content": "**Strategic Support for Complex Income Tax Matters**\nIncome tax disputes often involve complex legal and factual issues requiring specialized expertise and strategic guidance. At ConsultAvenuee, we assist taxpayers, businesses, professionals, and corporate entities by coordinating conferences with experienced Senior Tax Counsels, Advocates, and subject matter experts for matters relating to assessments, appeals, reassessments, penalties, and high-value tax disputes.\n\nOur team works closely with clients and legal professionals to ensure that cases are properly evaluated, documented, and presented before the appropriate authorities and appellate forums."
+                },
+                {
+                                "title": "Our Services Include",
+                                "content": "\u2022 Conferencing with Senior Tax Counsels\n\u2022 Litigation Coordination Support"
+                },
+                {
+                                "title": "Income Tax Matters Covered",
+                                "content": "\u2022 Scrutiny Assessments\n\u2022 Reassessment Proceedings\n\u2022 Faceless Assessments\n\u2022 Penalty Proceedings\n\u2022 TDS and Withholding Tax Matters\n\u2022 Search and Survey Related Proceedings\n\u2022 Income Tax Appeals\n\u2022 Revision and Rectification Matters\n\u2022 High-Value and Complex Tax Disputes"
+                }
+], faqs: [] },
+          { slug: "preparation-of-paper-books-case-records", title: "Preparation of Paper Books & Case Records", sections: [
+                {
+                                "title": "Preparation of Paper Books & Case Records",
+                                "content": "**Professional Documentation Support for Income Tax Proceedings**\nProper documentation plays a critical role in the successful handling of income tax disputes and appellate proceedings. Well-prepared paper books and case records help present facts, evidence, and legal submissions in a structured and professional manner before tax authorities and appellate forums.\n\nAt ConsultAvenuee, we assist in preparing comprehensive paper books and litigation records for income tax matters."
+                },
+                {
+                                "title": "Our Assistance Includes",
+                                "content": "\u2022 Preparation of Paper Books for appellate proceedings\n\u2022 Compilation and indexing of supporting documents\n\u2022 Preparation of statement of facts and case summaries\n\u2022 Chronology of events and transaction records\n\u2022 Reconciliation of financial and tax records\n\u2022 Compilation of judicial precedents and supporting references\n\u2022 Preparation of written submissions and supporting documentation\n\u2022 Organization of records for effective presentation before authorities"
+                },
+                {
+                                "title": "Benefits of Professional Case Preparation",
+                                "content": "\u2022 Systematic presentation of facts and evidence\n\u2022 Better coordination with tax counsels and advocates\n\u2022 Improved readiness for hearings and appellate proceedings\n\u2022 Efficient management of large volumes of records\n\u2022 Stronger support for legal and factual arguments\n\nWhether you are facing an assessment, appeal, penalty proceeding, or complex tax litigation, our team can assist in preparing comprehensive case records and coordinating with experienced tax counsels to support your matter effectively."
+                }
+], faqs: [] }
         ]
       }
     ]
