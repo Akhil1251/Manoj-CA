@@ -2131,12 +2131,346 @@ Partner with ConsultAvenuee's Virtual CFO team to gain expert financial insights
         description: "Expert income tax services including return filing, tax audits, TDS/TCS compliance, PAN/TAN applications, and strategic tax planning to help you stay compliant and optimize tax liabilities.",
         longDesc: "Expert income tax services including return filing, tax audits, TDS/TCS compliance, PAN/TAN applications, and strategic tax planning to help you stay compliant and optimize tax liabilities.",
         subSubServices: [
-          { slug: "income-tax-returns", title: "Income Tax Returns" },
-          { slug: "tax-audit", title: "Tax Audit" },
-          { slug: "tds-tcs-returns", title: "TDS/TCS Returns" },
-          { slug: "registration-under-12a-80g", title: "Registration under 12A & 80G" },
-          { slug: "pan-tan-applications", title: "PAN/TAN Applications" },
-          { slug: "tax-planning-advisory", title: "Tax Planning & Advisory" }
+          { slug: "income-tax-returns", title: "Income Tax Returns", sections: [
+                {
+                                "title": "Income Tax Return (ITR) Filing Services",
+                                "content": "Filing an Income Tax Return (ITR) is an important compliance requirement under the Income-tax Act, 1961. An Income Tax Return is a statement of income earned, deductions claimed, taxes paid, and tax liability for a financial year.\n\nTimely and accurate filing of ITR not only ensures compliance with tax laws but also helps taxpayers claim refunds, carry forward losses, obtain loans, apply for visas, and maintain proper financial records.\n\nAt ConsultAvenuee, we provide comprehensive Income Tax Return Filing Services for salaried individuals, professionals, freelancers, business owners, senior citizens, partnership firms, LLPs, companies, trusts, and Non-Resident Indians (NRIs)."
+                },
+                {
+                                "title": "What is an Income Tax Return (ITR)?",
+                                "content": "An Income Tax Return (ITR) is a prescribed form through which taxpayers report:\n\u2022 Income earned during the financial year\n\u2022 Tax deductions and exemptions claimed\n\u2022 Taxes paid through TDS, advance tax, and self-assessment tax\n\u2022 Capital gains and other income sources\n\u2022 Refunds due, if any\n\nThe return is filed electronically with the Income Tax Department through the Income Tax Portal."
+                },
+                {
+                                "title": "Who is Required to File an Income Tax Return?",
+                                "content": "An ITR may be required to be filed by:\n\u2022 Individuals whose income exceeds the basic exemption limit.\n\u2022 Businesses and professionals.\n\u2022 Companies and LLPs.\n\u2022 Partnership firms.\n\u2022 Trusts and societies required to file returns.\n\u2022 Individuals meeting specified conditions under the Income-tax Act.\n\u2022 Persons claiming refunds.\n\u2022 Taxpayers wishing to carry forward losses.\n\u2022 Non-Resident Indians (NRIs) having taxable income in India.\n\nEven where filing is not mandatory, it is often advisable for maintaining financial records and establishing income proof."
+                },
+                {
+                                "title": "Benefits of Filing Income Tax Returns",
+                                "content": "**Claim Income Tax Refunds**\nTaxpayers can claim refunds of excess:\n\u2022 TDS\n\u2022 Advance Tax\n\u2022 Self-Assessment Tax\n\u2022 Other taxes paid\n\n**Carry Forward Losses**\nTimely filing enables eligible taxpayers to carry forward:\n\u2022 Business losses\n\u2022 Capital losses\n\u2022 Certain other eligible losses\n\n**Avoid Penalties and Notices**\nProper and timely filing reduces the risk of:\n\u2022 Late filing fees\n\u2022 Interest liabilities\n\u2022 Compliance notices\n\u2022 Scrutiny proceedings\n\n**Financial Documentation**\nIncome Tax Returns serve as recognized proof of income for:\n\u2022 Government tenders\n\u2022 Financial transactions\n\u2022 Investments\n\u2022 Contract applications\n\n**Easier Loan Approvals**\nMost banks and financial institutions require the last 2\u20133 years' ITRs for:\n\u2022 Home Loans\n\u2022 Business Loans\n\u2022 Personal Loans\n\u2022 Vehicle Loans\n\u2022 Education Loans\n\n**Visa Processing**\nMany embassies and immigration authorities require ITR acknowledgements as proof of income and financial stability."
+                },
+                {
+                                "title": "Documents Required for Income Tax Return Filing",
+                                "content": "**Basic Documents**\n\u2022 PAN Card\n\u2022 Aadhaar Card\n\u2022 Mobile Number linked with Aadhaar\n\u2022 Bank Account Details\n\u2022 Previous Year's ITR (if available)\n\n**For Salaried Individuals**\n\u2022 Form 16\n\u2022 Salary Slips\n\u2022 Form 26AS\n\u2022 Annual Information Statement (AIS)\n\u2022 Taxpayer Information Summary (TIS)\n\n**For Interest Income**\n\u2022 Bank Statements\n\u2022 Fixed Deposit Interest Certificates\n\u2022 Interest Certificates\n\n**For Capital Gains**\n\u2022 Share Trading Statements\n\u2022 Mutual Fund Statements\n\u2022 Property Purchase and Sale Documents\n\u2022 Capital Gain Statements\n\n**For Business and Professional Income**\n\u2022 Profit & Loss Account\n\u2022 Balance Sheet\n\u2022 Books of Accounts\n\u2022 GST Returns\n\u2022 Bank Statements\n\n**For Claiming Deductions**\n*Section 80C*\n\u2022 LIC Premium Receipts\n\u2022 PPF Contribution Proof\n\u2022 ELSS Investments\n\u2022 NSC Certificates\n\u2022 Tuition Fee Receipts\n\u2022 Home Loan Principal Repayment Certificate\n\n*Section 80D*\n\u2022 Health Insurance Premium Receipts\n\n*Section 80E*\n\u2022 Education Loan Interest Certificate\n\n*Home Loan*\n\u2022 Interest Certificate issued by the lender"
+                },
+                {
+                                "title": "Important Pre-Filing Requirements",
+                                "content": "**PAN-Aadhaar Linking**\nPAN should be linked with Aadhaar in accordance with applicable Income Tax provisions.\n\n**Verification of Tax Information**\nBefore filing, taxpayers should reconcile:\n\u2022 Form 26AS\n\u2022 AIS (Annual Information Statement)\n\u2022 TIS (Taxpayer Information Summary)\nThis helps prevent mismatches and future notices.\n\n**Selection of Correct ITR Form**\nChoosing the appropriate ITR form ensures proper reporting of income and faster processing."
+                },
+                {
+                                "title": "Income Tax Refund",
+                                "content": "**What is an Income Tax Refund?**\nAn Income Tax Refund arises when taxes paid exceed the actual tax liability of the taxpayer.\nThe Income Tax Department processes the return and credits the refund directly to the taxpayer's validated bank account.\n\n**Situations Where Refund May Arise**\n\u2022 Excess TDS deducted by employer.\n\u2022 Excess TDS deducted by banks.\n\u2022 Excess Advance Tax paid.\n\u2022 Excess Self-Assessment Tax paid.\n\u2022 Tax-saving investments not considered during salary processing.\n\u2022 Relief available under Double Taxation Avoidance Agreements (DTAA).\n\n**Process for Claiming Refund**\n1. File the Income Tax Return.\n2. Verify the return electronically.\n3. Return is processed by CPC.\n4. Refund is credited directly to the registered bank account."
+                },
+                {
+                                "title": "Consequences of Late Filing",
+                                "content": "**Late Filing Fee \u2013 Section 234F**\nA late filing fee may be applicable if the return is filed after the prescribed due date, subject to the provisions of the Income-tax Act.\n\n**Interest Liability**\nInterest may be levied under:\n\u2022 Section 234A \u2013 Delay in filing return.\n\u2022 Section 234B \u2013 Default in payment of advance tax.\n\u2022 Section 234C \u2013 Deferment of advance tax instalments.\n\n**Other Consequences**\n\u2022 Delay in receiving tax refunds.\n\u2022 Loss of certain carry-forward benefits.\n\u2022 Increased likelihood of compliance notices."
+                }
+], faqs: [
+                {
+                                "question": "Income Tax Returns FAQs",
+                                "answer": "",
+                                "isHeading": true
+                },
+                {
+                                "question": "Is filing an ITR mandatory if my income is below the taxable limit?",
+                                "answer": "In certain specified situations, filing may still be mandatory. Even otherwise, filing is advisable for maintaining financial records and claiming refunds."
+                },
+                {
+                                "question": "Can I revise my return after filing?",
+                                "answer": "Yes. A revised return may be filed within the time permitted under the Income-tax Act if any omission or error is discovered."
+                },
+                {
+                                "question": "How long does it take to receive an income tax refund?",
+                                "answer": "Refund timelines depend upon processing by the Income Tax Department and successful verification of the return."
+                },
+                {
+                                "question": "Can I claim a refund for excess TDS deducted?",
+                                "answer": "Yes. Excess TDS can be claimed through the filing of an Income Tax Return."
+                },
+                {
+                                "question": "What happens if I do not file my return on time?",
+                                "answer": "Late filing may result in fees, interest, delay in refunds, and loss of certain benefits available under the Income-tax Act."
+                }
+] },
+          { slug: "tax-audit", title: "Tax Audit", sections: [
+                {
+                                "title": "Tax Audit Services",
+                                "content": "**Tax Audit under the Income-tax Act, 1961**\nA Tax Audit is an examination of the books of accounts of a taxpayer conducted by a Chartered Accountant as prescribed under Section 44AB of the Income-tax Act, 1961.\n\nThe primary objective of a Tax Audit is to ensure that taxpayers maintain proper books of accounts, accurately report income, and comply with applicable tax provisions. The audit helps the Income Tax Department verify the correctness of income, deductions, and tax liability disclosed in the Income Tax Return.\n\nAt ConsultAvenuee, we provide comprehensive Tax Audit Services, including audit planning, verification of books of accounts, preparation of audit reports, compliance review, and filing of audit reports with the Income Tax Department."
+                },
+                {
+                                "title": "Who is Required to Get a Tax Audit Conducted?",
+                                "content": "A Tax Audit may be applicable to the following categories of taxpayers, subject to the conditions prescribed under the Income-tax Act:\n\n**Business Entities**\nPersons carrying on business may be required to undergo a Tax Audit where turnover, gross receipts, or other prescribed conditions exceed the limits specified under Section 44AB.\n\n**Professionals**\nPersons carrying on a profession may be required to obtain a Tax Audit where gross professional receipts exceed the prescribed threshold.\n\n**Presumptive Taxation Cases**\nTax Audit may also be applicable in certain situations where taxpayers opt out of presumptive taxation schemes or declare income lower than the prescribed limits while meeting specified conditions under the Income-tax Act.\n\nSince audit applicability depends upon various factors, professional evaluation is recommended to determine compliance requirements."
+                },
+                {
+                                "title": "Documents Required for Tax Audit",
+                                "content": "The documents required generally include:\n\u2022 PAN Card\n\u2022 Aadhaar Details (where applicable)\n\u2022 Books of Accounts\n\u2022 Trial Balance\n\u2022 Profit & Loss Account\n\u2022 Balance Sheet\n\u2022 Bank Statements\n\u2022 GST Returns\n\u2022 TDS Returns\n\u2022 Fixed Asset Register\n\u2022 Loan Statements\n\u2022 Details of Related Party Transactions\n\u2022 Previous Year's Tax Audit Report\n\u2022 Income Tax Return Copies\n\nAdditional documents may be required depending on the nature of business or profession."
+                },
+                {
+                                "title": "Tax Audit Report",
+                                "content": "The Tax Audit Report is furnished electronically by a Chartered Accountant in the prescribed forms:\n\n**Audit Form | Applicability**\nForm 3CA | Where accounts are already audited under another law\nForm 3CB | Where accounts are not audited under any other law\nForm 3CD | Statement of prescribed particulars required under Section 44AB\n\nThe audit report is uploaded electronically on the Income Tax Portal."
+                },
+                {
+                                "title": "Due Date for Tax Audit",
+                                "content": "The due date for furnishing the Tax Audit Report is generally one month prior to the due date for filing the Income Tax Return applicable to audit cases.\nThe due date may be extended by the Government through notifications issued from time to time.\nTaxpayers should ensure timely completion of audits to avoid penalties and compliance issues."
+                },
+                {
+                                "title": "Penalty for Failure to Conduct Tax Audit",
+                                "content": "**Section 271B**\nIf a taxpayer liable for Tax Audit fails to get the accounts audited or fails to furnish the Tax Audit Report within the prescribed time, the Assessing Officer may levy a penalty.\n\nThe penalty may be:\n\u2022 0.5% of total sales, turnover, or gross receipts, or\n\u2022 \u20b91,50,000\nwhichever is lower."
+                }
+], faqs: [
+                {
+                                "question": "Tax Audit FAQs",
+                                "answer": "",
+                                "isHeading": true
+                },
+                {
+                                "question": "What is the purpose of a Tax Audit?",
+                                "answer": "A Tax Audit ensures that books of accounts and tax records are maintained correctly and comply with the provisions of the Income-tax Act."
+                },
+                {
+                                "question": "Is Tax Audit mandatory for every business?",
+                                "answer": "No. Tax Audit is applicable only when prescribed conditions under Section 44AB are satisfied."
+                },
+                {
+                                "question": "Who can conduct a Tax Audit?",
+                                "answer": "Only a practicing Chartered Accountant can conduct and certify a Tax Audit under the Income-tax Act."
+                },
+                {
+                                "question": "Can the Tax Audit Report be revised?",
+                                "answer": "Yes. In certain circumstances, a revised Tax Audit Report may be issued where required."
+                },
+                {
+                                "question": "What happens if the Tax Audit Report is not filed on time?",
+                                "answer": "Delay may attract penalty under Section 271B and may lead to further compliance issues."
+                }
+] },
+          { slug: "tds-tcs-returns", title: "TDS/TCS Returns", sections: [
+                {
+                                "title": "TDS Return Filing Services",
+                                "content": "**Tax Deducted at Source (TDS) Return Filing**\nTax Deducted at Source (TDS) is one of the most effective mechanisms adopted by the Government of India to ensure timely collection of taxes. Under the Income-tax Act, specified persons are required to deduct tax at source while making certain payments and deposit the same with the Government within the prescribed timelines.\n\nBusinesses, companies, LLPs, partnership firms, professionals, government departments, trusts, societies, and other deductors are required to comply with TDS provisions and file periodic TDS returns reporting the details of tax deducted and deposited.\n\nAt ConsultAvenuee, we provide comprehensive TDS compliance services including TAN registration, TDS computation, deposit of TDS, quarterly return filing, correction returns, TDS reconciliation, and refund assistance."
+                },
+                {
+                                "title": "What is TDS?",
+                                "content": "Tax Deducted at Source (TDS) is a mechanism under which the payer (deductor) deducts tax while making specified payments to the recipient (deductee) and deposits the same with the Income Tax Department on behalf of the recipient.\nThe deductee can claim credit for the TDS deducted while filing the Income Tax Return (ITR).\n\n**Objectives of TDS**\n\u2022 Ensures regular collection of taxes.\n\u2022 Minimizes tax evasion.\n\u2022 Tracks high-value financial transactions.\n\u2022 Distributes tax payments throughout the financial year.\n\u2022 Improves tax compliance and transparency."
+                },
+                {
+                                "title": "Payments Covered Under TDS",
+                                "content": "TDS is applicable on various types of payments, including:\n\u2022 Salary\n\u2022 Interest on Fixed Deposits\n\u2022 Interest on Securities\n\u2022 Rent\n\u2022 Professional Fees\n\u2022 Technical Service Fees\n\u2022 Commission and Brokerage\n\u2022 Contractor and Sub-Contractor Payments\n\u2022 Dividend Payments\n\u2022 Purchase of Immovable Property\n\u2022 Insurance Commission\n\u2022 Winning from Lottery or Game Shows\n\u2022 Winning from Horse Races\n\u2022 E-commerce Transactions\n\u2022 Certain Payments to Non-Residents\n\nThe applicable TDS rate varies depending upon the nature of payment and the relevant provisions of the Income-tax Act."
+                },
+                {
+                                "title": "Common TDS Sections",
+                                "content": "**Section | Nature of Payment**\n192 | Salary\n194A | Interest Other Than Securities\n194C | Contractor Payments\n194H | Commission and Brokerage\n194I | Rent\n194J | Professional and Technical Fees\n194Q | Purchase of Goods\n195 | Payments to Non-Residents"
+                },
+                {
+                                "title": "What is a TDS Return?",
+                                "content": "A TDS Return is a quarterly statement filed with the Income Tax Department containing details of:\n\u2022 Tax deducted at source\n\u2022 Tax deposited with the Government\n\u2022 PAN of deductees\n\u2022 TAN of deductor\n\u2022 Challan details\n\u2022 Nature of payment\n\u2022 Amount paid and tax deducted\n\nFiling of TDS returns is mandatory for all eligible deductors."
+                },
+                {
+                                "title": "Who is Required to File TDS Returns?",
+                                "content": "The following persons and entities are required to file TDS returns electronically:\n\u2022 Central Government Departments\n\u2022 State Government Departments\n\u2022 Companies\n\u2022 Partnership Firms\n\u2022 LLPs\n\u2022 Trusts and Societies\n\u2022 Individuals and HUFs liable for tax audit\n\u2022 Any person required to deduct TDS under the Income-tax Act"
+                },
+                {
+                                "title": "Due Dates for TDS",
+                                "content": "**Monthly TDS Payment Due Dates**\n\u2022 April to February: 7th of the Following Month\n\u2022 March: 30th April\nFailure to deposit TDS within the prescribed due dates attracts interest and penalties.\n\n**Due Dates for Filing TDS Returns**\n\u2022 Quarter Ending 30 June: 31 July\n\u2022 Quarter Ending 30 September: 31 October\n\u2022 Quarter Ending 31 December: 31 January\n\u2022 Quarter Ending 31 March: 31 May\n\nTimely filing of TDS returns helps avoid late filing fees, penalties, and notices from the Income Tax Department."
+                },
+                {
+                                "title": "TDS Return Forms and Certificates",
+                                "content": "**TDS Return Forms**\n\u2022 Form 24Q: TDS on Salary Payments\n\u2022 Form 26Q: TDS on Payments Other Than Salary to Residents\n\u2022 Form 27Q: TDS on Payments to Non-Residents\n\u2022 Form 27EQ: Tax Collection at Source (TCS) Return\n\n**TDS Certificates**\nAfter filing TDS returns, deductors are required to issue TDS certificates:\n\u2022 Form 16: TDS on Salary\n\u2022 Form 16A: TDS on Non-Salary Payments\n\u2022 Form 16B: TDS on Purchase of Immovable Property\n\u2022 Form 16C: TDS on Rent under Section 194IB\n\u2022 Form 16D: TDS under Section 194M"
+                },
+                {
+                                "title": "Interest and Penalty for TDS Defaults",
+                                "content": "**Interest for Non-Deduction or Short Deduction**\nIf TDS is not deducted or is deducted at a lower rate than prescribed:\n\u2022 Interest at 1% per month or part thereof.\n\u2022 Calculated from the date on which tax was deductible to the actual date of deduction.\n\n**Interest for Late Deposit of TDS**\nIf TDS is deducted but deposited after the due date:\n\u2022 Interest at 1.5% per month or part thereof.\n\u2022 Calculated from the date of deduction to the actual date of deposit.\n\n**Late Filing Fee**\nUnder Section 234E:\n\u2022 \u20b9200 per day for delay in filing TDS/TCS returns.\n\u2022 Maximum fee cannot exceed the amount of TDS/TCS deductible or collectible.\n\n**Penalty for Non-Filing or Incorrect Filing**\nUnder Section 271H:\n\u2022 Penalty ranging from \u20b910,000 to \u20b91,00,000 may be imposed for failure to file returns within the prescribed time or furnishing incorrect information."
+                },
+                {
+                                "title": "TDS Refund",
+                                "content": "**What is a TDS Refund?**\nA TDS refund arises when the tax deducted exceeds the actual tax liability of the taxpayer.\n\n**How to Claim a TDS Refund?**\nIn most cases, there is no separate application for claiming a TDS refund. The refund can be claimed while filing the Income Tax Return by:\n1. Reporting total taxable income.\n2. Reporting TDS credits appearing in Form 26AS and AIS.\n3. Computing actual tax liability.\n4. Claiming excess tax paid as a refund.\n\n**How to Avoid Excess TDS Deduction?**\n\u2022 Submission of Form 15G (for resident individuals).\n\u2022 Submission of Form 15H (for senior citizens).\n\u2022 Furnishing PAN to ensure deduction at normal rates."
+                }
+], faqs: [
+                {
+                                "question": "TDS/TCS Returns FAQs",
+                                "answer": "",
+                                "isHeading": true
+                },
+                {
+                                "question": "Is TDS return filing mandatory?",
+                                "answer": "Yes. Every person required to deduct TDS under the Income-tax Act must file quarterly TDS returns within the prescribed due dates."
+                },
+                {
+                                "question": "What happens if TDS return is filed late?",
+                                "answer": "Late filing attracts a fee of \u20b9200 per day under Section 234E and may also result in penalties under Section 271H."
+                },
+                {
+                                "question": "Can a TDS return be revised?",
+                                "answer": "Yes. Correction returns can be filed to rectify errors relating to PAN, challan details, deductee information, and other particulars."
+                },
+                {
+                                "question": "How can I check my TDS credit?",
+                                "answer": "TDS credits can be verified through Form 26AS and the Annual Information Statement (AIS) available on the Income Tax Portal."
+                },
+                {
+                                "question": "Can excess TDS deducted be claimed as a refund?",
+                                "answer": "Yes. Excess TDS can be claimed as a refund while filing the Income Tax Return."
+                }
+] },
+          { slug: "registration-under-12a-80g", title: "Registration under 12A & 80G", sections: [
+                {
+                                "title": "12A & 80G Registration Services",
+                                "content": "**Tax Exemption & Donor Benefit Registration for Trusts, Societies, NGOs and Section 8 Companies**\nStrengthen Your Organization's Credibility and Fundraising Potential\n\nTax exemption and donor benefit registrations are among the most important registrations for charitable and non-profit organizations. These registrations help eligible organizations avail income tax benefits while enabling donors to claim eligible tax benefits on donations made to the organization, subject to applicable laws and regulations.\n\nAt ConsultAvenuee, we provide end-to-end assistance for obtaining 12A & 80G Registration, including eligibility assessment, documentation support, application filing, regulatory representation, and post-registration compliance assistance."
+                },
+                {
+                                "title": "Why are 12A & 80G Registrations Important?",
+                                "content": "Charitable and non-profit organizations rely on donations, grants, sponsorships, CSR contributions, and community support to achieve their objectives. Appropriate registrations help establish regulatory recognition, strengthen governance, and enhance stakeholder confidence.\n\n**Benefits for Charitable Organizations**\n\u2022 Tax benefits on eligible income\n\u2022 Greater recognition among donors and stakeholders\n\u2022 Improved access to grants and funding opportunities\n\u2022 Enhanced governance and compliance standards\n\u2022 Increased transparency and accountability\n\u2022 Better prospects for corporate and institutional support\n\u2022 Improved credibility with government agencies and funding bodies\n\n**Benefits for Donors**\nDonors often prefer contributing to organizations possessing valid donor benefit registrations because such registrations may provide:\n\u2022 Tax benefits on eligible donations\n\u2022 Greater confidence regarding the utilization of funds\n\u2022 Enhanced transparency and accountability\n\u2022 Improved confidence in governance and financial management"
+                },
+                {
+                                "title": "Who Can Apply?",
+                                "content": "The registration framework is generally available to eligible charitable and non-profit organizations, including:\n\u2022 Public Charitable Trusts\n\u2022 Registered Societies\n\u2022 Section 8 Companies\n\u2022 Educational Institutions\n\u2022 Religious and Charitable Organizations\n\u2022 Welfare Associations\n\u2022 Foundations\n\u2022 Social Development Organizations\n\u2022 Healthcare and Community Service Organizations\n\u2022 Environmental and Cultural Organizations\n\u2022 Other Eligible Non-Profit Entities\n\nEligibility depends upon the nature of activities, organizational structure, objectives, and compliance with applicable regulations."
+                },
+                {
+                                "title": "Documents Generally Required",
+                                "content": "**Organizational Documents**\n\u2022 Registration Certificate\n\u2022 Trust Deed, Memorandum & Articles, Society Bye-Laws, or Governing Documents\n\u2022 PAN Card of the Organization\n\u2022 Registered Office Address Proof\n\u2022 Utility Bills or Occupancy Documents\n\u2022 Bank Account Details\n\n**Management Details**\n\u2022 PAN and Aadhaar of Trustees, Directors, Members, or Office Bearers\n\u2022 Identity and Address Proof of Key Persons\n\u2022 Governing Body Details\n\u2022 Contact Details of Authorized Representatives\n\n**Financial Information**\n\u2022 Financial Statements (where available)\n\u2022 Income & Expenditure Statements\n\u2022 Balance Sheet\n\u2022 Activity Reports\n\u2022 Details of Charitable and Social Activities Undertaken\n\u2022 Details of Donations, Grants, and Contributions Received\n\n**Additional Information**\n\u2022 Existing registrations and approvals, if any\n\u2022 NGO Darpan Registration details, if applicable\n\u2022 Details of grants, donations, or funding received\n\u2022 Any other documents required by the authorities"
+                },
+                {
+                                "title": "Registration Process",
+                                "content": "**Step 1:** Eligibility Assessment\n**Step 2:** Documentation Review\n**Step 3:** Application Preparation\n**Step 4:** Online Submission\n**Step 5:** Regulatory Review\n**Step 6:** Registration Approval"
+                },
+                {
+                                "title": "Build a Strong Foundation for Your Non-Profit Organization",
+                                "content": "Whether you are establishing a new charitable organization or strengthening the compliance framework of an existing entity, ConsultAvenuee provides professional guidance, documentation support, registration assistance, and ongoing compliance services to help your organization operate with transparency, credibility, and confidence.\n\n**Our Support Covers:**\n\u2022 NGO Registration\n\u2022 Trust Registration\n\u2022 Society Registration\n\u2022 Section 8 Company Incorporation\n\u2022 NGO Darpan Registration\n\u2022 12A Registration\n\u2022 80G Registration\n\u2022 CSR Compliance Advisory\n\u2022 NGO Accounting & Bookkeeping\n\u2022 Audit & Compliance Support\n\u2022 Governance Advisory Services"
+                }
+], faqs: [
+                {
+                                "question": "12A & 80G Registration FAQs",
+                                "answer": "",
+                                "isHeading": true
+                },
+                {
+                                "question": "Can a newly established organization apply for registration?",
+                                "answer": "Yes. Newly formed charitable and non-profit organizations may apply, subject to meeting the prescribed eligibility conditions."
+                },
+                {
+                                "question": "Can an organization obtain both registrations simultaneously?",
+                                "answer": "In many cases, organizations seek both registrations together to strengthen compliance, fundraising capabilities, and donor confidence."
+                },
+                {
+                                "question": "Are these registrations useful for fundraising?",
+                                "answer": "Yes. Appropriate registrations often enhance donor confidence and improve fundraising opportunities."
+                },
+                {
+                                "question": "What documents are generally required?",
+                                "answer": "Requirements vary depending upon the legal structure, activities, compliance status, and operational history of the organization."
+                },
+                {
+                                "question": "Does registration eliminate all compliance obligations?",
+                                "answer": "No. Organizations must continue to comply with applicable accounting, reporting, governance, and regulatory requirements after registration."
+                },
+                {
+                                "question": "Can ConsultAvenuee assist with post-registration compliance?",
+                                "answer": "Yes. We provide ongoing support for accounting, compliance management, filing requirements, governance advisory, and regulatory assistance."
+                }
+] },
+          { slug: "pan-tan-applications", title: "PAN/TAN Applications", sections: [
+                {
+                                "title": "PAN & TAN Registration Services",
+                                "content": "**Simplify Your Tax Registrations with ConsultAvenuee**\nWhether you are an individual, startup, business owner, professional, NGO, trust, society, LLP, or company, ConsultAvenuee provides reliable PAN and TAN registration services along with ongoing compliance support to help you meet your tax obligations efficiently and confidently.\n\nPAN and TAN are among the most important tax registrations under the Indian taxation system. These registrations serve as unique identification numbers for various tax-related transactions and statutory compliances."
+                },
+                {
+                                "title": "What is PAN?",
+                                "content": "Permanent Account Number (PAN) is a unique identification number issued by the Income Tax Department. It serves as a primary tax identification number for taxpayers and is used for various financial, taxation, and regulatory purposes.\n\nPAN helps authorities track financial transactions and ensures proper tax compliance.\n\n**Benefits of PAN**\nPAN is commonly required for:\n\u2022 Filing Income Tax Returns\n\u2022 Opening Bank Accounts\n\u2022 Financial and Investment Transactions\n\u2022 Property Transactions\n\u2022 Business Registrations\n\u2022 Loan Applications\n\u2022 Tax Deduction and Tax Collection Compliance\n\u2022 Regulatory and Government Filings"
+                },
+                {
+                                "title": "Who Requires PAN?",
+                                "content": "PAN may be required by:\n\u2022 Individuals and Salaried Employees\n\u2022 Professionals and Consultants\n\u2022 Proprietorship Businesses\n\u2022 Partnership Firms and LLPs\n\u2022 Private and Public Limited Companies\n\u2022 Trusts, Societies, Section 8 Companies, NGOs\n\u2022 Foreign Entities carrying out specified transactions in India\n\u2022 Other persons required under applicable tax laws"
+                },
+                {
+                                "title": "What is TAN?",
+                                "content": "Tax Deduction and Collection Account Number (TAN) is a unique identification number required by persons responsible for deducting or collecting tax under applicable tax laws.\n\n**Benefits of TAN**\nTAN facilitates:\n\u2022 Tax Deduction and Collection Compliance\n\u2022 Filing of TDS and TCS Returns\n\u2022 Issuance of Tax Certificates\n\u2022 Statutory Reporting Requirements\n\u2022 Regulatory Compliance"
+                },
+                {
+                                "title": "Who Requires TAN?",
+                                "content": "TAN may be required by:\n\u2022 Companies, LLPs, Partnership Firms\n\u2022 Proprietorship Businesses\n\u2022 Trusts, Societies, NGOs\n\u2022 Government Departments\n\u2022 Educational Institutions\n\u2022 Employers deducting tax from salaries\n\u2022 Persons required to deduct or collect tax under applicable laws"
+                },
+                {
+                                "title": "Documents Generally Required",
+                                "content": "**For PAN Application:**\n*Individuals:* Identity Proof, Address Proof, DOB Proof, Passport Size Photo\n*Business Entities / NGOs:* Registration Certificate, Constitutional Documents, Address Proof, Authorized Signatory Details, Identity & Address Proof of Key Persons\n\n**For TAN Application:**\n*Business Entities / NGOs:* PAN of the Applicant, Registration Documents, Address Proof, Authorized Representative Details"
+                },
+                {
+                                "title": "PAN & TAN Registration Process",
+                                "content": "**Step 1:** Eligibility Assessment\n**Step 2:** Documentation Review\n**Step 3:** Application Preparation\n**Step 4:** Verification Process\n**Step 5:** Allotment"
+                }
+], faqs: [
+                {
+                                "question": "PAN & TAN Applications FAQs",
+                                "answer": "",
+                                "isHeading": true
+                },
+                {
+                                "question": "Is PAN mandatory for all businesses?",
+                                "answer": "Most business entities require PAN for taxation, banking, and regulatory purposes, subject to applicable laws."
+                },
+                {
+                                "question": "Can an organization obtain PAN and TAN simultaneously?",
+                                "answer": "Yes. Depending on the nature of activities and compliance requirements, organizations may apply for both registrations."
+                },
+                {
+                                "question": "Is TAN required by every business?",
+                                "answer": "TAN is generally required by persons responsible for deducting or collecting tax under applicable tax laws."
+                },
+                {
+                                "question": "Can PAN or TAN details be corrected later?",
+                                "answer": "Yes. Correction and update facilities are available for eligible changes in registration details."
+                },
+                {
+                                "question": "Can ConsultAvenuee assist with PAN and TAN registrations for NGOs and trusts?",
+                                "answer": "Yes. We provide complete registration and compliance support for NGOs, Trusts, Societies, Section 8 Companies, LLPs, Firms, and Companies."
+                }
+] },
+          { slug: "tax-planning-advisory", title: "Tax Planning & Advisory", sections: [
+                {
+                                "title": "Tax Planning & Advisory Services",
+                                "content": "**Make Informed Tax Decisions with Confidence**\nWhether you are an individual taxpayer, startup, business owner, investor, NGO, or corporate entity, ConsultAvenuee provides strategic tax planning and advisory services designed to help you achieve your financial objectives while maintaining full compliance with applicable tax and regulatory requirements.\n\n**Strategic Tax Planning for Businesses, Professionals & Individuals**\nEffective tax planning is an essential component of sound financial management. A well-structured tax strategy helps optimize tax efficiency, improve cash flow, support business growth, and ensure compliance with applicable tax laws and regulations.\n\nOur objective is to help clients make informed financial decisions while maintaining full regulatory compliance."
+                },
+                {
+                                "title": "Our Tax Planning & Advisory Services",
+                                "content": "\u2022 Direct Tax Advisory\n\u2022 Corporate Tax Advisory\n\u2022 GST Advisory Services\n\u2022 Tax Compliance Support\n\u2022 Startup & Business Advisory"
+                },
+                {
+                                "title": "Benefits of Professional Tax Planning",
+                                "content": "Professional tax planning can help:\n\u2714 Improve tax efficiency within the framework of applicable laws\n\u2714 Optimize available deductions, exemptions, and tax benefits\n\u2714 Improve cash flow management\n\u2714 Strengthen financial planning and decision-making\n\u2714 Reduce compliance risks and regulatory exposure\n\u2714 Support long-term business growth and wealth creation\n\u2714 Enhance financial transparency and governance\n\u2714 Facilitate better business and investment decisions"
+                },
+                {
+                                "title": "Who Can Benefit from Tax Planning Services?",
+                                "content": "Our services are suitable for:\n\u2022 Salaried Individuals\n\u2022 Professionals and Consultants\n\u2022 Business Owners\n\u2022 Startups and Entrepreneurs\n\u2022 Partnership Firms\n\u2022 LLPs\n\u2022 Private Limited Companies\n\u2022 Public Limited Companies\n\u2022 Trusts and Societies\n\u2022 NGOs and Section 8 Companies\n\u2022 Investors\n\u2022 Non-Resident Indians (NRIs)\n\u2022 High-Net-Worth Individuals (HNIs)"
+                }
+], faqs: [
+                {
+                                "question": "Tax Planning & Advisory FAQs",
+                                "answer": "",
+                                "isHeading": true
+                },
+                {
+                                "question": "What is Tax Planning?",
+                                "answer": "Tax planning is the process of organizing financial affairs in a lawful and efficient manner to optimize tax outcomes while complying with applicable laws and regulations."
+                },
+                {
+                                "question": "Is Tax Planning Legal?",
+                                "answer": "Yes. Tax planning is a legitimate and accepted practice when carried out within the framework of applicable tax laws."
+                },
+                {
+                                "question": "Who should opt for Tax Planning Services?",
+                                "answer": "Individuals, professionals, business owners, startups, LLPs, companies, trusts, NGOs, investors, and NRIs can benefit from professional tax planning."
+                },
+                {
+                                "question": "How often should Tax Planning be reviewed?",
+                                "answer": "Tax planning should be reviewed periodically throughout the year and whenever significant financial or business transactions occur."
+                },
+                {
+                                "question": "Can Tax Planning help growing businesses?",
+                                "answer": "Yes. Effective tax planning can support business expansion, investment decisions, cash flow management, and long-term financial efficiency."
+                },
+                {
+                                "question": "Do you provide advisory for different tax regimes and structures?",
+                                "answer": "Yes. We evaluate available options and provide recommendations based on the client's specific financial and business circumstances."
+                }
+] }
         ]
       },
       {
