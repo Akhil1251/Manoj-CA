@@ -2128,7 +2128,8 @@ Partner with ConsultAvenuee's Virtual CFO team to gain expert financial insights
         title: "Income Tax",
         price: "₹2,999",
         badge: "HOT",
-        description: "Returns filing, auditing reports, TDS filings, 12A/80G status, and strategic advisory.",
+        description: "Expert income tax services including return filing, tax audits, TDS/TCS compliance, PAN/TAN applications, and strategic tax planning to help you stay compliant and optimize tax liabilities.",
+        longDesc: "Expert income tax services including return filing, tax audits, TDS/TCS compliance, PAN/TAN applications, and strategic tax planning to help you stay compliant and optimize tax liabilities.",
         subSubServices: [
           { slug: "income-tax-returns", title: "Income Tax Returns" },
           { slug: "tax-audit", title: "Tax Audit" },
@@ -2142,7 +2143,8 @@ Partner with ConsultAvenuee's Virtual CFO team to gain expert financial insights
         id: "gst",
         title: "GST",
         price: "₹1,499",
-        description: "GST registration, monthly returns filing, and optimization advisory.",
+        description: "Professional GST registration, return filing, and compliance services for businesses, startups, and MSMEs to ensure hassle-free tax compliance.",
+        longDesc: "Professional GST registration, return filing, and compliance services for businesses, startups, and MSMEs to ensure hassle-free tax compliance.",
         subSubServices: [
           { slug: "gst-registration-returns", title: "GST Registration & Returns" }
         ]
@@ -2152,7 +2154,8 @@ Partner with ConsultAvenuee's Virtual CFO team to gain expert financial insights
         title: "Litigation Support",
         price: "₹24,999",
         badge: "SPECIAL",
-        description: "Technical briefing, notice replies, appeals preparation, and conferencing with counsels.",
+        description: "Expert litigation support for tax matters, including case documentation, paper book preparation, and coordination with senior tax counsels.",
+        longDesc: "Expert litigation support for tax matters, including case documentation, paper book preparation, and coordination with senior tax counsels.",
         subSubServices: [
           { slug: "conferencing-senior-tax-counsels-litigation-support", title: "Conferencing with Senior Tax Counsels & Litigation Support" },
           { slug: "preparation-of-paper-books-case-records", title: "Preparation of Paper Books & Case Records" }
