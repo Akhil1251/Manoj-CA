@@ -138,10 +138,15 @@ export const Footer: React.FC = () => {
                 ConsultAvenuee is a trusted business advisory and compliance firm offering business registration, GST, income tax, TDS, accounting, ROC compliance, audit, legal, and regulatory solutions for startups, SMEs, corporates, housing societies, NRIs, and individuals across India.
               </p>
               <div className="flex flex-col gap-3 text-[13px] font-medium text-slate-400 mt-2">
-                <span className="flex items-start gap-2.5">
+                <div className="flex items-start gap-2.5">
                   <MapPin className="h-4 w-4 text-[#c79d62] shrink-0 mt-0.5" />
-                  <span>Hubtown Solaris one, Unit-1205, Andheri (E), Mumbai-400069</span>
-                </span>
+                  <div className="flex flex-col gap-2">
+                    <Link href="/contact" className="group text-[#c79d62] font-semibold hover:text-white transition-colors flex items-center gap-1.5">Mumbai <span className="text-[10px] opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all">→</span></Link>
+                    <Link href="/contact" className="group text-[#c79d62] font-semibold hover:text-white transition-colors flex items-center gap-1.5">Kolkata <span className="text-[10px] opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all">→</span></Link>
+                    <Link href="/contact" className="group text-[#c79d62] font-semibold hover:text-white transition-colors flex items-center gap-1.5">Delhi <span className="text-[10px] opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all">→</span></Link>
+                    <Link href="/contact" className="group text-[#c79d62] font-semibold hover:text-white transition-colors flex items-center gap-1.5">Siliguri <span className="text-[10px] opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all">→</span></Link>
+                  </div>
+                </div>
                 <span className="flex items-start gap-2.5">
                   <Phone className="h-4 w-4 text-[#c79d62] shrink-0 mt-0.5" />
                   <div className="flex flex-col gap-1">
@@ -275,7 +280,7 @@ export const Footer: React.FC = () => {
         <div className="border-t border-slate-800/80 bg-[#07070b]">
           <div className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between text-[13px] text-slate-500 font-medium gap-4">
             <span>
-              © {new Date().getFullYear()} ConsultAvenuee. All rights reserved.
+              © {new Date().getFullYear()} Prime Consultancy Pvt. Ltd. All rights reserved.
             </span>
             <div className="flex flex-wrap gap-4 sm:gap-6 justify-center">
               <Link href="/privacy" className="hover:text-[#c79d62] transition-colors">
@@ -289,6 +294,9 @@ export const Footer: React.FC = () => {
               </Link>
               <Link href="/disclaimer" className="hover:text-[#c79d62] transition-colors">
                 Disclaimer Policy
+              </Link>
+              <Link href="/refund" className="hover:text-[#c79d62] transition-colors">
+                Refund & Cancellation Policy
               </Link>
             </div>
           </div>
