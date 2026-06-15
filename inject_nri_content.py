@@ -228,9 +228,9 @@ def replace_service(content, svc_id, longDesc, sections, checklist, faqs):
     return content[:start_idx] + block + content[block_end:]
 
 
-content = replace_service(content, "nri-taxation-services`, taxation_longDesc, taxation_sections, taxation_checklist, taxation_faqs)
-content = replace_service(content, "nri-property-management-services`, prop_longDesc, prop_sections, prop_checklist, prop_faqs)
-content = replace_service(content, "nri-legal-services`, legal_longDesc, legal_sections, legal_checklist, legal_faqs)
+content = replace_service(content, "nri-taxation-services", taxation_longDesc, taxation_sections, taxation_checklist, taxation_faqs)
+content = replace_service(content, "nri-property-management-services", prop_longDesc, prop_sections, prop_checklist, prop_faqs)
+content = replace_service(content, "nri-legal-services", legal_longDesc, legal_sections, legal_checklist, legal_faqs)
 
 write_file('src/data/servicesData.ts', content)
 print("Updated successfully")

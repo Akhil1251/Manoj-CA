@@ -289,7 +289,7 @@ export default function ServiceDetailPage() {
     }
   };
 
-  const renderSubSubContent = () => {
+  const renderSubSubContent = (hideTitle: boolean = false) => {
     const data = subSubCustomContent[slug];
     const title = data ? data.title : foundService!.title;
     const content = data ? data.summary : (foundService!.longDesc || foundService!.shortDesc);
@@ -302,11 +302,13 @@ export default function ServiceDetailPage() {
         transition={{ duration: 0.5 }}
         className="space-y-4 text-left"
       >
-        <div className="border-b border-slate-200 dark:border-slate-800/80 pb-3">
-          <h2 className="text-xl sm:text-2.5xl font-black text-[#210821] dark:text-white tracking-tight max-w-none">
-            {title}
-          </h2>
-        </div>
+        {!hideTitle && (
+          <div className="border-b border-slate-200 dark:border-slate-800/80 pb-3">
+            <h2 className="text-xl sm:text-2.5xl font-black text-[#210821] dark:text-white tracking-tight max-w-none">
+              {title}
+            </h2>
+          </div>
+        )}
         <p className="text-sm sm:text-base text-slate-655 dark:text-slate-350 leading-relaxed font-semibold whitespace-pre-line text-justify">
           {content}
         </p>
@@ -1002,9 +1004,15 @@ export default function ServiceDetailPage() {
           </>
         );
 
-      // 4. NRI & Senior Citizen -> Layout Type D (Timeline last, simplified radial metrics)
       case "nri-services":
       case "senior-citizen-advisory":
+        return (
+          <>
+            {renderHeroHeader()}
+            {renderSubSubContent(true)}
+            {renderDetailedSections()}
+          </>
+        );
       default:
         return (
           <>

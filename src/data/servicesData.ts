@@ -117,94 +117,94 @@ interface RawTab {
 
 // FAQs lists for society categories
 const formationFAQs: FAQItem[] = [
-  { question: "What is a Cooperative Housing Society?", answer: "A Cooperative Housing Society is a legally registered body formed by flat owners or property owners for the purpose of managing, maintaining, and administering residential premises and common facilities collectively." },
-  { question: "When should a housing society be registered?", answer: "A housing society is generally registered after a prescribed number of purchasers have taken possession of their units and the eligibility conditions under applicable cooperative society laws are fulfilled." },
-  { question: "What documents are required for society registration?", answer: "The required documents may include property documents, agreements for sale, occupancy certificates, member details, promoter applications, builder documents, and other statutory records as prescribed by the Registrar of Cooperative Societies." },
-  { question: "How long does the society registration process take?", answer: "The timeline depends on the completeness of documents, regulatory approvals, and authority processing. Professional assistance helps expedite the process and avoid delays." },
-  { question: "What is builder handover?", answer: "Builder handover is the process through which the developer transfers possession, records, assets, common facilities, contracts, and management responsibilities to the registered housing society." },
-  { question: "Why is builder handover important?", answer: "A proper handover ensures that the society receives all essential documents, approvals, financial records, and property-related information required for effective management and future legal protection." },
-  { question: "What are society bye-laws?", answer: "Society bye-laws are the rules and regulations governing the administration, maintenance, rights, duties, and conduct of members and office bearers within a cooperative housing society." },
-  { question: "Can society bye-laws be amended?", answer: "Yes. Bye-laws can be amended subject to approval by the society members and the relevant cooperative authorities as per applicable regulations." },
-  { question: "What is a Managing Committee?", answer: "The Managing Committee is the elected governing body responsible for the day-to-day administration, financial management, maintenance, and compliance activities of the housing society." },
-  { question: "How is the Managing Committee formed?", answer: "The Managing Committee is formed through elections conducted in accordance with the applicable cooperative housing society laws, rules, and bye-laws." },
-  { question: "Can a newly formed society outsource compliance and management activities?", answer: "Yes. Societies can engage professional consultants for compliance management, accounting, statutory documentation, legal advisory, elections, audits, and governance support." },
-  { question: "How can ConsultAvenuee assist our housing society?", answer: "We provide comprehensive support for society registration, builder handover, bye-law advisory, committee formation, compliance management, governance advisory, documentation, and other housing society-related services." }
+  { question: "What is a Cooperative Housing Society?", answer: `A Cooperative Housing Society is a legally registered body formed by flat owners or property owners for the purpose of managing, maintaining, and administering residential premises and common facilities collectively.` },
+  { question: "When should a housing society be registered?", answer: `A housing society is generally registered after a prescribed number of purchasers have taken possession of their units and the eligibility conditions under applicable cooperative society laws are fulfilled.` },
+  { question: "What documents are required for society registration?", answer: `The required documents may include property documents, agreements for sale, occupancy certificates, member details, promoter applications, builder documents, and other statutory records as prescribed by the Registrar of Cooperative Societies.` },
+  { question: "How long does the society registration process take?", answer: `The timeline depends on the completeness of documents, regulatory approvals, and authority processing. Professional assistance helps expedite the process and avoid delays.` },
+  { question: "What is builder handover?", answer: `Builder handover is the process through which the developer transfers possession, records, assets, common facilities, contracts, and management responsibilities to the registered housing society.` },
+  { question: "Why is builder handover important?", answer: `A proper handover ensures that the society receives all essential documents, approvals, financial records, and property-related information required for effective management and future legal protection.` },
+  { question: "What are society bye-laws?", answer: `Society bye-laws are the rules and regulations governing the administration, maintenance, rights, duties, and conduct of members and office bearers within a cooperative housing society.` },
+  { question: "Can society bye-laws be amended?", answer: `Yes. Bye-laws can be amended subject to approval by the society members and the relevant cooperative authorities as per applicable regulations.` },
+  { question: "What is a Managing Committee?", answer: `The Managing Committee is the elected governing body responsible for the day-to-day administration, financial management, maintenance, and compliance activities of the housing society.` },
+  { question: "How is the Managing Committee formed?", answer: `The Managing Committee is formed through elections conducted in accordance with the applicable cooperative housing society laws, rules, and bye-laws.` },
+  { question: "Can a newly formed society outsource compliance and management activities?", answer: `Yes. Societies can engage professional consultants for compliance management, accounting, statutory documentation, legal advisory, elections, audits, and governance support.` },
+  { question: "How can ConsultAvenuee assist our housing society?", answer: `We provide comprehensive support for society registration, builder handover, bye-law advisory, committee formation, compliance management, governance advisory, documentation, and other housing society-related services.` }
 ];
 
 const electionFAQs: FAQItem[] = [
-  { question: "How often should society elections be conducted?", answer: "The election schedule depends on the applicable cooperative society laws and the tenure of the Managing Committee prescribed under the society's bye-laws." },
-  { question: "Who is eligible to vote in society elections?", answer: "Generally, members whose names are duly recorded in the society's membership register and who meet the eligibility requirements can participate in the voting process." },
-  { question: "What is the role of an Election Officer?", answer: "The Election Officer oversees and supervises the election process to ensure transparency, fairness, and compliance with applicable regulations." },
-  { question: "Why is voter list preparation important?", answer: "An accurate voter list ensures that only eligible members participate in the election process, reducing disputes and maintaining election integrity." },
-  { question: "What documents are required during society elections?", answer: "Documents may include election notices, voter lists, nomination forms, scrutiny records, withdrawal forms, ballot records, election results, and post-election resolutions." },
-  { question: "What happens after the election results are declared?", answer: "Following the declaration of results, the Managing Committee is formally constituted, office bearers are appointed, and post-election compliance requirements are completed." },
-  { question: "Who can become a Managing Committee member?", answer: "Eligibility depends on the provisions of the applicable cooperative housing society laws, society bye-laws, and statutory regulations." },
-  { question: "Can election results be challenged?", answer: "Election disputes may be raised through the appropriate legal or regulatory mechanisms as prescribed under applicable cooperative society laws." },
-  { question: "What are the key responsibilities of the Managing Committee?", answer: "The Managing Committee is responsible for administration, maintenance, financial management, statutory compliance, member welfare, vendor management, and overall governance of the society." },
-  { question: "How can ConsultAvenuee assist our society?", answer: "We provide comprehensive support for election planning, voter list preparation, election documentation, authority coordination, committee formation, and post-election compliance to ensure a transparent and legally compliant election process." }
+  { question: "How often should society elections be conducted?", answer: `The election schedule depends on the applicable cooperative society laws and the tenure of the Managing Committee prescribed under the society's bye-laws.` },
+  { question: "Who is eligible to vote in society elections?", answer: `Generally, members whose names are duly recorded in the society's membership register and who meet the eligibility requirements can participate in the voting process.` },
+  { question: "What is the role of an Election Officer?", answer: `The Election Officer oversees and supervises the election process to ensure transparency, fairness, and compliance with applicable regulations.` },
+  { question: "Why is voter list preparation important?", answer: `An accurate voter list ensures that only eligible members participate in the election process, reducing disputes and maintaining election integrity.` },
+  { question: "What documents are required during society elections?", answer: `Documents may include election notices, voter lists, nomination forms, scrutiny records, withdrawal forms, ballot records, election results, and post-election resolutions.` },
+  { question: "What happens after the election results are declared?", answer: `Following the declaration of results, the Managing Committee is formally constituted, office bearers are appointed, and post-election compliance requirements are completed.` },
+  { question: "Who can become a Managing Committee member?", answer: `Eligibility depends on the provisions of the applicable cooperative housing society laws, society bye-laws, and statutory regulations.` },
+  { question: "Can election results be challenged?", answer: `Election disputes may be raised through the appropriate legal or regulatory mechanisms as prescribed under applicable cooperative society laws.` },
+  { question: "What are the key responsibilities of the Managing Committee?", answer: `The Managing Committee is responsible for administration, maintenance, financial management, statutory compliance, member welfare, vendor management, and overall governance of the society.` },
+  { question: "How can ConsultAvenuee assist our society?", answer: `We provide comprehensive support for election planning, voter list preparation, election documentation, authority coordination, committee formation, and post-election compliance to ensure a transparent and legally compliant election process.` }
 ];
 
 const complianceFAQs: FAQItem[] = [
-  { question: "What are Statutory Compliance & Governance Services for a Housing Society?", answer: "These services help Cooperative Housing Societies comply with legal, regulatory, and governance requirements, including AGM compliance, committee meetings, statutory register maintenance, annual filings, audits, and Registrar compliance." },
-  { question: "Is conducting an Annual General Meeting (AGM) mandatory?", answer: "Yes. Every Cooperative Housing Society is required to conduct an AGM within the prescribed timelines and complete all related compliance requirements." },
-  { question: "What documents are required for an AGM?", answer: "AGM documentation generally includes AGM Notice, Agenda, Audited Financial Statements, Secretary's Annual Report, Budget, Auditor's Report, Resolutions, Attendance Records, and AGM Minutes." },
-  { question: "What is a Special General Body Meeting (SGBM)?", answer: "An SGBM is a meeting called to discuss specific matters requiring approval of members, such as redevelopment, major repairs, policy decisions, or bye-law amendments." },
-  { question: "Why are Managing Committee meetings important?", answer: "Managing Committee meetings are essential for decision-making, financial management, maintenance planning, vendor approvals, compliance monitoring, and overall governance of the society." },
-  { question: "What are statutory registers?", answer: "Statutory registers are mandatory records maintained by the society to record membership, shareholding, nominations, assets, investments, tenancy details, and other important governance information." },
-  { question: "What is Form Y?", answer: "Form Y is the Annual Return filed with the Registrar containing details relating to society activities, financial statements, AGM compliance, membership information, audit details, and governance records." },
-  { question: "Is Form Y filing mandatory every year?", answer: "Yes. Eligible Cooperative Housing Societies are required to submit annual returns and prescribed information to the Registrar within the stipulated timelines." },
-  { question: "What is Form O?", answer: "Form O is the Audit Rectification Report submitted after the statutory audit, detailing corrective actions taken against audit observations and recommendations." },
-  { question: "Why is Form O important?", answer: "Form O demonstrates that the society has reviewed audit observations and taken appropriate corrective actions to improve compliance and governance." },
-  { question: "Is a statutory audit mandatory for housing societies?", answer: "Yes. Cooperative Housing Societies are generally required to undergo an annual statutory audit conducted by an authorized auditor." },
-  { question: "What is audit rectification?", answer: "Audit rectification is the process of addressing deficiencies, observations, or irregularities identified during the statutory audit and implementing corrective measures." },
-  { question: "What happens if audit observations are not rectified?", answer: "Failure to address audit observations may result in compliance issues, governance concerns, Registrar notices, and difficulties during inspections or redevelopment projects." },
-  { question: "What is Annual Compliance Management?", answer: "Annual Compliance Management involves tracking and managing all recurring compliance obligations, including AGMs, audits, annual returns, statutory registers, committee meetings, and Registrar filings." },
-  { question: "What is a Compliance Calendar?", answer: "A Compliance Calendar helps societies monitor important due dates and statutory obligations, reducing the risk of missed deadlines and regulatory non-compliance." },
-  { question: "What are the consequences of non-compliance?", answer: "Non-compliance may lead to penalties, notices from authorities, audit qualifications, governance challenges, member disputes, and regulatory action." },
-  { question: "Can societies outsource compliance and governance activities?", answer: "Yes. Many housing societies appoint professional consultants to manage compliance, documentation, audits, Registrar filings, governance records, and statutory requirements." },
-  { question: "How can ConsultAvenuee assist our society?", answer: "ConsultAvenuee provides end-to-end support for AGM and SGBM compliance, committee meeting management, statutory register maintenance, Form Y and Form O filing, audit coordination, audit rectification, compliance calendar management, and overall society governance support." }
+  { question: "What are Statutory Compliance & Governance Services for a Housing Society?", answer: `These services help Cooperative Housing Societies comply with legal, regulatory, and governance requirements, including AGM compliance, committee meetings, statutory register maintenance, annual filings, audits, and Registrar compliance.` },
+  { question: "Is conducting an Annual General Meeting (AGM) mandatory?", answer: `Yes. Every Cooperative Housing Society is required to conduct an AGM within the prescribed timelines and complete all related compliance requirements.` },
+  { question: "What documents are required for an AGM?", answer: `AGM documentation generally includes AGM Notice, Agenda, Audited Financial Statements, Secretary's Annual Report, Budget, Auditor's Report, Resolutions, Attendance Records, and AGM Minutes.` },
+  { question: "What is a Special General Body Meeting (SGBM)?", answer: `An SGBM is a meeting called to discuss specific matters requiring approval of members, such as redevelopment, major repairs, policy decisions, or bye-law amendments.` },
+  { question: "Why are Managing Committee meetings important?", answer: `Managing Committee meetings are essential for decision-making, financial management, maintenance planning, vendor approvals, compliance monitoring, and overall governance of the society.` },
+  { question: "What are statutory registers?", answer: `Statutory registers are mandatory records maintained by the society to record membership, shareholding, nominations, assets, investments, tenancy details, and other important governance information.` },
+  { question: "What is Form Y?", answer: `Form Y is the Annual Return filed with the Registrar containing details relating to society activities, financial statements, AGM compliance, membership information, audit details, and governance records.` },
+  { question: "Is Form Y filing mandatory every year?", answer: `Yes. Eligible Cooperative Housing Societies are required to submit annual returns and prescribed information to the Registrar within the stipulated timelines.` },
+  { question: "What is Form O?", answer: `Form O is the Audit Rectification Report submitted after the statutory audit, detailing corrective actions taken against audit observations and recommendations.` },
+  { question: "Why is Form O important?", answer: `Form O demonstrates that the society has reviewed audit observations and taken appropriate corrective actions to improve compliance and governance.` },
+  { question: "Is a statutory audit mandatory for housing societies?", answer: `Yes. Cooperative Housing Societies are generally required to undergo an annual statutory audit conducted by an authorized auditor.` },
+  { question: "What is audit rectification?", answer: `Audit rectification is the process of addressing deficiencies, observations, or irregularities identified during the statutory audit and implementing corrective measures.` },
+  { question: "What happens if audit observations are not rectified?", answer: `Failure to address audit observations may result in compliance issues, governance concerns, Registrar notices, and difficulties during inspections or redevelopment projects.` },
+  { question: "What is Annual Compliance Management?", answer: `Annual Compliance Management involves tracking and managing all recurring compliance obligations, including AGMs, audits, annual returns, statutory registers, committee meetings, and Registrar filings.` },
+  { question: "What is a Compliance Calendar?", answer: `A Compliance Calendar helps societies monitor important due dates and statutory obligations, reducing the risk of missed deadlines and regulatory non-compliance.` },
+  { question: "What are the consequences of non-compliance?", answer: `Non-compliance may lead to penalties, notices from authorities, audit qualifications, governance challenges, member disputes, and regulatory action.` },
+  { question: "Can societies outsource compliance and governance activities?", answer: `Yes. Many housing societies appoint professional consultants to manage compliance, documentation, audits, Registrar filings, governance records, and statutory requirements.` },
+  { question: "How can ConsultAvenuee assist our society?", answer: `ConsultAvenuee provides end-to-end support for AGM and SGBM compliance, committee meeting management, statutory register maintenance, Form Y and Form O filing, audit coordination, audit rectification, compliance calendar management, and overall society governance support.` }
 ];
 
 const taxationFAQs: FAQItem[] = [
-  { question: "When is GST registration required for a housing society?", answer: "GST registration may become necessary when the society meets the prescribed conditions under GST laws. A compliance review can help determine registration requirements." },
-  { question: "What GST returns are required to be filed by a registered society?", answer: "Depending on the registration category and applicable provisions, societies may be required to file monthly, quarterly, and annual GST returns." },
-  { question: "What are TDS returns?", answer: "TDS returns are periodic statements filed with the Income Tax Department containing details of taxes deducted and deposited on behalf of vendors and service providers." },
-  { question: "Is Income Tax Return filing mandatory for housing societies?", answer: "Yes. Cooperative Housing Societies are generally required to file Income Tax Returns, even if certain receipts may qualify under the principle of mutuality or other applicable provisions." },
-  { question: "What types of income may be taxable for a housing society?", answer: "Taxability depends on the nature of income. Certain receipts such as interest income, rental income, advertisement income, mobile tower income, and other non-member income may require tax evaluation." },
-  { question: "What is an Internal Audit?", answer: "An Internal Audit is an independent review of the society's financial records, transactions, controls, and compliance practices to identify risks and improve governance." },
-  { question: "How is an Internal Audit different from a Statutory Audit?", answer: "A Statutory Audit is a mandatory annual audit conducted under applicable cooperative laws, whereas an Internal Audit focuses on reviewing internal controls, processes, financial management, and risk areas." },
-  { question: "What does an Internal Audit cover?", answer: "An Internal Audit may cover Accounting Records, Ledger Scrutiny, Expense Verification, Maintenance Collections, Vendor Payments, Bank Reconciliations, Fund Utilization, Compliance Review, and Financial Controls." },
-  { question: "Why is Bank Reconciliation important?", answer: "Bank reconciliation helps ensure that society accounting records match bank statements and assists in identifying errors, omissions, or unauthorized transactions." },
-  { question: "Can housing societies outsource accounting and tax compliance?", answer: "Yes. Many societies engage professional consultants for bookkeeping, GST compliance, TDS compliance, Income Tax filing, internal audits, and financial reviews." },
-  { question: "How can ConsultAvenuee assist our housing society?", answer: "ConsultAvenuee provides end-to-end support for GST compliance, TDS compliance, Income Tax filings, accounting reviews, internal audits, financial reporting, tax advisory, and ongoing financial governance support, helping societies maintain transparency, compliance, and financial discipline." }
+  { question: "When is GST registration required for a housing society?", answer: `GST registration may become necessary when the society meets the prescribed conditions under GST laws. A compliance review can help determine registration requirements.` },
+  { question: "What GST returns are required to be filed by a registered society?", answer: `Depending on the registration category and applicable provisions, societies may be required to file monthly, quarterly, and annual GST returns.` },
+  { question: "What are TDS returns?", answer: `TDS returns are periodic statements filed with the Income Tax Department containing details of taxes deducted and deposited on behalf of vendors and service providers.` },
+  { question: "Is Income Tax Return filing mandatory for housing societies?", answer: `Yes. Cooperative Housing Societies are generally required to file Income Tax Returns, even if certain receipts may qualify under the principle of mutuality or other applicable provisions.` },
+  { question: "What types of income may be taxable for a housing society?", answer: `Taxability depends on the nature of income. Certain receipts such as interest income, rental income, advertisement income, mobile tower income, and other non-member income may require tax evaluation.` },
+  { question: "What is an Internal Audit?", answer: `An Internal Audit is an independent review of the society's financial records, transactions, controls, and compliance practices to identify risks and improve governance.` },
+  { question: "How is an Internal Audit different from a Statutory Audit?", answer: `A Statutory Audit is a mandatory annual audit conducted under applicable cooperative laws, whereas an Internal Audit focuses on reviewing internal controls, processes, financial management, and risk areas.` },
+  { question: "What does an Internal Audit cover?", answer: `An Internal Audit may cover Accounting Records, Ledger Scrutiny, Expense Verification, Maintenance Collections, Vendor Payments, Bank Reconciliations, Fund Utilization, Compliance Review, and Financial Controls.` },
+  { question: "Why is Bank Reconciliation important?", answer: `Bank reconciliation helps ensure that society accounting records match bank statements and assists in identifying errors, omissions, or unauthorized transactions.` },
+  { question: "Can housing societies outsource accounting and tax compliance?", answer: `Yes. Many societies engage professional consultants for bookkeeping, GST compliance, TDS compliance, Income Tax filing, internal audits, and financial reviews.` },
+  { question: "How can ConsultAvenuee assist our housing society?", answer: `ConsultAvenuee provides end-to-end support for GST compliance, TDS compliance, Income Tax filings, accounting reviews, internal audits, financial reporting, tax advisory, and ongoing financial governance support, helping societies maintain transparency, compliance, and financial discipline.` }
 ];
 
 const redevelopmentFAQs: FAQItem[] = [
-  { question: "What is a redevelopment assessment?", answer: "A redevelopment assessment is a preliminary evaluation of a society's eligibility and potential for redevelopment based on factors such as building age, condition, land potential, and applicable regulations." },
-  { question: "Why is compliance review important in redevelopment?", answer: "A compliance review helps identify regulatory requirements, documentation gaps, and procedural obligations to ensure the redevelopment process is carried out smoothly and in accordance with applicable laws." },
-  { question: "How can you assist with member communication?", answer: "We help societies prepare notices, presentations, meeting agendas, and communication materials to keep members informed and promote transparency throughout the redevelopment process." },
-  { question: "What type of documentation support do you provide?", answer: "We assist in organizing and reviewing society records, resolutions, meeting minutes, notices, member registers, and other documents required during redevelopment." },
-  { question: "Do you help evaluate redevelopment proposals?", answer: "Yes. We assist societies in reviewing and comparing redevelopment proposals from a financial and commercial perspective, helping members understand the benefits and implications of each offer." },
-  { question: "Can you help societies before appointing a developer?", answer: "Yes. Our advisory services begin at the initial stage, helping societies assess redevelopment feasibility, review documentation, and understand the overall redevelopment process." },
-  { question: "Do you provide legal or technical approvals?", answer: "No. We provide advisory and support services. Statutory approvals and technical certifications are obtained through qualified architects, engineers, legal professionals, and other authorized experts." },
-  { question: "How do you help maintain transparency during redevelopment?", answer: "We support proper documentation, structured communication, record maintenance, and member engagement to ensure transparency throughout the redevelopment journey." },
-  { question: "Can small housing societies also benefit from redevelopment advisory services?", answer: "Yes. Societies of all sizes can benefit from professional guidance in assessing redevelopment opportunities, managing documentation, and making informed decisions." },
-  { question: "Why should a society engage a redevelopment advisor?", answer: "A redevelopment advisor helps societies navigate complex redevelopment processes, manage documentation efficiently, evaluate proposals objectively, and ensure that members receive reliable guidance throughout the project." }
+  { question: "What is a redevelopment assessment?", answer: `A redevelopment assessment is a preliminary evaluation of a society's eligibility and potential for redevelopment based on factors such as building age, condition, land potential, and applicable regulations.` },
+  { question: "Why is compliance review important in redevelopment?", answer: `A compliance review helps identify regulatory requirements, documentation gaps, and procedural obligations to ensure the redevelopment process is carried out smoothly and in accordance with applicable laws.` },
+  { question: "How can you assist with member communication?", answer: `We help societies prepare notices, presentations, meeting agendas, and communication materials to keep members informed and promote transparency throughout the redevelopment process.` },
+  { question: "What type of documentation support do you provide?", answer: `We assist in organizing and reviewing society records, resolutions, meeting minutes, notices, member registers, and other documents required during redevelopment.` },
+  { question: "Do you help evaluate redevelopment proposals?", answer: `Yes. We assist societies in reviewing and comparing redevelopment proposals from a financial and commercial perspective, helping members understand the benefits and implications of each offer.` },
+  { question: "Can you help societies before appointing a developer?", answer: `Yes. Our advisory services begin at the initial stage, helping societies assess redevelopment feasibility, review documentation, and understand the overall redevelopment process.` },
+  { question: "Do you provide legal or technical approvals?", answer: `No. We provide advisory and support services. Statutory approvals and technical certifications are obtained through qualified architects, engineers, legal professionals, and other authorized experts.` },
+  { question: "How do you help maintain transparency during redevelopment?", answer: `We support proper documentation, structured communication, record maintenance, and member engagement to ensure transparency throughout the redevelopment journey.` },
+  { question: "Can small housing societies also benefit from redevelopment advisory services?", answer: `Yes. Societies of all sizes can benefit from professional guidance in assessing redevelopment opportunities, managing documentation, and making informed decisions.` },
+  { question: "Why should a society engage a redevelopment advisor?", answer: `A redevelopment advisor helps societies navigate complex redevelopment processes, manage documentation efficiently, evaluate proposals objectively, and ensure that members receive reliable guidance throughout the project.` }
 ];
 
 const docsFAQs: FAQItem[] = [
-  { question: "What is a Society NOC?", answer: "A Society No Objection Certificate (NOC) is an official document issued by the society confirming that it has no objection to a particular transaction or activity, subject to applicable rules and requirements." },
-  { question: "When is a NOC required for the sale of a flat?", answer: "An NOC may be required by buyers, financial institutions, legal professionals, or other stakeholders during a property transaction, depending on applicable regulations and society procedures." },
-  { question: "Can a society issue a NOC for a home loan?", answer: "Yes. Societies may issue NOCs or confirmations required by banks and financial institutions after verifying the member's records and compliance status." },
-  { question: "What documents are required for membership transfer?", answer: "Requirements may vary, but generally include transfer forms, sale documents, application forms, identity proof, nomination details, and other documents prescribed by the society." },
-  { question: "What is a share certificate?", answer: "A share certificate is a legal document issued by a co-operative housing society that evidences a member's ownership interest and membership in the society." },
-  { question: "When should a share certificate be updated?", answer: "Share certificates should be updated whenever there is a transfer of ownership, membership change, correction of details, or other approved modifications in society records." },
-  { question: "What should a member do if the share certificate is lost?", answer: "The member should immediately inform the society and follow the prescribed procedure for obtaining a duplicate share certificate, including submission of required declarations and supporting documents." },
-  { question: "How long does the duplicate share certificate process take?", answer: "The timeline depends on the society's procedures, verification requirements, and completion of statutory formalities. Proper documentation helps expedite the process." },
-  { question: "Can societies issue certificates for passport verification?", answer: "Yes. Subject to verification of records, societies may issue residence or occupancy confirmations required for passport-related applications." },
-  { question: "Why is proper society documentation important?", answer: "Accurate documentation helps ensure legal compliance, smooth property transactions, proper record management, and efficient service delivery to society members." },
-  { question: "Do you assist societies in maintaining statutory records?", answer: "Yes. We assist societies in maintaining membership records, share certificate registers, transfer records, and other essential documentation required under applicable regulations." },
-  { question: "Can you help with old or incomplete society records?", answer: "Yes. We assist societies in reviewing, organizing, updating, and regularizing records wherever possible to improve documentation accuracy and compliance." }
+  { question: "What is a Society NOC?", answer: `A Society No Objection Certificate (NOC) is an official document issued by the society confirming that it has no objection to a particular transaction or activity, subject to applicable rules and requirements.` },
+  { question: "When is a NOC required for the sale of a flat?", answer: `An NOC may be required by buyers, financial institutions, legal professionals, or other stakeholders during a property transaction, depending on applicable regulations and society procedures.` },
+  { question: "Can a society issue a NOC for a home loan?", answer: `Yes. Societies may issue NOCs or confirmations required by banks and financial institutions after verifying the member's records and compliance status.` },
+  { question: "What documents are required for membership transfer?", answer: `Requirements may vary, but generally include transfer forms, sale documents, application forms, identity proof, nomination details, and other documents prescribed by the society.` },
+  { question: "What is a share certificate?", answer: `A share certificate is a legal document issued by a co-operative housing society that evidences a member's ownership interest and membership in the society.` },
+  { question: "When should a share certificate be updated?", answer: `Share certificates should be updated whenever there is a transfer of ownership, membership change, correction of details, or other approved modifications in society records.` },
+  { question: "What should a member do if the share certificate is lost?", answer: `The member should immediately inform the society and follow the prescribed procedure for obtaining a duplicate share certificate, including submission of required declarations and supporting documents.` },
+  { question: "How long does the duplicate share certificate process take?", answer: `The timeline depends on the society's procedures, verification requirements, and completion of statutory formalities. Proper documentation helps expedite the process.` },
+  { question: "Can societies issue certificates for passport verification?", answer: `Yes. Subject to verification of records, societies may issue residence or occupancy confirmations required for passport-related applications.` },
+  { question: "Why is proper society documentation important?", answer: `Accurate documentation helps ensure legal compliance, smooth property transactions, proper record management, and efficient service delivery to society members.` },
+  { question: "Do you assist societies in maintaining statutory records?", answer: `Yes. We assist societies in maintaining membership records, share certificate registers, transfer records, and other essential documentation required under applicable regulations.` },
+  { question: "Can you help with old or incomplete society records?", answer: `Yes. We assist societies in reviewing, organizing, updating, and regularizing records wherever possible to improve documentation accuracy and compliance.` }
 ];
 
 const rawServicesData: RawTab[] = [
@@ -388,16 +388,16 @@ const rawServicesData: RawTab[] = [
         price: "₹9,999",
         description: "Professional assistance for housing society elections, managing committee formation, and compliance with co-operative society regulations.",
         faqs: [
-          { question: "How often should society elections be conducted?", answer: "The election schedule depends on the applicable cooperative society laws and the tenure of the Managing Committee prescribed under the society's bye-laws." },
-          { question: "Who is eligible to vote in society elections?", answer: "Generally, members whose names are duly recorded in the society's membership register and who meet the eligibility requirements can participate in the voting process." },
-          { question: "What is the role of an Election Officer?", answer: "The Election Officer oversees and supervises the election process to ensure transparency, fairness, and compliance with applicable regulations." },
-          { question: "Why is voter list preparation important?", answer: "An accurate voter list ensures that only eligible members participate in the election process, reducing disputes and maintaining election integrity." },
-          { question: "What documents are required during society elections?", answer: "Documents may include election notices, voter lists, nomination forms, scrutiny records, withdrawal forms, ballot records, election results, and post-election resolutions." },
-          { question: "What happens after the election results are declared?", answer: "Following the declaration of results, the Managing Committee is formally constituted, office bearers are appointed, and post-election compliance requirements are completed." },
-          { question: "Who can become a Managing Committee member?", answer: "Eligibility depends on the provisions of the applicable cooperative housing society laws, society bye-laws, and statutory regulations." },
-          { question: "Can election results be challenged?", answer: "Election disputes may be raised through the appropriate legal or regulatory mechanisms as prescribed under applicable cooperative society laws." },
-          { question: "What are the key responsibilities of the Managing Committee?", answer: "The Managing Committee is responsible for administration, maintenance, financial management, statutory compliance, member welfare, vendor management, and overall governance of the society." },
-          { question: "How can ConsultAvenuee assist our society?", answer: "We provide comprehensive support for election planning, voter list preparation, election documentation, authority coordination, committee formation, and post-election compliance to ensure a transparent and legally compliant election process." }
+          { question: "How often should society elections be conducted?", answer: `The election schedule depends on the applicable cooperative society laws and the tenure of the Managing Committee prescribed under the society's bye-laws.` },
+          { question: "Who is eligible to vote in society elections?", answer: `Generally, members whose names are duly recorded in the society's membership register and who meet the eligibility requirements can participate in the voting process.` },
+          { question: "What is the role of an Election Officer?", answer: `The Election Officer oversees and supervises the election process to ensure transparency, fairness, and compliance with applicable regulations.` },
+          { question: "Why is voter list preparation important?", answer: `An accurate voter list ensures that only eligible members participate in the election process, reducing disputes and maintaining election integrity.` },
+          { question: "What documents are required during society elections?", answer: `Documents may include election notices, voter lists, nomination forms, scrutiny records, withdrawal forms, ballot records, election results, and post-election resolutions.` },
+          { question: "What happens after the election results are declared?", answer: `Following the declaration of results, the Managing Committee is formally constituted, office bearers are appointed, and post-election compliance requirements are completed.` },
+          { question: "Who can become a Managing Committee member?", answer: `Eligibility depends on the provisions of the applicable cooperative housing society laws, society bye-laws, and statutory regulations.` },
+          { question: "Can election results be challenged?", answer: `Election disputes may be raised through the appropriate legal or regulatory mechanisms as prescribed under applicable cooperative society laws.` },
+          { question: "What are the key responsibilities of the Managing Committee?", answer: `The Managing Committee is responsible for administration, maintenance, financial management, statutory compliance, member welfare, vendor management, and overall governance of the society.` },
+          { question: "How can ConsultAvenuee assist our society?", answer: `We provide comprehensive support for election planning, voter list preparation, election documentation, authority coordination, committee formation, and post-election compliance to ensure a transparent and legally compliant election process.` }
         ],
         longDesc: "Transparent Elections. Strong Leadership. Effective Governance.\nProper election planning, statutory compliance, and accurate documentation ensure that the Managing Committee is constituted in accordance with applicable laws and society bye-laws.\nAt ConsultAvenuee, we provide end-to-end support for Society Elections and Managing Committee Formation, helping societies conduct smooth, compliant, and professionally managed elections while minimizing disputes and procedural challenges.\n\n### Our Services Include\n\n**Managing Committee Elections**\nSociety elections are required to be conducted periodically in accordance with applicable Cooperative Society laws and Bye-laws.\nWe provide complete professional assistance to ensure fair, transparent, and legally compliant elections.",
         checklist: [],
@@ -440,24 +440,24 @@ const rawServicesData: RawTab[] = [
         price: "₹7,999",
         description: "Expert support for AGM compliance, committee meeting. statutory records, audits, and regulatory requirements to ensure transparent governance and smooth society operations.",
         faqs: [
-          { question: "What are Statutory Compliance & Governance Services for a Housing Society?", answer: "These services help Cooperative Housing Societies comply with legal, regulatory, and governance requirements, including AGM compliance, committee meetings, statutory register maintenance, annual filings, audits, and Registrar compliance." },
-          { question: "Is conducting an Annual General Meeting (AGM) mandatory?", answer: "Yes. Every Cooperative Housing Society is required to conduct an AGM within the prescribed timelines and complete all related compliance requirements." },
-          { question: "What documents are required for an AGM?", answer: "AGM documentation generally includes:\n• AGM Notice\n• Agenda\n• Audited Financial Statements\n• Secretary's Annual Report\n• Budget\n• Auditor's Report\n• Resolutions\n• Attendance Records\n• AGM Minutes" },
-          { question: "What is a Special General Body Meeting (SGBM)?", answer: "An SGBM is a meeting called to discuss specific matters requiring approval of members, such as redevelopment, major repairs, policy decisions, or bye-law amendments." },
-          { question: "Why are Managing Committee meetings important?", answer: "Managing Committee meetings are essential for decision-making, financial management, maintenance planning, vendor approvals, compliance monitoring, and overall governance of the society." },
-          { question: "What are statutory registers?", answer: "Statutory registers are mandatory records maintained by the society to record membership, shareholding, nominations, assets, investments, tenancy details, and other important governance information." },
-          { question: "What is Form Y?", answer: "Form Y is the Annual Return filed with the Registrar containing details relating to society activities, financial statements, AGM compliance, membership information, audit details, and governance records." },
-          { question: "Is Form Y filing mandatory every year?", answer: "Yes. Eligible Cooperative Housing Societies are required to submit annual returns and prescribed information to the Registrar within the stipulated timelines." },
-          { question: "What is Form O?", answer: "Form O is the Audit Rectification Report submitted after the statutory audit, detailing corrective actions taken against audit observations and recommendations." },
-          { question: "Why is Form O important?", answer: "Form O demonstrates that the society has reviewed audit observations and taken appropriate corrective actions to improve compliance and governance." },
-          { question: "Is a statutory audit mandatory for housing societies?", answer: "Yes. Cooperative Housing Societies are generally required to undergo an annual statutory audit conducted by an authorized auditor." },
-          { question: "What is audit rectification?", answer: "Audit rectification is the process of addressing deficiencies, observations, or irregularities identified during the statutory audit and implementing corrective measures." },
-          { question: "What happens if audit observations are not rectified?", answer: "Failure to address audit observations may result in compliance issues, governance concerns, Registrar notices, and difficulties during inspections or redevelopment projects." },
-          { question: "What is Annual Compliance Management?", answer: "Annual Compliance Management involves tracking and managing all recurring compliance obligations, including AGMs, audits, annual returns, statutory registers, committee meetings, and Registrar filings." },
-          { question: "What is a Compliance Calendar?", answer: "A Compliance Calendar helps societies monitor important due dates and statutory obligations, reducing the risk of missed deadlines and regulatory non-compliance." },
-          { question: "What are the consequences of non-compliance?", answer: "Non-compliance may lead to penalties, notices from authorities, audit qualifications, governance challenges, member disputes, and regulatory action." },
-          { question: "Can societies outsource compliance and governance activities?", answer: "Yes. Many housing societies appoint professional consultants to manage compliance, documentation, audits, Registrar filings, governance records, and statutory requirements." },
-          { question: "How can ConsultAvenuee assist our society?", answer: "ConsultAvenuee provides end-to-end support for AGM and SGBM compliance, committee meeting management, statutory register maintenance, Form Y and Form O filing, audit coordination, audit rectification, compliance calendar management, and overall society governance support." }
+          { question: "What are Statutory Compliance & Governance Services for a Housing Society?", answer: `These services help Cooperative Housing Societies comply with legal, regulatory, and governance requirements, including AGM compliance, committee meetings, statutory register maintenance, annual filings, audits, and Registrar compliance.` },
+          { question: "Is conducting an Annual General Meeting (AGM) mandatory?", answer: `Yes. Every Cooperative Housing Society is required to conduct an AGM within the prescribed timelines and complete all related compliance requirements.` },
+          { question: "What documents are required for an AGM?", answer: `AGM documentation generally includes:\n• AGM Notice\n• Agenda\n• Audited Financial Statements\n• Secretary's Annual Report\n• Budget\n• Auditor's Report\n• Resolutions\n• Attendance Records\n• AGM Minutes` },
+          { question: "What is a Special General Body Meeting (SGBM)?", answer: `An SGBM is a meeting called to discuss specific matters requiring approval of members, such as redevelopment, major repairs, policy decisions, or bye-law amendments.` },
+          { question: "Why are Managing Committee meetings important?", answer: `Managing Committee meetings are essential for decision-making, financial management, maintenance planning, vendor approvals, compliance monitoring, and overall governance of the society.` },
+          { question: "What are statutory registers?", answer: `Statutory registers are mandatory records maintained by the society to record membership, shareholding, nominations, assets, investments, tenancy details, and other important governance information.` },
+          { question: "What is Form Y?", answer: `Form Y is the Annual Return filed with the Registrar containing details relating to society activities, financial statements, AGM compliance, membership information, audit details, and governance records.` },
+          { question: "Is Form Y filing mandatory every year?", answer: `Yes. Eligible Cooperative Housing Societies are required to submit annual returns and prescribed information to the Registrar within the stipulated timelines.` },
+          { question: "What is Form O?", answer: `Form O is the Audit Rectification Report submitted after the statutory audit, detailing corrective actions taken against audit observations and recommendations.` },
+          { question: "Why is Form O important?", answer: `Form O demonstrates that the society has reviewed audit observations and taken appropriate corrective actions to improve compliance and governance.` },
+          { question: "Is a statutory audit mandatory for housing societies?", answer: `Yes. Cooperative Housing Societies are generally required to undergo an annual statutory audit conducted by an authorized auditor.` },
+          { question: "What is audit rectification?", answer: `Audit rectification is the process of addressing deficiencies, observations, or irregularities identified during the statutory audit and implementing corrective measures.` },
+          { question: "What happens if audit observations are not rectified?", answer: `Failure to address audit observations may result in compliance issues, governance concerns, Registrar notices, and difficulties during inspections or redevelopment projects.` },
+          { question: "What is Annual Compliance Management?", answer: `Annual Compliance Management involves tracking and managing all recurring compliance obligations, including AGMs, audits, annual returns, statutory registers, committee meetings, and Registrar filings.` },
+          { question: "What is a Compliance Calendar?", answer: `A Compliance Calendar helps societies monitor important due dates and statutory obligations, reducing the risk of missed deadlines and regulatory non-compliance.` },
+          { question: "What are the consequences of non-compliance?", answer: `Non-compliance may lead to penalties, notices from authorities, audit qualifications, governance challenges, member disputes, and regulatory action.` },
+          { question: "Can societies outsource compliance and governance activities?", answer: `Yes. Many housing societies appoint professional consultants to manage compliance, documentation, audits, Registrar filings, governance records, and statutory requirements.` },
+          { question: "How can ConsultAvenuee assist our society?", answer: `ConsultAvenuee provides end-to-end support for AGM and SGBM compliance, committee meeting management, statutory register maintenance, Form Y and Form O filing, audit coordination, audit rectification, compliance calendar management, and overall society governance support.` }
         ],
         longDesc: "Comprehensive Society Compliance & Secretarial Services\nSupporting Managing Committees with expert governance, documentation, and statutory compliance solutions.\nCooperative Housing Societies are required to comply with various statutory, administrative, and governance requirements under applicable cooperative laws and society bye-laws.\nProper maintenance of records, timely conduct of meetings, and accurate documentation are essential for transparent administration and smooth functioning of the society.\nAt ConsultAvenuee, we provide comprehensive Statutory Compliance & Governance Services to support Managing Committees, Office Bearers, and Society Members in fulfilling their legal obligations while maintaining high standards of governance and accountability.",
         postSectionsDesc: "Our objective is to ensure that your society remains fully compliant with annual filing requirements while allowing the Managing Committee to focus on effective administration and community development.",
@@ -509,17 +509,17 @@ const rawServicesData: RawTab[] = [
         price: "₹12,999",
         description: "GST, TDS, income tax filling, Internal audit and accounting support to ensure financial accuracy and regulatory compliance.",
         faqs: [
-          { question: "When is GST registration required for a housing society?", answer: "GST registration may become necessary when the society meets the prescribed conditions under GST laws. A compliance review can help determine registration requirements." },
-          { question: "What GST returns are required to be filed by a registered society?", answer: "Depending on the registration category and applicable provisions, societies may be required to file monthly, quarterly, and annual GST returns." },
-          { question: "What are TDS returns?", answer: "TDS returns are periodic statements filed with the Income Tax Department containing details of taxes deducted and deposited on behalf of vendors and service providers." },
-          { question: "Is Income Tax Return filing mandatory for housing societies?", answer: "Yes. Cooperative Housing Societies are generally required to file Income Tax Returns, even if certain receipts may qualify under the principle of mutuality or other applicable provisions." },
-          { question: "What types of income may be taxable for a housing society?", answer: "Taxability depends on the nature of income. Certain receipts such as interest income, rental income, advertisement income, mobile tower income, and other non-member income may require tax evaluation." },
-          { question: "What is an Internal Audit?", answer: "An Internal Audit is an independent review of the society's financial records, transactions, controls, and compliance practices to identify risks and improve governance." },
-          { question: "How is an Internal Audit different from a Statutory Audit?", answer: "A Statutory Audit is a mandatory annual audit conducted under applicable cooperative laws, whereas an Internal Audit focuses on reviewing internal controls, processes, financial management, and risk areas." },
-          { question: "What does an Internal Audit cover?", answer: "An Internal Audit may cover:\n• Accounting Records\n• Ledger Scrutiny\n• Expense Verification\n• Maintenance Collections\n• Vendor Payments\n• Bank Reconciliations\n• Fund Utilization\n• Compliance Review\n• Financial Controls" },
-          { question: "Why is Bank Reconciliation important?", answer: "Bank reconciliation helps ensure that society accounting records match bank statements and assists in identifying errors, omissions, or unauthorized transactions." },
-          { question: "Can housing societies outsource accounting and tax compliance?", answer: "Yes. Many societies engage professional consultants for bookkeeping, GST compliance, TDS compliance, Income Tax filing, internal audits, and financial reviews." },
-          { question: "How can ConsultAvenuee assist our housing society?", answer: "ConsultAvenuee provides end-to-end support for GST compliance, TDS compliance, Income Tax filings, accounting reviews, internal audits, financial reporting, tax advisory, and ongoing financial governance support, helping societies maintain transparency, compliance, and financial discipline." }
+          { question: "When is GST registration required for a housing society?", answer: `GST registration may become necessary when the society meets the prescribed conditions under GST laws. A compliance review can help determine registration requirements.` },
+          { question: "What GST returns are required to be filed by a registered society?", answer: `Depending on the registration category and applicable provisions, societies may be required to file monthly, quarterly, and annual GST returns.` },
+          { question: "What are TDS returns?", answer: `TDS returns are periodic statements filed with the Income Tax Department containing details of taxes deducted and deposited on behalf of vendors and service providers.` },
+          { question: "Is Income Tax Return filing mandatory for housing societies?", answer: `Yes. Cooperative Housing Societies are generally required to file Income Tax Returns, even if certain receipts may qualify under the principle of mutuality or other applicable provisions.` },
+          { question: "What types of income may be taxable for a housing society?", answer: `Taxability depends on the nature of income. Certain receipts such as interest income, rental income, advertisement income, mobile tower income, and other non-member income may require tax evaluation.` },
+          { question: "What is an Internal Audit?", answer: `An Internal Audit is an independent review of the society's financial records, transactions, controls, and compliance practices to identify risks and improve governance.` },
+          { question: "How is an Internal Audit different from a Statutory Audit?", answer: `A Statutory Audit is a mandatory annual audit conducted under applicable cooperative laws, whereas an Internal Audit focuses on reviewing internal controls, processes, financial management, and risk areas.` },
+          { question: "What does an Internal Audit cover?", answer: `An Internal Audit may cover:\n• Accounting Records\n• Ledger Scrutiny\n• Expense Verification\n• Maintenance Collections\n• Vendor Payments\n• Bank Reconciliations\n• Fund Utilization\n• Compliance Review\n• Financial Controls` },
+          { question: "Why is Bank Reconciliation important?", answer: `Bank reconciliation helps ensure that society accounting records match bank statements and assists in identifying errors, omissions, or unauthorized transactions.` },
+          { question: "Can housing societies outsource accounting and tax compliance?", answer: `Yes. Many societies engage professional consultants for bookkeeping, GST compliance, TDS compliance, Income Tax filing, internal audits, and financial reviews.` },
+          { question: "How can ConsultAvenuee assist our housing society?", answer: `ConsultAvenuee provides end-to-end support for GST compliance, TDS compliance, Income Tax filings, accounting reviews, internal audits, financial reporting, tax advisory, and ongoing financial governance support, helping societies maintain transparency, compliance, and financial discipline.` }
         ],
         longDesc: "Ensuring Financial Transparency, Regulatory Compliance & Sound Financial Management\nProper accounting, timely tax compliance, accurate record maintenance, and periodic financial reviews help societies maintain transparency, strengthen internal controls, and meet statutory obligations.\nAt ConsultAvenuee, we provide comprehensive Taxation, Audit & Accounting Services to support Managing Committees and Office Bearers in managing the society's financial affairs efficiently while ensuring compliance with applicable tax laws and regulatory requirements.\n\nOur objective is to help Cooperative Housing Societies maintain accurate financial records, achieve full tax compliance, strengthen financial governance, and create confidence among members through transparent and accountable financial management.",
         checklist: [],
@@ -554,16 +554,16 @@ const rawServicesData: RawTab[] = [
         price: "Custom Pricing",
         description: "Professional redevelopment advisory services for housing societies, including feasibility assessment, compliance support, member coordination, and financial evaluation.",
         faqs: [
-          { question: "What is a redevelopment assessment?", answer: "A redevelopment assessment is a preliminary evaluation of a society's eligibility and potential for redevelopment based on factors such as building age, condition, land potential, and applicable regulations." },
-          { question: "Why is compliance review important in redevelopment?", answer: "A compliance review helps identify regulatory requirements, documentation gaps, and procedural obligations to ensure the redevelopment process is carried out smoothly and in accordance with applicable laws." },
-          { question: "How can you assist with member communication?", answer: "We help societies prepare notices, presentations, meeting agendas, and communication materials to keep members informed and promote transparency throughout the redevelopment process." },
-          { question: "What type of documentation support do you provide?", answer: "We assist in organizing and reviewing society records, resolutions, meeting minutes, notices, member registers, and other documents required during redevelopment." },
-          { question: "Do you help evaluate redevelopment proposals?", answer: "Yes. We assist societies in reviewing and comparing redevelopment proposals from a financial and commercial perspective, helping members understand the benefits and implications of each offer." },
-          { question: "Can you help societies before appointing a developer?", answer: "Yes. Our advisory services begin at the initial stage, helping societies assess redevelopment feasibility, review documentation, and understand the overall redevelopment process." },
-          { question: "Do you provide legal or technical approvals?", answer: "No. We provide advisory and support services. Statutory approvals and technical certifications are obtained through qualified architects, engineers, legal professionals, and other authorized experts." },
-          { question: "How do you help maintain transparency during redevelopment?", answer: "We support proper documentation, structured communication, record maintenance, and member engagement to ensure transparency throughout the redevelopment journey." },
-          { question: "Can small housing societies also benefit from redevelopment advisory services?", answer: "Yes. Societies of all sizes can benefit from professional guidance in assessing redevelopment opportunities, managing documentation, and making informed decisions." },
-          { question: "Why should a society engage a redevelopment advisor?", answer: "A redevelopment advisor helps societies navigate complex redevelopment processes, manage documentation efficiently, evaluate proposals objectively, and ensure that members receive reliable guidance throughout the project." }
+          { question: "What is a redevelopment assessment?", answer: `A redevelopment assessment is a preliminary evaluation of a society's eligibility and potential for redevelopment based on factors such as building age, condition, land potential, and applicable regulations.` },
+          { question: "Why is compliance review important in redevelopment?", answer: `A compliance review helps identify regulatory requirements, documentation gaps, and procedural obligations to ensure the redevelopment process is carried out smoothly and in accordance with applicable laws.` },
+          { question: "How can you assist with member communication?", answer: `We help societies prepare notices, presentations, meeting agendas, and communication materials to keep members informed and promote transparency throughout the redevelopment process.` },
+          { question: "What type of documentation support do you provide?", answer: `We assist in organizing and reviewing society records, resolutions, meeting minutes, notices, member registers, and other documents required during redevelopment.` },
+          { question: "Do you help evaluate redevelopment proposals?", answer: `Yes. We assist societies in reviewing and comparing redevelopment proposals from a financial and commercial perspective, helping members understand the benefits and implications of each offer.` },
+          { question: "Can you help societies before appointing a developer?", answer: `Yes. Our advisory services begin at the initial stage, helping societies assess redevelopment feasibility, review documentation, and understand the overall redevelopment process.` },
+          { question: "Do you provide legal or technical approvals?", answer: `No. We provide advisory and support services. Statutory approvals and technical certifications are obtained through qualified architects, engineers, legal professionals, and other authorized experts.` },
+          { question: "How do you help maintain transparency during redevelopment?", answer: `We support proper documentation, structured communication, record maintenance, and member engagement to ensure transparency throughout the redevelopment journey.` },
+          { question: "Can small housing societies also benefit from redevelopment advisory services?", answer: `Yes. Societies of all sizes can benefit from professional guidance in assessing redevelopment opportunities, managing documentation, and making informed decisions.` },
+          { question: "Why should a society engage a redevelopment advisor?", answer: `A redevelopment advisor helps societies navigate complex redevelopment processes, manage documentation efficiently, evaluate proposals objectively, and ensure that members receive reliable guidance throughout the project.` }
         ],
         longDesc: "Professional Guidance for Housing Society Redevelopment Projects\nRedevelopment is a major milestone for any housing society and requires careful planning, transparent decision-making, and compliance with applicable regulations.\nOur Redevelopment Advisory & Support Services help societies evaluate redevelopment opportunities, manage documentation, and facilitate smooth communication among stakeholders throughout the process.\n\nOur objective is to help housing societies make informed redevelopment decisions through structured guidance, proper documentation, regulatory compliance, and transparent communication.",
         checklist: [],
@@ -598,18 +598,18 @@ const rawServicesData: RawTab[] = [
         price: "Custom Pricing",
         description: "Expert support for society NOCs, share certificates, membership transfers, and documentation services to ensure smooth and compliant member transactions.",
         faqs: [
-          { question: "What is a Society NOC?", answer: "A Society No Objection Certificate (NOC) is an official document issued by the society confirming that it has no objection to a particular transaction or activity, subject to applicable rules and requirements." },
-          { question: "When is a NOC required for the sale of a flat?", answer: "An NOC may be required by buyers, financial institutions, legal professionals, or other stakeholders during a property transaction, depending on applicable regulations and society procedures." },
-          { question: "Can a society issue a NOC for a home loan?", answer: "Yes. Societies may issue NOCs or confirmations required by banks and financial institutions after verifying the member's records and compliance status." },
-          { question: "What documents are required for membership transfer?", answer: "Requirements may vary, but generally include transfer forms, sale documents, application forms, identity proof, nomination details, and other documents prescribed by the society." },
-          { question: "What is a share certificate?", answer: "A share certificate is a legal document issued by a co-operative housing society that evidences a member's ownership interest and membership in the society." },
-          { question: "When should a share certificate be updated?", answer: "Share certificates should be updated whenever there is a transfer of ownership, membership change, correction of details, or other approved modifications in society records." },
-          { question: "What should a member do if the share certificate is lost?", answer: "The member should immediately inform the society and follow the prescribed procedure for obtaining a duplicate share certificate, including submission of required declarations and supporting documents." },
-          { question: "How long does the duplicate share certificate process take?", answer: "The timeline depends on the society's procedures, verification requirements, and completion of statutory formalities. Proper documentation helps expedite the process." },
-          { question: "Can societies issue certificates for passport verification?", answer: "Yes. Subject to verification of records, societies may issue residence or occupancy confirmations required for passport-related applications." },
-          { question: "Why is proper society documentation important?", answer: "Accurate documentation helps ensure legal compliance, smooth property transactions, proper record management, and efficient service delivery to society members." },
-          { question: "Do you assist societies in maintaining statutory records?", answer: "Yes. We assist societies in maintaining membership records, share certificate registers, transfer records, and other essential documentation required under applicable regulations." },
-          { question: "Can you help with old or incomplete society records?", answer: "Yes. We assist societies in reviewing, organizing, updating, and regularizing records wherever possible to improve documentation accuracy and compliance." }
+          { question: "What is a Society NOC?", answer: `A Society No Objection Certificate (NOC) is an official document issued by the society confirming that it has no objection to a particular transaction or activity, subject to applicable rules and requirements.` },
+          { question: "When is a NOC required for the sale of a flat?", answer: `An NOC may be required by buyers, financial institutions, legal professionals, or other stakeholders during a property transaction, depending on applicable regulations and society procedures.` },
+          { question: "Can a society issue a NOC for a home loan?", answer: `Yes. Societies may issue NOCs or confirmations required by banks and financial institutions after verifying the member's records and compliance status.` },
+          { question: "What documents are required for membership transfer?", answer: `Requirements may vary, but generally include transfer forms, sale documents, application forms, identity proof, nomination details, and other documents prescribed by the society.` },
+          { question: "What is a share certificate?", answer: `A share certificate is a legal document issued by a co-operative housing society that evidences a member's ownership interest and membership in the society.` },
+          { question: "When should a share certificate be updated?", answer: `Share certificates should be updated whenever there is a transfer of ownership, membership change, correction of details, or other approved modifications in society records.` },
+          { question: "What should a member do if the share certificate is lost?", answer: `The member should immediately inform the society and follow the prescribed procedure for obtaining a duplicate share certificate, including submission of required declarations and supporting documents.` },
+          { question: "How long does the duplicate share certificate process take?", answer: `The timeline depends on the society's procedures, verification requirements, and completion of statutory formalities. Proper documentation helps expedite the process.` },
+          { question: "Can societies issue certificates for passport verification?", answer: `Yes. Subject to verification of records, societies may issue residence or occupancy confirmations required for passport-related applications.` },
+          { question: "Why is proper society documentation important?", answer: `Accurate documentation helps ensure legal compliance, smooth property transactions, proper record management, and efficient service delivery to society members.` },
+          { question: "Do you assist societies in maintaining statutory records?", answer: `Yes. We assist societies in maintaining membership records, share certificate registers, transfer records, and other essential documentation required under applicable regulations.` },
+          { question: "Can you help with old or incomplete society records?", answer: `Yes. We assist societies in reviewing, organizing, updating, and regularizing records wherever possible to improve documentation accuracy and compliance.` }
         ],
         longDesc: "Efficient Documentation Support for Housing Societies\nProper documentation is essential for the smooth functioning of a co-operative housing society and for facilitating various member transactions.\nOur services help ensure that society records are maintained accurately and that members receive timely documentation support for property transactions, loan applications, membership transfers, and other official requirements.\n\nOur objective is to help housing societies maintain accurate records, comply with statutory requirements, and provide efficient documentation services to members in a timely and professional manner.",
         checklist: [],
@@ -668,52 +668,52 @@ At ConsultAvenuee, we provide comprehensive NRI Taxation Services to Non-Residen
         sections: [
           {
             title: "NRI Income Tax Return Filing",
-            content: "• Income Tax Return Filing for NRIs
+            content: `• Income Tax Return Filing for NRIs
 • Revised and Updated Return Filing
 • Tax Refund Processing
 • Income Tax Compliance Review
-• Tax Record Management",
+• Tax Record Management`,
             image: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=600&q=80"
           },
           {
             title: "Property Taxation Services",
-            content: "• Tax Advisory on Property Purchase and Sale
+            content: `• Tax Advisory on Property Purchase and Sale
 • Capital Gains Computation
 • TDS Compliance on Property Transactions
 • Reinvestment and Exemption Planning
 • Rental Income Tax Compliance
-• Repatriation Documentation Support",
+• Repatriation Documentation Support`,
             image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=600&q=80"
           },
           {
             title: "Capital Gains & Investment Tax Advisory",
-            content: "• Capital Gains Tax Planning
+            content: `• Capital Gains Tax Planning
 • Property, Shares and Mutual Fund Taxation
 • Investment Tax Advisory
-• Exemption and Relief Planning",
+• Exemption and Relief Planning`,
             image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=600&q=80"
           },
           {
             title: "TDS & Compliance Services",
-            content: "• Property Sale TDS Advisory
+            content: `• Property Sale TDS Advisory
 • Rental Income TDS Compliance
 • Investment Income TDS Review
 • Lower or Nil TDS Certificate Assistance
-• TDS Refund Claims",
+• TDS Refund Claims`,
             image: "https://images.unsplash.com/photo-1450133064473-71024230f91b?auto=format&fit=crop&w=600&q=80"
           },
           {
             title: "Tax Notices & Representation",
-            content: "• Income Tax Notice Response Support
+            content: `• Income Tax Notice Response Support
 • Assessment and Reassessment Assistance
 • Refund and Rectification Matters
 • Appeal Documentation Support
-• Representation Before Tax Authorities",
+• Representation Before Tax Authorities`,
             image: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=600&q=80"
           },
           {
             title: "Our Commitment",
-            content: "We help NRIs manage their Indian tax obligations with confidence through proactive planning, accurate compliance, and practical advisory solutions. Our objective is to simplify complex tax matters, minimize tax exposure, ensure regulatory compliance, and protect your financial interests in India and abroad.",
+            content: `We help NRIs manage their Indian tax obligations with confidence through proactive planning, accurate compliance, and practical advisory solutions. Our objective is to simplify complex tax matters, minimize tax exposure, ensure regulatory compliance, and protect your financial interests in India and abroad.`,
             image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=600&q=80"
           }
         ],
@@ -730,27 +730,33 @@ At ConsultAvenuee, we provide comprehensive NRI Taxation Services to Non-Residen
           { aspect: "Government Liaisoning", manual: "Requires multiple physical visits.", consultAvenuee: "Complete departmental representation." }
         ],
         faqs: [
-          { question: "Who can avail NRI Taxation Services?", answer: "Our NRI Taxation Services are designed for Non-Resident Indians (NRIs), Overseas Citizens of India (OCIs), Persons of Indian Origin (PIOs), and individuals with tax obligations, investments, or income sources in India." },
-          { question: "Do NRIs need to file Income Tax Returns in India?", answer: "Yes. NRIs may be required to file an Income Tax Return (ITR) in India if their taxable income exceeds the prescribed threshold or if they wish to claim tax refunds, carry forward losses, or meet specific compliance requirements." },
-          { question: "How is NRI tax residency determined?", answer: "Tax residency is determined based on the individual's physical presence in India during the relevant financial year and preceding years, as per the provisions of the Income Tax Act." },
-          { question: "What types of income earned by NRIs are taxable in India?", answer: "Generally, income that accrues, arises, or is received in India may be taxable in India. This may include:\n• Rental Income\n• Capital Gains\n• Salary earned in India\n• Interest Income\n• Business Income\n• Investment Income" },
-          { question: "Can NRIs claim tax refunds in India?", answer: "Yes. If excess tax has been deducted or paid, NRIs may claim refunds by filing the appropriate Income Tax Return." },
-          { question: "Is rental income from property in India taxable for NRIs?", answer: "Yes. Rental income earned from property located in India is generally taxable in India and may be subject to TDS requirements." },
-          { question: "How is capital gains tax calculated on the sale of property by an NRI?", answer: "Capital gains tax depends on factors such as the holding period, purchase cost, sale consideration, indexed cost benefits (where applicable), and available exemptions under tax laws." },
-          { question: "Can NRIs claim exemptions on capital gains tax?", answer: "Yes. Subject to eligibility conditions, NRIs may be able to claim exemptions and reliefs through specified reinvestment options and tax planning strategies." },
-          { question: "What is TDS on property sale transactions involving NRIs?", answer: "Property purchases from NRIs may attract specific TDS obligations under Indian tax laws. We assist both buyers and sellers in understanding and complying with these requirements." },
-          { question: "Can you assist with lower or nil TDS certificate applications?", answer: "Yes. We assist eligible taxpayers in preparing and filing applications for lower or nil deduction certificates, subject to approval by the tax authorities." },
-          { question: "Can you assist with taxation of shares, mutual funds, and other investments?", answer: "Yes. We provide advisory and compliance support relating to taxation of shares, mutual funds, bonds, securities, and other investment assets held in India." },
-          { question: "What is Double Taxation Avoidance Agreement (DTAA)?", answer: "DTAA is a tax treaty between two countries that helps taxpayers avoid being taxed twice on the same income. We assist NRIs in evaluating applicable DTAA benefits." },
-          { question: "Can NRIs claim DTAA benefits?", answer: "Yes. Eligible NRIs may claim relief under applicable DTAA provisions, subject to fulfilling prescribed conditions and documentation requirements." },
-          { question: "Can you assist with pending tax refunds?", answer: "Yes. We assist in tracking refund status, resolving discrepancies, responding to departmental queries, and facilitating refund processing." },
-          { question: "Do NRIs need to report foreign income in India?", answer: "Reporting requirements depend on residential status, source of income, and applicable tax provisions. We evaluate individual circumstances and advise accordingly." },
-          { question: "Can you assist with tax planning for property investments in India?", answer: "Yes. We provide advisory services on acquisition, ownership, rental income, sale transactions, capital gains planning, and tax-efficient investment structures." },
-          { question: "Is online tax filing and consultation available for overseas clients?", answer: "Yes. Most of our taxation services can be managed remotely through secure digital communication and document-sharing processes, enabling seamless support worldwide." },
-          { question: "Can you assist with taxation of NRO and NRE accounts?", answer: "Yes. We provide guidance on the tax treatment, compliance requirements, and reporting obligations associated with NRO and NRE accounts." },
-          { question: "Can you help obtain Form 15CA and Form 15CB for fund repatriation?", answer: "Yes. We assist with documentation, certification coordination, and compliance requirements related to overseas remittances and repatriation of funds." },
-          { question: "Can you review my overall Indian tax position before I invest or sell assets?", answer: "Yes. We provide pre-transaction tax reviews to help clients understand tax implications, available exemptions, compliance requirements, and potential tax exposures before making financial decisions." },
-          { question: "Can you coordinate with my overseas tax advisors?", answer: "Yes. We can work alongside your overseas tax consultants, accountants, and financial advisors to facilitate efficient management of cross-border tax matters and compliance requirements." }
+          { question: "Who can avail NRI Taxation Services?", answer: `Our NRI Taxation Services are designed for Non-Resident Indians (NRIs), Overseas Citizens of India (OCIs), Persons of Indian Origin (PIOs), and individuals with tax obligations, investments, or income sources in India.` },
+          { question: "Do NRIs need to file Income Tax Returns in India?", answer: `Yes. NRIs may be required to file an Income Tax Return (ITR) in India if their taxable income exceeds the prescribed threshold or if they wish to claim tax refunds, carry forward losses, or meet specific compliance requirements.` },
+          { question: "How is NRI tax residency determined?", answer: `Tax residency is determined based on the individual's physical presence in India during the relevant financial year and preceding years, as per the provisions of the Income Tax Act.` },
+          { question: "What types of income earned by NRIs are taxable in India?", answer: `Generally, income that accrues, arises, or is received in India may be taxable in India. This may include:
+• Rental Income
+• Capital Gains
+• Salary earned in India
+• Interest Income
+• Business Income
+• Investment Income` },
+          { question: "Can NRIs claim tax refunds in India?", answer: `Yes. If excess tax has been deducted or paid, NRIs may claim refunds by filing the appropriate Income Tax Return.` },
+          { question: "Is rental income from property in India taxable for NRIs?", answer: `Yes. Rental income earned from property located in India is generally taxable in India and may be subject to TDS requirements.` },
+          { question: "How is capital gains tax calculated on the sale of property by an NRI?", answer: `Capital gains tax depends on factors such as the holding period, purchase cost, sale consideration, indexed cost benefits (where applicable), and available exemptions under tax laws.` },
+          { question: "Can NRIs claim exemptions on capital gains tax?", answer: `Yes. Subject to eligibility conditions, NRIs may be able to claim exemptions and reliefs through specified reinvestment options and tax planning strategies.` },
+          { question: "What is TDS on property sale transactions involving NRIs?", answer: `Property purchases from NRIs may attract specific TDS obligations under Indian tax laws. We assist both buyers and sellers in understanding and complying with these requirements.` },
+          { question: "Can you assist with lower or nil TDS certificate applications?", answer: `Yes. We assist eligible taxpayers in preparing and filing applications for lower or nil deduction certificates, subject to approval by the tax authorities.` },
+          { question: "Can you assist with taxation of shares, mutual funds, and other investments?", answer: `Yes. We provide advisory and compliance support relating to taxation of shares, mutual funds, bonds, securities, and other investment assets held in India.` },
+          { question: "What is Double Taxation Avoidance Agreement (DTAA)?", answer: `DTAA is a tax treaty between two countries that helps taxpayers avoid being taxed twice on the same income. We assist NRIs in evaluating applicable DTAA benefits.` },
+          { question: "Can NRIs claim DTAA benefits?", answer: `Yes. Eligible NRIs may claim relief under applicable DTAA provisions, subject to fulfilling prescribed conditions and documentation requirements.` },
+          { question: "Can you assist with pending tax refunds?", answer: `Yes. We assist in tracking refund status, resolving discrepancies, responding to departmental queries, and facilitating refund processing.` },
+          { question: "Do NRIs need to report foreign income in India?", answer: `Reporting requirements depend on residential status, source of income, and applicable tax provisions. We evaluate individual circumstances and advise accordingly.` },
+          { question: "Can you assist with tax planning for property investments in India?", answer: `Yes. We provide advisory services on acquisition, ownership, rental income, sale transactions, capital gains planning, and tax-efficient investment structures.` },
+          { question: "Is online tax filing and consultation available for overseas clients?", answer: `Yes. Most of our taxation services can be managed remotely through secure digital communication and document-sharing processes, enabling seamless support worldwide.` },
+          { question: "Can you assist with taxation of NRO and NRE accounts?", answer: `Yes. We provide guidance on the tax treatment, compliance requirements, and reporting obligations associated with NRO and NRE accounts.` },
+          { question: "Can you help obtain Form 15CA and Form 15CB for fund repatriation?", answer: `Yes. We assist with documentation, certification coordination, and compliance requirements related to overseas remittances and repatriation of funds.` },
+          { question: "Can you review my overall Indian tax position before I invest or sell assets?", answer: `Yes. We provide pre-transaction tax reviews to help clients understand tax implications, available exemptions, compliance requirements, and potential tax exposures before making financial decisions.` },
+          { question: "Can you coordinate with my overseas tax advisors?", answer: `Yes. We can work alongside your overseas tax consultants, accountants, and financial advisors to facilitate efficient management of cross-border tax matters and compliance requirements.` }
         ],
         checklist: ["Passport", "PAN Card", "Aadhaar Card (if available)", "Overseas Address Proof", "Tax Residency Documents", "Bank Statements", "Property Documents", "Form 16 (if applicable)", "Investment Statements", "Foreign Income Records", "TDS Certificates", "Previous Tax Returns"],
         chartData: [
@@ -771,17 +777,17 @@ Acting as your trusted local representative, we ensure your property remains sec
         sections: [
           {
             title: "Property Inspection & Monitoring",
-            content: "Regular monitoring helps safeguard your property and ensures timely identification of any issues.",
+            content: `Regular monitoring helps safeguard your property and ensures timely identification of any issues.`,
             image: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=600&q=80"
           },
           {
             title: "Property Protection & Asset Security",
-            content: "We help protect your property against misuse, encroachment, and unauthorized occupation.",
+            content: `We help protect your property against misuse, encroachment, and unauthorized occupation.`,
             image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=600&q=80"
           },
           {
             title: "Tenant Management & Rental Services",
-            content: "Our team assists with the complete rental lifecycle, from tenant onboarding to rent management.
+            content: `Our team assists with the complete rental lifecycle, from tenant onboarding to rent management.
 Services include:
 • Property Marketing and Listing Support
 • Tenant Screening and Verification
@@ -790,17 +796,17 @@ Services include:
 • Lease Renewal Coordination
 • Security Deposit Management
 • Tenant Exit Documentation
-• Rental Income Monitoring and Reporting",
+• Rental Income Monitoring and Reporting`,
             image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=600&q=80"
           },
           {
             title: "Property Maintenance & Upkeep",
-            content: "We coordinate routine and emergency maintenance to preserve property value and functionality.",
+            content: `We coordinate routine and emergency maintenance to preserve property value and functionality.`,
             image: "https://images.unsplash.com/photo-1450133064473-71024230f91b?auto=format&fit=crop&w=600&q=80"
           },
           {
             title: "Property Sale & Purchase Assistance",
-            content: "Whether acquiring or disposing of property, we assist with documentation and transaction management.
+            content: `Whether acquiring or disposing of property, we assist with documentation and transaction management.
 Services include:
 • Property Due Diligence Coordination
 • Title Verification Support
@@ -808,17 +814,17 @@ Services include:
 • Buyer and Seller Documentation Assistance
 • Registration Support
 • Property Handover Coordination
-• Transaction Documentation Review",
+• Transaction Documentation Review`,
             image: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=600&q=80"
           },
           {
             title: "Property Reporting & Advisory",
-            content: "We provide transparent reporting and insights to help you make informed property decisions.",
+            content: `We provide transparent reporting and insights to help you make informed property decisions.`,
             image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=600&q=80"
           },
           {
             title: "Our Commitment",
-            content: "We act as your trusted property management partner in India, providing proactive oversight, professional coordination, and comprehensive support to protect your real estate investments. Our goal is to give NRIs complete peace of mind by ensuring their properties remain secure, compliant, well-maintained, and financially productive, regardless of where they reside in the world.",
+            content: `We act as your trusted property management partner in India, providing proactive oversight, professional coordination, and comprehensive support to protect your real estate investments. Our goal is to give NRIs complete peace of mind by ensuring their properties remain secure, compliant, well-maintained, and financially productive, regardless of where they reside in the world.`,
             image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=600&q=80"
           }
         ],
@@ -835,22 +841,22 @@ Services include:
           { aspect: "Government Liaisoning", manual: "Requires multiple physical visits.", consultAvenuee: "Complete departmental representation." }
         ],
         faqs: [
-          { question: "Who can avail NRI Property Management Services?", answer: "Our services are designed for Non-Resident Indians (NRIs), Overseas Citizens of India (OCIs), Persons of Indian Origin (PIOs), and foreign citizens who own property in India." },
-          { question: "What types of properties do you manage?", answer: "We manage residential apartments, villas, independent houses, commercial properties, and investment properties across India." },
-          { question: "How often do you inspect the property?", answer: "Inspection frequency can be customized based on client requirements. Regular inspections may be conducted monthly, quarterly, half-yearly, or annually." },
-          { question: "Can you help prevent unauthorized occupation or encroachment?", answer: "Yes. We conduct periodic property inspections, monitor occupancy status, coordinate with local authorities when necessary, and provide timely alerts regarding any unauthorized activity." },
-          { question: "Do I need to visit India to manage my property?", answer: "No. Most property management activities can be handled remotely through our authorized representatives and Power of Attorney arrangements, where applicable." },
-          { question: "Can you assist in finding tenants for my property?", answer: "Yes. We assist with property marketing, tenant screening, background verification, rent agreement documentation, lease management, and tenant onboarding." },
-          { question: "How do you verify prospective tenants?", answer: "We conduct identity verification, address verification, employment checks, and reference checks wherever possible before recommending a tenant." },
-          { question: "Do you prepare and manage rental agreements?", answer: "Yes. We coordinate the preparation, execution, renewal, and registration (where required) of rent and lease agreements." },
-          { question: "Can you coordinate property maintenance and repairs?", answer: "Yes. We arrange routine maintenance, emergency repairs, vendor coordination, utility management, and upkeep services to ensure the property remains in good condition." },
-          { question: "Can you assist in selling my property in India?", answer: "Yes. We assist with documentation, title verification coordination, valuation support, buyer coordination, registration assistance, and transaction documentation." },
-          { question: "Can you assist in purchasing property in India?", answer: "Yes. We provide support in due diligence, title verification, document review, valuation coordination, and transaction assistance." },
-          { question: "Do I need to provide a Power of Attorney (POA)?", answer: "A POA may be required for certain activities such as property transactions, legal representation, registration work, or dealing with government authorities. The requirement depends on the scope of services." },
-          { question: "Can you assist with property tax and utility bill payments?", answer: "Yes. We coordinate payment of property taxes, maintenance charges, electricity bills, water bills, and other statutory dues as authorized by the owner." },
-          { question: "Why should I choose professional property management services?", answer: "Professional management helps protect your property, reduce risks of misuse or encroachment, ensure timely maintenance, improve tenant management, maintain legal compliance, and provide peace of mind while you reside abroad." },
-          { question: "Can you represent me before housing societies and local authorities?", answer: "Yes. We can coordinate with housing societies, municipal authorities, utility providers, and other local bodies for routine property-related matters, subject to authorization." },
-          { question: "Do you provide property photo and video inspection reports?", answer: "Yes. Detailed photo and video reports can be provided after inspections to help owners monitor the property's condition remotely." }
+          { question: "Who can avail NRI Property Management Services?", answer: `Our services are designed for Non-Resident Indians (NRIs), Overseas Citizens of India (OCIs), Persons of Indian Origin (PIOs), and foreign citizens who own property in India.` },
+          { question: "What types of properties do you manage?", answer: `We manage residential apartments, villas, independent houses, commercial properties, and investment properties across India.` },
+          { question: "How often do you inspect the property?", answer: `Inspection frequency can be customized based on client requirements. Regular inspections may be conducted monthly, quarterly, half-yearly, or annually.` },
+          { question: "Can you help prevent unauthorized occupation or encroachment?", answer: `Yes. We conduct periodic property inspections, monitor occupancy status, coordinate with local authorities when necessary, and provide timely alerts regarding any unauthorized activity.` },
+          { question: "Do I need to visit India to manage my property?", answer: `No. Most property management activities can be handled remotely through our authorized representatives and Power of Attorney arrangements, where applicable.` },
+          { question: "Can you assist in finding tenants for my property?", answer: `Yes. We assist with property marketing, tenant screening, background verification, rent agreement documentation, lease management, and tenant onboarding.` },
+          { question: "How do you verify prospective tenants?", answer: `We conduct identity verification, address verification, employment checks, and reference checks wherever possible before recommending a tenant.` },
+          { question: "Do you prepare and manage rental agreements?", answer: `Yes. We coordinate the preparation, execution, renewal, and registration (where required) of rent and lease agreements.` },
+          { question: "Can you coordinate property maintenance and repairs?", answer: `Yes. We arrange routine maintenance, emergency repairs, vendor coordination, utility management, and upkeep services to ensure the property remains in good condition.` },
+          { question: "Can you assist in selling my property in India?", answer: `Yes. We assist with documentation, title verification coordination, valuation support, buyer coordination, registration assistance, and transaction documentation.` },
+          { question: "Can you assist in purchasing property in India?", answer: `Yes. We provide support in due diligence, title verification, document review, valuation coordination, and transaction assistance.` },
+          { question: "Do I need to provide a Power of Attorney (POA)?", answer: `A POA may be required for certain activities such as property transactions, legal representation, registration work, or dealing with government authorities. The requirement depends on the scope of services.` },
+          { question: "Can you assist with property tax and utility bill payments?", answer: `Yes. We coordinate payment of property taxes, maintenance charges, electricity bills, water bills, and other statutory dues as authorized by the owner.` },
+          { question: "Why should I choose professional property management services?", answer: `Professional management helps protect your property, reduce risks of misuse or encroachment, ensure timely maintenance, improve tenant management, maintain legal compliance, and provide peace of mind while you reside abroad.` },
+          { question: "Can you represent me before housing societies and local authorities?", answer: `Yes. We can coordinate with housing societies, municipal authorities, utility providers, and other local bodies for routine property-related matters, subject to authorization.` },
+          { question: "Do you provide property photo and video inspection reports?", answer: `Yes. Detailed photo and video reports can be provided after inspections to help owners monitor the property's condition remotely.` }
         ],
         checklist: ["Passport", "OCI / PIO Card (if applicable)", "PAN Card", "Property Title Documents", "Previous Sale Deeds", "Property Tax Receipts", "Utility Records", "Existing Lease Agreements", "Power of Attorney (if applicable)", "Bank Account Details"],
         chartData: [
@@ -870,7 +876,7 @@ At ConsultAvenuee, we provide comprehensive NRI Legal & Compliance Services, hel
         sections: [
           {
             title: "Power of Attorney (POA) Services",
-            content: "Power of Attorney is often essential for NRIs to authorize trusted representatives to act on their behalf in India.
+            content: `Power of Attorney is often essential for NRIs to authorize trusted representatives to act on their behalf in India.
 Our services include:
 • General Power of Attorney (GPA) Drafting
 • Special Power of Attorney (SPA) Drafting
@@ -878,47 +884,47 @@ Our services include:
 • Legal and Administrative Representation POA
 • POA Review and Legal Vetting
 • Attestation and Registration Guidance
-• Revocation and Amendment Documentation",
+• Revocation and Amendment Documentation`,
             image: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=600&q=80"
           },
           {
             title: "Documentation & Attestation Services",
-            content: "We assist with preparation, verification, authentication, and management of legal and regulatory documents required in India.
+            content: `We assist with preparation, verification, authentication, and management of legal and regulatory documents required in India.
 Services include:
 • PAN Application and Corrections
 • Affidavits and Declarations
 • Notarization Guidance
 • Certified Documentation Assistance
-• Compliance Documentation Support",
+• Compliance Documentation Support`,
             image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=600&q=80"
           },
           {
             title: "Retirement & Financial Documentation Services",
-            content: "We help NRIs manage retirement-related benefits, financial records, and beneficiary matters in India.
+            content: `We help NRIs manage retirement-related benefits, financial records, and beneficiary matters in India.
 Services include:
 • PF Withdrawal Assistance
 • Pension Documentation Support
 • Gratuity Claim Documentation
 • Nomination and Beneficiary Updates
 • Banking Documentation Assistance
-• Financial Record Consolidation",
+• Financial Record Consolidation`,
             image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=600&q=80"
           },
           {
             title: "Business & Corporate Support Services",
-            content: "For NRIs with business interests in India, we provide documentation and compliance assistance.
+            content: `For NRIs with business interests in India, we provide documentation and compliance assistance.
 Services include:
 • Company Incorporation Support
 • LLP and Partnership Documentation
 • Startup Advisory Support
 • ROC and secretarial Compliance Assistance
 • Share Transfer Documentation
-• Corporate Documentation Management",
+• Corporate Documentation Management`,
             image: "https://images.unsplash.com/photo-1450133064473-71024230f91b?auto=format&fit=crop&w=600&q=80"
           },
           {
             title: "Our Commitment",
-            content: "We serve as a trusted India-based advisory partner for NRIs, helping them navigate legal, compliance, documentation, and succession matters with confidence. Our objective is to simplify complex processes, ensure regulatory compliance, protect family interests, and provide seamless support for managing Indian affairs from anywhere in the world.",
+            content: `We serve as a trusted India-based advisory partner for NRIs, helping them navigate legal, compliance, documentation, and succession matters with confidence. Our objective is to simplify complex processes, ensure regulatory compliance, protect family interests, and provide seamless support for managing Indian affairs from anywhere in the world.`,
             image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=600&q=80"
           }
         ],
@@ -935,23 +941,23 @@ Services include:
           { aspect: "Government Liaisoning", manual: "Requires multiple physical visits.", consultAvenuee: "Complete departmental representation." }
         ],
         faqs: [
-          { question: "Who can avail NRI Legal & Compliance Services?", answer: "Our services are designed for Non-Resident Indians (NRIs), Overseas Citizens of India (OCIs), Persons of Indian Origin (PIOs), and their families who require assistance with legal, compliance, documentation, and succession matters in India." },
-          { question: "Why do NRIs require legal and compliance support in India?", answer: "Managing legal and regulatory matters from overseas can be challenging due to evolving laws, documentation requirements, and the need for local coordination. Professional support helps ensure compliance, accuracy, and timely execution of legal processes." },
-          { question: "What is a Power of Attorney (POA), and why is it important for NRIs?", answer: "A Power of Attorney allows an NRI to authorize a trusted individual to act on their behalf in India for property, banking, legal, administrative, and financial matters without requiring frequent travel." },
-          { question: "What is the difference between a General Power of Attorney (GPA) and a Special Power of Attorney (SPA)?", answer: "A GPA grants broad authority to the appointed representative for multiple matters, while an SPA grants authority for a specific transaction or purpose only." },
-          { question: "Can you assist with drafting and reviewing Power of Attorney documents?", answer: "Yes. We assist with drafting, reviewing, vetting, attestation guidance, registration support, amendments, and revocation of Power of Attorney documents." },
-          { question: "Can a Power of Attorney executed abroad be used in India?", answer: "Yes. Subject to applicable legal requirements, a POA executed overseas may need notarization, attestation, apostille, and registration in India before use." },
-          { question: "Can you help with PAN card applications and corrections?", answer: "Yes. We assist with PAN applications, corrections, updates, reissuance, and documentation support for NRIs." },
-          { question: "Do you provide document attestation and notarization support?", answer: "Yes. We provide guidance on notarization, attestation, apostille requirements, certified copies, affidavits, declarations, and other legal documentation processes." },
-          { question: "Can you assist with PF withdrawal and pension documentation?", answer: "Yes. We assist with documentation for Provident Fund withdrawals, pension claims, gratuity settlements, beneficiary updates, and retirement benefit processing." },
-          { question: "Can NRIs claim pension and retirement benefits in India?", answer: "Yes. Eligible NRIs may claim retirement benefits subject to applicable laws, eligibility criteria, and documentation requirements." },
-          { question: "Can you assist NRIs with company formation in India?", answer: "Yes. We provide support for company incorporation, LLP registration, partnership documentation, startup structuring, and related compliance requirements." },
-          { question: "Can you help with ROC and corporate compliance matters?", answer: "Yes. We assist with documentation and compliance support related to corporate filings, secretarial records, share transfers, and regulatory requirements." },
-          { question: "Can you represent me before government authorities and institutions?", answer: "We provide coordination and representation support through authorized processes, documentation management, and liaison assistance, subject to legal requirements and authorization." },
-          { question: "Can services be managed remotely from overseas?", answer: "Yes. Most services can be managed remotely through digital communication, document sharing, and authorized representation, reducing the need for travel to India." },
-          { question: "Why should NRIs engage professional legal and compliance support?", answer: "Professional support helps reduce legal risks, ensure regulatory compliance, streamline documentation, protect family interests, facilitate succession planning, and provide peace of mind while managing affairs in India from abroad." },
-          { question: "Can you assist elderly parents or family members in India on behalf of NRIs?", answer: "Yes. Subject to authorization, we can coordinate documentation, compliance requirements, and administrative support for family members residing in India." },
-          { question: "Can you coordinate with lawyers, chartered accountants, and other professionals?", answer: "Yes. We work closely with legal, tax, and compliance professionals whenever specialized expertise or representation is required." }
+          { question: "Who can avail NRI Legal & Compliance Services?", answer: `Our services are designed for Non-Resident Indians (NRIs), Overseas Citizens of India (OCIs), Persons of Indian Origin (PIOs), and their families who require assistance with legal, compliance, documentation, and succession matters in India.` },
+          { question: "Why do NRIs require legal and compliance support in India?", answer: `Managing legal and regulatory matters from overseas can be challenging due to evolving laws, documentation requirements, and the need for local coordination. Professional support helps ensure compliance, accuracy, and timely execution of legal processes.` },
+          { question: "What is a Power of Attorney (POA), and why is it important for NRIs?", answer: `A Power of Attorney allows an NRI to authorize a trusted individual to act on their behalf in India for property, banking, legal, administrative, and financial matters without requiring frequent travel.` },
+          { question: "What is the difference between a General Power of Attorney (GPA) and a Special Power of Attorney (SPA)?", answer: `A GPA grants broad authority to the appointed representative for multiple matters, while an SPA grants authority for a specific transaction or purpose only.` },
+          { question: "Can you assist with drafting and reviewing Power of Attorney documents?", answer: `Yes. We assist with drafting, reviewing, vetting, attestation guidance, registration support, amendments, and revocation of Power of Attorney documents.` },
+          { question: "Can a Power of Attorney executed abroad be used in India?", answer: `Yes. Subject to applicable legal requirements, a POA executed overseas may need notarization, attestation, apostille, and registration in India before use.` },
+          { question: "Can you help with PAN card applications and corrections?", answer: `Yes. We assist with PAN applications, corrections, updates, reissuance, and documentation support for NRIs.` },
+          { question: "Do you provide document attestation and notarization support?", answer: `Yes. We provide guidance on notarization, attestation, apostille requirements, certified copies, affidavits, declarations, and other legal documentation processes.` },
+          { question: "Can you assist with PF withdrawal and pension documentation?", answer: `Yes. We assist with documentation for Provident Fund withdrawals, pension claims, gratuity settlements, beneficiary updates, and retirement benefit processing.` },
+          { question: "Can NRIs claim pension and retirement benefits in India?", answer: `Yes. Eligible NRIs may claim retirement benefits subject to applicable laws, eligibility criteria, and documentation requirements.` },
+          { question: "Can you assist NRIs with company formation in India?", answer: `Yes. We provide support for company incorporation, LLP registration, partnership documentation, startup structuring, and related compliance requirements.` },
+          { question: "Can you help with ROC and corporate compliance matters?", answer: `Yes. We assist with documentation and compliance support related to corporate filings, secretarial records, share transfers, and regulatory requirements.` },
+          { question: "Can you represent me before government authorities and institutions?", answer: `We provide coordination and representation support through authorized processes, documentation management, and liaison assistance, subject to legal requirements and authorization.` },
+          { question: "Can services be managed remotely from overseas?", answer: `Yes. Most services can be managed remotely through digital communication, document sharing, and authorized representation, reducing the need for travel to India.` },
+          { question: "Why should NRIs engage professional legal and compliance support?", answer: `Professional support helps reduce legal risks, ensure regulatory compliance, streamline documentation, protect family interests, facilitate succession planning, and provide peace of mind while managing affairs in India from abroad.` },
+          { question: "Can you assist elderly parents or family members in India on behalf of NRIs?", answer: `Yes. Subject to authorization, we can coordinate documentation, compliance requirements, and administrative support for family members residing in India.` },
+          { question: "Can you coordinate with lawyers, chartered accountants, and other professionals?", answer: `Yes. We work closely with legal, tax, and compliance professionals whenever specialized expertise or representation is required.` }
         ],
         checklist: ["Passport", "OCI / PIO Card (if applicable)", "PAN Card", "Overseas Address Proof", "Indian Address Proof (if available)", "Tax Records and Financial Statements", "Bank Account Details", "Existing Legal Documents", "Family and Beneficiary Information", "Investment and Compliance Records"],
         chartData: [
@@ -966,32 +972,53 @@ Services include:
   {
     id: "senior-citizen-advisory",
     title: "Senior Citizen Advisory Services",
-    description: "Helping senior citizens manage tax, pension, property, and legal matters with ease.",
+    description: "Expert assistance for senior citizens in managing taxation, pension benefits, property matters, legal documentation, and succession planning.",
     subServices: [
       {
         id: "health-insurance-claims-support",
         title: "Health Insurance Claims Support",
-        description: "Assistance with filing and processing health insurance claims efficiently.",
+        description: "Professional support for health insurance reimbursement claims, documentation, and claim rejection matters, ensuring a smooth and efficient claims process.",
         badge: "SPECIAL",
-        longDesc: "Manoj CA offers expert guidance and complete handling of Health Insurance Claims Support. Our experienced team manages all statutory formalities, document verification, and government submissions to ensure full compliance and peace of mind.",
+        longDesc: `ConsultAvenuee Senior Citizen Assistance Services provide trusted support for taxation, health insurance claims, financial documentation, property matters, estate planning, and regulatory compliance, enabling senior citizens and their families to manage life's financial and administrative responsibilities with confidence, convenience, and peace of mind.
+
+Helping You Focus on Recovery, Not Paperwork
+ConsultAvenuee provides reliable and professional Health Insurance Claims Support Services to help you navigate the process with confidence and secure the benefits you are entitled to under your policy.
+Let us handle the claim process while you focus on your health and recovery.`,
         sections: [
           {
-            title: "Service Scope & Standards",
-            content: "Our professionals ensure a thorough audit and preparation process. We review all local state parameters, standard bylaws, and relevant central notifications to make sure that the filing is fully aligned with regulatory norms.",
-            image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=600&q=80"
-          },
-          {
-            title: "Regulatory Oversight & Risk Mitigation",
-            content: "With over 34+ years of professional standing, our advisory team helps mitigate any compliance risks. We actively track timeline calendars, address authority queries, and prevent delay penalties.",
+            title: "Health Insurance Claims Support Services",
+            content: `Simplifying Health Insurance Claims. Maximizing Your Benefits.
+Our objective is to simplify the process, minimize delays, reduce claim rejections, and help clients secure timely settlement of eligible insurance benefits.
+At ConsultAvenuee, we provide comprehensive Health Insurance Claims Support Services.`,
             image: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=600&q=80"
           },
           {
-            title: "Strategic Advisory & Post-Compliance Benefits",
-            content: "Beyond the registration or filing itself, we offer valuable long-term insights. This includes ongoing advisory on tax liabilities, structural governance, and annual filings so you can run operations seamlessly.",
+            title: "Reimbursement Claim Assistance",
+            content: `For medical expenses paid directly by the insured, we provide complete support for reimbursement claims.`,
+            image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=600&q=80"
+          },
+          {
+            title: "Claim Documentation Support",
+            content: `Accurate documentation plays a critical role in claim approval.`,
+            image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=600&q=80"
+          },
+          {
+            title: "Claim Rejection & Dispute Resolution Support",
+            content: `If a claim is rejected or partially settled, we assist clients in pursuing a fair review and resolution.`,
+            image: "https://images.unsplash.com/photo-1450133064473-71024230f91b?auto=format&fit=crop&w=600&q=80"
+          },
+          {
+            title: "Benefits of Professional Claims Assistance",
+            content: `• Reduced Claim Rejections
+• Faster Claim Processing
+• Continuous Claim Tracking
+• Expert Guidance
+• Dispute Resolution Support
+• Improved Settlement Outcomes`,
             image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=600&q=80"
           }
         ],
-                image: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=800&q=80",
+        image: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=800&q=80",
         timelineSteps: [
           { num: "01", title: "CONSULTATION", detailTitle: "Initial Briefing & Check", desc: "We discuss details and review all checklists." },
           { num: "02", title: "VERIFICATION", detailTitle: "Document Compilation", desc: "Our specialists check all details to ensure compliance and completeness." },
@@ -1003,7 +1030,12 @@ Services include:
           { aspect: "Compliance Accuracy", manual: "High risk of statutory notices or fines.", consultAvenuee: "Zero-error draft verification." },
           { aspect: "Government Liaisoning", manual: "Requires multiple physical visits.", consultAvenuee: "Complete departmental representation." }
         ],
-        checklist: ["Aadhaar Card & PAN Card copy", "Pension Account Booklet / PPO copy", "Original medical insurance policy bond & discharge summaries", "Property ownership title deeds & mutation certificate", "Nomination detail forms"],
+        checklist: ["Health Insurance Policy Details", "Health Insurance Card", "Aadhaar Card or Identity Proof", "Hospital Admission Records", "Discharge Summary", "Medical Prescriptions", "Diagnostic Reports", "Original Medical Bills and Receipts", "Pharmacy Bills", "Bank Account Details", "Cancelled Cheque (for reimbursement claims)"],
+        faqs: [
+          { question: "Can you help if my claim has already been rejected?", answer: "Yes. We can review the rejection reasons, evaluate available options, assist with documentation, and support you in pursuing reconsideration or grievance redressal processes." },
+          { question: "Can senior citizens avail these services?", answer: "Absolutely. We provide dedicated assistance for senior citizens and their family members throughout the claim process." },
+          { question: "Do you sell insurance policies?", answer: "No. Our role is to assist policyholders in managing and processing health insurance claims efficiently and professionally." }
+        ],
         chartData: [
           { label: "Intake Consultation", value: 30, color: "#c79d62" },
           { label: "Record Compilation", value: 30, color: "#110311" },
@@ -1014,26 +1046,51 @@ Services include:
       {
         id: "senior-income-tax-filing",
         title: "Income Tax planning & Filing",
-        description: "Specialized tax planning and ITR filing services for senior citizens.",
-        longDesc: "Manoj CA offers expert guidance and complete handling of Income Tax planning & Filing. Our experienced team manages all statutory formalities, document verification, and government submissions to ensure full compliance and peace of mind.",
+        description: "Comprehensive income tax services covering tax planning, return filing, compliance management, and tax notice support for senior citizens.",
+        longDesc: `Smart Tax Planning. Accurate Compliance. Maximum Savings.
+Effective tax planning is not just about reducing tax liability—it is about making informed financial decisions, ensuring regulatory compliance, and preserving wealth.
+At ConsultAvenuee, we provide comprehensive Income Tax Planning, Compliance, and Return Filing Services.
+Partner with us for proactive tax planning, accurate compliance, and trusted professional guidance throughout the year.`,
         sections: [
           {
-            title: "Service Scope & Standards",
-            content: "Our professionals ensure a thorough audit and preparation process. We review all local state parameters, standard bylaws, and relevant central notifications to make sure that the filing is fully aligned with regulatory norms.",
-            image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=600&q=80"
-          },
-          {
-            title: "Regulatory Oversight & Risk Mitigation",
-            content: "With over 34+ years of professional standing, our advisory team helps mitigate any compliance risks. We actively track timeline calendars, address authority queries, and prevent delay penalties.",
+            title: "Tax Planning & Advisory",
+            content: `We help clients develop tax-efficient strategies that align with their financial and business objectives.`,
             image: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=600&q=80"
           },
           {
-            title: "Strategic Advisory & Post-Compliance Benefits",
-            content: "Beyond the registration or filing itself, we offer valuable long-term insights. This includes ongoing advisory on tax liabilities, structural governance, and annual filings so you can run operations seamlessly.",
+            title: "Income Tax Return Filing Services",
+            content: `Timely and accurate filing of Income Tax Returns is essential for maintaining compliance and avoiding penalties.`,
+            image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=600&q=80"
+          },
+          {
+            title: "Tax Compliance Services",
+            content: `Our compliance support ensures that all tax obligations are met accurately and on time.
+• PAN & TAN Services
+• Advance Tax Computation
+• Self-Assessment Tax Calculation
+• TDS Verification & Reconciliation
+• AIS & Form 26AS Review
+• Income Tax Portal Assistance
+• Tax Compliance Review`,
+            image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=600&q=80"
+          },
+          {
+            title: "Tax Notice & Assessment Support",
+            content: `Receiving a tax notice can be stressful. Our experienced professionals provide practical assistance in responding effectively and protecting your interests.`,
+            image: "https://images.unsplash.com/photo-1450133064473-71024230f91b?auto=format&fit=crop&w=600&q=80"
+          },
+          {
+            title: "Benefits of Professional Tax Planning",
+            content: `• Maximize Tax Savings
+• Ensure Accurate Compliance
+• Minimize Tax Risks
+• Improve Financial Planning
+• Expert Guidance
+• Efficient Refund Processing`,
             image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=600&q=80"
           }
         ],
-                image: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=800&q=80",
+        image: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=800&q=80",
         timelineSteps: [
           { num: "01", title: "CONSULTATION", detailTitle: "Initial Briefing & Check", desc: "We discuss details and review all checklists." },
           { num: "02", title: "VERIFICATION", detailTitle: "Document Compilation", desc: "Our specialists check all details to ensure compliance and completeness." },
@@ -1045,7 +1102,13 @@ Services include:
           { aspect: "Compliance Accuracy", manual: "High risk of statutory notices or fines.", consultAvenuee: "Zero-error draft verification." },
           { aspect: "Government Liaisoning", manual: "Requires multiple physical visits.", consultAvenuee: "Complete departmental representation." }
         ],
-        checklist: ["Aadhaar Card & PAN Card copy", "Pension Account Booklet / PPO copy", "Original medical insurance policy bond & discharge summaries", "Property ownership title deeds & mutation certificate", "Nomination detail forms"],
+        checklist: ["PAN Card", "Aadhaar Card", "Form 16", "Salary Slips", "Bank Statements", "Investment Proofs", "Home Loan Interest Certificate", "Capital Gain Statements (if applicable)", "PAN & Registration Documents (Business)", "Books of Accounts (Business)", "Financial Statements (Business)", "GST Returns (Business)", "TDS Details (Business)", "Expense Records (Business)", "Audit Reports (where applicable)"],
+        faqs: [
+          { question: "Is tax planning different from tax filing?", answer: "Yes. Tax planning focuses on legally minimizing tax liability through strategic financial decisions, while tax filing involves reporting income and filing returns with the Income Tax Department." },
+          { question: "Can you assist with capital gains taxation?", answer: "Yes. We provide comprehensive advisory and return filing support for property, shares, mutual funds, and other capital asset transactions." },
+          { question: "Do you handle tax notices?", answer: "Yes. We assist clients in responding to notices, assessments, departmental queries, and rectification matters." },
+          { question: "Can NRIs avail your tax services?", answer: "Absolutely. We provide specialized tax planning, compliance, and return filing services for NRIs and overseas Indians." }
+        ],
         chartData: [
           { label: "Intake Consultation", value: 30, color: "#c79d62" },
           { label: "Record Compilation", value: 30, color: "#110311" },
@@ -1056,26 +1119,68 @@ Services include:
       {
         id: "pension-gratuity-documentations",
         title: "Pension & Gratuity Documentations",
-        description: "Support with documentation and compliance for pension and gratuity.",
-        longDesc: "Manoj CA offers expert guidance and complete handling of Pension & Gratuity Documentations. Our experienced team manages all statutory formalities, document verification, and government submissions to ensure full compliance and peace of mind.",
+        description: "Professional pension and gratuity documentation services for hassle-free retirement benefit claims, family pensions, and legal heir settlements.",
+        longDesc: `Securing Your Retirement Benefits with Confidence
+Retirement benefits such as pension and gratuity represent years of dedicated service and financial contribution. However, incomplete documentation, procedural complexities, and compliance requirements often lead to delays in claim processing and settlement.
+At ConsultAvenuee, we provide comprehensive Pension & Gratuity Documentation Services, assisting employees, retirees, senior citizens, employers, nominees, and legal heirs in preparing, verifying, and processing the documentation required for pension claims, gratuity settlements, and retirement benefit applications.
+Our objective is to ensure accurate documentation, seamless claim processing, and timely receipt of eligible retirement benefits.`,
         sections: [
           {
-            title: "Service Scope & Standards",
-            content: "Our professionals ensure a thorough audit and preparation process. We review all local state parameters, standard bylaws, and relevant central notifications to make sure that the filing is fully aligned with regulatory norms.",
-            image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=600&q=80"
-          },
-          {
-            title: "Regulatory Oversight & Risk Mitigation",
-            content: "With over 34+ years of professional standing, our advisory team helps mitigate any compliance risks. We actively track timeline calendars, address authority queries, and prevent delay penalties.",
+            title: "EPFO & EPS Pension Assistance",
+            content: `We assist employees and retirees in navigating pension claim procedures under the Employees' Provident Fund Organisation (EPFO) and Employees' Pension Scheme (EPS).
+Services include:
+• Form 10D Preparation (Monthly Pension Claims)
+• Form 10C Preparation (Pension Withdrawal / Scheme Certificate)
+• Pension Application Documentation
+• UAN & KYC Verification
+• Service History Verification
+• Pension Eligibility Assessment
+• Joint Declaration Preparation
+• Pension Corrections & Revision Applications
+• Pension Transfer Documentation`,
             image: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=600&q=80"
           },
           {
-            title: "Strategic Advisory & Post-Compliance Benefits",
-            content: "Beyond the registration or filing itself, we offer valuable long-term insights. This includes ongoing advisory on tax liabilities, structural governance, and annual filings so you can run operations seamlessly.",
+            title: "Family Pension Assistance",
+            content: `We provide dedicated support to family members and beneficiaries in claiming pension benefits after the demise of a pensioner or employee.`,
+            image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=600&q=80"
+          },
+          {
+            title: "Gratuity Claim Assistance",
+            content: `We assist employees and retirees in preparing and processing gratuity claims under the Payment of Gratuity Act and applicable organizational policies.
+Services include:
+• Gratuity Claim Form Preparation
+• Eligibility Assessment
+• Service Tenure Verification
+• Gratuity Calculation Support
+• Settlement Documentation
+• Payment Acknowledgement Records
+• Nomination Verification`,
+            image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=600&q=80"
+          },
+          {
+            title: "Nominee & Legal Heir Claims",
+            content: `In the event of an employee's demise, we assist nominees and legal heirs in securing eligible gratuity benefits.
+Services include:
+• Nominee Claim Documentation
+• Legal Heir Documentation Support
+• Death Claim Assistance
+• Affidavit & Declaration Support
+• Settlement Coordination & Documentation`,
+            image: "https://images.unsplash.com/photo-1450133064473-71024230f91b?auto=format&fit=crop&w=600&q=80"
+          },
+          {
+            title: "Benefits of Professional Assistance",
+            content: `• Accurate Documentation
+• Faster Processing
+• Reduced Claim Rejection Risk
+• Compliance Assurance
+• End-to-End Support
+• Assistance in Legacy Cases`,
             image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=600&q=80"
           }
         ],
-                image: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=800&q=80",
+        image: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=800&q=80",
         timelineSteps: [
           { num: "01", title: "CONSULTATION", detailTitle: "Initial Briefing & Check", desc: "We discuss details and review all checklists." },
           { num: "02", title: "VERIFICATION", detailTitle: "Document Compilation", desc: "Our specialists check all details to ensure compliance and completeness." },
@@ -1087,7 +1192,13 @@ Services include:
           { aspect: "Compliance Accuracy", manual: "High risk of statutory notices or fines.", consultAvenuee: "Zero-error draft verification." },
           { aspect: "Government Liaisoning", manual: "Requires multiple physical visits.", consultAvenuee: "Complete departmental representation." }
         ],
-        checklist: ["Aadhaar Card & PAN Card copy", "Pension Account Booklet / PPO copy", "Original medical insurance policy bond & discharge summaries", "Property ownership title deeds & mutation certificate", "Nomination detail forms"],
+        checklist: ["Aadhaar Card", "PAN Card", "UAN Number", "Bank Account Details", "Passport Size Photographs", "Service Records", "Form 10C / Form 10D", "Pension Payment Order (where applicable)", "Identity Proof (Gratuity)", "Employment Records (Gratuity)", "Salary Details (Gratuity)", "Gratuity Nomination Forms", "Service Certificate", "Retirement / Resignation Documents", "Death Certificate (for death claims)", "Legal Heir Documents (where applicable)"],
+        faqs: [
+          { question: "Can you assist with delayed pension claims?", answer: "Yes. We assist in reviewing records, identifying documentation gaps, and preparing supporting documents required for claim processing." },
+          { question: "Do you help with family pension claims?", answer: "Yes. We provide complete support for family pension documentation, nominee verification, and claim submission." },
+          { question: "Can you assist with gratuity claims after retirement?", answer: "Absolutely. We assist in gratuity eligibility verification, calculation support, documentation, and claim processing." },
+          { question: "Do you handle legacy or unresolved EPFO cases?", answer: "Yes. We provide assistance in complex cases involving service record discrepancies, pension corrections, and claim follow-up." }
+        ],
         chartData: [
           { label: "Intake Consultation", value: 30, color: "#c79d62" },
           { label: "Record Compilation", value: 30, color: "#110311" },
@@ -1098,26 +1209,44 @@ Services include:
       {
         id: "property-sale-gift-transfer",
         title: "Property sale, Gift & Transfer",
-        description: "Legal assistance for property transactions, gifts, and transfers.",
-        longDesc: "Manoj CA offers expert guidance and complete handling of Property sale, Gift & Transfer. Our experienced team manages all statutory formalities, document verification, and government submissions to ensure full compliance and peace of mind.",
+        description: "Comprehensive property sale, gift deed, and transfer services to ensure smooth, secure, and legally compliant property transactions.",
+        longDesc: `Secure Your Property. Protect Your Legacy. Ensure a Smooth Transfer of Ownership.
+Managing property matters during retirement can often be complex and time-consuming. Whether you are planning to transfer property to your children, gift assets to family members, sell a property, or organize your estate for future generations, proper documentation and legal compliance are essential to safeguard your interests and avoid future disputes.
+At ConsultAvenuee, we provide dedicated Property Sale, Gift, Transfer & Succession Services for Senior Citizens, helping individuals and families manage property-related matters with confidence, clarity, and peace of mind.`,
         sections: [
           {
-            title: "Service Scope & Standards",
-            content: "Our professionals ensure a thorough audit and preparation process. We review all local state parameters, standard bylaws, and relevant central notifications to make sure that the filing is fully aligned with regulatory norms.",
-            image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=600&q=80"
-          },
-          {
-            title: "Regulatory Oversight & Risk Mitigation",
-            content: "With over 34+ years of professional standing, our advisory team helps mitigate any compliance risks. We actively track timeline calendars, address authority queries, and prevent delay penalties.",
+            title: "Property Sale Services",
+            content: `• Sale Deed Drafting & Documentation Support
+• Property Transaction Assistance
+• Registration Coordination`,
             image: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=600&q=80"
           },
           {
-            title: "Strategic Advisory & Post-Compliance Benefits",
-            content: "Beyond the registration or filing itself, we offer valuable long-term insights. This includes ongoing advisory on tax liabilities, structural governance, and annual filings so you can run operations seamlessly.",
+            title: "Property Gift & Family Transfer Services",
+            content: `• Gift Deed Documentation
+• Transfer of Property to Children and Family Members
+• Family Settlement Arrangements
+• Relinquishment & Release Deed Documentation`,
+            image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=600&q=80"
+          },
+          {
+            title: "Benefits for Senior Citizens",
+            content: `• Hassle-Free Property Transfers
+• Smooth Transfer of Assets to Family Members
+• Reduced Risk of Family Disputes
+• Proper Succession and Inheritance Planning
+• Legally Compliant Documentation
+• Protection of Family Wealth and Property
+• Peace of Mind for Senior Citizens and Their Families`,
+            image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=600&q=80"
+          },
+          {
+            title: "Our Commitment",
+            content: `We assist senior citizens in managing every stage of property ownership transition—from gifting and transferring property to family members, to succession planning and inheritance matters.`,
             image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=600&q=80"
           }
         ],
-                image: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=800&q=80",
+        image: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=800&q=80",
         timelineSteps: [
           { num: "01", title: "CONSULTATION", detailTitle: "Initial Briefing & Check", desc: "We discuss details and review all checklists." },
           { num: "02", title: "VERIFICATION", detailTitle: "Document Compilation", desc: "Our specialists check all details to ensure compliance and completeness." },
@@ -1129,49 +1258,19 @@ Services include:
           { aspect: "Compliance Accuracy", manual: "High risk of statutory notices or fines.", consultAvenuee: "Zero-error draft verification." },
           { aspect: "Government Liaisoning", manual: "Requires multiple physical visits.", consultAvenuee: "Complete departmental representation." }
         ],
-        checklist: ["Aadhaar Card & PAN Card copy", "Pension Account Booklet / PPO copy", "Original medical insurance policy bond & discharge summaries", "Property ownership title deeds & mutation certificate", "Nomination detail forms"],
-        chartData: [
-          { label: "Intake Consultation", value: 30, color: "#c79d62" },
-          { label: "Record Compilation", value: 30, color: "#110311" },
-          { label: "Drafting & Check", value: 20, color: "#e5c595" },
-          { label: "Final Execution", value: 20, color: "#c79d62" }
-        ]
-      },
-      {
-        id: "drafting-of-will",
-        title: "Drafting of Will",
-        description: "Professional drafting and registration of Wills and succession planning.",
-        longDesc: "Manoj CA offers expert guidance and complete handling of Drafting of Will. Our experienced team manages all statutory formalities, document verification, and government submissions to ensure full compliance and peace of mind.",
-        sections: [
-          {
-            title: "Service Scope & Standards",
-            content: "Our professionals ensure a thorough audit and preparation process. We review all local state parameters, standard bylaws, and relevant central notifications to make sure that the filing is fully aligned with regulatory norms.",
-            image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=600&q=80"
-          },
-          {
-            title: "Regulatory Oversight & Risk Mitigation",
-            content: "With over 34+ years of professional standing, our advisory team helps mitigate any compliance risks. We actively track timeline calendars, address authority queries, and prevent delay penalties.",
-            image: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=600&q=80"
-          },
-          {
-            title: "Strategic Advisory & Post-Compliance Benefits",
-            content: "Beyond the registration or filing itself, we offer valuable long-term insights. This includes ongoing advisory on tax liabilities, structural governance, and annual filings so you can run operations seamlessly.",
-            image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=600&q=80"
-          }
+        checklist: ["Property Title Documents", "Previous Sale Deeds", "PAN Card & Aadhaar Card", "Identity & Address Proof", "Property Tax Receipts", "Encumbrance Certificate", "Society NOC (where applicable)", "Revenue Records and Mutation Extracts", "Death Certificate (for succession matters)", "Legal Heir Details", "Existing Will (if available)"],
+        faqs: [
+          { question: "Can I transfer my property to my children during my lifetime?", answer: "Yes. Property can be transferred during your lifetime through various legal methods such as a Gift Deed, Sale Deed, Family Settlement, or other legally recognized transfer mechanisms, depending on your objectives and circumstances." },
+          { question: "What is the difference between a Gift Deed and a Will?", answer: "A Gift Deed transfers ownership immediately during the lifetime of the owner, whereas a Will takes effect only after the death of the person making the Will. Both serve different estate planning objectives." },
+          { question: "Is registration of a Gift Deed mandatory?", answer: "Yes. In most cases, a Gift Deed relating to immovable property must be properly executed and registered in accordance with applicable laws to be legally valid." },
+          { question: "Can I gift property to my son, daughter, spouse, or other family members?", answer: "Yes. Property can generally be gifted to family members, including children, spouse, grandchildren, and other eligible relatives, subject to applicable legal requirements." },
+          { question: "What is a Family Settlement?", answer: "A Family Settlement is an arrangement among family members to distribute or resolve ownership rights in family assets and properties, often helping avoid future disputes and litigation." },
+          { question: "Can property be transferred without monetary consideration?", answer: "Yes. Transfers through Gift Deeds, Family Settlements, Relinquishment Deeds, or Release Deeds may not necessarily involve monetary consideration, depending on the nature of the transaction." },
+          { question: "What happens to property if there is no Will?", answer: "If a person passes away without leaving a valid Will, the property is generally distributed among legal heirs in accordance with the applicable succession laws." },
+          { question: "What precautions should senior citizens take before gifting or transferring property?", answer: "Before transferring property, it is advisable to:\n• Verify ownership records\n• Understand legal consequences\n• Review tax implications\n• Assess future financial needs\n• Obtain professional advice\n• Ensure proper documentation and registration" },
+          { question: "Can jointly owned property be transferred?", answer: "Yes. However, the consent and participation of all co-owners may be required depending on the ownership structure and nature of the transaction." },
+          { question: "Can ConsultAvenuee assist with end-to-end property transfer documentation?", answer: "Yes. We provide assistance with:\n• Property Sale Documentation\n• Gift Deeds\n• Family Settlements\n• Relinquishment & Release Deeds\n• Property Transfer Documentation\n• Succession & Inheritance Support\n• Registration Coordination\n• Legal Documentation Review" }
         ],
-                image: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=800&q=80",
-        timelineSteps: [
-          { num: "01", title: "CONSULTATION", detailTitle: "Initial Briefing & Check", desc: "We discuss details and review all checklists." },
-          { num: "02", title: "VERIFICATION", detailTitle: "Document Compilation", desc: "Our specialists check all details to ensure compliance and completeness." },
-          { num: "03", title: "SUBMISSION", detailTitle: "Filing and Liaisoning", desc: "We prepare the forms and submit the applications to the regulatory department." },
-          { num: "04", title: "COMPLETION", detailTitle: "Final Approval & Support", desc: "We deliver the certificates, resolve queries, and outline next-step requirements." }
-        ],
-        comparison: [
-          { aspect: "Operational Efficiency", manual: "Manual tracking takes weeks.", consultAvenuee: "Structured digital handling." },
-          { aspect: "Compliance Accuracy", manual: "High risk of statutory notices or fines.", consultAvenuee: "Zero-error draft verification." },
-          { aspect: "Government Liaisoning", manual: "Requires multiple physical visits.", consultAvenuee: "Complete departmental representation." }
-        ],
-        checklist: ["Aadhaar Card & PAN Card copy", "Pension Account Booklet / PPO copy", "Original medical insurance policy bond & discharge summaries", "Property ownership title deeds & mutation certificate", "Nomination detail forms"],
         chartData: [
           { label: "Intake Consultation", value: 30, color: "#c79d62" },
           { label: "Record Compilation", value: 30, color: "#110311" },
@@ -1219,17 +1318,17 @@ Services include:
               }
             ],
             faqs: [
-              { question: "Private Limited Company FAQs", answer: "", isHeading: true },
-              { question: "Do I need to be physically present during the registration process?", answer: "No. Company registration is a completely online process. All documents are submitted electronically, and physical presence is generally not required." },
-              { question: "How much time is required to register a Private Limited Company?", answer: "Subject to document availability and MCA approval, the registration process generally takes 7 to 15 working days." },
-              { question: "Is there any minimum capital requirement?", answer: "No. There is currently no minimum paid-up capital requirement for incorporating a Private Limited Company in India." },
-              { question: "Is it necessary to purchase an office premises?", answer: "No. A company can be registered from a rented premise or even a residential address, subject to submission of valid address proof and supporting documents." },
-              { question: "Can a Foreign National or NRI become a Director?", answer: "Yes. Foreign Nationals and NRIs can become Directors or Shareholders of a Private Limited Company, subject to applicable laws and regulatory requirements. However, at least one Director must be a Resident Director in India." },
-              { question: "What is a DSC?", answer: "A Digital Signature Certificate (DSC) is an electronic signature issued by authorized Certifying Authorities. It is used for signing and filing documents electronically with government departments." },
-              { question: "What are the annual compliance requirements?", answer: "A Private Limited Company is required to comply with annual ROC filings, maintenance of statutory records, accounting, auditing, income tax filings, and other applicable regulatory compliances." },
-              { question: "Can a salaried employee become a Director in a Private Limited Company?", answer: "Yes. A salaried employee can become a Director, subject to the terms and conditions of their employment agreement." },
-              { question: "Can an LLP be converted into a Private Limited Company?", answer: "Conversion of an LLP into a Company involves legal and regulatory procedures. Professional advice should be obtained based on the specific circumstances." },
-              { question: "Can I register a Private Limited Company at my residential address?", answer: "Yes. A residential address can be used as the registered office of the company by providing valid address proof and supporting documents." }
+              { question: "Private Limited Company FAQs", answer: ``, isHeading: true },
+              { question: "Do I need to be physically present during the registration process?", answer: `No. Company registration is a completely online process. All documents are submitted electronically, and physical presence is generally not required.` },
+              { question: "How much time is required to register a Private Limited Company?", answer: `Subject to document availability and MCA approval, the registration process generally takes 7 to 15 working days.` },
+              { question: "Is there any minimum capital requirement?", answer: `No. There is currently no minimum paid-up capital requirement for incorporating a Private Limited Company in India.` },
+              { question: "Is it necessary to purchase an office premises?", answer: `No. A company can be registered from a rented premise or even a residential address, subject to submission of valid address proof and supporting documents.` },
+              { question: "Can a Foreign National or NRI become a Director?", answer: `Yes. Foreign Nationals and NRIs can become Directors or Shareholders of a Private Limited Company, subject to applicable laws and regulatory requirements. However, at least one Director must be a Resident Director in India.` },
+              { question: "What is a DSC?", answer: `A Digital Signature Certificate (DSC) is an electronic signature issued by authorized Certifying Authorities. It is used for signing and filing documents electronically with government departments.` },
+              { question: "What are the annual compliance requirements?", answer: `A Private Limited Company is required to comply with annual ROC filings, maintenance of statutory records, accounting, auditing, income tax filings, and other applicable regulatory compliances.` },
+              { question: "Can a salaried employee become a Director in a Private Limited Company?", answer: `Yes. A salaried employee can become a Director, subject to the terms and conditions of their employment agreement.` },
+              { question: "Can an LLP be converted into a Private Limited Company?", answer: `Conversion of an LLP into a Company involves legal and regulatory procedures. Professional advice should be obtained based on the specific circumstances.` },
+              { question: "Can I register a Private Limited Company at my residential address?", answer: `Yes. A residential address can be used as the registered office of the company by providing valid address proof and supporting documents.` }
             ]
           },
           {
@@ -1316,18 +1415,18 @@ Step 6: Apply for PAN and Open Bank Account`
               }
             ],
             faqs: [
-              { question: "LLP Registration FAQs", answer: "", isHeading: true },
-              { question: "What is the minimum number of partners required to start an LLP?", answer: "A minimum of two partners is required to incorporate an LLP. There is no maximum limit on the number of partners." },
-              { question: "Who can become a Partner or Designated Partner in an LLP?", answer: "Any individual, company, LLP, or body corporate can become a partner in an LLP. However, only an individual can act as a Designated Partner." },
-              { question: "What is an LLP Agreement?", answer: "An LLP Agreement is a legal document executed between the partners that governs the rights, duties, responsibilities, profit-sharing arrangements, and management of the LLP." },
-              { question: "Can an NRI or Foreign National become a Partner in an LLP?", answer: "Yes. NRIs and Foreign Nationals can become partners in an LLP, subject to applicable laws and regulations. However, at least one Designated Partner must be a Resident of India." },
-              { question: "Is an LLP cheaper to maintain than a Private Limited Company?", answer: "Generally, yes. LLPs have fewer compliance requirements and lower maintenance costs compared to Private Limited Companies, making them a popular choice for professionals and small businesses." },
-              { question: "Can I register an LLP at my residential address?", answer: "Yes. An LLP can be registered at a residential address, provided valid address proof and supporting documents are submitted." },
-              { question: "Can a salaried employee become a Partner in an LLP?", answer: "Yes. A salaried employee can become a partner in an LLP, subject to the terms of their employment agreement." },
-              { question: "Is audit mandatory for an LLP?", answer: "Audit is mandatory if:\n• Annual Turnover exceeds ₹40 Lakhs; or\n• Contribution exceeds ₹25 Lakhs\nThe accounts must then be audited by a Chartered Accountant." },
-              { question: "What is the stamp duty payable on an LLP Agreement?", answer: "Stamp duty on an LLP Agreement varies from state to state and depends on the amount of contribution and applicable state laws." },
-              { question: "Can an LLP be incorporated for non-profit activities?", answer: "No. An LLP is formed with the objective of carrying on a lawful business with a view to earning profits. Non-profit activities are generally undertaken through entities such as Trusts, Societies, or Section 8 Companies." },
-              { question: "Can an LLP be converted into a Private Limited Company?", answer: "Yes. Subject to compliance with applicable legal provisions and regulatory requirements, an LLP may be converted into a Company. Professional advice should be obtained before undertaking such conversion." }
+              { question: "LLP Registration FAQs", answer: ``, isHeading: true },
+              { question: "What is the minimum number of partners required to start an LLP?", answer: `A minimum of two partners is required to incorporate an LLP. There is no maximum limit on the number of partners.` },
+              { question: "Who can become a Partner or Designated Partner in an LLP?", answer: `Any individual, company, LLP, or body corporate can become a partner in an LLP. However, only an individual can act as a Designated Partner.` },
+              { question: "What is an LLP Agreement?", answer: `An LLP Agreement is a legal document executed between the partners that governs the rights, duties, responsibilities, profit-sharing arrangements, and management of the LLP.` },
+              { question: "Can an NRI or Foreign National become a Partner in an LLP?", answer: `Yes. NRIs and Foreign Nationals can become partners in an LLP, subject to applicable laws and regulations. However, at least one Designated Partner must be a Resident of India.` },
+              { question: "Is an LLP cheaper to maintain than a Private Limited Company?", answer: `Generally, yes. LLPs have fewer compliance requirements and lower maintenance costs compared to Private Limited Companies, making them a popular choice for professionals and small businesses.` },
+              { question: "Can I register an LLP at my residential address?", answer: `Yes. An LLP can be registered at a residential address, provided valid address proof and supporting documents are submitted.` },
+              { question: "Can a salaried employee become a Partner in an LLP?", answer: `Yes. A salaried employee can become a partner in an LLP, subject to the terms of their employment agreement.` },
+              { question: "Is audit mandatory for an LLP?", answer: `Audit is mandatory if:\n• Annual Turnover exceeds ₹40 Lakhs; or\n• Contribution exceeds ₹25 Lakhs\nThe accounts must then be audited by a Chartered Accountant.` },
+              { question: "What is the stamp duty payable on an LLP Agreement?", answer: `Stamp duty on an LLP Agreement varies from state to state and depends on the amount of contribution and applicable state laws.` },
+              { question: "Can an LLP be incorporated for non-profit activities?", answer: `No. An LLP is formed with the objective of carrying on a lawful business with a view to earning profits. Non-profit activities are generally undertaken through entities such as Trusts, Societies, or Section 8 Companies.` },
+              { question: "Can an LLP be converted into a Private Limited Company?", answer: `Yes. Subject to compliance with applicable legal provisions and regulatory requirements, an LLP may be converted into a Company. Professional advice should be obtained before undertaking such conversion.` }
             ]
           },
           {
@@ -1409,18 +1508,18 @@ Step 4: Opening of Bank Account`
               }
             ],
             faqs: [
-              { question: "Partnership Firm FAQs", answer: "", isHeading: true },
-              { question: "What is the eligibility criteria for becoming a partner?", answer: "Any person competent to contract under the Indian Contract Act, 1872 can become a partner in a Partnership Firm." },
-              { question: "Is there any minimum capital requirement for a Partnership Firm?", answer: "No. There is no minimum capital requirement prescribed for starting a Partnership Firm." },
-              { question: "Is a Partnership Firm a separate legal entity?", answer: "No. A Partnership Firm is not a separate legal entity from its partners. The partners are jointly responsible for the obligations and liabilities of the firm." },
-              { question: "How many partners can a Partnership Firm have?", answer: "A Partnership Firm must have a minimum of two partners. The maximum number of partners is generally governed by applicable laws and regulatory provisions. Professional advice should be obtained for specific cases." },
-              { question: "What is the validity period of a Partnership Firm?", answer: "A Partnership Firm can continue indefinitely unless dissolved by mutual agreement, operation of law, or as provided in the Partnership Deed." },
-              { question: "Is a Partnership Deed mandatory?", answer: "Although a written Partnership Deed is not legally mandatory, it is strongly recommended as it clearly defines the rights, duties, responsibilities, and profit-sharing arrangements among partners." },
-              { question: "Is registration of a Partnership Firm compulsory?", answer: "No. Registration is optional under the Indian Partnership Act, 1932. However, a registered firm enjoys certain legal benefits and can more effectively enforce its rights in court." },
-              { question: "What should be included in a Partnership Deed?", answer: "A Partnership Deed generally contains:\n• Name and Address of Partners\n• Firm Name\n• Nature of Business\n• Capital Contribution\n• Profit and Loss Sharing Ratio\n• Rights and Duties of Partners\n• Admission and Retirement of Partners\n• Dispute Resolution Mechanism\n• Dissolution Clauses" },
-              { question: "Can a Partnership Firm be registered at a residential address?", answer: "Yes. A residential address can be used as the business address, subject to submission of valid address proof and supporting documents." },
-              { question: "Can a salaried employee become a partner in a Partnership Firm?", answer: "Yes. A salaried employee may become a partner in a Partnership Firm, subject to the terms and conditions of their employment agreement." },
-              { question: "Is audit mandatory for a Partnership Firm?", answer: "Audit requirements depend upon the applicable provisions of the Income Tax Act and other relevant laws. Professional advice should be obtained based on the firm's turnover and nature of business." }
+              { question: "Partnership Firm FAQs", answer: ``, isHeading: true },
+              { question: "What is the eligibility criteria for becoming a partner?", answer: `Any person competent to contract under the Indian Contract Act, 1872 can become a partner in a Partnership Firm.` },
+              { question: "Is there any minimum capital requirement for a Partnership Firm?", answer: `No. There is no minimum capital requirement prescribed for starting a Partnership Firm.` },
+              { question: "Is a Partnership Firm a separate legal entity?", answer: `No. A Partnership Firm is not a separate legal entity from its partners. The partners are jointly responsible for the obligations and liabilities of the firm.` },
+              { question: "How many partners can a Partnership Firm have?", answer: `A Partnership Firm must have a minimum of two partners. The maximum number of partners is generally governed by applicable laws and regulatory provisions. Professional advice should be obtained for specific cases.` },
+              { question: "What is the validity period of a Partnership Firm?", answer: `A Partnership Firm can continue indefinitely unless dissolved by mutual agreement, operation of law, or as provided in the Partnership Deed.` },
+              { question: "Is a Partnership Deed mandatory?", answer: `Although a written Partnership Deed is not legally mandatory, it is strongly recommended as it clearly defines the rights, duties, responsibilities, and profit-sharing arrangements among partners.` },
+              { question: "Is registration of a Partnership Firm compulsory?", answer: `No. Registration is optional under the Indian Partnership Act, 1932. However, a registered firm enjoys certain legal benefits and can more effectively enforce its rights in court.` },
+              { question: "What should be included in a Partnership Deed?", answer: `A Partnership Deed generally contains:\n• Name and Address of Partners\n• Firm Name\n• Nature of Business\n• Capital Contribution\n• Profit and Loss Sharing Ratio\n• Rights and Duties of Partners\n• Admission and Retirement of Partners\n• Dispute Resolution Mechanism\n• Dissolution Clauses` },
+              { question: "Can a Partnership Firm be registered at a residential address?", answer: `Yes. A residential address can be used as the business address, subject to submission of valid address proof and supporting documents.` },
+              { question: "Can a salaried employee become a partner in a Partnership Firm?", answer: `Yes. A salaried employee may become a partner in a Partnership Firm, subject to the terms and conditions of their employment agreement.` },
+              { question: "Is audit mandatory for a Partnership Firm?", answer: `Audit requirements depend upon the applicable provisions of the Income Tax Act and other relevant laws. Professional advice should be obtained based on the firm's turnover and nature of business.` }
             ]
           },
           {
@@ -1511,17 +1610,17 @@ Step 6: Opening of Bank Account`
               }
             ],
             faqs: [
-              { question: "Public Limited Company FAQs", answer: "", isHeading: true },
-              { question: "Do I need to be physically present during the registration process?", answer: "No. Public Limited Company registration is a completely online process. Physical presence is generally not required, and documents can be submitted electronically." },
-              { question: "Is there any limit on the number of shareholders in a Public Limited Company?", answer: "No. There is no maximum limit on the number of shareholders in a Public Limited Company. However, a minimum of seven shareholders is required." },
-              { question: "Is there any minimum capital requirement for incorporation?", answer: "No. There is currently no minimum paid-up capital requirement prescribed for incorporating a Public Limited Company." },
-              { question: "How many directors are required for a Public Limited Company?", answer: "A minimum of three directors is required. The maximum number of directors is fifteen, unless increased by passing a special resolution." },
-              { question: "Can an NRI or Foreign National become a Director?", answer: "Yes. NRIs and Foreign Nationals can become directors or shareholders in a Public Limited Company, subject to applicable laws and regulations. At least one director must be a resident of India." },
-              { question: "Can a Public Limited Company be converted into a Private Limited Company?", answer: "Yes. A Public Limited Company may be converted into a Private Limited Company subject to compliance with the provisions of the Companies Act, 2013 and approval from the relevant authorities." },
-              { question: "Is it necessary to purchase office premises for company registration?", answer: "No. The registered office can be a rented property, owned property, or residential address, subject to submission of valid supporting documents." },
-              { question: "What is a DSC?", answer: "A Digital Signature Certificate (DSC) is an electronic signature issued by authorized Certifying Authorities. It is used for signing and filing documents electronically with government authorities." },
-              { question: "What are the annual compliance requirements of a Public Limited Company?", answer: "A Public Limited Company is required to maintain statutory records, conduct audits, hold board and shareholder meetings, and file annual returns and financial statements with the Registrar of Companies (ROC)." },
-              { question: "Can a salaried employee become a Director in a Public Limited Company?", answer: "Yes. A salaried individual can serve as a director, subject to the terms of their employment agreement and applicable laws." }
+              { question: "Public Limited Company FAQs", answer: ``, isHeading: true },
+              { question: "Do I need to be physically present during the registration process?", answer: `No. Public Limited Company registration is a completely online process. Physical presence is generally not required, and documents can be submitted electronically.` },
+              { question: "Is there any limit on the number of shareholders in a Public Limited Company?", answer: `No. There is no maximum limit on the number of shareholders in a Public Limited Company. However, a minimum of seven shareholders is required.` },
+              { question: "Is there any minimum capital requirement for incorporation?", answer: `No. There is currently no minimum paid-up capital requirement prescribed for incorporating a Public Limited Company.` },
+              { question: "How many directors are required for a Public Limited Company?", answer: `A minimum of three directors is required. The maximum number of directors is fifteen, unless increased by passing a special resolution.` },
+              { question: "Can an NRI or Foreign National become a Director?", answer: `Yes. NRIs and Foreign Nationals can become directors or shareholders in a Public Limited Company, subject to applicable laws and regulations. At least one director must be a resident of India.` },
+              { question: "Can a Public Limited Company be converted into a Private Limited Company?", answer: `Yes. A Public Limited Company may be converted into a Private Limited Company subject to compliance with the provisions of the Companies Act, 2013 and approval from the relevant authorities.` },
+              { question: "Is it necessary to purchase office premises for company registration?", answer: `No. The registered office can be a rented property, owned property, or residential address, subject to submission of valid supporting documents.` },
+              { question: "What is a DSC?", answer: `A Digital Signature Certificate (DSC) is an electronic signature issued by authorized Certifying Authorities. It is used for signing and filing documents electronically with government authorities.` },
+              { question: "What are the annual compliance requirements of a Public Limited Company?", answer: `A Public Limited Company is required to maintain statutory records, conduct audits, hold board and shareholder meetings, and file annual returns and financial statements with the Registrar of Companies (ROC).` },
+              { question: "Can a salaried employee become a Director in a Public Limited Company?", answer: `Yes. A salaried individual can serve as a director, subject to the terms of their employment agreement and applicable laws.` }
             ]
           },
           {
@@ -1580,15 +1679,15 @@ Step 6: Tax Registration (if applicable)`
               }
             ],
             faqs: [
-              { question: "Trust Registration FAQs", answer: "", isHeading: true },
-              { question: "How many trustees are required to form a Trust?", answer: "Generally, a minimum of two trustees is required, though requirements may vary depending on the state." },
-              { question: "Is Trust Registration mandatory?", answer: "While a trust can be created through a deed, registration is recommended to provide legal validity and credibility." },
-              { question: "Can a Trust receive donations?", answer: "Yes. Registered trusts can receive donations and may apply for tax exemption registrations such as 12A and 80G." },
-              { question: "Can a Trust own property?", answer: "Yes. A Trust can acquire, hold, and manage movable and immovable property in its name." },
-              { question: "How long does Trust Registration take?", answer: "Typically, registration may take 7–15 working days, subject to documentation and local authority procedures." },
-              { question: "Can foreign citizens become trustees?", answer: "Yes, subject to applicable laws and compliance requirements." },
-              { question: "What is the difference between a Trust, Society, and Section 8 Company?", answer: "All are non-profit structures. Trusts are generally easier to form, while Societies and Section 8 Companies have different governance and compliance requirements." },
-              { question: "Can the objectives of a Trust be changed later?", answer: "Changes may be possible depending on the provisions of the Trust Deed and applicable legal requirements." }
+              { question: "Trust Registration FAQs", answer: ``, isHeading: true },
+              { question: "How many trustees are required to form a Trust?", answer: `Generally, a minimum of two trustees is required, though requirements may vary depending on the state.` },
+              { question: "Is Trust Registration mandatory?", answer: `While a trust can be created through a deed, registration is recommended to provide legal validity and credibility.` },
+              { question: "Can a Trust receive donations?", answer: `Yes. Registered trusts can receive donations and may apply for tax exemption registrations such as 12A and 80G.` },
+              { question: "Can a Trust own property?", answer: `Yes. A Trust can acquire, hold, and manage movable and immovable property in its name.` },
+              { question: "How long does Trust Registration take?", answer: `Typically, registration may take 7–15 working days, subject to documentation and local authority procedures.` },
+              { question: "Can foreign citizens become trustees?", answer: `Yes, subject to applicable laws and compliance requirements.` },
+              { question: "What is the difference between a Trust, Society, and Section 8 Company?", answer: `All are non-profit structures. Trusts are generally easier to form, while Societies and Section 8 Companies have different governance and compliance requirements.` },
+              { question: "Can the objectives of a Trust be changed later?", answer: `Changes may be possible depending on the provisions of the Trust Deed and applicable legal requirements.` }
             ]
           },
           {
@@ -1686,17 +1785,17 @@ Step 7: FEMA and RBI Compliance`
               }
             ],
             faqs: [
-              { question: "Indian Subsidiary Registration FAQs", answer: "", isHeading: true },
-              { question: "What are the minimum requirements for incorporating an Indian Subsidiary?", answer: "• Minimum 2 Shareholders\n• Minimum 2 Directors\n• At least 1 Resident Director in India\n• Registered Office Address in India\nThere is no minimum paid-up capital requirement." },
-              { question: "Can an Indian Company be a 100% subsidiary of a Foreign Company?", answer: "Yes. Subject to applicable FDI regulations and sector-specific restrictions, a foreign company may own up to 100% of an Indian subsidiary in sectors where such investment is permitted." },
-              { question: "Can a Foreign Company acquire an Indian Company?", answer: "Yes. Foreign companies can acquire shares in Indian companies subject to FEMA regulations, FDI policy, sectoral caps, and applicable approvals where required." },
-              { question: "Can a Foreign Company purchase land in India?", answer: "The ability of foreign entities to acquire immovable property in India is regulated under FEMA and RBI regulations. Specific legal advice should be obtained based on the nature of the entity and transaction." },
-              { question: "Can Foreign Investors invest in Indian Real Estate?", answer: "Foreign investment in the real estate sector is permitted subject to applicable FDI regulations and sector-specific conditions issued by the Government of India and the Reserve Bank of India." },
-              { question: "What is the Automatic Route under FDI?", answer: "Under the Automatic Route, foreign investment is permitted without prior approval of the Government of India, subject to sector-specific limits and conditions." },
-              { question: "What is the Government Approval Route under FDI?", answer: "Under the Government Route, prior approval from the Government of India is required before foreign investment can be made in specified sectors." },
-              { question: "Can Foreign Nationals become Directors in an Indian Subsidiary?", answer: "Yes. Foreign nationals can be appointed as directors, subject to compliance with the Companies Act, 2013 and other applicable laws. At least one director must be a resident of India." },
-              { question: "How long does it take to register an Indian Subsidiary Company?", answer: "Subject to document availability, foreign document legalization requirements, and regulatory approvals, incorporation generally takes 10–20 working days." },
-              { question: "Is RBI approval required for every Indian Subsidiary?", answer: "No. RBI or Government approval is only required in sectors where investment is not permitted under the Automatic Route or where specific approvals are mandated under FDI regulations." }
+              { question: "Indian Subsidiary Registration FAQs", answer: ``, isHeading: true },
+              { question: "What are the minimum requirements for incorporating an Indian Subsidiary?", answer: `• Minimum 2 Shareholders\n• Minimum 2 Directors\n• At least 1 Resident Director in India\n• Registered Office Address in India\nThere is no minimum paid-up capital requirement.` },
+              { question: "Can an Indian Company be a 100% subsidiary of a Foreign Company?", answer: `Yes. Subject to applicable FDI regulations and sector-specific restrictions, a foreign company may own up to 100% of an Indian subsidiary in sectors where such investment is permitted.` },
+              { question: "Can a Foreign Company acquire an Indian Company?", answer: `Yes. Foreign companies can acquire shares in Indian companies subject to FEMA regulations, FDI policy, sectoral caps, and applicable approvals where required.` },
+              { question: "Can a Foreign Company purchase land in India?", answer: `The ability of foreign entities to acquire immovable property in India is regulated under FEMA and RBI regulations. Specific legal advice should be obtained based on the nature of the entity and transaction.` },
+              { question: "Can Foreign Investors invest in Indian Real Estate?", answer: `Foreign investment in the real estate sector is permitted subject to applicable FDI regulations and sector-specific conditions issued by the Government of India and the Reserve Bank of India.` },
+              { question: "What is the Automatic Route under FDI?", answer: `Under the Automatic Route, foreign investment is permitted without prior approval of the Government of India, subject to sector-specific limits and conditions.` },
+              { question: "What is the Government Approval Route under FDI?", answer: `Under the Government Route, prior approval from the Government of India is required before foreign investment can be made in specified sectors.` },
+              { question: "Can Foreign Nationals become Directors in an Indian Subsidiary?", answer: `Yes. Foreign nationals can be appointed as directors, subject to compliance with the Companies Act, 2013 and other applicable laws. At least one director must be a resident of India.` },
+              { question: "How long does it take to register an Indian Subsidiary Company?", answer: `Subject to document availability, foreign document legalization requirements, and regulatory approvals, incorporation generally takes 10–20 working days.` },
+              { question: "Is RBI approval required for every Indian Subsidiary?", answer: `No. RBI or Government approval is only required in sectors where investment is not permitted under the Automatic Route or where specific approvals are mandated under FDI regulations.` }
             ]
           }
         ]
@@ -1738,12 +1837,12 @@ Step 7: FEMA and RBI Compliance`
               }
             ],
             faqs: [
-              { question: "Professional Tax Registration FAQs", answer: "", isHeading: true },
-              { question: "Is Professional Tax applicable throughout India?", answer: "No. Professional Tax is governed by State laws and is applicable only in those States that have enacted Professional Tax legislation." },
-              { question: "Who is required to obtain Professional Tax registration?", answer: "Registration requirements depend on the nature of the business, profession, employment structure, and the provisions of the applicable State law." },
-              { question: "Are employers required to comply with Professional Tax provisions?", answer: "Employers may be required to comply with Professional Tax obligations in relation to their employees, subject to the applicable State regulations." },
-              { question: "What happens if Professional Tax compliance is not completed on time?", answer: "Delayed compliance may result in interest, penalties, notices, and other consequences prescribed under the relevant State laws." },
-              { question: "Can ConsultAvenuee manage Professional Tax compliance for multiple locations?", answer: "Yes. We assist businesses operating across multiple branches, offices, and jurisdictions with registration, compliance management, and return filing support." }
+              { question: "Professional Tax Registration FAQs", answer: ``, isHeading: true },
+              { question: "Is Professional Tax applicable throughout India?", answer: `No. Professional Tax is governed by State laws and is applicable only in those States that have enacted Professional Tax legislation.` },
+              { question: "Who is required to obtain Professional Tax registration?", answer: `Registration requirements depend on the nature of the business, profession, employment structure, and the provisions of the applicable State law.` },
+              { question: "Are employers required to comply with Professional Tax provisions?", answer: `Employers may be required to comply with Professional Tax obligations in relation to their employees, subject to the applicable State regulations.` },
+              { question: "What happens if Professional Tax compliance is not completed on time?", answer: `Delayed compliance may result in interest, penalties, notices, and other consequences prescribed under the relevant State laws.` },
+              { question: "Can ConsultAvenuee manage Professional Tax compliance for multiple locations?", answer: `Yes. We assist businesses operating across multiple branches, offices, and jurisdictions with registration, compliance management, and return filing support.` }
             ]
           },
           {
@@ -1772,12 +1871,12 @@ Step 7: FEMA and RBI Compliance`
               }
             ],
             faqs: [
-              { question: "Shop & Establishment Registration FAQs", answer: "", isHeading: true },
-              { question: "Is Shops & Establishments Registration mandatory?", answer: "Most commercial establishments are required to obtain registration under the applicable state law. Requirements vary from state to state." },
-              { question: "Who can apply for Shops & Establishments Registration?", answer: "Proprietorships, Partnership Firms, LLPs, Companies, Professionals, Consultants, and other commercial establishments may be required to obtain registration." },
-              { question: "Can registration details be amended later?", answer: "Yes. Changes relating to business address, ownership, business activities, or other particulars can generally be updated through prescribed procedures." },
-              { question: "Do compliance requirements differ across states?", answer: "Yes. Registration procedures, documentation requirements, and compliance obligations may vary depending on the state in which the establishment operates." },
-              { question: "Can ConsultAvenuee assist with registration and compliance?", answer: "Yes. We provide complete assistance for registration, amendments, compliance advisory, and maintenance of statutory records under the applicable Shops & Establishments laws." }
+              { question: "Shop & Establishment Registration FAQs", answer: ``, isHeading: true },
+              { question: "Is Shops & Establishments Registration mandatory?", answer: `Most commercial establishments are required to obtain registration under the applicable state law. Requirements vary from state to state.` },
+              { question: "Who can apply for Shops & Establishments Registration?", answer: `Proprietorships, Partnership Firms, LLPs, Companies, Professionals, Consultants, and other commercial establishments may be required to obtain registration.` },
+              { question: "Can registration details be amended later?", answer: `Yes. Changes relating to business address, ownership, business activities, or other particulars can generally be updated through prescribed procedures.` },
+              { question: "Do compliance requirements differ across states?", answer: `Yes. Registration procedures, documentation requirements, and compliance obligations may vary depending on the state in which the establishment operates.` },
+              { question: "Can ConsultAvenuee assist with registration and compliance?", answer: `Yes. We provide complete assistance for registration, amendments, compliance advisory, and maintenance of statutory records under the applicable Shops & Establishments laws.` }
             ]
           },
           {
@@ -1810,12 +1909,12 @@ Step 7: FEMA and RBI Compliance`
               }
             ],
             faqs: [
-              { question: "Startup India Registration FAQs", answer: "", isHeading: true },
-              { question: "Is Startup India Recognition mandatory?", answer: "No. However, eligible startups often seek recognition to access various benefits, support programs, and opportunities available within the startup ecosystem." },
-              { question: "Can LLPs and Partnership Firms apply?", answer: "Eligible LLPs and registered partnership firms may apply subject to fulfillment of applicable conditions." },
-              { question: "Can newly incorporated businesses apply?", answer: "Yes. Newly established entities may apply if they satisfy the prescribed eligibility requirements." },
-              { question: "Does recognition guarantee funding?", answer: "No. Recognition does not guarantee funding but may improve access to investors, incubators, accelerators, and startup support programs." },
-              { question: "Can ConsultAvenuee assist with post-recognition compliance?", answer: "Yes. We provide ongoing support for accounting, taxation, corporate compliance, registrations, governance, and business advisory requirements." }
+              { question: "Startup India Registration FAQs", answer: ``, isHeading: true },
+              { question: "Is Startup India Recognition mandatory?", answer: `No. However, eligible startups often seek recognition to access various benefits, support programs, and opportunities available within the startup ecosystem.` },
+              { question: "Can LLPs and Partnership Firms apply?", answer: `Eligible LLPs and registered partnership firms may apply subject to fulfillment of applicable conditions.` },
+              { question: "Can newly incorporated businesses apply?", answer: `Yes. Newly established entities may apply if they satisfy the prescribed eligibility requirements.` },
+              { question: "Does recognition guarantee funding?", answer: `No. Recognition does not guarantee funding but may improve access to investors, incubators, accelerators, and startup support programs.` },
+              { question: "Can ConsultAvenuee assist with post-recognition compliance?", answer: `Yes. We provide ongoing support for accounting, taxation, corporate compliance, registrations, governance, and business advisory requirements.` }
             ]
           },
           {
@@ -1848,12 +1947,12 @@ Step 7: FEMA and RBI Compliance`
               }
             ],
             faqs: [
-              { question: "MSME/Udyam Registration FAQs", answer: "", isHeading: true },
-              { question: "Is MSME Registration mandatory?", answer: "MSME Registration is generally optional; however, obtaining registration can help eligible businesses access various support programs and opportunities." },
-              { question: "Who can obtain MSME Registration?", answer: "Eligible proprietorships, partnership firms, LLPs, companies, and other qualifying business entities may apply for MSME Registration." },
-              { question: "Can service businesses obtain MSME Registration?", answer: "Yes. Eligible service providers, consultants, professionals, and other service-oriented businesses may qualify for registration." },
-              { question: "Can startups apply for MSME Registration?", answer: "Yes. Eligible startups and newly established businesses may obtain MSME Registration subject to applicable conditions." },
-              { question: "Can ConsultAvenuee assist with MSME Registration and compliance?", answer: "Yes. We provide complete assistance for MSME Registration, documentation, advisory services, and ongoing compliance support." }
+              { question: "MSME/Udyam Registration FAQs", answer: ``, isHeading: true },
+              { question: "Is MSME Registration mandatory?", answer: `MSME Registration is generally optional; however, obtaining registration can help eligible businesses access various support programs and opportunities.` },
+              { question: "Who can obtain MSME Registration?", answer: `Eligible proprietorships, partnership firms, LLPs, companies, and other qualifying business entities may apply for MSME Registration.` },
+              { question: "Can service businesses obtain MSME Registration?", answer: `Yes. Eligible service providers, consultants, professionals, and other service-oriented businesses may qualify for registration.` },
+              { question: "Can startups apply for MSME Registration?", answer: `Yes. Eligible startups and newly established businesses may obtain MSME Registration subject to applicable conditions.` },
+              { question: "Can ConsultAvenuee assist with MSME Registration and compliance?", answer: `Yes. We provide complete assistance for MSME Registration, documentation, advisory services, and ongoing compliance support.` }
             ]
           },
           {
@@ -1890,16 +1989,16 @@ Step 7: FEMA and RBI Compliance`
               }
             ],
             faqs: [
-              { question: "PF Registration FAQs", answer: "", isHeading: true },
-              { question: "What is EPF Registration?", answer: "EPF Registration is the process of enrolling an eligible establishment under the Employees' Provident Fund (EPF) Scheme administered by the Employees' Provident Fund Organisation (EPFO). It enables employers to provide retirement, pension, and insurance benefits to employees." },
-              { question: "Is EPF Registration Mandatory?", answer: "Yes. EPF registration is mandatory for establishments employing 20 or more employees. Certain establishments with fewer employees may also opt for voluntary coverage." },
-              { question: "Who is Eligible for EPF Membership?", answer: "Generally, employees working in EPF-covered establishments are eligible to become members of the EPF Scheme as per applicable EPFO regulations." },
-              { question: "What is UAN (Universal Account Number)?", answer: "UAN is a unique number allotted by EPFO that links all PF accounts of an employee, enabling easy account management, transfers, and online access to EPF services." },
-              { question: "Can an Employee Have Multiple UANs?", answer: "No. An employee should have only one UAN throughout their employment career, irrespective of job changes." },
-              { question: "What Happens If Employee Strength Falls Below 20?", answer: "Once EPF becomes applicable to an establishment, it generally continues to remain covered even if the employee count subsequently falls below 20." },
-              { question: "Is EPF Applicable to Contract Employees?", answer: "Yes. Eligible contract employees working in covered establishments are generally required to be covered under the EPF Scheme." },
-              { question: "What Are the Consequences of Non-Compliance?", answer: "Failure to obtain EPF registration or deposit contributions on time may result in interest, penalties, damages, and legal action under the EPF Act." },
-              { question: "Why Choose ConsultAvenuee for EPF Registration?", answer: "ConsultAvenuee offers end-to-end assistance for EPF registration, PF code allotment, employee enrollment, UAN support, compliance management, and ongoing advisory services, ensuring seamless compliance with EPFO regulations." }
+              { question: "PF Registration FAQs", answer: ``, isHeading: true },
+              { question: "What is EPF Registration?", answer: `EPF Registration is the process of enrolling an eligible establishment under the Employees' Provident Fund (EPF) Scheme administered by the Employees' Provident Fund Organisation (EPFO). It enables employers to provide retirement, pension, and insurance benefits to employees.` },
+              { question: "Is EPF Registration Mandatory?", answer: `Yes. EPF registration is mandatory for establishments employing 20 or more employees. Certain establishments with fewer employees may also opt for voluntary coverage.` },
+              { question: "Who is Eligible for EPF Membership?", answer: `Generally, employees working in EPF-covered establishments are eligible to become members of the EPF Scheme as per applicable EPFO regulations.` },
+              { question: "What is UAN (Universal Account Number)?", answer: `UAN is a unique number allotted by EPFO that links all PF accounts of an employee, enabling easy account management, transfers, and online access to EPF services.` },
+              { question: "Can an Employee Have Multiple UANs?", answer: `No. An employee should have only one UAN throughout their employment career, irrespective of job changes.` },
+              { question: "What Happens If Employee Strength Falls Below 20?", answer: `Once EPF becomes applicable to an establishment, it generally continues to remain covered even if the employee count subsequently falls below 20.` },
+              { question: "Is EPF Applicable to Contract Employees?", answer: `Yes. Eligible contract employees working in covered establishments are generally required to be covered under the EPF Scheme.` },
+              { question: "What Are the Consequences of Non-Compliance?", answer: `Failure to obtain EPF registration or deposit contributions on time may result in interest, penalties, damages, and legal action under the EPF Act.` },
+              { question: "Why Choose ConsultAvenuee for EPF Registration?", answer: `ConsultAvenuee offers end-to-end assistance for EPF registration, PF code allotment, employee enrollment, UAN support, compliance management, and ongoing advisory services, ensuring seamless compliance with EPFO regulations.` }
             ]
           },
           {
@@ -1932,16 +2031,16 @@ Step 7: FEMA and RBI Compliance`
               }
             ],
             faqs: [
-              { question: "ESIC Registration FAQs", answer: "", isHeading: true },
-              { question: "What is ESI Registration?", answer: "ESI Registration is the process of enrolling an eligible establishment under the Employees' State Insurance (ESI) Scheme administered by ESIC. It provides medical and social security benefits to eligible employees and their dependents." },
-              { question: "Is ESI Registration Mandatory?", answer: "Yes. ESI registration is mandatory for eligible establishments employing 10 or more employees (subject to state-specific applicability) and covered under the ESI Act." },
-              { question: "Who is Eligible for ESI Benefits?", answer: "Employees earning gross wages up to ₹21,000 per month are generally covered under the ESI Scheme and are entitled to ESI benefits." },
-              { question: "How Long Does ESI Registration Take?", answer: "The registration process is generally completed within a few working days, subject to the submission of complete documents and approval by ESIC." },
-              { question: "Is ESI Registration Required for Startups and Small Businesses?", answer: "Yes. If the establishment meets the employee threshold and falls under the notified categories, ESI registration becomes mandatory regardless of the type of business." },
-              { question: "What Happens If an Employer Fails to Obtain ESI Registration?", answer: "Failure to obtain ESI registration or comply with ESI provisions may result in penalties, interest on delayed payments, and legal action under the ESI Act." },
-              { question: "Is ESI Applicable to Contract Employees?", answer: "Yes. Contract employees working in a covered establishment are generally covered under the ESI Scheme, subject to eligibility conditions." },
-              { question: "What Is the Due Date for ESI Contribution Payment?", answer: "ESI contributions must be deposited within the prescribed due date as notified by ESIC to avoid interest and penalties." },
-              { question: "Why Choose ConsultAvenuee for ESI Registration?", answer: "ConsultAvenuee provides end-to-end assistance for ESIC registration, documentation, employee enrolment, compliance management, return filing support, and ongoing advisory services, ensuring a hassle-free compliance experience." }
+              { question: "ESIC Registration FAQs", answer: ``, isHeading: true },
+              { question: "What is ESI Registration?", answer: `ESI Registration is the process of enrolling an eligible establishment under the Employees' State Insurance (ESI) Scheme administered by ESIC. It provides medical and social security benefits to eligible employees and their dependents.` },
+              { question: "Is ESI Registration Mandatory?", answer: `Yes. ESI registration is mandatory for eligible establishments employing 10 or more employees (subject to state-specific applicability) and covered under the ESI Act.` },
+              { question: "Who is Eligible for ESI Benefits?", answer: `Employees earning gross wages up to ₹21,000 per month are generally covered under the ESI Scheme and are entitled to ESI benefits.` },
+              { question: "How Long Does ESI Registration Take?", answer: `The registration process is generally completed within a few working days, subject to the submission of complete documents and approval by ESIC.` },
+              { question: "Is ESI Registration Required for Startups and Small Businesses?", answer: `Yes. If the establishment meets the employee threshold and falls under the notified categories, ESI registration becomes mandatory regardless of the type of business.` },
+              { question: "What Happens If an Employer Fails to Obtain ESI Registration?", answer: `Failure to obtain ESI registration or comply with ESI provisions may result in penalties, interest on delayed payments, and legal action under the ESI Act.` },
+              { question: "Is ESI Applicable to Contract Employees?", answer: `Yes. Contract employees working in a covered establishment are generally covered under the ESI Scheme, subject to eligibility conditions.` },
+              { question: "What Is the Due Date for ESI Contribution Payment?", answer: `ESI contributions must be deposited within the prescribed due date as notified by ESIC to avoid interest and penalties.` },
+              { question: "Why Choose ConsultAvenuee for ESI Registration?", answer: `ConsultAvenuee provides end-to-end assistance for ESIC registration, documentation, employee enrolment, compliance management, return filing support, and ongoing advisory services, ensuring a hassle-free compliance experience.` }
             ]
           },
           {
@@ -1974,16 +2073,16 @@ Step 7: FEMA and RBI Compliance`
               }
             ],
             faqs: [
-              { question: "Trade License FAQs", answer: "", isHeading: true },
-              { question: "What is a Trade License?", answer: "A Trade License is an authorization issued by the local Municipal Authority permitting an individual or business entity to carry out a specific trade or business activity at a designated location." },
-              { question: "Is a Trade License Mandatory?", answer: "Yes. Many businesses are required to obtain a Trade License before commencing operations to ensure compliance with municipal laws and regulations." },
-              { question: "Who Issues a Trade License?", answer: "A Trade License is issued by the concerned Municipal Corporation, Municipal Council, or Local Authority having jurisdiction over the business location." },
-              { question: "Who Can Apply for a Trade License?", answer: "Any individual, proprietor, partnership firm, LLP, company, or other legal entity carrying on a permissible business activity can apply for a Trade License." },
-              { question: "What Types of Businesses Require a Trade License?", answer: "Trade Licenses are generally required for:\n• Shops and retail establishments\n• Restaurants and food businesses\n• Offices and service providers\n• Manufacturing units\n• Warehouses and storage facilities\n• Advertising businesses\n• Hazardous and regulated businesses" },
-              { question: "What is the Validity of a Trade License?", answer: "Trade Licenses are typically valid for one year and must be renewed annually or as prescribed by the local authority." },
-              { question: "Is a Trade License Required for Home-Based Businesses?", answer: "Depending on the nature of the activity and local municipal regulations, a Trade License may be required even for certain home-based businesses." },
-              { question: "Are Different Trade Licenses Required for Different Activities?", answer: "Yes. The type of Trade License depends on the nature of the business activity, such as industrial, commercial, food-related, advertising, or hazardous business operations." },
-              { question: "Why Choose ConsultAvenuee for Trade License Registration?", answer: "ConsultAvenuee provides complete assistance with Trade License registration, documentation, application filing, liaison with municipal authorities, renewals, and ongoing compliance support, ensuring a hassle-free experience for businesses." }
+              { question: "Trade License FAQs", answer: ``, isHeading: true },
+              { question: "What is a Trade License?", answer: `A Trade License is an authorization issued by the local Municipal Authority permitting an individual or business entity to carry out a specific trade or business activity at a designated location.` },
+              { question: "Is a Trade License Mandatory?", answer: `Yes. Many businesses are required to obtain a Trade License before commencing operations to ensure compliance with municipal laws and regulations.` },
+              { question: "Who Issues a Trade License?", answer: `A Trade License is issued by the concerned Municipal Corporation, Municipal Council, or Local Authority having jurisdiction over the business location.` },
+              { question: "Who Can Apply for a Trade License?", answer: `Any individual, proprietor, partnership firm, LLP, company, or other legal entity carrying on a permissible business activity can apply for a Trade License.` },
+              { question: "What Types of Businesses Require a Trade License?", answer: `Trade Licenses are generally required for:\n• Shops and retail establishments\n• Restaurants and food businesses\n• Offices and service providers\n• Manufacturing units\n• Warehouses and storage facilities\n• Advertising businesses\n• Hazardous and regulated businesses` },
+              { question: "What is the Validity of a Trade License?", answer: `Trade Licenses are typically valid for one year and must be renewed annually or as prescribed by the local authority.` },
+              { question: "Is a Trade License Required for Home-Based Businesses?", answer: `Depending on the nature of the activity and local municipal regulations, a Trade License may be required even for certain home-based businesses.` },
+              { question: "Are Different Trade Licenses Required for Different Activities?", answer: `Yes. The type of Trade License depends on the nature of the business activity, such as industrial, commercial, food-related, advertising, or hazardous business operations.` },
+              { question: "Why Choose ConsultAvenuee for Trade License Registration?", answer: `ConsultAvenuee provides complete assistance with Trade License registration, documentation, application filing, liaison with municipal authorities, renewals, and ongoing compliance support, ensuring a hassle-free experience for businesses.` }
             ]
           },
           {
@@ -2016,13 +2115,13 @@ Step 7: FEMA and RBI Compliance`
               }
             ],
             faqs: [
-              { question: "NGO Darpan Registration FAQs", answer: "", isHeading: true },
-              { question: "Is NGO Darpan Registration Mandatory?", answer: "While not mandatory for every NGO, it is generally required for Government grants, many CSR funding opportunities, FCRA-related applications, and other regulatory processes." },
-              { question: "How Long Does NGO Darpan Registration Take?", answer: "The registration process is generally completed within a few working days, subject to document readiness and successful verification." },
-              { question: "Can a Newly Registered NGO Apply?", answer: "Yes. Newly registered Trusts, Societies, and Section 8 Companies can apply provided they possess valid registration and PAN documents." },
-              { question: "Does NGO Darpan Registration Provide Tax Exemption?", answer: "No. Tax exemptions are granted separately through 12A and 80G registrations under the Income-tax Act." },
-              { question: "Is NGO Darpan Registration Required for CSR Funding?", answer: "Many CSR contributors and corporate donors prefer or require NGOs to have a valid NGO Darpan ID before considering funding proposals." },
-              { question: "Need Assistance with NGO Darpan Registration?", answer: "ConsultAvenuee provides complete support for NGO Darpan Registration, 12A Registration, 80G Registration, FCRA Compliance, CSR Advisory, and NGO Annual Compliance Services—helping your organization focus on its mission while we manage the regulatory requirements." }
+              { question: "NGO Darpan Registration FAQs", answer: ``, isHeading: true },
+              { question: "Is NGO Darpan Registration Mandatory?", answer: `While not mandatory for every NGO, it is generally required for Government grants, many CSR funding opportunities, FCRA-related applications, and other regulatory processes.` },
+              { question: "How Long Does NGO Darpan Registration Take?", answer: `The registration process is generally completed within a few working days, subject to document readiness and successful verification.` },
+              { question: "Can a Newly Registered NGO Apply?", answer: `Yes. Newly registered Trusts, Societies, and Section 8 Companies can apply provided they possess valid registration and PAN documents.` },
+              { question: "Does NGO Darpan Registration Provide Tax Exemption?", answer: `No. Tax exemptions are granted separately through 12A and 80G registrations under the Income-tax Act.` },
+              { question: "Is NGO Darpan Registration Required for CSR Funding?", answer: `Many CSR contributors and corporate donors prefer or require NGOs to have a valid NGO Darpan ID before considering funding proposals.` },
+              { question: "Need Assistance with NGO Darpan Registration?", answer: `ConsultAvenuee provides complete support for NGO Darpan Registration, 12A Registration, 80G Registration, FCRA Compliance, CSR Advisory, and NGO Annual Compliance Services—helping your organization focus on its mission while we manage the regulatory requirements.` }
             ]
           },
           {
@@ -2059,12 +2158,12 @@ Step 7: FEMA and RBI Compliance`
               }
             ],
             faqs: [
-              { question: "Trademark Registration FAQs", answer: "", isHeading: true },
-              { question: "Can I use the ™ symbol before registration?", answer: "Yes. Once a trademark application is filed, you may use the ™ symbol. The ® symbol can only be used after successful registration." },
-              { question: "How long does trademark registration take?", answer: "The timeline varies depending on examination, objections, and opposition proceedings. Early filing helps secure your priority date." },
-              { question: "Is trademark registration mandatory?", answer: "No. However, registration provides stronger legal protection and exclusive rights over your brand identity." },
-              { question: "Can I register both my brand name and logo?", answer: "Yes. Separate registrations for the brand name and logo provide broader legal protection." },
-              { question: "Can foreign companies register trademarks in India?", answer: "Yes. Foreign individuals, companies, and entities can apply for trademark registration in India." }
+              { question: "Trademark Registration FAQs", answer: ``, isHeading: true },
+              { question: "Can I use the ™ symbol before registration?", answer: `Yes. Once a trademark application is filed, you may use the ™ symbol. The ® symbol can only be used after successful registration.` },
+              { question: "How long does trademark registration take?", answer: `The timeline varies depending on examination, objections, and opposition proceedings. Early filing helps secure your priority date.` },
+              { question: "Is trademark registration mandatory?", answer: `No. However, registration provides stronger legal protection and exclusive rights over your brand identity.` },
+              { question: "Can I register both my brand name and logo?", answer: `Yes. Separate registrations for the brand name and logo provide broader legal protection.` },
+              { question: "Can foreign companies register trademarks in India?", answer: `Yes. Foreign individuals, companies, and entities can apply for trademark registration in India.` }
             ]
           },
           {
@@ -2097,12 +2196,12 @@ Step 7: FEMA and RBI Compliance`
               }
             ],
             faqs: [
-              { question: "Import Export Code (IEC) FAQs", answer: "", isHeading: true },
-              { question: "Is IEC mandatory for import-export business?", answer: "Yes. IEC is mandatory for businesses involved in importing or exporting goods and services, except in specified exempt cases." },
-              { question: "Is IEC valid for a lifetime?", answer: "Yes. IEC has lifetime validity and does not require renewal." },
-              { question: "Is there any annual return filing under IEC?", answer: "No. There are no annual returns or recurring compliance requirements after obtaining IEC." },
-              { question: "Can service exporters obtain IEC?", answer: "Yes. Businesses providing services to overseas clients may also require IEC for certain international transactions and foreign remittances." },
-              { question: "Can an individual obtain IEC?", answer: "Yes. Individuals engaged in import-export activities can apply for IEC registration." }
+              { question: "Import Export Code (IEC) FAQs", answer: ``, isHeading: true },
+              { question: "Is IEC mandatory for import-export business?", answer: `Yes. IEC is mandatory for businesses involved in importing or exporting goods and services, except in specified exempt cases.` },
+              { question: "Is IEC valid for a lifetime?", answer: `Yes. IEC has lifetime validity and does not require renewal.` },
+              { question: "Is there any annual return filing under IEC?", answer: `No. There are no annual returns or recurring compliance requirements after obtaining IEC.` },
+              { question: "Can service exporters obtain IEC?", answer: `Yes. Businesses providing services to overseas clients may also require IEC for certain international transactions and foreign remittances.` },
+              { question: "Can an individual obtain IEC?", answer: `Yes. Individuals engaged in import-export activities can apply for IEC registration.` }
             ]
           },
           {
@@ -2139,12 +2238,12 @@ Step 7: FEMA and RBI Compliance`
               }
             ],
             faqs: [
-              { question: "ISO Certification FAQs", answer: "", isHeading: true },
-              { question: "Is ISO Certification mandatory?", answer: "ISO Certification is generally voluntary; however, many customers, government departments, and corporate organizations require it as a business qualification." },
-              { question: "How long does it take to obtain ISO Certification?", answer: "The timeline depends on the size, complexity, and preparedness of the organization. Smaller businesses may obtain certification within a few months, while larger organizations may require additional implementation time." },
-              { question: "How long is ISO Certification valid?", answer: "ISO Certification is typically valid for three years, subject to periodic surveillance audits." },
-              { question: "Can startups obtain ISO Certification?", answer: "Yes. Startups can benefit significantly from ISO Certification by improving credibility, process efficiency, and customer confidence." },
-              { question: "Which ISO Certification is best for my business?", answer: "The appropriate certification depends on your industry, business objectives, customer requirements, and regulatory expectations. Our team can help you identify the most suitable ISO standard." }
+              { question: "ISO Certification FAQs", answer: ``, isHeading: true },
+              { question: "Is ISO Certification mandatory?", answer: `ISO Certification is generally voluntary; however, many customers, government departments, and corporate organizations require it as a business qualification.` },
+              { question: "How long does it take to obtain ISO Certification?", answer: `The timeline depends on the size, complexity, and preparedness of the organization. Smaller businesses may obtain certification within a few months, while larger organizations may require additional implementation time.` },
+              { question: "How long is ISO Certification valid?", answer: `ISO Certification is typically valid for three years, subject to periodic surveillance audits.` },
+              { question: "Can startups obtain ISO Certification?", answer: `Yes. Startups can benefit significantly from ISO Certification by improving credibility, process efficiency, and customer confidence.` },
+              { question: "Which ISO Certification is best for my business?", answer: `The appropriate certification depends on your industry, business objectives, customer requirements, and regulatory expectations. Our team can help you identify the most suitable ISO standard.` }
             ]
           },
           {
@@ -2177,11 +2276,11 @@ Step 7: FEMA and RBI Compliance`
               }
             ],
             faqs: [
-              { question: "FSSAI Registration FAQs", answer: "", isHeading: true },
-              { question: "Is FSSAI registration mandatory?", answer: "Yes. Any business involved in manufacturing, processing, storage, distribution, transportation, or sale of food products is generally required to obtain FSSAI Registration or License." },
-              { question: "How long is an FSSAI License valid?", answer: "FSSAI Registration and Licenses can be obtained for a period ranging from 1 to 5 years and must be renewed before expiry." },
-              { question: "Can I operate a food business without FSSAI registration?", answer: "No. Operating a food business without the required registration or license may attract penalties and regulatory action." },
-              { question: "Is FSSAI required for cloud kitchens and home-based food businesses?", answer: "Yes. Depending on the scale of operations, cloud kitchens, home-based food businesses, and online food sellers are also required to obtain appropriate FSSAI registration." }
+              { question: "FSSAI Registration FAQs", answer: ``, isHeading: true },
+              { question: "Is FSSAI registration mandatory?", answer: `Yes. Any business involved in manufacturing, processing, storage, distribution, transportation, or sale of food products is generally required to obtain FSSAI Registration or License.` },
+              { question: "How long is an FSSAI License valid?", answer: `FSSAI Registration and Licenses can be obtained for a period ranging from 1 to 5 years and must be renewed before expiry.` },
+              { question: "Can I operate a food business without FSSAI registration?", answer: `No. Operating a food business without the required registration or license may attract penalties and regulatory action.` },
+              { question: "Is FSSAI required for cloud kitchens and home-based food businesses?", answer: `Yes. Depending on the scale of operations, cloud kitchens, home-based food businesses, and online food sellers are also required to obtain appropriate FSSAI registration.` }
             ]
           }
         ]
@@ -2471,49 +2570,49 @@ Ensure your corporate decisions are properly documented and legally compliant wi
           }
         ],
         faqs: [
-          { question: "MCA Annual Compliance FAQs", answer: "", isHeading: true },
-          { question: "Is annual compliance mandatory even if the company has no business activity?", answer: "Yes. Companies are generally required to complete prescribed annual compliances and filings even if there are limited or no business transactions during the year." },
-          { question: "Which are the major annual ROC filing forms?", answer: "The commonly applicable annual compliance forms include:\\n• AOC-4\\n• MGT-7 / MGT-7A\\n• DIR-3 KYC\\n• DPT-3\\n• MSME Form-I (where applicable)" },
-          { question: "What happens if annual filings are delayed?", answer: "Delayed filings may attract additional fees, regulatory consequences, and compliance issues for the company and its directors." },
-          { question: "Can ConsultAvenuee handle the entire annual compliance process?", answer: "Yes. We provide complete assistance from documentation, drafting, review, and filing of ROC forms to ongoing compliance support." },
+          { question: "MCA Annual Compliance FAQs", answer: ``, isHeading: true },
+          { question: "Is annual compliance mandatory even if the company has no business activity?", answer: `Yes. Companies are generally required to complete prescribed annual compliances and filings even if there are limited or no business transactions during the year.` },
+          { question: "Which are the major annual ROC filing forms?", answer: `The commonly applicable annual compliance forms include:\\n• AOC-4\\n• MGT-7 / MGT-7A\\n• DIR-3 KYC\\n• DPT-3\\n• MSME Form-I (where applicable)` },
+          { question: "What happens if annual filings are delayed?", answer: `Delayed filings may attract additional fees, regulatory consequences, and compliance issues for the company and its directors.` },
+          { question: "Can ConsultAvenuee handle the entire annual compliance process?", answer: `Yes. We provide complete assistance from documentation, drafting, review, and filing of ROC forms to ongoing compliance support.` },
 
-          { question: "ROC Filings FAQs", answer: "", isHeading: true },
-          { question: "What is ROC filing?", answer: "ROC filing refers to the submission of statutory forms, annual returns, financial statements, and event-based disclosures with the Registrar of Companies through the MCA portal." },
-          { question: "Is ROC filing mandatory?", answer: "Yes. Every registered company and LLP is required to comply with applicable ROC filing requirements, even if there is no business activity during the year." },
-          { question: "What happens if ROC filings are delayed?", answer: "Delayed filings attract additional fees and penalties. Persistent non-compliance can result in legal action and regulatory restrictions." },
-          { question: "Do dormant companies need to file ROC returns?", answer: "Yes. Even companies with no business transactions are generally required to meet prescribed compliance requirements unless specifically exempted under applicable law." },
-          { question: "Can you handle complete annual compliance?", answer: "Yes. We provide complete annual compliance services, including ROC filings, board meeting documentation, annual return preparation, statutory register maintenance, and coordination with auditors." },
+          { question: "ROC Filings FAQs", answer: ``, isHeading: true },
+          { question: "What is ROC filing?", answer: `ROC filing refers to the submission of statutory forms, annual returns, financial statements, and event-based disclosures with the Registrar of Companies through the MCA portal.` },
+          { question: "Is ROC filing mandatory?", answer: `Yes. Every registered company and LLP is required to comply with applicable ROC filing requirements, even if there is no business activity during the year.` },
+          { question: "What happens if ROC filings are delayed?", answer: `Delayed filings attract additional fees and penalties. Persistent non-compliance can result in legal action and regulatory restrictions.` },
+          { question: "Do dormant companies need to file ROC returns?", answer: `Yes. Even companies with no business transactions are generally required to meet prescribed compliance requirements unless specifically exempted under applicable law.` },
+          { question: "Can you handle complete annual compliance?", answer: `Yes. We provide complete annual compliance services, including ROC filings, board meeting documentation, annual return preparation, statutory register maintenance, and coordination with auditors.` },
 
-          { question: "Maintenance of Statutory Registers FAQs", answer: "", isHeading: true },
-          { question: "What are statutory registers and records?", answer: "Statutory registers and records are mandatory corporate records that companies are required to maintain under the Companies Act, 2013. These registers contain important information relating to shareholders, directors, share capital, charges, loans, investments, and other corporate matters." },
-          { question: "Why is maintenance of statutory registers important?", answer: "Proper maintenance of statutory registers helps ensure legal compliance, supports good corporate governance, facilitates audits and due diligence, and minimizes the risk of regulatory penalties and non-compliance." },
-          { question: "Which statutory registers are required to be maintained by a company?", answer: "Depending on the nature of the company and applicable provisions, statutory registers may include:\\n• Register of Members\\n• Register of Directors & KMP\\n• Register of Charges\\n• Register of Loans, Guarantees & Investments\\n• Register of Related Party Transactions\\n• Register of Beneficial Owners\\n• Share Transfer and Allotment Registers\\n• Other registers prescribed under applicable laws" },
-          { question: "Are companies required to maintain minutes books?", answer: "Yes. Companies are generally required to maintain minutes of Board Meetings, General Meetings, Committee Meetings, and related corporate proceedings as prescribed under the Companies Act, 2013." },
-          { question: "What happens if statutory registers are not maintained properly?", answer: "Failure to maintain statutory records may result in:\\n• Regulatory non-compliance\\n• Penalties and fines\\n• Difficulties during audits and inspections\\n• Delays in corporate transactions\\n• Issues during due diligence and fundraising exercises" },
-          { question: "What is included in secretarial record maintenance?", answer: "Secretarial record maintenance typically includes:\\n• Minutes Books\\n• Board and Shareholder Resolutions\\n• Notices and Agendas\\n• Attendance Registers\\n• Directors' Disclosures\\n• Corporate Action Documentation\\n• Secretarial Compliance Records" },
-          { question: "Do private limited companies need to maintain statutory registers?", answer: "Yes. Private limited companies are also required to maintain prescribed statutory registers and records under the Companies Act, 2013, subject to applicable provisions and exemptions." },
-          { question: "Are statutory records required during audits and due diligence?", answer: "Yes. Statutory registers and corporate records are commonly reviewed during:\\n• Statutory Audits\\n• Secretarial Audits\\n• Due Diligence Exercises\\n• Fundraising Transactions\\n• Mergers & Acquisitions\\n• Investor Reviews" },
-          { question: "What documents are required for maintaining statutory records?", answer: "Commonly required documents include:\\n• Certificate of Incorporation\\n• Memorandum & Articles of Association\\n• Shareholding Details\\n• Director Information\\n• Board and Shareholder Resolutions\\n• ROC Filing Records\\n• Share Certificates\\n• Corporate Action Documents" },
-          { question: "Can ConsultAvenuee assist with secretarial compliance and documentation?", answer: "Yes. We provide comprehensive support for:\\n• Statutory Register Maintenance\\n• Minutes Book Preparation\\n• Corporate Record Management\\n• Secretarial Documentation\\n• Share Capital Record Maintenance\\n• Compliance Updates Following Corporate Events\\n• Corporate Governance Support" },
-          { question: "How can ConsultAvenuee help?", answer: "Our team provides end-to-end support for maintaining statutory registers, corporate records, minutes books, shareholding records, and secretarial documentation. We help companies remain compliant, audit-ready, and well-governed while minimizing compliance risks." },
+          { question: "Maintenance of Statutory Registers FAQs", answer: ``, isHeading: true },
+          { question: "What are statutory registers and records?", answer: `Statutory registers and records are mandatory corporate records that companies are required to maintain under the Companies Act, 2013. These registers contain important information relating to shareholders, directors, share capital, charges, loans, investments, and other corporate matters.` },
+          { question: "Why is maintenance of statutory registers important?", answer: `Proper maintenance of statutory registers helps ensure legal compliance, supports good corporate governance, facilitates audits and due diligence, and minimizes the risk of regulatory penalties and non-compliance.` },
+          { question: "Which statutory registers are required to be maintained by a company?", answer: `Depending on the nature of the company and applicable provisions, statutory registers may include:\\n• Register of Members\\n• Register of Directors & KMP\\n• Register of Charges\\n• Register of Loans, Guarantees & Investments\\n• Register of Related Party Transactions\\n• Register of Beneficial Owners\\n• Share Transfer and Allotment Registers\\n• Other registers prescribed under applicable laws` },
+          { question: "Are companies required to maintain minutes books?", answer: `Yes. Companies are generally required to maintain minutes of Board Meetings, General Meetings, Committee Meetings, and related corporate proceedings as prescribed under the Companies Act, 2013.` },
+          { question: "What happens if statutory registers are not maintained properly?", answer: `Failure to maintain statutory records may result in:\\n• Regulatory non-compliance\\n• Penalties and fines\\n• Difficulties during audits and inspections\\n• Delays in corporate transactions\\n• Issues during due diligence and fundraising exercises` },
+          { question: "What is included in secretarial record maintenance?", answer: `Secretarial record maintenance typically includes:\\n• Minutes Books\\n• Board and Shareholder Resolutions\\n• Notices and Agendas\\n• Attendance Registers\\n• Directors' Disclosures\\n• Corporate Action Documentation\\n• Secretarial Compliance Records` },
+          { question: "Do private limited companies need to maintain statutory registers?", answer: `Yes. Private limited companies are also required to maintain prescribed statutory registers and records under the Companies Act, 2013, subject to applicable provisions and exemptions.` },
+          { question: "Are statutory records required during audits and due diligence?", answer: `Yes. Statutory registers and corporate records are commonly reviewed during:\\n• Statutory Audits\\n• Secretarial Audits\\n• Due Diligence Exercises\\n• Fundraising Transactions\\n• Mergers & Acquisitions\\n• Investor Reviews` },
+          { question: "What documents are required for maintaining statutory records?", answer: `Commonly required documents include:\\n• Certificate of Incorporation\\n• Memorandum & Articles of Association\\n• Shareholding Details\\n• Director Information\\n• Board and Shareholder Resolutions\\n• ROC Filing Records\\n• Share Certificates\\n• Corporate Action Documents` },
+          { question: "Can ConsultAvenuee assist with secretarial compliance and documentation?", answer: `Yes. We provide comprehensive support for:\\n• Statutory Register Maintenance\\n• Minutes Book Preparation\\n• Corporate Record Management\\n• Secretarial Documentation\\n• Share Capital Record Maintenance\\n• Compliance Updates Following Corporate Events\\n• Corporate Governance Support` },
+          { question: "How can ConsultAvenuee help?", answer: `Our team provides end-to-end support for maintaining statutory registers, corporate records, minutes books, shareholding records, and secretarial documentation. We help companies remain compliant, audit-ready, and well-governed while minimizing compliance risks.` },
 
-          { question: "AGM & EGM Compliance FAQs", answer: "", isHeading: true },
-          { question: "What is an Annual General Meeting (AGM)?", answer: "An AGM is a mandatory annual meeting of shareholders where the company's financial statements, directors' report, auditor's report, appointment of directors, appointment or ratification of auditors, and other ordinary business matters are considered and approved." },
-          { question: "Is conducting an AGM mandatory for every company?", answer: "Most companies are required to hold an AGM in accordance with the provisions of the Companies Act, 2013, subject to applicable exemptions and specific circumstances." },
-          { question: "What is an Extraordinary General Meeting (EGM)?", answer: "An EGM is a shareholder meeting convened to consider urgent or special business that cannot wait until the next AGM, such as alteration of constitutional documents, changes in capital structure, appointment or removal of directors, mergers, or other significant corporate actions." },
-          { question: "What is the difference between an AGM and an EGM?", answer: "An AGM is a mandatory annual meeting covering routine statutory business, whereas an EGM is convened whenever shareholder approval is required for specific or urgent matters during the year." },
-          { question: "Are Board Meetings mandatory?", answer: "Yes. Companies are generally required to hold Board Meetings at prescribed intervals and maintain proper records of discussions, decisions, and resolutions as required under the Companies Act, 2013." },
-          { question: "What documents are required for conducting an AGM or EGM?", answer: "Typically, the following documents may be required:\\n• Notice of Meeting\\n• Agenda\\n• Explanatory Statement\\n• Financial Statements\\n• Directors' Report\\n• Auditor's Report\\n• Draft Resolutions\\n• Shareholding Records\\n• Previous Meeting Minutes\\n\\nThe specific documentation depends on the agenda items being considered." },
-          { question: "What is an Explanatory Statement?", answer: "An Explanatory Statement provides shareholders with material facts and relevant information relating to special business proposed at a meeting, enabling informed decision-making before voting." },
-          { question: "What are Ordinary and Special Resolutions?", answer: "• Ordinary Resolution: Passed by a simple majority of votes cast.\\n• Special Resolution: Requires a higher voting threshold as prescribed under the Companies Act, 2013.\\n\\nThe type of resolution depends on the nature of the business being approved." },
-          { question: "Why are meeting minutes important?", answer: "Minutes serve as the official record of discussions, decisions, approvals, and resolutions passed during Board Meetings, AGMs, and EGMs. They are important compliance documents and may be reviewed during audits, inspections, and due diligence exercises." },
-          { question: "How soon should minutes be prepared after a meeting?", answer: "Minutes should be prepared, finalized, and maintained within the timelines prescribed under applicable legal and secretarial standards." },
-          { question: "What happens if a company fails to maintain proper meeting records?", answer: "Failure to maintain notices, resolutions, minutes, and statutory records may lead to:\\n• Regulatory non-compliance\\n• Penalties and fines\\n• Challenges to corporate decisions\\n• Audit observations\\n• Difficulties during due diligence and fundraising" },
-          { question: "Are Board Resolutions required for routine business decisions?", answer: "Many corporate actions require formal Board approval through resolutions, including:\\n• Opening bank accounts\\n• Appointment of directors or key personnel\\n• Borrowings and investments\\n• Approval of financial statements\\n• Share allotments and transfers\\n• Other significant business decisions" },
-          { question: "Can meetings be conducted through video conferencing?", answer: "Yes. Subject to applicable legal provisions, many Board Meetings and certain shareholder meetings may be conducted through video conferencing or other permitted electronic modes." },
-          { question: "Do meeting resolutions require ROC filings?", answer: "Certain resolutions and corporate actions require filing of prescribed forms with the Ministry of Corporate Affairs (MCA) within specified timelines. The filing requirements depend on the nature of the resolution and transaction." },
-          { question: "How can ConsultAvenuee assist with AGM, EGM, and Board Meeting compliance?", answer: "We provide comprehensive support including:\\n• AGM & EGM Planning\\n• Notice & Agenda Drafting\\n• Explanatory Statements\\n• Board & Shareholder Resolutions\\n• Minutes Preparation\\n• Attendance & Statutory Records\\n• ROC Compliance Support\\n• Corporate Documentation\\n• Secretarial Compliance Advisory" },
-          { question: "Can you assist startups and private limited companies?", answer: "Yes. We assist startups, private limited companies, closely held companies, and growing businesses in maintaining complete meeting and secretarial compliance throughout their corporate lifecycle." }
+          { question: "AGM & EGM Compliance FAQs", answer: ``, isHeading: true },
+          { question: "What is an Annual General Meeting (AGM)?", answer: `An AGM is a mandatory annual meeting of shareholders where the company's financial statements, directors' report, auditor's report, appointment of directors, appointment or ratification of auditors, and other ordinary business matters are considered and approved.` },
+          { question: "Is conducting an AGM mandatory for every company?", answer: `Most companies are required to hold an AGM in accordance with the provisions of the Companies Act, 2013, subject to applicable exemptions and specific circumstances.` },
+          { question: "What is an Extraordinary General Meeting (EGM)?", answer: `An EGM is a shareholder meeting convened to consider urgent or special business that cannot wait until the next AGM, such as alteration of constitutional documents, changes in capital structure, appointment or removal of directors, mergers, or other significant corporate actions.` },
+          { question: "What is the difference between an AGM and an EGM?", answer: `An AGM is a mandatory annual meeting covering routine statutory business, whereas an EGM is convened whenever shareholder approval is required for specific or urgent matters during the year.` },
+          { question: "Are Board Meetings mandatory?", answer: `Yes. Companies are generally required to hold Board Meetings at prescribed intervals and maintain proper records of discussions, decisions, and resolutions as required under the Companies Act, 2013.` },
+          { question: "What documents are required for conducting an AGM or EGM?", answer: `Typically, the following documents may be required:\\n• Notice of Meeting\\n• Agenda\\n• Explanatory Statement\\n• Financial Statements\\n• Directors' Report\\n• Auditor's Report\\n• Draft Resolutions\\n• Shareholding Records\\n• Previous Meeting Minutes\\n\\nThe specific documentation depends on the agenda items being considered.` },
+          { question: "What is an Explanatory Statement?", answer: `An Explanatory Statement provides shareholders with material facts and relevant information relating to special business proposed at a meeting, enabling informed decision-making before voting.` },
+          { question: "What are Ordinary and Special Resolutions?", answer: `• Ordinary Resolution: Passed by a simple majority of votes cast.\\n• Special Resolution: Requires a higher voting threshold as prescribed under the Companies Act, 2013.\\n\\nThe type of resolution depends on the nature of the business being approved.` },
+          { question: "Why are meeting minutes important?", answer: `Minutes serve as the official record of discussions, decisions, approvals, and resolutions passed during Board Meetings, AGMs, and EGMs. They are important compliance documents and may be reviewed during audits, inspections, and due diligence exercises.` },
+          { question: "How soon should minutes be prepared after a meeting?", answer: `Minutes should be prepared, finalized, and maintained within the timelines prescribed under applicable legal and secretarial standards.` },
+          { question: "What happens if a company fails to maintain proper meeting records?", answer: `Failure to maintain notices, resolutions, minutes, and statutory records may lead to:\\n• Regulatory non-compliance\\n• Penalties and fines\\n• Challenges to corporate decisions\\n• Audit observations\\n• Difficulties during due diligence and fundraising` },
+          { question: "Are Board Resolutions required for routine business decisions?", answer: `Many corporate actions require formal Board approval through resolutions, including:\\n• Opening bank accounts\\n• Appointment of directors or key personnel\\n• Borrowings and investments\\n• Approval of financial statements\\n• Share allotments and transfers\\n• Other significant business decisions` },
+          { question: "Can meetings be conducted through video conferencing?", answer: `Yes. Subject to applicable legal provisions, many Board Meetings and certain shareholder meetings may be conducted through video conferencing or other permitted electronic modes.` },
+          { question: "Do meeting resolutions require ROC filings?", answer: `Certain resolutions and corporate actions require filing of prescribed forms with the Ministry of Corporate Affairs (MCA) within specified timelines. The filing requirements depend on the nature of the resolution and transaction.` },
+          { question: "How can ConsultAvenuee assist with AGM, EGM, and Board Meeting compliance?", answer: `We provide comprehensive support including:\\n• AGM & EGM Planning\\n• Notice & Agenda Drafting\\n• Explanatory Statements\\n• Board & Shareholder Resolutions\\n• Minutes Preparation\\n• Attendance & Statutory Records\\n• ROC Compliance Support\\n• Corporate Documentation\\n• Secretarial Compliance Advisory` },
+          { question: "Can you assist startups and private limited companies?", answer: `Yes. We assist startups, private limited companies, closely held companies, and growing businesses in maintaining complete meeting and secretarial compliance throughout their corporate lifecycle.` }
         ],
         subSubServices: [
           { slug: "mca-annual-compliance", title: "MCA Annual Compliance", sections: [], faqs: [] },
@@ -2602,14 +2701,14 @@ Partner with ConsultAvenuee's Virtual CFO team to gain expert financial insights
           }
         ],
         faqs: [
-          { question: "Virtual CFO FAQs", answer: "", isHeading: true },
-          { question: "What is a Virtual CFO?", answer: "A Virtual CFO is an experienced finance professional who provides strategic financial leadership and advisory services on a part-time, outsourced, or project basis." },
-          { question: "How is a Virtual CFO Different from an Accountant?", answer: "An accountant focuses on bookkeeping, compliance, and financial records, whereas a Virtual CFO helps with business strategy, financial planning, cash flow management, profitability, and growth decisions." },
-          { question: "Is a Virtual CFO Suitable for Small Businesses?", answer: "Yes. Virtual CFO services are particularly beneficial for startups and SMEs that need expert financial guidance without the cost of a full-time CFO." },
-          { question: "How Often Does a Virtual CFO Work with a Business?", answer: "Engagements can be customized based on business requirements, ranging from a few hours per month to ongoing strategic support." },
-          { question: "Can a Virtual CFO Help with Fundraising?", answer: "Yes. Virtual CFOs assist with financial modelling, investor presentations, due diligence, valuation support, and interactions with banks, investors, and funding institutions." },
-          { question: "What Industries Do You Serve?", answer: "We work with startups, SMEs, service businesses and other growing enterprises." },
-          { question: "How Do I Know If My Business Needs a Virtual CFO?", answer: "If your business is experiencing growth, facing cash flow challenges, seeking funding, expanding operations, or requiring better financial visibility, a Virtual CFO can provide significant value." }
+          { question: "Virtual CFO FAQs", answer: ``, isHeading: true },
+          { question: "What is a Virtual CFO?", answer: `A Virtual CFO is an experienced finance professional who provides strategic financial leadership and advisory services on a part-time, outsourced, or project basis.` },
+          { question: "How is a Virtual CFO Different from an Accountant?", answer: `An accountant focuses on bookkeeping, compliance, and financial records, whereas a Virtual CFO helps with business strategy, financial planning, cash flow management, profitability, and growth decisions.` },
+          { question: "Is a Virtual CFO Suitable for Small Businesses?", answer: `Yes. Virtual CFO services are particularly beneficial for startups and SMEs that need expert financial guidance without the cost of a full-time CFO.` },
+          { question: "How Often Does a Virtual CFO Work with a Business?", answer: `Engagements can be customized based on business requirements, ranging from a few hours per month to ongoing strategic support.` },
+          { question: "Can a Virtual CFO Help with Fundraising?", answer: `Yes. Virtual CFOs assist with financial modelling, investor presentations, due diligence, valuation support, and interactions with banks, investors, and funding institutions.` },
+          { question: "What Industries Do You Serve?", answer: `We work with startups, SMEs, service businesses and other growing enterprises.` },
+          { question: "How Do I Know If My Business Needs a Virtual CFO?", answer: `If your business is experiencing growth, facing cash flow challenges, seeking funding, expanding operations, or requiring better financial visibility, a Virtual CFO can provide significant value.` }
         ]
       }
     ]
