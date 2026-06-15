@@ -358,19 +358,6 @@ export default function ContactPage() {
             </div>
           </div>
 
-          {/* Stylized Map Placeholder */}
-          <div className="glass h-48 rounded-3xl border border-slate-200/50 dark:border-slate-800/50 overflow-hidden relative flex items-center justify-center">
-            <div className="absolute inset-0 bg-slate-200 dark:bg-slate-900 opacity-20 bg-grid-slate-900/[0.1] z-0" />
-            <div className="text-center z-10 p-4">
-              <Landmark className="h-8 w-8 text-amber-500 mx-auto mb-2 animate-float" />
-              <span className="text-xs font-bold text-slate-700 dark:text-slate-300 block">
-                {currentOffice.name} Map Grid
-              </span>
-              <span className="text-[10px] text-slate-400 dark:text-slate-500 mt-1 block">
-                Regional Hub Location
-              </span>
-            </div>
-          </div>
         </div>
       </div>
     </div>
