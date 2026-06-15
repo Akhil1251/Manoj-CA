@@ -17,6 +17,22 @@ export default function ServicesPage() {
   const [activeTab, setActiveTab] = useState(servicesData[0].id);
   const [expandedSubService, setExpandedSubService] = useState<string | null>(null);
 
+  React.useEffect(() => {
+    const handleHashChange = () => {
+      const hash = window.location.hash.replace('#', '');
+      if (hash && servicesData.some(tab => tab.id === hash)) {
+        setActiveTab(hash);
+      }
+    };
+    
+    // Check on mount
+    handleHashChange();
+
+    // Also listen for hash changes
+    window.addEventListener('hashchange', handleHashChange);
+    return () => window.removeEventListener('hashchange', handleHashChange);
+  }, []);
+
   const currentTabData = servicesData.find((tab) => tab.id === activeTab) || servicesData[0];
 
   const handleSubServiceClick = (subServiceId: string) => {
@@ -59,52 +75,149 @@ export default function ServicesPage() {
           {/* LEFT COLUMN - SUB SERVICES GRID */}
           <div className="lg:col-span-9 space-y-8 text-left">
             <h2 className="text-2xl font-black text-[#210821] dark:text-white tracking-tight capitalize mb-6 border-b border-slate-100 dark:border-slate-800 pb-3">
-              {currentTabData.title} offerings
+              {currentTabData.title}
             </h2>
 
             {currentTabData.description && (
-              <p className="text-sm text-slate-500 dark:text-slate-400 mb-8 -mt-4 leading-relaxed max-w-3xl font-medium">
-                {currentTabData.description}
-              </p>
+              <div 
+                className="text-sm text-slate-500 dark:text-slate-400 mb-8 -mt-4 leading-relaxed max-w-3xl font-medium"
+                dangerouslySetInnerHTML={{ 
+                  __html: currentTabData.description
+                    .replace(/\n/g, '<br/>')
+                    .replace(/\*\*(.*?)\*\*/g, '<strong class="text-slate-800 dark:text-white font-bold">$1</strong>') 
+                }}
+              />
             )}
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {currentTabData.subServices.map((subService) => {
                 const isExpanded = expandedSubService === subService.id;
+                if (currentTabData.id !== "compliance-business-advisory" && currentTabData.id !== "taxation-regulatory-litigation") {
+                  return (
+                    <Link
+                      key={subService.id}
+                      href={`/services/${subService.id}`}
+                      className="relative p-6 rounded-2xl bg-white dark:bg-[#180618] border border-slate-100 dark:border-slate-800/80 hover:shadow-md hover:border-[#c79d62]/50 transition-all duration-300 flex flex-col justify-between cursor-pointer group"
+                    >
+                      <div>
+                        {/* Badge and Title */}
+                        <div className="flex items-center justify-between gap-4 mb-2">
+                          <div className="flex items-center gap-2">
+                            {subService.badge && (
+                              <span className="bg-[#c79d62] text-white text-[8px] font-black uppercase tracking-wider px-2 py-0.5 rounded">
+                                {subService.badge}
+                              </span>
+                            )}
+                            <h3 className="font-extrabold text-lg text-[#210821] dark:text-white leading-tight group-hover:text-[#c79d62] transition-colors">
+                              {subService.title}
+                            </h3>
+                          </div>
+                        </div>
+
+                        {/* Description */}
+                        <p className="text-xs text-slate-500 dark:text-slate-400 leading-relaxed font-normal mb-5">
+                          {subService.description}
+                        </p>
+                      </div>
+
+                      <div className="mt-auto -mx-6 -mb-6 pt-4">
+                        <div className="border-t border-slate-100 dark:border-slate-800/60 mx-6"></div>
+                        <div className="w-full flex items-center justify-between text-xs font-bold text-[#c79d62] transition-colors hover:bg-[#c79d62] hover:text-black dark:hover:text-black rounded-b-2xl px-6 py-4 group/readmore">
+                          <span>Read More</span>
+                          <ChevronRight className="w-4 h-4 opacity-0 group-hover:opacity-100 group-hover/readmore:translate-x-1 transition-all duration-300" />
+                        </div>
+                      </div>
+                    </Link>
+                  );
+                }
+
                 return (
-                  <Link
-                    key={subService.id}
-                    href={`/services/${subService.id}`}
-                    className="relative p-6 rounded-2xl bg-white dark:bg-[#180618] border border-slate-100 dark:border-slate-800/80 hover:shadow-md hover:border-[#c79d62]/50 transition-all duration-300 flex flex-col justify-between cursor-pointer group"
-                  >
-                    <div>
+                  <div key={subService.id} className="relative z-10 hover:z-[60] group">
+                    {/* INVISIBLE PLACEHOLDER to give the grid cell its intrinsic height */}
+                    <div className="p-6 opacity-0 pointer-events-none invisible flex flex-col w-full h-full" aria-hidden="true">
                       {/* Badge and Title */}
-                      <div className="flex items-center justify-between gap-4 mb-2">
+                      <div className="flex items-center justify-between gap-4 mb-4">
                         <div className="flex items-center gap-2">
                           {subService.badge && (
-                            <span className="bg-[#c79d62] text-white text-[8px] font-black uppercase tracking-wider px-2 py-0.5 rounded">
+                            <span className="text-[8px] font-black uppercase tracking-wider px-2 py-0.5">
                               {subService.badge}
                             </span>
                           )}
-                          <h3 className="font-extrabold text-lg text-[#210821] dark:text-white leading-tight group-hover:text-[#c79d62] transition-colors">
+                          <h3 className="font-extrabold text-lg leading-tight">
                             {subService.title}
                           </h3>
                         </div>
                       </div>
-
-                      {/* Description */}
-                      <p className="text-xs text-slate-500 dark:text-slate-400 leading-relaxed font-normal mb-5">
-                        {subService.description}
-                      </p>
-                    </div>
-
-                    <div className="border-t border-slate-100 dark:border-slate-800/60 pt-4 mt-auto">
-                      <div className="w-full flex items-center justify-between text-xs font-bold text-[#c79d62] transition-colors">
-                        <span>Read More</span>
-                        <ChevronRight className="w-4 h-4 opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all duration-300" />
+                      <div className="flex-grow">
+                        <p className="text-xs leading-relaxed font-normal">
+                          {subService.description}
+                        </p>
+                      </div>
+                      <div className="mt-auto -mx-6 -mb-6 pt-6">
+                        <div className="mx-6 pt-4">Read More</div>
                       </div>
                     </div>
-                  </Link>
+
+                    {/* ACTUAL VISIBLE OVERLAY CARD */}
+                    <div className="absolute top-0 left-0 w-full z-20">
+                      <div className="relative p-6 rounded-2xl bg-white dark:bg-[#180618] border border-slate-100 dark:border-slate-800/80 shadow-sm hover:shadow-2xl hover:border-[#c79d62]/50 transition-all duration-300 flex flex-col min-h-full group-hover:h-auto">
+                        <div className="flex flex-col flex-grow">
+                          {/* Badge and Title */}
+                          <div className="flex items-center justify-between gap-4 mb-4">
+                            <div className="flex items-center gap-2">
+                              {subService.badge && (
+                                <span className="bg-[#c79d62] text-white text-[8px] font-black uppercase tracking-wider px-2 py-0.5 rounded">
+                                  {subService.badge}
+                                </span>
+                              )}
+                              <Link href={`/services/${subService.id}`}>
+                                <h3 className="font-extrabold text-lg text-[#210821] dark:text-white leading-tight hover:text-[#c79d62] transition-colors cursor-pointer">
+                                  {subService.title}
+                                </h3>
+                              </Link>
+                            </div>
+                          </div>
+
+                          {/* Content Area */}
+                          <div className="relative flex-grow">
+                            {/* Description (hides on hover) */}
+                            <p className={`text-xs text-slate-500 dark:text-slate-400 leading-relaxed font-normal ${subService.subSubServices && subService.subSubServices.length > 1 ? 'group-hover:hidden' : ''}`}>
+                              {subService.description}
+                            </p>
+
+                            {/* Hover List (shows on hover) */}
+                            {subService.subSubServices && subService.subSubServices.length > 1 && (
+                              <div className="hidden group-hover:block pb-2 animate-in fade-in duration-300">
+                                <ul className="space-y-3 border-l-2 border-[#c79d62]/30 pl-3">
+                                  {subService.subSubServices.map((subSub: any, idx: number) => (
+                                    <li key={idx}>
+                                      <Link
+                                        href={['company-formation', 'registrations', 'corporate-compliance', 'income-tax', 'litigation-support'].includes(subService.id) ? `/services/${subService.id}#${subSub.slug}` : `/services/${subSub.slug}`}
+                                        className="text-[11px] font-extrabold text-slate-700 dark:text-slate-300 hover:text-[#c79d62] transition-colors block leading-tight"
+                                      >
+                                        {subSub.title}
+                                      </Link>
+                                    </li>
+                                  ))}
+                                </ul>
+                              </div>
+                            )}
+                          </div>
+                        </div>
+
+                        {/* Read More button stays at the bottom and moves down as card expands */}
+                        <div className="mt-auto -mx-6 -mb-6 pt-6">
+                          <div className="border-t border-slate-100 dark:border-slate-800/60 mx-6"></div>
+                          <Link href={`/services/${subService.id}`} className="block relative z-10 bg-white dark:bg-[#180618] rounded-b-2xl px-6 py-4 hover:bg-[#c79d62] dark:hover:bg-[#c79d62] transition-colors group/link">
+                            <div className="w-full flex items-center justify-between text-xs font-bold text-[#c79d62] group-hover/link:text-black transition-colors">
+                              <span>Read More</span>
+                              <ChevronRight className="w-4 h-4 transition-transform duration-300 group-hover/link:translate-x-1" />
+                            </div>
+                          </Link>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 );
               })}
             </div>

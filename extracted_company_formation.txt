@@ -1,0 +1,386 @@
+
+====================
+USER_INPUT:
+====================
+<USER_REQUEST>
+Now we work on Service Page 
+
+i Have 4-5 Services On Service page i want this in tab i share in picture
+
+and each service has sub services which i want in 2nd image i share you
+
+now each sub service has sub sub multiple service which i want dropdown 
+and that i have seprate page with image to show detail content of that service also on that page i want this type of tables which has all the chain i discuss with you
+
+kindly make a plan for this
+i provide you one service flow for exapmle
+Business Advisory & Compliance
+Company Formation
+	Private Limited Company Registration 
+	LLP Registration 
+	Partnership Firm Registration 
+	Public Limited Company Registration 
+	Trust Registration 
+	Indian Subsidiary for Foreign Entrepreneurs 
+Registrations
+	Shop & Establishment Registration 
+	Startup India Registration 
+	MSME/Udyam Registration 
+	PF Registration 
+	ESIC Registration 
+	Trade License 
+	NGO Darpan Registration 
+	Trademark Registration
+	Import Export Code (IEC) 
+	ISO Certification 
+	FSSAI Registration 
+Corporate Compliance & Secretarial Services
+	MCA Annual Compliance 
+	ROC Filings 
+	Maintenance of Statutory Registers & Records 
+	AGM & EGM, BM Compliance, Minutes & Resolutions 
+Virtual CFO (vCFO) Services
+</USER_REQUEST>
+<ADDITIONAL_METADATA>
+The current local time is: 2026-06-10T11:56:27+05:30.
+
+The user's current state is as follows:
+Active Document: d:\HelpVerse Projects\HelpVerse NEW\app\projects\page.js (LANGUAGE_JAVASCRIPT)
+Cursor is on line: 1455
+Other open documents:
+- d:\HelpVerse Projects\HelpVerse NEW\app\contact\page.js (LANGUAGE_JAVASCRIPT)
+- d:\HelpVerse Projects\HelpVerse NEW\components\MagicBento.css (LANGUAGE_CSS)
+- d:\HelpVerse Projects\HelpVerse NEW\components\Features.js (LANGUAGE_JAVASCRIPT)
+- d:\HelpVerse Projects\HelpVerse NEW\components\MobileShowcase.js (LANGUAGE_JAVASCRIPT)
+- d:\HelpVerse Projects\HelpVerse NEW\components\LogoWall.js (LANGUAGE_JAVASCRIPT)
+Running terminal commands:
+- npm run dev (in d:\HelpVerse Projects\Manoj CA, running for 23h4m51s)
+</ADDITIONAL_METADATA>
+
+====================
+USER_INPUT:
+====================
+<USER_REQUEST>
+1.Housing Society Management & Compliance 
+Your Trusted Partner in Society Management & Compliance
+Focus on your community while we manage your society’s compliance, governance, taxation, and regulatory requirements.
+Society Formation & Registration
+•	Co-operative Housing society registration
+•	Builder Handover Assistance
+•	First General Body Meeting (GBM)
+Society Elections & Managing Committee Formation 
+•	Society Election Planning 
+•	Election Officer Coordination 
+•	Voter List Preparation 
+•	Election Documentation 
+•	Managing Committee Formation
+Society Compliance & Secretarial Services
+•	 AGM & General Body Meeting Compliance
+•	Committee Meeting Compliance
+•	Maintenance of Statutory Registers
+•	Statutory Audit Coordination & Audit Rectification Services
+•	Annual Compliance Calendar Management
+Taxation, Audit & Accounting Services
+•	GST Compliance Services
+•	TDS Compliance Services
+•	Income Tax Compliance Services
+•	Internal Audit & Book Review Services
+•	Monthly Accounting Review & Monitoring
+
+
+Redevelopment Advisory Support
+•	Preliminary Redevelopment Assessment
+•	Compliance Review
+•	Member Communication Support
+•	Documentation Assistance
+•	Financial Evaluation Support
+Society Documentation & Certification Services
+•	NOC for Flat Transfer
+•	NOC for Sale of Flat
+•	NOC for Home Loans
+•	NOC for Passport Verification
+•	Membership Transfer Documentation
+•	Share Certificate Documentation
+•	Society Certificates & Confirmations
+•	Duplicate Share Certificate Assistance
+2.NRI SERVICES
+•	Taxation services.
+•	Property management services
+•	Legal services
+3.Senior Citizen Advisory Services
+•	Health Insurance Claims Support 
+•	Income Tax planning & Filing 
+•	Pension & Gratuity Documentations.
+•	Property sale. Gift & Transfer 
+•	Legal, Estate & Succession 
+4.Compliance & Business Advisory 
+Company Formation
+	Private Limited Company Registration 
+	LLP Registration 
+	Partnership Firm Registration 
+	Public Limited Company Registration 
+	Trust Registration 
+	Indian Subsidiary for Foreign Entrepreneurs 
+Registrations
+	Shop & Establishment Registration 
+	Startup India Registration 
+	MSME/Udyam Registration 
+	PF Registration 
+	ESIC Registration 
+	Trade License 
+	NGO Darpan Registration 
+	Trademark Registration
+	Import Export Code (IEC) 
+	ISO Certification 
+	FSSAI Registration 
+Corporate Compliance & Secretarial Services
+	MCA Annual Compliance 
+	ROC Filings 
+	Maintenance of Statutory Registers & Records 
+	AGM & EGM, BM Compliance, Minutes & Resolutions 
+Virtual CFO (vCFO) Services
+5. Taxation, Regulatory compliances & Litigation
+Income Tax
+	Income Tax Returns 
+	Tax Audit
+	TDS/TCS Returns 
+	Registration under 12A & 80G
+	PAN/TAN Applications 
+	Tax Planning & Advisory 
+GST
+	GST Registration & Returns 
+Regulatory Registrations.
+	Professional Tax Registration & Returns 
+	Shop & Establishment Registration 
+	Startup India Registration 
+	MSME/Udyam Registration 
+	PF Registration 
+	ESIC Registration 
+	Trade License 
+	NGO Darpan Registration 
+	Trademark Registration
+	Import Export Code (IEC) 
+	ISO Certification 
+	FSSAI Registration 
+Litigation Support
+	Conferencing with Senior Tax Counsels & Litigation Support
+	Preparation of Paper Books & Case Records 
+
+
+read this care full and update services 
+</USER_REQUEST>
+<ADDITIONAL_METADATA>
+The current local time is: 2026-06-10T13:16:04+05:30.
+
+The user's current state is as follows:
+Active Document: d:\HelpVerse Projects\Manoj CA\src\components\Navbar.tsx (LANGUAGE_TSX)
+Cursor is on line: 476
+Other open documents:
+- d:\HelpVerse Projects\Manoj CA\src\app\page.tsx (LANGUAGE_TSX)
+- d:\HelpVerse Projects\Manoj CA\src\components\Navbar.tsx (LANGUAGE_TSX)
+- d:\HelpVerse Projects\Manoj CA\src\app\services\page.tsx (LANGUAGE_TSX)
+Running terminal commands:
+- npm run dev (in d:\HelpVerse Projects\Manoj CA, running for 24h24m27s)
+</ADDITIONAL_METADATA>
+
+====================
+USER_INPUT:
+====================
+<USER_REQUEST>
+Okay this done now now back to Business Formation service
+in nav bar service dropdwon in all sub service like company formation, Registration and Corporate Compliance & Secretarial Services i want dropdown for their sub service
+
+for Company formation Sub service:
+	Private Limited Company Registration 
+	LLP Registration 
+	Partnership Firm Registration 
+	Public Limited Company Registration 
+	Trust Registration 
+	Indian Subsidiary for Foreign Entrepreneurs 
+
+for Registrations: 	Professional Tax Registration & Returns 
+	Shop & Establishment Registration 
+	Startup India Registration 
+	MSME/Udyam Registration 
+	PF Registration 
+	ESIC Registration 
+	Trade License 
+	NGO Darpan Registration 
+	Trademark Registration
+	Import Export Code (IEC) 
+	ISO Certification 
+	FSSAI Registration 
+
+and for last: 	MCA Annual Compliance 
+	ROC Filings 
+	Maintenance of Statutory Registers & Records 
+	AGM & EGM, BM Compliance, Minutes & Resolutions 
+
+
+these show in dropdown and virtual Cfo without dropdown
+
+do it first
+</USER_REQUEST>
+<ADDITIONAL_METADATA>
+The current local time is: 2026-06-14T18:33:06+05:30.
+
+The user's current state is as follows:
+Active Document: d:\HelpVerse Projects\Manoj CA\src\data\servicesData.ts (LANGUAGE_TYPESCRIPT)
+Cursor is on line: 206
+Other open documents:
+- d:\HelpVerse Projects\Manoj CA\src\app\services\page.tsx (LANGUAGE_TSX)
+- d:\HelpVerse Projects\Manoj CA\src\components\Navbar.tsx (LANGUAGE_TSX)
+- d:\HelpVerse Projects\Manoj CA\src\data\servicesData.ts (LANGUAGE_TYPESCRIPT)
+- d:\HelpVerse Projects\Manoj CA\src\app\team\page.tsx (LANGUAGE_TSX)
+- d:\HelpVerse Projects\Manoj CA\src\app\services\[slug]\page.tsx (LANGUAGE_TSX)
+Running terminal commands:
+- npm run dev (in d:\HelpVerse Projects\CA Vikas, running for 78h39m15s)
+- npm run dev (in d:\HelpVerse Projects\Manoj CA, running for 30h17m25s)
+</ADDITIONAL_METADATA>
+
+====================
+USER_INPUT:
+====================
+<USER_REQUEST>
+now start working on comapny formation detail page i rpovide you content for every sub service inside it and make one detail page section wise and and hwen dropdown when click to particular redirect to that otherwise if click company fromation then open at most top before implement make a plan and show me for give content anfd how you apply
+
+1.	Private Limited Company Registration 
+content: PRIVATE LIMITED COMPANY
+What is a Private Limited Company?
+A Private Limited Company is a company incorporated under the Companies Act, 2013. It is one of the most preferred and widely adopted business structures in India due to its separate legal identity, limited liability protection, credibility, and ease of raising funds.
+A Private Limited Company is a separate legal entity from its shareholders and directors. It can own property, enter into contracts, sue, and be sued in its own name.
+A Private Limited Company must have:
+•	Minimum 2 Shareholders
+•	Maximum 200 Shareholders
+•	Minimum 2 Directors
+•	Maximum 15 Directors (more can be appointed by passing a special resolution)
+•	At least one Resident Director in India
+Indian residents, NRIs, foreign nationals, and foreign companies can become shareholders or directors, subject to applicable laws and regulations.
+Advantages of a Private Limited Company
+•	Separate legal entity
+•	Limited liability protection for shareholders
+•	Better credibility and business image
+•	Easy transfer of ownership
+•	Perpetual succession
+•	Better fundraising opportunities
+•	Ability to issue shares and ESOPs
+•	Suitable for start-ups and growing businesses
+•	Greater acceptance among investors, banks, and financial institutions
+REQUIREMENTS
+Minimum Requirements for Company Registration
+•	Minimum 2 Directors
+•	Minimum 2 Shareholders
+•	Registered Office Address in India
+•	Digital Signature Certificate (DSC) for Directors
+•	Director Identification Number (DIN) for Directors
+•	Note: There is no minimum paid-up capital requiremen
+<truncated 27507 bytes>
+ut prior approval of the Government of India, subject to sector-specific limits and conditions.
+7. What is the Government Approval Route under FDI?
+Under the Government Route, prior approval from the Government of India is required before foreign investment can be made in specified sectors.
+8. Can Foreign Nationals become Directors in an Indian Subsidiary?
+Yes. Foreign nationals can be appointed as directors, subject to compliance with the Companies Act, 2013 and other applicable laws. At least one director must be a resident of India.
+9. How long does it take to register an Indian Subsidiary Company?
+Subject to document availability, foreign document legalization requirements, and regulatory approvals, incorporation generally takes 10–20 working days.
+10. Is RBI approval required for every Indian Subsidiary?
+No. RBI or Government approval is only required in sectors where investment is not permitted under the Automatic Route or where specific approvals are mandated under FDI regulations.
+
+
+
+i want same content no addons or change 
+
+also all faqs i want at last also use heading and timilines accordingly
+each service has different section with some transitions
+
+make a plan 
+</USER_REQUEST>
+<ADDITIONAL_METADATA>
+The current local time is: 2026-06-14T19:33:09+05:30.
+
+The user's current state is as follows:
+Active Document: d:\HelpVerse Projects\Manoj CA\src\data\servicesData.ts (LANGUAGE_TYPESCRIPT)
+Cursor is on line: 649
+Other open documents:
+- d:\HelpVerse Projects\Manoj CA\src\data\servicesData.ts (LANGUAGE_TYPESCRIPT)
+- d:\HelpVerse Projects\Manoj CA\src\components\Navbar.tsx (LANGUAGE_TSX)
+- d:\HelpVerse Projects\Manoj CA\src\app\team\page.tsx (LANGUAGE_TSX)
+- d:\HelpVerse Projects\Manoj CA\src\app\services\[slug]\page.tsx (LANGUAGE_TSX)
+- d:\HelpVerse Projects\Manoj CA\src\app\about\page.tsx (LANGUAGE_TSX)
+Running terminal commands:
+- npm run dev (in d:\HelpVerse Projects\CA Vikas, running for 79h39m18s)
+- npm run dev (in d:\HelpVerse Projects\Manoj CA, running for 31h17m29s)
+</ADDITIONAL_METADATA>
+
+====================
+USER_INPUT:
+====================
+<USER_REQUEST>
+now start working on comapny formation detail page i rpovide you content for every sub service inside it and make one detail page section wise and and hwen dropdown when click to particular redirect to that otherwise if click company fromation then open at most top before implement make a plan and show me for give content anfd how you apply
+
+1.	Private Limited Company Registration 
+content: PRIVATE LIMITED COMPANY
+What is a Private Limited Company?
+A Private Limited Company is a company incorporated under the Companies Act, 2013. It is one of the most preferred and widely adopted business structures in India due to its separate legal identity, limited liability protection, credibility, and ease of raising funds.
+A Private Limited Company is a separate legal entity from its shareholders and directors. It can own property, enter into contracts, sue, and be sued in its own name.
+A Private Limited Company must have:
+•	Minimum 2 Shareholders
+•	Maximum 200 Shareholders
+•	Minimum 2 Directors
+•	Maximum 15 Directors (more can be appointed by passing a special resolution)
+•	At least one Resident Director in India
+Indian residents, NRIs, foreign nationals, and foreign companies can become shareholders or directors, subject to applicable laws and regulations.
+Advantages of a Private Limited Company
+•	Separate legal entity
+•	Limited liability protection for shareholders
+•	Better credibility and business image
+•	Easy transfer of ownership
+•	Perpetual succession
+•	Better fundraising opportunities
+•	Ability to issue shares and ESOPs
+•	Suitable for start-ups and growing businesses
+•	Greater acceptance among investors, banks, and financial institutions
+REQUIREMENTS
+Minimum Requirements for Company Registration
+•	Minimum 2 Directors
+•	Minimum 2 Shareholders
+•	Registered Office Address in India
+•	Digital Signature Certificate (DSC) for Directors
+•	Director Identification Number (DIN) for Directors
+•	Note: There is no minimum paid-up capital requirement for incorporating a Privat
+<truncated 27166 bytes>
+r FDI?
+Under the Government Route, prior approval from the Government of India is required before foreign investment can be made in specified sectors.
+8. Can Foreign Nationals become Directors in an Indian Subsidiary?
+Yes. Foreign nationals can be appointed as directors, subject to compliance with the Companies Act, 2013 and other applicable laws. At least one director must be a resident of India.
+9. How long does it take to register an Indian Subsidiary Company?
+Subject to document availability, foreign document legalization requirements, and regulatory approvals, incorporation generally takes 10–20 working days.
+10. Is RBI approval required for every Indian Subsidiary?
+No. RBI or Government approval is only required in sectors where investment is not permitted under the Automatic Route or where specific approvals are mandated under FDI regulations.
+
+
+
+i want same content no addons or change 
+
+also all faqs i want at last also use heading and timilines accordingly
+each service has different section with some transitions
+
+make a plan 
+
+what you did i want same content no change i tell you no change also company formation has single detail page and add all content on that single page
+</USER_REQUEST>
+<ADDITIONAL_METADATA>
+The current local time is: 2026-06-14T19:44:32+05:30.
+
+The user's current state is as follows:
+Active Document: d:\HelpVerse Projects\Manoj CA\src\data\servicesData.ts (LANGUAGE_TYPESCRIPT)
+Cursor is on line: 649
+Other open documents:
+- d:\HelpVerse Projects\Manoj CA\src\data\servicesData.ts (LANGUAGE_TYPESCRIPT)
+- d:\HelpVerse Projects\Manoj CA\src\components\Navbar.tsx (LANGUAGE_TSX)
+- d:\HelpVerse Projects\Manoj CA\src\app\team\page.tsx (LANGUAGE_TSX)
+- d:\HelpVerse Projects\Manoj CA\src\app\services\[slug]\page.tsx (LANGUAGE_TSX)
+- d:\HelpVerse Projects\Manoj CA\src\app\about\page.tsx (LANGUAGE_TSX)
+Running terminal commands:
+- npm run dev (in d:\HelpVerse Projects\CA Vikas, running for 79h50m41s)
+- npm run dev (in d:\HelpVerse Projects\Manoj CA, running for 31h28m52s)
+</ADDITIONAL_METADATA>

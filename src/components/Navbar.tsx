@@ -44,10 +44,10 @@ const dropdownConfigs: Record<
       {
         title: "Business Advisory",
         links: [
-          { label: "Company Formation", href: "/services/private-limited-company-registration" },
-          { label: "LLP Registration", href: "/services/llp-registration" },
-          { label: "Partnership Firm Setup", href: "/services/partnership-firm-registration" },
-          { label: "Trust Registration", href: "/services/trust-registration" },
+          { label: "Company Formation", href: "/services/company-formation" },
+          { label: "LLP Registration", href: "/services/company-formation#llp-registration" },
+          { label: "Partnership Firm Setup", href: "/services/company-formation#partnership-firm-registration" },
+          { label: "Trust Registration", href: "/services/company-formation#trust-registration" },
           { label: "Startup India Setup", href: "/services/startup-india-registration" },
           { label: "MSME & Registrations", href: "/services/msme-udyam-registration" },
         ],
@@ -251,6 +251,66 @@ const dropdownConfigs: Record<
       btnHref: "/clients",
     },
   },
+};
+
+const SubServiceAccordion = ({ sub, setActiveDropdown }: { sub: any; setActiveDropdown: any }) => {
+  const [isOpen, setIsOpen] = useState(false);
+  const hasSubSubs = sub.subSubServices && sub.subSubServices.length > 1;
+
+  if (!hasSubSubs) {
+    return (
+      <div className="group/sub relative text-left">
+        <Link
+          href={`/services/${sub.id}`}
+          onClick={() => setActiveDropdown(null)}
+          className="text-[11px] font-extrabold tracking-wide text-slate-800 dark:text-white/90 block leading-snug cursor-pointer hover:text-[#c79d62] transition-colors capitalize flex items-center justify-between py-1"
+        >
+          {sub.title}
+        </Link>
+      </div>
+    );
+  }
+
+  return (
+    <div 
+      className="group/sub relative text-left flex flex-col"
+      onMouseEnter={() => setIsOpen(true)}
+      onMouseLeave={() => setIsOpen(false)}
+    >
+      <Link
+        href={`/services/${sub.id}`}
+        onClick={() => setActiveDropdown(null)}
+        className="text-[11px] font-extrabold tracking-wide text-slate-800 dark:text-white/90 leading-snug cursor-pointer hover:text-[#c79d62] transition-colors capitalize flex items-center justify-between py-1 w-full text-left"
+      >
+        <span>{sub.title}</span>
+        <span className={`transform transition-transform opacity-50 text-[9px] ${isOpen ? "rotate-180" : ""}`}>▼</span>
+      </Link>
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: "auto", opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            className="overflow-hidden pl-3 flex flex-col space-y-2 mt-2 border-l border-[#c79d62]/30 dark:border-slate-800"
+          >
+            {sub.subSubServices.map((subSub: any, idx: number) => {
+              const isCombined = sub.id === 'company-formation' || sub.id === 'registrations' || sub.id === 'corporate-compliance' || sub.id === 'income-tax' || sub.id === 'litigation-support';
+              return (
+                <Link
+                  key={idx}
+                  href={isCombined ? `/services/${sub.id}#${subSub.slug}` : `/services/${subSub.slug}`}
+                  onClick={() => setActiveDropdown(null)}
+                  className="text-[10px] font-bold text-slate-500 dark:text-slate-400 hover:text-[#c79d62] transition-colors leading-snug block py-0.5"
+                >
+                  {subSub.title}
+                </Link>
+              );
+            })}
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </div>
+  );
 };
 
 export const Navbar: React.FC = () => {
@@ -473,18 +533,22 @@ export const Navbar: React.FC = () => {
                   (() => {
                     const columns = [
                       {
+                        id: "society-management",
                         title: "Housing Society",
                         subServices: servicesData.find(t => t.id === "society-management")?.subServices || []
                       },
                       {
-                        title: "Business Advisory",
+                        id: "compliance-business-advisory",
+                        title: "Business Formation, Registration & Compliance",
                         subServices: servicesData.find(t => t.id === "compliance-business-advisory")?.subServices || []
                       },
                       {
+                        id: "taxation-regulatory-litigation",
                         title: "Tax & Litigation",
                         subServices: servicesData.find(t => t.id === "taxation-regulatory-litigation")?.subServices || []
                       },
                       {
+                        id: "nri-services",
                         title: "NRI & Senior Citizen",
                         subServices: [
                           ...(servicesData.find(t => t.id === "nri-services")?.subServices || []),
@@ -497,33 +561,17 @@ export const Navbar: React.FC = () => {
                       <div className="p-8 grid grid-cols-5 gap-8">
                         {columns.map((col, idx) => (
                           <div key={idx} className="space-y-5">
-                            <h4 className="text-sm font-black uppercase tracking-widest text-[#210821] dark:text-[#c79d62] border-b-2 border-[#c79d62]/30 dark:border-slate-800/50 pb-2.5">
-                              {col.title}
-                            </h4>
+                            <a href={`/services#${col.id}`} onClick={() => setActiveDropdown(null)}>
+                              <h4 className="text-sm font-black uppercase tracking-widest text-[#210821] dark:text-[#c79d62] border-b-2 border-[#c79d62]/30 dark:border-slate-800/50 pb-2.5 hover:text-[#c79d62]/80 transition-colors cursor-pointer">
+                                {col.title}
+                              </h4>
+                            </a>
                             <div className="max-h-[320px] overflow-y-auto pr-1 space-y-3 scrollbar-thin scrollbar-thumb-amber-500 scrollbar-track-transparent">
                               {col.subServices.map((sub, sIdx) => (
-                                <div key={sIdx} className="group/sub relative text-left">
-                                  {sub.subSubServices && sub.subSubServices.length > 0 ? (
-                                    <>
-                                      <span className="text-[11px] font-extrabold tracking-wide text-slate-800 dark:text-white/90 block leading-snug cursor-pointer group-hover/sub:text-[#c79d62] transition-colors capitalize flex items-center justify-between">
-                                        {sub.title}
-                                        <svg className="w-3 h-3 text-slate-400 group-hover/sub:text-[#c79d62] transition-transform duration-200 group-hover/sub:rotate-180 shrink-0 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}><path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" /></svg>
-                                      </span>
-                                      <ul className="hidden group-hover/sub:block space-y-1.5 pl-3 mt-1.5 border-l-2 border-[#c79d62]/25 animate-in fade-in slide-in-from-top-1 duration-200">
-                                        {sub.subSubServices?.map((subSub) => (
-                                          <li key={subSub.slug}>
-                                            <Link
-                                              href={`/services/${subSub.slug}`}
-                                              onClick={() => setActiveDropdown(null)}
-                                              className="text-[11px] font-semibold text-slate-500 dark:text-slate-400 hover:text-[#c79d62] dark:hover:text-[#c79d62] transition-colors block leading-snug capitalize py-0.5"
-                                            >
-                                              {subSub.title}
-                                            </Link>
-                                          </li>
-                                        ))}
-                                      </ul>
-                                    </>
-                                  ) : (
+                                (col.id === "compliance-business-advisory" || col.id === "taxation-regulatory-litigation") ? (
+                                  <SubServiceAccordion key={sIdx} sub={sub} setActiveDropdown={setActiveDropdown} />
+                                ) : (
+                                  <div key={sIdx} className="group/sub relative text-left">
                                     <Link
                                       href={`/services/${sub.id}`}
                                       onClick={() => setActiveDropdown(null)}
@@ -531,8 +579,8 @@ export const Navbar: React.FC = () => {
                                     >
                                       {sub.title}
                                     </Link>
-                                  )}
-                                </div>
+                                  </div>
+                                )
                               ))}
                             </div>
                           </div>

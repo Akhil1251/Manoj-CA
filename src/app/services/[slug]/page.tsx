@@ -31,6 +31,7 @@ export default function ServiceDetailPage() {
   // Search for the service in the database
   let foundService: SubSubService | null = null;
   let parentCategoryTitle = "";
+  let parentCategoryDescription = "";
   let parentCategoryId = "";
   let parentSubId = "";
   let parentSubService: any = null;
@@ -42,12 +43,18 @@ export default function ServiceDetailPage() {
         const combinedSections: any[] = sub.sections ? [...sub.sections] : [];
         const combinedFeatures: any[] = sub.features ? [...sub.features] : [];
         const combinedChecklist: any[] = sub.checklist ? [...sub.checklist] : [];
+        const combinedFaqs: any[] = sub.faqs ? [...sub.faqs] : [];
 
         if (sub.subSubServices) {
           sub.subSubServices.forEach(sss => {
-            if (sss.sections) combinedSections.push(...sss.sections);
+            if (sss.sections) {
+              sss.sections.forEach((sec: any) => {
+                combinedSections.push({ ...sec, _parentSlug: sss.slug });
+              });
+            }
             if (sss.features) combinedFeatures.push(...sss.features);
             if (sss.checklist) combinedChecklist.push(...sss.checklist);
+            if (sss.faqs) combinedFaqs.push(...sss.faqs);
           });
         }
 
@@ -65,10 +72,11 @@ export default function ServiceDetailPage() {
           comparison: firstSSS.comparison || [],
           checklist: combinedChecklist,
           chartData: sub.chartData || firstSSS.chartData || [],
-          faqs: sub.faqs || firstSSS.faqs || [],
+          faqs: combinedFaqs,
           features: combinedFeatures
         };
         parentCategoryTitle = tab.title;
+        parentCategoryDescription = tab.description || "";
         parentCategoryId = tab.id;
         parentSubId = sub.id;
         parentSubService = sub;
@@ -79,6 +87,7 @@ export default function ServiceDetailPage() {
       if (match) {
         foundService = match;
         parentCategoryTitle = tab.title;
+        parentCategoryDescription = tab.description || "";
         parentCategoryId = tab.id;
         parentSubId = sub.id;
         parentSubService = sub;
@@ -96,6 +105,7 @@ export default function ServiceDetailPage() {
 
   // Active FAQ state
   const [activeFaq, setActiveFaq] = useState<number | null>(null);
+  const [activeFaqCategory, setActiveFaqCategory] = useState<number>(0);
 
   // Expanded directory nodes
   const [openCategory, setOpenCategory] = useState<string | null>(parentCategoryId);
@@ -106,6 +116,18 @@ export default function ServiceDetailPage() {
     setCheckedDocs({});
     setActiveStep(0);
     setActiveFaq(null);
+    setActiveFaqCategory(0);
+  }, [slug]);
+
+  // Scroll to hash on load
+  useEffect(() => {
+    const hash = window.location.hash.replace('#', '');
+    if (hash) {
+      setTimeout(() => {
+        const el = document.getElementById(hash);
+        if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }, 500);
+    }
   }, [slug]);
 
   if (!foundService) {
@@ -300,7 +322,7 @@ export default function ServiceDetailPage() {
       className="py-6 flex flex-col justify-center text-center space-y-3 sm:space-y-4 items-center"
     >
       <div className="flex flex-col justify-center items-center space-y-3 sm:space-y-4 max-w-4xl mx-auto">
-        <Link href="/services" className="text-base sm:text-lg font-black uppercase text-[#c79d62] tracking-widest hover:text-[#e0b576] transition-colors">
+        <Link href={`/services#${parentCategoryId}`} className="text-base sm:text-lg font-black uppercase text-[#c79d62] tracking-widest hover:text-[#e0b576] transition-colors">
           {parentCategoryTitle}
         </Link>
         {parentCategoryId === "society-management" ? (
@@ -312,9 +334,27 @@ export default function ServiceDetailPage() {
               Focus on your community while we handle society compliance, governance, taxation, audits, documentation, and regulatory requirements with professional expertise.
             </p>
           </>
+        ) : parentCategoryId === "compliance-business-advisory" ? (
+          <>
+            {parentCategoryDescription && (
+              <p className="text-sm sm:text-base text-slate-550 dark:text-slate-400 leading-relaxed font-medium max-w-none whitespace-pre-line text-center mb-6">
+                {parentCategoryDescription}
+              </p>
+            )}
+            <div className="w-full flex flex-col space-y-4 text-left mt-8">
+              <h1 className="text-xl sm:text-3.5xl font-black text-[#210821] dark:text-white tracking-tight leading-tight max-w-none border-b border-slate-200 dark:border-slate-800/80 pb-3">
+                {parentSubService ? parentSubService.title : foundService!.title}
+              </h1>
+              <div className="w-full text-left">
+                <p className="text-sm sm:text-base text-slate-655 dark:text-slate-400 leading-relaxed font-semibold max-w-none whitespace-pre-line">
+                  {parentSubService ? parentSubService.description : ('description' in foundService! ? foundService.description : foundService.shortDesc)}
+                </p>
+              </div>
+            </div>
+          </>
         ) : (
           <div className="w-full flex flex-col space-y-4 text-left">
-            <h1 className="text-xl sm:text-3.5xl font-black text-[#210821] dark:text-white tracking-tight leading-tight max-w-none">
+            <h1 className="text-xl sm:text-3.5xl font-black text-[#210821] dark:text-white tracking-tight leading-tight max-w-none border-b border-slate-200 dark:border-slate-800/80 pb-3">
               {parentSubService ? parentSubService.title : foundService!.title}
             </h1>
             <div className="w-full text-left">
@@ -667,8 +707,8 @@ export default function ServiceDetailPage() {
                       key={idx}
                       initial={{ opacity: 0, x: -20 }}
                       whileInView={{ opacity: 1, x: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ duration: 0.5, delay: idx * 0.1 }}
+                      viewport={{ once: true, margin: "0px 0px 100px 0px" }}
+                      transition={{ duration: 0.4, delay: Math.min(idx * 0.05, 0.2) }}
                       className="relative group"
                     >
                       <div className="absolute left-[-43px] sm:left-[-59px] top-3 w-6 h-6 rounded-full bg-white dark:bg-[#120412] border-4 border-[#c79d62]/30 group-hover:border-[#c79d62] flex items-center justify-center transition-all duration-300 shadow-sm z-10">
@@ -679,7 +719,7 @@ export default function ServiceDetailPage() {
                           <span className="text-[10px] font-black uppercase text-[#c79d62] tracking-widest">
                             Phase 0{idx + 1}
                           </span>
-                          <h4 className="text-sm sm:text-base font-black text-[#210821] dark:text-white group-hover:text-[#c79d62] transition-colors leading-tight">
+                          <h4 className="text-xl sm:text-2xl font-black text-[#c79d62] leading-tight">
                             {section.title}
                           </h4>
                           {section.content && (
@@ -708,11 +748,12 @@ export default function ServiceDetailPage() {
               {foundService!.sections.map((section: any, idx: number) => (
                 <motion.div
                   key={idx}
+                  id={section._parentSlug || section.title.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '')}
                   initial={{ opacity: 0, x: -20 }}
                   whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: idx * 0.1 }}
-                  className="relative group"
+                  viewport={{ once: true, margin: "0px 0px 100px 0px" }}
+                  transition={{ duration: 0.4, delay: Math.min(idx * 0.05, 0.2) }}
+                  className="relative group scroll-mt-24"
                 >
                   <div className="absolute left-[-43px] sm:left-[-59px] top-3 w-6 h-6 rounded-full bg-white dark:bg-[#120412] border-4 border-[#c79d62]/30 group-hover:border-[#c79d62] flex items-center justify-center transition-all duration-300 shadow-sm z-10">
                     <span className="w-1.5 h-1.5 rounded-full bg-[#c79d62] group-hover:scale-125 transition-transform" />
@@ -720,9 +761,9 @@ export default function ServiceDetailPage() {
                   <div className="bg-white dark:bg-[#180618] border border-slate-200/60 dark:border-slate-800/60 rounded-2xl p-4 shadow-sm hover:shadow-xl transition-all duration-300 hover:border-[#c79d62]/60">
                     <div className="space-y-2">
                       <span className="text-[10px] font-black uppercase text-[#c79d62] tracking-widest">
-                        Phase 0{idx + 1}
+                        Phase {idx + 1}
                       </span>
-                      <h4 className="text-sm sm:text-base font-black text-[#210821] dark:text-white group-hover:text-[#c79d62] transition-colors leading-tight">
+                      <h4 className="text-xl sm:text-2xl font-black text-[#c79d62] leading-tight">
                         {section.title}
                       </h4>
                       {section.content && (
@@ -795,8 +836,31 @@ export default function ServiceDetailPage() {
     );
   };
 
-  const renderFAQs = () => (
-    foundService!.faqs && foundService!.faqs.length > 0 && (
+  const renderFAQs = () => {
+    if (!foundService!.faqs || foundService!.faqs.length === 0) return null;
+
+    const groupedFaqs: { heading: string, faqs: any[] }[] = [];
+    let currentGroup = { heading: "General", faqs: [] as any[] };
+
+    foundService!.faqs.forEach((faq: any) => {
+      if (faq.isHeading) {
+        if (currentGroup.faqs.length > 0) {
+          groupedFaqs.push(currentGroup);
+        }
+        currentGroup = { heading: faq.question.replace(' FAQs', ''), faqs: [] };
+      } else {
+        currentGroup.faqs.push(faq);
+      }
+    });
+    if (currentGroup.faqs.length > 0) {
+      groupedFaqs.push(currentGroup);
+    }
+
+    const hasTabs = groupedFaqs.length > 1;
+    const activeGroupIndex = activeFaqCategory < groupedFaqs.length ? activeFaqCategory : 0;
+    const activeGroup = groupedFaqs[activeGroupIndex];
+
+    return (
       <motion.div
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
@@ -812,8 +876,28 @@ export default function ServiceDetailPage() {
           </p>
         </div>
 
+        {hasTabs && (
+          <div className="flex overflow-x-auto pb-4 mb-2 gap-2 scrollbar-hide">
+            {groupedFaqs.map((group, idx) => (
+              <button
+                key={idx}
+                onClick={() => {
+                  setActiveFaqCategory(idx);
+                  setActiveFaq(null);
+                }}
+                className={`whitespace-nowrap px-4 py-2 rounded-full text-xs font-bold transition-all ${activeGroupIndex === idx
+                    ? "bg-[#c79d62] text-white shadow-md shadow-[#c79d62]/20"
+                    : "bg-slate-100 dark:bg-slate-800/50 text-slate-600 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-800"
+                  }`}
+              >
+                {group.heading}
+              </button>
+            ))}
+          </div>
+        )}
+
         <div className="space-y-4">
-          {foundService!.faqs.map((faq, idx) => {
+          {activeGroup.faqs.map((faq, idx) => {
             const isOpen = activeFaq === idx;
             return (
               <div
@@ -837,8 +921,8 @@ export default function ServiceDetailPage() {
           })}
         </div>
       </motion.div>
-    )
-  );
+    );
+  };
 
   const renderFormattedText = (text: string) => {
     return text.split('\n').map((line, idx) => {
@@ -850,7 +934,7 @@ export default function ServiceDetailPage() {
           </h3>
         );
       }
-      
+
       const parts = line.split(/(\*\*.*?\*\*)/g);
       return (
         <p key={idx} className="text-sm sm:text-base text-slate-550 dark:text-slate-400 font-medium leading-relaxed text-left">
@@ -894,12 +978,15 @@ export default function ServiceDetailPage() {
         return (
           <>
             {renderHeroHeader()}
-            {renderSubSubContent()}
             {renderDetailedSections()}
-            {renderVisualDataChart(false)}
-            {renderComparisonMatrix("#110311")}
-            {renderDocumentChecklist()}
-            {renderTimelineRoadmap()}
+            {parentSubId !== "company-formation" && parentSubId !== "registrations" && parentSubId !== "corporate-compliance" && parentSubId !== "virtual-cfo" && (
+              <>
+                {renderVisualDataChart(false)}
+                {renderComparisonMatrix("#110311")}
+                {renderDocumentChecklist()}
+                {renderTimelineRoadmap()}
+              </>
+            )}
           </>
         );
 
@@ -945,7 +1032,11 @@ export default function ServiceDetailPage() {
           {/* LEFT COLUMN - SERVICE CONTENT */}
           <div className="lg:col-span-9 space-y-12">
             {renderCategoryLayout()}
-            {renderFeatures()}
+            {parentSubId !== "company-formation" && parentSubId !== "registrations" && (
+              <>
+                {renderFeatures()}
+              </>
+            )}
             {renderFAQs()}
           </div>
 
@@ -964,9 +1055,9 @@ export default function ServiceDetailPage() {
                   return (
                     <div key={tab.id} className="space-y-2">
                       <div className="w-full flex items-center justify-between text-[13px] font-black uppercase tracking-wider py-2 transition-colors text-left">
-                        <Link href="/services" className={`flex-grow ${isCatOpen ? "text-[#c79d62]" : "text-slate-700 dark:text-slate-355 hover:text-[#c79d62]"}`}>
+                        <a href={`/services#${tab.id}`} className={`flex-grow ${isCatOpen ? "text-[#c79d62]" : "text-slate-700 dark:text-slate-355 hover:text-[#c79d62]"}`}>
                           {tab.title}
-                        </Link>
+                        </a>
                         <button
                           onClick={() => setOpenCategory(isCatOpen ? null : tab.id)}
                           className={`p-1 focus:outline-none cursor-pointer ${isCatOpen ? "text-[#c79d62]" : "text-slate-700 dark:text-slate-355 hover:text-[#c79d62]"}`}
@@ -978,15 +1069,62 @@ export default function ServiceDetailPage() {
                       {isCatOpen && (
                         <div className="pl-3 border-l border-slate-100 dark:border-slate-800/80 space-y-2.5 py-1.5">
                           {tab.subServices.map((sub) => {
-                            const isSubOpen = openSub === sub.id;
+                            const isSubOpen = openSub === sub.id || (parentSubService && parentSubService.id === sub.id);
                             return (
-                              <div key={sub.id} className="space-y-1.5">
-                                <Link
-                                  href={`/services/${sub.id}`}
-                                  className={`w-full flex items-center justify-between text-[12px] font-extrabold py-1.5 transition-colors text-left focus:outline-none cursor-pointer ${sub.id === slug || (parentSubService && parentSubService.id === sub.id) ? "text-[#c79d62]" : "text-slate-650 dark:text-slate-400 hover:text-[#c79d62]"}`}
-                                >
-                                  <span>{sub.title}</span>
-                                </Link>
+                              <div
+                                key={sub.id}
+                                className="space-y-1.5"
+                                onMouseEnter={() => {
+                                  if (tab.id === 'compliance-business-advisory' && sub.subSubServices && sub.subSubServices.length > 0) {
+                                    setOpenSub(sub.id);
+                                  }
+                                }}
+                                onMouseLeave={() => setOpenSub(null)}
+                              >
+                                <div className="w-full flex items-center justify-between">
+                                  <Link
+                                    href={`/services/${sub.id}`}
+                                    className={`flex-grow text-[12px] font-extrabold py-1.5 transition-colors text-left focus:outline-none cursor-pointer ${sub.id === slug || (parentSubService && parentSubService.id === sub.id) ? "text-[#c79d62]" : "text-slate-650 dark:text-slate-400 hover:text-[#c79d62]"}`}
+                                  >
+                                    <span>{sub.title}</span>
+                                  </Link>
+                                  {(tab.id === 'compliance-business-advisory' || tab.id === 'taxation-regulatory-litigation') && sub.subSubServices && sub.subSubServices.length > 1 && (
+                                    <button
+                                      onClick={() => setOpenSub(openSub === sub.id ? null : sub.id)}
+                                      className={`p-1 focus:outline-none cursor-pointer ${isSubOpen ? "text-[#c79d62]" : "text-slate-650 dark:text-slate-400 hover:text-[#c79d62]"}`}
+                                    >
+                                      <ChevronDown className={`w-3 h-3 transition-transform duration-200 ${isSubOpen ? "rotate-180" : ""}`} />
+                                    </button>
+                                  )}
+                                </div>
+
+                                {(tab.id === 'compliance-business-advisory' || tab.id === 'taxation-regulatory-litigation') && isSubOpen && sub.subSubServices && sub.subSubServices.length > 1 && (
+                                  <div className="pl-3 border-l border-slate-100 dark:border-slate-800/80 space-y-1.5 py-1">
+                                    {sub.subSubServices.map((sss: any) => {
+                                      const isCombinedPage = (sub.id === 'company-formation' && slug === 'company-formation') || (sub.id === 'registrations' && slug === 'registrations') || (sub.id === 'corporate-compliance' && slug === 'corporate-compliance');
+                                      return isCombinedPage ? (
+                                        <button
+                                          key={sss.slug}
+                                          onClick={() => {
+                                            const el = document.getElementById(sss.slug);
+                                            if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                                          }}
+                                          className={`block w-full text-[11px] font-bold py-1 transition-colors text-left cursor-pointer ${sss.slug === slug ? "text-[#c79d62]" : "text-slate-500 dark:text-slate-500 hover:text-[#c79d62]"}`}
+                                        >
+                                          {sss.title}
+                                        </button>
+                                      ) : (
+                                        <Link
+                                          key={sss.slug}
+                                          href={(sub.id === 'company-formation' || sub.id === 'registrations' || sub.id === 'corporate-compliance') ? `/services/${sub.id}#${sss.slug}` : `/services/${sss.slug}`}
+                                          className={`block w-full text-[11px] font-bold py-1 transition-colors text-left ${sss.slug === slug ? "text-[#c79d62]" : "text-slate-500 dark:text-slate-500 hover:text-[#c79d62]"}`}
+                                        >
+                                          {sss.title}
+                                        </Link>
+                                      );
+                                    })}
+                                  </div>
+                                )}
                               </div>
                             );
                           })}
