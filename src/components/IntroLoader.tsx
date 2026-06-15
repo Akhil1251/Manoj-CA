@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import React, { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
@@ -69,7 +69,7 @@ export const IntroLoader: React.FC<IntroLoaderProps> = ({ onComplete }) => {
           transition={{ delay: 0.2 }}
           className="text-3xl font-extrabold tracking-widest bg-clip-text text-transparent bg-gradient-to-r from-white via-amber-200 to-purple-300 mb-2"
         >
-          MANOJ CA
+          Consultavenuee.com
         </motion.h1>
         <motion.p
           initial={{ opacity: 0 }}

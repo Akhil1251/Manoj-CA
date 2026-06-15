@@ -400,10 +400,12 @@ export const Navbar: React.FC = () => {
                 </div>
               </div>
               <div className="flex items-center gap-3">
-                <Phone className="w-6 h-6 text-amber-500 stroke-[1.5]" />
-                <div className="flex flex-col leading-tight">
-                  <span className="text-sm font-bold flex flex-col xl:flex-row xl:gap-1"><a href="tel:+919076111021" className="hover:text-amber-500 transition-colors">9076111021</a> <span className="hidden xl:inline">/</span> <a href="tel:+919076111813" className="hover:text-amber-500 transition-colors">9076111813</a></span>
-                  <span className="font-normal opacity-90">Free call</span>
+                <a href="https://wa.me/919076111021" target="_blank" rel="noreferrer" className="flex items-center justify-center hover:scale-110 transition-transform" aria-label="Chat on WhatsApp">
+                  <svg className="w-6 h-6 text-amber-500" fill="currentColor" viewBox="0 0 24 24"><path d="M12.031 0C5.397 0 0 5.397 0 12.031c0 2.128.555 4.195 1.611 6.012L.391 23.609l5.719-1.5c1.761.961 3.743 1.468 5.922 1.468 6.634 0 12.031-5.397 12.031-12.031S18.666 0 12.031 0zm3.834 17.275c-.156.447-.905.864-1.282.909-.344.041-.787.126-2.222-.444-1.734-.69-2.855-2.455-2.939-2.565-.084-.11-1.688-2.247-1.688-4.285 0-2.037 1.055-3.041 1.433-3.468.378-.427.822-.497 1.096-.497.274 0 .548.006.772.016.236.011.554-.087.844.605.367.877 1.182 2.894 1.287 3.106.105.211.176.456.035.736-.14.281-.211.457-.422.702-.211.246-.441.539-.633.715-.211.192-.435.402-.2.806.235.405 1.045 1.728 2.248 2.801 1.558 1.389 2.836 1.817 3.238 2.01.402.193.637.158.877-.116.241-.275 1.034-1.205 1.314-1.619.28-.415.56-.345.928-.211.368.134 2.324 1.095 2.721 1.294.397.199.661.298.756.463.095.166.095.961-.061 1.408z"/></svg>
+                </a>
+                <div className="flex flex-col leading-tight gap-1">
+                  <a href="tel:+919076111021" className="text-sm font-bold hover:text-amber-500 transition-colors">9076111021</a>
+                  <a href="tel:+919076111813" className="text-sm font-bold hover:text-amber-500 transition-colors">9076111813</a>
                 </div>
               </div>
             </div>
@@ -470,6 +472,9 @@ export const Navbar: React.FC = () => {
                 <a href="https://twitter.com" target="_blank" rel="noreferrer" aria-label="Twitter">
                   <svg className="w-4 h-4 hover:text-white/70 cursor-pointer transition-colors" fill="currentColor" viewBox="0 0 24 24"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z" /></svg>
                 </a>
+                <a href="https://youtube.com" target="_blank" rel="noreferrer" aria-label="YouTube">
+                  <svg className="w-4 h-4 hover:text-white/70 cursor-pointer transition-colors" fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.5 12 3.5 12 3.5s-7.505 0-9.377.55a3.016 3.016 0 0 0-2.122 2.136C0 8.082 0 12 0 12s0 3.918.501 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.55 9.377.55 9.377.55s7.505 0 9.377-.55a3.016 3.016 0 0 0 2.122-2.136C24 15.918 24 12 24 12s0-3.918-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                </a>
               </div>
 
               {/* Language Dropdown */}
@@ -510,6 +515,11 @@ export const Navbar: React.FC = () => {
               <button onClick={toggleTheme} className="hover:text-white transition-colors ml-2">
                 {theme === "dark" ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
               </button>
+
+              {/* CTA Button */}
+              <a href="https://wa.me/919076111021" target="_blank" rel="noreferrer" className="ml-4 px-4 py-2 bg-amber-600 hover:bg-amber-700 text-white text-xs font-bold rounded shadow transition-colors whitespace-nowrap">
+                Book Free Consultation
+              </a>
             </div>
           </div>
         </div>

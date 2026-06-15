@@ -28,60 +28,124 @@ import {
   ShoppingCart,
   Landmark,
   Leaf,
-  Truck
+  Truck,
+  House
 } from "lucide-react";
 
 export default function HomePage() {
   const { t, theme } = useApp();
   const [activeStep, setActiveStep] = useState(0);
 
+  const journeySteps = [
+    { num: "01", title: "ASSESSMENT", icon: FileCheck, detailTitle: "Assessment", desc: "We evaluate your current compliance position, operational requirements, and potential risk areas to identify challenges, opportunities, and the most effective path forward." },
+    { num: "02", title: "ADVISORY", icon: Calculator, detailTitle: "Advisory", desc: "We provide clear, practical, and result-oriented guidance tailored to your unique requirements. Our experts help you make informed decisions." },
+    { num: "03", title: "EXECUTION", icon: Building, detailTitle: "Execution", desc: "Ideas create possibilities. Execution creates results. We implement every solution with precision, speed, and accountability." },
+    { num: "04", title: "COMPLIANCE", icon: ShieldAlert, detailTitle: "Compliance", desc: "Compliance is not a one-time activity. We provide continuous oversight and expert support to keep you ahead of regulatory requirements and potential risks." }
+  ];
+
   const problemsList = [
-    { id: "freelancer", title: t.p1Title, problem: t.p1Problem, solution: t.p1Solution, icon: Users, category: "Freelancer" },
-    { id: "startup", title: t.p2Title, problem: t.p2Problem, solution: t.p2Solution, icon: TrendingUp, category: "Startup" },
-    { id: "tax-notice", title: t.p3Title, problem: t.p3Problem, solution: t.p3Solution, icon: ShieldAlert, category: "Scrutiny Scenarios" },
-    { id: "gst-trap", title: t.p4Title, problem: t.p4Problem, solution: t.p4Solution, icon: FileSpreadsheet, category: "GST Audits" },
-    { id: "nri-tax", title: t.p5Title, problem: t.p5Problem, solution: t.p5Solution, icon: Compass, category: "NRI Assets" },
-    { id: "corporate-restructuring", title: t.p6Title, problem: t.p6Problem, solution: t.p6Solution, icon: Award, category: "Restructuring" },
-    { id: "bookkeeping", title: t.p7Title, problem: t.p7Problem, solution: t.p7Solution, icon: Calculator, category: "Automation" },
-    { id: "gst-registration", title: t.p8Title, problem: t.p8Problem, solution: t.p8Solution, icon: CheckCircle2, category: "GST Waiver" },
-    { id: "succession-trust", title: t.p9Title, problem: t.p9Problem, solution: t.p9Solution, icon: Sparkles, category: "Succession Trust" },
+    {
+      id: "society-management",
+      title: "Housing Society",
+      subtitle: "Secretary & Chairman Overburdened",
+      description: "Focus on your community while we manage AGM.SGBM, notices, minutes, compliance, taxation to ensure and protect Managing Committee members from penalties through proper compliance and governance.",
+      icon: Building,
+      category: "Advisory",
+      features: [
+        { q: "Is Your Housing Society Fully Compliant?", a: "Avoid penalties, notices and audit issues with professional compliance management." },
+        { q: "Builder not handing over your society?", a: "We help societies secure legal handover and complete documentation." }
+      ]
+    },
+    {
+      id: "compliance-business-advisory",
+      title: "Business Formation, Registration & Compliance",
+      subtitle: "Confused About Which Business Structure to Choose?",
+      description: "We help entrepreneurs select the right entity—Private Limited Company, LLP, Partnership or Proprietorship—based on their business goals, taxation and compliance requirements.",
+      icon: Briefcase,
+      category: "Compliance",
+      features: [
+        { q: "Worried About Missing Statutory Compliances?", a: "Stay compliant with ROC filings, GST, TDS, Income Tax, Labour Laws and other regulatory requirements to avoid penalties and notices." },
+        { q: "Are You Spending Too Much Time on Paperwork Instead of Growing Your Business?", a: "Focus on sales, operations and growth while we manage registrations, filings, taxation and regulatory compliance." }
+      ]
+    },
+    {
+      id: "taxation-regulatory-litigation",
+      title: "Tax & Litigation Services",
+      subtitle: "Facing Challenges with Regulatory Registrations and Approvals?",
+      description: "Assistance with GST, PAN, TAN, Professional Tax, MSME and other regulatory registrations and compliances.",
+      icon: ShieldAlert,
+      category: "Taxation",
+      features: [
+        { q: "Managing Multiple Tax Deadlines and Filings?", a: "Assistance with GST, PAN, TAN, Professional Tax, MSME and other regulatory registrations and compliances." },
+        { q: "Need Representation Before Tax Authorities?", a: "End-to-end compliance management ensures timely filings and reduces the risk of penalties and notices." },
+        { q: "Need Representation Before Tax Authorities?", a: "Professional representation during assessments, investigations, appeals and hearings helps protect your interests." }
+      ]
+    },
+    {
+      id: "nri-services",
+      title: "NRI Services",
+      subtitle: "NRI Tax & Property Solutions",
+      // description: "Trusted NRI Taxation, Property Management & Compliance Solutions for Global Indians.",
+      icon: Plane,
+      category: "NRI Solutions",
+      features: [
+        { q: "Confused About NRI Taxation?", a: "Expert guidance on tax filing, capital gains and compliance requirements." },
+        { q: "Unable to Visit India Frequently for Compliance Matters?", a: "Manage taxation, property and legal documentation remotely through our dedicated NRI support services." },
+        { q: "Planning to Sell Property in India?", a: "Get assistance with tax planning, TDS compliance, capital gains calculations and repatriation of sale proceeds." },
+        { q: "Confused About NRI Taxation?", a: "Expert guidance on tax filing, capital gains and compliance requirements." }
+      ]
+    },
+    {
+      id: "senior-citizen-advisory",
+      title: "Senior Citizen Advisory Services",
+      subtitle: "Senior Citizen Support Services",
+      // description: "Trusted support for taxation, pension benefits, property matters, estate planning, succession planning and legal documentation for senior citizens and their families.",
+      icon: HeartHandshake,
+      category: "Senior Citizen Support",
+      features: [
+        { q: "Confused About Income Tax Compliance After Retirement?", a: "Expert support for income tax filing, tax planning, deductions and compliance tailored to senior citizens." },
+        { q: "Experiencing Delays in Pension Benefits or Retirement Claims?", a: "Assistance with pension-related documentation, claims, compliance and grievance resolution." },
+        { q: "Concerned About Managing Affairs When Living Alone?", a: "Structured planning and documentation help ensure continuity and ease of decision-making during unforeseen circumstances." }
+        // { q: "Confused About NRI Taxation?", a: "Expert guidance on tax filing, capital gains and compliance requirements." }
+      ]
+    },
   ];
 
   // Expertise Sections with Professional High-Quality Images
   const expertiseSections = [
     {
-      title: "Industry Specific Expertise",
-      cta: "Explore Our Expertise",
-      desc: "Specialized advisory for Manufacturing, Real Estate, Tech Startups, and E-commerce. We understand the unique compliance and regulatory frameworks of your sector.",
-      href: "/services",
+      title: "Housing Society Advisory ",
+      cta: "Learn More",
+      desc: "Society Compliance & Governance-Complete Housing Society Compliance, Taxation, Audit & Governance Solutions for Cooperative Housing Societies Across India.",
+      href: "/services#society-management",
       image: "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=800&q=80",
     },
     {
-      title: "Tax Litigation & Dispute Resolution",
-      cta: "View Legal Services",
-      desc: "Unmatched strength in handling complex department notices, appeals, and tribunal representations to safeguard your business interests.",
-      href: "/services",
+      title: "Business Formation, Registration & Compliance",
+      cta: "Learn More",
+      desc: "Build. Comply. Grow-Comprehensive Company Registration, Regulatory Compliance, Taxation, Accounting and Virtual CFO Services for Startups, SMEs and Growing Businesses.",
+      href: "/services#compliance-business-advisory",
       image: "https://images.unsplash.com/photo-1589829085413-56de8ae18c73?auto=format&fit=crop&w=800&q=80",
     },
     {
-      title: "Modern Tech-Driven Bookkeeping",
-      cta: "Discover Automation",
-      desc: "Experience real-time financial dashboards, cloud accounting, and automated reconciliation powered by industry-leading software.",
-      href: "/services",
+      title: "Tax & Litigation Services",
+      cta: "Learn More",
+      desc: "Taxation & Litigation Experts-End-to-end Income Tax, GST, Tax Advisory, Regulatory Registration, Assessments, Appeals and Litigation Support for businesses, professionals and individuals across India.",
+      href: "/services#taxation-regulatory-litigation",
       image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80",
     },
     {
-      title: "Wealth, Legacy & Estate Planning",
-      cta: "Plan Your Legacy",
-      desc: "Comprehensive succession planning, family trusts, and HNI wealth preservation strategies tailored for long-term financial security.",
-      href: "/services",
+      title: "NRI Services",
+      cta: "Learn More",
+      desc: "NRI Tax & Property Solutions-Trusted NRI Taxation, Property Management & Compliance Solutions for Global Indians.",
+      href: "/services#nri-services",
       image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=800&q=80",
     },
     {
-      title: "Global Expansion & NRI Advisory",
-      cta: "Go Global",
-      desc: "Navigating FEMA compliance, cross-border taxation, transfer pricing, and seamless advisory for NRI property sales.",
-      href: "/services",
+      title: "Senior Citizen Advisory Services",
+      cta: "Learn More",
+      desc: "Senior Citizen Support Services-Trusted support for taxation, pension benefits, property matters, estate planning, succession planning and legal documentation for senior citizens and their families.",
+      href: "/services#senior-citizen-advisory",
       image: "https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?auto=format&fit=crop&w=800&q=80",
     }
   ];
@@ -96,33 +160,33 @@ export default function HomePage() {
 
   const industriesList = [
     {
-      title: "Travel and Aviation Consulting",
-      desc: "Providing specialized tax advisory, regulatory compliance, and audit support for airlines, travel agencies, and hospitality operators.",
-      icon: Plane
+      title: "HOUSING SOCIETY",
+      desc: "Expert Housing Society Registration, Compliance, Taxation & Governance Services Under One Roof.",
+      icon: House
     },
     {
-      title: "Business Services Consulting",
-      desc: "Tailored accounting, corporate structuring, and payroll solutions for service-oriented firms and professional consultancies.",
-      icon: Briefcase
+      title: "SME",
+      desc: "Your Reliable Partner for SME Registration, Compliance, Taxation and Business Growth.",
+      icon: Building
     },
     {
-      title: "Consumer Products Consulting",
-      desc: "Assisting retail, e-commerce, and FMCG companies with supply chain tax optimizations, inventory audits, and GST compliance.",
+      title: "STARTUP",
+      desc: "From Idea to Scale—Complete Startup Advisory and Compliance Solutions Under One Roof.",
       icon: ShoppingCart
     },
     {
-      title: "Financial Services Consulting",
-      desc: "Expert financial advisory, internal audits, and risk assessment for banking, insurance, fintech, and investment companies.",
+      title: "NRI",
+      desc: "Comprehensive NRI Taxation, Property, Compliance and Wealth Management Solutions for Global Indians.",
       icon: Landmark
     },
     {
-      title: "Energy and Environment Consulting",
-      desc: "Navigating carbon credit taxation, regulatory audits, and structured finance projects for green energy and utility initiatives.",
+      title: "SENIOR CITIZEN",
+      desc: "Helping Senior Citizens Manage Tax, Property, Investments and Retirement Affairs with Confidence.",
       icon: Leaf
     },
     {
-      title: "Surface Transport & Logistics Consulting",
-      desc: "Financial strategies, GST optimization on freight services, and operating cost audits for logistics, warehousing, and shipping providers.",
+      title: "Charitable Trust",
+      desc: "Empowering Charitable Trusts with Expert Registration, Tax Exemption, Compliance and Governance Solutions.",
       icon: Truck
     }
   ];
@@ -154,15 +218,16 @@ export default function HomePage() {
             className="flex flex-col items-center max-w-3xl"
           >
             {/* Main Title */}
-            <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white mb-2 leading-none select-none">
-              Precision Taxation & Advisory
-            </h1>
+            <h3 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white mb-2 leading-none select-none">
+              Your Trusted Partner for Compliance, Governance & Advisory Services
+            </h3>
 
 
 
             {/* Subtitle */}
             <p className="text-xs sm:text-sm lg:text-base text-slate-100 max-w-xl leading-relaxed mb-8 font-medium">
-              Compliance, auditing, and strategic growth simplified for your business.
+              India's Trusted Compliance, Taxation & Business Advisory Platform
+              Providing business registration, GST, income tax, accounting, legal compliance, audit and strategic advisory services for startups, SMEs, housing societies and individuals across India.
             </p>
 
             {/* CTA Button */}
@@ -180,8 +245,8 @@ export default function HomePage() {
       <section className="py-20 bg-white dark:bg-[#180618] border-b border-slate-100 dark:border-slate-800/30">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-[#210821] dark:text-white tracking-tight lowercase">
-              industries
+            <h2 className="text-3xl uppercase sm:text-4xl font-extrabold text-[#210821] dark:text-white tracking-tight lowercase">
+              WE SERVED TO
             </h2>
             <div className="w-10 h-[3px] bg-[#c79d62] mx-auto mt-2 rounded" />
           </div>
@@ -211,161 +276,121 @@ export default function HomePage() {
       </section>
 
       {/* 2. ACCREDITATIONS & TRUST BADGES SECTION */}
-      <section className="py-12 bg-slate-50 dark:bg-slate-900 border-b border-slate-200/50 dark:border-slate-800/50 text-center">
-        <div className="max-w-7xl mx-auto px-4 grid grid-cols-2 md:grid-cols-4 gap-6 items-center">
-          <div className="flex flex-col items-center gap-1.5">
-            <span className="text-amber-600 dark:text-amber-400 font-extrabold text-lg flex items-center gap-1">
-              ICAI
-            </span>
-            <span className="text-[10px] uppercase font-bold text-slate-400 dark:text-slate-500 tracking-wider">
-              Practicing Fellowship CA
+      <section className="py-5 bg-[#c79d62] text-center shadow-inner">
+        <div className="max-w-7xl mx-auto px-4 grid grid-cols-2 md:grid-cols-4 gap-0 items-center">
+          <div className="flex justify-center items-center group cursor-pointer py-2">
+            <span className="text-white font-bold text-sm sm:text-base uppercase tracking-widest relative overflow-hidden pb-1">
+              <span className="relative z-10 transition-colors duration-300 group-hover:text-[#210821]">Advisory</span>
+              <span className="absolute bottom-0 left-0 w-full h-[2px] bg-[#210821] transform -translate-x-full group-hover:translate-x-0 transition-transform duration-300 ease-out"></span>
             </span>
           </div>
-          <div className="flex flex-col items-center gap-1.5 border-l border-slate-200 dark:border-slate-800">
-            <span className="text-slate-800 dark:text-white font-extrabold text-base flex items-center gap-1">
-              ISO 27001
-            </span>
-            <span className="text-[10px] uppercase font-bold text-slate-400 dark:text-slate-500 tracking-wider">
-              Secure Data Systems
+          <div className="flex justify-center items-center group cursor-pointer py-2 border-l border-white/20">
+            <span className="text-white font-bold text-sm sm:text-base uppercase tracking-widest relative overflow-hidden pb-1">
+              <span className="relative z-10 transition-colors duration-300 group-hover:text-[#210821]">Taxation</span>
+              <span className="absolute bottom-0 left-0 w-full h-[2px] bg-[#210821] transform -translate-x-full group-hover:translate-x-0 transition-transform duration-300 ease-out"></span>
             </span>
           </div>
-          <div className="flex flex-col items-center gap-1.5 border-l border-slate-200 dark:border-slate-800">
-            <div className="flex text-amber-400 items-center gap-0.5">
-              {[...Array(5)].map((_, i) => (
-                <Star key={i} className="h-3.5 w-3.5 fill-amber-400" />
-              ))}
-            </div>
-            <span className="text-[10px] uppercase font-bold text-slate-400 dark:text-slate-500 tracking-wider">
-              4.9/5 Rating (1500+ Clients)
+          <div className="flex justify-center items-center group cursor-pointer py-2 border-l border-white/20">
+            <span className="text-white font-bold text-sm sm:text-base uppercase tracking-widest relative overflow-hidden pb-1">
+              <span className="relative z-10 transition-colors duration-300 group-hover:text-[#210821]">Compliance</span>
+              <span className="absolute bottom-0 left-0 w-full h-[2px] bg-[#210821] transform -translate-x-full group-hover:translate-x-0 transition-transform duration-300 ease-out"></span>
             </span>
           </div>
-          <div className="flex flex-col items-center gap-1.5 border-l border-slate-200 dark:border-slate-800">
-            <span className="text-slate-800 dark:text-white font-extrabold text-base">
-              DISA Certified
-            </span>
-            <span className="text-[10px] uppercase font-bold text-slate-400 dark:text-slate-500 tracking-wider">
-              System Audit Credentials
+          <div className="flex justify-center items-center group cursor-pointer py-2 border-l border-white/20">
+            <span className="text-white font-bold text-sm sm:text-base uppercase tracking-widest relative overflow-hidden pb-1">
+              <span className="relative z-10 transition-colors duration-300 group-hover:text-[#210821]">Accounting</span>
+              <span className="absolute bottom-0 left-0 w-full h-[2px] bg-[#210821] transform -translate-x-full group-hover:translate-x-0 transition-transform duration-300 ease-out"></span>
             </span>
           </div>
         </div>
       </section>
 
-      {/* 3. DUE DATE COMPLIANCE CALENDAR TRACKER */}
-      <section className="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-10">
-          <span className="text-xs font-bold uppercase tracking-widest text-amber-500">
-            Filing Deadlines
-          </span>
-          <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white mt-1">
-            Active Compliance Calendar
-          </h2>
-        </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {dueDates.map((item, idx) => (
-            <div
-              key={idx}
-              className="glass p-5 rounded-2xl border border-slate-200/50 dark:border-slate-800/50 flex flex-col justify-between"
-            >
-              <div>
-                <span className={`px-2 py-0.5 rounded text-[8px] font-extrabold uppercase tracking-wider inline-block mb-3.5 ${
-                  item.status === "Critical"
-                    ? "bg-rose-500/10 text-rose-500"
-                    : "bg-amber-500/10 text-amber-500"
-                }`}>
-                  {item.status}
-                </span>
-                <h3 className="text-sm font-bold text-slate-900 dark:text-white leading-snug mb-1">
-                  {item.task}
-                </h3>
-              </div>
-              <div className="mt-4 pt-3 border-t border-slate-100 dark:border-slate-800 flex items-center gap-2 text-xs font-bold text-slate-400">
-                <CalendarDays className="h-4 w-4 text-amber-500" />
-                <span>{item.date}</span>
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
 
       {/* 4. THE 8-9 CORE PROBLEMS CA SOLVES SECTION */}
-      <section className="py-20 relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-t border-slate-200/50 dark:border-slate-800/50">
-        <div className="text-center mb-16">
-          <span className="text-xs font-bold uppercase tracking-widest text-amber-500">
-            Real Cases, Real Success
-          </span>
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white mt-2 mb-4">
-            {t.problemsTitle}
-          </h2>
-          <p className="text-slate-500 dark:text-slate-400 max-w-2xl mx-auto text-sm sm:text-base leading-relaxed">
-            {t.problemsSubtitle}
-          </p>
-        </div>
+      <section className="py-24 relative bg-[#1b1c21] border-t border-slate-800/50">
+        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=2070&auto=format&fit=crop')] bg-cover bg-center opacity-40 mix-blend-overlay"></div>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="text-center mb-16">
+            <span className="text-xs font-bold uppercase tracking-widest text-[#c79d62] mb-2 block">
+              Clarity. Compliance. Confidence.
+            </span>
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white mt-2 mb-6 drop-shadow-md whitespace-nowrap overflow-hidden text-ellipsis">
+              Compliance is not a cost; it is an investment in trust
+            </h2>
+            <p className="max-w-3xl mx-auto text-slate-300 text-sm sm:text-base leading-relaxed mb-8 whitespace-normal">
+              Helping businesses, housing societies, NRIs overcome compliance challenges, regulatory roadblocks, taxation complexities, governance issues through trusted advisory and strategic guidance.
+            </p>
+            <Link href="/contact" className="inline-block px-8 py-3.5 bg-[#c79d62] text-white hover:bg-[#a67d46] transition-colors text-sm font-bold uppercase tracking-widest shadow-lg">
+              Book Free Consultation
+            </Link>
+          </div>
 
-        {/* Interactive Problem Explorer (3D perspective / grid) */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {problemsList.map((item, idx) => {
-            const Icon = item.icon;
-            return (
-              <motion.div
-                key={idx}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: idx * 0.05 }}
-                className="glass-premium p-6 rounded-2xl border border-slate-200/50 dark:border-slate-800/50 hover-3d relative overflow-hidden group flex flex-col justify-between"
-              >
-                <div>
-                  <div className="flex items-center justify-between mb-5">
-                    <span className="px-2.5 py-1 rounded-md text-[10px] font-extrabold uppercase tracking-wider bg-amber-500/10 text-amber-600 dark:text-amber-400">
-                      {item.category}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {problemsList.map((item, idx) => {
+              const Icon = item.icon;
+              return (
+                <motion.div
+                  key={idx}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: idx * 0.05 }}
+                  className="p-8 md:p-10 border border-[#c79d62] bg-black/20 hover:bg-black/50 transition-all duration-300 relative flex flex-col text-left items-start justify-start min-h-[340px] group"
+                >
+                  <div className="absolute top-5 left-5 right-5 md:top-8 md:left-8 md:right-8 flex items-center justify-between gap-3">
+                    <span className="text-[10px] font-bold text-[#c79d62] uppercase tracking-widest leading-tight text-left pr-4">
+                      {item.title}
                     </span>
-                    <Icon className="h-6 w-6 text-amber-500 dark:text-amber-400 group-hover:scale-110 transition-transform" />
+                    <div className="w-10 h-10 rounded bg-[#c79d62] flex shrink-0 items-center justify-center shadow-lg transform group-hover:scale-110 transition-transform duration-300">
+                      <Icon className="w-5 h-5 text-white stroke-[2]" />
+                    </div>
                   </div>
-                  <h3 className="text-lg font-bold text-slate-900 dark:text-white mb-3">
-                    {item.title}
-                  </h3>
-                  <div className="mb-4">
-                    <span className="text-[10px] font-bold text-rose-500 dark:text-rose-450 uppercase tracking-widest block mb-1">
-                      The Challenge
-                    </span>
-                    <p className="text-xs text-slate-500 dark:text-slate-400 leading-relaxed font-medium">
-                      {item.problem}
-                    </p>
-                  </div>
-                </div>
 
-                <div className="pt-4 border-t border-slate-100 dark:border-slate-800 mt-auto flex flex-col gap-3.5">
-                  <div>
-                    <span className="text-[10px] font-bold text-emerald-500 dark:text-emerald-400 uppercase tracking-widest block mb-1">
-                      The Solution
-                    </span>
-                    <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed font-semibold">
-                      {item.solution.slice(0, 110)}...
-                    </p>
+                  <div className="mb-4 mt-12">
+                    <h3 className="text-xl sm:text-2xl font-bold text-white">
+                      {item.subtitle}
+                    </h3>
                   </div>
-                  <Link
-                    href={`/problems/${item.id}`}
-                    className="inline-flex items-center gap-1.5 text-[11px] font-extrabold uppercase tracking-widest text-amber-600 dark:text-amber-400 group"
-                  >
-                    Explore Case Details <ArrowRight className="h-3 w-3 group-hover:translate-x-1 transition-transform" />
-                  </Link>
-                </div>
-              </motion.div>
-            );
-          })}
+                  <p className="text-sm text-slate-300 leading-relaxed font-medium mb-8">
+                    {item.description}
+                  </p>
+
+                  {item.features && (
+                    <div className="flex flex-col gap-3 mb-8 w-full">
+                      {item.features.map((feature, fIdx) => (
+                        <div key={fIdx} className="bg-black/40 border border-[#c79d62]/30 p-3.5 rounded shadow-sm text-left w-full">
+                          <p className="text-[#c79d62] font-bold text-[13px] mb-1.5 leading-snug">{feature.q}</p>
+                          <p className="text-slate-300 text-xs leading-relaxed">{feature.a}</p>
+                        </div>
+                      ))}
+                    </div>
+                  )}
+
+                  <div className="mt-auto">
+                    <Link
+                      href={`/services#${item.id}`}
+                      className="inline-flex items-center gap-1.5 text-xs font-bold text-white bg-[#c79d62] hover:bg-[#a67d46] px-6 py-2.5 uppercase tracking-widest transition-colors shadow-md"
+                    >
+                      Learn more <ArrowRight className="h-4 w-4" />
+                    </Link>
+                  </div>
+                </motion.div>
+              );
+            })}
+          </div>
         </div>
       </section>
 
       {/* 5. EXPERTISE & SERVICES SECTION (Professional Image-Driven Layout) */}
-      <section className="py-24 bg-slate-100/50 dark:bg-slate-950/40 border-t border-slate-200/50 dark:border-slate-800/50 overflow-hidden">
+      < section className="py-24 bg-slate-100/50 dark:bg-slate-950/40 border-t border-slate-200/50 dark:border-slate-800/50 overflow-hidden" >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-20">
             <span className="text-xs font-bold uppercase tracking-widest text-amber-500">
-              Specialized Solutions
+              One Platform. Multiple Solutions
             </span>
             <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white mt-3">
-              Comprehensive Financial Excellence
+              Your Trusted Compliance & Advisory Partner
             </h2>
           </div>
 
@@ -375,9 +400,8 @@ export default function HomePage() {
               return (
                 <div
                   key={idx}
-                  className={`flex flex-col ${
-                    isEven ? "lg:flex-row" : "lg:flex-row-reverse"
-                  } gap-12 lg:gap-20 items-center`}
+                  className={`flex flex-col ${isEven ? "lg:flex-row" : "lg:flex-row-reverse"
+                    } gap-12 lg:gap-20 items-center`}
                 >
                   {/* Text Container */}
                   <motion.div
@@ -412,8 +436,8 @@ export default function HomePage() {
                     {/* Decorative backdrop element */}
                     <div className="absolute -inset-4 bg-gradient-to-tr from-amber-500/20 to-purple-500/20 rounded-3xl blur-2xl -z-10" />
                     <div className="relative rounded-3xl overflow-hidden shadow-2xl border border-white/20 dark:border-white/10 group aspect-[4/3] bg-slate-200 dark:bg-slate-800">
-                      <img 
-                        src={section.image} 
+                      <img
+                        src={section.image}
                         alt={section.title}
                         className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                         loading="lazy"
@@ -427,57 +451,57 @@ export default function HomePage() {
             })}
           </div>
         </div>
-      </section>
+      </section >
 
       {/* 6. WHY CHOOSE US */}
-      <section className="py-24 bg-white dark:bg-slate-950 text-slate-900 dark:text-white relative overflow-hidden transition-colors duration-300">
-        <div className="absolute inset-0 z-0 bg-slate-50 dark:bg-[url('https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&w=2000&q=20')] dark:opacity-20 bg-cover bg-center transition-colors duration-300"></div>
+      <section className="py-24 bg-[#16171b] text-white relative overflow-hidden transition-colors duration-300">
+        <div className="absolute inset-0 z-0 bg-[url('https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&w=2000&q=20')] opacity-10 bg-cover bg-center mix-blend-overlay"></div>
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           {/* Animated floating elements */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="space-y-6 bg-white/80 dark:bg-slate-950/80 backdrop-blur-xl p-8 sm:p-12 rounded-[2rem] border border-slate-200 dark:border-slate-800 shadow-2xl relative"
+            className="space-y-6 bg-black/40 backdrop-blur-xl p-8 sm:p-12 rounded-[2rem] border border-[#c79d62]/20 shadow-2xl relative"
           >
-             <motion.div animate={{ y: [0, -10, 0] }} transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }} className="absolute -top-6 -right-6 h-20 w-20 bg-amber-500/20 rounded-full blur-2xl"></motion.div>
-             <div className="flex items-center gap-5 relative z-10">
-                <div className="bg-amber-100 dark:bg-amber-500/20 p-4 rounded-2xl">
-                   <ShieldAlert className="h-8 w-8 text-amber-600 dark:text-amber-500" />
-                </div>
-                <div>
-                   <h3 className="font-extrabold text-xl mb-1">Practising ICAI Member</h3>
-                   <p className="text-sm font-semibold text-slate-600 dark:text-slate-400 flex items-center gap-2">
-                     <TrendingUp className="h-4 w-4 text-amber-500 dark:text-amber-400" /> 15+ years of trust.
-                   </p>
-                </div>
-             </div>
-             <div className="h-px w-full bg-gradient-to-r from-slate-200 dark:from-slate-800 to-transparent my-6 relative z-10"></div>
-             <div className="flex items-center gap-5 relative z-10">
-                <div className="bg-blue-100 dark:bg-blue-500/20 p-4 rounded-2xl">
-                   <Star className="h-8 w-8 text-blue-600 dark:text-blue-500" />
-                </div>
-                <div>
-                   <h3 className="font-extrabold text-xl mb-1">Top Rated Advisory</h3>
-                   <p className="text-sm font-semibold text-slate-600 dark:text-slate-400">4.9/5 Average Client Rating</p>
-                </div>
-             </div>
+            <motion.div animate={{ y: [0, -10, 0] }} transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }} className="absolute -top-6 -right-6 h-20 w-20 bg-[#c79d62]/20 rounded-full blur-2xl"></motion.div>
+            <div className="flex items-center gap-5 relative z-10">
+              <div className="bg-[#c79d62]/10 p-4 rounded-2xl border border-[#c79d62]/20">
+                <ShieldAlert className="h-8 w-8 text-[#c79d62]" />
+              </div>
+              <div>
+                <h3 className="font-extrabold text-xl mb-1 text-white">ICAI member</h3>
+                <p className="text-sm font-semibold text-slate-300 flex items-center gap-2">
+                  <TrendingUp className="h-4 w-4 text-[#c79d62]" /> Since 1992.
+                </p>
+              </div>
+            </div>
+            <div className="h-px w-full bg-gradient-to-r from-[#c79d62]/30 to-transparent my-6 relative z-10"></div>
+            <div className="flex items-center gap-5 relative z-10">
+              <div className="bg-blue-500/10 p-4 rounded-2xl border border-blue-500/20">
+                <Star className="h-8 w-8 text-blue-400" />
+              </div>
+              <div>
+                <h3 className="font-extrabold text-xl mb-1 text-white">Founded on Experience </h3>
+                <p className="text-sm font-semibold text-slate-300">Top Rated advisory</p>
+              </div>
+            </div>
           </motion.div>
           <motion.div
-             initial={{ opacity: 0, x: 30 }}
-             whileInView={{ opacity: 1, x: 0 }}
-             viewport={{ once: true }}
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
           >
-            <span className="inline-flex px-3 py-1 rounded-full bg-amber-100 dark:bg-amber-500/10 text-amber-700 dark:text-amber-400 border border-amber-200 dark:border-amber-500/20 font-bold text-xs uppercase tracking-widest items-center gap-2 mb-6">
-              <TrendingUp className="h-4 w-4" /> Precision & Growth
+            <span className="inline-flex px-3 py-1 rounded-full bg-[#c79d62]/10 text-[#c79d62] border border-[#c79d62]/20 font-bold text-xs uppercase tracking-widest items-center gap-2 mb-6">
+              <TrendingUp className="h-4 w-4" /> Advisory & Compliance
             </span>
-            <h2 className="text-4xl sm:text-5xl font-extrabold mb-6 leading-tight">
-              Not Just Accountants.<br/>We Are <span className="text-amber-600 dark:text-amber-400">Strategic Partners.</span>
+            <h2 className="text-4xl sm:text-5xl font-extrabold mb-6 leading-tight text-white">
+              Not Just Accountants.<br />We Are <span className="text-[#c79d62]">compliance and strategic Partners.</span>
             </h2>
-            <p className="text-slate-600 dark:text-slate-400 leading-relaxed mb-10 text-lg">
-              We move beyond traditional number crunching. Whether you are a startup securing funding or an enterprise navigating complex GST frameworks, our personalized solutions drive actual business growth.
+            <p className="text-slate-300 leading-relaxed mb-10 text-lg">
+              Led by an ICAI member since 1992, we go beyond filing returns and meeting deadlines. Our expert advisory and compliance solutions empower businesses, housing societies, NRIs, and individuals to achieve sustainable growth while staying fully compliant.
             </p>
-            <Link href="/about" className="inline-flex h-12 items-center justify-center px-8 rounded-full bg-slate-900 dark:bg-white text-white dark:text-slate-900 hover:scale-105 transition-transform text-sm font-extrabold tracking-wide shadow-lg">
+            <Link href="/about" className="inline-flex h-12 items-center justify-center px-8 rounded-full bg-[#c79d62] text-white hover:bg-[#a67d46] hover:scale-105 transition-all text-sm font-extrabold tracking-wide shadow-lg">
               Read Our Story
             </Link>
           </motion.div>
@@ -485,215 +509,122 @@ export default function HomePage() {
       </section>
 
       {/* 7. OUR ADVISORY JOURNEY - INTERACTIVE TIMELINE */}
-      <section className="py-24 bg-slate-50 dark:bg-[#120412]/50 border-t border-b border-slate-200/50 dark:border-slate-800/50 transition-colors duration-300">
+      < section className="py-24 bg-slate-50 dark:bg-[#120412]/50 border-t border-b border-slate-200/50 dark:border-slate-800/50 transition-colors duration-300" >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-           <div className="mb-16">
-              <span className="text-xs font-bold bg-[#c79d62]/10 text-[#c79d62] px-3.5 py-1.5 rounded-full border border-[#c79d62]/20 uppercase tracking-widest">
-                Journey Process
-              </span>
-              <h2 className="text-3xl sm:text-4xl font-extrabold text-[#210821] dark:text-white mt-4 mb-4">
-                Our Advisory Journey
-              </h2>
-              <p className="text-slate-500 dark:text-slate-400 max-w-xl mx-auto text-sm leading-relaxed font-normal">
-                We execute an agile, 4-step compliance and strategic growth blueprint tailored directly to your operational scale.
-              </p>
-           </div>
+          <div className="mb-16">
+            <span className="text-xs font-bold bg-[#c79d62]/10 text-[#c79d62] px-3.5 py-1.5 rounded-full border border-[#c79d62]/20 uppercase tracking-widest">
+              How We Work
+            </span>
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-[#210821] dark:text-white mt-4 mb-4">
+              Our Advisory Journey
+            </h2>
+            <p className="text-slate-500 dark:text-slate-400 max-w-xl mx-auto text-sm leading-relaxed font-normal">
+              Our proven 4-step process helps businesses, housing societies, NRIs, and individuals navigate compliance requirements and achieve their goals with confidence.
+            </p>
+          </div>
 
-            {/* Interactive Timeline Bar */}
-            <div className="relative mb-16 max-w-4xl mx-auto px-0">
-               {/* Background Gold-tinted Line */}
-               <div className="absolute top-[28px] left-[12.5%] right-[12.5%] h-[2px] bg-[#c79d62]/30 dark:bg-[#c79d62]/20 -translate-y-1/2" />
-               
-               {/* Dynamic Filling Gold Line */}
-               <div className="absolute top-[28px] left-[12.5%] right-[12.5%] h-[2px] -translate-y-1/2 overflow-hidden">
-                 <motion.div 
-                    className="h-full bg-[#c79d62] origin-left"
-                    animate={{ width: `${(activeStep / 3) * 100}%` }}
-                    transition={{ type: "spring", stiffness: 80, damping: 15 }}
-                 />
-               </div>
+          {/* Interactive Timeline Bar */}
+          <div className="relative mb-16 max-w-4xl mx-auto px-0">
+            {/* Background Gold-tinted Line */}
+            <div className="absolute top-[28px] left-[12.5%] right-[12.5%] h-[2px] bg-[#c79d62]/30 dark:bg-[#c79d62]/20 -translate-y-1/2" />
 
-               <div className="grid grid-cols-4 relative z-10">
-                 {[
-                   { num: "01", title: "ASSESSMENT", icon: FileCheck, detailTitle: "Deep Diagnostic Assessment", desc: "We perform a comprehensive audit of your financial records, historical filing patterns, and corporate entities. This allows us to identify structural exposure risks, missed tax credits, and optimization opportunities." },
-                   { num: "02", title: "STRATEGY", icon: Calculator, detailTitle: "Bespoke Financial Strategy", desc: "We design legal tax mitigation plans, asset-protection frameworks, and direct/indirect tax strategies. We customize corporate structuring models to minimize future tax liabilities and secure investment compliance." },
-                   { num: "03", title: "EXECUTION", icon: Building, detailTitle: "Seamless Implementation", desc: "Our team takes over the paperwork. We set up accounting integrations, file required GST/IT registrations, draft family trust deeds, and establish reliable workflows to operationalize your new structures." },
-                   { num: "04", title: "COMPLIANCE", icon: ShieldAlert, detailTitle: "Active Audits & Advisory", desc: "We provide ongoing audit-preparedness, statutory filings, regular GST reconciliation checks, and direct notice representation before regulatory benches to keep your business fully audit-proof." }
-                 ].map((step, i) => {
-                   const Icon = step.icon;
-                   const isActive = activeStep === i;
-                   const isCompleted = i <= activeStep;
-                   return (
-                      <button 
-                        key={i} 
-                        onClick={() => setActiveStep(i)}
-                        className="flex flex-col items-center focus:outline-none group cursor-pointer"
-                      >
-                         {/* Circle/Squircle Badge */}
-                         <motion.div 
-                           animate={{ 
-                             scale: isActive ? 1.08 : 1.0,
-                           }}
-                           transition={{ duration: 0.2 }}
-                           className={`h-14 w-14 rounded-[18px] flex items-center justify-center mb-4 transition-all duration-300 relative ${
-                             isActive 
-                               ? "bg-[#210821] dark:bg-[#321232] border-2 border-[#c79d62] text-white shadow-[0_0_20px_rgba(158,128,85,0.35)] ring-4 ring-[#c79d62]/10" 
-                               : "bg-white dark:bg-[#1a0b1a] border-2 border-[#c79d62]/50 hover:border-[#c79d62] text-[#c79d62]"
-                           }`}
-                         >
-                            <Icon className={`h-6 w-6 transition-colors duration-300 ${
-                              isActive 
-                                ? "text-white" 
-                                : "text-[#c79d62]"
-                            }`} />
-                         </motion.div>
-                         <span className={`text-[10px] font-black tracking-wider transition-colors duration-300 ${
-                           isActive ? "text-[#c79d62]" : "text-slate-400 dark:text-slate-500"
-                         }`}>{step.num}</span>
-                         <h3 className={`font-extrabold text-[10px] sm:text-[11px] tracking-widest uppercase transition-colors duration-300 mt-1 ${
-                           isActive ? "text-[#210821] dark:text-[#c79d62]" : "text-slate-400 dark:text-slate-500 group-hover:text-slate-650 dark:group-hover:text-slate-350"
-                         }`}>{step.title}</h3>
-                      </button>
-                   );
-                 })}
-               </div>
+            {/* Dynamic Filling Gold Line */}
+            <div className="absolute top-[28px] left-[12.5%] right-[12.5%] h-[2px] -translate-y-1/2 overflow-hidden">
+              <motion.div
+                className="h-full bg-[#c79d62] origin-left"
+                animate={{ width: `${(activeStep / 3) * 100}%` }}
+                transition={{ type: "spring", stiffness: 80, damping: 15 }}
+              />
             </div>
 
-           {/* Content Details Display Area */}
-           <div className="max-w-3xl mx-auto min-h-[150px] px-4">
-             <AnimatePresence mode="wait">
-               <motion.div
-                 key={activeStep}
-                 initial={{ opacity: 0, y: 10 }}
-                 animate={{ opacity: 1, y: 0 }}
-                 exit={{ opacity: 0, y: -10 }}
-                 transition={{ duration: 0.25 }}
-                 className="p-8 sm:p-10 rounded-[24px] bg-white dark:bg-[#160716] border border-slate-100 dark:border-slate-800/80 shadow-[0_8px_30px_rgb(0,0,0,0.04)] dark:shadow-[0_8px_30px_rgb(0,0,0,0.2)] text-left relative overflow-hidden max-w-2xl mx-auto"
-               >
-                 <div className="absolute top-0 right-0 w-32 h-32 bg-[#c79d62]/3 rounded-full blur-2xl pointer-events-none" />
-                 <h3 className="font-extrabold text-xl text-[#210821] dark:text-white mb-3 tracking-tight">
-                   0{activeStep + 1}. {[
-                     "Deep Diagnostic Assessment",
-                     "Bespoke Financial Strategy",
-                     "Seamless Implementation",
-                     "Active Audits & Advisory"
-                   ][activeStep]}
-                 </h3>
-                 <p className="text-sm text-slate-600 dark:text-slate-300 leading-relaxed font-normal">
-                   {[
-                     "We perform a comprehensive audit of your financial records, historical filing patterns, and corporate entities. This allows us to identify structural exposure risks, missed tax credits, and optimization opportunities.",
-                     "We design legal tax mitigation plans, asset-protection frameworks, and direct/indirect tax strategies. We customize corporate structuring models to minimize future tax liabilities and secure investment compliance.",
-                     "Our team takes over the paperwork. We set up accounting integrations, file required GST/IT registrations, draft family trust deeds, and establish reliable workflows to operationalize your new structures.",
-                     "We provide ongoing audit-preparedness, statutory filings, regular GST reconciliation checks, and direct notice representation before regulatory benches to keep your business fully audit-proof."
-                   ][activeStep]}
-                 </p>
-               </motion.div>
-             </AnimatePresence>
-           </div>
-        </div>
-      </section>
-
-
-
-      {/* 9. STAY AHEAD OF DEADLINES - Auto Scrolling Ticker */}
-      <section className="py-24 bg-slate-50 dark:bg-slate-900 text-slate-900 dark:text-white border-t border-slate-200 dark:border-slate-800 transition-colors duration-300">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-           <div className="text-center mb-16">
-              <h2 className="text-4xl font-extrabold mb-5">Stay Ahead of Deadlines</h2>
-              <p className="text-slate-600 dark:text-slate-400 max-w-2xl mx-auto text-lg">We track the ever-changing regulatory landscape so you don't have to. Actionable intelligence delivered live.</p>
-           </div>
-           
-           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
-              {/* Left Column: Vertical Ticker */}
-              <div>
-                 <h3 className="text-2xl font-extrabold flex items-center gap-3 mb-8">
-                   <FileSpreadsheet className="h-6 w-6 text-amber-600 dark:text-amber-500" /> Live Tax & GST News
-                 </h3>
-                 <div className="relative h-[480px] overflow-hidden rounded-3xl bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 shadow-inner p-2">
-                    {/* Fade Edges Vertical */}
-                    <div className="absolute top-0 inset-x-0 h-12 bg-gradient-to-b from-white dark:from-slate-950 to-transparent z-10 rounded-t-3xl pointer-events-none"></div>
-                    <div className="absolute bottom-0 inset-x-0 h-12 bg-gradient-to-t from-white dark:from-slate-950 to-transparent z-10 rounded-b-3xl pointer-events-none"></div>
-
-                    <motion.div 
-                       animate={{ y: ["0%", "-50%"] }}
-                       transition={{ repeat: Infinity, ease: "linear", duration: 25 }}
-                       className="flex flex-col gap-4 py-6"
+            <div className="grid grid-cols-4 relative z-10">
+              {journeySteps.map((step, i) => {
+                const Icon = step.icon;
+                const isActive = activeStep === i;
+                const isCompleted = i <= activeStep;
+                return (
+                  <button
+                    key={i}
+                    onClick={() => setActiveStep(i)}
+                    className="flex flex-col items-center focus:outline-none group cursor-pointer"
+                  >
+                    {/* Circle/Squircle Badge */}
+                    <motion.div
+                      animate={{
+                        scale: isActive ? 1.08 : 1.0,
+                      }}
+                      transition={{ duration: 0.2 }}
+                      className={`h-14 w-14 rounded-[18px] flex items-center justify-center mb-4 transition-all duration-300 relative ${isActive
+                        ? "bg-[#210821] dark:bg-[#321232] border-2 border-[#c79d62] text-white shadow-[0_0_20px_rgba(158,128,85,0.35)] ring-4 ring-[#c79d62]/10"
+                        : "bg-white dark:bg-[#1a0b1a] border-2 border-[#c79d62]/50 hover:border-[#c79d62] text-[#c79d62]"
+                        }`}
                     >
-                       {[
-                         {date: "09 JUN", type: "GST", title: "GST Council Proposes Restructuring of Tax Slabs", desc: "The GST Council has initiated discussions to rationalise tax slabs, potentially..."},
-                         {date: "08 JUN", type: "Income Tax", title: "CBDT Issues Clarification on Capital Gains Taxation", desc: "New circular resolves ambiguities regarding indexation benefits for properties..."},
-                         {date: "07 JUN", type: "Compliance", title: "New E-invoicing Deadlines Announced for Small Businesses", desc: "Taxpayers with turnover exceeding ₹2 Crores must adopt compulsory e-invoicing..."},
-                         {date: "05 JUN", type: "MCA", title: "MCA Extends Due Date for Filing Annual Returns", desc: "A grace period of 30 days is announced for corporate filings due to portal upgrades..."},
-                         // Duplicate for infinite scroll
-                         {date: "09 JUN", type: "GST", title: "GST Council Proposes Restructuring of Tax Slabs", desc: "The GST Council has initiated discussions to rationalise tax slabs, potentially..."},
-                         {date: "08 JUN", type: "Income Tax", title: "CBDT Issues Clarification on Capital Gains Taxation", desc: "New circular resolves ambiguities regarding indexation benefits for properties..."},
-                         {date: "07 JUN", type: "Compliance", title: "New E-invoicing Deadlines Announced for Small Businesses", desc: "Taxpayers with turnover exceeding ₹2 Crores must adopt compulsory e-invoicing..."},
-                         {date: "05 JUN", type: "MCA", title: "MCA Extends Due Date for Filing Annual Returns", desc: "A grace period of 30 days is announced for corporate filings due to portal upgrades..."},
-                       ].map((news, i) => (
-                         <div key={i} className="flex gap-5 p-5 rounded-2xl bg-slate-50 dark:bg-slate-900/40 hover:bg-slate-100 dark:hover:bg-slate-800/80 transition-colors mx-4 shadow-sm border border-slate-100 dark:border-slate-800">
-                            <div className="bg-blue-600 text-white rounded-xl h-16 w-16 flex flex-col items-center justify-center shrink-0 shadow-md">
-                               <span className="font-extrabold text-xl leading-none">{news.date.split(' ')[0]}</span>
-                               <span className="text-[10px] uppercase font-bold mt-0.5 tracking-wider">{news.date.split(' ')[1]}</span>
-                            </div>
-                            <div className="flex-1">
-                               <span className="text-[10px] font-bold text-amber-600 dark:text-amber-500 uppercase tracking-widest block mb-1.5">{news.type}</span>
-                               <h4 className="font-bold text-base mb-1.5 leading-snug">{news.title}</h4>
-                               <p className="text-slate-500 dark:text-slate-400 text-xs line-clamp-2 leading-relaxed">{news.desc}</p>
-                            </div>
-                         </div>
-                       ))}
+                      <Icon className={`h-6 w-6 transition-colors duration-300 ${isActive
+                        ? "text-white"
+                        : "text-[#c79d62]"
+                        }`} />
                     </motion.div>
-                 </div>
-              </div>
+                    <span className={`text-[10px] font-black tracking-wider transition-colors duration-300 ${isActive ? "text-[#c79d62]" : "text-slate-400 dark:text-slate-500"
+                      }`}>{step.num}</span>
+                    <h3 className={`font-extrabold text-[10px] sm:text-[11px] tracking-widest uppercase transition-colors duration-300 mt-1 ${isActive ? "text-[#210821] dark:text-[#c79d62]" : "text-slate-400 dark:text-slate-500 group-hover:text-slate-650 dark:group-hover:text-slate-350"
+                      }`}>{step.title}</h3>
+                  </button>
+                );
+              })}
+            </div>
+          </div>
 
-              {/* Right Column: Static Articles */}
-              <div>
-                 <h3 className="text-2xl font-extrabold flex items-center gap-3 mb-8">
-                   <BookOpen className="h-6 w-6 text-amber-500" /> Expert Articles & Insights
-                 </h3>
-                 <div className="space-y-4">
-                    {[
-                      {date: "09 JUN", type: "Income Tax", title: "Strategic Tax Planning Under the New Regime: Is It Really Better?", desc: "A deep dive comparing tax liability under old and new regimes using realistic sala..."},
-                      {date: "08 JUN", type: "GST", title: "Demystifying GST Input Tax Credit (ITC) Rules under Section 16(4)", desc: "Understand the strict statutory limits and time horizons for claiming input tax..."},
-                      {date: "06 JUN", type: "Company Law", title: "A Startup Guide to Selecting the Right Corporate Entity Structure", desc: "Should you incorporate a Private Limited Company, register an LLP, or stick to a..."},
-                      {date: "04 JUN", type: "Audit", title: "Avoiding Common Audit Pitfalls: A Checklist for Small Businesses", desc: "Prepare your financial statements correctly and avoid red flags before statutory..."},
-                    ].map((article, i) => (
-                      <div key={i} className="flex gap-5 p-5 rounded-3xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/40 hover:bg-slate-50 dark:hover:bg-slate-800/80 transition-colors shadow-sm cursor-pointer group">
-                         <div className="text-slate-500 dark:text-slate-400 bg-slate-100 dark:bg-slate-950 rounded-xl h-16 w-16 flex flex-col items-center justify-center shrink-0 border border-slate-200 dark:border-slate-800 group-hover:border-slate-300 dark:group-hover:border-slate-600 transition-colors">
-                            <span className="font-extrabold text-xl leading-none">{article.date.split(' ')[0]}</span>
-                            <span className="text-[10px] uppercase font-bold mt-0.5 tracking-wider">{article.date.split(' ')[1]}</span>
-                         </div>
-                         <div className="flex-1">
-                            <span className="text-[10px] font-bold text-emerald-600 dark:text-emerald-500 uppercase tracking-widest block mb-1.5">{article.type}</span>
-                            <h4 className="font-bold text-base mb-1.5 leading-snug group-hover:text-amber-600 dark:group-hover:text-amber-400 transition-colors">{article.title}</h4>
-                            <p className="text-slate-500 dark:text-slate-400 text-xs line-clamp-2 leading-relaxed">{article.desc}</p>
-                         </div>
-                      </div>
-                    ))}
-                 </div>
-              </div>
-           </div>
+          {/* Content Details Display Area */}
+          <div className="max-w-3xl mx-auto min-h-[150px] px-4">
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={activeStep}
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -10 }}
+                transition={{ duration: 0.25 }}
+                className="p-8 sm:p-10 rounded-[24px] bg-white dark:bg-[#160716] border border-slate-100 dark:border-slate-800/80 shadow-[0_8px_30px_rgb(0,0,0,0.04)] dark:shadow-[0_8px_30px_rgb(0,0,0,0.2)] text-left relative overflow-hidden max-w-2xl mx-auto"
+              >
+                <div className="absolute top-0 right-0 w-32 h-32 bg-[#c79d62]/3 rounded-full blur-2xl pointer-events-none" />
+                <h3 className="font-extrabold text-xl text-[#210821] dark:text-white mb-3 tracking-tight">
+                  0{activeStep + 1}. {journeySteps[activeStep].detailTitle}
+                </h3>
+                <p className="text-sm text-slate-600 dark:text-slate-300 leading-relaxed font-normal">
+                  {journeySteps[activeStep].desc}
+                </p>
+              </motion.div>
+            </AnimatePresence>
+          </div>
         </div>
-      </section>
+      </section >
+
+
+
+
 
       {/* 7. QUICK CONSULTATION BOOKING WIDGET */}
-      <section className="py-20 max-w-3xl mx-auto px-4 sm:px-6 text-center">
-        <div className="glass-premium p-8 sm:p-12 rounded-3xl border border-slate-200/60 dark:border-slate-800/60 relative overflow-hidden">
-          <div className="absolute top-0 right-0 w-32 h-32 bg-amber-500/10 rounded-full blur-2xl" />
-          <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white mb-3">
-            Ready to Secure Your Financial Health?
-          </h2>
-          <p className="text-sm text-slate-500 dark:text-slate-400 mb-8 leading-relaxed">
-            Schedule a free 15-minute diagnostic call with our senior tax specialists. Let's map your goals together.
-          </p>
-          <Link
-            href="/contact"
-            className="inline-flex h-12 items-center justify-center px-8 rounded-xl bg-amber-600 hover:bg-amber-500 text-white font-semibold shadow-lg shadow-amber-600/15 transition"
-          >
-            Schedule Free Strategy Call
-          </Link>
+      <section className="py-24 relative bg-[#0f1014] text-white overflow-hidden">
+        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&w=2000&q=20')] bg-cover bg-center opacity-10 mix-blend-overlay"></div>
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 relative z-10 text-center">
+          <div className="bg-[#1b1c21]/80 backdrop-blur-2xl p-10 sm:p-14 rounded-[2.5rem] border border-[#c79d62]/30 relative overflow-hidden shadow-2xl">
+            <div className="absolute top-[-20%] right-[-10%] w-64 h-64 bg-[#c79d62]/20 rounded-full blur-3xl pointer-events-none" />
+            <div className="absolute bottom-[-20%] left-[-10%] w-64 h-64 bg-blue-500/10 rounded-full blur-3xl pointer-events-none" />
+
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-white mb-5 relative z-10 leading-tight">
+              Ready to Simplify Compliance & Accelerate Growth?
+            </h2>
+            <p className="text-base text-slate-300 mb-10 leading-relaxed max-w-2xl mx-auto relative z-10">
+              Schedule a consultation with our experts and discover practical solutions tailored to your business, society, or personal requirements.
+            </p>
+            <Link
+              href="/contact"
+              className="inline-flex h-14 items-center justify-center px-10 rounded-full bg-[#c79d62] hover:bg-[#a67d46] hover:scale-105 text-white font-extrabold shadow-[0_0_30px_rgba(199,157,98,0.2)] transition-all tracking-wide relative z-10"
+            >
+              Schedule a Free Call
+            </Link>
+          </div>
         </div>
       </section>
-    </div>
+    </div >
   );
 }

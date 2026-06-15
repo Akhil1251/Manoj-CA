@@ -14,23 +14,38 @@ import {
 } from "lucide-react";
 
 export default function ServicesPage() {
-  const [activeTab, setActiveTab] = useState(servicesData[0].id);
+  const [activeTab, setActiveTab] = useState(() => {
+    if (typeof window !== "undefined") {
+      const hash = window.location.hash.replace('#', '');
+      if (hash && servicesData.some(tab => tab.id === hash)) {
+        return hash;
+      }
+    }
+    return servicesData[0].id;
+  });
   const [expandedSubService, setExpandedSubService] = useState<string | null>(null);
 
   React.useEffect(() => {
     const handleHashChange = () => {
-      const hash = window.location.hash.replace('#', '');
-      if (hash && servicesData.some(tab => tab.id === hash)) {
-        setActiveTab(hash);
-      }
+      // Small timeout to allow Next.js router to update window.location.hash on soft navigations
+      setTimeout(() => {
+        const hash = window.location.hash.replace('#', '');
+        if (hash && servicesData.some(tab => tab.id === hash)) {
+          setActiveTab(hash);
+        }
+      }, 50);
     };
     
     // Check on mount
     handleHashChange();
 
-    // Also listen for hash changes
+    // Also listen for hash changes and popstate
     window.addEventListener('hashchange', handleHashChange);
-    return () => window.removeEventListener('hashchange', handleHashChange);
+    window.addEventListener('popstate', handleHashChange);
+    return () => {
+      window.removeEventListener('hashchange', handleHashChange);
+      window.removeEventListener('popstate', handleHashChange);
+    };
   }, []);
 
   const currentTabData = servicesData.find((tab) => tab.id === activeTab) || servicesData[0];

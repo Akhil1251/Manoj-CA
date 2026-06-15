@@ -77,6 +77,33 @@ export default function AboutPage() {
       image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=800&q=80"
     },
     {
+      title: "OUR CORE VALUE",
+      content: (
+        <ul className="space-y-3 font-medium text-slate-700 dark:text-slate-200 text-[15px]">
+          <li>
+            <strong className="text-[#c79d62]">Integrity & Transparency</strong> – Upholding the highest ethical and professional standards.
+          </li>
+          <li>
+            <strong className="text-[#c79d62]">Client-Centric Approach</strong> – Delivering personalized solutions focused on client success.
+          </li>
+          <li>
+            <strong className="text-[#c79d62]">Excellence & Expertise</strong> – Providing high-quality advisory, taxation, and compliance services.
+          </li>
+          <li>
+            <strong className="text-[#c79d62]">Trust & Reliability</strong> – Building long-term relationships through consistent professional support.
+          </li>
+          <li>
+            <strong className="text-[#c79d62]">Timely Compliance & Accountability</strong> – Ensuring accurate, proactive, and timely execution of services.
+          </li>
+          <li>
+            <strong className="text-[#c79d62]">Growth & Value Creation</strong> – Helping clients achieve sustainable growth while minimizing risks and ensuring compliance.
+          </li>
+        </ul>
+      ),
+      // Team collaborating
+      image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80"
+    },
+    {
       title: "OUR MISSION",
       content: (
         <p>To be a trusted partner in our clients' growth journey by delivering high-quality advisory, compliance, taxation, and business support services. We strive to provide innovative, practical, and cost-effective solutions while upholding the highest standards of professionalism, ethics, and integrity</p>
@@ -103,7 +130,49 @@ export default function AboutPage() {
   ];
 
   return (
-    <div className="w-full bg-[#f8f9fa] dark:bg-slate-950 min-h-screen pb-24">
+    <div className="w-full bg-white dark:bg-slate-950 min-h-screen pb-24">
+      {/* HERO SECTION */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-16">
+        <div className="w-full h-[400px] md:h-[480px] flex shadow-lg">
+          {/* Quote Box - Left Side */}
+          <div className="w-full md:w-[45%] lg:w-[42%] bg-[#c79d62] h-full flex flex-col justify-center px-8 md:px-12 lg:px-16 text-white">
+            <h2 className="text-2xl md:text-[28px] lg:text-[32px] font-bold leading-[1.3] mb-4 tracking-wide">
+              Welcome to Consultavenuee.com
+            </h2>
+            <p className="text-[15px] md:text-base leading-relaxed opacity-95 font-medium">
+              Your Business Advisory, Compliance & Growth Partner, backed by a team of experienced Chartered Accountants, Company Secretaries, Legal Professionals, and Business Advisors.
+            </p>
+          </div>
+          
+          {/* Background Image - Right Side */}
+          <div className="hidden md:block md:w-[55%] lg:w-[58%] h-full">
+            <img 
+              src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=1200&q=80" 
+              alt="Team Collaborating" 
+              className="w-full h-full object-cover"
+            />
+          </div>
+        </div>
+      </div>
+
+      {/* STATS SECTION */}
+      <div className="w-full bg-[#c79d62] py-16 px-4">
+        {/* Traits Banner */}
+        <div className="max-w-6xl mx-auto text-center">
+          <p className="text-[#1b071b] text-xl md:text-2xl lg:text-3xl font-bold tracking-widest uppercase flex flex-col md:flex-row items-center justify-center gap-2 md:gap-4 lg:gap-6">
+            <span>Trusted</span>
+            <span className="hidden md:inline-block opacity-50 font-light">|</span> 
+            <span>Experienced</span>
+            <span className="hidden md:inline-block opacity-50 font-light">|</span> 
+            <span>Responsive</span>
+            <span className="hidden md:inline-block opacity-50 font-light">|</span> 
+            <span>Result-Driven</span>
+          </p>
+        </div>
+      </div>
+      
+      {/* Spacer before next section */}
+      <div className="pt-8"></div>
       {/* HEADER SECTION */}
       <div className="text-center pt-12 pb-12 px-4">
         <h3 className="text-amber-600 font-bold tracking-widest uppercase mb-4 text-sm">About us</h3>
@@ -131,7 +200,7 @@ export default function AboutPage() {
                 {/* Content Side */}
                 <div className={`w-full md:w-1/2 flex flex-col justify-center ${isEven ? 'md:pl-16' : 'md:pr-16'} mb-6 md:mb-0 z-20`}>
                   <div className="bg-white dark:bg-slate-900 p-6 md:p-8 shadow-[0_15px_50px_-15px_rgba(0,0,0,0.1)] dark:shadow-none dark:border dark:border-slate-800 h-full flex flex-col justify-center">
-                    <h2 className="text-xl md:text-2xl font-bold mb-4 text-[#0a1930] dark:text-white">{sec.title}</h2>
+                    <h2 className="text-xl md:text-2xl font-bold mb-4 text-[#c79d62]">{sec.title}</h2>
                     <div className="text-slate-600 dark:text-slate-300 text-sm leading-relaxed">
                       {sec.content}
                     </div>
