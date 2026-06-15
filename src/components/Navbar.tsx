@@ -384,9 +384,7 @@ export const Navbar: React.FC = () => {
 
               {/* Mobile toggles */}
               <div className="flex lg:hidden items-center gap-2.5">
-                <button onClick={toggleTheme} className="p-2 rounded-lg border border-slate-200/20 hover:bg-slate-100/10 transition">
-                  {theme === "dark" ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
-                </button>
+                {/* Theme toggle removed */}
                 <button onClick={() => setIsMobileMenuOpen(true)} className="p-2 rounded-lg border border-slate-200/20 hover:bg-slate-100/10 transition">
                   <Menu className="h-5 w-5" />
                 </button>
@@ -483,10 +481,7 @@ export const Navbar: React.FC = () => {
                   </AnimatePresence>
                 </div>
 
-                {/* Theme Toggle */}
-                <button onClick={toggleTheme} className="hover:text-white transition-colors ml-2">
-                  {theme === "dark" ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
-                </button>
+                {/* Theme Toggle Removed */}
 
                 {/* CTA Button */}
                 <button onClick={() => setIsConsultationOpen(true)} className="ml-4 px-4 py-2 bg-amber-600 hover:bg-amber-700 text-white text-xs font-bold rounded shadow transition-colors whitespace-nowrap cursor-pointer">
