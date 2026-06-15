@@ -9,35 +9,74 @@ export default function CareersPage() {
     name: "",
     email: "",
     phone: "",
-    position: "article_assistant",
-    qualification: "ipcc_both",
+    position: "mgr_tax_audit",
+    qualification: "ca",
     coverLetter: ""
   });
   const [submitted, setSubmitted] = useState(false);
 
   const openings = [
     {
-      title: "Chartered Accountant (Associate)",
-      type: "Full-Time (On-Site)",
-      experience: "1-3 Years post qualification",
-      desc: "Looking for an energetic ACA to handle tax representations and internal corporate audits."
+      title: "Manager Taxation and Audit",
+      type: "Full Time",
+      experience: "Fresher / 1-2 Yrs",
+      qualification: "Chartered Accountant (2 Positions)",
+      desc: "Have knowledge of Tax Audit, Statutory Audit, Internal Audit, preparation of Financial statement, ITR, TDS and GST fillings and registration. Audits and other statutory compliance assignments. Capable of independently handling assignments and client interactions."
     },
     {
-      title: "Article Assistant (ICAI)",
-      type: "Statutory Internship",
-      experience: "IPCC cleared (Single/Both groups)",
-      desc: "Gain deep, practical exposure across direct tax representations, audits, and automated bookkeeping."
+      title: "Manager Compliance",
+      type: "Full Time",
+      experience: "Fresher / 1-2 Yrs",
+      qualification: "Company Secretary (2 Positions)",
+      desc: "Have experience of Company incorporation, ROC annual compliance, ROC fillings, statutory compliance under various law, Drafting of Agenda, Minutes & Notice. Capable of independently handling assignments and client interactions."
     },
     {
-      title: "GST Operations Executive",
-      type: "Full-Time",
-      experience: "2+ Years in GST filings",
-      desc: "Supervise daily reconciliations, file monthly GSTR-1/3B, and coordinate vendor audits."
+      title: "Asst Manager Taxation",
+      type: "Full Time",
+      experience: "1-2 Yrs in relevant field",
+      qualification: "CA-Inter / MCOM / BCOM (5 Vacancies)",
+      desc: "Have knowledge of Audit, registration and filling of ITR, TDS and GST returns. Capable of independently handling assignments and client interactions."
+    },
+    {
+      title: "Asst Manager Compliance",
+      type: "Full Time",
+      experience: "1-2 Yrs",
+      qualification: "CS (Inter) / LLB (2 Positions)",
+      desc: "Have experience of ROC compliances, Company incorporation, Drafting of Agenda, Minutes & Notice. Capable of independently handling assignments and client interactions."
     }
   ];
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    
+    const positionNames: Record<string, string> = {
+      mgr_tax_audit: "Manager Taxation and Audit",
+      mgr_compliance: "Manager Compliance",
+      asst_mgr_tax: "Asst Manager Taxation",
+      asst_mgr_compliance: "Asst Manager Compliance"
+    };
+    
+    const qualificationNames: Record<string, string> = {
+      ca: "Chartered Accountant (CA)",
+      cs: "Company Secretary (CS)",
+      ca_inter: "CA Inter (Semi-Qualified)",
+      cs_inter: "CS Inter",
+      llb: "LLB",
+      mcom: "M.Com",
+      bcom: "B.Com"
+    };
+
+    const text = `*New Job Application*
+*Name:* ${formData.name}
+*Email:* ${formData.email}
+*Phone:* ${formData.phone}
+*Position:* ${positionNames[formData.position] || formData.position}
+*Qualification:* ${qualificationNames[formData.qualification] || formData.qualification}
+*Cover Note:* ${formData.coverLetter}`;
+
+    const whatsappUrl = `https://wa.me/919076111021?text=${encodeURIComponent(text)}`;
+    window.open(whatsappUrl, '_blank');
+    
     setSubmitted(true);
   };
 
@@ -46,7 +85,7 @@ export default function CareersPage() {
       {/* Title */}
       <div className="text-center mb-16">
         <span className="text-xs font-bold bg-amber-500/10 text-amber-600 dark:text-amber-400 px-3.5 py-1.5 rounded-full border border-amber-500/20 uppercase tracking-widest">
-          ðŸ’¼ Join Our Team
+          💼 Join Our Team
         </span>
         <h1 className="text-3xl sm:text-5xl font-extrabold text-slate-900 dark:text-white mt-4 mb-4">
           Build Your Financial Advisory Career
@@ -65,20 +104,23 @@ export default function CareersPage() {
           {openings.map((job, idx) => (
             <div
               key={idx}
-              className="glass p-6 rounded-2xl border border-slate-200/50 dark:border-slate-800/50 space-y-3 hover-3d"
+              className="bg-white dark:bg-slate-900 p-6 rounded-2xl border-2 border-slate-800 dark:border-slate-700 space-y-4 shadow-sm transition-transform hover:-translate-y-1"
             >
               <h3 className="text-base sm:text-lg font-bold text-slate-900 dark:text-white">
                 {job.title}
               </h3>
-              <div className="flex gap-4 text-xs font-bold text-amber-600 dark:text-amber-400 uppercase tracking-wider">
-                <span className="flex items-center gap-1">
-                  <Clock className="h-3.5 w-3.5" /> {job.type}
+              <div className="flex flex-col gap-y-2 text-[11px] sm:text-xs font-bold uppercase tracking-wider">
+                <span className="flex items-center gap-2 text-blue-600 dark:text-blue-400">
+                  <Clock className="h-4 w-4" /> {job.type}
                 </span>
-                <span className="flex items-center gap-1">
-                  <GraduationCap className="h-3.5 w-3.5" /> {job.experience}
+                <span className="flex items-center gap-2 text-emerald-600 dark:text-emerald-400">
+                  <GraduationCap className="h-4 w-4" /> {job.qualification}
+                </span>
+                <span className="flex items-center gap-2 text-amber-600 dark:text-amber-400">
+                  <Briefcase className="h-4 w-4" /> {job.experience}
                 </span>
               </div>
-              <p className="text-xs sm:text-sm text-slate-500 dark:text-slate-450 leading-relaxed font-medium">
+              <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed font-medium pt-2 border-t border-slate-100 dark:border-slate-800">
                 {job.desc}
               </p>
             </div>
@@ -145,9 +187,10 @@ export default function CareersPage() {
                     onChange={(e) => setFormData({ ...formData, position: e.target.value })}
                     className="w-full h-11 px-3.5 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 text-sm focus:ring-1 focus:ring-amber-500 outline-none"
                   >
-                    <option value="associate_ca">Chartered Accountant (Associate)</option>
-                    <option value="article_assistant">Article Assistant (ICAI)</option>
-                    <option value="gst_executive">GST Operations Executive</option>
+                    <option value="mgr_tax_audit">Manager Taxation and Audit</option>
+                    <option value="mgr_compliance">Manager Compliance</option>
+                    <option value="asst_mgr_tax">Asst Manager Taxation</option>
+                    <option value="asst_mgr_compliance">Asst Manager Compliance</option>
                   </select>
                 </div>
                 <div>
@@ -159,10 +202,13 @@ export default function CareersPage() {
                     onChange={(e) => setFormData({ ...formData, qualification: e.target.value })}
                     className="w-full h-11 px-3.5 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 text-sm focus:ring-1 focus:ring-amber-500 outline-none"
                   >
-                    <option value="ca_final">CA Completed</option>
-                    <option value="ipcc_both">IPCC Both Groups Cleared</option>
-                    <option value="ipcc_single">IPCC Single Group Cleared</option>
-                    <option value="mba_finance">MBA (Finance) / M.Com</option>
+                    <option value="ca">Chartered Accountant (CA)</option>
+                    <option value="cs">Company Secretary (CS)</option>
+                    <option value="ca_inter">CA Inter (Semi-Qualified)</option>
+                    <option value="cs_inter">CS Inter</option>
+                    <option value="llb">LLB</option>
+                    <option value="mcom">M.Com</option>
+                    <option value="bcom">B.Com</option>
                   </select>
                 </div>
               </div>

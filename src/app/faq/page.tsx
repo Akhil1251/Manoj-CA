@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import React, { useState } from "react";
 import { Search, ChevronDown, ChevronUp, HelpCircle } from "lucide-react";
@@ -7,7 +7,6 @@ import { motion, AnimatePresence } from "framer-motion";
 interface FAQItem {
   question: string;
   answer: string;
-  category: "tax" | "gst" | "corp";
 }
 
 export default function FAQPage() {
@@ -16,29 +15,56 @@ export default function FAQPage() {
 
   const faqs: FAQItem[] = [
     {
-      category: "tax",
-      question: "What is the basic difference between the Old and New Income Tax Regimes?",
-      answer: "The Old Regime allows you to claim multiple deductions under Section 80C (PPF, LIC, etc.), Section 80D (health insurance), and Section 24 (home loan interest), but has higher tax rates. The New Regime offers lower tax slabs but eliminates almost all deductions. Our Tools page includes a calculator to simulate which scheme is best for you."
+      question: "What is ConsultAvenuee?",
+      answer: "ConsultAvenuee is a professional advisory and compliance firm providing services in business registration, taxation, regulatory compliance, housing society management, NRI services, and senior citizen advisory."
     },
     {
-      category: "gst",
-      question: "What is GSTR-2B reconciliation and why is it important?",
-      answer: "GSTR-2B is an auto-drafted, static input tax credit (ITC) statement generated for every registered taxpayer. Monthly reconciliation ensures that the ITC you claim in your GSTR-3B matches the sales invoices actually uploaded by your vendors. Mismatches can lead to legal notices and fines."
+      question: "Who can benefit from ConsultAvenuee's services?",
+      answer: "Our services are designed for startups, businesses, MSMEs, cooperative housing societies, NRIs, senior citizens, NGOs, trusts, and individual taxpayers."
     },
     {
-      category: "corp",
-      question: "What are the requirements for setting up a Private Limited Company?",
-      answer: "You need at least 2 directors (one must be an Indian resident), a registered office address in India, and basic identity/address proofs. There is no minimum capital requirement to incorporate a company under current MCA laws."
+      question: "What business registration services do you provide?",
+      answer: "We assist with Private Limited Company Registration, LLP Registration, Partnership Firm Registration, Trust Registration, Startup Registration, MSME Registration, and other statutory registrations."
     },
     {
-      category: "tax",
-      question: "Are NRI property sales subject to TDS, and how can it be reduced?",
-      answer: "Yes, property sales by NRIs are subject to a mandatory 20% TDS on the gross sales value under Section 195. However, the NRI can apply to the Income Tax department for a 'Certificate for Lower/Nil Deductions' (Form 13) to calculate TDS only on the actual capital gains rather than the total price."
+      question: "Do you provide GST and Income Tax services?",
+      answer: "Yes. We offer GST registration, GST return filing, income tax return filing, tax audits, tax planning, TDS compliance, and tax advisory services."
     },
     {
-      category: "gst",
-      question: "What is the threshold limit for mandatory GST registration?",
-      answer: "For service providers, GST registration is mandatory if annual turnover crosses ₹20 Lakhs (₹10 Lakhs for special hill states). For goods suppliers, the threshold limit is ₹40 Lakhs."
+      question: "Can you help with regulatory registrations and licenses?",
+      answer: "Yes. We assist with MSME/Udyam Registration, Professional Tax Registration, Shop & Establishment Registration, FSSAI Registration, IEC Registration, Trademark Registration, PF, ESIC, and other regulatory approvals."
+    },
+    {
+      question: "What housing society services do you offer?",
+      answer: "We provide housing society registration, builder handover support, elections, AGM compliance, statutory audits, taxation, documentation, governance, and redevelopment advisory services."
+    },
+    {
+      question: "Do you provide Virtual CFO (vCFO) services?",
+      answer: "Yes. Our Virtual CFO services help businesses with financial planning, budgeting, cash flow management, MIS reporting, profitability analysis, fundraising support, and strategic financial decision-making."
+    },
+    {
+      question: "How do your NRI services help clients living abroad?",
+      answer: "We assist NRIs with taxation, property management, legal documentation, Power of Attorney, compliance matters, property transactions, and investment-related advisory services in India."
+    },
+    {
+      question: "What services do you provide for senior citizens?",
+      answer: "Our senior citizen services include income tax planning, pension and gratuity assistance, property sale and transfer support, legal documentation, estate planning, and health insurance claim assistance."
+    },
+    {
+      question: "Can services be provided remotely?",
+      answer: "Yes. Most of our services can be delivered remotely through secure digital communication, online consultations, and electronic document management."
+    },
+    {
+      question: "Do you assist with tax notices and litigation matters?",
+      answer: "Yes. We provide support for tax notices, assessments, appeals, litigation documentation, paper book preparation, and coordination with senior tax counsels."
+    },
+    {
+      question: "Why choose ConsultAvenuee?",
+      answer: "We offer comprehensive advisory, compliance, taxation, governance, and documentation services under one roof, providing clients with professional expertise, personalized attention, and reliable support."
+    },
+    {
+      question: "How can I get started?",
+      answer: "Simply contact our team through our website, phone, or email. We will understand your requirements and guide you through the appropriate solution."
     }
   ];
 
@@ -55,13 +81,13 @@ export default function FAQPage() {
       {/* Title */}
       <div className="text-center mb-12">
         <span className="text-xs font-bold bg-amber-500/10 text-amber-600 dark:text-amber-400 px-3.5 py-1.5 rounded-full border border-amber-500/20 uppercase tracking-widest">
-          â“ FAQ Center
+          ❓ FAQ Center
         </span>
         <h1 className="text-3xl sm:text-5xl font-extrabold text-slate-900 dark:text-white mt-4 mb-4">
-          Frequently Answered Queries
+          Frequently Asked Questions
         </h1>
         <p className="text-slate-500 dark:text-slate-400 text-sm sm:text-base leading-relaxed">
-          Quickly search common questions regarding Indian taxation, GST registrations, and corporate setup rules.
+          Quickly search common questions regarding ConsultAvenuee's comprehensive advisory, compliance, and taxation services.
         </p>
       </div>
 

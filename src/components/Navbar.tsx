@@ -8,6 +8,7 @@ import { Language } from "@/context/translations";
 import { Menu, X, Globe, Sun, Moon, MapPin, Clock, Phone, Calculator, Mail } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { servicesData } from "@/data/servicesData";
+import BookConsultationModal from "@/components/BookConsultationModal";
 
 const dropdownConfigs: Record<
   string,
@@ -253,65 +254,7 @@ const dropdownConfigs: Record<
   },
 };
 
-const SubServiceAccordion = ({ sub, setActiveDropdown }: { sub: any; setActiveDropdown: any }) => {
-  const [isOpen, setIsOpen] = useState(false);
-  const hasSubSubs = sub.subSubServices && sub.subSubServices.length > 1;
 
-  if (!hasSubSubs) {
-    return (
-      <div className="group/sub relative text-left">
-        <Link
-          href={`/services/${sub.id}`}
-          onClick={() => setActiveDropdown(null)}
-          className="text-[11px] font-extrabold tracking-wide text-slate-800 dark:text-white/90 block leading-snug cursor-pointer hover:text-[#c79d62] transition-colors capitalize flex items-center justify-between py-1"
-        >
-          {sub.title}
-        </Link>
-      </div>
-    );
-  }
-
-  return (
-    <div
-      className="group/sub relative text-left flex flex-col"
-      onMouseEnter={() => setIsOpen(true)}
-      onMouseLeave={() => setIsOpen(false)}
-    >
-      <Link
-        href={`/services/${sub.id}`}
-        onClick={() => setActiveDropdown(null)}
-        className="text-[11px] font-extrabold tracking-wide text-slate-800 dark:text-white/90 leading-snug cursor-pointer hover:text-[#c79d62] transition-colors capitalize flex items-center justify-between py-1 w-full text-left"
-      >
-        <span>{sub.title}</span>
-        <span className={`transform transition-transform opacity-50 text-[9px] ${isOpen ? "rotate-180" : ""}`}>▼</span>
-      </Link>
-      <AnimatePresence>
-        {isOpen && (
-          <motion.div
-            initial={{ height: 0, opacity: 0 }}
-            animate={{ height: "auto", opacity: 1 }}
-            exit={{ height: 0, opacity: 0 }}
-            className="overflow-hidden pl-3 flex flex-col space-y-2 mt-2 border-l border-[#c79d62]/30 dark:border-slate-800"
-          >
-            {sub.subSubServices.map((subSub: any, idx: number) => {
-              const isCombined = ['company-formation', 'registrations', 'corporate-compliance', 'income-tax', 'litigation-support'].includes(sub.id);
-              return (
-                <Link
-                  key={idx}
-                  href={isCombined ? `/services/${sub.id}#${subSub.slug}` : `/services/${subSub.slug}`}
-                  onClick={() => setActiveDropdown(null)}
-                  className="text-[10px] font-bold text-slate-500 dark:text-slate-400 hover:text-[#c79d62] transition-colors leading-snug block py-0.5"
-                >
-                  {subSub.title}
-                </Link>
-              );
-            })}
-          </motion.div>
-        )}
-      </AnimatePresence>
-    </div>
-  );
-};
 
 export const Navbar: React.FC = () => {
   const { language, theme, setLanguage, toggleTheme, t } = useApp();
@@ -322,6 +265,7 @@ export const Navbar: React.FC = () => {
   const [scrolled, setScrolled] = useState(false);
   const [isHidden, setIsHidden] = useState(false);
   const [lastScrollY, setLastScrollY] = useState(0);
+  const [isConsultationOpen, setIsConsultationOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -351,8 +295,6 @@ export const Navbar: React.FC = () => {
     { href: "/careers", label: "Careers" },
     { href: "/faq", label: "FAQ Centre" },
     { href: "/contact", label: "Contact Us" },
-    { href: "/knowledge", label: "Resources", key: "knowledge" },
-    { href: "/tools", label: "Financial Tools", key: "tools" },
   ];
 
   const languagesList: { code: Language; name: string }[] = [
@@ -374,6 +316,7 @@ export const Navbar: React.FC = () => {
   };
 
   return (
+    <>
     <header className={`${isHome ? "fixed" : "sticky"} z-[999] w-full transition-all duration-300 ${isHidden ? "-top-48" : "top-0"}`}>
       <div className={`transition-all duration-300 ${isTransparent ? "bg-transparent text-white pt-3 lg:pt-4" : "border-b border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-950 text-slate-800 dark:text-white shadow-sm"}`}>
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -460,19 +403,19 @@ export const Navbar: React.FC = () => {
             {/* Social Icons & Actions */}
             <div className="flex items-center gap-4 text-white">
               <div className="flex items-center gap-5 border-r border-amber-500/30 pr-5">
-                <a href="https://instagram.com" target="_blank" rel="noreferrer" aria-label="Instagram">
+                <a href="https://www.instagram.com/consult_avenuee?igsh=MW1mN3pzdXlld251bw==" target="_blank" rel="noreferrer" aria-label="Instagram">
                   <svg className="w-4 h-4 hover:text-white/70 cursor-pointer transition-colors" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z" /></svg>
                 </a>
-                <a href="https://facebook.com" target="_blank" rel="noreferrer" aria-label="Facebook">
+                <a href="https://www.facebook.com/prime.consultancy.75#" target="_blank" rel="noreferrer" aria-label="Facebook">
                   <svg className="w-4 h-4 hover:text-white/70 cursor-pointer transition-colors" fill="currentColor" viewBox="0 0 24 24"><path d="M9.198 21.5h4v-8.01h3.604l.396-3.98h-4V7.5a1 1 0 011-1h3v-4h-3a5 5 0 00-5 5v2.01h-2l-.396 3.98h2.396v8.01z" /></svg>
                 </a>
-                <a href="https://linkedin.com" target="_blank" rel="noreferrer" aria-label="LinkedIn">
+                <a href="https://www.linkedin.com/in/consult-avenuee-a07536179/" target="_blank" rel="noreferrer" aria-label="LinkedIn">
                   <svg className="w-4 h-4 hover:text-white/70 cursor-pointer transition-colors" fill="currentColor" viewBox="0 0 24 24"><path d="M4.98 3.5c0 1.381-1.11 2.5-2.48 2.5s-2.48-1.119-2.48-2.5c0-1.38 1.11-2.5 2.48-2.5s2.48 1.12 2.48 2.5zm.02 4.5h-5v16h5v-16zm7.982 0h-4.968v16h4.969v-8.399c0-4.67 6.029-5.052 6.029 0v8.399h4.988v-10.131c0-7.88-8.922-7.593-11.018-3.714v-2.155z" /></svg>
                 </a>
-                <a href="https://twitter.com" target="_blank" rel="noreferrer" aria-label="Twitter">
+                <a href="https://x.com/consultavenuee" target="_blank" rel="noreferrer" aria-label="Twitter">
                   <svg className="w-4 h-4 hover:text-white/70 cursor-pointer transition-colors" fill="currentColor" viewBox="0 0 24 24"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z" /></svg>
                 </a>
-                <a href="https://youtube.com" target="_blank" rel="noreferrer" aria-label="YouTube">
+                <a href="https://www.youtube.com/channel/UCsGMvEo1L56O7zUm3Lp7c6w" target="_blank" rel="noreferrer" aria-label="YouTube">
                   <svg className="w-4 h-4 hover:text-white/70 cursor-pointer transition-colors" fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.5 12 3.5 12 3.5s-7.505 0-9.377.55a3.016 3.016 0 0 0-2.122 2.136C0 8.082 0 12 0 12s0 3.918.501 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.55 9.377.55 9.377.55s7.505 0 9.377-.55a3.016 3.016 0 0 0 2.122-2.136C24 15.918 24 12 24 12s0-3.918-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
                 </a>
               </div>
@@ -517,9 +460,9 @@ export const Navbar: React.FC = () => {
               </button>
 
               {/* CTA Button */}
-              <a href="https://wa.me/919076111021" target="_blank" rel="noreferrer" className="ml-4 px-4 py-2 bg-amber-600 hover:bg-amber-700 text-white text-xs font-bold rounded shadow transition-colors whitespace-nowrap">
+              <button onClick={() => setIsConsultationOpen(true)} className="ml-4 px-4 py-2 bg-amber-600 hover:bg-amber-700 text-white text-xs font-bold rounded shadow transition-colors whitespace-nowrap cursor-pointer">
                 Book Free Consultation
-              </a>
+              </button>
             </div>
           </div>
         </div>
@@ -578,9 +521,6 @@ export const Navbar: React.FC = () => {
                             </a>
                             <div className="max-h-[320px] overflow-y-auto pr-1 space-y-3 scrollbar-thin scrollbar-thumb-amber-500 scrollbar-track-transparent">
                               {col.subServices.map((sub, sIdx) => (
-                                (sub.subSubServices && sub.subSubServices.length > 0) ? (
-                                  <SubServiceAccordion key={sIdx} sub={sub} setActiveDropdown={setActiveDropdown} />
-                                ) : (
                                   <div key={sIdx} className="group/sub relative text-left">
                                     <Link
                                       href={`/services/${sub.id}`}
@@ -590,7 +530,6 @@ export const Navbar: React.FC = () => {
                                       {sub.title}
                                     </Link>
                                   </div>
-                                )
                               ))}
                             </div>
                           </div>
@@ -741,17 +680,20 @@ export const Navbar: React.FC = () => {
 
               <div>
                 <div className="flex items-center justify-center gap-6 mb-8 text-slate-400 dark:text-slate-500">
-                  <a href="https://instagram.com" target="_blank" rel="noreferrer" aria-label="Instagram">
-                    <svg className="w-5 h-5 hover:text-amber-600 cursor-pointer transition-colors" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z" /></svg>
+                  <a href="https://www.instagram.com/consult_avenuee?igsh=MW1mN3pzdXlld251bw==" target="_blank" rel="noreferrer" aria-label="Instagram">
+                    <svg className="w-4 h-4 hover:text-amber-500 cursor-pointer transition-colors" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z" /></svg>
                   </a>
-                  <a href="https://facebook.com" target="_blank" rel="noreferrer" aria-label="Facebook">
-                    <svg className="w-5 h-5 hover:text-amber-600 cursor-pointer transition-colors" fill="currentColor" viewBox="0 0 24 24"><path d="M9.198 21.5h4v-8.01h3.604l.396-3.98h-4V7.5a1 1 0 011-1h3v-4h-3a5 5 0 00-5 5v2.01h-2l-.396 3.98h2.396v8.01z" /></svg>
+                  <a href="https://www.facebook.com/prime.consultancy.75#" target="_blank" rel="noreferrer" aria-label="Facebook">
+                    <svg className="w-4 h-4 hover:text-amber-500 cursor-pointer transition-colors" fill="currentColor" viewBox="0 0 24 24"><path d="M9.198 21.5h4v-8.01h3.604l.396-3.98h-4V7.5a1 1 0 011-1h3v-4h-3a5 5 0 00-5 5v2.01h-2l-.396 3.98h2.396v8.01z" /></svg>
                   </a>
-                  <a href="https://linkedin.com" target="_blank" rel="noreferrer" aria-label="LinkedIn">
-                    <svg className="w-5 h-5 hover:text-amber-600 cursor-pointer transition-colors" fill="currentColor" viewBox="0 0 24 24"><path d="M4.98 3.5c0 1.381-1.11 2.5-2.48 2.5s-2.48-1.119-2.48-2.5c0-1.38 1.11-2.5 2.48-2.5s2.48 1.12 2.48 2.5zm.02 4.5h-5v16h5v-16zm7.982 0h-4.968v16h4.969v-8.399c0-4.67 6.029-5.052 6.029 0v8.399h4.988v-10.131c0-7.88-8.922-7.593-11.018-3.714v-2.155z" /></svg>
+                  <a href="https://www.linkedin.com/in/consult-avenuee-a07536179/" target="_blank" rel="noreferrer" aria-label="LinkedIn">
+                    <svg className="w-4 h-4 hover:text-amber-500 cursor-pointer transition-colors" fill="currentColor" viewBox="0 0 24 24"><path d="M4.98 3.5c0 1.381-1.11 2.5-2.48 2.5s-2.48-1.119-2.48-2.5c0-1.38 1.11-2.5 2.48-2.5s2.48 1.12 2.48 2.5zm.02 4.5h-5v16h5v-16zm7.982 0h-4.968v16h4.969v-8.399c0-4.67 6.029-5.052 6.029 0v8.399h4.988v-10.131c0-7.88-8.922-7.593-11.018-3.714v-2.155z" /></svg>
                   </a>
-                  <a href="https://twitter.com" target="_blank" rel="noreferrer" aria-label="Twitter">
-                    <svg className="w-5 h-5 hover:text-amber-600 cursor-pointer transition-colors" fill="currentColor" viewBox="0 0 24 24"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z" /></svg>
+                  <a href="https://x.com/consultavenuee" target="_blank" rel="noreferrer" aria-label="Twitter">
+                    <svg className="w-4 h-4 hover:text-amber-500 cursor-pointer transition-colors" fill="currentColor" viewBox="0 0 24 24"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z" /></svg>
+                  </a>
+                  <a href="https://www.youtube.com/channel/UCsGMvEo1L56O7zUm3Lp7c6w" target="_blank" rel="noreferrer" aria-label="YouTube">
+                    <svg className="w-4 h-4 hover:text-amber-500 cursor-pointer transition-colors" fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.5 12 3.5 12 3.5s-7.505 0-9.377.55a3.016 3.016 0 0 0-2.122 2.136C0 8.082 0 12 0 12s0 3.918.501 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.55 9.377.55 9.377.55s7.505 0 9.377-.55a3.016 3.016 0 0 0 2.122-2.136C24 15.918 24 12 24 12s0-3.918-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
                   </a>
                 </div>
               </div>
@@ -791,5 +733,7 @@ export const Navbar: React.FC = () => {
         )}
       </AnimatePresence>
     </header>
+      <BookConsultationModal isOpen={isConsultationOpen} onClose={() => setIsConsultationOpen(false)} />
+    </>
   );
 };
