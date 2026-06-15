@@ -62,7 +62,7 @@ const dropdownConfigs: Record<
         ],
       },
       {
-        title: "NRI & Senior Citizen",
+        title: "NRI Services",
         links: [
           { label: "NRI Taxation", href: "/services/nri-taxation-services" },
           { label: "NRI Property Management", href: "/services/nri-property-management-services" },
@@ -272,7 +272,7 @@ const SubServiceAccordion = ({ sub, setActiveDropdown }: { sub: any; setActiveDr
   }
 
   return (
-    <div 
+    <div
       className="group/sub relative text-left flex flex-col"
       onMouseEnter={() => setIsOpen(true)}
       onMouseLeave={() => setIsOpen(false)}
@@ -294,7 +294,7 @@ const SubServiceAccordion = ({ sub, setActiveDropdown }: { sub: any; setActiveDr
             className="overflow-hidden pl-3 flex flex-col space-y-2 mt-2 border-l border-[#c79d62]/30 dark:border-slate-800"
           >
             {sub.subSubServices.map((subSub: any, idx: number) => {
-              const isCombined = sub.id === 'company-formation' || sub.id === 'registrations' || sub.id === 'corporate-compliance' || sub.id === 'income-tax' || sub.id === 'litigation-support';
+              const isCombined = ['company-formation', 'registrations', 'corporate-compliance', 'income-tax', 'litigation-support'].includes(sub.id);
               return (
                 <Link
                   key={idx}
@@ -421,7 +421,7 @@ export const Navbar: React.FC = () => {
         </div>
       </div>
 
-      <div 
+      <div
         className={`hidden lg:block mx-auto max-w-7xl relative z-10 ${isTransparent ? "mt-4 lg:mt-5" : ""}`}
         onMouseLeave={() => setActiveDropdown(null)}
       >
@@ -444,9 +444,8 @@ export const Navbar: React.FC = () => {
                     <Link
                       href={link.href}
                       onClick={() => setActiveDropdown(null)}
-                      className={`flex items-center gap-1 text-sm leading-tight font-bold transition-colors hover:text-white h-full ${
-                        isActive ? "text-white/60" : "text-white"
-                      }`}
+                      className={`flex items-center gap-1 text-sm leading-tight font-bold transition-colors hover:text-white h-full ${isActive ? "text-white/60" : "text-white"
+                        }`}
                     >
                       <span className="text-center">{link.label}</span>
                       {hasDropdown && <span className="text-[7px] opacity-60 mt-0.5 shrink-0">▼</span>}
@@ -460,16 +459,16 @@ export const Navbar: React.FC = () => {
             <div className="flex items-center gap-4 text-white">
               <div className="flex items-center gap-5 border-r border-amber-500/30 pr-5">
                 <a href="https://instagram.com" target="_blank" rel="noreferrer" aria-label="Instagram">
-                  <svg className="w-4 h-4 hover:text-white/70 cursor-pointer transition-colors" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+                  <svg className="w-4 h-4 hover:text-white/70 cursor-pointer transition-colors" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z" /></svg>
                 </a>
                 <a href="https://facebook.com" target="_blank" rel="noreferrer" aria-label="Facebook">
                   <svg className="w-4 h-4 hover:text-white/70 cursor-pointer transition-colors" fill="currentColor" viewBox="0 0 24 24"><path d="M9.198 21.5h4v-8.01h3.604l.396-3.98h-4V7.5a1 1 0 011-1h3v-4h-3a5 5 0 00-5 5v2.01h-2l-.396 3.98h2.396v8.01z" /></svg>
                 </a>
                 <a href="https://linkedin.com" target="_blank" rel="noreferrer" aria-label="LinkedIn">
-                  <svg className="w-4 h-4 hover:text-white/70 cursor-pointer transition-colors" fill="currentColor" viewBox="0 0 24 24"><path d="M4.98 3.5c0 1.381-1.11 2.5-2.48 2.5s-2.48-1.119-2.48-2.5c0-1.38 1.11-2.5 2.48-2.5s2.48 1.12 2.48 2.5zm.02 4.5h-5v16h5v-16zm7.982 0h-4.968v16h4.969v-8.399c0-4.67 6.029-5.052 6.029 0v8.399h4.988v-10.131c0-7.88-8.922-7.593-11.018-3.714v-2.155z"/></svg>
+                  <svg className="w-4 h-4 hover:text-white/70 cursor-pointer transition-colors" fill="currentColor" viewBox="0 0 24 24"><path d="M4.98 3.5c0 1.381-1.11 2.5-2.48 2.5s-2.48-1.119-2.48-2.5c0-1.38 1.11-2.5 2.48-2.5s2.48 1.12 2.48 2.5zm.02 4.5h-5v16h5v-16zm7.982 0h-4.968v16h4.969v-8.399c0-4.67 6.029-5.052 6.029 0v8.399h4.988v-10.131c0-7.88-8.922-7.593-11.018-3.714v-2.155z" /></svg>
                 </a>
                 <a href="https://twitter.com" target="_blank" rel="noreferrer" aria-label="Twitter">
-                  <svg className="w-4 h-4 hover:text-white/70 cursor-pointer transition-colors" fill="currentColor" viewBox="0 0 24 24"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/></svg>
+                  <svg className="w-4 h-4 hover:text-white/70 cursor-pointer transition-colors" fill="currentColor" viewBox="0 0 24 24"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z" /></svg>
                 </a>
               </div>
 
@@ -494,11 +493,10 @@ export const Navbar: React.FC = () => {
                         <button
                           key={lang.code}
                           onClick={() => handleLanguageChange(lang.code)}
-                          className={`w-full text-left px-4 py-2 text-xs font-bold hover:bg-amber-50 dark:hover:bg-amber-950 hover:text-amber-600 transition-colors ${
-                            language === lang.code
+                          className={`w-full text-left px-4 py-2 text-xs font-bold hover:bg-amber-50 dark:hover:bg-amber-950 hover:text-amber-600 transition-colors ${language === lang.code
                               ? "bg-amber-50/50 dark:bg-amber-950/50 text-amber-600"
                               : "text-slate-700 dark:text-slate-300"
-                          }`}
+                            }`}
                         >
                           {lang.name}
                         </button>
@@ -549,16 +547,18 @@ export const Navbar: React.FC = () => {
                       },
                       {
                         id: "nri-services",
-                        title: "NRI & Senior Citizen",
-                        subServices: [
-                          ...(servicesData.find(t => t.id === "nri-services")?.subServices || []),
-                          ...(servicesData.find(t => t.id === "senior-citizen-advisory")?.subServices || [])
-                        ]
+                        title: "NRI Services",
+                        subServices: servicesData.find(t => t.id === "nri-services")?.subServices || []
+                      },
+                      {
+                        id: "senior-citizen-advisory",
+                        title: "Senior Citizen Advisory",
+                        subServices: servicesData.find(t => t.id === "senior-citizen-advisory")?.subServices || []
                       }
                     ];
-                    
+
                     return (
-                      <div className="p-8 grid grid-cols-5 gap-8">
+                      <div className="p-8 grid grid-cols-6 gap-8">
                         {columns.map((col, idx) => (
                           <div key={idx} className="space-y-5">
                             <a href={`/services#${col.id}`} onClick={() => setActiveDropdown(null)}>
@@ -568,7 +568,7 @@ export const Navbar: React.FC = () => {
                             </a>
                             <div className="max-h-[320px] overflow-y-auto pr-1 space-y-3 scrollbar-thin scrollbar-thumb-amber-500 scrollbar-track-transparent">
                               {col.subServices.map((sub, sIdx) => (
-                                (col.id === "compliance-business-advisory" || col.id === "taxation-regulatory-litigation") ? (
+                                (sub.subSubServices && sub.subSubServices.length > 0) ? (
                                   <SubServiceAccordion key={sIdx} sub={sub} setActiveDropdown={setActiveDropdown} />
                                 ) : (
                                   <div key={sIdx} className="group/sub relative text-left">
@@ -585,7 +585,7 @@ export const Navbar: React.FC = () => {
                             </div>
                           </div>
                         ))}
-                        
+
                         {/* Spotlight column */}
                         <div className="space-y-5">
                           <h4 className="text-sm font-black uppercase tracking-widest text-[#210821] dark:text-[#c79d62] border-b-2 border-[#c79d62]/30 dark:border-slate-800/50 pb-2.5">
@@ -632,7 +632,7 @@ export const Navbar: React.FC = () => {
                         </ul>
                       </div>
                     ))}
-                    
+
                     <div className="space-y-4">
                       <h4 className="text-xs font-black uppercase tracking-widest text-[#210821] dark:text-[#c79d62] border-b border-slate-100 dark:border-slate-800/50 pb-2">
                         Spotlight
@@ -719,9 +719,8 @@ export const Navbar: React.FC = () => {
                         key={link.href}
                         href={link.href}
                         onClick={() => setIsMobileMenuOpen(false)}
-                        className={`text-base font-semibold transition-colors py-2 border-b border-slate-100 dark:border-slate-900 ${
-                          isActive ? "text-amber-600" : "text-slate-700 dark:text-slate-300"
-                        }`}
+                        className={`text-base font-semibold transition-colors py-2 border-b border-slate-100 dark:border-slate-900 ${isActive ? "text-amber-600" : "text-slate-700 dark:text-slate-300"
+                          }`}
                       >
                         {link.label}
                       </Link>
@@ -733,16 +732,16 @@ export const Navbar: React.FC = () => {
               <div>
                 <div className="flex items-center justify-center gap-6 mb-8 text-slate-400 dark:text-slate-500">
                   <a href="https://instagram.com" target="_blank" rel="noreferrer" aria-label="Instagram">
-                    <svg className="w-5 h-5 hover:text-amber-600 cursor-pointer transition-colors" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+                    <svg className="w-5 h-5 hover:text-amber-600 cursor-pointer transition-colors" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z" /></svg>
                   </a>
                   <a href="https://facebook.com" target="_blank" rel="noreferrer" aria-label="Facebook">
                     <svg className="w-5 h-5 hover:text-amber-600 cursor-pointer transition-colors" fill="currentColor" viewBox="0 0 24 24"><path d="M9.198 21.5h4v-8.01h3.604l.396-3.98h-4V7.5a1 1 0 011-1h3v-4h-3a5 5 0 00-5 5v2.01h-2l-.396 3.98h2.396v8.01z" /></svg>
                   </a>
                   <a href="https://linkedin.com" target="_blank" rel="noreferrer" aria-label="LinkedIn">
-                    <svg className="w-5 h-5 hover:text-amber-600 cursor-pointer transition-colors" fill="currentColor" viewBox="0 0 24 24"><path d="M4.98 3.5c0 1.381-1.11 2.5-2.48 2.5s-2.48-1.119-2.48-2.5c0-1.38 1.11-2.5 2.48-2.5s2.48 1.12 2.48 2.5zm.02 4.5h-5v16h5v-16zm7.982 0h-4.968v16h4.969v-8.399c0-4.67 6.029-5.052 6.029 0v8.399h4.988v-10.131c0-7.88-8.922-7.593-11.018-3.714v-2.155z"/></svg>
+                    <svg className="w-5 h-5 hover:text-amber-600 cursor-pointer transition-colors" fill="currentColor" viewBox="0 0 24 24"><path d="M4.98 3.5c0 1.381-1.11 2.5-2.48 2.5s-2.48-1.119-2.48-2.5c0-1.38 1.11-2.5 2.48-2.5s2.48 1.12 2.48 2.5zm.02 4.5h-5v16h5v-16zm7.982 0h-4.968v16h4.969v-8.399c0-4.67 6.029-5.052 6.029 0v8.399h4.988v-10.131c0-7.88-8.922-7.593-11.018-3.714v-2.155z" /></svg>
                   </a>
                   <a href="https://twitter.com" target="_blank" rel="noreferrer" aria-label="Twitter">
-                    <svg className="w-5 h-5 hover:text-amber-600 cursor-pointer transition-colors" fill="currentColor" viewBox="0 0 24 24"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/></svg>
+                    <svg className="w-5 h-5 hover:text-amber-600 cursor-pointer transition-colors" fill="currentColor" viewBox="0 0 24 24"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z" /></svg>
                   </a>
                 </div>
               </div>
@@ -759,11 +758,10 @@ export const Navbar: React.FC = () => {
                         handleLanguageChange(lang.code);
                         setIsMobileMenuOpen(false);
                       }}
-                      className={`text-left px-3 py-2 text-[11px] font-bold rounded-lg border transition-colors ${
-                        language === lang.code
+                      className={`text-left px-3 py-2 text-[11px] font-bold rounded-lg border transition-colors ${language === lang.code
                           ? "bg-amber-600 border-amber-600 text-white"
                           : "border-slate-200 dark:border-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-900"
-                      }`}
+                        }`}
                     >
                       {lang.name}
                     </button>

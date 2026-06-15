@@ -15,6 +15,7 @@ export interface SectionDetail {
   title: string;
   content: string;
   image?: string;
+  _parentSlug?: string;
 }
 
 export interface ChartDataPoint {
@@ -59,6 +60,9 @@ export interface SubService {
   checklist?: string[];
   features?: string[];
   chartData?: ChartDataPoint[];
+  image?: string;
+  timelineSteps?: TimelineStep[];
+  comparison?: ComparisonPoint[];
 }
 
 export interface ServiceTab {
@@ -99,6 +103,9 @@ interface RawSub {
   checklist?: string[];
   features?: string[];
   chartData?: ChartDataPoint[];
+  image?: string;
+  timelineSteps?: TimelineStep[];
+  comparison?: ComparisonPoint[];
 }
 
 interface RawTab {
@@ -648,18 +655,310 @@ const rawServicesData: RawTab[] = [
   {
     id: "nri-services",
     title: "NRI Services",
-    description: "Trusted NRI solutions for tax, property, and legal matters in India. Expert support. Complete peace of mind.",
+    description: "End-to-end NRI services covering tax compliance, property management, and legal assistance to help NRIs manage their investments, assets, and obligations in India with confidence.",
     subServices: [
       {
-        id: "nri-advisory",
-        title: "NRI Services",
-        price: "₹14,999",
+        id: "nri-taxation-services",
+        title: "Taxation Services",
+        description: "Simplify your Indian tax compliance with our comprehensive NRI taxation services covering income tax returns, property taxation, capital gains, DTAA benefits, TDS compliance, and tax planning.",
         badge: "HOT",
-        description: "Trusted NRI solutions for tax, property, and legal matters in India. Expert support. Complete peace of mind.",
-        subSubServices: [
-          { slug: "nri-taxation-services", title: "Taxation Services" },
-          { slug: "nri-property-management-services", title: "Property Management Services" },
-          { slug: "nri-legal-services", title: "Legal Services" }
+        longDesc: `Simplifying Indian Tax Compliance for Non-Resident Indians Worldwide
+Managing tax obligations across multiple jurisdictions can be complex and challenging. Whether you earn income in India, own property, invest in Indian assets, or require assistance with tax compliance and repatriation, expert guidance is essential to ensure compliance while optimizing your tax position.
+At ConsultAvenuee, we provide comprehensive NRI Taxation Services to Non-Resident Indians (NRIs), Overseas Citizens of India (OCIs), and Persons of Indian Origin (PIOs).`,
+        sections: [
+          {
+            title: "NRI Income Tax Return Filing",
+            content: "• Income Tax Return Filing for NRIs
+• Revised and Updated Return Filing
+• Tax Refund Processing
+• Income Tax Compliance Review
+• Tax Record Management",
+            image: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=600&q=80"
+          },
+          {
+            title: "Property Taxation Services",
+            content: "• Tax Advisory on Property Purchase and Sale
+• Capital Gains Computation
+• TDS Compliance on Property Transactions
+• Reinvestment and Exemption Planning
+• Rental Income Tax Compliance
+• Repatriation Documentation Support",
+            image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=600&q=80"
+          },
+          {
+            title: "Capital Gains & Investment Tax Advisory",
+            content: "• Capital Gains Tax Planning
+• Property, Shares and Mutual Fund Taxation
+• Investment Tax Advisory
+• Exemption and Relief Planning",
+            image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=600&q=80"
+          },
+          {
+            title: "TDS & Compliance Services",
+            content: "• Property Sale TDS Advisory
+• Rental Income TDS Compliance
+• Investment Income TDS Review
+• Lower or Nil TDS Certificate Assistance
+• TDS Refund Claims",
+            image: "https://images.unsplash.com/photo-1450133064473-71024230f91b?auto=format&fit=crop&w=600&q=80"
+          },
+          {
+            title: "Tax Notices & Representation",
+            content: "• Income Tax Notice Response Support
+• Assessment and Reassessment Assistance
+• Refund and Rectification Matters
+• Appeal Documentation Support
+• Representation Before Tax Authorities",
+            image: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=600&q=80"
+          },
+          {
+            title: "Our Commitment",
+            content: "We help NRIs manage their Indian tax obligations with confidence through proactive planning, accurate compliance, and practical advisory solutions. Our objective is to simplify complex tax matters, minimize tax exposure, ensure regulatory compliance, and protect your financial interests in India and abroad.",
+            image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=600&q=80"
+          }
+        ],
+                image: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=800&q=80",
+        timelineSteps: [
+          { num: "01", title: "CONSULTATION", detailTitle: "Initial Briefing & Check", desc: "We discuss details and review all checklists." },
+          { num: "02", title: "VERIFICATION", detailTitle: "Document Compilation", desc: "Our specialists check all details to ensure compliance and completeness." },
+          { num: "03", title: "SUBMISSION", detailTitle: "Filing and Liaisoning", desc: "We prepare the forms and submit the applications to the regulatory department." },
+          { num: "04", title: "COMPLETION", detailTitle: "Final Approval & Support", desc: "We deliver the certificates, resolve queries, and outline next-step requirements." }
+        ],
+        comparison: [
+          { aspect: "Operational Efficiency", manual: "Manual tracking takes weeks.", consultAvenuee: "Structured digital handling." },
+          { aspect: "Compliance Accuracy", manual: "High risk of statutory notices or fines.", consultAvenuee: "Zero-error draft verification." },
+          { aspect: "Government Liaisoning", manual: "Requires multiple physical visits.", consultAvenuee: "Complete departmental representation." }
+        ],
+        faqs: [
+          { question: "Who can avail NRI Taxation Services?", answer: "Our NRI Taxation Services are designed for Non-Resident Indians (NRIs), Overseas Citizens of India (OCIs), Persons of Indian Origin (PIOs), and individuals with tax obligations, investments, or income sources in India." },
+          { question: "Do NRIs need to file Income Tax Returns in India?", answer: "Yes. NRIs may be required to file an Income Tax Return (ITR) in India if their taxable income exceeds the prescribed threshold or if they wish to claim tax refunds, carry forward losses, or meet specific compliance requirements." },
+          { question: "How is NRI tax residency determined?", answer: "Tax residency is determined based on the individual's physical presence in India during the relevant financial year and preceding years, as per the provisions of the Income Tax Act." },
+          { question: "What types of income earned by NRIs are taxable in India?", answer: "Generally, income that accrues, arises, or is received in India may be taxable in India. This may include:\n• Rental Income\n• Capital Gains\n• Salary earned in India\n• Interest Income\n• Business Income\n• Investment Income" },
+          { question: "Can NRIs claim tax refunds in India?", answer: "Yes. If excess tax has been deducted or paid, NRIs may claim refunds by filing the appropriate Income Tax Return." },
+          { question: "Is rental income from property in India taxable for NRIs?", answer: "Yes. Rental income earned from property located in India is generally taxable in India and may be subject to TDS requirements." },
+          { question: "How is capital gains tax calculated on the sale of property by an NRI?", answer: "Capital gains tax depends on factors such as the holding period, purchase cost, sale consideration, indexed cost benefits (where applicable), and available exemptions under tax laws." },
+          { question: "Can NRIs claim exemptions on capital gains tax?", answer: "Yes. Subject to eligibility conditions, NRIs may be able to claim exemptions and reliefs through specified reinvestment options and tax planning strategies." },
+          { question: "What is TDS on property sale transactions involving NRIs?", answer: "Property purchases from NRIs may attract specific TDS obligations under Indian tax laws. We assist both buyers and sellers in understanding and complying with these requirements." },
+          { question: "Can you assist with lower or nil TDS certificate applications?", answer: "Yes. We assist eligible taxpayers in preparing and filing applications for lower or nil deduction certificates, subject to approval by the tax authorities." },
+          { question: "Can you assist with taxation of shares, mutual funds, and other investments?", answer: "Yes. We provide advisory and compliance support relating to taxation of shares, mutual funds, bonds, securities, and other investment assets held in India." },
+          { question: "What is Double Taxation Avoidance Agreement (DTAA)?", answer: "DTAA is a tax treaty between two countries that helps taxpayers avoid being taxed twice on the same income. We assist NRIs in evaluating applicable DTAA benefits." },
+          { question: "Can NRIs claim DTAA benefits?", answer: "Yes. Eligible NRIs may claim relief under applicable DTAA provisions, subject to fulfilling prescribed conditions and documentation requirements." },
+          { question: "Can you assist with pending tax refunds?", answer: "Yes. We assist in tracking refund status, resolving discrepancies, responding to departmental queries, and facilitating refund processing." },
+          { question: "Do NRIs need to report foreign income in India?", answer: "Reporting requirements depend on residential status, source of income, and applicable tax provisions. We evaluate individual circumstances and advise accordingly." },
+          { question: "Can you assist with tax planning for property investments in India?", answer: "Yes. We provide advisory services on acquisition, ownership, rental income, sale transactions, capital gains planning, and tax-efficient investment structures." },
+          { question: "Is online tax filing and consultation available for overseas clients?", answer: "Yes. Most of our taxation services can be managed remotely through secure digital communication and document-sharing processes, enabling seamless support worldwide." },
+          { question: "Can you assist with taxation of NRO and NRE accounts?", answer: "Yes. We provide guidance on the tax treatment, compliance requirements, and reporting obligations associated with NRO and NRE accounts." },
+          { question: "Can you help obtain Form 15CA and Form 15CB for fund repatriation?", answer: "Yes. We assist with documentation, certification coordination, and compliance requirements related to overseas remittances and repatriation of funds." },
+          { question: "Can you review my overall Indian tax position before I invest or sell assets?", answer: "Yes. We provide pre-transaction tax reviews to help clients understand tax implications, available exemptions, compliance requirements, and potential tax exposures before making financial decisions." },
+          { question: "Can you coordinate with my overseas tax advisors?", answer: "Yes. We can work alongside your overseas tax consultants, accountants, and financial advisors to facilitate efficient management of cross-border tax matters and compliance requirements." }
+        ],
+        checklist: ["Passport", "PAN Card", "Aadhaar Card (if available)", "Overseas Address Proof", "Tax Residency Documents", "Bank Statements", "Property Documents", "Form 16 (if applicable)", "Investment Statements", "Foreign Income Records", "TDS Certificates", "Previous Tax Returns"],
+        chartData: [
+          { label: "Intake Consultation", value: 30, color: "#c79d62" },
+          { label: "Record Compilation", value: 30, color: "#110311" },
+          { label: "Drafting & Check", value: 20, color: "#e5c595" },
+          { label: "Final Execution", value: 20, color: "#c79d62" }
+        ]
+      },
+      {
+        id: "nri-property-management-services",
+        title: "Property Management Services",
+        description: "Professional NRI property management services designed to protect your real estate assets, ensure legal compliance, manage tenants, and maintain your property's value while you live abroad.",
+        longDesc: `Protecting, Managing & Maximizing the Value of Your Property in India
+Owning property in India while living abroad presents unique challenges—from property monitoring and tenant management to maintenance, compliance, and safeguarding against unauthorized occupation. Managing these responsibilities remotely can be time-consuming and stressful.
+At ConsultAvenuee, we provide comprehensive NRI Property Management Services designed to help NRIs, OCIs, and PIOs efficiently manage, protect, and optimize their residential, commercial, inherited, and investment properties across India.
+Acting as your trusted local representative, we ensure your property remains secure, compliant, well-maintained, and financially productive.`,
+        sections: [
+          {
+            title: "Property Inspection & Monitoring",
+            content: "Regular monitoring helps safeguard your property and ensures timely identification of any issues.",
+            image: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=600&q=80"
+          },
+          {
+            title: "Property Protection & Asset Security",
+            content: "We help protect your property against misuse, encroachment, and unauthorized occupation.",
+            image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=600&q=80"
+          },
+          {
+            title: "Tenant Management & Rental Services",
+            content: "Our team assists with the complete rental lifecycle, from tenant onboarding to rent management.
+Services include:
+• Property Marketing and Listing Support
+• Tenant Screening and Verification
+• Rent Negotiation Assistance
+• Rent Agreement Documentation
+• Lease Renewal Coordination
+• Security Deposit Management
+• Tenant Exit Documentation
+• Rental Income Monitoring and Reporting",
+            image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=600&q=80"
+          },
+          {
+            title: "Property Maintenance & Upkeep",
+            content: "We coordinate routine and emergency maintenance to preserve property value and functionality.",
+            image: "https://images.unsplash.com/photo-1450133064473-71024230f91b?auto=format&fit=crop&w=600&q=80"
+          },
+          {
+            title: "Property Sale & Purchase Assistance",
+            content: "Whether acquiring or disposing of property, we assist with documentation and transaction management.
+Services include:
+• Property Due Diligence Coordination
+• Title Verification Support
+• Property Valuation Coordination
+• Buyer and Seller Documentation Assistance
+• Registration Support
+• Property Handover Coordination
+• Transaction Documentation Review",
+            image: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=600&q=80"
+          },
+          {
+            title: "Property Reporting & Advisory",
+            content: "We provide transparent reporting and insights to help you make informed property decisions.",
+            image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=600&q=80"
+          },
+          {
+            title: "Our Commitment",
+            content: "We act as your trusted property management partner in India, providing proactive oversight, professional coordination, and comprehensive support to protect your real estate investments. Our goal is to give NRIs complete peace of mind by ensuring their properties remain secure, compliant, well-maintained, and financially productive, regardless of where they reside in the world.",
+            image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=600&q=80"
+          }
+        ],
+                image: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=800&q=80",
+        timelineSteps: [
+          { num: "01", title: "CONSULTATION", detailTitle: "Initial Briefing & Check", desc: "We discuss details and review all checklists." },
+          { num: "02", title: "VERIFICATION", detailTitle: "Document Compilation", desc: "Our specialists check all details to ensure compliance and completeness." },
+          { num: "03", title: "SUBMISSION", detailTitle: "Filing and Liaisoning", desc: "We prepare the forms and submit the applications to the regulatory department." },
+          { num: "04", title: "COMPLETION", detailTitle: "Final Approval & Support", desc: "We deliver the certificates, resolve queries, and outline next-step requirements." }
+        ],
+        comparison: [
+          { aspect: "Operational Efficiency", manual: "Manual tracking takes weeks.", consultAvenuee: "Structured digital handling." },
+          { aspect: "Compliance Accuracy", manual: "High risk of statutory notices or fines.", consultAvenuee: "Zero-error draft verification." },
+          { aspect: "Government Liaisoning", manual: "Requires multiple physical visits.", consultAvenuee: "Complete departmental representation." }
+        ],
+        faqs: [
+          { question: "Who can avail NRI Property Management Services?", answer: "Our services are designed for Non-Resident Indians (NRIs), Overseas Citizens of India (OCIs), Persons of Indian Origin (PIOs), and foreign citizens who own property in India." },
+          { question: "What types of properties do you manage?", answer: "We manage residential apartments, villas, independent houses, commercial properties, and investment properties across India." },
+          { question: "How often do you inspect the property?", answer: "Inspection frequency can be customized based on client requirements. Regular inspections may be conducted monthly, quarterly, half-yearly, or annually." },
+          { question: "Can you help prevent unauthorized occupation or encroachment?", answer: "Yes. We conduct periodic property inspections, monitor occupancy status, coordinate with local authorities when necessary, and provide timely alerts regarding any unauthorized activity." },
+          { question: "Do I need to visit India to manage my property?", answer: "No. Most property management activities can be handled remotely through our authorized representatives and Power of Attorney arrangements, where applicable." },
+          { question: "Can you assist in finding tenants for my property?", answer: "Yes. We assist with property marketing, tenant screening, background verification, rent agreement documentation, lease management, and tenant onboarding." },
+          { question: "How do you verify prospective tenants?", answer: "We conduct identity verification, address verification, employment checks, and reference checks wherever possible before recommending a tenant." },
+          { question: "Do you prepare and manage rental agreements?", answer: "Yes. We coordinate the preparation, execution, renewal, and registration (where required) of rent and lease agreements." },
+          { question: "Can you coordinate property maintenance and repairs?", answer: "Yes. We arrange routine maintenance, emergency repairs, vendor coordination, utility management, and upkeep services to ensure the property remains in good condition." },
+          { question: "Can you assist in selling my property in India?", answer: "Yes. We assist with documentation, title verification coordination, valuation support, buyer coordination, registration assistance, and transaction documentation." },
+          { question: "Can you assist in purchasing property in India?", answer: "Yes. We provide support in due diligence, title verification, document review, valuation coordination, and transaction assistance." },
+          { question: "Do I need to provide a Power of Attorney (POA)?", answer: "A POA may be required for certain activities such as property transactions, legal representation, registration work, or dealing with government authorities. The requirement depends on the scope of services." },
+          { question: "Can you assist with property tax and utility bill payments?", answer: "Yes. We coordinate payment of property taxes, maintenance charges, electricity bills, water bills, and other statutory dues as authorized by the owner." },
+          { question: "Why should I choose professional property management services?", answer: "Professional management helps protect your property, reduce risks of misuse or encroachment, ensure timely maintenance, improve tenant management, maintain legal compliance, and provide peace of mind while you reside abroad." },
+          { question: "Can you represent me before housing societies and local authorities?", answer: "Yes. We can coordinate with housing societies, municipal authorities, utility providers, and other local bodies for routine property-related matters, subject to authorization." },
+          { question: "Do you provide property photo and video inspection reports?", answer: "Yes. Detailed photo and video reports can be provided after inspections to help owners monitor the property's condition remotely." }
+        ],
+        checklist: ["Passport", "OCI / PIO Card (if applicable)", "PAN Card", "Property Title Documents", "Previous Sale Deeds", "Property Tax Receipts", "Utility Records", "Existing Lease Agreements", "Power of Attorney (if applicable)", "Bank Account Details"],
+        chartData: [
+          { label: "Intake Consultation", value: 30, color: "#c79d62" },
+          { label: "Record Compilation", value: 30, color: "#110311" },
+          { label: "Drafting & Check", value: 20, color: "#e5c595" },
+          { label: "Final Execution", value: 20, color: "#c79d62" }
+        ]
+      },
+      {
+        id: "nri-legal-services",
+        title: "Legal Services",
+        description: "Expert legal and documentation services for NRIs, covering Power of Attorney, attestation, retirement claims, and corporate compliance support with complete peace of mind.",
+        longDesc: `Your Trusted India Partner for Legal, Documentation & Compliance Matters
+Managing legal, compliance, and documentation requirements in India can be challenging while living overseas.
+At ConsultAvenuee, we provide comprehensive NRI Legal & Compliance Services, helping NRIs, OCIs, PIOs, and their families manage legal documentation, retirement benefits, regulatory compliance, and representation matters efficiently and securely from anywhere in the world.`,
+        sections: [
+          {
+            title: "Power of Attorney (POA) Services",
+            content: "Power of Attorney is often essential for NRIs to authorize trusted representatives to act on their behalf in India.
+Our services include:
+• General Power of Attorney (GPA) Drafting
+• Special Power of Attorney (SPA) Drafting
+• Banking and Financial POA Documentation
+• Legal and Administrative Representation POA
+• POA Review and Legal Vetting
+• Attestation and Registration Guidance
+• Revocation and Amendment Documentation",
+            image: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=600&q=80"
+          },
+          {
+            title: "Documentation & Attestation Services",
+            content: "We assist with preparation, verification, authentication, and management of legal and regulatory documents required in India.
+Services include:
+• PAN Application and Corrections
+• Affidavits and Declarations
+• Notarization Guidance
+• Certified Documentation Assistance
+• Compliance Documentation Support",
+            image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=600&q=80"
+          },
+          {
+            title: "Retirement & Financial Documentation Services",
+            content: "We help NRIs manage retirement-related benefits, financial records, and beneficiary matters in India.
+Services include:
+• PF Withdrawal Assistance
+• Pension Documentation Support
+• Gratuity Claim Documentation
+• Nomination and Beneficiary Updates
+• Banking Documentation Assistance
+• Financial Record Consolidation",
+            image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=600&q=80"
+          },
+          {
+            title: "Business & Corporate Support Services",
+            content: "For NRIs with business interests in India, we provide documentation and compliance assistance.
+Services include:
+• Company Incorporation Support
+• LLP and Partnership Documentation
+• Startup Advisory Support
+• ROC and secretarial Compliance Assistance
+• Share Transfer Documentation
+• Corporate Documentation Management",
+            image: "https://images.unsplash.com/photo-1450133064473-71024230f91b?auto=format&fit=crop&w=600&q=80"
+          },
+          {
+            title: "Our Commitment",
+            content: "We serve as a trusted India-based advisory partner for NRIs, helping them navigate legal, compliance, documentation, and succession matters with confidence. Our objective is to simplify complex processes, ensure regulatory compliance, protect family interests, and provide seamless support for managing Indian affairs from anywhere in the world.",
+            image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=600&q=80"
+          }
+        ],
+                image: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=800&q=80",
+        timelineSteps: [
+          { num: "01", title: "CONSULTATION", detailTitle: "Initial Briefing & Check", desc: "We discuss details and review all checklists." },
+          { num: "02", title: "VERIFICATION", detailTitle: "Document Compilation", desc: "Our specialists check all details to ensure compliance and completeness." },
+          { num: "03", title: "SUBMISSION", detailTitle: "Filing and Liaisoning", desc: "We prepare the forms and submit the applications to the regulatory department." },
+          { num: "04", title: "COMPLETION", detailTitle: "Final Approval & Support", desc: "We deliver the certificates, resolve queries, and outline next-step requirements." }
+        ],
+        comparison: [
+          { aspect: "Operational Efficiency", manual: "Manual tracking takes weeks.", consultAvenuee: "Structured digital handling." },
+          { aspect: "Compliance Accuracy", manual: "High risk of statutory notices or fines.", consultAvenuee: "Zero-error draft verification." },
+          { aspect: "Government Liaisoning", manual: "Requires multiple physical visits.", consultAvenuee: "Complete departmental representation." }
+        ],
+        faqs: [
+          { question: "Who can avail NRI Legal & Compliance Services?", answer: "Our services are designed for Non-Resident Indians (NRIs), Overseas Citizens of India (OCIs), Persons of Indian Origin (PIOs), and their families who require assistance with legal, compliance, documentation, and succession matters in India." },
+          { question: "Why do NRIs require legal and compliance support in India?", answer: "Managing legal and regulatory matters from overseas can be challenging due to evolving laws, documentation requirements, and the need for local coordination. Professional support helps ensure compliance, accuracy, and timely execution of legal processes." },
+          { question: "What is a Power of Attorney (POA), and why is it important for NRIs?", answer: "A Power of Attorney allows an NRI to authorize a trusted individual to act on their behalf in India for property, banking, legal, administrative, and financial matters without requiring frequent travel." },
+          { question: "What is the difference between a General Power of Attorney (GPA) and a Special Power of Attorney (SPA)?", answer: "A GPA grants broad authority to the appointed representative for multiple matters, while an SPA grants authority for a specific transaction or purpose only." },
+          { question: "Can you assist with drafting and reviewing Power of Attorney documents?", answer: "Yes. We assist with drafting, reviewing, vetting, attestation guidance, registration support, amendments, and revocation of Power of Attorney documents." },
+          { question: "Can a Power of Attorney executed abroad be used in India?", answer: "Yes. Subject to applicable legal requirements, a POA executed overseas may need notarization, attestation, apostille, and registration in India before use." },
+          { question: "Can you help with PAN card applications and corrections?", answer: "Yes. We assist with PAN applications, corrections, updates, reissuance, and documentation support for NRIs." },
+          { question: "Do you provide document attestation and notarization support?", answer: "Yes. We provide guidance on notarization, attestation, apostille requirements, certified copies, affidavits, declarations, and other legal documentation processes." },
+          { question: "Can you assist with PF withdrawal and pension documentation?", answer: "Yes. We assist with documentation for Provident Fund withdrawals, pension claims, gratuity settlements, beneficiary updates, and retirement benefit processing." },
+          { question: "Can NRIs claim pension and retirement benefits in India?", answer: "Yes. Eligible NRIs may claim retirement benefits subject to applicable laws, eligibility criteria, and documentation requirements." },
+          { question: "Can you assist NRIs with company formation in India?", answer: "Yes. We provide support for company incorporation, LLP registration, partnership documentation, startup structuring, and related compliance requirements." },
+          { question: "Can you help with ROC and corporate compliance matters?", answer: "Yes. We assist with documentation and compliance support related to corporate filings, secretarial records, share transfers, and regulatory requirements." },
+          { question: "Can you represent me before government authorities and institutions?", answer: "We provide coordination and representation support through authorized processes, documentation management, and liaison assistance, subject to legal requirements and authorization." },
+          { question: "Can services be managed remotely from overseas?", answer: "Yes. Most services can be managed remotely through digital communication, document sharing, and authorized representation, reducing the need for travel to India." },
+          { question: "Why should NRIs engage professional legal and compliance support?", answer: "Professional support helps reduce legal risks, ensure regulatory compliance, streamline documentation, protect family interests, facilitate succession planning, and provide peace of mind while managing affairs in India from abroad." },
+          { question: "Can you assist elderly parents or family members in India on behalf of NRIs?", answer: "Yes. Subject to authorization, we can coordinate documentation, compliance requirements, and administrative support for family members residing in India." },
+          { question: "Can you coordinate with lawyers, chartered accountants, and other professionals?", answer: "Yes. We work closely with legal, tax, and compliance professionals whenever specialized expertise or representation is required." }
+        ],
+        checklist: ["Passport", "OCI / PIO Card (if applicable)", "PAN Card", "Overseas Address Proof", "Indian Address Proof (if available)", "Tax Records and Financial Statements", "Bank Account Details", "Existing Legal Documents", "Family and Beneficiary Information", "Investment and Compliance Records"],
+        chartData: [
+          { label: "Intake Consultation", value: 30, color: "#c79d62" },
+          { label: "Record Compilation", value: 30, color: "#110311" },
+          { label: "Drafting & Check", value: 20, color: "#e5c595" },
+          { label: "Final Execution", value: 20, color: "#c79d62" }
         ]
       }
     ]
@@ -670,17 +969,214 @@ const rawServicesData: RawTab[] = [
     description: "Helping senior citizens manage tax, pension, property, and legal matters with ease.",
     subServices: [
       {
-        id: "senior-advisory",
-        title: "Senior Citizen Advisory Services",
-        price: "₹4,999",
+        id: "health-insurance-claims-support",
+        title: "Health Insurance Claims Support",
+        description: "Assistance with filing and processing health insurance claims efficiently.",
         badge: "SPECIAL",
-        description: "Helping senior citizens manage tax, pension, property, and legal matters with ease.",
-        subSubServices: [
-          { slug: "health-insurance-claims-support", title: "Health Insurance Claims Support" },
-          { slug: "senior-income-tax-filing", title: "Income Tax planning & Filing" },
-          { slug: "pension-gratuity-documentations", title: "Pension & Gratuity Documentations" },
-          { slug: "property-sale-gift-transfer", title: "Property sale, Gift & Transfer" },
-          { slug: "senior-legal-estate-succession", title: "Legal, Estate & Succession" }
+        longDesc: "Manoj CA offers expert guidance and complete handling of Health Insurance Claims Support. Our experienced team manages all statutory formalities, document verification, and government submissions to ensure full compliance and peace of mind.",
+        sections: [
+          {
+            title: "Service Scope & Standards",
+            content: "Our professionals ensure a thorough audit and preparation process. We review all local state parameters, standard bylaws, and relevant central notifications to make sure that the filing is fully aligned with regulatory norms.",
+            image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=600&q=80"
+          },
+          {
+            title: "Regulatory Oversight & Risk Mitigation",
+            content: "With over 34+ years of professional standing, our advisory team helps mitigate any compliance risks. We actively track timeline calendars, address authority queries, and prevent delay penalties.",
+            image: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=600&q=80"
+          },
+          {
+            title: "Strategic Advisory & Post-Compliance Benefits",
+            content: "Beyond the registration or filing itself, we offer valuable long-term insights. This includes ongoing advisory on tax liabilities, structural governance, and annual filings so you can run operations seamlessly.",
+            image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=600&q=80"
+          }
+        ],
+                image: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=800&q=80",
+        timelineSteps: [
+          { num: "01", title: "CONSULTATION", detailTitle: "Initial Briefing & Check", desc: "We discuss details and review all checklists." },
+          { num: "02", title: "VERIFICATION", detailTitle: "Document Compilation", desc: "Our specialists check all details to ensure compliance and completeness." },
+          { num: "03", title: "SUBMISSION", detailTitle: "Filing and Liaisoning", desc: "We prepare the forms and submit the applications to the regulatory department." },
+          { num: "04", title: "COMPLETION", detailTitle: "Final Approval & Support", desc: "We deliver the certificates, resolve queries, and outline next-step requirements." }
+        ],
+        comparison: [
+          { aspect: "Operational Efficiency", manual: "Manual tracking takes weeks.", consultAvenuee: "Structured digital handling." },
+          { aspect: "Compliance Accuracy", manual: "High risk of statutory notices or fines.", consultAvenuee: "Zero-error draft verification." },
+          { aspect: "Government Liaisoning", manual: "Requires multiple physical visits.", consultAvenuee: "Complete departmental representation." }
+        ],
+        checklist: ["Aadhaar Card & PAN Card copy", "Pension Account Booklet / PPO copy", "Original medical insurance policy bond & discharge summaries", "Property ownership title deeds & mutation certificate", "Nomination detail forms"],
+        chartData: [
+          { label: "Intake Consultation", value: 30, color: "#c79d62" },
+          { label: "Record Compilation", value: 30, color: "#110311" },
+          { label: "Drafting & Check", value: 20, color: "#e5c595" },
+          { label: "Final Execution", value: 20, color: "#c79d62" }
+        ]
+      },
+      {
+        id: "senior-income-tax-filing",
+        title: "Income Tax planning & Filing",
+        description: "Specialized tax planning and ITR filing services for senior citizens.",
+        longDesc: "Manoj CA offers expert guidance and complete handling of Income Tax planning & Filing. Our experienced team manages all statutory formalities, document verification, and government submissions to ensure full compliance and peace of mind.",
+        sections: [
+          {
+            title: "Service Scope & Standards",
+            content: "Our professionals ensure a thorough audit and preparation process. We review all local state parameters, standard bylaws, and relevant central notifications to make sure that the filing is fully aligned with regulatory norms.",
+            image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=600&q=80"
+          },
+          {
+            title: "Regulatory Oversight & Risk Mitigation",
+            content: "With over 34+ years of professional standing, our advisory team helps mitigate any compliance risks. We actively track timeline calendars, address authority queries, and prevent delay penalties.",
+            image: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=600&q=80"
+          },
+          {
+            title: "Strategic Advisory & Post-Compliance Benefits",
+            content: "Beyond the registration or filing itself, we offer valuable long-term insights. This includes ongoing advisory on tax liabilities, structural governance, and annual filings so you can run operations seamlessly.",
+            image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=600&q=80"
+          }
+        ],
+                image: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=800&q=80",
+        timelineSteps: [
+          { num: "01", title: "CONSULTATION", detailTitle: "Initial Briefing & Check", desc: "We discuss details and review all checklists." },
+          { num: "02", title: "VERIFICATION", detailTitle: "Document Compilation", desc: "Our specialists check all details to ensure compliance and completeness." },
+          { num: "03", title: "SUBMISSION", detailTitle: "Filing and Liaisoning", desc: "We prepare the forms and submit the applications to the regulatory department." },
+          { num: "04", title: "COMPLETION", detailTitle: "Final Approval & Support", desc: "We deliver the certificates, resolve queries, and outline next-step requirements." }
+        ],
+        comparison: [
+          { aspect: "Operational Efficiency", manual: "Manual tracking takes weeks.", consultAvenuee: "Structured digital handling." },
+          { aspect: "Compliance Accuracy", manual: "High risk of statutory notices or fines.", consultAvenuee: "Zero-error draft verification." },
+          { aspect: "Government Liaisoning", manual: "Requires multiple physical visits.", consultAvenuee: "Complete departmental representation." }
+        ],
+        checklist: ["Aadhaar Card & PAN Card copy", "Pension Account Booklet / PPO copy", "Original medical insurance policy bond & discharge summaries", "Property ownership title deeds & mutation certificate", "Nomination detail forms"],
+        chartData: [
+          { label: "Intake Consultation", value: 30, color: "#c79d62" },
+          { label: "Record Compilation", value: 30, color: "#110311" },
+          { label: "Drafting & Check", value: 20, color: "#e5c595" },
+          { label: "Final Execution", value: 20, color: "#c79d62" }
+        ]
+      },
+      {
+        id: "pension-gratuity-documentations",
+        title: "Pension & Gratuity Documentations",
+        description: "Support with documentation and compliance for pension and gratuity.",
+        longDesc: "Manoj CA offers expert guidance and complete handling of Pension & Gratuity Documentations. Our experienced team manages all statutory formalities, document verification, and government submissions to ensure full compliance and peace of mind.",
+        sections: [
+          {
+            title: "Service Scope & Standards",
+            content: "Our professionals ensure a thorough audit and preparation process. We review all local state parameters, standard bylaws, and relevant central notifications to make sure that the filing is fully aligned with regulatory norms.",
+            image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=600&q=80"
+          },
+          {
+            title: "Regulatory Oversight & Risk Mitigation",
+            content: "With over 34+ years of professional standing, our advisory team helps mitigate any compliance risks. We actively track timeline calendars, address authority queries, and prevent delay penalties.",
+            image: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=600&q=80"
+          },
+          {
+            title: "Strategic Advisory & Post-Compliance Benefits",
+            content: "Beyond the registration or filing itself, we offer valuable long-term insights. This includes ongoing advisory on tax liabilities, structural governance, and annual filings so you can run operations seamlessly.",
+            image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=600&q=80"
+          }
+        ],
+                image: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=800&q=80",
+        timelineSteps: [
+          { num: "01", title: "CONSULTATION", detailTitle: "Initial Briefing & Check", desc: "We discuss details and review all checklists." },
+          { num: "02", title: "VERIFICATION", detailTitle: "Document Compilation", desc: "Our specialists check all details to ensure compliance and completeness." },
+          { num: "03", title: "SUBMISSION", detailTitle: "Filing and Liaisoning", desc: "We prepare the forms and submit the applications to the regulatory department." },
+          { num: "04", title: "COMPLETION", detailTitle: "Final Approval & Support", desc: "We deliver the certificates, resolve queries, and outline next-step requirements." }
+        ],
+        comparison: [
+          { aspect: "Operational Efficiency", manual: "Manual tracking takes weeks.", consultAvenuee: "Structured digital handling." },
+          { aspect: "Compliance Accuracy", manual: "High risk of statutory notices or fines.", consultAvenuee: "Zero-error draft verification." },
+          { aspect: "Government Liaisoning", manual: "Requires multiple physical visits.", consultAvenuee: "Complete departmental representation." }
+        ],
+        checklist: ["Aadhaar Card & PAN Card copy", "Pension Account Booklet / PPO copy", "Original medical insurance policy bond & discharge summaries", "Property ownership title deeds & mutation certificate", "Nomination detail forms"],
+        chartData: [
+          { label: "Intake Consultation", value: 30, color: "#c79d62" },
+          { label: "Record Compilation", value: 30, color: "#110311" },
+          { label: "Drafting & Check", value: 20, color: "#e5c595" },
+          { label: "Final Execution", value: 20, color: "#c79d62" }
+        ]
+      },
+      {
+        id: "property-sale-gift-transfer",
+        title: "Property sale, Gift & Transfer",
+        description: "Legal assistance for property transactions, gifts, and transfers.",
+        longDesc: "Manoj CA offers expert guidance and complete handling of Property sale, Gift & Transfer. Our experienced team manages all statutory formalities, document verification, and government submissions to ensure full compliance and peace of mind.",
+        sections: [
+          {
+            title: "Service Scope & Standards",
+            content: "Our professionals ensure a thorough audit and preparation process. We review all local state parameters, standard bylaws, and relevant central notifications to make sure that the filing is fully aligned with regulatory norms.",
+            image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=600&q=80"
+          },
+          {
+            title: "Regulatory Oversight & Risk Mitigation",
+            content: "With over 34+ years of professional standing, our advisory team helps mitigate any compliance risks. We actively track timeline calendars, address authority queries, and prevent delay penalties.",
+            image: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=600&q=80"
+          },
+          {
+            title: "Strategic Advisory & Post-Compliance Benefits",
+            content: "Beyond the registration or filing itself, we offer valuable long-term insights. This includes ongoing advisory on tax liabilities, structural governance, and annual filings so you can run operations seamlessly.",
+            image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=600&q=80"
+          }
+        ],
+                image: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=800&q=80",
+        timelineSteps: [
+          { num: "01", title: "CONSULTATION", detailTitle: "Initial Briefing & Check", desc: "We discuss details and review all checklists." },
+          { num: "02", title: "VERIFICATION", detailTitle: "Document Compilation", desc: "Our specialists check all details to ensure compliance and completeness." },
+          { num: "03", title: "SUBMISSION", detailTitle: "Filing and Liaisoning", desc: "We prepare the forms and submit the applications to the regulatory department." },
+          { num: "04", title: "COMPLETION", detailTitle: "Final Approval & Support", desc: "We deliver the certificates, resolve queries, and outline next-step requirements." }
+        ],
+        comparison: [
+          { aspect: "Operational Efficiency", manual: "Manual tracking takes weeks.", consultAvenuee: "Structured digital handling." },
+          { aspect: "Compliance Accuracy", manual: "High risk of statutory notices or fines.", consultAvenuee: "Zero-error draft verification." },
+          { aspect: "Government Liaisoning", manual: "Requires multiple physical visits.", consultAvenuee: "Complete departmental representation." }
+        ],
+        checklist: ["Aadhaar Card & PAN Card copy", "Pension Account Booklet / PPO copy", "Original medical insurance policy bond & discharge summaries", "Property ownership title deeds & mutation certificate", "Nomination detail forms"],
+        chartData: [
+          { label: "Intake Consultation", value: 30, color: "#c79d62" },
+          { label: "Record Compilation", value: 30, color: "#110311" },
+          { label: "Drafting & Check", value: 20, color: "#e5c595" },
+          { label: "Final Execution", value: 20, color: "#c79d62" }
+        ]
+      },
+      {
+        id: "drafting-of-will",
+        title: "Drafting of Will",
+        description: "Professional drafting and registration of Wills and succession planning.",
+        longDesc: "Manoj CA offers expert guidance and complete handling of Drafting of Will. Our experienced team manages all statutory formalities, document verification, and government submissions to ensure full compliance and peace of mind.",
+        sections: [
+          {
+            title: "Service Scope & Standards",
+            content: "Our professionals ensure a thorough audit and preparation process. We review all local state parameters, standard bylaws, and relevant central notifications to make sure that the filing is fully aligned with regulatory norms.",
+            image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=600&q=80"
+          },
+          {
+            title: "Regulatory Oversight & Risk Mitigation",
+            content: "With over 34+ years of professional standing, our advisory team helps mitigate any compliance risks. We actively track timeline calendars, address authority queries, and prevent delay penalties.",
+            image: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=600&q=80"
+          },
+          {
+            title: "Strategic Advisory & Post-Compliance Benefits",
+            content: "Beyond the registration or filing itself, we offer valuable long-term insights. This includes ongoing advisory on tax liabilities, structural governance, and annual filings so you can run operations seamlessly.",
+            image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=600&q=80"
+          }
+        ],
+                image: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=800&q=80",
+        timelineSteps: [
+          { num: "01", title: "CONSULTATION", detailTitle: "Initial Briefing & Check", desc: "We discuss details and review all checklists." },
+          { num: "02", title: "VERIFICATION", detailTitle: "Document Compilation", desc: "Our specialists check all details to ensure compliance and completeness." },
+          { num: "03", title: "SUBMISSION", detailTitle: "Filing and Liaisoning", desc: "We prepare the forms and submit the applications to the regulatory department." },
+          { num: "04", title: "COMPLETION", detailTitle: "Final Approval & Support", desc: "We deliver the certificates, resolve queries, and outline next-step requirements." }
+        ],
+        comparison: [
+          { aspect: "Operational Efficiency", manual: "Manual tracking takes weeks.", consultAvenuee: "Structured digital handling." },
+          { aspect: "Compliance Accuracy", manual: "High risk of statutory notices or fines.", consultAvenuee: "Zero-error draft verification." },
+          { aspect: "Government Liaisoning", manual: "Requires multiple physical visits.", consultAvenuee: "Complete departmental representation." }
+        ],
+        checklist: ["Aadhaar Card & PAN Card copy", "Pension Account Booklet / PPO copy", "Original medical insurance policy bond & discharge summaries", "Property ownership title deeds & mutation certificate", "Nomination detail forms"],
+        chartData: [
+          { label: "Intake Consultation", value: 30, color: "#c79d62" },
+          { label: "Record Compilation", value: 30, color: "#110311" },
+          { label: "Drafting & Check", value: 20, color: "#e5c595" },
+          { label: "Final Execution", value: 20, color: "#c79d62" }
         ]
       }
     ]

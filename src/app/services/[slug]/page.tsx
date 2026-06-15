@@ -66,10 +66,10 @@ export default function ServiceDetailPage() {
           title: sub.title,
           shortDesc: sub.description,
           longDesc: sub.longDesc || (firstSSS.shortDesc ? `${firstSSS.shortDesc}\n\n${firstSSS.longDesc}` : sub.description),
-          image: firstSSS.image || "",
-          timelineSteps: firstSSS.timelineSteps || [],
+          image: sub.image || firstSSS.image || "",
+          timelineSteps: sub.timelineSteps || firstSSS.timelineSteps || [],
           sections: combinedSections,
-          comparison: firstSSS.comparison || [],
+          comparison: sub.comparison || firstSSS.comparison || [],
           checklist: combinedChecklist,
           chartData: sub.chartData || firstSSS.chartData || [],
           faqs: combinedFaqs,
@@ -508,7 +508,9 @@ export default function ServiceDetailPage() {
     </motion.div>
   );
 
-  const renderTimelineRoadmap = () => (
+  const renderTimelineRoadmap = () => {
+    if (!steps || steps.length === 0) return null;
+    return (
     <motion.div
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
@@ -602,6 +604,7 @@ export default function ServiceDetailPage() {
       </div>
     </motion.div>
   );
+  };
 
   const renderDocumentChecklist = () => (
     checklist.length > 0 && (
@@ -1093,10 +1096,10 @@ export default function ServiceDetailPage() {
                                   )}
                                 </div>
 
-                                {(tab.id === 'compliance-business-advisory' || tab.id === 'taxation-regulatory-litigation') && isSubOpen && sub.subSubServices && sub.subSubServices.length > 1 && (
+                                {(tab.id === 'compliance-business-advisory' || tab.id === 'taxation-regulatory-litigation' || tab.id === 'nri-services' || tab.id === 'senior-citizen-advisory') && isSubOpen && sub.subSubServices && sub.subSubServices.length > 1 && (
                                   <div className="pl-3 border-l border-slate-100 dark:border-slate-800/80 space-y-1.5 py-1">
                                     {sub.subSubServices.map((sss: any) => {
-                                      const isCombinedPage = (sub.id === 'company-formation' && slug === 'company-formation') || (sub.id === 'registrations' && slug === 'registrations') || (sub.id === 'corporate-compliance' && slug === 'corporate-compliance');
+                                      const isCombinedPage = ['company-formation', 'registrations', 'corporate-compliance', 'income-tax', 'litigation-support'].includes(sub.id) && slug === sub.id;
                                       return isCombinedPage ? (
                                         <button
                                           key={sss.slug}

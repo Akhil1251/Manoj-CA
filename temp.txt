@@ -1,0 +1,20 @@
+        ]
+      }
+    ]
+  },
+  {
+    id: "senior-citizen-advisory",
+    title: "Senior Citizen Advisory Services",
+    description: "Helping senior citizens manage tax, pension, property, and legal matters with ease.",
+    subServices: [
+      {
+        id: "senior-advisory",
+        title: "Senior Citizen Advisory Services",
+        price: "Γé╣4,999",
+        badge: "SPECIAL",
+        description: "Helping senior citizens manage tax, pension, property, and legal matters with ease.",
+        subSubServices: [
+          { slug: "health-insurance-claims-support", title: "Health Insurance Claims Support" },
+          { slug: "senior-income-tax-filing", title: "Income Tax planning & Filing" },
+          { slug: "pension-gratuity-documentations", title: "Pension & Gratuity Documentations" },
+          { slug: "property-sale-gift-transfer", title: "Property sale, Gift & Transfer" },
