@@ -46,37 +46,37 @@ const dropdownConfigs: Record<
         title: "Business Formation, Registration & Compliance",
         links: [
           {
-            label: "Company Formation", href: "/services/company-formation", subLinks: [
-              { label: "Private Limited Company Registration", href: "/services/company-formation#private-limited-company" },
-              { label: "LLP Registration", href: "/services/company-formation#llp-registration" },
-              { label: "Partnership Firm Registration", href: "/services/company-formation#partnership-firm-registration" },
-              { label: "Public Limited Company Registration", href: "/services/company-formation#public-limited-company-registration" },
-              { label: "Trust Registration", href: "/services/company-formation#trust-registration" },
-              { label: "Indian Subsidiary for Foreign Entrepreneurs", href: "/services/company-formation#indian-subsidiary-foreign-entrepreneurs" }
+            label: "Company Formation", href: "/services/private-limited-company-registration", subLinks: [
+              { label: "Private Limited Company Registration", href: "/services/private-limited-company-registration" },
+              { label: "LLP Registration", href: "/services/llp-registration" },
+              { label: "Partnership Firm Registration", href: "/services/partnership-firm-registration" },
+              { label: "Public Limited Company Registration", href: "/services/public-limited-company-registration" },
+              { label: "Trust Registration", href: "/services/trust-registration" },
+              { label: "Indian Subsidiary for Foreign Entrepreneurs", href: "/services/indian-subsidiary-foreign-entrepreneurs" }
             ]
           },
           {
-            label: "Registrations", href: "/services/registrations", subLinks: [
-              { label: "Professional Tax Registration & Returns", href: "/services/registrations#professional-tax" },
-              { label: "Shop & Establishment Registration", href: "/services/registrations#shop-establishment" },
+            label: "Registrations", href: "/services/professional-tax-registration", subLinks: [
+              { label: "Professional Tax Registration & Returns", href: "/services/professional-tax-registration" },
+              { label: "Shop & Establishment Registration", href: "/services/shop-and-establishment-registration" },
               { label: "Startup India Registration", href: "/services/startup-india-registration" },
               { label: "MSME/Udyam Registration", href: "/services/msme-udyam-registration" },
-              { label: "PF Registration", href: "/services/registrations#pf-registration" },
-              { label: "ESIC Registration", href: "/services/registrations#esic-registration" },
+              { label: "PF Registration", href: "/services/pf-registration" },
+              { label: "ESIC Registration", href: "/services/esic-registration" },
               { label: "Trade License", href: "/services/trade-license" },
-              { label: "NGO Darpan Registration", href: "/services/registrations#ngo-darpan" },
-              { label: "Trademark Registration", href: "/services/registrations#trademark" },
-              { label: "Import Export Code (IEC)", href: "/services/registrations#iec" },
-              { label: "ISO Certification", href: "/services/registrations#iso" },
+              { label: "NGO Darpan Registration", href: "/services/ngo-darpan-registration" },
+              { label: "Trademark Registration", href: "/services/trademark-registration" },
+              { label: "Import Export Code (IEC)", href: "/services/import-export-code" },
+              { label: "ISO Certification", href: "/services/iso-certification" },
               { label: "FSSAI Registration", href: "/services/fssai-registration" }
             ]
           },
           {
-            label: "Corporate Compliance & Secretarial Services", href: "/services/corporate-compliance", subLinks: [
-              { label: "MCA Annual Compliance", href: "/services/corporate-compliance#mca-annual" },
-              { label: "ROC Filings", href: "/services/corporate-compliance#roc-filings" },
-              { label: "Maintenance of Statutory Registers & Records", href: "/services/corporate-compliance#statutory-registers" },
-              { label: "AGM & EGM, BM Compliance, Minutes & Resolutions", href: "/services/corporate-compliance#agm-egm" }
+            label: "Corporate Compliance & Secretarial Services", href: "/services/mca-annual-compliance", subLinks: [
+              { label: "MCA Annual Compliance", href: "/services/mca-annual-compliance" },
+              { label: "ROC Filings", href: "/services/roc-filings" },
+              { label: "Maintenance of Statutory Registers & Records", href: "/services/maintenance-of-statutory-registers-records" },
+              { label: "AGM & EGM, BM Compliance, Minutes & Resolutions", href: "/services/agm-egm-bm-compliance-minutes-resolutions" }
             ]
           },
           { label: "Virtual CFO (VCFO) Services", href: "/services/virtual-cfo-services" },
@@ -317,13 +317,13 @@ export const Navbar: React.FC = () => {
   const isTransparent = isHome && !scrolled;
 
   const navLinks = [
-    { href: "/", label: "Home" },
-    { href: "/about", label: "About Us" },
+    { href: "/", label: t.navHome || "Home" },
+    { href: "/about", label: t.navAbout || "About Us" },
     { href: "/team", label: "Our Team" },
-    { href: "/services", label: "Services", key: "services" },
-    { href: "/careers", label: "Careers" },
-    { href: "/faq", label: "FAQ Centre" },
-    { href: "/contact", label: "Contact Us" },
+    { href: "/services", label: t.navServices || "Services", key: "services" },
+    { href: "/careers", label: t.navCareers || "Careers" },
+    { href: "/faq", label: t.navFaq || "FAQ Centre" },
+    { href: "/contact", label: t.navContact || "Contact Us" },
   ];
 
   const languagesList: { code: Language; name: string }[] = [

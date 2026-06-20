@@ -9,39 +9,34 @@ export default function AboutPage() {
       content: (
         <>
           <p className="mb-3">
-            ConsultAvenuee is a "Business Advisory, Compliance & Growth Partner" serving Startups, SMEs, Corporates, NRIs, Housing Societies, and Senior Citizens. Backed by a team of experienced Chartered Accountants, Company Secretaries, Legal Professionals, and Business Advisors, we provide comprehensive solutions that help businesses start, grow, and remain compliant.
+            ConsultAvenuee is a trusted Business Advisory, Taxation, Compliance, and Growth Partner serving Housing Societies, Startups, SMEs, Corporates, NRIs, and Senior Citizens across India. We provide end to end solution including business registration, GST compliance, income tax/TDS filing, accounting & bookkeeping, ROC compliance, audit support, legal advisory and regulatory compliance management.
           </p>
-          <p className="mb-3">
-            Founded with the vision of making professional advisory services accessible and affordable, we act as your trusted Advisor and Compliance Partner, delivering personalized solutions tailored to your unique business requirements.
-          </p>
-          <p>
-            At ConsultAvenuee, we believe in building long-term relationships. Our success is closely linked to the success of our clients, and we are committed to creating lasting value through trusted partnerships.
-          </p>
+
         </>
       ),
       // Team meeting / Advisory
       image: "https://images.unsplash.com/photo-1556761175-4b46a572b786?auto=format&fit=crop&w=800&q=80"
     },
     {
-      title: "What We do.",
+      title: "What We do?",
       content: (
         <>
-          <p className="mb-3">We offer a comprehensive range of advisory, compliance, taxation, and business support services, including:</p>
+          <p className="mb-3">ConsultAvenuee offers a comprehensive range of advisory in:</p>
           <ol className="list-decimal pl-5 mb-3 space-y-1 font-medium text-slate-700 dark:text-slate-200">
-            <li>Housing Society Management & Compliance</li>
-            <li>NRI SERVICES</li>
-            <li>Senior Citizen Advisory Services</li>
-            <li>Compliance & Business Advisory</li>
-            <li>Taxation, Regulatory compliances & Litigation</li>
+            <li>Housing Society Advisory</li>
+            <li>Business Formation, Registration & Compliance</li>
+            <li>Tax & Litigation</li>
+            <li>NRI Services</li>
+            <li>Senior Citizen Advisory</li>
           </ol>
-          <p>Our objective is to simplify business operations by providing end-to-end professional support through a single, reliable platform.</p>
+          {/* <p>Our objective is to simplify business operations by providing end-to-end professional support through a single, reliable platform.</p> */}
         </>
       ),
       // Calculator and Financial Documents
-      image: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=800&q=80"
+      image: "/we serve/what we do.png"
     },
     {
-      title: "Why to Choose Us?",
+      title: "Why to Choose ConsultAvenuee?",
       content: (
         <>
           <ul className="list-disc pl-5 mb-3 space-y-1 font-medium text-slate-700 dark:text-slate-200">
@@ -50,27 +45,26 @@ export default function AboutPage() {
             <li>Dedicated Professional Support</li>
             <li>Cost-Effective Solutions</li>
             <li>Timely Compliance Management</li>
-            <li>End-to-End Business Support</li>
+            
           </ul>
-          <p>Our professionals work closely with clients to understand their requirements and deliver practical, business-oriented solutions that create measurable value.</p>
+          {/* <p>Our professionals work closely with clients to understand their requirements and deliver practical, business-oriented solutions that create measurable value.</p> */}
         </>
       ),
       // Business Consulting Meeting
-      image: "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=800&q=80"
+      image: "/we serve/why choose us.png"
     },
     {
-      title: "Why Clients Trust Us",
+      title: "Why Clients Trust ConsultAvenuee?",
       content: (
         <>
           <ul className="list-disc pl-5 mb-3 space-y-1 font-medium text-slate-700 dark:text-slate-200">
             <li>Client-Centric Approach</li>
             <li>Transparent & Ethical Practices</li>
-            <li>Cost & Time Efficiency</li>
+            <li>Cost effective & Time Efficient solution</li>
             <li>Continuous Professional Support</li>
-            <li>Expertise Across Industries</li>
-            <li>Strong Governance & Compliance Focus</li>
+            
           </ul>
-          <p>ConsultAvenuee is a complete end to end solutions provider and is professionally managed. This platform represents a combination of specialized skills, which are geared to offer quality advisory services and personalized proactive services. The Professionals associates at Consultavenuee.com adopt a customer-centric approach which helps to understand the exact client requirements and providing them with the most effective solutions</p>
+          <p>ConsultAvenuee is tailored to the unique needs of businesses, NRIs, housing societies, senior citizens, and entrepreneurs.</p>
         </>
       ),
       // Financial Analysis on Laptop
@@ -106,15 +100,15 @@ export default function AboutPage() {
     {
       title: "OUR MISSION",
       content: (
-        <p>To be a trusted partner in our clients' growth journey by delivering high-quality advisory, compliance, taxation, and business support services. We strive to provide innovative, practical, and cost-effective solutions while upholding the highest standards of professionalism, ethics, and integrity</p>
+        <p>To empower SMEs Startups, businesses, housing societies, NRIs, senior citizens, and individuals with reliable advisory, taxation, compliance, legal, and business support services. We are committed to delivering practical, cost-effective, and result-oriented solutions with the highest standards of professionalism, integrity, and client service.</p>
       ),
       // Digital charts / Business growth
-      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80"
+      image: "/we serve/our mission.png"
     },
     {
       title: "OUR VISION",
       content: (
-        <p>To be the preferred business advisory and compliance platform for entrepreneurs, SMEs, corporates, housing societies, and individuals by delivering trusted expertise, innovative solutions, and long-term value creation.</p>
+        <p>To become India's preferred business advisory, taxation, and compliance partner, helping entrepreneurs, SMEs, corporates, housing societies, and individuals achieve sustainable growth through trusted expertise, innovative solutions, and long-term value creation.</p>
       ),
       // Modern Corporate Building
       image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=800&q=80"
@@ -143,12 +137,12 @@ export default function AboutPage() {
               Your Business Advisory, Compliance & Growth Partner, backed by a team of experienced Chartered Accountants, Company Secretaries, Legal Professionals, and Business Advisors.
             </p>
           </div>
-          
+
           {/* Background Image - Right Side */}
           <div className="hidden md:block md:w-[55%] lg:w-[58%] h-full">
-            <img 
-              src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=1200&q=80" 
-              alt="Team Collaborating" 
+            <img
+              src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=1200&q=80"
+              alt="Team Collaborating"
               className="w-full h-full object-cover"
             />
           </div>
@@ -161,16 +155,16 @@ export default function AboutPage() {
         <div className="max-w-6xl mx-auto text-center">
           <p className="text-[#1b071b] text-xl md:text-2xl lg:text-3xl font-bold tracking-widest uppercase flex flex-col md:flex-row items-center justify-center gap-2 md:gap-4 lg:gap-6">
             <span>Trusted</span>
-            <span className="hidden md:inline-block opacity-50 font-light">|</span> 
+            <span className="hidden md:inline-block opacity-50 font-light">|</span>
             <span>Experienced</span>
-            <span className="hidden md:inline-block opacity-50 font-light">|</span> 
+            <span className="hidden md:inline-block opacity-50 font-light">|</span>
             <span>Responsive</span>
-            <span className="hidden md:inline-block opacity-50 font-light">|</span> 
+            <span className="hidden md:inline-block opacity-50 font-light">|</span>
             <span>Result-Driven</span>
           </p>
         </div>
       </div>
-      
+
       {/* Spacer before next section */}
       <div className="pt-8"></div>
       {/* HEADER SECTION */}
@@ -183,7 +177,7 @@ export default function AboutPage() {
 
       {/* TIMELINE SECTION */}
       <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
-        
+
         {/* The Vertical Line (Visible only on desktop) */}
         <div className="absolute left-1/2 top-0 bottom-0 w-px bg-slate-300 dark:bg-slate-700 transform -translate-x-1/2 hidden md:block"></div>
 
@@ -193,10 +187,10 @@ export default function AboutPage() {
 
             return (
               <div key={idx} className={`relative flex flex-col items-stretch w-full ${isEven ? 'md:flex-row-reverse' : 'md:flex-row'}`}>
-                
+
                 {/* Timeline Square Marker */}
                 <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-3 h-3 bg-[#c29b62] hidden md:block z-10 shadow-[0_0_0_4px_#f8f9fa] dark:shadow-[0_0_0_4px_#020617]" />
-                
+
                 {/* Content Side */}
                 <div className={`w-full md:w-1/2 flex flex-col justify-center ${isEven ? 'md:pl-16' : 'md:pr-16'} mb-6 md:mb-0 z-20`}>
                   <div className="bg-white dark:bg-slate-900 p-6 md:p-8 shadow-[0_15px_50px_-15px_rgba(0,0,0,0.1)] dark:shadow-none dark:border dark:border-slate-800 h-full flex flex-col justify-center">
@@ -209,9 +203,9 @@ export default function AboutPage() {
 
                 {/* Image Side */}
                 <div className={`w-full md:w-1/2 flex ${isEven ? 'md:pr-16' : 'md:pl-16'} z-10`}>
-                  <img 
-                    src={sec.image} 
-                    alt={sec.title} 
+                  <img
+                    src={sec.image}
+                    alt={sec.title}
                     className="w-full h-full min-h-[250px] object-cover shadow-lg"
                   />
                 </div>

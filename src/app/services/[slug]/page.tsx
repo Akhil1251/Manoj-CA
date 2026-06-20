@@ -54,7 +54,13 @@ export default function ServiceDetailPage() {
             }
             if (sss.features) combinedFeatures.push(...sss.features);
             if (sss.checklist) combinedChecklist.push(...sss.checklist);
-            if (sss.faqs) combinedFaqs.push(...sss.faqs);
+            if (sss.faqs) {
+              sss.faqs.forEach((faq: any) => {
+                if (!combinedFaqs.some(f => f.question === faq.question)) {
+                  combinedFaqs.push(faq);
+                }
+              });
+            }
           });
         }
 
@@ -73,7 +79,8 @@ export default function ServiceDetailPage() {
           checklist: combinedChecklist,
           chartData: sub.chartData || firstSSS.chartData || [],
           faqs: combinedFaqs,
-          features: combinedFeatures
+          features: combinedFeatures,
+          postSectionsDesc: sub.postSectionsDesc || firstSSS.postSectionsDesc || ""
         };
         parentCategoryTitle = tab.title;
         parentCategoryDescription = tab.description || "";
@@ -118,6 +125,13 @@ export default function ServiceDetailPage() {
     setActiveFaq(null);
     setActiveFaqCategory(0);
   }, [slug]);
+
+  // Redirect parent sub-services to their first sub-sub-service
+  useEffect(() => {
+    if (foundService && parentSubId === slug && parentSubService?.subSubServices && parentSubService.subSubServices.length > 0) {
+      router.replace(`/services/${parentSubService.subSubServices[0].slug}`);
+    }
+  }, [slug, foundService, parentSubId, parentSubService, router]);
 
   // Scroll to hash on load
   useEffect(() => {
@@ -304,7 +318,7 @@ export default function ServiceDetailPage() {
       >
         {!hideTitle && (
           <div className="border-b border-slate-200 dark:border-slate-800/80 pb-3">
-            <h2 className="text-xl sm:text-2.5xl font-black text-[#210821] dark:text-white tracking-tight max-w-none">
+            <h2 className="text-2xl sm:text-3.5xl font-black text-[#210821] dark:text-white tracking-tight max-w-none">
               {title}
             </h2>
           </div>
@@ -316,199 +330,215 @@ export default function ServiceDetailPage() {
     );
   };
 
-  const renderHeroHeader = () => (
-    <motion.div
-      initial={{ opacity: 0, y: 10 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5 }}
-      className="py-6 flex flex-col justify-center text-center space-y-3 sm:space-y-4 items-center"
-    >
-      <div className="flex flex-col justify-center items-center space-y-3 sm:space-y-4 max-w-4xl mx-auto">
-        <Link href={`/services#${parentCategoryId}`} className="text-base sm:text-lg font-black uppercase text-[#c79d62] tracking-widest hover:text-[#e0b576] transition-colors">
-          {parentCategoryTitle}
-        </Link>
-        {parentCategoryId === "society-management" ? (
-          <>
-            <h1 className="text-xl sm:text-3.5xl font-black text-[#210821] dark:text-white tracking-tight leading-tight max-w-none">
-              Your Trusted Partner for Housing Society Management & Compliance
-            </h1>
-            <p className="text-sm sm:text-base text-slate-550 dark:text-slate-400 leading-relaxed font-medium max-w-none whitespace-pre-line text-center">
-              Focus on your community while we handle society compliance, governance, taxation, audits, documentation, and regulatory requirements with professional expertise.
-            </p>
-          </>
-        ) : (parentCategoryId === "compliance-business-advisory" || parentCategoryId === "taxation-regulatory-litigation") ? (
-          <>
-            {parentCategoryDescription && (
-              <p className="text-sm sm:text-base text-slate-550 dark:text-slate-400 leading-relaxed font-medium max-w-none whitespace-pre-line text-center mb-6">
-                {parentCategoryDescription}
+  const renderHeroHeader = () => {
+    const isSubSub = slug !== parentSubId;
+    const heroTitle = isSubSub ? foundService!.title : (parentSubService ? parentSubService.title : foundService!.title);
+    const heroDesc = isSubSub ? foundService!.shortDesc : (parentSubService ? parentSubService.description : foundService!.shortDesc);
+
+    return (
+      <motion.div
+        initial={{ opacity: 0, y: 10 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+        className="py-6 flex flex-col justify-center text-center space-y-3 sm:space-y-4 items-center"
+      >
+        <div className="flex flex-col justify-center items-center space-y-3 sm:space-y-4 max-w-4xl mx-auto">
+          <Link href={`/services#${parentCategoryId}`} className="text-base sm:text-lg font-black uppercase text-[#c79d62] tracking-widest hover:text-[#e0b576] transition-colors">
+            {parentCategoryTitle}
+          </Link>
+          {parentCategoryId === "society-management" ? (
+            <>
+              <h1 className="text-xl sm:text-3.5xl font-black text-[#210821] dark:text-white tracking-tight leading-tight max-w-none">
+                Your Trusted Partner for Housing Society Management & Compliance
+              </h1>
+              <p className="text-sm sm:text-base text-slate-550 dark:text-slate-400 leading-relaxed font-medium max-w-none whitespace-pre-line text-center">
+                Focus on your community while we handle society compliance, governance, taxation, audits, documentation, and regulatory requirements with professional expertise.
               </p>
-            )}
-            <div className="w-full flex flex-col space-y-4 text-left mt-8">
+            </>
+          ) : (parentCategoryId === "compliance-business-advisory" || parentCategoryId === "taxation-regulatory-litigation") ? (
+            <>
+              {parentCategoryDescription && !isSubSub && (
+                <p className="text-sm sm:text-base text-slate-550 dark:text-slate-400 leading-relaxed font-medium max-w-none whitespace-pre-line text-center mb-6">
+                  {parentCategoryDescription}
+                </p>
+              )}
+              <div className="w-full flex flex-col space-y-4 text-left mt-8">
+                <h1 className="text-xl sm:text-3.5xl font-black text-[#210821] dark:text-white tracking-tight leading-tight max-w-none border-b border-slate-200 dark:border-slate-800/80 pb-3">
+                  {heroTitle}
+                </h1>
+                <div className="w-full text-left">
+                  <p className="text-sm sm:text-base text-slate-655 dark:text-slate-400 leading-relaxed font-semibold max-w-none whitespace-pre-line">
+                    {heroDesc}
+                  </p>
+                </div>
+              </div>
+            </>
+          ) : (
+            <div className="w-full flex flex-col space-y-4 text-left">
               <h1 className="text-xl sm:text-3.5xl font-black text-[#210821] dark:text-white tracking-tight leading-tight max-w-none border-b border-slate-200 dark:border-slate-800/80 pb-3">
-                {parentSubService ? parentSubService.title : foundService!.title}
+                {heroTitle}
               </h1>
               <div className="w-full text-left">
                 <p className="text-sm sm:text-base text-slate-655 dark:text-slate-400 leading-relaxed font-semibold max-w-none whitespace-pre-line">
-                  {parentSubService ? parentSubService.description : ('description' in foundService! ? foundService.description : foundService.shortDesc)}
+                  {heroDesc}
                 </p>
               </div>
             </div>
-          </>
-        ) : (
-          <div className="w-full flex flex-col space-y-4 text-left">
-            <h1 className="text-xl sm:text-3.5xl font-black text-[#210821] dark:text-white tracking-tight leading-tight max-w-none border-b border-slate-200 dark:border-slate-800/80 pb-3">
-              {parentSubService ? parentSubService.title : foundService!.title}
-            </h1>
-            <div className="w-full text-left">
-              <p className="text-sm sm:text-base text-slate-655 dark:text-slate-400 leading-relaxed font-semibold max-w-none whitespace-pre-line">
-                {parentSubService ? parentSubService.description : ('description' in foundService! ? foundService.description : foundService.shortDesc)}
-              </p>
-            </div>
-          </div>
-        )}
-      </div>
-    </motion.div>
-  );
-
-  const renderComparisonMatrix = (accentColor: string) => (
-    <motion.div
-      initial={{ opacity: 0 }}
-      whileInView={{ opacity: 1 }}
-      viewport={{ once: true }}
-      className="space-y-6"
-    >
-      <div className="text-left">
-        <h3 className="text-xl font-extrabold text-[#210821] dark:text-white tracking-tight">
-          Comparison Analysis & Compliance Risk Matrix
-        </h3>
-        <p className="text-xs text-slate-400 mt-1">
-          Understanding the operational trade-offs of self-management versus our certified advisory service:
-        </p>
-      </div>
-
-      <div className="overflow-hidden border border-slate-200/60 dark:border-slate-800/60 rounded-2xl shadow-md bg-white dark:bg-[#180618]">
-        <table className="w-full text-xs text-left border-collapse">
-          <thead>
-            <tr className="bg-slate-50 dark:bg-slate-900/50 border-b border-slate-200/60 dark:border-slate-800/60 text-[11px] font-black uppercase text-slate-500 dark:text-slate-400">
-              <th className="py-4 px-5">Performance Aspect</th>
-              <th className="py-4 px-5 text-red-500 bg-red-50/10 dark:bg-red-950/5">Alternative / Manual</th>
-              <th className="py-4 px-5 style={{ color: accentColor }} bg-amber-500/5">ConsultAvenuee Managed</th>
-            </tr>
-          </thead>
-          <tbody className="divide-y divide-slate-100 dark:divide-slate-800/60 font-bold">
-            {foundService!.comparison.map((row, idx) => (
-              <tr key={idx} className="hover:bg-slate-50/50 dark:hover:bg-slate-900/10 transition-colors">
-                <td className="py-4 px-5 text-[#210821] dark:text-white font-extrabold">{row.aspect}</td>
-                <td className="py-4 px-5 text-slate-500 dark:text-slate-400 bg-red-50/5 dark:bg-red-950/2">
-                  <div className="flex items-start gap-2">
-                    <X className="w-4 h-4 text-red-500 shrink-0 mt-0.5" />
-                    <span>{row.manual}</span>
-                  </div>
-                </td>
-                <td className="py-4 px-5 text-slate-700 dark:text-slate-250 bg-amber-500/2">
-                  <div className="flex items-start gap-2">
-                    <Check className="w-4 h-4 text-emerald-500 shrink-0 mt-0.5" />
-                    <span>{row.consultAvenuee}</span>
-                  </div>
-                </td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
-    </motion.div>
-  );
-
-  const renderVisualDataChart = (isRadial: boolean) => (
-    <motion.div
-      initial={{ opacity: 0 }}
-      whileInView={{ opacity: 1 }}
-      viewport={{ once: true }}
-      className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center bg-white dark:bg-[#180618] border border-slate-100 dark:border-slate-800 p-8 rounded-3xl shadow-sm text-left"
-    >
-      <div className="space-y-4">
-        <span className="text-[10px] font-black uppercase text-[#c79d62] tracking-widest flex items-center gap-1.5">
-          <BarChart3 className="w-3.5 h-3.5" /> Service Analytics
-        </span>
-        <h3 className="text-xl font-extrabold text-[#210821] dark:text-white tracking-tight">
-          Execution Workload Breakdown
-        </h3>
-        <p className="text-xs text-slate-500 dark:text-slate-400 leading-relaxed font-normal">
-          This data model provides a breakdown of resource allocation across phases, highlighting where strategic focus reduces delays.
-        </p>
-        <div className="pt-2 space-y-2">
-          {foundService!.chartData.map((item, idx) => (
-            <div key={idx} className="flex items-center justify-between text-xs font-semibold border-b border-slate-100 dark:border-slate-900 pb-1">
-              <div className="flex items-center gap-2">
-                <span className="w-2.5 h-2.5 rounded-full shrink-0" style={{ backgroundColor: item.color }} />
-                <span className="text-slate-600 dark:text-slate-350">{item.label}</span>
-              </div>
-              <span className="font-extrabold" style={{ color: item.color }}>{item.value}%</span>
-            </div>
-          ))}
+          )}
         </div>
-      </div>
+      </motion.div>
+    );
+  };
 
-      <div className="flex justify-center relative">
-        {isRadial ? (
-          <>
-            {/* Radial Donut Visualization */}
-            <svg className="w-44 h-44 transform -rotate-90" viewBox="0 0 100 100">
-              {(() => {
-                let accumulatedPercent = 0;
-                return foundService!.chartData.map((item, idx) => {
-                  const strokeDash = `${item.value} ${100 - item.value}`;
-                  const strokeOffset = 100 - accumulatedPercent + 25;
-                  accumulatedPercent += item.value;
-                  return (
-                    <circle
-                      key={idx}
-                      cx="50"
-                      cy="50"
-                      r="40"
-                      fill="transparent"
-                      stroke={item.color || "#c79d62"}
-                      strokeWidth="10"
-                      strokeDasharray={strokeDash}
-                      strokeDashoffset={strokeOffset}
-                      className="transition-all duration-700 ease-out hover:stroke-[11px] cursor-pointer"
-                    />
-                  );
-                });
-              })()}
-              <circle cx="50" cy="50" r="30" fill="transparent" className="fill-white dark:fill-[#180618]" />
-            </svg>
-            <div className="absolute inset-0 flex flex-col items-center justify-center pointer-events-none">
-              <span className="text-base font-black text-[#210821] dark:text-white">Active</span>
-              <span className="text-[7px] font-black uppercase text-slate-400 tracking-widest mt-0.5">Assistance</span>
-            </div>
-          </>
-        ) : (
-          /* Stacked Progression Bars Visualization */
-          <div className="w-full space-y-4">
+  const renderComparisonMatrix = (accentColor: string) => {
+    return null; // Commented out per user request
+    /*
+    return (
+      <motion.div
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+        className="space-y-6"
+      >
+        <div className="text-left">
+          <h3 className="text-xl font-extrabold text-[#210821] dark:text-white tracking-tight">
+            Comparison Analysis & Compliance Risk Matrix
+          </h3>
+          <p className="text-xs text-slate-400 mt-1">
+            Understanding the operational trade-offs of self-management versus our certified advisory service:
+          </p>
+        </div>
+
+        <div className="overflow-hidden border border-slate-200/60 dark:border-slate-800/60 rounded-2xl shadow-md bg-white dark:bg-[#180618]">
+          <table className="w-full text-xs text-left border-collapse">
+            <thead>
+              <tr className="bg-slate-50 dark:bg-slate-900/50 border-b border-slate-200/60 dark:border-slate-800/60 text-[11px] font-black uppercase text-slate-500 dark:text-slate-400">
+                <th className="py-4 px-5">Performance Aspect</th>
+                <th className="py-4 px-5 text-red-500 bg-red-50/10 dark:bg-red-950/5">Alternative / Manual</th>
+                <th className="py-4 px-5 style={{ color: accentColor }} bg-amber-500/5">ConsultAvenuee Managed</th>
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-slate-100 dark:divide-slate-800/60 font-bold">
+              {foundService!.comparison.map((row, idx) => (
+                <tr key={idx} className="hover:bg-slate-50/50 dark:hover:bg-slate-900/10 transition-colors">
+                  <td className="py-4 px-5 text-[#210821] dark:text-white font-extrabold">{row.aspect}</td>
+                  <td className="py-4 px-5 text-slate-500 dark:text-slate-400 bg-red-50/5 dark:bg-red-950/2">
+                    <div className="flex items-start gap-2">
+                      <X className="w-4 h-4 text-red-500 shrink-0 mt-0.5" />
+                      <span>{row.manual}</span>
+                    </div>
+                  </td>
+                  <td className="py-4 px-5 text-slate-700 dark:text-slate-250 bg-amber-500/2">
+                    <div className="flex items-start gap-2">
+                      <Check className="w-4 h-4 text-emerald-500 shrink-0 mt-0.5" />
+                      <span>{row.consultAvenuee}</span>
+                    </div>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </motion.div>
+    );
+    */
+  };
+
+  const renderVisualDataChart = (isRadial: boolean) => {
+    return null; // Commented out per user request
+    /*
+    return (
+      <motion.div
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+        className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center bg-white dark:bg-[#180618] border border-slate-100 dark:border-slate-800 p-8 rounded-3xl shadow-sm text-left"
+      >
+        <div className="space-y-4">
+          <span className="text-[10px] font-black uppercase text-[#c79d62] tracking-widest flex items-center gap-1.5">
+            <BarChart3 className="w-3.5 h-3.5" /> Service Analytics
+          </span>
+          <h3 className="text-xl font-extrabold text-[#210821] dark:text-white tracking-tight">
+            Execution Workload Breakdown
+          </h3>
+          <p className="text-xs text-slate-500 dark:text-slate-400 leading-relaxed font-normal">
+            This data model provides a breakdown of resource allocation, highlighting where strategic focus reduces delays.
+          </p>
+          <div className="pt-2 space-y-2">
             {foundService!.chartData.map((item, idx) => (
-              <div key={idx} className="space-y-1 text-left">
-                <div className="flex justify-between text-[11px] font-bold">
-                  <span className="text-slate-500">{item.label}</span>
-                  <span className="text-slate-400">{item.value}%</span>
+              <div key={idx} className="flex items-center justify-between text-xs font-semibold border-b border-slate-100 dark:border-slate-900 pb-1">
+                <div className="flex items-center gap-2">
+                  <span className="w-2.5 h-2.5 rounded-full shrink-0" style={{ backgroundColor: item.color }} />
+                  <span className="text-slate-600 dark:text-slate-350">{item.label}</span>
                 </div>
-                <div className="w-full bg-slate-100 dark:bg-slate-900 rounded-full h-3 overflow-hidden">
-                  <motion.div
-                    initial={{ width: 0 }}
-                    whileInView={{ width: `${item.value}%` }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 1, ease: "easeOut" }}
-                    className="h-full rounded-full"
-                    style={{ backgroundColor: item.color || "#c79d62" }}
-                  />
-                </div>
+                <span className="font-extrabold" style={{ color: item.color }}>{item.value}%</span>
               </div>
             ))}
           </div>
-        )}
-      </div>
-    </motion.div>
-  );
+        </div>
+
+        <div className="flex justify-center relative">
+          {isRadial ? (
+            <>
+              {/* Radial Donut Visualization }
+              <svg className="w-44 h-44 transform -rotate-90" viewBox="0 0 100 100">
+                {(() => {
+                  let accumulatedPercent = 0;
+                  return foundService!.chartData.map((item, idx) => {
+                    const strokeDash = `${item.value} ${100 - item.value}`;
+                    const strokeOffset = 100 - accumulatedPercent + 25;
+                    accumulatedPercent += item.value;
+                    return (
+                      <circle
+                        key={idx}
+                        cx="50"
+                        cy="50"
+                        r="40"
+                        fill="transparent"
+                        stroke={item.color || "#c79d62"}
+                        strokeWidth="10"
+                        strokeDasharray={strokeDash}
+                        strokeDashoffset={strokeOffset}
+                        className="transition-all duration-700 ease-out hover:stroke-[11px] cursor-pointer"
+                      />
+                    );
+                  });
+                })()}
+                <circle cx="50" cy="50" r="30" fill="transparent" className="fill-white dark:fill-[#180618]" />
+              </svg>
+              <div className="absolute inset-0 flex flex-col items-center justify-center pointer-events-none">
+                <span className="text-base font-black text-[#210821] dark:text-white">Active</span>
+                <span className="text-[7px] font-black uppercase text-slate-400 tracking-widest mt-0.5">Assistance</span>
+              </div>
+            </>
+          ) : (
+            /* Stacked Progression Bars Visualization }
+            <div className="w-full space-y-4">
+              {foundService!.chartData.map((item, idx) => (
+                <div key={idx} className="space-y-1 text-left">
+                  <div className="flex justify-between text-[11px] font-bold">
+                    <span className="text-slate-500">{item.label}</span>
+                    <span className="text-slate-400">{item.value}%</span>
+                  </div>
+                  <div className="w-full bg-slate-100 dark:bg-slate-900 rounded-full h-3 overflow-hidden">
+                    <motion.div
+                      initial={{ width: 0 }}
+                      whileInView={{ width: `${item.value}%` }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 1, ease: "easeOut" }}
+                      className="h-full rounded-full"
+                      style={{ backgroundColor: item.color || "#c79d62" }}
+                    />
+                  </div>
+                </div>
+              ))}
+            </div>
+          )}
+        </div>
+      </motion.div>
+    );
+    */
+  };
 
   const renderTimelineRoadmap = () => {
     if (!steps || steps.length === 0) return null;
@@ -608,88 +638,100 @@ export default function ServiceDetailPage() {
   );
   };
 
-  const renderDocumentChecklist = () => (
-    checklist.length > 0 && (
-      <motion.div
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        viewport={{ once: true }}
-        className="bg-white dark:bg-[#180618] border border-slate-100 dark:border-slate-800 p-8 rounded-3xl shadow-sm space-y-6"
-      >
-        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-slate-100 dark:border-slate-800/80 pb-5 text-left">
-          <div>
-            <h3 className="text-lg font-black text-[#210821] dark:text-white tracking-tight flex items-center gap-2">
-              <FileCheck className="w-5 h-5 text-[#c79d62]" />
-              Prerequisites & Document Checklist
-            </h3>
-            <p className="text-xs text-slate-400 mt-1">
-              Select the documents you have on hand to verify your compliance readiness level:
-            </p>
+  const renderDocumentChecklist = () => {
+    return null; // Commented out per user request
+    /*
+    return (
+      checklist.length > 0 && (
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          className="bg-white dark:bg-[#180618] border border-slate-100 dark:border-slate-800 p-8 rounded-3xl shadow-sm space-y-6"
+        >
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-slate-100 dark:border-slate-800/80 pb-5 text-left">
+            <div>
+              <h3 className="text-lg font-black text-[#210821] dark:text-white tracking-tight flex items-center gap-2">
+                <FileCheck className="w-5 h-5 text-[#c79d62]" />
+                Prerequisites & Document Checklist
+              </h3>
+              <p className="text-xs text-slate-400 mt-1">
+                Select the documents you have on hand to verify your compliance readiness level:
+              </p>
+            </div>
+
+            <div className="flex items-center gap-3 bg-slate-50 dark:bg-slate-900/50 px-4 py-2.5 rounded-2xl border border-slate-200/50 dark:border-slate-800">
+              <div className="relative w-10 h-10 flex items-center justify-center shrink-0">
+                <svg className="w-full h-full transform -rotate-90" viewBox="0 0 36 36">
+                  <circle cx="18" cy="18" r="15.91" fill="transparent" stroke="rgba(199, 157, 98, 0.15)" strokeWidth="2.5" />
+                  <circle
+                    cx="18"
+                    cy="18"
+                    r="15.91"
+                    fill="transparent"
+                    stroke="#c79d62"
+                    strokeWidth="2.5"
+                    strokeDasharray={`${readinessPercentage} ${100 - readinessPercentage}`}
+                    className="transition-all duration-500 ease-out"
+                  />
+                </svg>
+                <span className="absolute text-[10px] font-black text-[#c79d62]">{readinessPercentage}%</span>
+              </div>
+              <div className="text-left leading-none">
+                <span className="text-[10px] font-black text-slate-400 uppercase tracking-widest block">Readiness</span>
+                <span className="text-xs font-black text-[#210821] dark:text-white mt-0.5 block">
+                  {readinessPercentage === 100 ? "Ready to File!" : `${checkedCount} of ${checklist.length} Checked`}
+                </span>
+              </div>
+            </div>
           </div>
 
-          <div className="flex items-center gap-3 bg-slate-50 dark:bg-slate-900/50 px-4 py-2.5 rounded-2xl border border-slate-200/50 dark:border-slate-800">
-            <div className="relative w-10 h-10 flex items-center justify-center shrink-0">
-              <svg className="w-full h-full transform -rotate-90" viewBox="0 0 36 36">
-                <circle cx="18" cy="18" r="15.91" fill="transparent" stroke="rgba(199, 157, 98, 0.15)" strokeWidth="2.5" />
-                <circle
-                  cx="18"
-                  cy="18"
-                  r="15.91"
-                  fill="transparent"
-                  stroke="#c79d62"
-                  strokeWidth="2.5"
-                  strokeDasharray={`${readinessPercentage} ${100 - readinessPercentage}`}
-                  className="transition-all duration-500 ease-out"
-                />
-              </svg>
-              <span className="absolute text-[10px] font-black text-[#c79d62]">{readinessPercentage}%</span>
-            </div>
-            <div className="text-left leading-none">
-              <span className="text-[10px] font-black text-slate-400 uppercase tracking-widest block">Readiness</span>
-              <span className="text-xs font-black text-[#210821] dark:text-white mt-0.5 block">
-                {readinessPercentage === 100 ? "Ready to File!" : `${checkedCount} of ${checklist.length} Checked`}
-              </span>
-            </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-left">
+            {checklist.map((doc, idx) => {
+              const isChecked = !!checkedDocs[idx];
+              return (
+                <button
+                  key={idx}
+                  onClick={() => toggleCheck(idx)}
+                  className={`flex items-center gap-3.5 p-4 rounded-xl text-left border transition-all duration-300 cursor-pointer ${isChecked
+                    ? "bg-[#c79d62]/5 border-[#c79d62] text-[#c79d62] shadow-[0_4px_20px_rgba(199,157,98,0.05)]"
+                    : "bg-slate-50/50 dark:bg-slate-900/20 border-slate-200/60 dark:border-slate-800/60 text-slate-600 dark:text-slate-350 hover:bg-slate-50 dark:hover:bg-slate-900/40"
+                    }`}
+                >
+                  <div className={`w-5 h-5 rounded-md flex items-center justify-center border shrink-0 transition-colors ${isChecked ? "bg-[#c79d62] border-[#c79d62] text-white" : "border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-950"
+                    }`}>
+                    {isChecked && <Check className="w-3.5 h-3.5 stroke-[3]" />}
+                  </div>
+                  <span className="text-xs font-semibold leading-snug">{doc}</span>
+                </button>
+              );
+            })}
           </div>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-left">
-          {checklist.map((doc, idx) => {
-            const isChecked = !!checkedDocs[idx];
-            return (
-              <button
-                key={idx}
-                onClick={() => toggleCheck(idx)}
-                className={`flex items-center gap-3.5 p-4 rounded-xl text-left border transition-all duration-300 cursor-pointer ${isChecked
-                  ? "bg-[#c79d62]/5 border-[#c79d62] text-[#c79d62] shadow-[0_4px_20px_rgba(199,157,98,0.05)]"
-                  : "bg-slate-50/50 dark:bg-slate-900/20 border-slate-200/60 dark:border-slate-800/60 text-slate-600 dark:text-slate-350 hover:bg-slate-50 dark:hover:bg-slate-900/40"
-                  }`}
-              >
-                <div className={`w-5 h-5 rounded-md flex items-center justify-center border shrink-0 transition-colors ${isChecked ? "bg-[#c79d62] border-[#c79d62] text-white" : "border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-950"
-                  }`}>
-                  {isChecked && <Check className="w-3.5 h-3.5 stroke-[3]" />}
-                </div>
-                <span className="text-xs font-semibold leading-snug">{doc}</span>
-              </button>
-            );
-          })}
-        </div>
-      </motion.div>
-    )
-  );
+        </motion.div>
+      )
+    );
+    */
+  };
 
   const renderDetailedSections = () => {
     const isGrouped = parentCategoryId === "society-management" && parentSubService?.subSubServices;
 
     return (
       <div className="space-y-16">
+        {foundService!.sections && foundService!.sections.length > 0 && (
+          <div className="border-b border-slate-200 dark:border-slate-800/80 pb-3 text-left">
+            <h3 className="text-xl sm:text-2.5xl font-black text-[#210821] dark:text-white tracking-tight">
+              Our Services Includes
+            </h3>
+          </div>
+        )}
         {isGrouped ? (
           parentSubService.subSubServices.map((subSub: any, groupIdx: number) => {
             return (
               <div key={groupIdx} id={subSub.slug} className="space-y-8 scroll-mt-24">
                 {/* Heading for this sub-service group */}
                 <div className="border-b border-slate-200 dark:border-slate-800/80 pb-3 text-left">
-                  <h3 className="text-xl sm:text-2xl font-black text-[#210821] dark:text-white tracking-tight">
+                  <h3 className="text-xl sm:text-2.5xl font-black text-[#210821] dark:text-white tracking-tight">
                     {subSub.title}
                   </h3>
                   {subSub.shortDesc && (
@@ -721,10 +763,7 @@ export default function ServiceDetailPage() {
                       </div>
                       <div className="bg-white dark:bg-[#180618] border border-slate-200/60 dark:border-slate-800/60 rounded-2xl p-4 shadow-sm hover:shadow-xl transition-all duration-300 hover:border-[#c79d62]/60">
                         <div className="space-y-2">
-                          <span className="text-[10px] font-black uppercase text-[#c79d62] tracking-widest">
-                            Phase 0{idx + 1}
-                          </span>
-                          <h4 className="text-xl sm:text-2xl font-black text-[#c79d62] leading-tight">
+                          <h4 className="text-lg sm:text-xl font-black text-[#c79d62] leading-tight">
                             {section.title}
                           </h4>
                           {section.content && (
@@ -751,43 +790,55 @@ export default function ServiceDetailPage() {
                 className="absolute left-0 top-10 bottom-12 w-[2px] bg-gradient-to-b from-[#c79d62] via-[#c79d62]/50 to-transparent origin-top"
               />
               {foundService!.sections.map((section: any, idx: number) => (
-                <motion.div
-                  key={idx}
-                  id={section._parentSlug || section.title.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '')}
-                  initial={{ opacity: 0, x: -20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true, margin: "0px 0px 100px 0px" }}
-                  transition={{ duration: 0.4, delay: Math.min(idx * 0.05, 0.2) }}
-                  className="relative group scroll-mt-24"
-                >
-                  <div className="absolute left-[-43px] sm:left-[-59px] top-3 w-6 h-6 rounded-full bg-white dark:bg-[#120412] border-4 border-[#c79d62]/30 group-hover:border-[#c79d62] flex items-center justify-center transition-all duration-300 shadow-sm z-10">
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#c79d62] group-hover:scale-125 transition-transform" />
-                  </div>
-                  <div className="bg-white dark:bg-[#180618] border border-slate-200/60 dark:border-slate-800/60 rounded-2xl p-4 shadow-sm hover:shadow-xl transition-all duration-300 hover:border-[#c79d62]/60">
-                    <div className="space-y-2">
-                      <span className="text-[10px] font-black uppercase text-[#c79d62] tracking-widest">
-                        Phase {idx + 1}
-                      </span>
-                      <h4 className="text-xl sm:text-2xl font-black text-[#c79d62] leading-tight">
-                        {section.title}
-                      </h4>
-                      {section.content && (
-                        <div className="text-xs sm:text-sm text-slate-600 dark:text-slate-350 leading-relaxed font-semibold mt-1">
-                          {renderFormattedText(section.content)}
-                        </div>
-                      )}
+                <React.Fragment key={idx}>
+                  {section.groupHeader && (
+                    <div className="pt-6 pb-2 -ml-8 sm:-ml-12 scroll-mt-24" id={section.groupHeader.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '')}>
+                      <h3 className="text-lg sm:text-xl font-black text-[#210821] dark:text-white border-l-4 border-[#c79d62] pl-3">
+                        {section.groupHeader}
+                      </h3>
                     </div>
-                  </div>
-                </motion.div>
+                  )}
+                  <motion.div
+                    id={section._parentSlug || section.title.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '')}
+                    initial={{ opacity: 0, x: -20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true, margin: "0px 0px 100px 0px" }}
+                    transition={{ duration: 0.4, delay: Math.min(idx * 0.05, 0.2) }}
+                    className="relative group scroll-mt-24"
+                  >
+                    <div className="absolute left-[-43px] sm:left-[-59px] top-3 w-6 h-6 rounded-full bg-white dark:bg-[#120412] border-4 border-[#c79d62]/30 group-hover:border-[#c79d62] flex items-center justify-center transition-all duration-300 shadow-sm z-10">
+                      <span className="w-1.5 h-1.5 rounded-full bg-[#c79d62] group-hover:scale-125 transition-transform" />
+                    </div>
+                    <div className="bg-white dark:bg-[#180618] border border-slate-200/60 dark:border-slate-800/60 rounded-2xl p-4 shadow-sm hover:shadow-xl transition-all duration-300 hover:border-[#c79d62]/60">
+                      <div className="space-y-2">
+                        <h4 className="text-lg sm:text-xl font-black text-[#c79d62] leading-tight">
+                          {section.title}
+                        </h4>
+                        {section.content && (
+                          <div className="text-xs sm:text-sm text-slate-600 dark:text-slate-350 leading-relaxed font-semibold mt-1">
+                            {renderFormattedText(section.content)}
+                          </div>
+                        )}
+                      </div>
+                    </div>
+                  </motion.div>
+                </React.Fragment>
               ))}
             </div>
           )
+        )}
+        {foundService!.postSectionsDesc && (
+          <div className="max-w-4xl text-left mt-8 text-sm sm:text-base text-slate-550 dark:text-slate-400 font-semibold leading-relaxed">
+            {renderFormattedText(foundService!.postSectionsDesc)}
+          </div>
         )}
       </div>
     );
   };
 
   const renderFeatures = () => {
+    return null; // Commented out per user request
+    /*
     const isGrouped = parentCategoryId === "society-management" && parentSubService?.subSubServices;
 
     if (isGrouped) return null;
@@ -802,7 +853,7 @@ export default function ServiceDetailPage() {
       >
         <div className="border-b border-slate-100 dark:border-slate-800/80 pb-5">
           <h3 className="text-lg font-black text-[#210821] dark:text-white tracking-tight flex items-center gap-2">
-            Our Services Include
+            Our Services Includes
           </h3>
         </div>
 
@@ -839,6 +890,7 @@ export default function ServiceDetailPage() {
         </div>
       </motion.div>
     );
+    */
   };
 
   const renderFAQs = () => {
@@ -876,9 +928,6 @@ export default function ServiceDetailPage() {
           <h3 className="text-lg font-black text-[#210821] dark:text-white tracking-tight flex items-center gap-2">
             Frequently Asked Questions
           </h3>
-          <p className="text-xs text-slate-400 mt-1">
-            Common answers to registration, handover, and compliance policies:
-          </p>
         </div>
 
         {hasTabs && (
@@ -913,7 +962,10 @@ export default function ServiceDetailPage() {
                   onClick={() => setActiveFaq(isOpen ? null : idx)}
                   className="w-full text-left p-5 flex items-center justify-between gap-4 font-bold text-sm text-[#210821] dark:text-white hover:bg-slate-100/50 dark:hover:bg-slate-900/20 transition-colors cursor-pointer"
                 >
-                  <span>{faq.question}</span>
+                  <span className="flex items-center gap-2">
+                    <span className="text-[#c79d62] font-black shrink-0">{idx + 1}.</span>
+                    <span>{faq.question}</span>
+                  </span>
                   <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${isOpen ? "rotate-180" : ""}`} />
                 </button>
                 {isOpen && (
@@ -955,6 +1007,7 @@ export default function ServiceDetailPage() {
   };
 
   const renderCategoryLayout = () => {
+    const isSubSub = slug !== parentSubId;
     switch (parentCategoryId) {
       // 1. Housing Society Management -> Layout Type A
       case "society-management":
@@ -964,7 +1017,7 @@ export default function ServiceDetailPage() {
             {renderHeroHeader()}
             {isGroupedLayout ? renderSubSubContent() : (
               <div className="max-w-4xl mx-auto px-4 sm:px-6 mt-12 mb-12 flex flex-col space-y-4 text-left">
-                <h2 className="text-2xl sm:text-3xl font-black text-[#210821] dark:text-white tracking-tight leading-tight mb-2">
+                <h2 className="text-2xl sm:text-3.5xl font-black text-[#210821] dark:text-white tracking-tight leading-tight mb-2">
                   {foundService!.title}
                 </h2>
                 {foundService!.longDesc && (
@@ -975,6 +1028,14 @@ export default function ServiceDetailPage() {
               </div>
             )}
             {renderDetailedSections()}
+            {!isGroupedLayout && (
+              <>
+                {renderComparisonMatrix("#c79d62")}
+                {renderDocumentChecklist()}
+                {renderVisualDataChart(false)}
+                {renderTimelineRoadmap()}
+              </>
+            )}
           </>
         );
 
@@ -984,7 +1045,7 @@ export default function ServiceDetailPage() {
           <>
             {renderHeroHeader()}
             {renderDetailedSections()}
-            {parentSubId !== "company-formation" && parentSubId !== "registrations" && parentSubId !== "corporate-compliance" && parentSubId !== "virtual-cfo" && (
+            {(parentSubId !== "company-formation" && parentSubId !== "registrations" && parentSubId !== "corporate-compliance" && parentSubId !== "virtual-cfo" || isSubSub) && (
               <>
                 {renderVisualDataChart(false)}
                 {renderComparisonMatrix("#110311")}
@@ -1001,6 +1062,14 @@ export default function ServiceDetailPage() {
           <>
             {renderHeroHeader()}
             {renderDetailedSections()}
+            {isSubSub && (
+              <>
+                {renderComparisonMatrix("#c79d62")}
+                {renderDocumentChecklist()}
+                {renderVisualDataChart(false)}
+                {renderTimelineRoadmap()}
+              </>
+            )}
           </>
         );
 
@@ -1032,13 +1101,38 @@ export default function ServiceDetailPage() {
     <div className="bg-[#fcfcfc] dark:bg-[#120412] min-h-screen text-slate-800 dark:text-slate-200 transition-colors duration-300 py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
+        {/* Navigation Back Bar */}
+        <div className="mb-8 flex items-center gap-3">
+          <button
+            onClick={() => router.back()}
+            className="inline-flex items-center gap-2 text-xs font-bold text-slate-500 hover:text-[#c79d62] dark:text-slate-400 transition-colors group cursor-pointer focus:outline-none"
+          >
+            <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
+            <span>Go Back</span>
+          </button>
+          <span className="text-slate-300 dark:text-slate-800">|</span>
+          <Link
+            href="/services"
+            className="text-xs font-bold text-slate-500 hover:text-[#c79d62] dark:text-slate-400 transition-colors"
+          >
+            All Services
+          </Link>
+          <span className="text-slate-300 dark:text-slate-800">|</span>
+          <Link
+            href="/"
+            className="text-xs font-bold text-slate-500 hover:text-[#c79d62] dark:text-slate-400 transition-colors"
+          >
+            Home
+          </Link>
+        </div>
+
         {/* Content Layout Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start text-left">
 
           {/* LEFT COLUMN - SERVICE CONTENT */}
           <div className="lg:col-span-9 space-y-12">
             {renderCategoryLayout()}
-            {parentSubId !== "company-formation" && parentSubId !== "registrations" && (
+            {(parentSubId !== "company-formation" && parentSubId !== "registrations" || slug !== parentSubId) && (
               <>
                 {renderFeatures()}
               </>
@@ -1087,50 +1181,36 @@ export default function ServiceDetailPage() {
                                 }}
                                 onMouseLeave={() => setOpenSub(null)}
                               >
-                                <div className="w-full flex items-center justify-between">
-                                  <Link
-                                    href={`/services/${sub.id}`}
-                                    className={`flex-grow text-[12px] font-extrabold py-1.5 transition-colors text-left focus:outline-none cursor-pointer ${sub.id === slug || (parentSubService && parentSubService.id === sub.id) ? "text-[#c79d62]" : "text-slate-650 dark:text-slate-400 hover:text-[#c79d62]"}`}
-                                  >
-                                    <span>{sub.title}</span>
-                                  </Link>
-                                  {(tab.id === 'compliance-business-advisory' || tab.id === 'taxation-regulatory-litigation') && sub.subSubServices && sub.subSubServices.length > 1 && (
-                                    <button
-                                      onClick={() => setOpenSub(openSub === sub.id ? null : sub.id)}
-                                      className={`p-1 focus:outline-none cursor-pointer ${isSubOpen ? "text-[#c79d62]" : "text-slate-650 dark:text-slate-400 hover:text-[#c79d62]"}`}
+                                  <div className="w-full flex items-center justify-between">
+                                    <Link
+                                      href={`/services/${sub.subSubServices && sub.subSubServices.length > 0 ? sub.subSubServices[0].slug : sub.id}`}
+                                      className={`flex-grow text-[12px] font-extrabold py-1.5 transition-colors text-left focus:outline-none cursor-pointer ${sub.id === slug || (parentSubService && parentSubService.id === sub.id) ? "text-[#c79d62]" : "text-slate-650 dark:text-slate-400 hover:text-[#c79d62]"}`}
                                     >
-                                      <ChevronDown className={`w-3 h-3 transition-transform duration-200 ${isSubOpen ? "rotate-180" : ""}`} />
-                                    </button>
-                                  )}
-                                </div>
+                                      <span>{sub.title}</span>
+                                    </Link>
+                                    {(tab.id === 'compliance-business-advisory' || tab.id === 'taxation-regulatory-litigation') && sub.subSubServices && sub.subSubServices.length > 1 && (
+                                      <button
+                                        onClick={() => setOpenSub(openSub === sub.id ? null : sub.id)}
+                                        className={`p-1 focus:outline-none cursor-pointer ${isSubOpen ? "text-[#c79d62]" : "text-slate-650 dark:text-slate-400 hover:text-[#c79d62]"}`}
+                                      >
+                                        <ChevronDown className={`w-3 h-3 transition-transform duration-200 ${isSubOpen ? "rotate-180" : ""}`} />
+                                      </button>
+                                    )}
+                                  </div>
 
-                                {(tab.id === 'compliance-business-advisory' || tab.id === 'taxation-regulatory-litigation' || tab.id === 'nri-services' || tab.id === 'senior-citizen-advisory') && isSubOpen && sub.subSubServices && sub.subSubServices.length > 1 && (
-                                  <div className="pl-3 border-l border-slate-100 dark:border-slate-800/80 space-y-1.5 py-1">
-                                    {sub.subSubServices.map((sss: any) => {
-                                      const isCombinedPage = ['company-formation', 'registrations', 'corporate-compliance', 'income-tax', 'litigation-support'].includes(sub.id) && slug === sub.id;
-                                      return isCombinedPage ? (
-                                        <button
-                                          key={sss.slug}
-                                          onClick={() => {
-                                            const el = document.getElementById(sss.slug);
-                                            if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                                          }}
-                                          className={`block w-full text-[11px] font-bold py-1 transition-colors text-left cursor-pointer ${sss.slug === slug ? "text-[#c79d62]" : "text-slate-500 dark:text-slate-500 hover:text-[#c79d62]"}`}
-                                        >
-                                          {sss.title}
-                                        </button>
-                                      ) : (
+                                  {(tab.id === 'compliance-business-advisory' || tab.id === 'taxation-regulatory-litigation' || tab.id === 'nri-services' || tab.id === 'senior-citizen-advisory') && isSubOpen && sub.subSubServices && sub.subSubServices.length > 1 && (
+                                    <div className="pl-3 border-l border-slate-100 dark:border-slate-800/80 space-y-1.5 py-1">
+                                      {sub.subSubServices.map((sss: any) => (
                                         <Link
                                           key={sss.slug}
-                                          href={(sub.id === 'company-formation' || sub.id === 'registrations' || sub.id === 'corporate-compliance') ? `/services/${sub.id}#${sss.slug}` : `/services/${sss.slug}`}
+                                          href={`/services/${sss.slug}`}
                                           className={`block w-full text-[11px] font-bold py-1 transition-colors text-left ${sss.slug === slug ? "text-[#c79d62]" : "text-slate-500 dark:text-slate-500 hover:text-[#c79d62]"}`}
                                         >
                                           {sss.title}
                                         </Link>
-                                      );
-                                    })}
-                                  </div>
-                                )}
+                                      ))}
+                                    </div>
+                                  )}
                               </div>
                             );
                           })}
@@ -1142,20 +1222,7 @@ export default function ServiceDetailPage() {
               </div>
             </div>
 
-            {/* Company Presentation Box */}
-            <a
-              href="#"
-              className="group flex items-center justify-between bg-[#110311] hover:bg-[#1c061c] text-white p-5 rounded-md shadow-md transition-all duration-300 transform hover:-translate-y-0.5"
-            >
-              <div className="flex items-center gap-3">
-                <FileText className="w-8 h-8 text-[#c79d62] group-hover:scale-110 transition-transform duration-300" />
-                <div className="text-left">
-                  <div className="text-[10px] font-extrabold uppercase tracking-wider opacity-60">Company</div>
-                  <div className="text-xs font-black uppercase tracking-widest">Presentation</div>
-                </div>
-              </div>
-              <Download className="w-4 h-4 text-[#c79d62] opacity-60 group-hover:opacity-100 transition-opacity" />
-            </a>
+
 
             {/* How Can We Help You Box */}
             <div className="bg-[#c79d62] text-white p-7 rounded-md relative overflow-hidden shadow-md">

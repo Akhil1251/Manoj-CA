@@ -118,7 +118,7 @@ export default function FAQPage() {
                   className="w-full text-left p-5 flex items-center justify-between gap-4 font-bold text-sm sm:text-base text-slate-900 dark:text-white hover:bg-slate-100/50 dark:hover:bg-slate-900/50 transition-colors"
                 >
                   <span className="flex items-center gap-2">
-                    <HelpCircle className="h-4.5 w-4.5 text-amber-500 shrink-0" />
+                    <span className="text-amber-500 font-extrabold shrink-0 min-w-[1.5rem]">{idx + 1}.</span>
                     {faq.question}
                   </span>
                   {isOpen ? <ChevronUp className="h-5 w-5" /> : <ChevronDown className="h-5 w-5" />}

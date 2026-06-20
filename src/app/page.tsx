@@ -39,16 +39,16 @@ export default function HomePage() {
   const [isConsultationOpen, setIsConsultationOpen] = useState(false);
 
   const journeySteps = [
-    { num: "01", title: "ASSESSMENT", icon: FileCheck, detailTitle: "Assessment", desc: "We evaluate your current compliance position, operational requirements, and potential risk areas to identify challenges, opportunities, and the most effective path forward." },
-    { num: "02", title: "ADVISORY", icon: Calculator, detailTitle: "Advisory", desc: "We provide clear, practical, and result-oriented guidance tailored to your unique requirements. Our experts help you make informed decisions." },
-    { num: "03", title: "EXECUTION", icon: Building, detailTitle: "Execution", desc: "Ideas create possibilities. Execution creates results. We implement every solution with precision, speed, and accountability." },
+    { num: "01", title: "ASSESSMENT", image: "/we serve/assessment.png", icon: FileCheck, detailTitle: "Assessment", desc: "We evaluate your current compliance position, operational requirements, and potential risk areas to identify challenges, opportunities, and the most effective path forward." },
+    { num: "02", title: "ADVISORY", image: "/we serve/advise.png", icon: Calculator, detailTitle: "Advisory", desc: "We provide clear, practical, and result-oriented guidance tailored to your unique requirements. Our experts help you make informed decisions." },
+    { num: "03", title: "EXECUTION", image: "/we serve/execution.png", icon: Building, detailTitle: "Execution", desc: "Ideas create possibilities. Execution creates results. We implement every solution with precision, speed, and accountability." },
     { num: "04", title: "COMPLIANCE", icon: ShieldAlert, detailTitle: "Compliance", desc: "Compliance is not a one-time activity. We provide continuous oversight and expert support to keep you ahead of regulatory requirements and potential risks." }
   ];
 
   const problemsList = [
     {
       id: "society-management",
-      title: "Housing Society",
+      title: "Housing Society Advisory",
       // subtitle: "Secretary & Chairman Overburdened",
       // description: "Focus on your community while we manage AGM.SGBM, notices, minutes, compliance, taxation to ensure and protect Managing Committee members from penalties through proper compliance and governance.",
       icon: Building,
@@ -74,7 +74,7 @@ export default function HomePage() {
     },
     {
       id: "taxation-regulatory-litigation",
-      title: "Tax & Litigation Services",
+      title: "Tax & Litigation",
       // subtitle: "Facing Challenges with Regulatory Registrations and Approvals?",
       // description: "Assistance with GST, PAN, TAN, Professional Tax, MSME and other regulatory registrations and compliances.",
       icon: ShieldAlert,
@@ -102,7 +102,7 @@ export default function HomePage() {
     },
     {
       id: "senior-citizen-advisory",
-      title: "Senior Citizen Advisory Services",
+      title: "Senior Citizen Advisory",
       // subtitle: "Senior Citizen Support Services",
       // description: "Trusted support for taxation, pension benefits, property matters, estate planning, succession planning and legal documentation for senior citizens and their families.",
       icon: HeartHandshake,
@@ -119,39 +119,39 @@ export default function HomePage() {
   // Expertise Sections with Professional High-Quality Images
   const expertiseSections = [
     {
-      title: "Housing Society Advisory ",
+      title: "Housing Society Advisory",
       cta: "Learn More",
       desc: "Society Compliance & Governance-Complete Housing Society Compliance, Taxation, Audit & Governance Solutions for Cooperative Housing Societies Across India.",
       href: "/services#society-management",
-      image: "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=800&q=80",
+      image: "/5th home/housing society.png",
     },
     {
       title: "Business Formation, Registration & Compliance",
       cta: "Learn More",
       desc: "Build. Comply. Grow-Comprehensive Company Registration, Regulatory Compliance, Taxation, Accounting and Virtual CFO Services for Startups, SMEs and Growing Businesses.",
       href: "/services#compliance-business-advisory",
-      image: "https://images.unsplash.com/photo-1589829085413-56de8ae18c73?auto=format&fit=crop&w=800&q=80",
+      image: "/5th home/business reg.png",
     },
     {
-      title: "Tax & Litigation Services",
+      title: "Tax & Litigation",
       cta: "Learn More",
       desc: "Taxation & Litigation Experts-End-to-end Income Tax, GST, Tax Advisory, Regulatory Registration, Assessments, Appeals and Litigation Support for businesses, professionals and individuals across India.",
       href: "/services#taxation-regulatory-litigation",
-      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80",
+      image: "/5th home/tax.png",
     },
     {
       title: "NRI Services",
       cta: "Learn More",
       desc: "NRI Tax & Property Solutions-Trusted NRI Taxation, Property Management & Compliance Solutions for Global Indians.",
       href: "/services#nri-services",
-      image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=800&q=80",
+      image: "/5th home/nri service.png",
     },
     {
-      title: "Senior Citizen Advisory Services",
+      title: "Senior Citizen Advisory",
       cta: "Learn More",
       desc: "Senior Citizen Support Services-Trusted support for taxation, pension benefits, property matters, estate planning, succession planning and legal documentation for senior citizens and their families.",
       href: "/services#senior-citizen-advisory",
-      image: "https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?auto=format&fit=crop&w=800&q=80",
+      image: "/5th home/senior citizen.png",
     }
   ];
 
@@ -258,25 +258,44 @@ export default function HomePage() {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-12">
-              {industriesList.map((item, idx) => {
-                const IconComponent = item.icon;
-                return (
-                  <div key={idx} className="flex items-start gap-4 group">
-                    <div className="flex-shrink-0 w-14 h-14 rounded-full bg-[#1b071b] border border-[#c79d62]/20 flex items-center justify-center shadow-md transition-all duration-300 group-hover:border-[#c79d62]/50 group-hover:scale-105">
-                      <IconComponent className="w-6 h-6 text-white" />
+              {(() => {
+                const weServeIconMap: Record<string, string> = {
+                  "SME": "/we serve/sme.png",
+                  "STARTUP": "/we serve/startup.png",
+                  "NRI": "/we serve/nri.png",
+                  "SENIOR CITIZEN": "/we serve/senior.png",
+                  "Charitable Trust": "/we serve/ngo.png",
+                };
+                
+                return industriesList.map((item, idx) => {
+                  const IconComponent = item.icon;
+                  const imgSrc = weServeIconMap[item.title];
+                  return (
+                    <div key={idx} className="flex items-start gap-4 group">
+                      <div className="flex-shrink-0 w-14 h-14 flex items-center justify-center transition-all duration-300 group-hover:scale-105">
+                        {imgSrc ? (
+                          <img
+                            src={imgSrc}
+                            alt={item.title}
+                            className="w-12 h-12 object-contain"
+                          />
+                        ) : (
+                          <IconComponent className="w-10 h-10 text-[#c79d62] dark:text-[#c79d62]" />
+                        )}
+                      </div>
+                      <div className="flex-grow pt-1">
+                        <h3 className="text-base font-bold text-slate-900 dark:text-white tracking-tight leading-snug">
+                          {item.title}
+                        </h3>
+                        <div className="w-10 h-[2px] bg-[#c79d62] mt-1 mb-2.5" />
+                        <p className="text-sm text-slate-600 dark:text-slate-350 leading-relaxed font-normal">
+                          {item.desc}
+                        </p>
+                      </div>
                     </div>
-                    <div className="flex-grow pt-1">
-                      <h3 className="text-base font-bold text-slate-900 dark:text-white tracking-tight leading-snug">
-                        {item.title}
-                      </h3>
-                      <div className="w-10 h-[2px] bg-[#c79d62] mt-1 mb-2.5" />
-                      <p className="text-xs text-slate-500 dark:text-slate-400 leading-relaxed font-normal">
-                        {item.desc}
-                      </p>
-                    </div>
-                  </div>
-                );
-              })}
+                  );
+                });
+              })()}
             </div>
           </div>
         </section>
@@ -321,7 +340,7 @@ export default function HomePage() {
               <span className="text-xs font-bold uppercase tracking-widest text-[#c79d62] mb-2 block">
                 Clarity. Compliance. Confidence.
               </span>
-              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white mt-2 mb-6 drop-shadow-md whitespace-nowrap overflow-hidden text-ellipsis">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white mt-2 mb-6 drop-shadow-md whitespace-normal">
                 Compliance is not a cost, it is an investment in trust
               </h2>
               <p className="max-w-3xl mx-auto text-slate-300 text-sm sm:text-base leading-relaxed mb-8 whitespace-normal">
@@ -391,7 +410,7 @@ export default function HomePage() {
               <span className="text-xs font-bold uppercase tracking-widest text-amber-500">
                 One Platform. Multiple Solutions
               </span>
-              <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white mt-3">
+              <h2 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 dark:text-white mt-3">
                 Your Trusted Compliance & Advisory Partner
               </h2>
             </div>
@@ -561,10 +580,18 @@ export default function HomePage() {
                           : "bg-white dark:bg-[#1a0b1a] border-2 border-[#c79d62]/50 hover:border-[#c79d62] text-[#c79d62]"
                           }`}
                       >
-                        <Icon className={`h-6 w-6 transition-colors duration-300 ${isActive
-                          ? "text-white"
-                          : "text-[#c79d62]"
-                          }`} />
+                        {step.image ? (
+                          <img
+                            src={step.image}
+                            alt={step.title}
+                            className="w-7 h-7 object-contain"
+                          />
+                        ) : (
+                          <Icon className={`h-6 w-6 transition-colors duration-300 ${isActive
+                            ? "text-white"
+                            : "text-[#c79d62]"
+                            }`} />
+                        )}
                       </motion.div>
                       <span className={`text-[10px] font-black tracking-wider transition-colors duration-300 ${isActive ? "text-[#c79d62]" : "text-slate-400 dark:text-slate-500"
                         }`}>{step.num}</span>
