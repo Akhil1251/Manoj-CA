@@ -1,0 +1,220 @@
+Observation on website content.
+FAQ- in all services- remove common answer lines appearing below faq
+In FAQ where bullet points are coming, you have put certain sybbol , pls check that and keep coma or numbering
+Heading of sub services should be of same size in all the services section
+Sub sub heading should be smaller to sub headings.
+Pls remove the word phase 1 , phase-2 mentioned in all content
+Right side content in service pages- needs modification with below mentioned content
+How Can We Help You?
+Looking for expert assistance with housing society matters, GST, Income Tax, ROC compliance, NRI services, or housing society matters? Contact ConsultAvenuee today.
+Company presentation remove it.
+Some content below contact us remove it.
+Icon/Images need to be replace with relevant image
+2nd Section- home page- we served to- pls replace icons.
+Icon suggestion to replace with existing one.
+SME
+STARTUP
+NRI
+SENIOR CITIZEN
+Charitable Trust
+5th section- home page- pls replace images with existing one.
+Housing Society Advisory,
+Business Formation, Registration & Compliance
+Tax & Litigation
+NRI Services
+Senior Citizen Advisory
+6th section
+Our advisory journey
+Assessment
+Advisory
+Execution
+Compliance
+About us
+1st section – image is not coming on mobile version
+Who we are-
+Old content given- replace it with new content.
+What we do?
+Change image
+Old content given- replace it with new content.
+Why to choose us?-
+Change image-
+Heading is old- pls update it
+Old content-replace with new content
+Why client trust us.
+Heading is old- Please update it
+old content- replace with new content
+OUR MISSION-
+Change image-
+old content- replace with new content
+OUR VISION-
+old content- replace with new content
+Contents in attached file is highlighted in yellow
+Home page
+2nd section-
+we served to – Pls increase font size of sub content it is not readable.
+4th section –
+heading- increase font
+2nd line coming incomplete on mobile - reduce the font to fit or keep in 2 lines.
+5th section-
+font size of heading to be increased.
+Last section
+Logo size to increase.
+Corporate office coordiantes- heading in pink colour not readable
+Services tab
+In Services tab -services sequence droop down is ok,
+On clicking service tab and also on Right-side service directory sequence needs to be rearranged as per services tab.
+Services heading and name should be same at all places.
+put exact these words and sequence in Services heads.
+Housing Society Advisory,
+Business Formation, Registration & Compliance
+Tax & Litigation
+NRI Services
+Senior Citizen Advisory.
+Business Formation, Registration & Compliance
+on clicking Sub Sub services relevant content along with all contents of other sub sub services are appearing in same page. It has to be separate for all sub sub services.
+Like -On click of any sub sub services only relevant content of that sub sub services as single page should appear not entire content of other sub services. Pls repeat this for all sub sub services
+Further contents in certain sub sub services is not as per our provided input.
+So please put our single page content against all clickable sub sub services. Remove your content.
+Sub services page will open with
+Heading and content of Main services, then heading and content of sub services ----- then sub sub content in our format.
+Housing society Advisory
+Society formation and Registration- heading should be big.
+Include below line before services
+Our Services Includes
+FAQ- is repeated 3 times- pls remove extra one.
+Society Elections & Managing Committee Formation
+Please include below mentioned section which has missed out
+Annual Compliance Calendar Management
+Services:
+AGM Due Date Tracking
+Audit Due Date Tracking
+Registrar Filing Monitoring
+Committee Meeting Compliance
+Statutory Register Review
+Compliance Alerts & Reminders
+Our objective is to ensure that your society remains fully compliant with annual filing requirements while allowing the Managing Committee to focus on effective administration and community development.
+NRI Services-
+When we are clicking on sub services- NRI services heading is there but content is missing, it should be there and should be common with all sub services section.
+NRI Taxation Services
+Our Services- pls add this then services will start.
+Pls include below mentioned section which is left out.
+Documents Commonly Required
+Passport
+PAN Card
+Aadhaar Card (if available)
+Overseas Address Proof
+Tax Residency Documents
+Bank Statements
+Property Documents
+Form 16 (if applicable)
+Investment Statements
+Foreign Income Records
+TDS Certificates
+Previous Tax Returns
+NRI Property Management Services
+Pls include below line before service section start.
+Our Services
+Pls include below mentioned section which is left out.
+Documents Commonly Required
+Passport
+OCI / PIO Card (if applicable)
+PAN Card
+Property Title Documents
+Previous Sale Deeds
+Property Tax Receipts
+Utility Records
+Existing Lease Agreements
+Power of Attorney (if applicable)
+Bank Account Details
+NRI Legal & Compliance Services
+Pls include below mentioned section which is left out.
+Documents Commonly Required
+Passport
+OCI / PIO Card (if applicable)
+PAN Card
+Overseas Address Proof
+Indian Address Proof (if available)
+Tax Records and Financial Statements
+Bank Account Details
+Existing Legal Documents
+Family and Beneficiary Information
+Investment and Compliance Records
+Senior Citizen Advisory Services
+Heading along with content should appear with all the sub services page.
+Health Insurance Claims Support Services
+Pls include below mentioned section which is left out.
+Documents Generally Required
+The documents required may vary depending on the insurer and type of claim. Commonly required documents include:
+Health Insurance Policy Details
+Health Insurance Card
+Aadhaar Card or Identity Proof
+Hospital Admission Records
+Discharge Summary
+Medical Prescriptions
+Diagnostic Reports
+Original Medical Bills and Receipts
+Pharmacy Bills
+Bank Account Details
+Cancelled Cheque (for reimbursement claims)
+Income Tax Planning & Return Filing Services
+Pls include below line before service section start.
+Our Income Tax Services
+Pls include below mentioned section which is left out.
+Documents Generally Required
+For Salaried Individuals
+PAN Card
+Aadhaar Card
+Form 16
+Salary Slips
+Bank Statements
+Investment Proofs
+Home Loan Interest Certificate
+Capital Gain Statements (if applicable)
+For Businesses & Professionals
+PAN & Registration Documents
+Books of Accounts
+Financial Statements
+GST Returns
+TDS Details
+Bank Statements
+Expense Records
+Audit Reports (where applicable)
+Additional documents may be required based on the nature of income and filing requirements.
+Pension & Gratuity Documentation Services
+Pls include below line before service section start.
+Our Pension Documentation Services
+Pls include below line before service section start.
+Gratuity Documentation Services
+Pls include below mentioned section which is left out.
+Documents Generally Required
+For Pension Claims
+Aadhaar Card
+PAN Card
+UAN Number
+Bank Account Details
+Passport Size Photographs
+Service Records
+Form 10C / Form 10D
+Pension Payment Order (where applicable)
+For Gratuity Claims
+Identity Proof
+Employment Records
+Salary Details
+Gratuity Nomination Forms
+Service Certificate
+Retirement / Resignation Documents
+Death Certificate (for death claims)
+Legal Heir Documents (where applicable)
+Additional documents may be required depending on the nature of the claim and the applicable authority.
+Tax & Litigation Services
+Inside page heading pls change to Tax & litigation
+on clicking Sub Sub services relevant content along with all contents of other sub sub services are appearing in same page. It has to be separate for all sub sub services.
+Like -On click of any sub sub services only relevant content of that sub sub services as single page should appear not entire content of other sub services. Pls repeat this for all sub sub services
+Further contents in certain sub sub services is not as per our provided input.
+So please put our single page content against all clickable sub sub services. Remove your content.
+We need to have back button to go out
+General observation
+Language option not working
+Client testimonial ?
+Social media  content for home page needs modification
+Logo needs discussion
