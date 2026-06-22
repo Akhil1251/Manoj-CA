@@ -312,34 +312,34 @@ export default function ContactPage() {
         <div className="lg:col-span-5 flex flex-col gap-6 justify-between">
           {/* Coordinates */}
           <div className="glass p-6 rounded-3xl border border-slate-200/50 dark:border-slate-800/50 space-y-6">
-            <h3 className="text-lg font-bold text-slate-900 dark:text-white">
+            <h3 className="text-lg font-bold text-zinc-900 dark:text-white">
               Corporate Office Coordinates
             </h3>
-            <div className="flex gap-4 items-start text-xs sm:text-sm text-slate-500 dark:text-slate-400">
+            <div className="flex gap-4 items-start text-xs sm:text-sm text-zinc-600 dark:text-zinc-400">
               <MapPin className="h-5 w-5 text-amber-500 shrink-0" />
               <div>
-                <strong className="block text-slate-700 dark:text-slate-350 font-bold mb-1">
+                <strong className="block text-zinc-800 dark:text-zinc-300 font-bold mb-1">
                   {currentOffice.name}
                 </strong>
                 {currentOffice.address}
               </div>
             </div>
-            <div className="flex gap-4 items-start text-xs sm:text-sm text-slate-500 dark:text-slate-400">
+            <div className="flex gap-4 items-start text-xs sm:text-sm text-zinc-600 dark:text-zinc-400">
               <Mail className="h-5 w-5 text-amber-500 shrink-0" />
               <div>
-                <strong className="block text-slate-700 dark:text-slate-350 font-bold mb-1">
+                <strong className="block text-zinc-800 dark:text-zinc-300 font-bold mb-1">
                   Client Support & Inquiries
                 </strong>
                 <a href={`mailto:${currentOffice.email}`} className="hover:text-amber-500 transition-colors">{currentOffice.email}</a>
               </div>
             </div>
-            <div className="flex gap-4 items-start text-xs sm:text-sm text-slate-500 dark:text-slate-400">
+            <div className="flex gap-4 items-start text-xs sm:text-sm text-zinc-600 dark:text-zinc-400">
               <Phone className="h-5 w-5 text-amber-500 shrink-0" />
               <div>
-                <strong className="block text-slate-700 dark:text-slate-350 font-bold mb-1">
+                <strong className="block text-zinc-800 dark:text-zinc-300 font-bold mb-1">
                   Direct Line
                 </strong>
-                <span className="text-slate-600 dark:text-slate-400">{currentOffice.phone}</span>
+                <span className="text-zinc-600 dark:text-zinc-400">{currentOffice.phone}</span>
               </div>
             </div>
           </div>
@@ -347,8 +347,8 @@ export default function ContactPage() {
           {/* Operating hours */}
           <div className="glass p-6 rounded-3xl border border-slate-200/50 dark:border-slate-800/50 flex gap-4 items-start">
             <Clock className="h-5 w-5 text-amber-500 shrink-0" />
-            <div className="text-xs sm:text-sm text-slate-500 dark:text-slate-450">
-              <strong className="block text-slate-700 dark:text-slate-350 font-bold mb-1">
+            <div className="text-xs sm:text-sm text-zinc-600 dark:text-zinc-400">
+              <strong className="block text-zinc-800 dark:text-zinc-300 font-bold mb-1">
                 Consultation Hours
               </strong>
               Monday - Saturday: 09:30 AM - 06:30 PM (IST)

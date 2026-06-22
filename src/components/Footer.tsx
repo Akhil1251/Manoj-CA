@@ -132,7 +132,7 @@ export const Footer: React.FC = () => {
             {/* Column 1: Brand & Mission */}
             <div className="flex flex-col gap-6">
               <Link href="/" className="flex items-center">
-                <img src="/White_Logo-removebg-preview.png" alt="ConsultAvenuee" className="w-auto h-[42px] object-contain origin-left" />
+                <img src="/White_Logo-removebg-preview.png" alt="ConsultAvenuee" className="w-auto h-[56px] object-contain origin-left" />
               </Link>
               <p className="text-[13px] leading-relaxed text-slate-400 font-medium">
                 ConsultAvenuee is a trusted business advisory and compliance firm offering business registration, GST, income tax, TDS, accounting, ROC compliance, audit, legal, and regulatory solutions for startups, SMEs, corporates, housing societies, NRIs, and individuals across India.

@@ -10,7 +10,8 @@ import {
   ChevronRight,
   Download,
   PhoneCall,
-  Sparkles
+  Sparkles,
+  ArrowLeft
 } from "lucide-react";
 
 export default function ServicesPage() {
@@ -35,7 +36,7 @@ export default function ServicesPage() {
         }
       }, 50);
     };
-    
+
     // Check on mount
     handleHashChange();
 
@@ -61,6 +62,17 @@ export default function ServicesPage() {
   return (
     <div className="bg-[#fcfcfc] dark:bg-[#120412] min-h-screen text-slate-800 dark:text-slate-200 transition-colors duration-300 pt-8 pb-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+        {/* Back to Home Button */}
+        <div className="mb-6 flex justify-start">
+          <Link
+            href="/"
+            className="inline-flex items-center gap-2 text-xs font-bold text-slate-500 hover:text-[#c79d62] dark:text-slate-400 transition-colors group"
+          >
+            <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
+            <span>Back to Home</span>
+          </Link>
+        </div>
 
         {/* Horizontal Navigation Tab Bar (Size matched to main nav header) */}
         <div className="w-full bg-[#c79d62] rounded-md overflow-hidden flex h-16 mb-6 shadow-md">
@@ -94,12 +106,12 @@ export default function ServicesPage() {
             </h2>
 
             {currentTabData.description && (
-              <div 
+              <div
                 className="text-sm text-slate-500 dark:text-slate-400 mb-8 -mt-4 leading-relaxed max-w-3xl font-medium"
-                dangerouslySetInnerHTML={{ 
+                dangerouslySetInnerHTML={{
                   __html: currentTabData.description
                     .replace(/\n/g, '<br/>')
-                    .replace(/\*\*(.*?)\*\*/g, '<strong class="text-slate-800 dark:text-white font-bold">$1</strong>') 
+                    .replace(/\*\*(.*?)\*\*/g, '<strong class="text-slate-800 dark:text-white font-bold">$1</strong>')
                 }}
               />
             )}
@@ -185,7 +197,7 @@ export default function ServicesPage() {
                                   {subService.badge}
                                 </span>
                               )}
-                              <Link href={`/services/${subService.id}`}>
+                              <Link href={`/services/${subService.subSubServices && subService.subSubServices.length > 0 ? subService.subSubServices[0].slug : subService.id}`}>
                                 <h3 className="font-extrabold text-lg text-[#210821] dark:text-white leading-tight hover:text-[#c79d62] transition-colors cursor-pointer">
                                   {subService.title}
                                 </h3>
@@ -207,7 +219,7 @@ export default function ServicesPage() {
                                   {subService.subSubServices.map((subSub: any, idx: number) => (
                                     <li key={idx}>
                                       <Link
-                                        href={['company-formation', 'registrations', 'corporate-compliance', 'income-tax', 'litigation-support'].includes(subService.id) ? `/services/${subService.id}#${subSub.slug}` : `/services/${subSub.slug}`}
+                                        href={`/services/${subSub.slug}`}
                                         className="text-[11px] font-extrabold text-slate-700 dark:text-slate-300 hover:text-[#c79d62] transition-colors block leading-tight"
                                       >
                                         {subSub.title}
@@ -223,7 +235,7 @@ export default function ServicesPage() {
                         {/* Read More button stays at the bottom and moves down as card expands */}
                         <div className="mt-auto -mx-6 -mb-6 pt-6">
                           <div className="border-t border-slate-100 dark:border-slate-800/60 mx-6"></div>
-                          <Link href={`/services/${subService.id}`} className="block relative z-10 bg-white dark:bg-[#180618] rounded-b-2xl px-6 py-4 hover:bg-[#c79d62] dark:hover:bg-[#c79d62] transition-colors group/link">
+                          <Link href={`/services/${subService.subSubServices && subService.subSubServices.length > 0 ? subService.subSubServices[0].slug : subService.id}`} className="block relative z-10 bg-white dark:bg-[#180618] rounded-b-2xl px-6 py-4 hover:bg-[#c79d62] dark:hover:bg-[#c79d62] transition-colors group/link">
                             <div className="w-full flex items-center justify-between text-xs font-bold text-[#c79d62] group-hover/link:text-black transition-colors">
                               <span>Read More</span>
                               <ChevronRight className="w-4 h-4 transition-transform duration-300 group-hover/link:translate-x-1" />
@@ -241,27 +253,14 @@ export default function ServicesPage() {
           {/* RIGHT COLUMN - SIDEBAR WIDGETS */}
           <div className="lg:col-span-3 space-y-8">
 
-            {/* Company Presentation Box */}
-            <a
-              href="#"
-              className="group flex items-center justify-between bg-[#110311] hover:bg-[#1c061c] text-white p-5 rounded-md shadow-md transition-all duration-300 transform hover:-translate-y-0.5"
-            >
-              <div className="flex items-center gap-3">
-                <FileText className="w-8 h-8 text-[#c79d62] group-hover:scale-110 transition-transform duration-300" />
-                <div className="text-left">
-                  <div className="text-[10px] font-extrabold uppercase tracking-wider opacity-60">Company</div>
-                  <div className="text-xs font-black uppercase tracking-widest">Presentation</div>
-                </div>
-              </div>
-              <Download className="w-4 h-4 text-[#c79d62] opacity-60 group-hover:opacity-100 transition-opacity" />
-            </a>
+
 
             {/* How Can We Help You Box */}
             <div className="bg-[#c79d62] text-white p-7 rounded-md relative overflow-hidden shadow-md">
               <div className="absolute top-0 right-0 w-24 h-24 bg-white/5 rounded-full blur-xl pointer-events-none" />
               <h4 className="text-base font-bold lowercase tracking-tight mb-2">how can we help you?</h4>
               <p className="text-xs text-white/80 leading-relaxed mb-6 text-left">
-                Contact us at the Consulting WP office nearest to you or submit a business inquiry online.
+                Looking for expert assistance with housing society matters, GST, Income Tax, ROC compliance, NRI services, or housing society matters? Contact ConsultAvenuee today.
               </p>
               <Link
                 href="/contact"

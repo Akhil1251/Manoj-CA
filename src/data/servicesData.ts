@@ -16,6 +16,7 @@ export interface SectionDetail {
   content: string;
   image?: string;
   _parentSlug?: string;
+  groupHeader?: string;
 }
 
 export interface ChartDataPoint {
@@ -424,6 +425,19 @@ const rawServicesData: RawTab[] = [
             content: "Following the election process, we assist in the constitution of the Managing Committee, allocation of office bearers, preparation of committee records, and completion of post-election compliance requirements."
           },
           {
+            title: "Annual Compliance Calendar Management",
+            content: `Services:
+• AGM Due Date Tracking
+• Audit Due Date Tracking
+• Registrar Filing Monitoring
+• Committee Meeting Compliance
+• Statutory Register Review
+• Compliance Alerts & Reminders
+
+Our objective is to ensure that your society remains fully compliant with annual filing requirements while allowing the Managing Committee to focus on effective administration and community development.`,
+            image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=600&q=80"
+          },
+          {
             title: "Election Services Include:",
             content: "• Election planning and compliance review\n• Election schedule preparation\n• Assistance in appointment of Election Officer\n• Preparation & Verification of voter lists\n• Nomination scrutiny support\n• Polling and counting process assistance\n• Result declaration support\n• Election record documentation"
           },
@@ -715,6 +729,22 @@ At ConsultAvenuee, we provide comprehensive NRI Taxation Services to Non-Residen
             title: "Our Commitment",
             content: `We help NRIs manage their Indian tax obligations with confidence through proactive planning, accurate compliance, and practical advisory solutions. Our objective is to simplify complex tax matters, minimize tax exposure, ensure regulatory compliance, and protect your financial interests in India and abroad.`,
             image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=600&q=80"
+          },
+          {
+            title: "Documents Commonly Required",
+            content: `• Passport
+• PAN Card
+• Aadhaar Card (if available)
+• Overseas Address Proof
+• Tax Residency Documents
+• Bank Statements
+• Property Documents
+• Form 16 (if applicable)
+• Investment Statements
+• Foreign Income Records
+• TDS Certificates
+• Previous Tax Returns`,
+            image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=600&q=80"
           }
         ],
                 image: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=800&q=80",
@@ -826,6 +856,20 @@ Services include:
             title: "Our Commitment",
             content: `We act as your trusted property management partner in India, providing proactive oversight, professional coordination, and comprehensive support to protect your real estate investments. Our goal is to give NRIs complete peace of mind by ensuring their properties remain secure, compliant, well-maintained, and financially productive, regardless of where they reside in the world.`,
             image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=600&q=80"
+          },
+          {
+            title: "Documents Commonly Required",
+            content: `• Passport
+• OCI / PIO Card (if applicable)
+• PAN Card
+• Property Title Documents
+• Previous Sale Deeds
+• Property Tax Receipts
+• Utility Records
+• Existing Lease Agreements
+• Power of Attorney (if applicable)
+• Bank Account Details`,
+            image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=600&q=80"
           }
         ],
                 image: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=800&q=80",
@@ -926,6 +970,20 @@ Services include:
             title: "Our Commitment",
             content: `We serve as a trusted India-based advisory partner for NRIs, helping them navigate legal, compliance, documentation, and succession matters with confidence. Our objective is to simplify complex processes, ensure regulatory compliance, protect family interests, and provide seamless support for managing Indian affairs from anywhere in the world.`,
             image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=600&q=80"
+          },
+          {
+            title: "Documents Commonly Required",
+            content: `• Passport
+• OCI / PIO Card (if applicable)
+• PAN Card
+• Overseas Address Proof
+• Indian Address Proof (if available)
+• Tax Records and Financial Statements
+• Bank Account Details
+• Existing Legal Documents
+• Family and Beneficiary Information
+• Investment and Compliance Records`,
+            image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=600&q=80"
           }
         ],
                 image: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=800&q=80",
@@ -1016,6 +1074,22 @@ At ConsultAvenuee, we provide comprehensive Health Insurance Claims Support Serv
 • Dispute Resolution Support
 • Improved Settlement Outcomes`,
             image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=600&q=80"
+          },
+          {
+            title: "Documents Generally Required",
+            content: `The documents required may vary depending on the insurer and type of claim. Commonly required documents include:
+• Health Insurance Policy Details
+• Health Insurance Card
+• Aadhaar Card or Identity Proof
+• Hospital Admission Records
+• Discharge Summary
+• Medical Prescriptions
+• Diagnostic Reports
+• Original Medical Bills and Receipts
+• Pharmacy Bills
+• Bank Account Details
+• Cancelled Cheque (for reimbursement claims)`,
+            image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=600&q=80"
           }
         ],
         image: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=800&q=80",
@@ -1047,10 +1121,13 @@ At ConsultAvenuee, we provide comprehensive Health Insurance Claims Support Serv
         id: "senior-income-tax-filing",
         title: "Income Tax planning & Filing",
         description: "Comprehensive income tax services covering tax planning, return filing, compliance management, and tax notice support for senior citizens.",
-        longDesc: `Smart Tax Planning. Accurate Compliance. Maximum Savings.
+        longDesc: `Income Tax Planning & Return Filing Services
+Simplifying Tax Compliance, Maximizing Financial Efficiency
+Partner with us for proactive tax planning, accurate compliance, and trusted professional guidance throughout the year.
+
+Smart Tax Planning. Accurate Compliance. Maximum Savings.
 Effective tax planning is not just about reducing tax liability—it is about making informed financial decisions, ensuring regulatory compliance, and preserving wealth.
-At ConsultAvenuee, we provide comprehensive Income Tax Planning, Compliance, and Return Filing Services.
-Partner with us for proactive tax planning, accurate compliance, and trusted professional guidance throughout the year.`,
+At ConsultAvenuee, we provide comprehensive Income Tax Planning, Compliance, and Return Filing Services.`,
         sections: [
           {
             title: "Tax Planning & Advisory",
@@ -1088,6 +1165,31 @@ Partner with us for proactive tax planning, accurate compliance, and trusted pro
 • Expert Guidance
 • Efficient Refund Processing`,
             image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=600&q=80"
+          },
+          {
+            title: "Documents Generally Required",
+            content: `**For Salaried Individuals**
+• PAN Card
+• Aadhaar Card
+• Form 16
+• Salary Slips
+• Bank Statements
+• Investment Proofs
+• Home Loan Interest Certificate
+• Capital Gain Statements (if applicable)
+
+**For Businesses & Professionals**
+• PAN & Registration Documents
+• Books of Accounts
+• Financial Statements
+• GST Returns
+• TDS Details
+• Bank Statements
+• Expense Records
+• Audit Reports (where applicable)
+
+Additional documents may be required based on the nature of income and filing requirements.`,
+            image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=600&q=80"
           }
         ],
         image: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=800&q=80",
@@ -1120,32 +1222,10 @@ Partner with us for proactive tax planning, accurate compliance, and trusted pro
         id: "pension-gratuity-documentations",
         title: "Pension & Gratuity Documentations",
         description: "Professional pension and gratuity documentation services for hassle-free retirement benefit claims, family pensions, and legal heir settlements.",
-        longDesc: `Securing Your Retirement Benefits with Confidence
-Retirement benefits such as pension and gratuity represent years of dedicated service and financial contribution. However, incomplete documentation, procedural complexities, and compliance requirements often lead to delays in claim processing and settlement.
-At ConsultAvenuee, we provide comprehensive Pension & Gratuity Documentation Services, assisting employees, retirees, senior citizens, employers, nominees, and legal heirs in preparing, verifying, and processing the documentation required for pension claims, gratuity settlements, and retirement benefit applications.
-Our objective is to ensure accurate documentation, seamless claim processing, and timely receipt of eligible retirement benefits.`,
+        longDesc: "Pension & Gratuity Documentation Services\nSecuring Your Retirement Benefits with Confidence\nRetirement benefits such as pension and gratuity represent years of dedicated service and financial contribution. However, incomplete documentation, procedural complexities, and compliance requirements often lead to delays in claim processing and settlement.\nAt ConsultAvenuee, we provide comprehensive Pension & Gratuity Documentation Services, assisting employees, retirees, senior citizens, employers, nominees, and legal heirs in preparing, verifying, and processing the documentation required for pension claims, gratuity settlements, and retirement benefit applications.\nOur objective is to ensure accurate documentation, seamless claim processing, and timely receipt of eligible retirement benefits.",
         sections: [
           {
-            title: "EPFO & EPS Pension Assistance",
-            content: `We assist employees and retirees in navigating pension claim procedures under the Employees' Provident Fund Organisation (EPFO) and Employees' Pension Scheme (EPS).
-Services include:
-• Form 10D Preparation (Monthly Pension Claims)
-• Form 10C Preparation (Pension Withdrawal / Scheme Certificate)
-• Pension Application Documentation
-• UAN & KYC Verification
-• Service History Verification
-• Pension Eligibility Assessment
-• Joint Declaration Preparation
-• Pension Corrections & Revision Applications
-• Pension Transfer Documentation`,
-            image: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=600&q=80"
-          },
-          {
-            title: "Family Pension Assistance",
-            content: `We provide dedicated support to family members and beneficiaries in claiming pension benefits after the demise of a pensioner or employee.`,
-            image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=600&q=80"
-          },
-          {
+            groupHeader: "Gratuity Documentation Services",
             title: "Gratuity Claim Assistance",
             content: `We assist employees and retirees in preparing and processing gratuity claims under the Payment of Gratuity Act and applicable organizational policies.
 Services include:
@@ -1170,6 +1250,27 @@ Services include:
             image: "https://images.unsplash.com/photo-1450133064473-71024230f91b?auto=format&fit=crop&w=600&q=80"
           },
           {
+            groupHeader: "Our Pension Documentation Services",
+            title: "EPFO & EPS Pension Assistance",
+            content: `We assist employees and retirees in navigating pension claim procedures under the Employees' Provident Fund Organisation (EPFO) and Employees' Pension Scheme (EPS).
+Services include:
+• Form 10D Preparation (Monthly Pension Claims)
+• Form 10C Preparation (Pension Withdrawal / Scheme Certificate)
+• Pension Application Documentation
+• UAN & KYC Verification
+• Service History Verification
+• Pension Eligibility Assessment
+• Joint Declaration Preparation
+• Pension Corrections & Revision Applications
+• Pension Transfer Documentation`,
+            image: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=600&q=80"
+          },
+          {
+            title: "Family Pension Assistance",
+            content: `We provide dedicated support to family members and beneficiaries in claiming pension benefits after the demise of a pensioner or employee.`,
+            image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=600&q=80"
+          },
+          {
             title: "Benefits of Professional Assistance",
             content: `• Accurate Documentation
 • Faster Processing
@@ -1178,8 +1279,36 @@ Services include:
 • End-to-End Support
 • Assistance in Legacy Cases`,
             image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=600&q=80"
+          },
+          {
+            title: "Documents Generally Required",
+            content: `**For Gratuity Claims**
+• Identity Proof
+• Employment Records
+• Salary Details
+• Gratuity Nomination Forms
+• Service Certificate
+• Retirement / Resignation Documents
+• Death Certificate (for death claims)
+• Legal Heir Documents (where applicable)
+
+**For Pension Claims**
+• Aadhaar Card
+• PAN Card
+• UAN Number
+• Bank Account Details
+• Passport Size Photographs
+• Service Records
+• Form 10C / Form 10D
+• Pension Payment Order (where applicable)
+
+Additional documents may be required depending on the nature of the claim and the applicable authority.`,
+            image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=600&q=80"
           }
         ],
+        postSectionsDesc: `Helping You Receive the Benefits You Have Earned
+Retirement benefits are an important part of your financial security. ConsultAvenuee provides reliable and professional Pension & Gratuity Documentation Services to help employees, retirees, senior citizens, nominees, and organizations navigate the documentation process with confidence and ease.
+Let our experts assist you in securing timely pension, gratuity, and retirement benefit settlements with complete peace of mind.`,
         image: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=800&q=80",
         timelineSteps: [
           { num: "01", title: "CONSULTATION", detailTitle: "Initial Briefing & Check", desc: "We discuss details and review all checklists." },
@@ -1208,9 +1337,10 @@ Services include:
       },
       {
         id: "property-sale-gift-transfer",
-        title: "Property sale, Gift & Transfer",
+        title: "Property sale. Gift & Transfer",
         description: "Comprehensive property sale, gift deed, and transfer services to ensure smooth, secure, and legally compliant property transactions.",
-        longDesc: `Secure Your Property. Protect Your Legacy. Ensure a Smooth Transfer of Ownership.
+        longDesc: `Senior Citizen Property Sale, Gift & Transfer Services
+Secure Your Property. Protect Your Legacy. Ensure a Smooth Transfer of Ownership.
 Managing property matters during retirement can often be complex and time-consuming. Whether you are planning to transfer property to your children, gift assets to family members, sell a property, or organize your estate for future generations, proper documentation and legal compliance are essential to safeguard your interests and avoid future disputes.
 At ConsultAvenuee, we provide dedicated Property Sale, Gift, Transfer & Succession Services for Senior Citizens, helping individuals and families manage property-related matters with confidence, clarity, and peace of mind.`,
         sections: [
@@ -1244,6 +1374,21 @@ At ConsultAvenuee, we provide dedicated Property Sale, Gift, Transfer & Successi
             title: "Our Commitment",
             content: `We assist senior citizens in managing every stage of property ownership transition—from gifting and transferring property to family members, to succession planning and inheritance matters.`,
             image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=600&q=80"
+          },
+          {
+            title: "Documents Commonly Required",
+            content: `• Property Title Documents
+• Previous Sale Deeds
+• PAN Card & Aadhaar Card
+• Identity & Address Proof
+• Property Tax Receipts
+• Encumbrance Certificate
+• Society NOC (where applicable)
+• Revenue Records and Mutation Extracts
+• Death Certificate (for succession matters)
+• Legal Heir Details
+• Existing Will (if available)`,
+            image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=600&q=80"
           }
         ],
         image: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=800&q=80",
@@ -2715,7 +2860,7 @@ Partner with ConsultAvenuee's Virtual CFO team to gain expert financial insights
   },
   {
     id: "taxation-regulatory-litigation",
-    title: "Taxation & Litigation",
+    title: "Tax & litigation",
     description: "Professional solutions for income tax, GST, regulatory registrations, and litigation support. Focused on compliance, efficiency, and effective representation.",
     subServices: [
       {
@@ -3157,34 +3302,40 @@ Partner with ConsultAvenuee's Virtual CFO team to gain expert financial insights
         description: "Expert litigation support for tax matters, including case documentation, paper book preparation, and coordination with senior tax counsels.",
         longDesc: "Expert litigation support for tax matters, including case documentation, paper book preparation, and coordination with senior tax counsels.",
         subSubServices: [
-          { slug: "conferencing-senior-tax-counsels-litigation-support", title: "Conferencing with Senior Tax Counsels & Litigation Support", sections: [
-                {
-                                "title": "Conferencing with Senior Tax Counsels & Litigation Support",
-                                "content": "**Strategic Support for Complex Income Tax Matters**\nIncome tax disputes often involve complex legal and factual issues requiring specialized expertise and strategic guidance. At ConsultAvenuee, we assist taxpayers, businesses, professionals, and corporate entities by coordinating conferences with experienced Senior Tax Counsels, Advocates, and subject matter experts for matters relating to assessments, appeals, reassessments, penalties, and high-value tax disputes.\n\nOur team works closely with clients and legal professionals to ensure that cases are properly evaluated, documented, and presented before the appropriate authorities and appellate forums."
-                },
-                {
-                                "title": "Our Services Include",
-                                "content": "\u2022 Conferencing with Senior Tax Counsels\n\u2022 Litigation Coordination Support"
-                },
-                {
-                                "title": "Income Tax Matters Covered",
-                                "content": "\u2022 Scrutiny Assessments\n\u2022 Reassessment Proceedings\n\u2022 Faceless Assessments\n\u2022 Penalty Proceedings\n\u2022 TDS and Withholding Tax Matters\n\u2022 Search and Survey Related Proceedings\n\u2022 Income Tax Appeals\n\u2022 Revision and Rectification Matters\n\u2022 High-Value and Complex Tax Disputes"
-                }
-], faqs: [] },
-          { slug: "preparation-of-paper-books-case-records", title: "Preparation of Paper Books & Case Records", sections: [
-                {
-                                "title": "Preparation of Paper Books & Case Records",
-                                "content": "**Professional Documentation Support for Income Tax Proceedings**\nProper documentation plays a critical role in the successful handling of income tax disputes and appellate proceedings. Well-prepared paper books and case records help present facts, evidence, and legal submissions in a structured and professional manner before tax authorities and appellate forums.\n\nAt ConsultAvenuee, we assist in preparing comprehensive paper books and litigation records for income tax matters."
-                },
-                {
-                                "title": "Our Assistance Includes",
-                                "content": "\u2022 Preparation of Paper Books for appellate proceedings\n\u2022 Compilation and indexing of supporting documents\n\u2022 Preparation of statement of facts and case summaries\n\u2022 Chronology of events and transaction records\n\u2022 Reconciliation of financial and tax records\n\u2022 Compilation of judicial precedents and supporting references\n\u2022 Preparation of written submissions and supporting documentation\n\u2022 Organization of records for effective presentation before authorities"
-                },
-                {
-                                "title": "Benefits of Professional Case Preparation",
-                                "content": "\u2022 Systematic presentation of facts and evidence\n\u2022 Better coordination with tax counsels and advocates\n\u2022 Improved readiness for hearings and appellate proceedings\n\u2022 Efficient management of large volumes of records\n\u2022 Stronger support for legal and factual arguments\n\nWhether you are facing an assessment, appeal, penalty proceeding, or complex tax litigation, our team can assist in preparing comprehensive case records and coordinating with experienced tax counsels to support your matter effectively."
-                }
-], faqs: [] }
+          {
+            slug: "conferencing-senior-tax-counsels-litigation-support",
+            title: "Conferencing with Senior Tax Counsels & Litigation Support",
+            shortDesc: "Strategic Support for Complex Income Tax Matters",
+            longDesc: "Income tax disputes often involve complex legal and factual issues requiring specialized expertise and strategic guidance. At ConsultAvenuee, we assist taxpayers, businesses, professionals, and corporate entities by coordinating conferences with experienced Senior Tax Counsels, Advocates, and subject matter experts for matters relating to assessments, appeals, reassessments, penalties, and high-value tax disputes.\n\nOur team works closely with clients and legal professionals to ensure that cases are properly evaluated, documented, and presented before the appropriate authorities and appellate forums.",
+            sections: [
+              {
+                title: "Our Services Include",
+                content: "• Conferencing with Senior Tax Counsels\n• Litigation Coordination Support"
+              },
+              {
+                title: "Income Tax Matters Covered",
+                content: "• Scrutiny Assessments\n• Reassessment Proceedings\n• Faceless Assessments\n• Penalty Proceedings\n• TDS and Withholding Tax Matters\n• Search and Survey Related Proceedings\n• Income Tax Appeals\n• Revision and Rectification Matters\n• High-Value and Complex Tax Disputes"
+              }
+            ],
+            faqs: []
+          },
+          {
+            slug: "preparation-of-paper-books-case-records",
+            title: "Preparation of Paper Books & Case Records",
+            shortDesc: "Professional Documentation Support for Income Tax Proceedings",
+            longDesc: "Proper documentation plays a critical role in the successful handling of income tax disputes and appellate proceedings. Well-prepared paper books and case records help present facts, evidence, and legal submissions in a structured and professional manner before tax authorities and appellate forums.\n\nAt ConsultAvenuee, we assist in preparing comprehensive paper books and litigation records for income tax matters.",
+            sections: [
+              {
+                title: "Our Assistance Includes",
+                content: "• Preparation of Paper Books for appellate proceedings\n• Compilation and indexing of supporting documents\n• Preparation of statement of facts and case summaries\n• Chronology of events and transaction records\n• Reconciliation of financial and tax records\n• Compilation of judicial precedents and supporting references\n• Preparation of written submissions and supporting documentation\n• Organization of records for effective presentation before authorities"
+              },
+              {
+                title: "Benefits of Professional Case Preparation",
+                content: "• Systematic presentation of facts and evidence\n• Better coordination with tax counsels and advocates\n• Improved readiness for hearings and appellate proceedings\n• Efficient management of large volumes of records\n• Stronger support for legal and factual arguments\n\nWhether you are facing an assessment, appeal, penalty proceeding, or complex tax litigation, our team can assist in preparing comprehensive case records and coordinating with experienced tax counsels to support your matter effectively."
+              }
+            ],
+            faqs: []
+          }
         ]
       }
     ]
