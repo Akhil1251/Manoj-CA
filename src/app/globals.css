@@ -13,8 +13,8 @@
   --color-slate-950: #140514;
 }
 
-/* Disable dark theme completely by mapping it to a non-existent class */
-@variant dark (&:where(.dark-mode-disabled));
+/* Dark mode: enable class-based dark mode (Tailwind v4 default) */
+@variant dark (&:where(.dark, .dark *));
 
 @layer base {
   :root {
@@ -22,22 +22,36 @@
     --foreground: #0f172a;
     --card: #ffffff;
     --card-foreground: #0f172a;
-    --primary: #f59e0b;
+    --primary: #c79d62;
     --primary-foreground: #ffffff;
     --muted: #f1f5f9;
     --muted-foreground: #64748b;
     --border: #e2e8f0;
     --accent: #a855f7;
     --accent-foreground: #ffffff;
-    --glow: rgba(245, 158, 11, 0.15);
+    --glow: rgba(199, 157, 98, 0.15);
   }
 
-
+  /* Dark theme CSS variables */
+  .dark {
+    --background: #140514;
+    --foreground: #f1f5f9;
+    --card: #210821;
+    --card-foreground: #f1f5f9;
+    --primary: #c79d62;
+    --primary-foreground: #ffffff;
+    --muted: #210821;
+    --muted-foreground: #94a3b8;
+    --border: #210821;
+    --accent: #c79d62;
+    --accent-foreground: #ffffff;
+    --glow: rgba(199, 157, 98, 0.2);
+  }
 
   body {
     background-color: var(--background);
     color: var(--foreground);
-    transition: background-color 0.5s ease, color 0.5s ease;
+    transition: background-color 0.4s ease, color 0.4s ease;
     overflow-x: hidden;
   }
 }

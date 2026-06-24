@@ -119,7 +119,13 @@ export default function ServicesPage() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {currentTabData.subServices.map((subService) => {
                 const isExpanded = expandedSubService === subService.id;
-                if (!subService.subSubServices || subService.subSubServices.length === 0) {
+                const isSinglePage = 
+                  !subService.subSubServices || 
+                  subService.subSubServices.length === 0 || 
+                  subService.id === "society-formation" || 
+                  currentTabData.id === "compliance-business-advisory";
+
+                if (isSinglePage) {
                   return (
                     <Link
                       key={subService.id}

@@ -337,7 +337,7 @@ export default function HomePage() {
           <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=2070&auto=format&fit=crop')] bg-cover bg-center opacity-40 mix-blend-overlay"></div>
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div className="text-center mb-16">
-              <span className="text-xs font-bold uppercase tracking-widest text-[#c79d62] mb-2 block">
+              <span className="text-base sm:text-lg font-bold uppercase tracking-widest text-[#c79d62] mb-2 block">
                 Clarity. Compliance. Confidence.
               </span>
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white mt-2 mb-6 drop-shadow-md whitespace-normal">

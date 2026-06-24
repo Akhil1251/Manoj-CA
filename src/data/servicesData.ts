@@ -424,19 +424,7 @@ const rawServicesData: RawTab[] = [
             title: "Managing Committee Formation",
             content: "Following the election process, we assist in the constitution of the Managing Committee, allocation of office bearers, preparation of committee records, and completion of post-election compliance requirements."
           },
-          {
-            title: "Annual Compliance Calendar Management",
-            content: `Services:
-• AGM Due Date Tracking
-• Audit Due Date Tracking
-• Registrar Filing Monitoring
-• Committee Meeting Compliance
-• Statutory Register Review
-• Compliance Alerts & Reminders
 
-Our objective is to ensure that your society remains fully compliant with annual filing requirements while allowing the Managing Committee to focus on effective administration and community development.`,
-            image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=600&q=80"
-          },
           {
             title: "Election Services Include:",
             content: "• Election planning and compliance review\n• Election schedule preparation\n• Assistance in appointment of Election Officer\n• Preparation & Verification of voter lists\n• Nomination scrutiny support\n• Polling and counting process assistance\n• Result declaration support\n• Election record documentation"
@@ -513,6 +501,19 @@ Our objective is to ensure that your society remains fully compliant with annual
           {
             title: "Statutory Audit Coordination & Audit Rectification Services",
             content: "At ConsultAvenuee, we provide end-to-end Statutory Audit Coordination and Audit Rectification Services to help societies complete audits efficiently, address audit observations, and maintain ongoing compliance. Many societies struggle with audit completion and audit rectification."
+          },
+          {
+            title: "Annual Compliance Calendar Management",
+            content: `Services:
+• AGM Due Date Tracking
+• Audit Due Date Tracking
+• Registrar Filing Monitoring
+• Committee Meeting Compliance
+• Statutory Register Review
+• Compliance Alerts & Reminders
+
+Our objective is to ensure that your society remains fully compliant with annual filing requirements while allowing the Managing Committee to focus on effective administration and community development.`,
+            image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=600&q=80"
           }
         ],
         chartData: []
@@ -663,765 +664,6 @@ Our objective is to ensure that your society remains fully compliant with annual
           }
         ],
         chartData: []
-      }
-    ]
-  },
-  {
-    id: "nri-services",
-    title: "NRI Services",
-    description: "End-to-end NRI services covering tax compliance, property management, and legal assistance to help NRIs manage their investments, assets, and obligations in India with confidence.",
-    subServices: [
-      {
-        id: "nri-taxation-services",
-        title: "Taxation Services",
-        description: "Simplify your Indian tax compliance with our comprehensive NRI taxation services covering income tax returns, property taxation, capital gains, DTAA benefits, TDS compliance, and tax planning.",
-        badge: "HOT",
-        longDesc: `Simplifying Indian Tax Compliance for Non-Resident Indians Worldwide
-Managing tax obligations across multiple jurisdictions can be complex and challenging. Whether you earn income in India, own property, invest in Indian assets, or require assistance with tax compliance and repatriation, expert guidance is essential to ensure compliance while optimizing your tax position.
-At ConsultAvenuee, we provide comprehensive NRI Taxation Services to Non-Resident Indians (NRIs), Overseas Citizens of India (OCIs), and Persons of Indian Origin (PIOs).`,
-        sections: [
-          {
-            title: "NRI Income Tax Return Filing",
-            content: `• Income Tax Return Filing for NRIs
-• Revised and Updated Return Filing
-• Tax Refund Processing
-• Income Tax Compliance Review
-• Tax Record Management`,
-            image: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=600&q=80"
-          },
-          {
-            title: "Property Taxation Services",
-            content: `• Tax Advisory on Property Purchase and Sale
-• Capital Gains Computation
-• TDS Compliance on Property Transactions
-• Reinvestment and Exemption Planning
-• Rental Income Tax Compliance
-• Repatriation Documentation Support`,
-            image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=600&q=80"
-          },
-          {
-            title: "Capital Gains & Investment Tax Advisory",
-            content: `• Capital Gains Tax Planning
-• Property, Shares and Mutual Fund Taxation
-• Investment Tax Advisory
-• Exemption and Relief Planning`,
-            image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=600&q=80"
-          },
-          {
-            title: "TDS & Compliance Services",
-            content: `• Property Sale TDS Advisory
-• Rental Income TDS Compliance
-• Investment Income TDS Review
-• Lower or Nil TDS Certificate Assistance
-• TDS Refund Claims`,
-            image: "https://images.unsplash.com/photo-1450133064473-71024230f91b?auto=format&fit=crop&w=600&q=80"
-          },
-          {
-            title: "Tax Notices & Representation",
-            content: `• Income Tax Notice Response Support
-• Assessment and Reassessment Assistance
-• Refund and Rectification Matters
-• Appeal Documentation Support
-• Representation Before Tax Authorities`,
-            image: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=600&q=80"
-          },
-          {
-            title: "Our Commitment",
-            content: `We help NRIs manage their Indian tax obligations with confidence through proactive planning, accurate compliance, and practical advisory solutions. Our objective is to simplify complex tax matters, minimize tax exposure, ensure regulatory compliance, and protect your financial interests in India and abroad.`,
-            image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=600&q=80"
-          },
-          {
-            title: "Documents Commonly Required",
-            content: `• Passport
-• PAN Card
-• Aadhaar Card (if available)
-• Overseas Address Proof
-• Tax Residency Documents
-• Bank Statements
-• Property Documents
-• Form 16 (if applicable)
-• Investment Statements
-• Foreign Income Records
-• TDS Certificates
-• Previous Tax Returns`,
-            image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=600&q=80"
-          }
-        ],
-                image: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=800&q=80",
-        timelineSteps: [
-          { num: "01", title: "CONSULTATION", detailTitle: "Initial Briefing & Check", desc: "We discuss details and review all checklists." },
-          { num: "02", title: "VERIFICATION", detailTitle: "Document Compilation", desc: "Our specialists check all details to ensure compliance and completeness." },
-          { num: "03", title: "SUBMISSION", detailTitle: "Filing and Liaisoning", desc: "We prepare the forms and submit the applications to the regulatory department." },
-          { num: "04", title: "COMPLETION", detailTitle: "Final Approval & Support", desc: "We deliver the certificates, resolve queries, and outline next-step requirements." }
-        ],
-        comparison: [
-          { aspect: "Operational Efficiency", manual: "Manual tracking takes weeks.", consultAvenuee: "Structured digital handling." },
-          { aspect: "Compliance Accuracy", manual: "High risk of statutory notices or fines.", consultAvenuee: "Zero-error draft verification." },
-          { aspect: "Government Liaisoning", manual: "Requires multiple physical visits.", consultAvenuee: "Complete departmental representation." }
-        ],
-        faqs: [
-          { question: "Who can avail NRI Taxation Services?", answer: `Our NRI Taxation Services are designed for Non-Resident Indians (NRIs), Overseas Citizens of India (OCIs), Persons of Indian Origin (PIOs), and individuals with tax obligations, investments, or income sources in India.` },
-          { question: "Do NRIs need to file Income Tax Returns in India?", answer: `Yes. NRIs may be required to file an Income Tax Return (ITR) in India if their taxable income exceeds the prescribed threshold or if they wish to claim tax refunds, carry forward losses, or meet specific compliance requirements.` },
-          { question: "How is NRI tax residency determined?", answer: `Tax residency is determined based on the individual's physical presence in India during the relevant financial year and preceding years, as per the provisions of the Income Tax Act.` },
-          { question: "What types of income earned by NRIs are taxable in India?", answer: `Generally, income that accrues, arises, or is received in India may be taxable in India. This may include:
-• Rental Income
-• Capital Gains
-• Salary earned in India
-• Interest Income
-• Business Income
-• Investment Income` },
-          { question: "Can NRIs claim tax refunds in India?", answer: `Yes. If excess tax has been deducted or paid, NRIs may claim refunds by filing the appropriate Income Tax Return.` },
-          { question: "Is rental income from property in India taxable for NRIs?", answer: `Yes. Rental income earned from property located in India is generally taxable in India and may be subject to TDS requirements.` },
-          { question: "How is capital gains tax calculated on the sale of property by an NRI?", answer: `Capital gains tax depends on factors such as the holding period, purchase cost, sale consideration, indexed cost benefits (where applicable), and available exemptions under tax laws.` },
-          { question: "Can NRIs claim exemptions on capital gains tax?", answer: `Yes. Subject to eligibility conditions, NRIs may be able to claim exemptions and reliefs through specified reinvestment options and tax planning strategies.` },
-          { question: "What is TDS on property sale transactions involving NRIs?", answer: `Property purchases from NRIs may attract specific TDS obligations under Indian tax laws. We assist both buyers and sellers in understanding and complying with these requirements.` },
-          { question: "Can you assist with lower or nil TDS certificate applications?", answer: `Yes. We assist eligible taxpayers in preparing and filing applications for lower or nil deduction certificates, subject to approval by the tax authorities.` },
-          { question: "Can you assist with taxation of shares, mutual funds, and other investments?", answer: `Yes. We provide advisory and compliance support relating to taxation of shares, mutual funds, bonds, securities, and other investment assets held in India.` },
-          { question: "What is Double Taxation Avoidance Agreement (DTAA)?", answer: `DTAA is a tax treaty between two countries that helps taxpayers avoid being taxed twice on the same income. We assist NRIs in evaluating applicable DTAA benefits.` },
-          { question: "Can NRIs claim DTAA benefits?", answer: `Yes. Eligible NRIs may claim relief under applicable DTAA provisions, subject to fulfilling prescribed conditions and documentation requirements.` },
-          { question: "Can you assist with pending tax refunds?", answer: `Yes. We assist in tracking refund status, resolving discrepancies, responding to departmental queries, and facilitating refund processing.` },
-          { question: "Do NRIs need to report foreign income in India?", answer: `Reporting requirements depend on residential status, source of income, and applicable tax provisions. We evaluate individual circumstances and advise accordingly.` },
-          { question: "Can you assist with tax planning for property investments in India?", answer: `Yes. We provide advisory services on acquisition, ownership, rental income, sale transactions, capital gains planning, and tax-efficient investment structures.` },
-          { question: "Is online tax filing and consultation available for overseas clients?", answer: `Yes. Most of our taxation services can be managed remotely through secure digital communication and document-sharing processes, enabling seamless support worldwide.` },
-          { question: "Can you assist with taxation of NRO and NRE accounts?", answer: `Yes. We provide guidance on the tax treatment, compliance requirements, and reporting obligations associated with NRO and NRE accounts.` },
-          { question: "Can you help obtain Form 15CA and Form 15CB for fund repatriation?", answer: `Yes. We assist with documentation, certification coordination, and compliance requirements related to overseas remittances and repatriation of funds.` },
-          { question: "Can you review my overall Indian tax position before I invest or sell assets?", answer: `Yes. We provide pre-transaction tax reviews to help clients understand tax implications, available exemptions, compliance requirements, and potential tax exposures before making financial decisions.` },
-          { question: "Can you coordinate with my overseas tax advisors?", answer: `Yes. We can work alongside your overseas tax consultants, accountants, and financial advisors to facilitate efficient management of cross-border tax matters and compliance requirements.` }
-        ],
-        checklist: ["Passport", "PAN Card", "Aadhaar Card (if available)", "Overseas Address Proof", "Tax Residency Documents", "Bank Statements", "Property Documents", "Form 16 (if applicable)", "Investment Statements", "Foreign Income Records", "TDS Certificates", "Previous Tax Returns"],
-        chartData: [
-          { label: "Intake Consultation", value: 30, color: "#c79d62" },
-          { label: "Record Compilation", value: 30, color: "#110311" },
-          { label: "Drafting & Check", value: 20, color: "#e5c595" },
-          { label: "Final Execution", value: 20, color: "#c79d62" }
-        ]
-      },
-      {
-        id: "nri-property-management-services",
-        title: "Property Management Services",
-        description: "Professional NRI property management services designed to protect your real estate assets, ensure legal compliance, manage tenants, and maintain your property's value while you live abroad.",
-        longDesc: `Protecting, Managing & Maximizing the Value of Your Property in India
-Owning property in India while living abroad presents unique challenges—from property monitoring and tenant management to maintenance, compliance, and safeguarding against unauthorized occupation. Managing these responsibilities remotely can be time-consuming and stressful.
-At ConsultAvenuee, we provide comprehensive NRI Property Management Services designed to help NRIs, OCIs, and PIOs efficiently manage, protect, and optimize their residential, commercial, inherited, and investment properties across India.
-Acting as your trusted local representative, we ensure your property remains secure, compliant, well-maintained, and financially productive.`,
-        sections: [
-          {
-            title: "Property Inspection & Monitoring",
-            content: `Regular monitoring helps safeguard your property and ensures timely identification of any issues.`,
-            image: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=600&q=80"
-          },
-          {
-            title: "Property Protection & Asset Security",
-            content: `We help protect your property against misuse, encroachment, and unauthorized occupation.`,
-            image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=600&q=80"
-          },
-          {
-            title: "Tenant Management & Rental Services",
-            content: `Our team assists with the complete rental lifecycle, from tenant onboarding to rent management.
-Services include:
-• Property Marketing and Listing Support
-• Tenant Screening and Verification
-• Rent Negotiation Assistance
-• Rent Agreement Documentation
-• Lease Renewal Coordination
-• Security Deposit Management
-• Tenant Exit Documentation
-• Rental Income Monitoring and Reporting`,
-            image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=600&q=80"
-          },
-          {
-            title: "Property Maintenance & Upkeep",
-            content: `We coordinate routine and emergency maintenance to preserve property value and functionality.`,
-            image: "https://images.unsplash.com/photo-1450133064473-71024230f91b?auto=format&fit=crop&w=600&q=80"
-          },
-          {
-            title: "Property Sale & Purchase Assistance",
-            content: `Whether acquiring or disposing of property, we assist with documentation and transaction management.
-Services include:
-• Property Due Diligence Coordination
-• Title Verification Support
-• Property Valuation Coordination
-• Buyer and Seller Documentation Assistance
-• Registration Support
-• Property Handover Coordination
-• Transaction Documentation Review`,
-            image: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=600&q=80"
-          },
-          {
-            title: "Property Reporting & Advisory",
-            content: `We provide transparent reporting and insights to help you make informed property decisions.`,
-            image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=600&q=80"
-          },
-          {
-            title: "Our Commitment",
-            content: `We act as your trusted property management partner in India, providing proactive oversight, professional coordination, and comprehensive support to protect your real estate investments. Our goal is to give NRIs complete peace of mind by ensuring their properties remain secure, compliant, well-maintained, and financially productive, regardless of where they reside in the world.`,
-            image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=600&q=80"
-          },
-          {
-            title: "Documents Commonly Required",
-            content: `• Passport
-• OCI / PIO Card (if applicable)
-• PAN Card
-• Property Title Documents
-• Previous Sale Deeds
-• Property Tax Receipts
-• Utility Records
-• Existing Lease Agreements
-• Power of Attorney (if applicable)
-• Bank Account Details`,
-            image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=600&q=80"
-          }
-        ],
-                image: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=800&q=80",
-        timelineSteps: [
-          { num: "01", title: "CONSULTATION", detailTitle: "Initial Briefing & Check", desc: "We discuss details and review all checklists." },
-          { num: "02", title: "VERIFICATION", detailTitle: "Document Compilation", desc: "Our specialists check all details to ensure compliance and completeness." },
-          { num: "03", title: "SUBMISSION", detailTitle: "Filing and Liaisoning", desc: "We prepare the forms and submit the applications to the regulatory department." },
-          { num: "04", title: "COMPLETION", detailTitle: "Final Approval & Support", desc: "We deliver the certificates, resolve queries, and outline next-step requirements." }
-        ],
-        comparison: [
-          { aspect: "Operational Efficiency", manual: "Manual tracking takes weeks.", consultAvenuee: "Structured digital handling." },
-          { aspect: "Compliance Accuracy", manual: "High risk of statutory notices or fines.", consultAvenuee: "Zero-error draft verification." },
-          { aspect: "Government Liaisoning", manual: "Requires multiple physical visits.", consultAvenuee: "Complete departmental representation." }
-        ],
-        faqs: [
-          { question: "Who can avail NRI Property Management Services?", answer: `Our services are designed for Non-Resident Indians (NRIs), Overseas Citizens of India (OCIs), Persons of Indian Origin (PIOs), and foreign citizens who own property in India.` },
-          { question: "What types of properties do you manage?", answer: `We manage residential apartments, villas, independent houses, commercial properties, and investment properties across India.` },
-          { question: "How often do you inspect the property?", answer: `Inspection frequency can be customized based on client requirements. Regular inspections may be conducted monthly, quarterly, half-yearly, or annually.` },
-          { question: "Can you help prevent unauthorized occupation or encroachment?", answer: `Yes. We conduct periodic property inspections, monitor occupancy status, coordinate with local authorities when necessary, and provide timely alerts regarding any unauthorized activity.` },
-          { question: "Do I need to visit India to manage my property?", answer: `No. Most property management activities can be handled remotely through our authorized representatives and Power of Attorney arrangements, where applicable.` },
-          { question: "Can you assist in finding tenants for my property?", answer: `Yes. We assist with property marketing, tenant screening, background verification, rent agreement documentation, lease management, and tenant onboarding.` },
-          { question: "How do you verify prospective tenants?", answer: `We conduct identity verification, address verification, employment checks, and reference checks wherever possible before recommending a tenant.` },
-          { question: "Do you prepare and manage rental agreements?", answer: `Yes. We coordinate the preparation, execution, renewal, and registration (where required) of rent and lease agreements.` },
-          { question: "Can you coordinate property maintenance and repairs?", answer: `Yes. We arrange routine maintenance, emergency repairs, vendor coordination, utility management, and upkeep services to ensure the property remains in good condition.` },
-          { question: "Can you assist in selling my property in India?", answer: `Yes. We assist with documentation, title verification coordination, valuation support, buyer coordination, registration assistance, and transaction documentation.` },
-          { question: "Can you assist in purchasing property in India?", answer: `Yes. We provide support in due diligence, title verification, document review, valuation coordination, and transaction assistance.` },
-          { question: "Do I need to provide a Power of Attorney (POA)?", answer: `A POA may be required for certain activities such as property transactions, legal representation, registration work, or dealing with government authorities. The requirement depends on the scope of services.` },
-          { question: "Can you assist with property tax and utility bill payments?", answer: `Yes. We coordinate payment of property taxes, maintenance charges, electricity bills, water bills, and other statutory dues as authorized by the owner.` },
-          { question: "Why should I choose professional property management services?", answer: `Professional management helps protect your property, reduce risks of misuse or encroachment, ensure timely maintenance, improve tenant management, maintain legal compliance, and provide peace of mind while you reside abroad.` },
-          { question: "Can you represent me before housing societies and local authorities?", answer: `Yes. We can coordinate with housing societies, municipal authorities, utility providers, and other local bodies for routine property-related matters, subject to authorization.` },
-          { question: "Do you provide property photo and video inspection reports?", answer: `Yes. Detailed photo and video reports can be provided after inspections to help owners monitor the property's condition remotely.` }
-        ],
-        checklist: ["Passport", "OCI / PIO Card (if applicable)", "PAN Card", "Property Title Documents", "Previous Sale Deeds", "Property Tax Receipts", "Utility Records", "Existing Lease Agreements", "Power of Attorney (if applicable)", "Bank Account Details"],
-        chartData: [
-          { label: "Intake Consultation", value: 30, color: "#c79d62" },
-          { label: "Record Compilation", value: 30, color: "#110311" },
-          { label: "Drafting & Check", value: 20, color: "#e5c595" },
-          { label: "Final Execution", value: 20, color: "#c79d62" }
-        ]
-      },
-      {
-        id: "nri-legal-services",
-        title: "Legal Services",
-        description: "Expert legal and documentation services for NRIs, covering Power of Attorney, attestation, retirement claims, and corporate compliance support with complete peace of mind.",
-        longDesc: `Your Trusted India Partner for Legal, Documentation & Compliance Matters
-Managing legal, compliance, and documentation requirements in India can be challenging while living overseas.
-At ConsultAvenuee, we provide comprehensive NRI Legal & Compliance Services, helping NRIs, OCIs, PIOs, and their families manage legal documentation, retirement benefits, regulatory compliance, and representation matters efficiently and securely from anywhere in the world.`,
-        sections: [
-          {
-            title: "Power of Attorney (POA) Services",
-            content: `Power of Attorney is often essential for NRIs to authorize trusted representatives to act on their behalf in India.
-Our services include:
-• General Power of Attorney (GPA) Drafting
-• Special Power of Attorney (SPA) Drafting
-• Banking and Financial POA Documentation
-• Legal and Administrative Representation POA
-• POA Review and Legal Vetting
-• Attestation and Registration Guidance
-• Revocation and Amendment Documentation`,
-            image: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=600&q=80"
-          },
-          {
-            title: "Documentation & Attestation Services",
-            content: `We assist with preparation, verification, authentication, and management of legal and regulatory documents required in India.
-Services include:
-• PAN Application and Corrections
-• Affidavits and Declarations
-• Notarization Guidance
-• Certified Documentation Assistance
-• Compliance Documentation Support`,
-            image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=600&q=80"
-          },
-          {
-            title: "Retirement & Financial Documentation Services",
-            content: `We help NRIs manage retirement-related benefits, financial records, and beneficiary matters in India.
-Services include:
-• PF Withdrawal Assistance
-• Pension Documentation Support
-• Gratuity Claim Documentation
-• Nomination and Beneficiary Updates
-• Banking Documentation Assistance
-• Financial Record Consolidation`,
-            image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=600&q=80"
-          },
-          {
-            title: "Business & Corporate Support Services",
-            content: `For NRIs with business interests in India, we provide documentation and compliance assistance.
-Services include:
-• Company Incorporation Support
-• LLP and Partnership Documentation
-• Startup Advisory Support
-• ROC and secretarial Compliance Assistance
-• Share Transfer Documentation
-• Corporate Documentation Management`,
-            image: "https://images.unsplash.com/photo-1450133064473-71024230f91b?auto=format&fit=crop&w=600&q=80"
-          },
-          {
-            title: "Our Commitment",
-            content: `We serve as a trusted India-based advisory partner for NRIs, helping them navigate legal, compliance, documentation, and succession matters with confidence. Our objective is to simplify complex processes, ensure regulatory compliance, protect family interests, and provide seamless support for managing Indian affairs from anywhere in the world.`,
-            image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=600&q=80"
-          },
-          {
-            title: "Documents Commonly Required",
-            content: `• Passport
-• OCI / PIO Card (if applicable)
-• PAN Card
-• Overseas Address Proof
-• Indian Address Proof (if available)
-• Tax Records and Financial Statements
-• Bank Account Details
-• Existing Legal Documents
-• Family and Beneficiary Information
-• Investment and Compliance Records`,
-            image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=600&q=80"
-          }
-        ],
-                image: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=800&q=80",
-        timelineSteps: [
-          { num: "01", title: "CONSULTATION", detailTitle: "Initial Briefing & Check", desc: "We discuss details and review all checklists." },
-          { num: "02", title: "VERIFICATION", detailTitle: "Document Compilation", desc: "Our specialists check all details to ensure compliance and completeness." },
-          { num: "03", title: "SUBMISSION", detailTitle: "Filing and Liaisoning", desc: "We prepare the forms and submit the applications to the regulatory department." },
-          { num: "04", title: "COMPLETION", detailTitle: "Final Approval & Support", desc: "We deliver the certificates, resolve queries, and outline next-step requirements." }
-        ],
-        comparison: [
-          { aspect: "Operational Efficiency", manual: "Manual tracking takes weeks.", consultAvenuee: "Structured digital handling." },
-          { aspect: "Compliance Accuracy", manual: "High risk of statutory notices or fines.", consultAvenuee: "Zero-error draft verification." },
-          { aspect: "Government Liaisoning", manual: "Requires multiple physical visits.", consultAvenuee: "Complete departmental representation." }
-        ],
-        faqs: [
-          { question: "Who can avail NRI Legal & Compliance Services?", answer: `Our services are designed for Non-Resident Indians (NRIs), Overseas Citizens of India (OCIs), Persons of Indian Origin (PIOs), and their families who require assistance with legal, compliance, documentation, and succession matters in India.` },
-          { question: "Why do NRIs require legal and compliance support in India?", answer: `Managing legal and regulatory matters from overseas can be challenging due to evolving laws, documentation requirements, and the need for local coordination. Professional support helps ensure compliance, accuracy, and timely execution of legal processes.` },
-          { question: "What is a Power of Attorney (POA), and why is it important for NRIs?", answer: `A Power of Attorney allows an NRI to authorize a trusted individual to act on their behalf in India for property, banking, legal, administrative, and financial matters without requiring frequent travel.` },
-          { question: "What is the difference between a General Power of Attorney (GPA) and a Special Power of Attorney (SPA)?", answer: `A GPA grants broad authority to the appointed representative for multiple matters, while an SPA grants authority for a specific transaction or purpose only.` },
-          { question: "Can you assist with drafting and reviewing Power of Attorney documents?", answer: `Yes. We assist with drafting, reviewing, vetting, attestation guidance, registration support, amendments, and revocation of Power of Attorney documents.` },
-          { question: "Can a Power of Attorney executed abroad be used in India?", answer: `Yes. Subject to applicable legal requirements, a POA executed overseas may need notarization, attestation, apostille, and registration in India before use.` },
-          { question: "Can you help with PAN card applications and corrections?", answer: `Yes. We assist with PAN applications, corrections, updates, reissuance, and documentation support for NRIs.` },
-          { question: "Do you provide document attestation and notarization support?", answer: `Yes. We provide guidance on notarization, attestation, apostille requirements, certified copies, affidavits, declarations, and other legal documentation processes.` },
-          { question: "Can you assist with PF withdrawal and pension documentation?", answer: `Yes. We assist with documentation for Provident Fund withdrawals, pension claims, gratuity settlements, beneficiary updates, and retirement benefit processing.` },
-          { question: "Can NRIs claim pension and retirement benefits in India?", answer: `Yes. Eligible NRIs may claim retirement benefits subject to applicable laws, eligibility criteria, and documentation requirements.` },
-          { question: "Can you assist NRIs with company formation in India?", answer: `Yes. We provide support for company incorporation, LLP registration, partnership documentation, startup structuring, and related compliance requirements.` },
-          { question: "Can you help with ROC and corporate compliance matters?", answer: `Yes. We assist with documentation and compliance support related to corporate filings, secretarial records, share transfers, and regulatory requirements.` },
-          { question: "Can you represent me before government authorities and institutions?", answer: `We provide coordination and representation support through authorized processes, documentation management, and liaison assistance, subject to legal requirements and authorization.` },
-          { question: "Can services be managed remotely from overseas?", answer: `Yes. Most services can be managed remotely through digital communication, document sharing, and authorized representation, reducing the need for travel to India.` },
-          { question: "Why should NRIs engage professional legal and compliance support?", answer: `Professional support helps reduce legal risks, ensure regulatory compliance, streamline documentation, protect family interests, facilitate succession planning, and provide peace of mind while managing affairs in India from abroad.` },
-          { question: "Can you assist elderly parents or family members in India on behalf of NRIs?", answer: `Yes. Subject to authorization, we can coordinate documentation, compliance requirements, and administrative support for family members residing in India.` },
-          { question: "Can you coordinate with lawyers, chartered accountants, and other professionals?", answer: `Yes. We work closely with legal, tax, and compliance professionals whenever specialized expertise or representation is required.` }
-        ],
-        checklist: ["Passport", "OCI / PIO Card (if applicable)", "PAN Card", "Overseas Address Proof", "Indian Address Proof (if available)", "Tax Records and Financial Statements", "Bank Account Details", "Existing Legal Documents", "Family and Beneficiary Information", "Investment and Compliance Records"],
-        chartData: [
-          { label: "Intake Consultation", value: 30, color: "#c79d62" },
-          { label: "Record Compilation", value: 30, color: "#110311" },
-          { label: "Drafting & Check", value: 20, color: "#e5c595" },
-          { label: "Final Execution", value: 20, color: "#c79d62" }
-        ]
-      }
-    ]
-  },
-  {
-    id: "senior-citizen-advisory",
-    title: "Senior Citizen Advisory Services",
-    description: "Expert assistance for senior citizens in managing taxation, pension benefits, property matters, legal documentation, and succession planning.",
-    subServices: [
-      {
-        id: "health-insurance-claims-support",
-        title: "Health Insurance Claims Support",
-        description: "Professional support for health insurance reimbursement claims, documentation, and claim rejection matters, ensuring a smooth and efficient claims process.",
-        badge: "SPECIAL",
-        longDesc: `ConsultAvenuee Senior Citizen Assistance Services provide trusted support for taxation, health insurance claims, financial documentation, property matters, estate planning, and regulatory compliance, enabling senior citizens and their families to manage life's financial and administrative responsibilities with confidence, convenience, and peace of mind.
-
-Helping You Focus on Recovery, Not Paperwork
-ConsultAvenuee provides reliable and professional Health Insurance Claims Support Services to help you navigate the process with confidence and secure the benefits you are entitled to under your policy.
-Let us handle the claim process while you focus on your health and recovery.`,
-        sections: [
-          {
-            title: "Health Insurance Claims Support Services",
-            content: `Simplifying Health Insurance Claims. Maximizing Your Benefits.
-Our objective is to simplify the process, minimize delays, reduce claim rejections, and help clients secure timely settlement of eligible insurance benefits.
-At ConsultAvenuee, we provide comprehensive Health Insurance Claims Support Services.`,
-            image: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=600&q=80"
-          },
-          {
-            title: "Reimbursement Claim Assistance",
-            content: `For medical expenses paid directly by the insured, we provide complete support for reimbursement claims.`,
-            image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=600&q=80"
-          },
-          {
-            title: "Claim Documentation Support",
-            content: `Accurate documentation plays a critical role in claim approval.`,
-            image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=600&q=80"
-          },
-          {
-            title: "Claim Rejection & Dispute Resolution Support",
-            content: `If a claim is rejected or partially settled, we assist clients in pursuing a fair review and resolution.`,
-            image: "https://images.unsplash.com/photo-1450133064473-71024230f91b?auto=format&fit=crop&w=600&q=80"
-          },
-          {
-            title: "Benefits of Professional Claims Assistance",
-            content: `• Reduced Claim Rejections
-• Faster Claim Processing
-• Continuous Claim Tracking
-• Expert Guidance
-• Dispute Resolution Support
-• Improved Settlement Outcomes`,
-            image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=600&q=80"
-          },
-          {
-            title: "Documents Generally Required",
-            content: `The documents required may vary depending on the insurer and type of claim. Commonly required documents include:
-• Health Insurance Policy Details
-• Health Insurance Card
-• Aadhaar Card or Identity Proof
-• Hospital Admission Records
-• Discharge Summary
-• Medical Prescriptions
-• Diagnostic Reports
-• Original Medical Bills and Receipts
-• Pharmacy Bills
-• Bank Account Details
-• Cancelled Cheque (for reimbursement claims)`,
-            image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=600&q=80"
-          }
-        ],
-        image: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=800&q=80",
-        timelineSteps: [
-          { num: "01", title: "CONSULTATION", detailTitle: "Initial Briefing & Check", desc: "We discuss details and review all checklists." },
-          { num: "02", title: "VERIFICATION", detailTitle: "Document Compilation", desc: "Our specialists check all details to ensure compliance and completeness." },
-          { num: "03", title: "SUBMISSION", detailTitle: "Filing and Liaisoning", desc: "We prepare the forms and submit the applications to the regulatory department." },
-          { num: "04", title: "COMPLETION", detailTitle: "Final Approval & Support", desc: "We deliver the certificates, resolve queries, and outline next-step requirements." }
-        ],
-        comparison: [
-          { aspect: "Operational Efficiency", manual: "Manual tracking takes weeks.", consultAvenuee: "Structured digital handling." },
-          { aspect: "Compliance Accuracy", manual: "High risk of statutory notices or fines.", consultAvenuee: "Zero-error draft verification." },
-          { aspect: "Government Liaisoning", manual: "Requires multiple physical visits.", consultAvenuee: "Complete departmental representation." }
-        ],
-        checklist: ["Health Insurance Policy Details", "Health Insurance Card", "Aadhaar Card or Identity Proof", "Hospital Admission Records", "Discharge Summary", "Medical Prescriptions", "Diagnostic Reports", "Original Medical Bills and Receipts", "Pharmacy Bills", "Bank Account Details", "Cancelled Cheque (for reimbursement claims)"],
-        faqs: [
-          { question: "Can you help if my claim has already been rejected?", answer: "Yes. We can review the rejection reasons, evaluate available options, assist with documentation, and support you in pursuing reconsideration or grievance redressal processes." },
-          { question: "Can senior citizens avail these services?", answer: "Absolutely. We provide dedicated assistance for senior citizens and their family members throughout the claim process." },
-          { question: "Do you sell insurance policies?", answer: "No. Our role is to assist policyholders in managing and processing health insurance claims efficiently and professionally." }
-        ],
-        chartData: [
-          { label: "Intake Consultation", value: 30, color: "#c79d62" },
-          { label: "Record Compilation", value: 30, color: "#110311" },
-          { label: "Drafting & Check", value: 20, color: "#e5c595" },
-          { label: "Final Execution", value: 20, color: "#c79d62" }
-        ]
-      },
-      {
-        id: "senior-income-tax-filing",
-        title: "Income Tax planning & Filing",
-        description: "Comprehensive income tax services covering tax planning, return filing, compliance management, and tax notice support for senior citizens.",
-        longDesc: `Income Tax Planning & Return Filing Services
-Simplifying Tax Compliance, Maximizing Financial Efficiency
-Partner with us for proactive tax planning, accurate compliance, and trusted professional guidance throughout the year.
-
-Smart Tax Planning. Accurate Compliance. Maximum Savings.
-Effective tax planning is not just about reducing tax liability—it is about making informed financial decisions, ensuring regulatory compliance, and preserving wealth.
-At ConsultAvenuee, we provide comprehensive Income Tax Planning, Compliance, and Return Filing Services.`,
-        sections: [
-          {
-            title: "Tax Planning & Advisory",
-            content: `We help clients develop tax-efficient strategies that align with their financial and business objectives.`,
-            image: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=600&q=80"
-          },
-          {
-            title: "Income Tax Return Filing Services",
-            content: `Timely and accurate filing of Income Tax Returns is essential for maintaining compliance and avoiding penalties.`,
-            image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=600&q=80"
-          },
-          {
-            title: "Tax Compliance Services",
-            content: `Our compliance support ensures that all tax obligations are met accurately and on time.
-• PAN & TAN Services
-• Advance Tax Computation
-• Self-Assessment Tax Calculation
-• TDS Verification & Reconciliation
-• AIS & Form 26AS Review
-• Income Tax Portal Assistance
-• Tax Compliance Review`,
-            image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=600&q=80"
-          },
-          {
-            title: "Tax Notice & Assessment Support",
-            content: `Receiving a tax notice can be stressful. Our experienced professionals provide practical assistance in responding effectively and protecting your interests.`,
-            image: "https://images.unsplash.com/photo-1450133064473-71024230f91b?auto=format&fit=crop&w=600&q=80"
-          },
-          {
-            title: "Benefits of Professional Tax Planning",
-            content: `• Maximize Tax Savings
-• Ensure Accurate Compliance
-• Minimize Tax Risks
-• Improve Financial Planning
-• Expert Guidance
-• Efficient Refund Processing`,
-            image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=600&q=80"
-          },
-          {
-            title: "Documents Generally Required",
-            content: `**For Salaried Individuals**
-• PAN Card
-• Aadhaar Card
-• Form 16
-• Salary Slips
-• Bank Statements
-• Investment Proofs
-• Home Loan Interest Certificate
-• Capital Gain Statements (if applicable)
-
-**For Businesses & Professionals**
-• PAN & Registration Documents
-• Books of Accounts
-• Financial Statements
-• GST Returns
-• TDS Details
-• Bank Statements
-• Expense Records
-• Audit Reports (where applicable)
-
-Additional documents may be required based on the nature of income and filing requirements.`,
-            image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=600&q=80"
-          }
-        ],
-        image: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=800&q=80",
-        timelineSteps: [
-          { num: "01", title: "CONSULTATION", detailTitle: "Initial Briefing & Check", desc: "We discuss details and review all checklists." },
-          { num: "02", title: "VERIFICATION", detailTitle: "Document Compilation", desc: "Our specialists check all details to ensure compliance and completeness." },
-          { num: "03", title: "SUBMISSION", detailTitle: "Filing and Liaisoning", desc: "We prepare the forms and submit the applications to the regulatory department." },
-          { num: "04", title: "COMPLETION", detailTitle: "Final Approval & Support", desc: "We deliver the certificates, resolve queries, and outline next-step requirements." }
-        ],
-        comparison: [
-          { aspect: "Operational Efficiency", manual: "Manual tracking takes weeks.", consultAvenuee: "Structured digital handling." },
-          { aspect: "Compliance Accuracy", manual: "High risk of statutory notices or fines.", consultAvenuee: "Zero-error draft verification." },
-          { aspect: "Government Liaisoning", manual: "Requires multiple physical visits.", consultAvenuee: "Complete departmental representation." }
-        ],
-        checklist: ["PAN Card", "Aadhaar Card", "Form 16", "Salary Slips", "Bank Statements", "Investment Proofs", "Home Loan Interest Certificate", "Capital Gain Statements (if applicable)", "PAN & Registration Documents (Business)", "Books of Accounts (Business)", "Financial Statements (Business)", "GST Returns (Business)", "TDS Details (Business)", "Expense Records (Business)", "Audit Reports (where applicable)"],
-        faqs: [
-          { question: "Is tax planning different from tax filing?", answer: "Yes. Tax planning focuses on legally minimizing tax liability through strategic financial decisions, while tax filing involves reporting income and filing returns with the Income Tax Department." },
-          { question: "Can you assist with capital gains taxation?", answer: "Yes. We provide comprehensive advisory and return filing support for property, shares, mutual funds, and other capital asset transactions." },
-          { question: "Do you handle tax notices?", answer: "Yes. We assist clients in responding to notices, assessments, departmental queries, and rectification matters." },
-          { question: "Can NRIs avail your tax services?", answer: "Absolutely. We provide specialized tax planning, compliance, and return filing services for NRIs and overseas Indians." }
-        ],
-        chartData: [
-          { label: "Intake Consultation", value: 30, color: "#c79d62" },
-          { label: "Record Compilation", value: 30, color: "#110311" },
-          { label: "Drafting & Check", value: 20, color: "#e5c595" },
-          { label: "Final Execution", value: 20, color: "#c79d62" }
-        ]
-      },
-      {
-        id: "pension-gratuity-documentations",
-        title: "Pension & Gratuity Documentations",
-        description: "Professional pension and gratuity documentation services for hassle-free retirement benefit claims, family pensions, and legal heir settlements.",
-        longDesc: "Pension & Gratuity Documentation Services\nSecuring Your Retirement Benefits with Confidence\nRetirement benefits such as pension and gratuity represent years of dedicated service and financial contribution. However, incomplete documentation, procedural complexities, and compliance requirements often lead to delays in claim processing and settlement.\nAt ConsultAvenuee, we provide comprehensive Pension & Gratuity Documentation Services, assisting employees, retirees, senior citizens, employers, nominees, and legal heirs in preparing, verifying, and processing the documentation required for pension claims, gratuity settlements, and retirement benefit applications.\nOur objective is to ensure accurate documentation, seamless claim processing, and timely receipt of eligible retirement benefits.",
-        sections: [
-          {
-            groupHeader: "Gratuity Documentation Services",
-            title: "Gratuity Claim Assistance",
-            content: `We assist employees and retirees in preparing and processing gratuity claims under the Payment of Gratuity Act and applicable organizational policies.
-Services include:
-• Gratuity Claim Form Preparation
-• Eligibility Assessment
-• Service Tenure Verification
-• Gratuity Calculation Support
-• Settlement Documentation
-• Payment Acknowledgement Records
-• Nomination Verification`,
-            image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=600&q=80"
-          },
-          {
-            title: "Nominee & Legal Heir Claims",
-            content: `In the event of an employee's demise, we assist nominees and legal heirs in securing eligible gratuity benefits.
-Services include:
-• Nominee Claim Documentation
-• Legal Heir Documentation Support
-• Death Claim Assistance
-• Affidavit & Declaration Support
-• Settlement Coordination & Documentation`,
-            image: "https://images.unsplash.com/photo-1450133064473-71024230f91b?auto=format&fit=crop&w=600&q=80"
-          },
-          {
-            groupHeader: "Our Pension Documentation Services",
-            title: "EPFO & EPS Pension Assistance",
-            content: `We assist employees and retirees in navigating pension claim procedures under the Employees' Provident Fund Organisation (EPFO) and Employees' Pension Scheme (EPS).
-Services include:
-• Form 10D Preparation (Monthly Pension Claims)
-• Form 10C Preparation (Pension Withdrawal / Scheme Certificate)
-• Pension Application Documentation
-• UAN & KYC Verification
-• Service History Verification
-• Pension Eligibility Assessment
-• Joint Declaration Preparation
-• Pension Corrections & Revision Applications
-• Pension Transfer Documentation`,
-            image: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=600&q=80"
-          },
-          {
-            title: "Family Pension Assistance",
-            content: `We provide dedicated support to family members and beneficiaries in claiming pension benefits after the demise of a pensioner or employee.`,
-            image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=600&q=80"
-          },
-          {
-            title: "Benefits of Professional Assistance",
-            content: `• Accurate Documentation
-• Faster Processing
-• Reduced Claim Rejection Risk
-• Compliance Assurance
-• End-to-End Support
-• Assistance in Legacy Cases`,
-            image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=600&q=80"
-          },
-          {
-            title: "Documents Generally Required",
-            content: `**For Gratuity Claims**
-• Identity Proof
-• Employment Records
-• Salary Details
-• Gratuity Nomination Forms
-• Service Certificate
-• Retirement / Resignation Documents
-• Death Certificate (for death claims)
-• Legal Heir Documents (where applicable)
-
-**For Pension Claims**
-• Aadhaar Card
-• PAN Card
-• UAN Number
-• Bank Account Details
-• Passport Size Photographs
-• Service Records
-• Form 10C / Form 10D
-• Pension Payment Order (where applicable)
-
-Additional documents may be required depending on the nature of the claim and the applicable authority.`,
-            image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=600&q=80"
-          }
-        ],
-        postSectionsDesc: `Helping You Receive the Benefits You Have Earned
-Retirement benefits are an important part of your financial security. ConsultAvenuee provides reliable and professional Pension & Gratuity Documentation Services to help employees, retirees, senior citizens, nominees, and organizations navigate the documentation process with confidence and ease.
-Let our experts assist you in securing timely pension, gratuity, and retirement benefit settlements with complete peace of mind.`,
-        image: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=800&q=80",
-        timelineSteps: [
-          { num: "01", title: "CONSULTATION", detailTitle: "Initial Briefing & Check", desc: "We discuss details and review all checklists." },
-          { num: "02", title: "VERIFICATION", detailTitle: "Document Compilation", desc: "Our specialists check all details to ensure compliance and completeness." },
-          { num: "03", title: "SUBMISSION", detailTitle: "Filing and Liaisoning", desc: "We prepare the forms and submit the applications to the regulatory department." },
-          { num: "04", title: "COMPLETION", detailTitle: "Final Approval & Support", desc: "We deliver the certificates, resolve queries, and outline next-step requirements." }
-        ],
-        comparison: [
-          { aspect: "Operational Efficiency", manual: "Manual tracking takes weeks.", consultAvenuee: "Structured digital handling." },
-          { aspect: "Compliance Accuracy", manual: "High risk of statutory notices or fines.", consultAvenuee: "Zero-error draft verification." },
-          { aspect: "Government Liaisoning", manual: "Requires multiple physical visits.", consultAvenuee: "Complete departmental representation." }
-        ],
-        checklist: ["Aadhaar Card", "PAN Card", "UAN Number", "Bank Account Details", "Passport Size Photographs", "Service Records", "Form 10C / Form 10D", "Pension Payment Order (where applicable)", "Identity Proof (Gratuity)", "Employment Records (Gratuity)", "Salary Details (Gratuity)", "Gratuity Nomination Forms", "Service Certificate", "Retirement / Resignation Documents", "Death Certificate (for death claims)", "Legal Heir Documents (where applicable)"],
-        faqs: [
-          { question: "Can you assist with delayed pension claims?", answer: "Yes. We assist in reviewing records, identifying documentation gaps, and preparing supporting documents required for claim processing." },
-          { question: "Do you help with family pension claims?", answer: "Yes. We provide complete support for family pension documentation, nominee verification, and claim submission." },
-          { question: "Can you assist with gratuity claims after retirement?", answer: "Absolutely. We assist in gratuity eligibility verification, calculation support, documentation, and claim processing." },
-          { question: "Do you handle legacy or unresolved EPFO cases?", answer: "Yes. We provide assistance in complex cases involving service record discrepancies, pension corrections, and claim follow-up." }
-        ],
-        chartData: [
-          { label: "Intake Consultation", value: 30, color: "#c79d62" },
-          { label: "Record Compilation", value: 30, color: "#110311" },
-          { label: "Drafting & Check", value: 20, color: "#e5c595" },
-          { label: "Final Execution", value: 20, color: "#c79d62" }
-        ]
-      },
-      {
-        id: "property-sale-gift-transfer",
-        title: "Property sale. Gift & Transfer",
-        description: "Comprehensive property sale, gift deed, and transfer services to ensure smooth, secure, and legally compliant property transactions.",
-        longDesc: `Senior Citizen Property Sale, Gift & Transfer Services
-Secure Your Property. Protect Your Legacy. Ensure a Smooth Transfer of Ownership.
-Managing property matters during retirement can often be complex and time-consuming. Whether you are planning to transfer property to your children, gift assets to family members, sell a property, or organize your estate for future generations, proper documentation and legal compliance are essential to safeguard your interests and avoid future disputes.
-At ConsultAvenuee, we provide dedicated Property Sale, Gift, Transfer & Succession Services for Senior Citizens, helping individuals and families manage property-related matters with confidence, clarity, and peace of mind.`,
-        sections: [
-          {
-            title: "Property Sale Services",
-            content: `• Sale Deed Drafting & Documentation Support
-• Property Transaction Assistance
-• Registration Coordination`,
-            image: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=600&q=80"
-          },
-          {
-            title: "Property Gift & Family Transfer Services",
-            content: `• Gift Deed Documentation
-• Transfer of Property to Children and Family Members
-• Family Settlement Arrangements
-• Relinquishment & Release Deed Documentation`,
-            image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=600&q=80"
-          },
-          {
-            title: "Benefits for Senior Citizens",
-            content: `• Hassle-Free Property Transfers
-• Smooth Transfer of Assets to Family Members
-• Reduced Risk of Family Disputes
-• Proper Succession and Inheritance Planning
-• Legally Compliant Documentation
-• Protection of Family Wealth and Property
-• Peace of Mind for Senior Citizens and Their Families`,
-            image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=600&q=80"
-          },
-          {
-            title: "Our Commitment",
-            content: `We assist senior citizens in managing every stage of property ownership transition—from gifting and transferring property to family members, to succession planning and inheritance matters.`,
-            image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=600&q=80"
-          },
-          {
-            title: "Documents Commonly Required",
-            content: `• Property Title Documents
-• Previous Sale Deeds
-• PAN Card & Aadhaar Card
-• Identity & Address Proof
-• Property Tax Receipts
-• Encumbrance Certificate
-• Society NOC (where applicable)
-• Revenue Records and Mutation Extracts
-• Death Certificate (for succession matters)
-• Legal Heir Details
-• Existing Will (if available)`,
-            image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=600&q=80"
-          }
-        ],
-        image: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=800&q=80",
-        timelineSteps: [
-          { num: "01", title: "CONSULTATION", detailTitle: "Initial Briefing & Check", desc: "We discuss details and review all checklists." },
-          { num: "02", title: "VERIFICATION", detailTitle: "Document Compilation", desc: "Our specialists check all details to ensure compliance and completeness." },
-          { num: "03", title: "SUBMISSION", detailTitle: "Filing and Liaisoning", desc: "We prepare the forms and submit the applications to the regulatory department." },
-          { num: "04", title: "COMPLETION", detailTitle: "Final Approval & Support", desc: "We deliver the certificates, resolve queries, and outline next-step requirements." }
-        ],
-        comparison: [
-          { aspect: "Operational Efficiency", manual: "Manual tracking takes weeks.", consultAvenuee: "Structured digital handling." },
-          { aspect: "Compliance Accuracy", manual: "High risk of statutory notices or fines.", consultAvenuee: "Zero-error draft verification." },
-          { aspect: "Government Liaisoning", manual: "Requires multiple physical visits.", consultAvenuee: "Complete departmental representation." }
-        ],
-        checklist: ["Property Title Documents", "Previous Sale Deeds", "PAN Card & Aadhaar Card", "Identity & Address Proof", "Property Tax Receipts", "Encumbrance Certificate", "Society NOC (where applicable)", "Revenue Records and Mutation Extracts", "Death Certificate (for succession matters)", "Legal Heir Details", "Existing Will (if available)"],
-        faqs: [
-          { question: "Can I transfer my property to my children during my lifetime?", answer: "Yes. Property can be transferred during your lifetime through various legal methods such as a Gift Deed, Sale Deed, Family Settlement, or other legally recognized transfer mechanisms, depending on your objectives and circumstances." },
-          { question: "What is the difference between a Gift Deed and a Will?", answer: "A Gift Deed transfers ownership immediately during the lifetime of the owner, whereas a Will takes effect only after the death of the person making the Will. Both serve different estate planning objectives." },
-          { question: "Is registration of a Gift Deed mandatory?", answer: "Yes. In most cases, a Gift Deed relating to immovable property must be properly executed and registered in accordance with applicable laws to be legally valid." },
-          { question: "Can I gift property to my son, daughter, spouse, or other family members?", answer: "Yes. Property can generally be gifted to family members, including children, spouse, grandchildren, and other eligible relatives, subject to applicable legal requirements." },
-          { question: "What is a Family Settlement?", answer: "A Family Settlement is an arrangement among family members to distribute or resolve ownership rights in family assets and properties, often helping avoid future disputes and litigation." },
-          { question: "Can property be transferred without monetary consideration?", answer: "Yes. Transfers through Gift Deeds, Family Settlements, Relinquishment Deeds, or Release Deeds may not necessarily involve monetary consideration, depending on the nature of the transaction." },
-          { question: "What happens to property if there is no Will?", answer: "If a person passes away without leaving a valid Will, the property is generally distributed among legal heirs in accordance with the applicable succession laws." },
-          { question: "What precautions should senior citizens take before gifting or transferring property?", answer: "Before transferring property, it is advisable to:\n• Verify ownership records\n• Understand legal consequences\n• Review tax implications\n• Assess future financial needs\n• Obtain professional advice\n• Ensure proper documentation and registration" },
-          { question: "Can jointly owned property be transferred?", answer: "Yes. However, the consent and participation of all co-owners may be required depending on the ownership structure and nature of the transaction." },
-          { question: "Can ConsultAvenuee assist with end-to-end property transfer documentation?", answer: "Yes. We provide assistance with:\n• Property Sale Documentation\n• Gift Deeds\n• Family Settlements\n• Relinquishment & Release Deeds\n• Property Transfer Documentation\n• Succession & Inheritance Support\n• Registration Coordination\n• Legal Documentation Review" }
-        ],
-        chartData: [
-          { label: "Intake Consultation", value: 30, color: "#c79d62" },
-          { label: "Record Compilation", value: 30, color: "#110311" },
-          { label: "Drafting & Check", value: 20, color: "#e5c595" },
-          { label: "Final Execution", value: 20, color: "#c79d62" }
-        ]
       }
     ]
   },
@@ -2404,6 +1646,10 @@ Step 7: FEMA and RBI Compliance`
                 content: `The Food Safety and Standards Authority of India (FSSAI) is the apex regulatory body established under the Ministry of Health & Family Welfare, Government of India, responsible for regulating and supervising food safety standards across the country.\n\nFSSAI ensures that food products manufactured, distributed, sold, or imported in India meet prescribed safety and quality standards, thereby protecting consumer health and promoting confidence in the food industry.\n\nEvery Food Business Operator (FBO) is required to obtain the appropriate FSSAI Registration or License before commencing food-related business activities.`
               },
               {
+                title: "Benefits of FSSAI Registration",
+                content: `• Legal Compliance\n• Consumer Confidence\n• Business Credibility\n• Expansion Opportunities\n• Import & Export Support\n• Regulatory Protection`
+              },
+              {
                 title: "Who Needs FSSAI Registration?",
                 content: `FSSAI Registration or License is mandatory for:\n• Food Manufacturers\n• Food Processors\n• Restaurants & Cafés\n• Hotels & Catering Businesses\n• Bakers & Sweet Shops\n• Cloud Kitchens\n• Food Traders & Distributors\n• Food Importers & Exporters\n• E-commerce Food Sellers\n• Dairy & Milk Processing Units\n• Meat & Poultry Businesses\n• Storage & Warehouse Operators\n• Transporters of Food Products\n• Retail Food Businesses`
               },
@@ -3009,7 +2255,7 @@ Partner with ConsultAvenuee's Virtual CFO team to gain expert financial insights
                                 "content": "The following persons and entities are required to file TDS returns electronically:\n\u2022 Central Government Departments\n\u2022 State Government Departments\n\u2022 Companies\n\u2022 Partnership Firms\n\u2022 LLPs\n\u2022 Trusts and Societies\n\u2022 Individuals and HUFs liable for tax audit\n\u2022 Any person required to deduct TDS under the Income-tax Act"
                 },
                 {
-                                "title": "Due Dates for TDS",
+                                "title": "Due Dates for Deposit of TDS",
                                 "content": "**Monthly TDS Payment Due Dates**\n\u2022 April to February: 7th of the Following Month\n\u2022 March: 30th April\nFailure to deposit TDS within the prescribed due dates attracts interest and penalties.\n\n**Due Dates for Filing TDS Returns**\n\u2022 Quarter Ending 30 June: 31 July\n\u2022 Quarter Ending 30 September: 31 October\n\u2022 Quarter Ending 31 December: 31 January\n\u2022 Quarter Ending 31 March: 31 May\n\nTimely filing of TDS returns helps avoid late filing fees, penalties, and notices from the Income Tax Department."
                 },
                 {
@@ -3022,7 +2268,11 @@ Partner with ConsultAvenuee's Virtual CFO team to gain expert financial insights
                 },
                 {
                                 "title": "TDS Refund",
-                                "content": "**What is a TDS Refund?**\nA TDS refund arises when the tax deducted exceeds the actual tax liability of the taxpayer.\n\n**How to Claim a TDS Refund?**\nIn most cases, there is no separate application for claiming a TDS refund. The refund can be claimed while filing the Income Tax Return by:\n1. Reporting total taxable income.\n2. Reporting TDS credits appearing in Form 26AS and AIS.\n3. Computing actual tax liability.\n4. Claiming excess tax paid as a refund.\n\n**How to Avoid Excess TDS Deduction?**\n\u2022 Submission of Form 15G (for resident individuals).\n\u2022 Submission of Form 15H (for senior citizens).\n\u2022 Furnishing PAN to ensure deduction at normal rates."
+                                "content": "**What is a TDS Refund?**\nA TDS refund arises when the tax deducted exceeds the actual tax liability of the taxpayer.\n\nCommon reasons include:\n\u2022 Excess TDS deduction by employer.\n\u2022 Excess TDS deduction by banks.\n\u2022 Incorrect tax estimation.\n\u2022 Additional deductions claimed while filing the Income Tax Return.\n\u2022 Lower taxable income than originally estimated.\n\n**How to Claim a TDS Refund?**\nIn most cases, there is no separate application for claiming a TDS refund. The refund can be claimed while filing the Income Tax Return by:\n1. Reporting total taxable income.\n2. Reporting TDS credits appearing in Form 26AS and AIS.\n3. Computing actual tax liability.\n4. Claiming excess tax paid as a refund.\n\n**How to Avoid Excess TDS Deduction?**\n\u2022 Submission of Form 15G (for resident individuals).\n\u2022 Submission of Form 15H (for senior citizens).\n\u2022 Furnishing PAN to ensure deduction at normal rates."
+                },
+                {
+                                "title": "Documents Required for TDS Return Filing",
+                                "content": "\u2022 TAN Registration Details\n\u2022 PAN of Deductor\n\u2022 PAN of Deductees\n\u2022 TDS Challan Details\n\u2022 Salary Records (if applicable)\n\u2022 Vendor Payment Details\n\u2022 Professional Fee Records\n\u2022 Rent Payment Details\n\u2022 Previous TDS Return Copies\n\u2022 Form 26AS Reconciliation Statement"
                 }
 ], faqs: [
                 {
@@ -3336,6 +2586,765 @@ Partner with ConsultAvenuee's Virtual CFO team to gain expert financial insights
             ],
             faqs: []
           }
+        ]
+      }
+    ]
+  },
+  {
+    id: "nri-services",
+    title: "NRI Services",
+    description: "End-to-end NRI services covering tax compliance, property management, and legal assistance to help NRIs manage their investments, assets, and obligations in India with confidence.",
+    subServices: [
+      {
+        id: "nri-taxation-services",
+        title: "Taxation Services",
+        description: "Simplify your Indian tax compliance with our comprehensive NRI taxation services covering income tax returns, property taxation, capital gains, DTAA benefits, TDS compliance, and tax planning.",
+        badge: "HOT",
+        longDesc: `Simplifying Indian Tax Compliance for Non-Resident Indians Worldwide
+Managing tax obligations across multiple jurisdictions can be complex and challenging. Whether you earn income in India, own property, invest in Indian assets, or require assistance with tax compliance and repatriation, expert guidance is essential to ensure compliance while optimizing your tax position.
+At ConsultAvenuee, we provide comprehensive NRI Taxation Services to Non-Resident Indians (NRIs), Overseas Citizens of India (OCIs), and Persons of Indian Origin (PIOs).`,
+        sections: [
+          {
+            title: "NRI Income Tax Return Filing",
+            content: `• Income Tax Return Filing for NRIs
+• Revised and Updated Return Filing
+• Tax Refund Processing
+• Income Tax Compliance Review
+• Tax Record Management`,
+            image: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=600&q=80"
+          },
+          {
+            title: "Property Taxation Services",
+            content: `• Tax Advisory on Property Purchase and Sale
+• Capital Gains Computation
+• TDS Compliance on Property Transactions
+• Reinvestment and Exemption Planning
+• Rental Income Tax Compliance
+• Repatriation Documentation Support`,
+            image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=600&q=80"
+          },
+          {
+            title: "Capital Gains & Investment Tax Advisory",
+            content: `• Capital Gains Tax Planning
+• Property, Shares and Mutual Fund Taxation
+• Investment Tax Advisory
+• Exemption and Relief Planning`,
+            image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=600&q=80"
+          },
+          {
+            title: "TDS & Compliance Services",
+            content: `• Property Sale TDS Advisory
+• Rental Income TDS Compliance
+• Investment Income TDS Review
+• Lower or Nil TDS Certificate Assistance
+• TDS Refund Claims`,
+            image: "https://images.unsplash.com/photo-1450133064473-71024230f91b?auto=format&fit=crop&w=600&q=80"
+          },
+          {
+            title: "Tax Notices & Representation",
+            content: `• Income Tax Notice Response Support
+• Assessment and Reassessment Assistance
+• Refund and Rectification Matters
+• Appeal Documentation Support
+• Representation Before Tax Authorities`,
+            image: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=600&q=80"
+          },
+          {
+            title: "Documents Commonly Required",
+            content: `• Passport
+• PAN Card
+• Aadhaar Card (if available)
+• Overseas Address Proof
+• Tax Residency Documents
+• Bank Statements
+• Property Documents
+• Form 16 (if applicable)
+• Investment Statements
+• Foreign Income Records
+• TDS Certificates
+• Previous Tax Returns`,
+            image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=600&q=80"
+          },
+          {
+            title: "Our Commitment",
+            content: `We help NRIs manage their Indian tax obligations with confidence through proactive planning, accurate compliance, and practical advisory solutions. Our objective is to simplify complex tax matters, minimize tax exposure, ensure regulatory compliance, and protect your financial interests in India and abroad.`,
+            image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=600&q=80"
+          }
+        ],
+                image: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=800&q=80",
+        timelineSteps: [
+          { num: "01", title: "CONSULTATION", detailTitle: "Initial Briefing & Check", desc: "We discuss details and review all checklists." },
+          { num: "02", title: "VERIFICATION", detailTitle: "Document Compilation", desc: "Our specialists check all details to ensure compliance and completeness." },
+          { num: "03", title: "SUBMISSION", detailTitle: "Filing and Liaisoning", desc: "We prepare the forms and submit the applications to the regulatory department." },
+          { num: "04", title: "COMPLETION", detailTitle: "Final Approval & Support", desc: "We deliver the certificates, resolve queries, and outline next-step requirements." }
+        ],
+        comparison: [
+          { aspect: "Operational Efficiency", manual: "Manual tracking takes weeks.", consultAvenuee: "Structured digital handling." },
+          { aspect: "Compliance Accuracy", manual: "High risk of statutory notices or fines.", consultAvenuee: "Zero-error draft verification." },
+          { aspect: "Government Liaisoning", manual: "Requires multiple physical visits.", consultAvenuee: "Complete departmental representation." }
+        ],
+        faqs: [
+          { question: "Who can avail NRI Taxation Services?", answer: `Our NRI Taxation Services are designed for Non-Resident Indians (NRIs), Overseas Citizens of India (OCIs), Persons of Indian Origin (PIOs), and individuals with tax obligations, investments, or income sources in India.` },
+          { question: "Do NRIs need to file Income Tax Returns in India?", answer: `Yes. NRIs may be required to file an Income Tax Return (ITR) in India if their taxable income exceeds the prescribed threshold or if they wish to claim tax refunds, carry forward losses, or meet specific compliance requirements.` },
+          { question: "How is NRI tax residency determined?", answer: `Tax residency is determined based on the individual's physical presence in India during the relevant financial year and preceding years, as per the provisions of the Income Tax Act.` },
+          { question: "What types of income earned by NRIs are taxable in India?", answer: `Generally, income that accrues, arises, or is received in India may be taxable in India. This may include:
+• Rental Income
+• Capital Gains
+• Salary earned in India
+• Interest Income
+• Business Income
+• Investment Income` },
+          { question: "Can NRIs claim tax refunds in India?", answer: `Yes. If excess tax has been deducted or paid, NRIs may claim refunds by filing the appropriate Income Tax Return.` },
+          { question: "Is rental income from property in India taxable for NRIs?", answer: `Yes. Rental income earned from property located in India is generally taxable in India and may be subject to TDS requirements.` },
+          { question: "How is capital gains tax calculated on the sale of property by an NRI?", answer: `Capital gains tax depends on factors such as the holding period, purchase cost, sale consideration, indexed cost benefits (where applicable), and available exemptions under tax laws.` },
+          { question: "Can NRIs claim exemptions on capital gains tax?", answer: `Yes. Subject to eligibility conditions, NRIs may be able to claim exemptions and reliefs through specified reinvestment options and tax planning strategies.` },
+          { question: "What is TDS on property sale transactions involving NRIs?", answer: `Property purchases from NRIs may attract specific TDS obligations under Indian tax laws. We assist both buyers and sellers in understanding and complying with these requirements.` },
+          { question: "Can you assist with lower or nil TDS certificate applications?", answer: `Yes. We assist eligible taxpayers in preparing and filing applications for lower or nil deduction certificates, subject to approval by the tax authorities.` },
+          { question: "Can you assist with taxation of shares, mutual funds, and other investments?", answer: `Yes. We provide advisory and compliance support relating to taxation of shares, mutual funds, bonds, securities, and other investment assets held in India.` },
+          { question: "What is Double Taxation Avoidance Agreement (DTAA)?", answer: `DTAA is a tax treaty between two countries that helps taxpayers avoid being taxed twice on the same income. We assist NRIs in evaluating applicable DTAA benefits.` },
+          { question: "Can NRIs claim DTAA benefits?", answer: `Yes. Eligible NRIs may claim relief under applicable DTAA provisions, subject to fulfilling prescribed conditions and documentation requirements.` },
+          { question: "Can you assist with pending tax refunds?", answer: `Yes. We assist in tracking refund status, resolving discrepancies, responding to departmental queries, and facilitating refund processing.` },
+          { question: "Do NRIs need to report foreign income in India?", answer: `Reporting requirements depend on residential status, source of income, and applicable tax provisions. We evaluate individual circumstances and advise accordingly.` },
+          { question: "Can you assist with tax planning for property investments in India?", answer: `Yes. We provide advisory services on acquisition, ownership, rental income, sale transactions, capital gains planning, and tax-efficient investment structures.` },
+          { question: "Is online tax filing and consultation available for overseas clients?", answer: `Yes. Most of our taxation services can be managed remotely through secure digital communication and document-sharing processes, enabling seamless support worldwide.` },
+          { question: "Can you assist with taxation of NRO and NRE accounts?", answer: `Yes. We provide guidance on the tax treatment, compliance requirements, and reporting obligations associated with NRO and NRE accounts.` },
+          { question: "Can you help obtain Form 15CA and Form 15CB for fund repatriation?", answer: `Yes. We assist with documentation, certification coordination, and compliance requirements related to overseas remittances and repatriation of funds.` },
+          { question: "Can you review my overall Indian tax position before I invest or sell assets?", answer: `Yes. We provide pre-transaction tax reviews to help clients understand tax implications, available exemptions, compliance requirements, and potential tax exposures before making financial decisions.` },
+          { question: "Can you coordinate with my overseas tax advisors?", answer: `Yes. We can work alongside your overseas tax consultants, accountants, and financial advisors to facilitate efficient management of cross-border tax matters and compliance requirements.` }
+        ],
+        checklist: ["Passport", "PAN Card", "Aadhaar Card (if available)", "Overseas Address Proof", "Tax Residency Documents", "Bank Statements", "Property Documents", "Form 16 (if applicable)", "Investment Statements", "Foreign Income Records", "TDS Certificates", "Previous Tax Returns"],
+        chartData: [
+          { label: "Intake Consultation", value: 30, color: "#c79d62" },
+          { label: "Record Compilation", value: 30, color: "#110311" },
+          { label: "Drafting & Check", value: 20, color: "#e5c595" },
+          { label: "Final Execution", value: 20, color: "#c79d62" }
+        ]
+      },
+      {
+        id: "nri-property-management-services",
+        title: "Property Management Services",
+        description: "Professional NRI property management services designed to protect your real estate assets, ensure legal compliance, manage tenants, and maintain your property's value while you live abroad.",
+        longDesc: `Protecting, Managing & Maximizing the Value of Your Property in India
+Owning property in India while living abroad presents unique challenges—from property monitoring and tenant management to maintenance, compliance, and safeguarding against unauthorized occupation. Managing these responsibilities remotely can be time-consuming and stressful.
+At ConsultAvenuee, we provide comprehensive NRI Property Management Services designed to help NRIs, OCIs, and PIOs efficiently manage, protect, and optimize their residential, commercial, inherited, and investment properties across India.
+Acting as your trusted local representative, we ensure your property remains secure, compliant, well-maintained, and financially productive.`,
+        sections: [
+          {
+            title: "Property Inspection & Monitoring",
+            content: `Regular monitoring helps safeguard your property and ensures timely identification of any issues.`,
+            image: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=600&q=80"
+          },
+          {
+            title: "Property Protection & Asset Security",
+            content: `We help protect your property against misuse, encroachment, and unauthorized occupation.`,
+            image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=600&q=80"
+          },
+          {
+            title: "Tenant Management & Rental Services",
+            content: `Our team assists with the complete rental lifecycle, from tenant onboarding to rent management.
+Services include:
+• Property Marketing and Listing Support
+• Tenant Screening and Verification
+• Rent Negotiation Assistance
+• Rent Agreement Documentation
+• Lease Renewal Coordination
+• Security Deposit Management
+• Tenant Exit Documentation
+• Rental Income Monitoring and Reporting`,
+            image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=600&q=80"
+          },
+          {
+            title: "Property Maintenance & Upkeep",
+            content: `We coordinate routine and emergency maintenance to preserve property value and functionality.`,
+            image: "https://images.unsplash.com/photo-1450133064473-71024230f91b?auto=format&fit=crop&w=600&q=80"
+          },
+          {
+            title: "Property Sale & Purchase Assistance",
+            content: `Whether acquiring or disposing of property, we assist with documentation and transaction management.
+Services include:
+• Property Due Diligence Coordination
+• Title Verification Support
+• Property Valuation Coordination
+• Buyer and Seller Documentation Assistance
+• Registration Support
+• Property Handover Coordination
+• Transaction Documentation Review`,
+            image: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=600&q=80"
+          },
+          {
+            title: "Property Reporting & Advisory",
+            content: `We provide transparent reporting and insights to help you make informed property decisions.`,
+            image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=600&q=80"
+          },
+          {
+            title: "Documents Commonly Required",
+            content: `• Passport
+• OCI / PIO Card (if applicable)
+• PAN Card
+• Property Title Documents
+• Previous Sale Deeds
+• Property Tax Receipts
+• Utility Records
+• Existing Lease Agreements
+• Power of Attorney (if applicable)
+• Bank Account Details`,
+            image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=600&q=80"
+          },
+          {
+            title: "Our Commitment",
+            content: `We act as your trusted property management partner in India, providing proactive oversight, professional coordination, and comprehensive support to protect your real estate investments. Our goal is to give NRIs complete peace of mind by ensuring their properties remain secure, compliant, well-maintained, and financially productive, regardless of where they reside in the world.`,
+            image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=600&q=80"
+          }
+        ],
+                image: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=800&q=80",
+        timelineSteps: [
+          { num: "01", title: "CONSULTATION", detailTitle: "Initial Briefing & Check", desc: "We discuss details and review all checklists." },
+          { num: "02", title: "VERIFICATION", detailTitle: "Document Compilation", desc: "Our specialists check all details to ensure compliance and completeness." },
+          { num: "03", title: "SUBMISSION", detailTitle: "Filing and Liaisoning", desc: "We prepare the forms and submit the applications to the regulatory department." },
+          { num: "04", title: "COMPLETION", detailTitle: "Final Approval & Support", desc: "We deliver the certificates, resolve queries, and outline next-step requirements." }
+        ],
+        comparison: [
+          { aspect: "Operational Efficiency", manual: "Manual tracking takes weeks.", consultAvenuee: "Structured digital handling." },
+          { aspect: "Compliance Accuracy", manual: "High risk of statutory notices or fines.", consultAvenuee: "Zero-error draft verification." },
+          { aspect: "Government Liaisoning", manual: "Requires multiple physical visits.", consultAvenuee: "Complete departmental representation." }
+        ],
+        faqs: [
+          { question: "Who can avail NRI Property Management Services?", answer: `Our services are designed for Non-Resident Indians (NRIs), Overseas Citizens of India (OCIs), Persons of Indian Origin (PIOs), and foreign citizens who own property in India.` },
+          { question: "What types of properties do you manage?", answer: `We manage residential apartments, villas, independent houses, commercial properties, and investment properties across India.` },
+          { question: "How often do you inspect the property?", answer: `Inspection frequency can be customized based on client requirements. Regular inspections may be conducted monthly, quarterly, half-yearly, or annually.` },
+          { question: "Can you help prevent unauthorized occupation or encroachment?", answer: `Yes. We conduct periodic property inspections, monitor occupancy status, coordinate with local authorities when necessary, and provide timely alerts regarding any unauthorized activity.` },
+          { question: "Do I need to visit India to manage my property?", answer: `No. Most property management activities can be handled remotely through our authorized representatives and Power of Attorney arrangements, where applicable.` },
+          { question: "Can you assist in finding tenants for my property?", answer: `Yes. We assist with property marketing, tenant screening, background verification, rent agreement documentation, lease management, and tenant onboarding.` },
+          { question: "How do you verify prospective tenants?", answer: `We conduct identity verification, address verification, employment checks, and reference checks wherever possible before recommending a tenant.` },
+          { question: "Do you prepare and manage rental agreements?", answer: `Yes. We coordinate the preparation, execution, renewal, and registration (where required) of rent and lease agreements.` },
+          { question: "Can you coordinate property maintenance and repairs?", answer: `Yes. We arrange routine maintenance, emergency repairs, vendor coordination, utility management, and upkeep services to ensure the property remains in good condition.` },
+          { question: "Can you assist in selling my property in India?", answer: `Yes. We assist with documentation, title verification coordination, valuation support, buyer coordination, registration assistance, and transaction documentation.` },
+          { question: "Can you assist in purchasing property in India?", answer: `Yes. We provide support in due diligence, title verification, document review, valuation coordination, and transaction assistance.` },
+          { question: "Do I need to provide a Power of Attorney (POA)?", answer: `A POA may be required for certain activities such as property transactions, legal representation, registration work, or dealing with government authorities. The requirement depends on the scope of services.` },
+          { question: "Can you assist with property tax and utility bill payments?", answer: `Yes. We coordinate payment of property taxes, maintenance charges, electricity bills, water bills, and other statutory dues as authorized by the owner.` },
+          { question: "Why should I choose professional property management services?", answer: `Professional management helps protect your property, reduce risks of misuse or encroachment, ensure timely maintenance, improve tenant management, maintain legal compliance, and provide peace of mind while you reside abroad.` },
+          { question: "Can you represent me before housing societies and local authorities?", answer: `Yes. We can coordinate with housing societies, municipal authorities, utility providers, and other local bodies for routine property-related matters, subject to authorization.` },
+          { question: "Do you provide property photo and video inspection reports?", answer: `Yes. Detailed photo and video reports can be provided after inspections to help owners monitor the property's condition remotely.` }
+        ],
+        checklist: ["Passport", "OCI / PIO Card (if applicable)", "PAN Card", "Property Title Documents", "Previous Sale Deeds", "Property Tax Receipts", "Utility Records", "Existing Lease Agreements", "Power of Attorney (if applicable)", "Bank Account Details"],
+        chartData: [
+          { label: "Intake Consultation", value: 30, color: "#c79d62" },
+          { label: "Record Compilation", value: 30, color: "#110311" },
+          { label: "Drafting & Check", value: 20, color: "#e5c595" },
+          { label: "Final Execution", value: 20, color: "#c79d62" }
+        ]
+      },
+      {
+        id: "nri-legal-services",
+        title: "Legal Services",
+        description: "Expert legal and documentation services for NRIs, covering Power of Attorney, attestation, retirement claims, and corporate compliance support with complete peace of mind.",
+        longDesc: `Your Trusted India Partner for Legal, Documentation & Compliance Matters
+Managing legal, compliance, and documentation requirements in India can be challenging while living overseas.
+At ConsultAvenuee, we provide comprehensive NRI Legal & Compliance Services, helping NRIs, OCIs, PIOs, and their families manage legal documentation, retirement benefits, regulatory compliance, and representation matters efficiently and securely from anywhere in the world.`,
+        sections: [
+          {
+            title: "Power of Attorney (POA) Services",
+            content: `Power of Attorney is often essential for NRIs to authorize trusted representatives to act on their behalf in India.
+Our services include:
+• General Power of Attorney (GPA) Drafting
+• Special Power of Attorney (SPA) Drafting
+• Banking and Financial POA Documentation
+• Legal and Administrative Representation POA
+• POA Review and Legal Vetting
+• Attestation and Registration Guidance
+• Revocation and Amendment Documentation`,
+            image: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=600&q=80"
+          },
+          {
+            title: "Documentation & Attestation Services",
+            content: `We assist with preparation, verification, authentication, and management of legal and regulatory documents required in India.
+Services include:
+• PAN Application and Corrections
+• Affidavits and Declarations
+• Notarization Guidance
+• Certified Documentation Assistance
+• Compliance Documentation Support`,
+            image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=600&q=80"
+          },
+          {
+            title: "Retirement & Financial Documentation Services",
+            content: `We help NRIs manage retirement-related benefits, financial records, and beneficiary matters in India.
+Services include:
+• PF Withdrawal Assistance
+• Pension Documentation Support
+• Gratuity Claim Documentation
+• Nomination and Beneficiary Updates
+• Banking Documentation Assistance
+• Financial Record Consolidation`,
+            image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=600&q=80"
+          },
+          {
+            title: "Business & Corporate Support Services",
+            content: `For NRIs with business interests in India, we provide documentation and compliance assistance.
+Services include:
+• Company Incorporation Support
+• LLP and Partnership Documentation
+• Startup Advisory Support
+• ROC and secretarial Compliance Assistance
+• Share Transfer Documentation
+• Corporate Documentation Management`,
+            image: "https://images.unsplash.com/photo-1450133064473-71024230f91b?auto=format&fit=crop&w=600&q=80"
+          },
+          {
+            title: "Documents Commonly Required",
+            content: `• Passport
+• OCI / PIO Card (if applicable)
+• PAN Card
+• Overseas Address Proof
+• Indian Address Proof (if available)
+• Tax Records and Financial Statements
+• Bank Account Details
+• Existing Legal Documents
+• Family and Beneficiary Information
+• Investment and Compliance Records`,
+            image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=600&q=80"
+          },
+          {
+            title: "Our Commitment",
+            content: `We serve as a trusted India-based advisory partner for NRIs, helping them navigate legal, compliance, documentation, and succession matters with confidence. Our objective is to simplify complex processes, ensure regulatory compliance, protect family interests, and provide seamless support for managing Indian affairs from anywhere in the world.`,
+            image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=600&q=80"
+          }
+        ],
+                image: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=800&q=80",
+        timelineSteps: [
+          { num: "01", title: "CONSULTATION", detailTitle: "Initial Briefing & Check", desc: "We discuss details and review all checklists." },
+          { num: "02", title: "VERIFICATION", detailTitle: "Document Compilation", desc: "Our specialists check all details to ensure compliance and completeness." },
+          { num: "03", title: "SUBMISSION", detailTitle: "Filing and Liaisoning", desc: "We prepare the forms and submit the applications to the regulatory department." },
+          { num: "04", title: "COMPLETION", detailTitle: "Final Approval & Support", desc: "We deliver the certificates, resolve queries, and outline next-step requirements." }
+        ],
+        comparison: [
+          { aspect: "Operational Efficiency", manual: "Manual tracking takes weeks.", consultAvenuee: "Structured digital handling." },
+          { aspect: "Compliance Accuracy", manual: "High risk of statutory notices or fines.", consultAvenuee: "Zero-error draft verification." },
+          { aspect: "Government Liaisoning", manual: "Requires multiple physical visits.", consultAvenuee: "Complete departmental representation." }
+        ],
+        faqs: [
+          { question: "Who can avail NRI Legal & Compliance Services?", answer: `Our services are designed for Non-Resident Indians (NRIs), Overseas Citizens of India (OCIs), Persons of Indian Origin (PIOs), and their families who require assistance with legal, compliance, documentation, and succession matters in India.` },
+          { question: "Why do NRIs require legal and compliance support in India?", answer: `Managing legal and regulatory matters from overseas can be challenging due to evolving laws, documentation requirements, and the need for local coordination. Professional support helps ensure compliance, accuracy, and timely execution of legal processes.` },
+          { question: "What is a Power of Attorney (POA), and why is it important for NRIs?", answer: `A Power of Attorney allows an NRI to authorize a trusted individual to act on their behalf in India for property, banking, legal, administrative, and financial matters without requiring frequent travel.` },
+          { question: "What is the difference between a General Power of Attorney (GPA) and a Special Power of Attorney (SPA)?", answer: `A GPA grants broad authority to the appointed representative for multiple matters, while an SPA grants authority for a specific transaction or purpose only.` },
+          { question: "Can you assist with drafting and reviewing Power of Attorney documents?", answer: `Yes. We assist with drafting, reviewing, vetting, attestation guidance, registration support, amendments, and revocation of Power of Attorney documents.` },
+          { question: "Can a Power of Attorney executed abroad be used in India?", answer: `Yes. Subject to applicable legal requirements, a POA executed overseas may need notarization, attestation, apostille, and registration in India before use.` },
+          { question: "Can you help with PAN card applications and corrections?", answer: `Yes. We assist with PAN applications, corrections, updates, reissuance, and documentation support for NRIs.` },
+          { question: "Do you provide document attestation and notarization support?", answer: `Yes. We provide guidance on notarization, attestation, apostille requirements, certified copies, affidavits, declarations, and other legal documentation processes.` },
+          { question: "Can you assist with PF withdrawal and pension documentation?", answer: `Yes. We assist with documentation for Provident Fund withdrawals, pension claims, gratuity settlements, beneficiary updates, and retirement benefit processing.` },
+          { question: "Can NRIs claim pension and retirement benefits in India?", answer: `Yes. Eligible NRIs may claim retirement benefits subject to applicable laws, eligibility criteria, and documentation requirements.` },
+          { question: "Can you assist NRIs with company formation in India?", answer: `Yes. We provide support for company incorporation, LLP registration, partnership documentation, startup structuring, and related compliance requirements.` },
+          { question: "Can you help with ROC and corporate compliance matters?", answer: `Yes. We assist with documentation and compliance support related to corporate filings, secretarial records, share transfers, and regulatory requirements.` },
+          { question: "Can you represent me before government authorities and institutions?", answer: `We provide coordination and representation support through authorized processes, documentation management, and liaison assistance, subject to legal requirements and authorization.` },
+          { question: "Can services be managed remotely from overseas?", answer: `Yes. Most services can be managed remotely through digital communication, document sharing, and authorized representation, reducing the need for travel to India.` },
+          { question: "Why should NRIs engage professional legal and compliance support?", answer: `Professional support helps reduce legal risks, ensure regulatory compliance, streamline documentation, protect family interests, facilitate succession planning, and provide peace of mind while managing affairs in India from abroad.` },
+          { question: "Can you assist elderly parents or family members in India on behalf of NRIs?", answer: `Yes. Subject to authorization, we can coordinate documentation, compliance requirements, and administrative support for family members residing in India.` },
+          { question: "Can you coordinate with lawyers, chartered accountants, and other professionals?", answer: `Yes. We work closely with legal, tax, and compliance professionals whenever specialized expertise or representation is required.` }
+        ],
+        checklist: ["Passport", "OCI / PIO Card (if applicable)", "PAN Card", "Overseas Address Proof", "Indian Address Proof (if available)", "Tax Records and Financial Statements", "Bank Account Details", "Existing Legal Documents", "Family and Beneficiary Information", "Investment and Compliance Records"],
+        chartData: [
+          { label: "Intake Consultation", value: 30, color: "#c79d62" },
+          { label: "Record Compilation", value: 30, color: "#110311" },
+          { label: "Drafting & Check", value: 20, color: "#e5c595" },
+          { label: "Final Execution", value: 20, color: "#c79d62" }
+        ]
+      }
+    ]
+  },
+  {
+    id: "senior-citizen-advisory",
+    title: "Senior Citizen Advisory Services",
+    description: "Expert assistance for senior citizens in managing taxation, pension benefits, property matters, legal documentation, and succession planning.",
+    subServices: [
+      {
+        id: "health-insurance-claims-support",
+        title: "Health Insurance Claims Support",
+        description: "Professional support for health insurance reimbursement claims, documentation, and claim rejection matters, ensuring a smooth and efficient claims process.",
+        badge: "SPECIAL",
+        longDesc: `ConsultAvenuee Senior Citizen Assistance Services provide trusted support for taxation, health insurance claims, financial documentation, property matters, estate planning, and regulatory compliance, enabling senior citizens and their families to manage life's financial and administrative responsibilities with confidence, convenience, and peace of mind.
+
+Helping You Focus on Recovery, Not Paperwork
+ConsultAvenuee provides reliable and professional Health Insurance Claims Support Services to help you navigate the process with confidence and secure the benefits you are entitled to under your policy.
+Let us handle the claim process while you focus on your health and recovery.`,
+        sections: [
+          {
+            title: "Health Insurance Claims Support Services",
+            content: `Simplifying Health Insurance Claims. Maximizing Your Benefits.
+Our objective is to simplify the process, minimize delays, reduce claim rejections, and help clients secure timely settlement of eligible insurance benefits.
+At ConsultAvenuee, we provide comprehensive Health Insurance Claims Support Services.`,
+            image: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=600&q=80"
+          },
+          {
+            title: "Reimbursement Claim Assistance",
+            content: `For medical expenses paid directly by the insured, we provide complete support for reimbursement claims.`,
+            image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=600&q=80"
+          },
+          {
+            title: "Claim Documentation Support",
+            content: `Accurate documentation plays a critical role in claim approval.`,
+            image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=600&q=80"
+          },
+          {
+            title: "Claim Rejection & Dispute Resolution Support",
+            content: `If a claim is rejected or partially settled, we assist clients in pursuing a fair review and resolution.`,
+            image: "https://images.unsplash.com/photo-1450133064473-71024230f91b?auto=format&fit=crop&w=600&q=80"
+          },
+          {
+            title: "Benefits of Professional Claims Assistance",
+            content: `• Reduced Claim Rejections
+• Faster Claim Processing
+• Continuous Claim Tracking
+• Expert Guidance
+• Dispute Resolution Support
+• Improved Settlement Outcomes`,
+            image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=600&q=80"
+          },
+          {
+            title: "Documents Generally Required",
+            content: `The documents required may vary depending on the insurer and type of claim. Commonly required documents include:
+• Health Insurance Policy Details
+• Health Insurance Card
+• Aadhaar Card or Identity Proof
+• Hospital Admission Records
+• Discharge Summary
+• Medical Prescriptions
+• Diagnostic Reports
+• Original Medical Bills and Receipts
+• Pharmacy Bills
+• Bank Account Details
+• Cancelled Cheque (for reimbursement claims)`,
+            image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=600&q=80"
+          }
+        ],
+        image: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=800&q=80",
+        timelineSteps: [
+          { num: "01", title: "CONSULTATION", detailTitle: "Initial Briefing & Check", desc: "We discuss details and review all checklists." },
+          { num: "02", title: "VERIFICATION", detailTitle: "Document Compilation", desc: "Our specialists check all details to ensure compliance and completeness." },
+          { num: "03", title: "SUBMISSION", detailTitle: "Filing and Liaisoning", desc: "We prepare the forms and submit the applications to the regulatory department." },
+          { num: "04", title: "COMPLETION", detailTitle: "Final Approval & Support", desc: "We deliver the certificates, resolve queries, and outline next-step requirements." }
+        ],
+        comparison: [
+          { aspect: "Operational Efficiency", manual: "Manual tracking takes weeks.", consultAvenuee: "Structured digital handling." },
+          { aspect: "Compliance Accuracy", manual: "High risk of statutory notices or fines.", consultAvenuee: "Zero-error draft verification." },
+          { aspect: "Government Liaisoning", manual: "Requires multiple physical visits.", consultAvenuee: "Complete departmental representation." }
+        ],
+        checklist: ["Health Insurance Policy Details", "Health Insurance Card", "Aadhaar Card or Identity Proof", "Hospital Admission Records", "Discharge Summary", "Medical Prescriptions", "Diagnostic Reports", "Original Medical Bills and Receipts", "Pharmacy Bills", "Bank Account Details", "Cancelled Cheque (for reimbursement claims)"],
+        faqs: [
+          { question: "Can you help if my claim has already been rejected?", answer: "Yes. We can review the rejection reasons, evaluate available options, assist with documentation, and support you in pursuing reconsideration or grievance redressal processes." },
+          { question: "Can senior citizens avail these services?", answer: "Absolutely. We provide dedicated assistance for senior citizens and their family members throughout the claim process." },
+          { question: "Do you sell insurance policies?", answer: "No. Our role is to assist policyholders in managing and processing health insurance claims efficiently and professionally." }
+        ],
+        chartData: [
+          { label: "Intake Consultation", value: 30, color: "#c79d62" },
+          { label: "Record Compilation", value: 30, color: "#110311" },
+          { label: "Drafting & Check", value: 20, color: "#e5c595" },
+          { label: "Final Execution", value: 20, color: "#c79d62" }
+        ]
+      },
+      {
+        id: "senior-income-tax-filing",
+        title: "Income Tax planning & Filing",
+        description: "Comprehensive income tax services covering tax planning, return filing, compliance management, and tax notice support for senior citizens.",
+        longDesc: `Income Tax Planning & Return Filing Services
+Simplifying Tax Compliance, Maximizing Financial Efficiency
+Partner with us for proactive tax planning, accurate compliance, and trusted professional guidance throughout the year.
+
+Smart Tax Planning. Accurate Compliance. Maximum Savings.
+Effective tax planning is not just about reducing tax liability—it is about making informed financial decisions, ensuring regulatory compliance, and preserving wealth.
+At ConsultAvenuee, we provide comprehensive Income Tax Planning, Compliance, and Return Filing Services.`,
+        sections: [
+          {
+            title: "Tax Planning & Advisory",
+            content: `We help clients develop tax-efficient strategies that align with their financial and business objectives.`,
+            image: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=600&q=80"
+          },
+          {
+            title: "Income Tax Return Filing Services",
+            content: `Timely and accurate filing of Income Tax Returns is essential for maintaining compliance and avoiding penalties.`,
+            image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=600&q=80"
+          },
+          {
+            title: "Tax Compliance Services",
+            content: `Our compliance support ensures that all tax obligations are met accurately and on time.
+• PAN & TAN Services
+• Advance Tax Computation
+• Self-Assessment Tax Calculation
+• TDS Verification & Reconciliation
+• AIS & Form 26AS Review
+• Income Tax Portal Assistance
+• Tax Compliance Review`,
+            image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=600&q=80"
+          },
+          {
+            title: "Tax Notice & Assessment Support",
+            content: `Receiving a tax notice can be stressful. Our experienced professionals provide practical assistance in responding effectively and protecting your interests.`,
+            image: "https://images.unsplash.com/photo-1450133064473-71024230f91b?auto=format&fit=crop&w=600&q=80"
+          },
+          {
+            title: "Benefits of Professional Tax Planning",
+            content: `• Maximize Tax Savings
+• Ensure Accurate Compliance
+• Minimize Tax Risks
+• Improve Financial Planning
+• Expert Guidance
+• Efficient Refund Processing`,
+            image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=600&q=80"
+          },
+          {
+            title: "Documents Generally Required",
+            content: `**For Salaried Individuals**
+• PAN Card
+• Aadhaar Card
+• Form 16
+• Salary Slips
+• Bank Statements
+• Investment Proofs
+• Home Loan Interest Certificate
+• Capital Gain Statements (if applicable)
+
+**For Businesses & Professionals**
+• PAN & Registration Documents
+• Books of Accounts
+• Financial Statements
+• GST Returns
+• TDS Details
+• Bank Statements
+• Expense Records
+• Audit Reports (where applicable)
+
+Additional documents may be required based on the nature of income and filing requirements.`,
+            image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=600&q=80"
+          }
+        ],
+        image: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=800&q=80",
+        timelineSteps: [
+          { num: "01", title: "CONSULTATION", detailTitle: "Initial Briefing & Check", desc: "We discuss details and review all checklists." },
+          { num: "02", title: "VERIFICATION", detailTitle: "Document Compilation", desc: "Our specialists check all details to ensure compliance and completeness." },
+          { num: "03", title: "SUBMISSION", detailTitle: "Filing and Liaisoning", desc: "We prepare the forms and submit the applications to the regulatory department." },
+          { num: "04", title: "COMPLETION", detailTitle: "Final Approval & Support", desc: "We deliver the certificates, resolve queries, and outline next-step requirements." }
+        ],
+        comparison: [
+          { aspect: "Operational Efficiency", manual: "Manual tracking takes weeks.", consultAvenuee: "Structured digital handling." },
+          { aspect: "Compliance Accuracy", manual: "High risk of statutory notices or fines.", consultAvenuee: "Zero-error draft verification." },
+          { aspect: "Government Liaisoning", manual: "Requires multiple physical visits.", consultAvenuee: "Complete departmental representation." }
+        ],
+        checklist: ["PAN Card", "Aadhaar Card", "Form 16", "Salary Slips", "Bank Statements", "Investment Proofs", "Home Loan Interest Certificate", "Capital Gain Statements (if applicable)", "PAN & Registration Documents (Business)", "Books of Accounts (Business)", "Financial Statements (Business)", "GST Returns (Business)", "TDS Details (Business)", "Expense Records (Business)", "Audit Reports (where applicable)"],
+        faqs: [
+          { question: "Is tax planning different from tax filing?", answer: "Yes. Tax planning focuses on legally minimizing tax liability through strategic financial decisions, while tax filing involves reporting income and filing returns with the Income Tax Department." },
+          { question: "Can you assist with capital gains taxation?", answer: "Yes. We provide comprehensive advisory and return filing support for property, shares, mutual funds, and other capital asset transactions." },
+          { question: "Do you handle tax notices?", answer: "Yes. We assist clients in responding to notices, assessments, departmental queries, and rectification matters." },
+          { question: "Can NRIs avail your tax services?", answer: "Absolutely. We provide specialized tax planning, compliance, and return filing services for NRIs and overseas Indians." }
+        ],
+        chartData: [
+          { label: "Intake Consultation", value: 30, color: "#c79d62" },
+          { label: "Record Compilation", value: 30, color: "#110311" },
+          { label: "Drafting & Check", value: 20, color: "#e5c595" },
+          { label: "Final Execution", value: 20, color: "#c79d62" }
+        ]
+      },
+      {
+        id: "pension-gratuity-documentations",
+        title: "Pension & Gratuity Documentations",
+        description: "Professional pension and gratuity documentation services for hassle-free retirement benefit claims, family pensions, and legal heir settlements.",
+        longDesc: "Pension & Gratuity Documentation Services\nSecuring Your Retirement Benefits with Confidence\nRetirement benefits such as pension and gratuity represent years of dedicated service and financial contribution. However, incomplete documentation, procedural complexities, and compliance requirements often lead to delays in claim processing and settlement.\nAt ConsultAvenuee, we provide comprehensive Pension & Gratuity Documentation Services, assisting employees, retirees, senior citizens, employers, nominees, and legal heirs in preparing, verifying, and processing the documentation required for pension claims, gratuity settlements, and retirement benefit applications.\nOur objective is to ensure accurate documentation, seamless claim processing, and timely receipt of eligible retirement benefits.",
+        sections: [
+          {
+            groupHeader: "Gratuity Documentation Services",
+            title: "Gratuity Claim Assistance",
+            content: `We assist employees and retirees in preparing and processing gratuity claims under the Payment of Gratuity Act and applicable organizational policies.
+Services include:
+• Gratuity Claim Form Preparation
+• Eligibility Assessment
+• Service Tenure Verification
+• Gratuity Calculation Support
+• Settlement Documentation
+• Payment Acknowledgement Records
+• Nomination Verification`,
+            image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=600&q=80"
+          },
+          {
+            title: "Nominee & Legal Heir Claims",
+            content: `In the event of an employee's demise, we assist nominees and legal heirs in securing eligible gratuity benefits.
+Services include:
+• Nominee Claim Documentation
+• Legal Heir Documentation Support
+• Death Claim Assistance
+• Affidavit & Declaration Support
+• Settlement Coordination & Documentation`,
+            image: "https://images.unsplash.com/photo-1450133064473-71024230f91b?auto=format&fit=crop&w=600&q=80"
+          },
+          {
+            groupHeader: "Our Pension Documentation Services",
+            title: "EPFO & EPS Pension Assistance",
+            content: `We assist employees and retirees in navigating pension claim procedures under the Employees' Provident Fund Organisation (EPFO) and Employees' Pension Scheme (EPS).
+Services include:
+• Form 10D Preparation (Monthly Pension Claims)
+• Form 10C Preparation (Pension Withdrawal / Scheme Certificate)
+• Pension Application Documentation
+• UAN & KYC Verification
+• Service History Verification
+• Pension Eligibility Assessment
+• Joint Declaration Preparation
+• Pension Corrections & Revision Applications
+• Pension Transfer Documentation`,
+            image: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=600&q=80"
+          },
+          {
+            title: "Family Pension Assistance",
+            content: `We provide dedicated support to family members and beneficiaries in claiming pension benefits after the demise of a pensioner or employee.`,
+            image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=600&q=80"
+          },
+          {
+            title: "Benefits of Professional Assistance",
+            content: `• Accurate Documentation
+• Faster Processing
+• Reduced Claim Rejection Risk
+• Compliance Assurance
+• End-to-End Support
+• Assistance in Legacy Cases`,
+            image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=600&q=80"
+          },
+          {
+            title: "Documents Generally Required",
+            content: `**For Gratuity Claims**
+• Identity Proof
+• Employment Records
+• Salary Details
+• Gratuity Nomination Forms
+• Service Certificate
+• Retirement / Resignation Documents
+• Death Certificate (for death claims)
+• Legal Heir Documents (where applicable)
+
+**For Pension Claims**
+• Aadhaar Card
+• PAN Card
+• UAN Number
+• Bank Account Details
+• Passport Size Photographs
+• Service Records
+• Form 10C / Form 10D
+• Pension Payment Order (where applicable)
+
+Additional documents may be required depending on the nature of the claim and the applicable authority.`,
+            image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=600&q=80"
+          }
+        ],
+        postSectionsDesc: `Helping You Receive the Benefits You Have Earned
+Retirement benefits are an important part of your financial security. ConsultAvenuee provides reliable and professional Pension & Gratuity Documentation Services to help employees, retirees, senior citizens, nominees, and organizations navigate the documentation process with confidence and ease.
+Let our experts assist you in securing timely pension, gratuity, and retirement benefit settlements with complete peace of mind.`,
+        image: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=800&q=80",
+        timelineSteps: [
+          { num: "01", title: "CONSULTATION", detailTitle: "Initial Briefing & Check", desc: "We discuss details and review all checklists." },
+          { num: "02", title: "VERIFICATION", detailTitle: "Document Compilation", desc: "Our specialists check all details to ensure compliance and completeness." },
+          { num: "03", title: "SUBMISSION", detailTitle: "Filing and Liaisoning", desc: "We prepare the forms and submit the applications to the regulatory department." },
+          { num: "04", title: "COMPLETION", detailTitle: "Final Approval & Support", desc: "We deliver the certificates, resolve queries, and outline next-step requirements." }
+        ],
+        comparison: [
+          { aspect: "Operational Efficiency", manual: "Manual tracking takes weeks.", consultAvenuee: "Structured digital handling." },
+          { aspect: "Compliance Accuracy", manual: "High risk of statutory notices or fines.", consultAvenuee: "Zero-error draft verification." },
+          { aspect: "Government Liaisoning", manual: "Requires multiple physical visits.", consultAvenuee: "Complete departmental representation." }
+        ],
+        checklist: ["Aadhaar Card", "PAN Card", "UAN Number", "Bank Account Details", "Passport Size Photographs", "Service Records", "Form 10C / Form 10D", "Pension Payment Order (where applicable)", "Identity Proof (Gratuity)", "Employment Records (Gratuity)", "Salary Details (Gratuity)", "Gratuity Nomination Forms", "Service Certificate", "Retirement / Resignation Documents", "Death Certificate (for death claims)", "Legal Heir Documents (where applicable)"],
+        faqs: [
+          { question: "Can you assist with delayed pension claims?", answer: "Yes. We assist in reviewing records, identifying documentation gaps, and preparing supporting documents required for claim processing." },
+          { question: "Do you help with family pension claims?", answer: "Yes. We provide complete support for family pension documentation, nominee verification, and claim submission." },
+          { question: "Can you assist with gratuity claims after retirement?", answer: "Absolutely. We assist in gratuity eligibility verification, calculation support, documentation, and claim processing." },
+          { question: "Do you handle legacy or unresolved EPFO cases?", answer: "Yes. We provide assistance in complex cases involving service record discrepancies, pension corrections, and claim follow-up." }
+        ],
+        chartData: [
+          { label: "Intake Consultation", value: 30, color: "#c79d62" },
+          { label: "Record Compilation", value: 30, color: "#110311" },
+          { label: "Drafting & Check", value: 20, color: "#e5c595" },
+          { label: "Final Execution", value: 20, color: "#c79d62" }
+        ]
+      },
+      {
+        id: "property-sale-gift-transfer",
+        title: "Property sale. Gift & Transfer",
+        description: "Comprehensive property sale, gift deed, and transfer services to ensure smooth, secure, and legally compliant property transactions.",
+        longDesc: `Senior Citizen Property Sale, Gift & Transfer Services
+Secure Your Property. Protect Your Legacy. Ensure a Smooth Transfer of Ownership.
+Managing property matters during retirement can often be complex and time-consuming. Whether you are planning to transfer property to your children, gift assets to family members, sell a property, or organize your estate for future generations, proper documentation and legal compliance are essential to safeguard your interests and avoid future disputes.
+At ConsultAvenuee, we provide dedicated Property Sale, Gift, Transfer & Succession Services for Senior Citizens, helping individuals and families manage property-related matters with confidence, clarity, and peace of mind.`,
+        sections: [
+          {
+            title: "Property Sale Services",
+            content: `• Sale Deed Drafting & Documentation Support
+• Property Transaction Assistance
+• Registration Coordination`,
+            image: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=600&q=80"
+          },
+          {
+            title: "Property Gift & Family Transfer Services",
+            content: `• Gift Deed Documentation
+• Transfer of Property to Children and Family Members
+• Family Settlement Arrangements
+• Relinquishment & Release Deed Documentation`,
+            image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=600&q=80"
+          },
+          {
+            title: "Benefits for Senior Citizens",
+            content: `• Hassle-Free Property Transfers
+• Smooth Transfer of Assets to Family Members
+• Reduced Risk of Family Disputes
+• Proper Succession and Inheritance Planning
+• Legally Compliant Documentation
+• Protection of Family Wealth and Property
+• Peace of Mind for Senior Citizens and Their Families`,
+            image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=600&q=80"
+          },
+          {
+            title: "Our Commitment",
+            content: `We assist senior citizens in managing every stage of property ownership transition—from gifting and transferring property to family members, to succession planning and inheritance matters.`,
+            image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=600&q=80"
+          },
+          {
+            title: "Documents Commonly Required",
+            content: `• Property Title Documents
+• Previous Sale Deeds
+• PAN Card & Aadhaar Card
+• Identity & Address Proof
+• Property Tax Receipts
+• Encumbrance Certificate
+• Society NOC (where applicable)
+• Revenue Records and Mutation Extracts
+• Death Certificate (for succession matters)
+• Legal Heir Details
+• Existing Will (if available)`,
+            image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=600&q=80"
+          }
+        ],
+        image: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=800&q=80",
+        timelineSteps: [
+          { num: "01", title: "CONSULTATION", detailTitle: "Initial Briefing & Check", desc: "We discuss details and review all checklists." },
+          { num: "02", title: "VERIFICATION", detailTitle: "Document Compilation", desc: "Our specialists check all details to ensure compliance and completeness." },
+          { num: "03", title: "SUBMISSION", detailTitle: "Filing and Liaisoning", desc: "We prepare the forms and submit the applications to the regulatory department." },
+          { num: "04", title: "COMPLETION", detailTitle: "Final Approval & Support", desc: "We deliver the certificates, resolve queries, and outline next-step requirements." }
+        ],
+        comparison: [
+          { aspect: "Operational Efficiency", manual: "Manual tracking takes weeks.", consultAvenuee: "Structured digital handling." },
+          { aspect: "Compliance Accuracy", manual: "High risk of statutory notices or fines.", consultAvenuee: "Zero-error draft verification." },
+          { aspect: "Government Liaisoning", manual: "Requires multiple physical visits.", consultAvenuee: "Complete departmental representation." }
+        ],
+        checklist: ["Property Title Documents", "Previous Sale Deeds", "PAN Card & Aadhaar Card", "Identity & Address Proof", "Property Tax Receipts", "Encumbrance Certificate", "Society NOC (where applicable)", "Revenue Records and Mutation Extracts", "Death Certificate (for succession matters)", "Legal Heir Details", "Existing Will (if available)"],
+        faqs: [
+          { question: "Can I transfer my property to my children during my lifetime?", answer: "Yes. Property can be transferred during your lifetime through various legal methods such as a Gift Deed, Sale Deed, Family Settlement, or other legally recognized transfer mechanisms, depending on your objectives and circumstances." },
+          { question: "What is the difference between a Gift Deed and a Will?", answer: "A Gift Deed transfers ownership immediately during the lifetime of the owner, whereas a Will takes effect only after the death of the person making the Will. Both serve different estate planning objectives." },
+          { question: "Is registration of a Gift Deed mandatory?", answer: "Yes. In most cases, a Gift Deed relating to immovable property must be properly executed and registered in accordance with applicable laws to be legally valid." },
+          { question: "Can I gift property to my son, daughter, spouse, or other family members?", answer: "Yes. Property can generally be gifted to family members, including children, spouse, grandchildren, and other eligible relatives, subject to applicable legal requirements." },
+          { question: "What is a Family Settlement?", answer: "A Family Settlement is an arrangement among family members to distribute or resolve ownership rights in family assets and properties, often helping avoid future disputes and litigation." },
+          { question: "Can property be transferred without monetary consideration?", answer: "Yes. Transfers through Gift Deeds, Family Settlements, Relinquishment Deeds, or Release Deeds may not necessarily involve monetary consideration, depending on the nature of the transaction." },
+          { question: "What happens to property if there is no Will?", answer: "If a person passes away without leaving a valid Will, the property is generally distributed among legal heirs in accordance with the applicable succession laws." },
+          { question: "What precautions should senior citizens take before gifting or transferring property?", answer: "Before transferring property, it is advisable to:\n• Verify ownership records\n• Understand legal consequences\n• Review tax implications\n• Assess future financial needs\n• Obtain professional advice\n• Ensure proper documentation and registration" },
+          { question: "Can jointly owned property be transferred?", answer: "Yes. However, the consent and participation of all co-owners may be required depending on the ownership structure and nature of the transaction." },
+          { question: "Can ConsultAvenuee assist with end-to-end property transfer documentation?", answer: "Yes. We provide assistance with:\n• Property Sale Documentation\n• Gift Deeds\n• Family Settlements\n• Relinquishment & Release Deeds\n• Property Transfer Documentation\n• Succession & Inheritance Support\n• Registration Coordination\n• Legal Documentation Review" }
+        ],
+        chartData: [
+          { label: "Intake Consultation", value: 30, color: "#c79d62" },
+          { label: "Record Compilation", value: 30, color: "#110311" },
+          { label: "Drafting & Check", value: 20, color: "#e5c595" },
+          { label: "Final Execution", value: 20, color: "#c79d62" }
         ]
       }
     ]

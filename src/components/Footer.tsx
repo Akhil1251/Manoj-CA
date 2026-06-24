@@ -141,10 +141,10 @@ export const Footer: React.FC = () => {
                 <div className="flex items-start gap-2.5">
                   <MapPin className="h-4 w-4 text-[#c79d62] shrink-0 mt-0.5" />
                   <div className="flex flex-col gap-2">
-                    <Link href="/contact" className="group text-[#c79d62] font-semibold hover:text-white transition-colors flex items-center gap-1.5">Mumbai <span className="text-[10px] opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all">→</span></Link>
-                    <Link href="/contact" className="group text-[#c79d62] font-semibold hover:text-white transition-colors flex items-center gap-1.5">Kolkata <span className="text-[10px] opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all">→</span></Link>
-                    <Link href="/contact" className="group text-[#c79d62] font-semibold hover:text-white transition-colors flex items-center gap-1.5">Delhi <span className="text-[10px] opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all">→</span></Link>
-                    <Link href="/contact" className="group text-[#c79d62] font-semibold hover:text-white transition-colors flex items-center gap-1.5">Siliguri <span className="text-[10px] opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all">→</span></Link>
+                    <Link href="/contact?office=mumbai" className="group text-[#c79d62] font-semibold hover:text-white transition-colors flex items-center gap-1.5">Mumbai <span className="text-[10px] opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all">→</span></Link>
+                    <Link href="/contact?office=kolkata" className="group text-[#c79d62] font-semibold hover:text-white transition-colors flex items-center gap-1.5">Kolkata <span className="text-[10px] opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all">→</span></Link>
+                    <Link href="/contact?office=delhi" className="group text-[#c79d62] font-semibold hover:text-white transition-colors flex items-center gap-1.5">Delhi <span className="text-[10px] opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all">→</span></Link>
+                    <Link href="/contact?office=siliguri" className="group text-[#c79d62] font-semibold hover:text-white transition-colors flex items-center gap-1.5">Siliguri <span className="text-[10px] opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all">→</span></Link>
                   </div>
                 </div>
                 <span className="flex items-start gap-2.5">
