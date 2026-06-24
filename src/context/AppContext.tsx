@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import React, { createContext, useContext, useState, useEffect } from "react";
 import { Language, TranslationDict, translations } from "./translations";
@@ -69,12 +69,10 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
   };
 
   const toggleTheme = () => {
-    triggerTransition(() => {
-      const nextTheme = theme === "dark" ? "light" : "dark";
-      setTheme(nextTheme);
-      localStorage.setItem("ca_theme", nextTheme);
-      document.documentElement.classList.toggle("dark", nextTheme === "dark");
-    });
+    const nextTheme = theme === "dark" ? "light" : "dark";
+    setTheme(nextTheme);
+    localStorage.setItem("ca_theme", nextTheme);
+    document.documentElement.classList.toggle("dark", nextTheme === "dark");
   };
 
   const t = translations[language];

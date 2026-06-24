@@ -32,9 +32,9 @@ const dropdownConfigs: Record<
   services: {
     columns: [
       {
-        title: "Housing Society",
+        title: "Housing Society Advisory",
         links: [
-          { label: "Co-operative Society", href: "/services/cooperative-housing-society-registration" },
+          { label: "Society Formation & Registration", href: "/services/society-formation" },
           { label: "Election & Committee", href: "/services/society-election-planning" },
           { label: "Compliance & Secretarial", href: "/services/agm-general-body-meeting-compliance" },
           { label: "Taxation & Accounting", href: "/services/society-gst-compliance" },
@@ -45,40 +45,9 @@ const dropdownConfigs: Record<
       {
         title: "Business Formation, Registration & Compliance",
         links: [
-          {
-            label: "Company Formation", href: "/services/private-limited-company-registration", subLinks: [
-              { label: "Private Limited Company Registration", href: "/services/private-limited-company-registration" },
-              { label: "LLP Registration", href: "/services/llp-registration" },
-              { label: "Partnership Firm Registration", href: "/services/partnership-firm-registration" },
-              { label: "Public Limited Company Registration", href: "/services/public-limited-company-registration" },
-              { label: "Trust Registration", href: "/services/trust-registration" },
-              { label: "Indian Subsidiary for Foreign Entrepreneurs", href: "/services/indian-subsidiary-foreign-entrepreneurs" }
-            ]
-          },
-          {
-            label: "Registrations", href: "/services/professional-tax-registration", subLinks: [
-              { label: "Professional Tax Registration & Returns", href: "/services/professional-tax-registration" },
-              { label: "Shop & Establishment Registration", href: "/services/shop-and-establishment-registration" },
-              { label: "Startup India Registration", href: "/services/startup-india-registration" },
-              { label: "MSME/Udyam Registration", href: "/services/msme-udyam-registration" },
-              { label: "PF Registration", href: "/services/pf-registration" },
-              { label: "ESIC Registration", href: "/services/esic-registration" },
-              { label: "Trade License", href: "/services/trade-license" },
-              { label: "NGO Darpan Registration", href: "/services/ngo-darpan-registration" },
-              { label: "Trademark Registration", href: "/services/trademark-registration" },
-              { label: "Import Export Code (IEC)", href: "/services/import-export-code" },
-              { label: "ISO Certification", href: "/services/iso-certification" },
-              { label: "FSSAI Registration", href: "/services/fssai-registration" }
-            ]
-          },
-          {
-            label: "Corporate Compliance & Secretarial Services", href: "/services/mca-annual-compliance", subLinks: [
-              { label: "MCA Annual Compliance", href: "/services/mca-annual-compliance" },
-              { label: "ROC Filings", href: "/services/roc-filings" },
-              { label: "Maintenance of Statutory Registers & Records", href: "/services/maintenance-of-statutory-registers-records" },
-              { label: "AGM & EGM, BM Compliance, Minutes & Resolutions", href: "/services/agm-egm-bm-compliance-minutes-resolutions" }
-            ]
-          },
+          { label: "Company Formation", href: "/services/company-formation" },
+          { label: "Registrations", href: "/services/registrations" },
+          { label: "Corporate Compliance & Secretarial Services", href: "/services/corporate-compliance" },
           { label: "Virtual CFO (VCFO) Services", href: "/services/virtual-cfo-services" },
         ],
       },
@@ -97,7 +66,7 @@ const dropdownConfigs: Record<
           { label: "NRI Taxation", href: "/services/nri-taxation-services" },
           { label: "NRI Property Management", href: "/services/nri-property-management-services" },
           { label: "NRI Legal Services", href: "/services/nri-legal-services" },
-          { label: "Senior Citizen Advisory", href: "/services/health-insurance-claims-support" },
+          { label: "Senior Citizen Advisory services", href: "/services/health-insurance-claims-support" },
         ],
       },
     ],
@@ -292,26 +261,15 @@ export const Navbar: React.FC = () => {
   const [isLangDropdownOpen, setIsLangDropdownOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const [scrolled, setScrolled] = useState(false);
-  const [isHidden, setIsHidden] = useState(false);
-  const [lastScrollY, setLastScrollY] = useState(0);
   const [isConsultationOpen, setIsConsultationOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      const currentScrollY = window.scrollY;
-      setScrolled(currentScrollY > 20);
-
-      if (currentScrollY > lastScrollY && currentScrollY > 100) {
-        setIsHidden(true);
-      } else {
-        setIsHidden(false);
-      }
-      setLastScrollY(currentScrollY);
+      setScrolled(window.scrollY > 20);
     };
-
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
-  }, [lastScrollY]);
+  }, []);
 
   const isHome = pathname === "/";
   const isTransparent = isHome && !scrolled;
@@ -346,7 +304,7 @@ export const Navbar: React.FC = () => {
 
   return (
     <>
-      <header className={`${isHome ? "fixed" : "sticky"} z-[999] w-full transition-all duration-300 ${isHidden ? "-top-48" : "top-0"}`}>
+      <header className="sticky top-0 z-[999] w-full transition-all duration-300">
         <div className={`transition-all duration-300 ${isTransparent ? "bg-transparent text-white pt-3 lg:pt-4" : "border-b border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-950 text-slate-800 dark:text-white shadow-sm"}`}>
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="flex justify-between items-center py-4 lg:py-5">
@@ -384,7 +342,15 @@ export const Navbar: React.FC = () => {
 
               {/* Mobile toggles */}
               <div className="flex lg:hidden items-center gap-2.5">
-                {/* Theme toggle removed */}
+                {/* Theme Toggle - Mobile top bar */}
+                <button
+                  id="theme-toggle-mobile-topbar"
+                  onClick={toggleTheme}
+                  aria-label={theme === "dark" ? "Switch to light mode" : "Switch to dark mode"}
+                  className="p-2 rounded-lg border border-slate-200/20 hover:bg-slate-100/10 transition"
+                >
+                  {theme === "dark" ? <Sun className="h-5 w-5 text-amber-400" /> : <Moon className="h-5 w-5" />}
+                </button>
                 <button onClick={() => setIsMobileMenuOpen(true)} className="p-2 rounded-lg border border-slate-200/20 hover:bg-slate-100/10 transition">
                   <Menu className="h-5 w-5" />
                 </button>
@@ -481,7 +447,16 @@ export const Navbar: React.FC = () => {
                   </AnimatePresence>
                 </div>
 
-                {/* Theme Toggle Removed */}
+                {/* Theme Toggle */}
+                <button
+                  id="theme-toggle-desktop"
+                  onClick={toggleTheme}
+                  aria-label={theme === "dark" ? "Switch to light mode" : "Switch to dark mode"}
+                  className="p-2 rounded-lg border border-amber-500/30 hover:bg-amber-500/10 text-white transition-all hover:scale-105"
+                  title={theme === "dark" ? "Light mode" : "Dark mode"}
+                >
+                  {theme === "dark" ? <Sun className="h-4 w-4 text-amber-400" /> : <Moon className="h-4 w-4" />}
+                </button>
 
                 {/* CTA Button */}
                 <button onClick={() => setIsConsultationOpen(true)} className="ml-4 px-4 py-2 bg-amber-600 hover:bg-amber-700 text-white text-xs font-bold rounded shadow transition-colors whitespace-nowrap cursor-pointer">
@@ -509,7 +484,7 @@ export const Navbar: React.FC = () => {
                       const columns = [
                         {
                           id: "society-management",
-                          title: "Housing Society",
+                          title: "Housing Society Advisory",
                           subServices: servicesData.find(t => t.id === "society-management")?.subServices || []
                         },
                         {
@@ -529,7 +504,7 @@ export const Navbar: React.FC = () => {
                         },
                         {
                           id: "senior-citizen-advisory",
-                          title: "Senior Citizen Advisory",
+                          title: "Senior Citizen Advisory services",
                           subServices: servicesData.find(t => t.id === "senior-citizen-advisory")?.subServices || []
                         }
                       ];
@@ -552,10 +527,10 @@ export const Navbar: React.FC = () => {
                                       className="text-[11px] font-extrabold tracking-wide text-slate-800 dark:text-white/90 leading-snug cursor-pointer hover:text-[#c79d62] transition-colors capitalize flex items-center justify-between py-1 w-full"
                                     >
                                       <span>{sub.title}</span>
-                                      {sub.subSubServices && sub.subSubServices.length > 0 && col.id !== "society-management" && sub.title !== "GST" && <ChevronRight className="w-3.5 h-3.5 shrink-0 ml-2 opacity-60 transition-transform duration-200 group-hover/sub:rotate-90" />}
+                                      {sub.subSubServices && sub.subSubServices.length > 0 && col.id !== "society-management" && col.id !== "compliance-business-advisory" && sub.title !== "GST" && <ChevronRight className="w-3.5 h-3.5 shrink-0 ml-2 opacity-60 transition-transform duration-200 group-hover/sub:rotate-90" />}
                                     </Link>
                                     
-                                    {sub.subSubServices && sub.subSubServices.length > 0 && col.id !== "society-management" && sub.title !== "GST" && (
+                                    {sub.subSubServices && sub.subSubServices.length > 0 && col.id !== "society-management" && col.id !== "compliance-business-advisory" && sub.title !== "GST" && (
                                       <div className="hidden group-hover/sub:block mt-1 animate-in slide-in-from-top-1 duration-200">
                                         <ul className="space-y-2.5 text-xs border-l-2 border-[#c79d62]/30 pl-3 pb-2 pt-1">
                                           {sub.subSubServices.map((subsub: any, ssIdx: number) => (
@@ -759,6 +734,31 @@ export const Navbar: React.FC = () => {
                 </div>
 
                 <div>
+                  {/* Theme Toggle in mobile sidebar */}
+                  <div className="mb-5">
+                    <h4 className="text-xs font-semibold uppercase tracking-wider text-slate-400 dark:text-slate-500 mb-3">
+                      Appearance
+                    </h4>
+                    <button
+                      id="theme-toggle-mobile-sidebar"
+                      onClick={toggleTheme}
+                      aria-label={theme === "dark" ? "Switch to light mode" : "Switch to dark mode"}
+                      className={`w-full flex items-center justify-between px-4 py-3 rounded-xl border font-semibold text-sm transition-all ${
+                        theme === "dark"
+                          ? "bg-slate-800 border-slate-700 text-amber-400 hover:bg-slate-700"
+                          : "bg-slate-100 border-slate-200 text-slate-700 hover:bg-slate-200"
+                      }`}
+                    >
+                      <span>{theme === "dark" ? "Dark Mode" : "Light Mode"}</span>
+                      <div className="flex items-center gap-2">
+                        {theme === "dark" ? <Moon className="h-4 w-4" /> : <Sun className="h-4 w-4 text-amber-500" />}
+                        <div className={`relative w-10 h-5 rounded-full transition-colors ${ theme === "dark" ? "bg-amber-500" : "bg-slate-300" }`}>
+                          <div className={`absolute top-0.5 h-4 w-4 rounded-full bg-white shadow transition-transform ${ theme === "dark" ? "translate-x-5" : "translate-x-0.5" }`} />
+                        </div>
+                      </div>
+                    </button>
+                  </div>
+
                   <h4 className="text-xs font-semibold uppercase tracking-wider text-slate-400 dark:text-slate-500 mb-3 flex items-center gap-1">
                     <Globe className="h-3.5 w-3.5" /> Language / भाषा
                   </h4>

@@ -1,12 +1,14 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect, Suspense } from "react";
+import { useSearchParams } from "next/navigation";
 import { useApp } from "@/context/AppContext";
 import { Mail, Phone, MapPin, Calendar, Clock, Landmark, CheckCircle } from "lucide-react";
 import { motion } from "framer-motion";
 
-export default function ContactPage() {
+function ContactPageContent() {
   const { t } = useApp();
+  const searchParams = useSearchParams();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -17,6 +19,16 @@ export default function ContactPage() {
   });
   const [submitted, setSubmitted] = useState(false);
   const [activeOffice, setActiveOffice] = useState("mumbai");
+
+  useEffect(() => {
+    const officeParam = searchParams.get("office");
+    if (officeParam) {
+      const lowerOfficeParam = officeParam.toLowerCase();
+      if (["mumbai", "kolkata", "delhi", "siliguri"].includes(lowerOfficeParam)) {
+        setActiveOffice(lowerOfficeParam);
+      }
+    }
+  }, [searchParams]);
 
   const offices = [
     {
@@ -361,5 +373,17 @@ export default function ContactPage() {
         </div>
       </div>
     </div>
+  );
+}
+
+export default function ContactPage() {
+  return (
+    <Suspense fallback={
+      <div className="pt-24 pb-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-slate-500 font-medium animate-pulse">
+        Loading contact details...
+      </div>
+    }>
+      <ContactPageContent />
+    </Suspense>
   );
 }

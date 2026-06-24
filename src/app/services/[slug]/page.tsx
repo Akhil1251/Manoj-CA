@@ -129,7 +129,9 @@ export default function ServiceDetailPage() {
   // Redirect parent sub-services to their first sub-sub-service
   useEffect(() => {
     if (foundService && parentSubId === slug && parentSubService?.subSubServices && parentSubService.subSubServices.length > 0) {
-      router.replace(`/services/${parentSubService.subSubServices[0].slug}`);
+      if (parentSubId !== "society-formation" && parentCategoryId !== "compliance-business-advisory") {
+        router.replace(`/services/${parentSubService.subSubServices[0].slug}`);
+      }
     }
   }, [slug, foundService, parentSubId, parentSubService, router]);
 
@@ -816,7 +818,7 @@ export default function ServiceDetailPage() {
                         </h4>
                         {section.content && (
                           <div className="text-xs sm:text-sm text-slate-600 dark:text-slate-350 leading-relaxed font-semibold mt-1">
-                            {renderFormattedText(section.content)}
+                            {renderFormattedText(section.content, "text-xs sm:text-sm text-slate-600 dark:text-slate-350 font-semibold")}
                           </div>
                         )}
                       </div>
@@ -981,7 +983,7 @@ export default function ServiceDetailPage() {
     );
   };
 
-  const renderFormattedText = (text: string) => {
+  const renderFormattedText = (text: string, customClass: string = "text-sm sm:text-base text-slate-550 dark:text-slate-400 font-medium") => {
     return text.split('\n').map((line, idx) => {
       if (line.trim() === '') return <br key={idx} />;
       if (line.startsWith('### ')) {
@@ -994,7 +996,7 @@ export default function ServiceDetailPage() {
 
       const parts = line.split(/(\*\*.*?\*\*)/g);
       return (
-        <p key={idx} className="text-sm sm:text-base text-slate-550 dark:text-slate-400 font-medium leading-relaxed text-left">
+        <p key={idx} className={`${customClass} leading-relaxed text-left`}>
           {parts.map((part, pIdx) => {
             if (part.startsWith('**') && part.endsWith('**')) {
               return <strong key={pIdx} className="font-extrabold text-[#210821] dark:text-white">{part.slice(2, -2)}</strong>;
@@ -1175,7 +1177,7 @@ export default function ServiceDetailPage() {
                                 key={sub.id}
                                 className="space-y-1.5"
                                 onMouseEnter={() => {
-                                  if (tab.id === 'compliance-business-advisory' && sub.subSubServices && sub.subSubServices.length > 0) {
+                                  if (tab.id !== 'compliance-business-advisory' && sub.subSubServices && sub.subSubServices.length > 0) {
                                     setOpenSub(sub.id);
                                   }
                                 }}
@@ -1183,12 +1185,12 @@ export default function ServiceDetailPage() {
                               >
                                   <div className="w-full flex items-center justify-between">
                                     <Link
-                                      href={`/services/${sub.subSubServices && sub.subSubServices.length > 0 ? sub.subSubServices[0].slug : sub.id}`}
+                                      href={`/services/${sub.subSubServices && sub.subSubServices.length > 0 && sub.id !== "society-formation" && tab.id !== "compliance-business-advisory" ? sub.subSubServices[0].slug : sub.id}`}
                                       className={`flex-grow text-[12px] font-extrabold py-1.5 transition-colors text-left focus:outline-none cursor-pointer ${sub.id === slug || (parentSubService && parentSubService.id === sub.id) ? "text-[#c79d62]" : "text-slate-650 dark:text-slate-400 hover:text-[#c79d62]"}`}
                                     >
                                       <span>{sub.title}</span>
                                     </Link>
-                                    {(tab.id === 'compliance-business-advisory' || tab.id === 'taxation-regulatory-litigation') && sub.subSubServices && sub.subSubServices.length > 1 && (
+                                    {(tab.id === 'taxation-regulatory-litigation') && sub.subSubServices && sub.subSubServices.length > 1 && (
                                       <button
                                         onClick={() => setOpenSub(openSub === sub.id ? null : sub.id)}
                                         className={`p-1 focus:outline-none cursor-pointer ${isSubOpen ? "text-[#c79d62]" : "text-slate-650 dark:text-slate-400 hover:text-[#c79d62]"}`}
@@ -1198,7 +1200,7 @@ export default function ServiceDetailPage() {
                                     )}
                                   </div>
 
-                                  {(tab.id === 'compliance-business-advisory' || tab.id === 'taxation-regulatory-litigation' || tab.id === 'nri-services' || tab.id === 'senior-citizen-advisory') && isSubOpen && sub.subSubServices && sub.subSubServices.length > 1 && (
+                                  {(tab.id === 'taxation-regulatory-litigation' || tab.id === 'nri-services' || tab.id === 'senior-citizen-advisory') && isSubOpen && sub.subSubServices && sub.subSubServices.length > 1 && (
                                     <div className="pl-3 border-l border-slate-100 dark:border-slate-800/80 space-y-1.5 py-1">
                                       {sub.subSubServices.map((sss: any) => (
                                         <Link
