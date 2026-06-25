@@ -1809,6 +1809,23 @@ Apart from annual filings, companies are required to file various forms upon occ
 
 ---
 
+### Documents Required for ROC Filings
+The documents required vary depending on the nature of filing. Common documents include:
+• Certificate of Incorporation
+• PAN of Company/LLP
+• Memorandum and Articles of Association (MOA & AOA)
+• LLP Agreement (for LLPs)
+• Financial Statements
+• Director KYC Documents
+• Digital Signature Certificates (DSC)
+• Board Resolutions
+• Shareholder Resolutions
+• Bank Statements
+• Auditor's Report
+• Statutory Registers
+
+---
+
 ### Value of Timely ROC Filings
 • Avoidance of late filing fees and penalties
 • Prevention of Director disqualification
@@ -1820,144 +1837,131 @@ Apart from annual filings, companies are required to file various forms upon occ
             _parentSlug: "maintenance-of-statutory-registers-records",
             title: "Maintenance of Statutory Registers & Records",
             content: `### Maintenance of Statutory Registers & Records
+**Corporate Record Maintenance & Secretarial Compliance Services**
 
-**Overview**
-The Companies Act, 2013 mandates every registered company to maintain specific statutory registers and records at its registered office. These registers serve as the official historical record of the company's members, directors, investments, charges, and key administrative actions.
+Proper maintenance of statutory registers, records, and corporate documents is a fundamental compliance requirement under the Companies Act, 2013. Well-maintained records not only ensure regulatory compliance but also support smooth audits, due diligence exercises, fundraising activities, and corporate governance.
 
-Proper maintenance of statutory registers is not only a strict legal requirement but also crucial for transparency, corporate governance, and smooth business operations.
-
-At ConsultAvenuee, we assist companies in maintaining, updating, and organizing their statutory registers and records in complete compliance with the Companies Act and relevant corporate laws.
+At ConsultAvenuee, we assist companies in maintaining and updating statutory registers, minutes books, and secretarial records to help ensure ongoing compliance and readiness for regulatory reviews.
 
 ---
 
-### Key Statutory Registers to be Maintained
+### Our Services Include
 
-Under the Companies Act, 2013, the common statutory registers required to be maintained include:
+#### Statutory Registers Maintenance
+Preparation, updating, and maintenance of:
+• Register of Members
+• Register of Directors & Key Managerial Personnel (KMP)
+• Register of Charges
+• Register of Share Transfers and Allotments
+• Register of Loans, Guarantees & Investments
+• Register of Related Party Transactions
+• Register of Beneficial Owners
+• Other statutory registers as applicable
 
-**1. Register of Members (MGT-1)**
-Maintains details of all shareholders, their shareholding patterns, dates of becoming/ceasing to be a member, and transfer records.
+#### Minutes Books & Corporate Records
+• Board Meeting Minutes
+• Annual General Meeting (AGM) Minutes
+• Extraordinary General Meeting (EGM) Minutes
+• Committee Meeting Minutes
+• Resolution Registers
+• Attendance Registers
 
-**2. Register of Directors and Key Managerial Personnel (KMP)**
-Records details of all past and present Directors and KMPs, their DIN, PAN, residential details, and dates of appointment/resignation.
+#### Secretarial Documentation
+• Board Meeting Notices & Agendas
+• Shareholder Meeting Notices
+• Board & Shareholder Resolutions
+• Directors' Disclosures and Declarations
+• Corporate Action Documentation
+• Secretarial Compliance Records
 
-**3. Register of Directors' Shareholding**
-Tracks the shares or securities held by Directors and KMPs in the company, its holding, subsidiary, or associate companies.
-
-**4. Register of Contracts or Arrangements (MBP-4)**
-Records contracts or arrangements in which Directors are interested.
-
-**5. Register of Charges (CHG-7)**
-Maintains records of all charges created, modified, or satisfied by the company on its assets.
-
-**6. Register of Loans, Guarantees, Securities, and Investments (MBP-2)**
-Records details of loans made, guarantees given, securities provided, or investments made by the company.
-
-**7. Register of Renewed and Duplicate Share Certificates (SH-2)**
-Maintains a record of all duplicate or renewed share certificates issued.
-
-**8. Register of Employee Stock Options (SH-6)**
-Tracks details related to ESOPs granted to employees, if applicable.
+#### Share Capital & Shareholding Records
+• Share Certificates
+• Share Allotment Records
+• Share Transfer Documentation
+• Shareholding Registers
+• Beneficial Ownership Records
+• Capital Structure Updates
 
 ---
 
-### Other Important Records & Documents
-Apart from statutory registers, companies must also maintain:
-• Minutes Books of Board Meetings, AGMs, and EGMs
-• Copies of all Annual Returns filed
-• Copies of Financial Statements
-• Notices of Meetings
-• Attendance Registers for Board and General Meetings
-
----
-
-### Consequences of Non-Maintenance
-Failure to maintain statutory registers properly can lead to:
-• Heavy penalties on the company and its Directors/officers
-• Non-compliance during ROC inspections or audits
-• Difficulties during due diligence for funding, mergers, or acquisitions
-• Challenges in resolving shareholder disputes
-
-### How We Assist
-• Initial setup and formatting of all required statutory registers.
-• Regular updation of registers based on corporate events (e.g., share transfers, director changes, creation of charges).
-• Review and rectification of past records.
-• Digital maintenance of registers where permitted.
-• Assistance during statutory audits or regulatory inspections.
-
-Maintain accurate and compliant corporate records with our expert Secretarial Services.`
+### Compliance Support
+We provide assistance for updating statutory records arising from:
+• Appointment or resignation of directors
+• Share allotments and transfers
+• Changes in share capital
+• Corporate restructuring transactions
+• Creation or satisfaction of charges
+• Changes in registered office
+• Board and shareholder approvals
+• Other corporate events requiring record updates`
           },
           {
             _parentSlug: "agm-egm-bm-compliance-minutes-resolutions",
             title: "AGM & EGM, BM Compliance, Minutes & Resolutions",
-            content: `### Meetings, Minutes & Resolutions Compliance
+            content: `### AGM, EGM, BOARD MEETING Compliance, Minutes & Resolutions
+**Shareholder Meeting Compliance & Secretarial Support**
 
-**Overview**
-Corporate decision-making is formally conducted and recorded through various meetings, primarily Board Meetings and General Meetings (AGM/EGM). The Companies Act, 2013 prescribes strict procedures for convening these meetings, recording minutes, and passing resolutions.
+Annual General Meetings (AGMs) and Extraordinary General Meetings (EGMs) are important corporate events requiring proper planning, documentation, and compliance under the Companies Act, 2013, along with documentation of Board meetings. Accurate preparation of notices, resolutions, minutes, and statutory records is essential for ensuring valid shareholder approvals and maintaining good corporate governance.
 
-Proper compliance in this area is fundamental to good corporate governance. It ensures that decisions are legally valid, stakeholders are informed, and regulatory requirements are fully met.
-
-Our corporate secretarial team at ConsultAvenuee provides complete support for organizing, documenting, and filing compliances related to AGMs, EGMs, and Board Meetings.
+At ConsultAvenuee, we provide end-to-end support for meeting documentation, resolutions, minutes, and related ROC compliance requirements.
 
 ---
 
-### 1. Board Meetings (BM)
-Every company must hold a minimum number of Board Meetings each year to discuss and approve key business decisions, financial results, appointments, and operational matters.
+### Our Services Include
 
-**Our Services Include:**
-• Preparation and circulation of Board Meeting Notices.
-• Drafting of detailed Agendas and Agenda Notes.
-• Drafting of Board Resolutions.
-• Maintenance of Attendance Registers.
-• Recording, drafting, and finalizing Board Meeting Minutes.
-• Assisting in conducting meetings via Video Conferencing (VC) where applicable.
+#### AGM Compliance
+Assistance in conducting Annual General Meetings, including:
+• AGM Notices and Agenda
+• Explanatory Statements
+• Shareholder Resolutions
+• Directors' Report Coordination
+• AGM Minutes Preparation
+• Maintenance of Meeting Records
 
----
+#### EGM Compliance
+Support for Extraordinary General Meetings relating to:
+• Alteration of MOA & AOA
+• Changes in Share Capital
+• Issue or Transfer of Securities
+• Appointment or Removal of Directors
+• Related Party Approvals
+• Corporate Restructuring and Special Business Matters
+• Other Shareholder Approvals as required
 
-### 2. Annual General Meetings (AGM)
-An AGM is a mandatory yearly gathering of the company's shareholders to adopt financial statements, declare dividends, appoint auditors, and discuss other ordinary or special business.
+#### Drafting of Resolutions
+Preparation of:
+• Ordinary Resolutions
+• Special Resolutions
+• Shareholder Approvals
+• Board Resolutions linked to corporate actions
+• Statutory Consents and Approvals
 
-**Our Services Include:**
-• Determining the timeline and scheduling the AGM.
-• Drafting the Notice of AGM and Explanatory Statements.
-• Preparation of the Director's Report / Board's Report.
-• Managing the dispatch of notices and annual reports to shareholders.
-• Drafting of Ordinary and Special Resolutions.
-• Recording and finalizing AGM Minutes.
-• Filing required forms with the ROC post-AGM.
+#### Minutes & Record Maintenance
+Preparation and maintenance of:
+• AGM Minutes
+• EGM Minutes
+• Attendance Registers
+• Resolution Registers
+• Voting and Approval Records
+• Statutory Meeting Documentation
 
----
-
-### 3. Extra-Ordinary General Meetings (EGM)
-EGMs are convened when urgent matters require shareholder approval before the next AGM. This includes changes in share capital, alteration of MOA/AOA, or removal of directors.
-
-**Our Services Include:**
-• Drafting EGM Notices and Explanatory Statements.
-• Ensuring compliance with notice periods and quorum requirements.
-• Drafting relevant resolutions.
-• Recording and finalizing EGM Minutes.
-• Filing of MGT-14 and other applicable forms with the ROC.
-
----
-
-### 4. Minutes & Resolutions
-Minutes are the official, legally binding written record of the proceedings of a meeting. Resolutions are the formal decisions taken during these meetings.
-
-**Our Services Include:**
-• Drafting crisp, accurate, and legally compliant minutes.
-• Ensuring minutes are signed and entered in the Minutes Book within the statutory 30-day timeline.
-• Drafting of Circular Resolutions for urgent board decisions.
-• Ensuring safe custody and proper binding of Minutes Books.
+#### Board Meetings
+Companies are required to conduct Board Meetings and maintain proper records of decisions and resolutions. Our services include:
+• Drafting Board Meeting Notices
+• Agenda Preparation
+• Board Resolutions
+• Minutes of Meetings
+• Maintenance of Statutory Records
 
 ---
 
-### Importance of Proper Meeting Compliance
-• Ensures legal validity of corporate actions and decisions.
-• Prevents disputes among directors and shareholders.
-• Crucial during due diligence by investors, lenders, and buyers.
-• Required for statutory audits and ROC inspections.
-• Non-compliance can result in heavy penalties and invalidation of decisions.
-
-Ensure your corporate decisions are properly documented and legally compliant with our expert secretarial support.`
+### Benefits of Professional AGM & EGM Compliance
+• Proper shareholder approvals and documentation
+• Compliance with Companies Act requirements
+• Well-maintained corporate records
+• Reduced compliance risks
+• Audit and due diligence readiness
+• Stronger corporate governance practices`
           }
         ],
         faqs: [
@@ -2006,10 +2010,346 @@ Ensure your corporate decisions are properly documented and legally compliant wi
           { question: "Can you assist startups and private limited companies?", answer: `Yes. We assist startups, private limited companies, closely held companies, and growing businesses in maintaining complete meeting and secretarial compliance throughout their corporate lifecycle.` }
         ],
         subSubServices: [
-          { slug: "mca-annual-compliance", title: "MCA Annual Compliance", sections: [], faqs: [] },
-          { slug: "roc-filings", title: "ROC Filings", sections: [], faqs: [] },
-          { slug: "maintenance-of-statutory-registers-records", title: "Maintenance of Statutory Registers & Records", sections: [], faqs: [] },
-          { slug: "agm-egm-bm-compliance-minutes-resolutions", title: "AGM & EGM, BM Compliance, Minutes & Resolutions", sections: [], faqs: [] }
+          {
+            slug: "mca-annual-compliance",
+            title: "MCA Annual Compliance",
+            sections: [
+              {
+                title: "MCA Annual Compliance Services",
+                content: `Stay Compliant. Stay Protected. Stay Focused on Growth.
+Every company registered under the Companies Act is required to comply with various annual filing and statutory requirements. Timely compliance helps maintain good corporate standing, enhances credibility, and reduces regulatory risks.
+
+At ConsultAvenuee, we provide end-to-end MCA Annual Compliance services, ensuring that your company remains fully compliant with all statutory requirements while you focus on running your business.
+
+---
+
+### ROC Forms Covered Under Annual Compliance
+
+**For Companies**
+• **Form AOC-4**: Filing of Financial Statements and related documents with the Registrar of Companies.
+• **Form MGT-7 / MGT-7A**: Filing of Annual Return containing details relating to: Shareholders, Directors, Share Capital, Registered Office, Other statutory information.
+• **DIR-3 KYC**: Annual KYC compliance for Directors holding Director Identification Number (DIN).
+• **DPT-3**: Reporting of deposits and certain outstanding receipts, where applicable.
+• **MSME Form-I**: Half-yearly reporting relating to outstanding dues to MSME suppliers, where applicable.
+
+**For LLPs**
+• LLP Annual Return (Form 11)
+• Statement of Account & Solvency (Form 8)
+
+**Other Event-Based Filings**
+Assistance with various ROC filings as may be applicable based on company-specific transactions and events.
+
+---
+
+### Who Can Benefit?
+• Private Limited Companies
+• One Person Companies (OPCs)
+• Section 8 Companies
+• Startup Companies
+• Group Companies and Holding Structures
+• Foreign-Owned Indian Companies
+
+### Consequences of Non-Compliance
+Failure to comply with annual filing requirements may result in:
+• Additional filing fees
+• Regulatory penalties
+• Director compliance issues
+• Company being treated as non-compliant
+• Difficulties in obtaining loans, investments, tenders, and approvals
+• Increased regulatory scrutiny
+
+Timely compliance helps safeguard the company's reputation and legal status.`
+              }
+            ],
+            faqs: [
+              { question: "Is annual compliance mandatory even if the company has no business activity?", answer: `Yes. Companies are generally required to complete prescribed annual compliances and filings even if there are limited or no business transactions during the year.` },
+              { question: "Which are the major annual ROC filing forms?", answer: `The commonly applicable annual compliance forms include:\n• AOC-4\n• MGT-7 / MGT-7A\n• DIR-3 KYC\n• DPT-3\n• MSME Form-I (where applicable)` },
+              { question: "What happens if annual filings are delayed?", answer: `Delayed filings may attract additional fees, regulatory consequences, and compliance issues for the company and its directors.` },
+              { question: "Can ConsultAvenuee handle the entire annual compliance process?", answer: `Yes. We provide complete assistance from documentation, drafting, review, and filing of ROC forms to ongoing compliance support.` }
+            ]
+          },
+          {
+            slug: "roc-filings",
+            title: "ROC Filings",
+            sections: [
+              {
+                title: "ROC Filings (Registrar of Companies Filings)",
+                content: `**Overview**
+Every company and LLP registered in India is required to comply with various filing requirements prescribed under the Companies Act, 2013, the Limited Liability Partnership Act, 2008, and the rules issued by the Ministry of Corporate Affairs (MCA).
+
+ROC (Registrar of Companies) filings ensure that statutory information relating to the company or LLP is regularly updated with the MCA and remains available in the public domain. Timely compliance helps businesses avoid penalties, maintain good legal standing, and build credibility with investors, lenders, and stakeholders.
+
+---
+
+### Our ROC Filing Services
+We provide comprehensive ROC filing and compliance support for:
+• Private Limited Companies
+• Public Limited Companies
+• One Person Companies (OPC)
+• Limited Liability Partnerships (LLP)
+• Section 8 Companies
+• Foreign Subsidiaries in India
+
+**Annual ROC Filings**
+
+**For Companies**
+• Filing of Financial Statements (Form AOC-4)
+• Filing of Annual Return (Form MGT-7/MGT-7A)
+• Director's Report Preparation
+• Board Report Drafting
+• AGM Compliance Assistance
+• Maintenance of Statutory Registers
+• Shareholding and Capital Structure Updates
+
+**For LLPs**
+• LLP Annual Return (Form 11)
+• Statement of Account & Solvency (Form 8)
+• Compliance Review and Documentation
+• Partner Contribution and Structure Updates
+
+---
+
+### Event-Based ROC Filings
+Apart from annual filings, companies are required to file various forms upon occurrence of specific events.
+
+**Director Related Filings**
+• Appointment of Director
+• Resignation of Director
+• Change in Director Designation
+• DIN Related Compliances
+• Filing of DIR-12 and related forms
+
+**Registered Office Changes**
+• Change of Registered Office within City
+• Change of Registered Office within State
+• Change of Registered Office from one State to another
+• Filing of INC-22, MGT-14 and related forms
+
+**Share Capital & Shareholder Changes**
+• Increase in Authorized Share Capital
+• Issue and Allotment of Shares
+• Transfer of Shares
+• Private Placement and Rights Issue compliance
+• Filing of PAS-3, SH-7, MGT-14 and related forms
+
+**Charge Management**
+• Creation of Charge (CHG-1)
+• Modification of Charge
+• Satisfaction of Charge (CHG-4)
+• Other Event-Based Compliances
+• Change in Company Name
+• Change in Main Object Clause
+• Auditor Appointment and Resignation (ADT-1, ADT-3)
+• Filing of Resolutions and Agreements (MGT-14)
+• Conversion of Company (e.g., Private to Public, OPC to Private)
+• Strike-off / Closure of Company (STK-2)
+
+---
+
+### Documents Required for ROC Filings
+The documents required vary depending on the nature of filing. Common documents include:
+• Certificate of Incorporation
+• PAN of Company/LLP
+• Memorandum and Articles of Association (MOA & AOA)
+• LLP Agreement (for LLPs)
+• Financial Statements
+• Director KYC Documents
+• Digital Signature Certificates (DSC)
+• Board Resolutions
+• Shareholder Resolutions
+• Bank Statements
+• Auditor's Report
+• Statutory Registers
+
+---
+
+### Value of Timely ROC Filings
+• Avoidance of late filing fees and penalties
+• Prevention of Director disqualification
+• Maintenance of 'Active' status on MCA portal
+• Readiness for bank loans, investments, and tenders
+• Enhanced corporate governance and stakeholder trust`
+              }
+            ],
+            faqs: [
+              { question: "What is ROC filing?", answer: `ROC filing refers to the submission of statutory forms, annual returns, financial statements, and event-based disclosures with the Registrar of Companies through the MCA portal.` },
+              { question: "Is ROC filing mandatory?", answer: `Yes. Every registered company and LLP is required to comply with applicable ROC filing requirements, even if there is no business activity during the year.` },
+              { question: "What happens if ROC filings are delayed?", answer: `Delayed filings attract additional fees and penalties. Persistent non-compliance can result in legal action and regulatory restrictions.` },
+              { question: "Do dormant companies need to file ROC returns?", answer: `Yes. Even companies with no business transactions are generally required to meet prescribed compliance requirements unless specifically exempted under applicable law.` },
+              { question: "Can you handle complete annual compliance?", answer: `Yes. We provide complete annual compliance services, including ROC filings, board meeting documentation, annual return preparation, statutory register maintenance, and coordination with auditors.` }
+            ]
+          },
+          {
+            slug: "maintenance-of-statutory-registers-records",
+            title: "Maintenance of Statutory Registers & Records",
+            sections: [
+              {
+                title: "Maintenance of Statutory Registers & Records",
+                content: `### Maintenance of Statutory Registers & Records
+**Corporate Record Maintenance & Secretarial Compliance Services**
+
+Proper maintenance of statutory registers, records, and corporate documents is a fundamental compliance requirement under the Companies Act, 2013. Well-maintained records not only ensure regulatory compliance but also support smooth audits, due diligence exercises, fundraising activities, and corporate governance.
+
+At ConsultAvenuee, we assist companies in maintaining and updating statutory registers, minutes books, and secretarial records to help ensure ongoing compliance and readiness for regulatory reviews.
+
+---
+
+### Our Services Include
+
+#### Statutory Registers Maintenance
+Preparation, updating, and maintenance of:
+• Register of Members
+• Register of Directors & Key Managerial Personnel (KMP)
+• Register of Charges
+• Register of Share Transfers and Allotments
+• Register of Loans, Guarantees & Investments
+• Register of Related Party Transactions
+• Register of Beneficial Owners
+• Other statutory registers as applicable
+
+#### Minutes Books & Corporate Records
+• Board Meeting Minutes
+• Annual General Meeting (AGM) Minutes
+• Extraordinary General Meeting (EGM) Minutes
+• Committee Meeting Minutes
+• Resolution Registers
+• Attendance Registers
+
+#### Secretarial Documentation
+• Board Meeting Notices & Agendas
+• Shareholder Meeting Notices
+• Board & Shareholder Resolutions
+• Directors' Disclosures and Declarations
+• Corporate Action Documentation
+• Secretarial Compliance Records
+
+#### Share Capital & Shareholding Records
+• Share Certificates
+• Share Allotment Records
+• Share Transfer Documentation
+• Shareholding Registers
+• Beneficial Ownership Records
+• Capital Structure Updates
+
+---
+
+### Compliance Support
+We provide assistance for updating statutory records arising from:
+• Appointment or resignation of directors
+• Share allotments and transfers
+• Changes in share capital
+• Corporate restructuring transactions
+• Creation or satisfaction of charges
+• Changes in registered office
+• Board and shareholder approvals
+• Other corporate events requiring record updates`
+              }
+            ],
+            faqs: [
+              { question: "What are statutory registers and records?", answer: `Statutory registers and records are mandatory corporate records that companies are required to maintain under the Companies Act, 2013. These registers contain important information relating to shareholders, directors, share capital, charges, loans, investments, and other corporate matters.` },
+              { question: "Why is maintenance of statutory registers important?", answer: `Proper maintenance of statutory registers helps ensure legal compliance, supports good corporate governance, facilitates audits and due diligence, and minimizes the risk of regulatory penalties and non-compliance.` },
+              { question: "Which statutory registers are required to be maintained by a company?", answer: `Depending on the nature of the company and applicable provisions, statutory registers may include:\n• Register of Members\n• Register of Directors & KMP\n• Register of Charges\n• Register of Loans, Guarantees & Investments\n• Register of Related Party Transactions\n• Register of Beneficial Owners\n• Share Transfer and Allotment Registers\n• Other registers prescribed under applicable laws` },
+              { question: "Are companies required to maintain minutes books?", answer: `Yes. Companies are generally required to maintain minutes of Board Meetings, General Meetings, Committee Meetings, and related corporate proceedings as prescribed under the Companies Act, 2013.` },
+              { question: "What happens if statutory registers are not maintained properly?", answer: `Failure to maintain statutory records may result in:\n• Regulatory non-compliance\n• Penalties and fines\n• Difficulties during audits and inspections\n• Delays in corporate transactions\n• Issues during due diligence and fundraising exercises` },
+              { question: "What is included in secretarial record maintenance?", answer: `Secretarial record maintenance typically includes:\n• Minutes Books\n• Board and Shareholder Resolutions\n• Notices and Agendas\n• Attendance Registers\n• Directors' Disclosures\n• Corporate Action Documentation\n• Secretarial Compliance Records` },
+              { question: "Do private limited companies need to maintain statutory registers?", answer: `Yes. Private limited companies are also required to maintain prescribed statutory registers and records under the Companies Act, 2013, subject to applicable provisions and exemptions.` },
+              { question: "Are statutory records required during audits and due diligence?", answer: `Yes. Statutory registers and corporate records are commonly reviewed during:\n• Statutory Audits\n• Secretarial Audits\n• Due Diligence Exercises\n• Fundraising Transactions\n• Mergers & Acquisitions\n• Investor Reviews` },
+              { question: "What documents are required for maintaining statutory records?", answer: `Commonly required documents include:\n• Certificate of Incorporation\n• Memorandum & Articles of Association\n• Shareholding Details\n• Director Information\n• Board and Shareholder Resolutions\n• ROC Filing Records\n• Share Certificates\n• Corporate Action Documents` },
+              { question: "Can ConsultAvenuee assist with secretarial compliance and documentation?", answer: `Yes. We provide comprehensive support for:\n• Statutory Register Maintenance\n• Minutes Book Preparation\n• Corporate Record Management\n• Secretarial Documentation\n• Share Capital Record Maintenance\n• Compliance Updates Following Corporate Events\n• Corporate Governance Support` },
+              { question: "How can ConsultAvenuee help?", answer: `Our team provides end-to-end support for maintaining statutory registers, corporate records, minutes books, shareholding records, and secretarial documentation. We help companies remain compliant, audit-ready, and well-governed while minimizing compliance risks.` }
+            ]
+          },
+          {
+            slug: "agm-egm-bm-compliance-minutes-resolutions",
+            title: "AGM & EGM, BM Compliance, Minutes & Resolutions",
+            sections: [
+              {
+                title: "AGM & EGM, BM Compliance, Minutes & Resolutions",
+                content: `### AGM, EGM, BOARD MEETING Compliance, Minutes & Resolutions
+**Shareholder Meeting Compliance & Secretarial Support**
+
+Annual General Meetings (AGMs) and Extraordinary General Meetings (EGMs) are important corporate events requiring proper planning, documentation, and compliance under the Companies Act, 2013, along with documentation of Board meetings. Accurate preparation of notices, resolutions, minutes, and statutory records is essential for ensuring valid shareholder approvals and maintaining good corporate governance.
+
+At ConsultAvenuee, we provide end-to-end support for meeting documentation, resolutions, minutes, and related ROC compliance requirements.
+
+---
+
+### Our Services Include
+
+#### AGM Compliance
+Assistance in conducting Annual General Meetings, including:
+• AGM Notices and Agenda
+• Explanatory Statements
+• Shareholder Resolutions
+• Directors' Report Coordination
+• AGM Minutes Preparation
+• Maintenance of Meeting Records
+
+#### EGM Compliance
+Support for Extraordinary General Meetings relating to:
+• Alteration of MOA & AOA
+• Changes in Share Capital
+• Issue or Transfer of Securities
+• Appointment or Removal of Directors
+• Related Party Approvals
+• Corporate Restructuring and Special Business Matters
+• Other Shareholder Approvals as required
+
+#### Drafting of Resolutions
+Preparation of:
+• Ordinary Resolutions
+• Special Resolutions
+• Shareholder Approvals
+• Board Resolutions linked to corporate actions
+• Statutory Consents and Approvals
+
+#### Minutes & Record Maintenance
+Preparation and maintenance of:
+• AGM Minutes
+• EGM Minutes
+• Attendance Registers
+• Resolution Registers
+• Voting and Approval Records
+• Statutory Meeting Documentation
+
+#### Board Meetings
+Companies are required to conduct Board Meetings and maintain proper records of decisions and resolutions. Our services include:
+• Drafting Board Meeting Notices
+• Agenda Preparation
+• Board Resolutions
+• Minutes of Meetings
+• Maintenance of Statutory Records
+
+---
+
+### Benefits of Professional AGM & EGM Compliance
+• Proper shareholder approvals and documentation
+• Compliance with Companies Act requirements
+• Well-maintained corporate records
+• Reduced compliance risks
+• Audit and due diligence readiness
+• Stronger corporate governance practices`
+              }
+            ],
+            faqs: [
+              { question: "What is an Annual General Meeting (AGM)?", answer: `An AGM is a mandatory annual meeting of shareholders where the company's financial statements, directors' report, auditor's report, appointment of directors, appointment or ratification of auditors, and other ordinary business matters are considered and approved.` },
+              { question: "Is conducting an AGM mandatory for every company?", answer: `Most companies are required to hold an AGM in accordance with the provisions of the Companies Act, 2013, subject to applicable exemptions and specific circumstances.` },
+              { question: "What is an Extraordinary General Meeting (EGM)?", answer: `An EGM is a shareholder meeting convened to consider urgent or special business that cannot wait until the next AGM, such as alteration of constitutional documents, changes in capital structure, appointment or removal of directors, mergers, or other significant corporate actions.` },
+              { question: "What is the difference between an AGM and an EGM?", answer: `An AGM is a mandatory annual meeting covering routine statutory business, whereas an EGM is convened whenever shareholder approval is required for specific or urgent matters during the year.` },
+              { question: "Are Board Meetings mandatory?", answer: `Yes. Companies are generally required to hold Board Meetings at prescribed intervals and maintain proper records of discussions, decisions, and resolutions as required under the Companies Act, 2013.` },
+              { question: "What documents are required for conducting an AGM or EGM?", answer: `Typically, the following documents may be required:\n• Notice of Meeting\n• Agenda\n• Explanatory Statement\n• Financial Statements\n• Directors' Report\n• Auditor's Report\n• Draft Resolutions\n• Shareholding Records\n• Previous Meeting Minutes\n\nThe specific documentation depends on the agenda items being considered.` },
+              { question: "What is an Explanatory Statement?", answer: `An Explanatory Statement provides shareholders with material facts and relevant information relating to special business proposed at a meeting, enabling informed decision-making before voting.` },
+              { question: "What are Ordinary and Special Resolutions?", answer: `• Ordinary Resolution: Passed by a simple majority of votes cast.\n• Special Resolution: Requires a higher voting threshold as prescribed under the Companies Act, 2013.\n\nThe type of resolution depends on the nature of the business being approved.` },
+              { question: "Why are meeting minutes important?", answer: `Minutes serve as the official record of discussions, decisions, approvals, and resolutions passed during Board Meetings, AGMs, and EGMs. They are important compliance documents and may be reviewed during audits, inspections, and due diligence exercises.` },
+              { question: "How soon should minutes be prepared after a meeting?", answer: `Minutes should be prepared, finalized, and maintained within the timelines prescribed under applicable legal and secretarial standards.` },
+              { question: "What happens if a company fails to maintain proper meeting records?", answer: `Failure to maintain notices, resolutions, minutes, and statutory records may lead to:\n• Regulatory non-compliance\n• Penalties and fines\n• Challenges to corporate decisions\n• Audit observations\n• Difficulties during due diligence and fundraising` },
+              { question: "Are Board Resolutions required for routine business decisions?", answer: `Many corporate actions require formal Board approval through resolutions, including:\n• Opening bank accounts\n• Appointment of directors or key personnel\n• Borrowings and investments\n• Approval of financial statements\n• Share allotments and transfers\n• Other significant business decisions` },
+              { question: "Can meetings be conducted through video conferencing?", answer: `Yes. Subject to applicable legal provisions, many Board Meetings and certain shareholder meetings may be conducted through video conferencing or other permitted electronic modes.` },
+              { question: "Do meeting resolutions require ROC filings?", answer: `Certain resolutions and corporate actions require filing of prescribed forms with the Ministry of Corporate Affairs (MCA) within specified timelines. The filing requirements depend on the nature of the resolution and transaction.` },
+              { question: "How can ConsultAvenuee assist with AGM, EGM, and Board Meeting compliance?", answer: `We provide comprehensive support including:\n• AGM & EGM Planning\n• Notice & Agenda Drafting\n• Explanatory Statements\n• Board & Shareholder Resolutions\n• Minutes Preparation\n• Attendance & Statutory Records\n• ROC Compliance Support\n• Corporate Documentation\n• Secretarial Compliance Advisory` },
+              { question: "Can you assist startups and private limited companies?", answer: `Yes. We assist startups, private limited companies, closely held companies, and growing businesses in maintaining complete meeting and secretarial compliance throughout their corporate lifecycle.` }
+            ]
+          }
         ]
       },
       {
