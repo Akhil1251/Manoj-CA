@@ -125,7 +125,7 @@ export default function ServiceDetailPage() {
     const list: string[] = [];
     servicesData.forEach((tab) => {
       tab.subServices.forEach((sub) => {
-        if (sub.subSubServices && sub.subSubServices.length > 0 && sub.id !== "society-formation" && tab.id !== "compliance-business-advisory") {
+        if (sub.subSubServices && sub.subSubServices.length > 0 && sub.id !== "society-formation") {
           sub.subSubServices.forEach((sss) => {
             list.push(sss.slug);
           });
@@ -152,7 +152,7 @@ export default function ServiceDetailPage() {
   // Redirect parent sub-services to their first sub-sub-service
   useEffect(() => {
     if (foundService && parentSubId === slug && parentSubService?.subSubServices && parentSubService.subSubServices.length > 0) {
-      if (parentSubId !== "society-formation" && parentCategoryId !== "compliance-business-advisory") {
+      if (parentSubId !== "society-formation") {
         router.replace(`/services/${parentSubService.subSubServices[0].slug}`);
       }
     }
@@ -1216,7 +1216,7 @@ export default function ServiceDetailPage() {
                                 key={sub.id}
                                 className="space-y-1.5"
                                 onMouseEnter={() => {
-                                  if (tab.id !== 'compliance-business-advisory' && sub.subSubServices && sub.subSubServices.length > 0) {
+                                  if (sub.subSubServices && sub.subSubServices.length > 0) {
                                     setOpenSub(sub.id);
                                   }
                                 }}
@@ -1224,12 +1224,12 @@ export default function ServiceDetailPage() {
                               >
                                   <div className="w-full flex items-center justify-between">
                                     <Link
-                                      href={`/services/${sub.subSubServices && sub.subSubServices.length > 0 && sub.id !== "society-formation" && tab.id !== "compliance-business-advisory" ? sub.subSubServices[0].slug : sub.id}`}
+                                      href={`/services/${sub.subSubServices && sub.subSubServices.length > 0 && sub.id !== "society-formation" ? sub.subSubServices[0].slug : sub.id}`}
                                       className={`flex-grow text-[12px] font-extrabold py-1.5 transition-colors text-left focus:outline-none cursor-pointer ${sub.id === slug || (parentSubService && parentSubService.id === sub.id) ? "text-[#c79d62]" : "text-slate-650 dark:text-slate-400 hover:text-[#c79d62]"}`}
                                     >
                                       <span>{sub.title}</span>
                                     </Link>
-                                    {(tab.id === 'taxation-regulatory-litigation') && sub.subSubServices && sub.subSubServices.length > 1 && (
+                                    {(tab.id === 'taxation-regulatory-litigation' || tab.id === 'compliance-business-advisory') && sub.subSubServices && sub.subSubServices.length > 1 && (
                                       <button
                                         onClick={() => setOpenSub(openSub === sub.id ? null : sub.id)}
                                         className={`p-1 focus:outline-none cursor-pointer ${isSubOpen ? "text-[#c79d62]" : "text-slate-650 dark:text-slate-400 hover:text-[#c79d62]"}`}
@@ -1239,7 +1239,7 @@ export default function ServiceDetailPage() {
                                     )}
                                   </div>
 
-                                  {(tab.id === 'taxation-regulatory-litigation' || tab.id === 'nri-services' || tab.id === 'senior-citizen-advisory') && isSubOpen && sub.subSubServices && sub.subSubServices.length > 1 && (
+                                  {(tab.id === 'taxation-regulatory-litigation' || tab.id === 'compliance-business-advisory' || tab.id === 'nri-services' || tab.id === 'senior-citizen-advisory') && isSubOpen && sub.subSubServices && sub.subSubServices.length > 1 && (
                                     <div className="pl-3 border-l border-slate-100 dark:border-slate-800/80 space-y-1.5 py-1">
                                       {sub.subSubServices.map((sss: any) => (
                                         <Link
@@ -1270,7 +1270,7 @@ export default function ServiceDetailPage() {
               <div className="absolute top-0 right-0 w-24 h-24 bg-white/5 rounded-full blur-xl pointer-events-none" />
               <h4 className="text-base font-bold lowercase tracking-tight mb-2">how can we help you?</h4>
               <p className="text-xs text-white/80 leading-relaxed mb-6">
-                Looking for expert assistance with housing society matters, GST, Income Tax, ROC compliance, NRI services, or housing society matters? Contact ConsultAvenuee today.
+                Looking for expert assistance with housing society matters, GST, Income Tax, ROC compliance or NRI services? Contact ConsultAvenuee today.
               </p>
               <button
                 onClick={() => setIsConsultationOpen(true)}

@@ -124,8 +124,7 @@ export default function ServicesPage() {
                 const isSinglePage = 
                   !subService.subSubServices || 
                   subService.subSubServices.length === 0 || 
-                  subService.id === "society-formation" || 
-                  currentTabData.id === "compliance-business-advisory";
+                  subService.id === "society-formation";
 
                 if (isSinglePage) {
                   return (
@@ -268,7 +267,7 @@ export default function ServicesPage() {
               <div className="absolute top-0 right-0 w-24 h-24 bg-white/5 rounded-full blur-xl pointer-events-none" />
               <h4 className="text-base font-bold lowercase tracking-tight mb-2">how can we help you?</h4>
               <p className="text-xs text-white/80 leading-relaxed mb-6 text-left">
-                Looking for expert assistance with housing society matters, GST, Income Tax, ROC compliance, NRI services, or housing society matters? Contact ConsultAvenuee today.
+                Looking for expert assistance with housing society matters, GST, Income Tax, ROC compliance or NRI services? Contact ConsultAvenuee today.
               </p>
               <button
                 onClick={() => setIsConsultationOpen(true)}

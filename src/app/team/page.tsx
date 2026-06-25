@@ -57,7 +57,7 @@ export default function TeamPage() {
     <div className="w-full bg-white dark:bg-slate-950 min-h-screen py-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Founder's Message Section */}
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
@@ -67,31 +67,31 @@ export default function TeamPage() {
           {/* Decorative glow effects */}
           <div className="absolute top-0 right-0 w-64 h-64 bg-[#c29b62] rounded-full mix-blend-screen filter blur-[100px] opacity-20 animate-pulse"></div>
           <div className="absolute bottom-0 left-0 w-64 h-64 bg-blue-500 rounded-full mix-blend-screen filter blur-[100px] opacity-10"></div>
-          
+
           <div className="relative z-10 flex flex-col items-center text-center">
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-[#c29b62] via-[#e8c88f] to-[#c29b62] mb-8 tracking-tight">
               Founder's Message
             </h2>
-            
+
             <div className="max-w-4xl space-y-6 text-gray-200 text-base md:text-[17px] leading-relaxed font-light">
               <p className="text-lg md:text-xl font-medium text-white">Dear Clients, Partners, and Visitors,</p>
-              
+
               <p>
                 At ConsultAvenuee, we are committed to simplifying compliance, taxation, governance, and advisory matters through professional expertise and client-focused solutions. Our goal is to be a trusted partner for businesses, housing societies, NRIs, and senior citizens by delivering reliable guidance, practical solutions, and exceptional service.
               </p>
-              
+
               <p>
                 I sincerely thank our clients, associates, and well-wishers for their continued confidence and support. We look forward to partnering with you and contributing to your success with integrity, expertise, and dedication.
               </p>
-              
+
               <p>
                 Thank you for your trust. We look forward to supporting your growth, compliance, and long-term success.
               </p>
             </div>
-            
+
             <div className="mt-10 pt-8 border-t border-white/10 flex flex-col items-center w-full max-w-md mx-auto">
               <p className="text-base font-medium text-gray-300 mb-2 italic">Warm Regards,</p>
-              <h3 className="text-2xl font-bold text-white tracking-wide">Manoj Keshri<span className="text-[#c29b62] text-lg font-medium">, FCA</span></h3>
+              <h3 className="text-2xl font-bold text-white tracking-wide">Manoj Kumar Keshri<span className="text-[#c29b62] text-lg font-medium">, FCA</span></h3>
               <p className="text-sm text-[#c29b62] tracking-wider uppercase mt-1 mb-2">Founder & Chairman</p>
               <div className="h-[2px] w-12 bg-[#c29b62] mb-2"></div>
               <p className="text-sm font-bold text-white tracking-[0.2em] uppercase">ConsultAvenuee</p>

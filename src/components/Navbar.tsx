@@ -527,16 +527,16 @@ export const Navbar: React.FC = () => {
                                       className="text-[11px] font-extrabold tracking-wide text-slate-800 dark:text-white/90 leading-snug cursor-pointer hover:text-[#c79d62] transition-colors capitalize flex items-center justify-between py-1 w-full"
                                     >
                                       <span>{sub.title}</span>
-                                      {sub.subSubServices && sub.subSubServices.length > 0 && col.id !== "society-management" && col.id !== "compliance-business-advisory" && sub.title !== "GST" && <ChevronRight className="w-3.5 h-3.5 shrink-0 ml-2 opacity-60 transition-transform duration-200 group-hover/sub:rotate-90" />}
+                                      {sub.subSubServices && sub.subSubServices.length > 0 && col.id !== "society-management" && sub.title !== "GST" && <ChevronRight className="w-3.5 h-3.5 shrink-0 ml-2 opacity-60 transition-transform duration-200 group-hover/sub:rotate-90" />}
                                     </Link>
                                     
-                                    {sub.subSubServices && sub.subSubServices.length > 0 && col.id !== "society-management" && col.id !== "compliance-business-advisory" && sub.title !== "GST" && (
+                                    {sub.subSubServices && sub.subSubServices.length > 0 && col.id !== "society-management" && sub.title !== "GST" && (
                                       <div className="hidden group-hover/sub:block mt-1 animate-in slide-in-from-top-1 duration-200">
                                         <ul className="space-y-2.5 text-xs border-l-2 border-[#c79d62]/30 pl-3 pb-2 pt-1">
                                           {sub.subSubServices.map((subsub: any, ssIdx: number) => (
                                             <li key={ssIdx}>
                                               <Link
-                                                href={['company-formation', 'registrations', 'corporate-compliance', 'income-tax', 'litigation-support'].includes(sub.id) ? `/services/${sub.id}#${subsub.slug}` : `/services/${subsub.slug}`}
+                                                href={['income-tax', 'litigation-support'].includes(sub.id) ? `/services/${sub.id}#${subsub.slug}` : `/services/${subsub.slug}`}
                                                 onClick={() => setActiveDropdown(null)}
                                                 className="text-slate-600 dark:text-slate-200 hover:text-[#c79d62] transition-colors block capitalize font-bold leading-tight"
                                               >
@@ -755,13 +755,15 @@ export const Navbar: React.FC = () => {
                     ))}
                   </div>
 
-                  <Link
-                    href="/contact"
-                    onClick={() => setIsMobileMenuOpen(false)}
-                    className="flex w-full h-11 items-center justify-center rounded-xl bg-amber-600 text-sm font-semibold text-white shadow-lg shadow-amber-600/10 hover:bg-amber-500 transition"
+                  <button
+                    onClick={() => {
+                      setIsMobileMenuOpen(false);
+                      setIsConsultationOpen(true);
+                    }}
+                    className="flex w-full h-11 items-center justify-center rounded-xl bg-amber-600 text-sm font-semibold text-white shadow-lg shadow-amber-600/10 hover:bg-amber-500 transition cursor-pointer"
                   >
                     {t.heroCTA}
-                  </Link>
+                  </button>
                 </div>
               </motion.div>
             </>
