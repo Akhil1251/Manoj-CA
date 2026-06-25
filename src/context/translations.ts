@@ -5,6 +5,7 @@ export interface TranslationDict {
   navTools: string;
   navServices: string;
   navAbout: string;
+  navTeam: string;
   navContact: string;
   navKnowledge: string;
   navClients: string;
@@ -55,6 +56,7 @@ export const translations: Record<Language, TranslationDict> = {
     navTools: "Financial Tools",
     navServices: "Services",
     navAbout: "About Us",
+    navTeam: "Our Team",
     navContact: "Contact",
     navKnowledge: "Knowledge Hub",
     navClients: "Clients & Cases",
@@ -102,6 +104,7 @@ export const translations: Record<Language, TranslationDict> = {
     navTools: "वित्तीय उपकरण",
     navServices: "सेवाएं",
     navAbout: "हमारे बारे में",
+    navTeam: "हमारी टीम",
     navContact: "संपर्क",
     navKnowledge: "ज्ञान केंद्र",
     navClients: "ग्राहक और मामले",
@@ -149,6 +152,7 @@ export const translations: Record<Language, TranslationDict> = {
     navTools: "वित्तीय साधने",
     navServices: "सेवा",
     navAbout: "आमच्याबद्दल",
+    navTeam: "आमची टीम",
     navContact: "संपर्क",
     navKnowledge: "माहिती केंद्र",
     navClients: "ग्राहक आणि केसेस",
@@ -193,7 +197,7 @@ export const translations: Record<Language, TranslationDict> = {
   },
   // Provide other languages fallback containing similar translated contents, to keep dictionary fully formed and rich.
   gu: {
-    navHome: "હોમ", navTools: "નાણાકીય સાધનો", navServices: "સેવાઓ", navAbout: "અમારા વિશે", navContact: "સંપર્ક", navKnowledge: "જ્ઞાન કેન્દ્ર", navClients: "ગ્રાહકો", navPricing: "કિંમત નિર્ધારણ", navCareers: "કરિયર", navFaq: "પ્રશ્નોત્તરી",
+    navHome: "હોમ", navTools: "નાણાકીય સાધનો", navServices: "સેવાઓ", navAbout: "અમારા વિશે", navTeam: "અમારી ટીમ", navContact: "સંપર્ક", navKnowledge: "જ્ઞાન કેન્દ્ર", navClients: "ગ્રાહકો", navPricing: "કિંમત નિર્ધારણ", navCareers: "કરિયર", navFaq: "પ્રશ્નોત્તરી",
     heroTitle: "નાણાકીય અને કાનૂની ઉકેલો", heroSubtitle: "જટિલ નાણાકીય મુશ્કેલીઓનો અંત લાવીએ જેથી તમે તમારા વ્યવસાયના વિકાસ પર ધ્યાન કેન્દ્રિત કરી શકો.",
     heroCTA: "પરામર્શ બુક કરો", heroCTASecondary: "નાણાકીય કેલ્ક્યુલેટર", themeToggle: "થીમ બદલો", langChange: "ભાષા",
     problemsTitle: "અમે હલ કરીએ છીએ તેવા વાસ્તવિક જીવનના પ્રશ્નો",
@@ -209,7 +213,7 @@ export const translations: Record<Language, TranslationDict> = {
     p9Title: "9. વરસા હક અને મિલકત ટ્રાન્સફર", p9Problem: "વડીલ વ્યાપારી પોતાની મિલકત બાળકોના નામે કોઈ પણ કાનૂની વિવાદ વગર કરવા માંગતા હતા.", p9Solution: "અમે પ્રાઇવેટ ફેમિલી ટ્રસ્ટ બનાવી ટેક્સ બચાવી મિલકત સુરક્ષિત ટ્રાન્સફર કરી આપી."
   },
   bn: {
-    navHome: "মূল পাতা", navTools: "আর্থিক সরঞ্জাম", navServices: "পরিষেবা সমূহ", navAbout: "আমাদের কথা", navContact: "যোগাযোগ", navKnowledge: "জ্ঞান ভান্ডার", navClients: "ক্লায়েন্ট এবং কেস", navPricing: "মূল্য নির্ধারণ", navCareers: "কেরিয়ার", navFaq: "জিজ্ঞাসাবাদ",
+    navHome: "মূল পাতা", navTools: "আর্থিক সরঞ্জাম", navServices: "পরিষেবা সমূহ", navAbout: "আমাদের কথা", navTeam: "আমাদের দল", navContact: "যোগাযোগ", navKnowledge: "জ্ঞান ভান্ডার", navClients: "ক্লায়েন্ট এবং কেস", navPricing: "মূল্য নির্ধারণ", navCareers: "কেরিয়ার", navFaq: "জিজ্ঞাসাবাদ",
     heroTitle: "বিশেষজ্ঞ আর্থিক ও আইনি সমাধান", heroSubtitle: "জটিল আর্থিক বাধা দূর করে আপনার ব্যবসার বৃদ্ধি এবং সম্পদ সুরক্ষিত করতে সাহায্য করি।",
     heroCTA: "পরামর্শ বুক করুন", heroCTASecondary: "আর্থিক টুলস", themeToggle: "থিম পরিবর্তন", langChange: "ভাষা",
     problemsTitle: "বাস্তব জীবনের আর্থিক সমস্যা এবং আমাদের সমাধান",
@@ -225,7 +229,7 @@ export const translations: Record<Language, TranslationDict> = {
     p9Title: "9. উত্তরাধিকার ও সম্পত্তি হস্তান্তর", p9Problem: "এক বয়স্ক ব্যবসায়ী নিজের সম্পত্তি কোনো পারিবারিক বিবাদ ছাড়াই সন্তানদের দিতে চাইছিলেন।", p9Solution: "আমরা প্রাইভেট ফ্যামিলি ট্রাস্ট গঠন করে সম্পত্তি সুরক্ষিত হস্তান্তর করি।"
   },
   ta: {
-    navHome: "முகப்பு", navTools: "நிதி கருவிகள்", navServices: "சேவைகள்", navAbout: "எங்களைப் பற்றி", navContact: "தொடர்பு", navKnowledge: "அறிவு மையம்", navClients: "வாடிக்கையாளர்கள்", navPricing: "கட்டணம்", navCareers: "பணிவாய்ப்பு", navFaq: "கேள்வி-பதில்",
+    navHome: "முகப்பு", navTools: "நிதி கருவிகள்", navServices: "சேவைகள்", navAbout: "எங்களைப் பற்றி", navTeam: "எங்கள் குழு", navContact: "தொடர்பு", navKnowledge: "அறிவு மையம்", navClients: "வாடிக்கையாளர்கள்", navPricing: "கட்டணம்", navCareers: "பணிவாய்ப்பு", navFaq: "கேள்வி-பதில்",
     heroTitle: "சிறந்த நிதி மற்றும் வரி தீர்வுகள்", heroSubtitle: "உங்கள் நிதிச் சிக்கல்களை நாங்கள் தீர்க்கிறோம், நீங்கள் உங்கள் வணிகத்தை வளர்க்கலாம்.",
     heroCTA: "ஆலோசனை பெறுக", heroCTASecondary: "நிதி கருவிகள்", themeToggle: "தீம் மாற்றுக", langChange: "மொழி",
     problemsTitle: "நாங்கள் தீர்க்கும் நிஜ வாழ்க்கை நிதிச் சிக்கல்கள்",
@@ -241,7 +245,7 @@ export const translations: Record<Language, TranslationDict> = {
     p9Title: "9. சொத்துரிமை மாற்றம்", p9Problem: "ஒரு முதியவர் தனது சொத்துக்களை வாரிசுகளுக்கு எவ்வித சண்டையுமின்றி மாற்ற விரும்பினார்.", p9Solution: "நாங்கள் குடும்ப அறக்கட்டளை அமைத்து சொத்துக்களைப் பாதுகாப்பாக மாற்றினோம்."
   },
   te: {
-    navHome: "హోమ్", navTools: "ఆర్థిక సాధనాలు", navServices: "సేవలు", navAbout: "మా గురించి", navContact: "సంప్రదించండి", navKnowledge: "నాలెడ్జ్ హబ్", navClients: "క్లయింట్లు", navPricing: "ధరలు", navCareers: "కెరీర్స్", navFaq: "FAQs",
+    navHome: "హోమ్", navTools: "ఆర్థిక సాధనాలు", navServices: "సేవలు", navAbout: "మా గురించి", navTeam: "మా బృందం", navContact: "సంప్రదించండి", navKnowledge: "నాలెడ్జ్ హబ్", navClients: "క్లయింట్లు", navPricing: "ధరలు", navCareers: "కెరీర్స్", navFaq: "FAQs",
     heroTitle: "నిపుణుల ఆర్థిక మరియు పన్ను పరిష్కారాలు", heroSubtitle: "మీ వ్యాపార వృద్ధి పై మీరు దృష్టి పెట్టేందుకు ఆర్థిక సవాళ్లను మేము పరిష్కరిస్తాము.",
     heroCTA: "కన్సల్టేషన్ బుక్ చేయండి", heroCTASecondary: "క్యాలిక్యులేటర్లు", themeToggle: "థీమ్ మార్చండి", langChange: "భాష",
     problemsTitle: "మేము పరిష్కరించే నిజ జీవిత ఆర్థిక సమస్యలు",
@@ -257,7 +261,7 @@ export const translations: Record<Language, TranslationDict> = {
     p9Title: "9. వారసత్వ సంపద బదిలీ", p9Problem: "ఒక వృద్ధ వ్యాపారవేత్త తన సంపదను వివాదాలు లేకుండా పిల్లలకు ఇవ్వాలనుకున్నారు.", p9Solution: "ఫ్యామిలీ ట్రస్ట్ ఏర్పాటు చేసి పన్ను లేకుండా సంపదను సురక్షितంగా బదిలీ చేసాము."
   },
   kn: {
-    navHome: "ಮುಖಪುಟ", navTools: "ಹಣಕಾಸು ಪರಿಕರಗಳು", navServices: "ಸೇವೆಗಳು", navAbout: "ನಮ್ಮ ಬಗ್ಗೆ", navContact: "ಸಂಪರ್ಕಿಸಿ", navKnowledge: "ಮಾಹಿತಿ ಕೇಂದ್ರ", navClients: "ಗ್ರಾಹಕರು", navPricing: "ದರ ಪಟ್ಟಿ", navCareers: "ವೃತ್ತಿಜೀವನ", navFaq: "ಪ್ರಶ್ನೋತ್ತರ",
+    navHome: "ಮುಖಪುಟ", navTools: "ಹಣಕಾಸು ಪರಿಕರಗಳು", navServices: "ಸೇವೆಗಳು", navAbout: "ನಮ್ಮ ಬಗ್ಗೆ", navTeam: "ನಮ್ಮ ತಂಡ", navContact: "ಸಂಪರ್ಕಿಸಿ", navKnowledge: "ಮಾಹಿತಿ ಕೇಂದ್ರ", navClients: "ಗ್ರಾಹಕರು", navPricing: "ದರ ಪಟ್ಟಿ", navCareers: "ವೃತ್ತಿಜೀವನ", navFaq: "ಪ್ರಶ್ನೋತ್ತರ",
     heroTitle: "ತಜ್ಞ ಹಣಕಾಸು ಮತ್ತು ತೆರಿಗೆ ಪರಿಹಾರಗಳು", heroSubtitle: "ನಿಮ್ಮ ಉದ್ಯಮದ ಬೆಳವಣಿಗೆಯತ್ತ ಗಮನ ಹರಿಸಲು ನಿಮ್ಮ ಆರ್ಥಿಕ ಸಮಸ್ಯೆಗಳನ್ನು ನಾವು ಪರಿಹರಿಸುತ್ತೇವೆ.",
     heroCTA: "ಸಮಾಲೋಚನೆ ಬುಕ್ ಮಾಡಿ", heroCTASecondary: "ಆರ್ಥಿಕ ಪರಿಕರಗಳು", themeToggle: "ಥೀಮ್ ಬದಲಾಯಿಸಿ", langChange: "ಭಾಷೆ",
     problemsTitle: "ನಾವು ಪರಿಹರಿಸುವ ನಿಜ ಜೀವನದ ಹಣಕಾಸಿನ ತೊಂದರೆಗಳು",
@@ -273,7 +277,7 @@ export const translations: Record<Language, TranslationDict> = {
     p9Title: "9. ಉತ್ತರಾಧಿಕಾರ ಮತ್ತು ಆಸ್ತಿ ವರ್ಗಾವಣೆ", p9Problem: "ಹಿರಿಯ ಉದ್ಯಮಿಯೊಬ್ಬರು ವಿವಾದಗಳಿಲ್ಲದೆ ಆಸ್ತಿಯನ್ನು ಮಕ್ಕಳಿಗೆ ನೀಡಲು ಬಯಸಿದ್ದರು.", p9Solution: "ಫ್ಯಾಮಿಲಿ ಟ್ರಸ್ಟ್ ರಚಿಸಿ ತೆರಿಗೆ ರಹಿತವಾಗಿ ಆಸ್ತಿ ವರ್ಗಾವಣೆ ಮಾಡಿದೆವು."
   },
   ml: {
-    navHome: "ഹോം", navTools: "ധനകാര്യ ഉപകരണങ്ങൾ", navServices: "സേവനങ്ങൾ", navAbout: "ഞങ്ങളെക്കുറിച്ച്", navContact: "ബന്ധപ്പെടുക", navKnowledge: "വിവര കേന്ദ്രം", navClients: "ക്ലയന്റുകൾ", navPricing: "നിരക്കുകൾ", navCareers: "കരിയർ", navFaq: "പതിവു ചോദ്യങ്ങൾ",
+    navHome: "ഹോം", navTools: "ധനകാര്യ ഉപകരണങ്ങൾ", navServices: "സേവനങ്ങൾ", navAbout: "ഞങ്ങളെക്കുറിച്ച്", navTeam: "ഞങ്ങളുടെ ടീം", navContact: "ബന്ധപ്പെടുക", navKnowledge: "വിവര കേന്ദ്രം", navClients: "ക്ലയന്റുകൾ", navPricing: "നിരക്കുകൾ", navCareers: "കരിയർ", navFaq: "പതിവു ചോദ്യങ്ങൾ",
     heroTitle: "വിദഗ്ദ്ധ സാമ്പത്തിക നിയമ സഹായം", heroSubtitle: "സങ്കീർണ്ണമായ സാമ്പത്തിക പ്രശ്നങ്ങൾ ഞങ്ങൾ പരിഹരിക്കുന്നു, നിങ്ങളുടെ ബിസിനസ്സ് വളർത്തുക.",
     heroCTA: "കൺസൾട്ടേഷൻ ബുക്ക് ചെയ്യുക", heroCTASecondary: "ധനകാര്യ കാൽക്കുലേറ്ററുകൾ", themeToggle: "തീം മാറ്റുക", langChange: "ഭാഷ",
     problemsTitle: "ഞങ്ങൾ പരിഹരിക്കുന്ന യഥാർത്ഥ സാമ്പത്തിക പ്രശ്നങ്ങൾ",
@@ -289,7 +293,7 @@ export const translations: Record<Language, TranslationDict> = {
     p9Title: "9. വസ്തു കൈമാറ്റവും പിന്തുടർച്ചയും", p9Problem: "മുതിർന്ന വ്യാപാരിക്ക് തർക്കങ്ങളില്ലാതെ സ്വത്ത് മക്കൾക്ക് കൈമാറണമായിരുന്നു.", p9Solution: "ഫാമിലി ട്രസ്റ്റ് വഴി നികുതിയില്ലാതെ സുരക്ഷിതമായി സ്വത്ത് കൈമാറ്റം ചെയ്തു."
   },
   pa: {
-    navHome: "ਮੁੱਖ ਪੰਨਾ", navTools: "ਵਿੱਤੀ ਸਾਧਨ", navServices: "ਸੇਵਾਵਾਂ", navAbout: "ਸਾਡੇ ਬਾਰੇ", navContact: "ਸੰਪਰਕ", navKnowledge: "ਗਿਆਨ ਕੇਂਦਰ", navClients: "ਗਾਹਕ", navPricing: "ਕੀਮਤਾਂ", navCareers: "ਕਰੀਅਰ", navFaq: "ਸਵਾਲ-ਜਵਾਬ",
+    navHome: "ਮੁੱਖ ਪੰਨਾ", navTools: "ਵਿੱਤੀ ਸਾਧਨ", navServices: "ਸੇਵਾਵਾਂ", navAbout: "ਸਾਡੇ ਬਾਰੇ", navTeam: "ਸਾਡੀ ਟੀਮ", navContact: "ਸੰਪਰਕ", navKnowledge: "ਗਿਆਨ ਕੇਂਦਰ", navClients: "ਗਾਹਕ", navPricing: "ਕੀਮਤਾਂ", navCareers: "ਕਰੀਅਰ", navFaq: "ਸਵਾਲ-ਜਵਾਬ",
     heroTitle: "ਮਾਹਿਰ ਵਿੱਤੀ ਅਤੇ ਕਾਨੂੰਨੀ ਹੱਲ", heroSubtitle: "ਗੁੰਝਲਦਾਰ ਵਿੱਤੀ ਰੁਕਾਵਟਾਂ ਨੂੰ ਅਸੀਂ ਹੱਲ ਕਰਦੇ ਹਾਂ ਤਾਂ ਜੋ ਤੁਸੀਂ ਕਾਰੋਬਾਰ ਵਧਾ ਸਕੋ।",
     heroCTA: "ਸਲਾਹ-ਮਸ਼ਵਰਾ ਬੁੱਕ ਕਰੋ", heroCTASecondary: "ਵਿੱਤੀ ਕੈਲਕੁਲੇਟਰ", themeToggle: "ਥੀਮ ਬਦਲੋ", langChange: "ਭਾਸ਼ਾ",
     problemsTitle: "ਅਸੀਂ ਹੱਲ ਕਰਦੇ ਹਾਂ ਅਸਲ ਜ਼ਿੰਦਗੀ ਦੀਆਂ ਵਿੱਤੀ ਸਮੱਸਿਆਵਾਂ",

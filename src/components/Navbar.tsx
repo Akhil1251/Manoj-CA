@@ -277,7 +277,7 @@ export const Navbar: React.FC = () => {
   const navLinks = [
     { href: "/", label: t.navHome || "Home" },
     { href: "/about", label: t.navAbout || "About Us" },
-    { href: "/team", label: "Our Team" },
+    { href: "/team", label: t.navTeam || "Our Team" },
     { href: "/services", label: t.navServices || "Services", key: "services" },
     { href: "/careers", label: t.navCareers || "Careers" },
     { href: "/faq", label: t.navFaq || "FAQ Centre" },
@@ -396,7 +396,7 @@ export const Navbar: React.FC = () => {
                         className={`flex items-center gap-1 text-sm leading-tight font-bold transition-colors hover:text-white h-full ${isActive ? "text-white/60" : "text-white"
                           }`}
                       >
-                        <span className="text-center">{link.label}</span>
+                        <span className="text-center notranslate">{link.label}</span>
                         {hasDropdown && <span className="text-[7px] opacity-60 mt-0.5 shrink-0">▼</span>}
                       </Link>
                     </div>
@@ -445,7 +445,7 @@ export const Navbar: React.FC = () => {
                           <button
                             key={lang.code}
                             onClick={() => handleLanguageChange(lang.code)}
-                            className={`w-full text-left px-4 py-2 text-xs font-bold hover:bg-amber-50 dark:hover:bg-amber-950 hover:text-amber-600 transition-colors ${language === lang.code
+                            className={`w-full text-left px-4 py-2 text-xs font-bold hover:bg-amber-50 dark:hover:bg-amber-950 hover:text-amber-600 transition-colors notranslate ${language === lang.code
                               ? "bg-amber-50/50 dark:bg-amber-950/50 text-amber-600"
                               : "text-slate-700 dark:text-slate-300"
                               }`}
@@ -703,7 +703,7 @@ export const Navbar: React.FC = () => {
                           key={link.href}
                           href={link.href}
                           onClick={() => setIsMobileMenuOpen(false)}
-                          className={`text-base font-semibold transition-colors py-2 border-b border-slate-100 dark:border-slate-900 ${isActive ? "text-amber-600" : "text-slate-700 dark:text-slate-300"
+                          className={`text-base font-semibold transition-colors py-2 border-b border-slate-100 dark:border-slate-900 notranslate ${isActive ? "text-amber-600" : "text-slate-700 dark:text-slate-300"
                             }`}
                         >
                           {link.label}
@@ -745,7 +745,7 @@ export const Navbar: React.FC = () => {
                           handleLanguageChange(lang.code);
                           setIsMobileMenuOpen(false);
                         }}
-                        className={`text-left px-3 py-2 text-[11px] font-bold rounded-lg border transition-colors ${language === lang.code
+                        className={`text-left px-3 py-2 text-[11px] font-bold rounded-lg border transition-colors notranslate ${language === lang.code
                           ? "bg-amber-600 border-amber-600 text-white"
                           : "border-slate-200 dark:border-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-900"
                           }`}

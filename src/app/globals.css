@@ -157,3 +157,41 @@
 .hover-3d {
   transition: transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.5s ease;
 }
+
+/* Google Translate UI overrides to keep look clean */
+.skiptranslate,
+iframe.goog-te-banner-frame,
+.goog-te-banner-frame,
+.goog-te-banner,
+.goog-te-menu-frame,
+iframe.goog-te-menu-frame,
+.goog-tooltip,
+.goog-tooltip:hover,
+#goog-gt-tt,
+.goog-te-balloon-frame {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  height: 0px !important;
+  width: 0px !important;
+}
+
+body {
+  top: 0px !important;
+  margin-top: 0px !important;
+  padding-top: 0px !important;
+  position: static !important;
+}
+
+html {
+  top: 0px !important;
+  margin-top: 0px !important;
+  padding-top: 0px !important;
+  position: static !important;
+}
+
+.goog-text-highlight {
+  background-color: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+}

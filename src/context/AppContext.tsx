@@ -61,6 +61,27 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
     triggerTransition(() => {
       setLanguageState(lang);
       localStorage.setItem("ca_lang", lang);
+
+      // Apply Google Translate cookie trans
+      const transValue = `/en/${lang}`;
+      document.cookie = `googtrans=${transValue}; path=/;`;
+      document.cookie = `googtrans=${transValue}; path=/; domain=${window.location.hostname};`;
+
+      if (lang === 'en') {
+        // Clear cookie to ensure English is restored properly
+        document.cookie = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+        document.cookie = `googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=${window.location.hostname};`;
+      }
+
+      // Trigger programmatic dynamic translation update if select element is present
+      const selectEl = document.querySelector('.goog-te-combo') as HTMLSelectElement;
+      if (selectEl) {
+        selectEl.value = lang;
+        selectEl.dispatchEvent(new Event('change'));
+      } else {
+        // Fallback: reload the page to let script process the cookie on start
+        window.location.reload();
+      }
     });
   };
 
