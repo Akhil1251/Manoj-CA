@@ -29,14 +29,10 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
       setIsIntroLoading(false);
     }
 
-    // Check saved theme
-    const savedTheme = localStorage.getItem("ca_theme") as "light" | "dark" | null;
-    if (savedTheme) {
-      setTheme(savedTheme);
-      document.documentElement.classList.toggle("dark", savedTheme === "dark");
-    } else {
-      document.documentElement.classList.add("dark");
-    }
+    // Force dark theme
+    setTheme("dark");
+    document.documentElement.classList.add("dark");
+    localStorage.setItem("ca_theme", "dark");
 
     // Check saved lang
     const savedLang = localStorage.getItem("ca_lang") as Language | null;
@@ -69,10 +65,7 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
   };
 
   const toggleTheme = () => {
-    const nextTheme = theme === "dark" ? "light" : "dark";
-    setTheme(nextTheme);
-    localStorage.setItem("ca_theme", nextTheme);
-    document.documentElement.classList.toggle("dark", nextTheme === "dark");
+    // Theme is locked to dark mode
   };
 
   const t = translations[language];

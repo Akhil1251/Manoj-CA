@@ -6,7 +6,6 @@ import { Navbar } from "./Navbar";
 import { Footer } from "./Footer";
 import { IntroLoader } from "./IntroLoader";
 import { LanguageThemeLoader } from "./LanguageThemeLoader";
-import { ThemeToggle } from "./ThemeToggle";
 
 const LayoutContent: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const { isIntroLoading, isTransitioning, finishIntro } = useApp();
@@ -37,7 +36,6 @@ const FloatingWhatsApp = () => (
       </main>
       <Footer />
       <FloatingWhatsApp />
-      <ThemeToggle />
       <LanguageThemeLoader isVisible={isTransitioning} />
     </>
   );

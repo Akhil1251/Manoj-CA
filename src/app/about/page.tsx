@@ -127,9 +127,9 @@ export default function AboutPage() {
     <div className="w-full bg-white dark:bg-slate-950 min-h-screen pb-24">
       {/* HERO SECTION */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-16">
-        <div className="w-full h-[400px] md:h-[480px] flex shadow-lg">
+        <div className="w-full h-auto md:h-[480px] flex flex-col md:flex-row shadow-lg rounded-md overflow-hidden">
           {/* Quote Box - Left Side */}
-          <div className="w-full md:w-[45%] lg:w-[42%] bg-[#c79d62] h-full flex flex-col justify-center px-8 md:px-12 lg:px-16 text-white">
+          <div className="w-full md:w-[45%] lg:w-[42%] bg-[#c79d62] py-12 px-8 md:px-12 lg:px-16 text-white flex flex-col justify-center">
             <h2 className="text-2xl md:text-[28px] lg:text-[32px] font-bold leading-[1.3] mb-4 tracking-wide">
               Welcome to Consultavenuee.com
             </h2>
@@ -139,7 +139,7 @@ export default function AboutPage() {
           </div>
 
           {/* Background Image - Right Side */}
-          <div className="hidden md:block md:w-[55%] lg:w-[58%] h-full">
+          <div className="w-full md:w-[55%] lg:w-[58%] h-[260px] md:h-full">
             <img
               src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=1200&q=80"
               alt="Team Collaborating"

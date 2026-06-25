@@ -57,7 +57,7 @@ export const IntroLoader: React.FC<IntroLoaderProps> = ({ onComplete }) => {
             transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
           >
             <span className="text-xl font-bold tracking-wider text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-amber-400">
-              MV
+              MK
             </span>
           </motion.div>
         </div>
