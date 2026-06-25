@@ -140,7 +140,7 @@ export default function TeamPage() {
                   </div>
 
                   <div
-                    className="text-gray-600 dark:text-gray-400 mb-6 max-w-4xl"
+                    className="text-gray-600 dark:text-white mb-6 max-w-4xl"
                     style={{ fontFamily: "'Open Sans', Arial, sans-serif", fontSize: "14px", lineHeight: "26px", fontWeight: 400 }}
                   >
                     <p>{member.bioSnippet}</p>

@@ -316,7 +316,7 @@ export default function HomePage() {
                           {item.title}
                         </h3>
                         <div className="w-10 h-[2px] bg-[#c79d62] mt-1 mb-2.5" />
-                        <p className="text-sm text-white leading-relaxed font-normal">
+                        <p className="text-sm text-slate-600 dark:text-white leading-relaxed font-normal">
                           {item.desc}
                         </p>
                       </div>

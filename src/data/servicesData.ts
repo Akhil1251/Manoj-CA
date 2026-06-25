@@ -1686,8 +1686,7 @@ Step 7: FEMA and RBI Compliance`
           {
             _parentSlug: "mca-annual-compliance",
             title: "MCA Annual Compliance",
-            content: `### MCA Annual Compliance Services
-Stay Compliant. Stay Protected. Stay Focused on Growth.
+            content: `Stay Compliant. Stay Protected. Stay Focused on Growth.
 Every company registered under the Companies Act is required to comply with various annual filing and statutory requirements. Timely compliance helps maintain good corporate standing, enhances credibility, and reduces regulatory risks.
 
 At ConsultAvenuee, we provide end-to-end MCA Annual Compliance services, ensuring that your company remains fully compliant with all statutory requirements while you focus on running your business.
@@ -1734,9 +1733,7 @@ Timely compliance helps safeguard the company's reputation and legal status.`
           {
             _parentSlug: "roc-filings",
             title: "ROC Filings",
-            content: `### ROC Filings (Registrar of Companies Filings)
-
-**Overview**
+            content: `**Overview**
 Every company and LLP registered in India is required to comply with various filing requirements prescribed under the Companies Act, 2013, the Limited Liability Partnership Act, 2008, and the rules issued by the Ministry of Corporate Affairs (MCA).
 
 ROC (Registrar of Companies) filings ensure that statutory information relating to the company or LLP is regularly updated with the MCA and remains available in the public domain. Timely compliance helps businesses avoid penalties, maintain good legal standing, and build credibility with investors, lenders, and stakeholders.
@@ -1836,8 +1833,7 @@ The documents required vary depending on the nature of filing. Common documents 
           {
             _parentSlug: "maintenance-of-statutory-registers-records",
             title: "Maintenance of Statutory Registers & Records",
-            content: `### Maintenance of Statutory Registers & Records
-**Corporate Record Maintenance & Secretarial Compliance Services**
+            content: `**Corporate Record Maintenance & Secretarial Compliance Services**
 
 Proper maintenance of statutory registers, records, and corporate documents is a fundamental compliance requirement under the Companies Act, 2013. Well-maintained records not only ensure regulatory compliance but also support smooth audits, due diligence exercises, fundraising activities, and corporate governance.
 
@@ -1898,8 +1894,7 @@ We provide assistance for updating statutory records arising from:
           {
             _parentSlug: "agm-egm-bm-compliance-minutes-resolutions",
             title: "AGM & EGM, BM Compliance, Minutes & Resolutions",
-            content: `### AGM, EGM, BOARD MEETING Compliance, Minutes & Resolutions
-**Shareholder Meeting Compliance & Secretarial Support**
+            content: `**Shareholder Meeting Compliance & Secretarial Support**
 
 Annual General Meetings (AGMs) and Extraordinary General Meetings (EGMs) are important corporate events requiring proper planning, documentation, and compliance under the Companies Act, 2013, along with documentation of Board meetings. Accurate preparation of notices, resolutions, minutes, and statutory records is essential for ensuring valid shareholder approvals and maintaining good corporate governance.
 
@@ -2185,8 +2180,7 @@ The documents required vary depending on the nature of filing. Common documents 
             sections: [
               {
                 title: "Maintenance of Statutory Registers & Records",
-                content: `### Maintenance of Statutory Registers & Records
-**Corporate Record Maintenance & Secretarial Compliance Services**
+                content: `**Corporate Record Maintenance & Secretarial Compliance Services**
 
 Proper maintenance of statutory registers, records, and corporate documents is a fundamental compliance requirement under the Companies Act, 2013. Well-maintained records not only ensure regulatory compliance but also support smooth audits, due diligence exercises, fundraising activities, and corporate governance.
 
@@ -2265,8 +2259,7 @@ We provide assistance for updating statutory records arising from:
             sections: [
               {
                 title: "AGM & EGM, BM Compliance, Minutes & Resolutions",
-                content: `### AGM, EGM, BOARD MEETING Compliance, Minutes & Resolutions
-**Shareholder Meeting Compliance & Secretarial Support**
+                content: `**Shareholder Meeting Compliance & Secretarial Support**
 
 Annual General Meetings (AGMs) and Extraordinary General Meetings (EGMs) are important corporate events requiring proper planning, documentation, and compliance under the Companies Act, 2013, along with documentation of Board meetings. Accurate preparation of notices, resolutions, minutes, and statutory records is essential for ensuring valid shareholder approvals and maintaining good corporate governance.
 
@@ -2764,7 +2757,7 @@ Partner with ConsultAvenuee's Virtual CFO team to gain expert financial insights
                 },
                 {
                                 "title": "Benefits of Professional Tax Planning",
-                                "content": "Professional tax planning can help:\n\u2714 Improve tax efficiency within the framework of applicable laws\n\u2714 Optimize available deductions, exemptions, and tax benefits\n\u2714 Improve cash flow management\n\u2714 Strengthen financial planning and decision-making\n\u2714 Reduce compliance risks and regulatory exposure\n\u2714 Support long-term business growth and wealth creation\n\u2714 Enhance financial transparency and governance\n\u2714 Facilitate better business and investment decisions"
+                                "content": "Professional tax planning can help:\n\u2022 Improve tax efficiency within the framework of applicable laws\n\u2022 Optimize available deductions, exemptions, and tax benefits\n\u2022 Improve cash flow management\n\u2022 Strengthen financial planning and decision-making\n\u2022 Reduce compliance risks and regulatory exposure\n\u2022 Support long-term business growth and wealth creation\n\u2022 Enhance financial transparency and governance\n\u2022 Facilitate better business and investment decisions"
                 },
                 {
                                 "title": "Who Can Benefit from Tax Planning Services?",

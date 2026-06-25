@@ -348,7 +348,7 @@ export default function ServiceDetailPage() {
             </h2>
           </div>
         )}
-        <p className="text-sm sm:text-base text-slate-655 dark:text-slate-350 leading-relaxed font-semibold whitespace-pre-line text-justify">
+        <p className="text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed font-semibold whitespace-pre-line text-justify">
           {content}
         </p>
       </motion.div>
@@ -376,14 +376,14 @@ export default function ServiceDetailPage() {
               <h1 className="text-xl sm:text-3.5xl font-black text-[#210821] dark:text-white tracking-tight leading-tight max-w-none">
                 Your Trusted Partner for Housing Society Management & Compliance
               </h1>
-              <p className="text-sm sm:text-base text-slate-550 dark:text-slate-400 leading-relaxed font-medium max-w-none whitespace-pre-line text-center">
+              <p className="text-sm sm:text-base text-slate-500 dark:text-slate-400 leading-relaxed font-medium max-w-none whitespace-pre-line text-center">
                 Focus on your community while we handle society compliance, governance, taxation, audits, documentation, and regulatory requirements with professional expertise.
               </p>
             </>
           ) : (parentCategoryId === "compliance-business-advisory" || parentCategoryId === "taxation-regulatory-litigation") ? (
             <>
               {parentCategoryDescription && !isSubSub && (
-                <p className="text-sm sm:text-base text-slate-550 dark:text-slate-400 leading-relaxed font-medium max-w-none whitespace-pre-line text-center mb-6">
+                <p className="text-sm sm:text-base text-slate-500 dark:text-slate-400 leading-relaxed font-medium max-w-none whitespace-pre-line text-center mb-6">
                   {parentCategoryDescription}
                 </p>
               )}
@@ -392,7 +392,7 @@ export default function ServiceDetailPage() {
                   {heroTitle}
                 </h1>
                 <div className="w-full text-left">
-                  <p className="text-sm sm:text-base text-slate-655 dark:text-slate-400 leading-relaxed font-semibold max-w-none whitespace-pre-line">
+                  <p className="text-sm sm:text-base text-slate-600 dark:text-slate-400 leading-relaxed font-semibold max-w-none whitespace-pre-line">
                     {heroDesc}
                   </p>
                 </div>
@@ -404,7 +404,7 @@ export default function ServiceDetailPage() {
                 {heroTitle}
               </h1>
               <div className="w-full text-left">
-                <p className="text-sm sm:text-base text-slate-655 dark:text-slate-400 leading-relaxed font-semibold max-w-none whitespace-pre-line">
+                <p className="text-sm sm:text-base text-slate-600 dark:text-slate-400 leading-relaxed font-semibold max-w-none whitespace-pre-line">
                   {heroDesc}
                 </p>
               </div>
@@ -494,7 +494,7 @@ export default function ServiceDetailPage() {
               <div key={idx} className="flex items-center justify-between text-xs font-semibold border-b border-slate-100 dark:border-slate-900 pb-1">
                 <div className="flex items-center gap-2">
                   <span className="w-2.5 h-2.5 rounded-full shrink-0" style={{ backgroundColor: item.color }} />
-                  <span className="text-slate-600 dark:text-slate-350">{item.label}</span>
+                  <span className="text-slate-600 dark:text-slate-300">{item.label}</span>
                 </div>
                 <span className="font-extrabold" style={{ color: item.color }}>{item.value}%</span>
               </div>
@@ -641,7 +641,7 @@ export default function ServiceDetailPage() {
                 <h3 className="font-extrabold text-xl text-[#210821] dark:text-white mb-3 tracking-tight">
                   0{activeStep + 1}. {steps[activeStep].detailTitle}
                 </h3>
-                <p className="text-sm text-slate-600 dark:text-slate-350 leading-relaxed font-normal">
+                <p className="text-sm text-slate-600 dark:text-slate-300 leading-relaxed font-normal">
                   {steps[activeStep].desc}
                 </p>
               </div>
@@ -723,7 +723,7 @@ export default function ServiceDetailPage() {
                   onClick={() => toggleCheck(idx)}
                   className={`flex items-center gap-3.5 p-4 rounded-xl text-left border transition-all duration-300 cursor-pointer ${isChecked
                     ? "bg-[#c79d62]/5 border-[#c79d62] text-[#c79d62] shadow-[0_4px_20px_rgba(199,157,98,0.05)]"
-                    : "bg-slate-50/50 dark:bg-slate-900/20 border-slate-200/60 dark:border-slate-800/60 text-slate-600 dark:text-slate-350 hover:bg-slate-50 dark:hover:bg-slate-900/40"
+                    : "bg-slate-50/50 dark:bg-slate-900/20 border-slate-200/60 dark:border-slate-800/60 text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-900/40"
                     }`}
                 >
                   <div className={`w-5 h-5 rounded-md flex items-center justify-center border shrink-0 transition-colors ${isChecked ? "bg-[#c79d62] border-[#c79d62] text-white" : "border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-950"
@@ -763,7 +763,7 @@ export default function ServiceDetailPage() {
                     {subSub.title}
                   </h3>
                   {subSub.shortDesc && (
-                    <p className="text-sm text-slate-550 dark:text-slate-400 font-semibold mt-1">
+                    <p className="text-sm text-slate-500 dark:text-slate-400 font-semibold mt-1">
                       {subSub.shortDesc}
                     </p>
                   )}
@@ -795,7 +795,7 @@ export default function ServiceDetailPage() {
                             {section.title}
                           </h4>
                           {section.content && (
-                            <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-350 leading-relaxed font-semibold whitespace-pre-line mt-1">
+                            <p className="text-xs sm:text-sm text-slate-600 dark:text-white leading-relaxed font-semibold whitespace-pre-line mt-1">
                               {section.content}
                             </p>
                           )}
@@ -843,8 +843,8 @@ export default function ServiceDetailPage() {
                           {section.title}
                         </h4>
                         {section.content && (
-                          <div className="text-xs sm:text-sm text-slate-600 dark:text-slate-350 leading-relaxed font-semibold mt-1">
-                            {renderFormattedText(section.content, "text-xs sm:text-sm text-slate-600 dark:text-slate-350 font-semibold")}
+                          <div className="text-xs sm:text-sm text-slate-600 dark:text-white leading-relaxed font-semibold mt-1">
+                            {renderFormattedText(section.content, "text-xs sm:text-sm text-slate-600 dark:text-white font-semibold")}
                           </div>
                         )}
                       </div>
@@ -856,7 +856,7 @@ export default function ServiceDetailPage() {
           )
         )}
         {foundService!.postSectionsDesc && (
-          <div className="max-w-4xl text-left mt-8 text-sm sm:text-base text-slate-550 dark:text-slate-400 font-semibold leading-relaxed">
+          <div className="max-w-4xl text-left mt-8 text-sm sm:text-base text-slate-500 dark:text-slate-400 font-semibold leading-relaxed">
             {renderFormattedText(foundService!.postSectionsDesc)}
           </div>
         )}
@@ -997,7 +997,7 @@ export default function ServiceDetailPage() {
                   <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${isOpen ? "rotate-180" : ""}`} />
                 </button>
                 {isOpen && (
-                  <div className="p-5 border-t border-slate-200/60 dark:border-slate-800/60 bg-white dark:bg-[#1c081c] text-xs sm:text-sm text-slate-550 dark:text-slate-400 leading-relaxed font-semibold">
+                  <div className="p-5 border-t border-slate-200/60 dark:border-slate-800/60 bg-white dark:bg-[#1c081c] text-xs sm:text-sm text-slate-500 dark:text-slate-400 leading-relaxed font-semibold">
                     {faq.answer}
                   </div>
                 )}
@@ -1009,14 +1009,21 @@ export default function ServiceDetailPage() {
     );
   };
 
-  const renderFormattedText = (text: string, customClass: string = "text-sm sm:text-base text-slate-550 dark:text-slate-400 font-medium") => {
+  const renderFormattedText = (text: string, customClass: string = "text-sm sm:text-base text-slate-500 dark:text-slate-400 font-medium") => {
     return text.split('\n').map((line, idx) => {
       if (line.trim() === '') return <br key={idx} />;
       if (line.startsWith('### ')) {
         return (
-          <h3 key={idx} className="text-lg sm:text-xl font-extrabold text-[#210821] dark:text-white tracking-tight mt-6 mb-2">
+          <h3 key={idx} className="text-lg sm:text-xl font-extrabold text-[#c79d62] dark:text-[#c79d62] tracking-tight mt-6 mb-2">
             {line.replace('### ', '')}
           </h3>
+        );
+      }
+      if (line.startsWith('#### ')) {
+        return (
+          <h4 key={idx} className="text-base sm:text-lg font-bold text-[#c79d62] dark:text-[#c79d62] tracking-tight mt-4 mb-2">
+            {line.replace('#### ', '')}
+          </h4>
         );
       }
 
@@ -1196,12 +1203,12 @@ export default function ServiceDetailPage() {
                   return (
                     <div key={tab.id} className="space-y-2">
                       <div className="w-full flex items-center justify-between text-[13px] font-black uppercase tracking-wider py-2 transition-colors text-left">
-                        <a href={`/services#${tab.id}`} className={`flex-grow ${isCatOpen ? "text-[#c79d62]" : "text-slate-700 dark:text-slate-355 hover:text-[#c79d62]"}`}>
+                        <a href={`/services#${tab.id}`} className={`flex-grow ${isCatOpen ? "text-[#c79d62]" : "text-slate-700 dark:text-slate-400 hover:text-[#c79d62]"}`}>
                           {tab.title}
                         </a>
                         <button
                           onClick={() => setOpenCategory(isCatOpen ? null : tab.id)}
-                          className={`p-1 focus:outline-none cursor-pointer ${isCatOpen ? "text-[#c79d62]" : "text-slate-700 dark:text-slate-355 hover:text-[#c79d62]"}`}
+                          className={`p-1 focus:outline-none cursor-pointer ${isCatOpen ? "text-[#c79d62]" : "text-slate-700 dark:text-slate-400 hover:text-[#c79d62]"}`}
                         >
                           <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-200 ${isCatOpen ? "rotate-180" : ""}`} />
                         </button>
@@ -1225,14 +1232,14 @@ export default function ServiceDetailPage() {
                                   <div className="w-full flex items-center justify-between">
                                     <Link
                                       href={`/services/${sub.subSubServices && sub.subSubServices.length > 0 && sub.id !== "society-formation" ? sub.subSubServices[0].slug : sub.id}`}
-                                      className={`flex-grow text-[12px] font-extrabold py-1.5 transition-colors text-left focus:outline-none cursor-pointer ${sub.id === slug || (parentSubService && parentSubService.id === sub.id) ? "text-[#c79d62]" : "text-slate-650 dark:text-slate-400 hover:text-[#c79d62]"}`}
+                                      className={`flex-grow text-[12px] font-extrabold py-1.5 transition-colors text-left focus:outline-none cursor-pointer ${sub.id === slug || (parentSubService && parentSubService.id === sub.id) ? "text-[#c79d62]" : "text-slate-600 dark:text-slate-400 hover:text-[#c79d62]"}`}
                                     >
                                       <span>{sub.title}</span>
                                     </Link>
                                     {(tab.id === 'taxation-regulatory-litigation' || tab.id === 'compliance-business-advisory') && sub.subSubServices && sub.subSubServices.length > 1 && (
                                       <button
                                         onClick={() => setOpenSub(openSub === sub.id ? null : sub.id)}
-                                        className={`p-1 focus:outline-none cursor-pointer ${isSubOpen ? "text-[#c79d62]" : "text-slate-650 dark:text-slate-400 hover:text-[#c79d62]"}`}
+                                        className={`p-1 focus:outline-none cursor-pointer ${isSubOpen ? "text-[#c79d62]" : "text-slate-600 dark:text-slate-400 hover:text-[#c79d62]"}`}
                                       >
                                         <ChevronDown className={`w-3 h-3 transition-transform duration-200 ${isSubOpen ? "rotate-180" : ""}`} />
                                       </button>

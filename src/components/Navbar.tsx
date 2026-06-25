@@ -349,7 +349,7 @@ export const Navbar: React.FC = () => {
             </div>
 
             {/* Mobile Contact Info Row */}
-            <div className="flex lg:hidden flex-col gap-1.5 pb-3 border-t border-slate-200/10 dark:border-slate-800/60 text-xs font-semibold pt-2 text-slate-650 dark:text-slate-350">
+            <div className="flex lg:hidden flex-col gap-1.5 pb-3 border-t border-slate-200/10 dark:border-slate-800/60 text-xs font-semibold pt-2 text-slate-600 dark:text-slate-400">
               <div className="flex items-center gap-1.5">
                 <MapPin className="w-3.5 h-3.5 text-amber-500 shrink-0" />
                 <span>Hubtown Solaris one, Unit-1205, Andheri (E), Mumbai-400069</span>
