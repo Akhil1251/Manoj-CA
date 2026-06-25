@@ -82,8 +82,27 @@ export default function BookConsultationModal({ isOpen, onClose }: BookConsultat
             onClick={(e) => e.stopPropagation()}
           >
             {/* Top Bar */}
-            <div className="flex items-center justify-between px-6 py-4 bg-gradient-to-r from-[#0a122a] to-[#1a2744] rounded-t-2xl">
-              <div className="flex items-center gap-6">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 px-6 py-4 bg-gradient-to-r from-[#0a122a] to-[#1a2744] rounded-t-2xl relative">
+              {/* Title & Call Info (Desktop/Mobile wrapper) */}
+              <div className="flex flex-col text-left pr-10 sm:pr-0">
+                <h2 className="text-base sm:text-lg font-extrabold text-white tracking-wide uppercase">
+                  Book Free Consultation
+                </h2>
+                
+                {/* Mobile Call Info - Below the title */}
+                <div className="block sm:hidden mt-2">
+                  <a
+                    href="tel:+919076111021"
+                    className="flex flex-col gap-0.5 text-xs text-white hover:text-amber-400 transition-colors"
+                  >
+                    <span className="text-[10px] font-black uppercase tracking-widest text-slate-300">CALL US</span>
+                    <span className="text-sm font-bold text-amber-400 underline underline-offset-2">+91 90761 11021</span>
+                  </a>
+                </div>
+              </div>
+
+              {/* Desktop Call Info - Hidden on mobile, shown in middle/right on desktop */}
+              <div className="hidden sm:flex items-center gap-6">
                 <a
                   href="tel:+919076111021"
                   className="flex items-center gap-2 text-white hover:text-amber-400 transition-colors"
@@ -93,17 +112,15 @@ export default function BookConsultationModal({ isOpen, onClose }: BookConsultat
                   <span className="text-sm font-bold text-amber-400 underline underline-offset-2">+91 90761 11021</span>
                 </a>
               </div>
-              <div className="flex items-center gap-4">
-                <h2 className="text-base sm:text-lg font-extrabold text-white tracking-wide uppercase">
-                  Book Free Consultation
-                </h2>
-                <button
-                  onClick={onClose}
-                  className="w-8 h-8 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors"
-                >
-                  <X className="w-4 h-4 text-white" />
-                </button>
-              </div>
+
+              {/* Close Button - positioned absolutely on mobile, relative on desktop */}
+              <button
+                onClick={onClose}
+                className="absolute sm:relative right-4 top-4 sm:top-auto sm:right-auto w-8 h-8 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors z-20 cursor-pointer"
+                aria-label="Close modal"
+              >
+                <X className="w-4 h-4 text-white" />
+              </button>
             </div>
 
             {/* Content: Left Form + Right Services */}

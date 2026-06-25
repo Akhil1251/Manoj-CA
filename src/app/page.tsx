@@ -252,9 +252,9 @@ export default function HomePage() {
               className="flex flex-col items-center max-w-3xl"
             >
               {/* Main Title */}
-              <h3 className="text-1xl sm:text-2xl lg:text-2xl font-extrabold tracking-tight text-white mb-2 leading-tight select-none">
-                Your Trusted Partner for Compliance, Governance & Advisory Services
-              </h3>
+              <h1 className="text-xl sm:text-3xl lg:text-5xl font-extrabold tracking-tight text-white mb-6 leading-tight select-none">
+                Your Trusted Partner for Compliance,<br />Governance & Advisory Services
+              </h1>
 
 
 
@@ -316,7 +316,7 @@ export default function HomePage() {
                           {item.title}
                         </h3>
                         <div className="w-10 h-[2px] bg-[#c79d62] mt-1 mb-2.5" />
-                        <p className="text-sm text-white leading-relaxed font-normal">
+                        <p className="text-sm text-slate-600 dark:text-white leading-relaxed font-normal">
                           {item.desc}
                         </p>
                       </div>
@@ -435,7 +435,7 @@ export default function HomePage() {
         < section className="py-24 bg-slate-100/50 dark:bg-slate-950/40 border-t border-slate-200/50 dark:border-slate-800/50 overflow-hidden" >
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-20">
-              <span className="text-xs font-bold uppercase tracking-widest text-amber-500">
+              <span className="text-sm sm:text-lg lg:text-2xl font-bold uppercase tracking-widest text-amber-500">
                 One Platform. Multiple Solutions
               </span>
               <h2 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 dark:text-white mt-3">

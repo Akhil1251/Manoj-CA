@@ -232,7 +232,7 @@ export default function ProblemDetailPage() {
               <h2 className="text-lg font-bold text-slate-900 dark:text-white mb-4 flex items-center gap-2">
                 <AlertTriangle className="h-5 w-5 text-rose-500" /> Case Background & Context
               </h2>
-              <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-350 leading-relaxed font-semibold">
+              <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed font-semibold">
                 {currentCase.background}
               </p>
             </div>
