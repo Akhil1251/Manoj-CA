@@ -6,10 +6,88 @@ import { Navbar } from "./Navbar";
 import { Footer } from "./Footer";
 import { IntroLoader } from "./IntroLoader";
 import { LanguageThemeLoader } from "./LanguageThemeLoader";
-import { ThemeToggle } from "./ThemeToggle";
+
+import { usePathname } from "next/navigation";
 
 const LayoutContent: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  const { isIntroLoading, isTransitioning, finishIntro } = useApp();
+  const { isIntroLoading, isTransitioning, finishIntro, language } = useApp();
+  const pathname = usePathname();
+
+  React.useEffect(() => {
+    // 1. Define global callback for Google Translate initialization
+    (window as any).googleTranslateElementInit = () => {
+      new (window as any).google.translate.TranslateElement(
+        {
+          pageLanguage: "en",
+          includedLanguages: "en,hi,mr,gu,bn,ta,te,kn,ml,pa",
+          autoDisplay: false,
+        },
+        "google_translate_element"
+      );
+    };
+
+    // 2. Add translation script if not already present
+    if (!document.getElementById("google-translate-script")) {
+      const script = document.createElement("script");
+      script.id = "google-translate-script";
+      script.src = "https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit";
+      script.async = true;
+      document.body.appendChild(script);
+    }
+
+    // 3. Continuously clean up Google Translate banner and layout shifts
+    const cleanTranslateUI = () => {
+      const selectors = [
+        "iframe.goog-te-banner-frame",
+        ".goog-te-banner-frame",
+        ".goog-te-banner",
+        ".goog-te-menu-frame",
+        "iframe.goog-te-menu-frame",
+        "#goog-gt-tt",
+        ".goog-te-balloon-frame",
+        "iframe[class*='goog-te']",
+        "[class*='goog-te-banner']"
+      ];
+
+      selectors.forEach(selector => {
+        const els = document.querySelectorAll(selector);
+        els.forEach(el => {
+          (el as HTMLElement).style.display = "none";
+          (el as HTMLElement).style.visibility = "hidden";
+          (el as HTMLElement).style.height = "0px";
+        });
+      });
+
+      // Override inline shifts added by Google Translate script on html/body elements
+      if (document.body && (document.body.style.top !== "0px" && document.body.style.top !== "")) {
+        document.body.style.top = "0px";
+        document.body.style.position = "static";
+      }
+      if (document.documentElement && (document.documentElement.style.top !== "0px" && document.documentElement.style.top !== "")) {
+        document.documentElement.style.top = "0px";
+        document.documentElement.style.position = "static";
+      }
+    };
+
+    cleanTranslateUI();
+    const interval = setInterval(cleanTranslateUI, 150);
+    return () => clearInterval(interval);
+  }, []);
+
+  // Handle dynamic translation on page change and language change
+  React.useEffect(() => {
+    const applyTranslation = () => {
+      const selectEl = document.querySelector('.goog-te-combo') as HTMLSelectElement;
+      if (selectEl && selectEl.value !== language) {
+        selectEl.value = language;
+        selectEl.dispatchEvent(new Event('change'));
+      }
+    };
+
+    // Delay slightly to allow Next.js route transition & DOM render to finish
+    const timer = setTimeout(applyTranslation, 500);
+    return () => clearTimeout(timer);
+  }, [pathname, language]);
 
   if (isIntroLoading) {
     return <IntroLoader onComplete={finishIntro} />;
@@ -31,13 +109,13 @@ const FloatingWhatsApp = () => (
 
   return (
     <>
+      <div id="google_translate_element" style={{ display: "none" }} />
       <Navbar />
       <main className="flex-1 w-full bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-slate-100 transition-colors duration-300">
         {children}
       </main>
       <Footer />
       <FloatingWhatsApp />
-      <ThemeToggle />
       <LanguageThemeLoader isVisible={isTransitioning} />
     </>
   );

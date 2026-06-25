@@ -277,7 +277,7 @@ export const Navbar: React.FC = () => {
   const navLinks = [
     { href: "/", label: t.navHome || "Home" },
     { href: "/about", label: t.navAbout || "About Us" },
-    { href: "/team", label: "Our Team" },
+    { href: "/team", label: t.navTeam || "Our Team" },
     { href: "/services", label: t.navServices || "Services", key: "services" },
     { href: "/careers", label: t.navCareers || "Careers" },
     { href: "/faq", label: t.navFaq || "FAQ Centre" },
@@ -342,18 +342,29 @@ export const Navbar: React.FC = () => {
 
               {/* Mobile toggles */}
               <div className="flex lg:hidden items-center gap-2.5">
-                {/* Theme Toggle - Mobile top bar */}
-                <button
-                  id="theme-toggle-mobile-topbar"
-                  onClick={toggleTheme}
-                  aria-label={theme === "dark" ? "Switch to light mode" : "Switch to dark mode"}
-                  className="p-2 rounded-lg border border-slate-200/20 hover:bg-slate-100/10 transition"
-                >
-                  {theme === "dark" ? <Sun className="h-5 w-5 text-amber-400" /> : <Moon className="h-5 w-5" />}
-                </button>
                 <button onClick={() => setIsMobileMenuOpen(true)} className="p-2 rounded-lg border border-slate-200/20 hover:bg-slate-100/10 transition">
                   <Menu className="h-5 w-5" />
                 </button>
+              </div>
+            </div>
+
+            {/* Mobile Contact Info Row */}
+            <div className="flex lg:hidden flex-col gap-1.5 pb-3 border-t border-slate-200/10 dark:border-slate-800/60 text-xs font-semibold pt-2 text-slate-650 dark:text-slate-350">
+              <div className="flex items-center gap-1.5">
+                <MapPin className="w-3.5 h-3.5 text-amber-500 shrink-0" />
+                <span>Hubtown Solaris one, Unit-1205, Andheri (E), Mumbai-400069</span>
+              </div>
+              <div className="flex flex-wrap items-center justify-between gap-y-1">
+                <div className="flex items-center gap-1.5">
+                  <Mail className="w-3.5 h-3.5 text-amber-500 shrink-0" />
+                  <a href="mailto:info@consultavenuee.com" className="hover:text-amber-500 transition-colors">info@consultavenuee.com</a>
+                </div>
+                <div className="flex items-center gap-1.5">
+                  <Phone className="w-3.5 h-3.5 text-amber-500 shrink-0" />
+                  <a href="tel:+919076111021" className="hover:text-amber-500 transition-colors">9076111021</a>
+                  <span className="text-slate-400">|</span>
+                  <a href="tel:+919076111813" className="hover:text-amber-500 transition-colors">9076111813</a>
+                </div>
               </div>
             </div>
           </div>
@@ -385,7 +396,7 @@ export const Navbar: React.FC = () => {
                         className={`flex items-center gap-1 text-sm leading-tight font-bold transition-colors hover:text-white h-full ${isActive ? "text-white/60" : "text-white"
                           }`}
                       >
-                        <span className="text-center">{link.label}</span>
+                        <span className="text-center notranslate">{link.label}</span>
                         {hasDropdown && <span className="text-[7px] opacity-60 mt-0.5 shrink-0">▼</span>}
                       </Link>
                     </div>
@@ -434,7 +445,7 @@ export const Navbar: React.FC = () => {
                           <button
                             key={lang.code}
                             onClick={() => handleLanguageChange(lang.code)}
-                            className={`w-full text-left px-4 py-2 text-xs font-bold hover:bg-amber-50 dark:hover:bg-amber-950 hover:text-amber-600 transition-colors ${language === lang.code
+                            className={`w-full text-left px-4 py-2 text-xs font-bold hover:bg-amber-50 dark:hover:bg-amber-950 hover:text-amber-600 transition-colors notranslate ${language === lang.code
                               ? "bg-amber-50/50 dark:bg-amber-950/50 text-amber-600"
                               : "text-slate-700 dark:text-slate-300"
                               }`}
@@ -446,17 +457,6 @@ export const Navbar: React.FC = () => {
                     )}
                   </AnimatePresence>
                 </div>
-
-                {/* Theme Toggle */}
-                <button
-                  id="theme-toggle-desktop"
-                  onClick={toggleTheme}
-                  aria-label={theme === "dark" ? "Switch to light mode" : "Switch to dark mode"}
-                  className="p-2 rounded-lg border border-amber-500/30 hover:bg-amber-500/10 text-white transition-all hover:scale-105"
-                  title={theme === "dark" ? "Light mode" : "Dark mode"}
-                >
-                  {theme === "dark" ? <Sun className="h-4 w-4 text-amber-400" /> : <Moon className="h-4 w-4" />}
-                </button>
 
                 {/* CTA Button */}
                 <button onClick={() => setIsConsultationOpen(true)} className="ml-4 px-4 py-2 bg-amber-600 hover:bg-amber-700 text-white text-xs font-bold rounded shadow transition-colors whitespace-nowrap cursor-pointer">
@@ -703,7 +703,7 @@ export const Navbar: React.FC = () => {
                           key={link.href}
                           href={link.href}
                           onClick={() => setIsMobileMenuOpen(false)}
-                          className={`text-base font-semibold transition-colors py-2 border-b border-slate-100 dark:border-slate-900 ${isActive ? "text-amber-600" : "text-slate-700 dark:text-slate-300"
+                          className={`text-base font-semibold transition-colors py-2 border-b border-slate-100 dark:border-slate-900 notranslate ${isActive ? "text-amber-600" : "text-slate-700 dark:text-slate-300"
                             }`}
                         >
                           {link.label}
@@ -734,31 +734,6 @@ export const Navbar: React.FC = () => {
                 </div>
 
                 <div>
-                  {/* Theme Toggle in mobile sidebar */}
-                  <div className="mb-5">
-                    <h4 className="text-xs font-semibold uppercase tracking-wider text-slate-400 dark:text-slate-500 mb-3">
-                      Appearance
-                    </h4>
-                    <button
-                      id="theme-toggle-mobile-sidebar"
-                      onClick={toggleTheme}
-                      aria-label={theme === "dark" ? "Switch to light mode" : "Switch to dark mode"}
-                      className={`w-full flex items-center justify-between px-4 py-3 rounded-xl border font-semibold text-sm transition-all ${
-                        theme === "dark"
-                          ? "bg-slate-800 border-slate-700 text-amber-400 hover:bg-slate-700"
-                          : "bg-slate-100 border-slate-200 text-slate-700 hover:bg-slate-200"
-                      }`}
-                    >
-                      <span>{theme === "dark" ? "Dark Mode" : "Light Mode"}</span>
-                      <div className="flex items-center gap-2">
-                        {theme === "dark" ? <Moon className="h-4 w-4" /> : <Sun className="h-4 w-4 text-amber-500" />}
-                        <div className={`relative w-10 h-5 rounded-full transition-colors ${ theme === "dark" ? "bg-amber-500" : "bg-slate-300" }`}>
-                          <div className={`absolute top-0.5 h-4 w-4 rounded-full bg-white shadow transition-transform ${ theme === "dark" ? "translate-x-5" : "translate-x-0.5" }`} />
-                        </div>
-                      </div>
-                    </button>
-                  </div>
-
                   <h4 className="text-xs font-semibold uppercase tracking-wider text-slate-400 dark:text-slate-500 mb-3 flex items-center gap-1">
                     <Globe className="h-3.5 w-3.5" /> Language / भाषा
                   </h4>
@@ -770,7 +745,7 @@ export const Navbar: React.FC = () => {
                           handleLanguageChange(lang.code);
                           setIsMobileMenuOpen(false);
                         }}
-                        className={`text-left px-3 py-2 text-[11px] font-bold rounded-lg border transition-colors ${language === lang.code
+                        className={`text-left px-3 py-2 text-[11px] font-bold rounded-lg border transition-colors notranslate ${language === lang.code
                           ? "bg-amber-600 border-amber-600 text-white"
                           : "border-slate-200 dark:border-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-900"
                           }`}

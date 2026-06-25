@@ -13,6 +13,7 @@ import {
   Sparkles,
   ArrowLeft
 } from "lucide-react";
+import BookConsultationModal from "@/components/BookConsultationModal";
 
 export default function ServicesPage() {
   const [activeTab, setActiveTab] = useState(() => {
@@ -25,6 +26,7 @@ export default function ServicesPage() {
     return servicesData[0].id;
   });
   const [expandedSubService, setExpandedSubService] = useState<string | null>(null);
+  const [isConsultationOpen, setIsConsultationOpen] = useState(false);
 
   React.useEffect(() => {
     const handleHashChange = () => {
@@ -74,8 +76,8 @@ export default function ServicesPage() {
           </Link>
         </div>
 
-        {/* Horizontal Navigation Tab Bar (Size matched to main nav header) */}
-        <div className="w-full bg-[#c79d62] rounded-md overflow-hidden flex h-16 mb-6 shadow-md">
+        {/* Responsive Navigation Tab Bar */}
+        <div className="w-full bg-[#c79d62] rounded-md overflow-hidden flex flex-col md:flex-row h-auto md:h-16 mb-6 shadow-md">
           {servicesData.map((tab) => {
             const isActive = activeTab === tab.id;
             return (
@@ -85,7 +87,7 @@ export default function ServicesPage() {
                   setActiveTab(tab.id);
                   setExpandedSubService(null);
                 }}
-                className={`px-8 h-full flex items-center justify-center text-sm font-extrabold tracking-wider transition-all duration-300 ${isActive
+                className={`px-4 py-4 md:py-0 md:px-6 h-auto md:h-full flex-1 flex items-center justify-center text-center text-xs md:text-sm font-extrabold tracking-wider transition-all duration-300 border-b border-white/10 md:border-b-0 md:border-r md:last:border-r-0 last:border-b-0 ${isActive
                   ? "bg-[#110311] text-white shadow-inner"
                   : "text-white/85 hover:text-white hover:bg-black/10"
                   }`}
@@ -268,46 +270,22 @@ export default function ServicesPage() {
               <p className="text-xs text-white/80 leading-relaxed mb-6 text-left">
                 Looking for expert assistance with housing society matters, GST, Income Tax, ROC compliance, NRI services, or housing society matters? Contact ConsultAvenuee today.
               </p>
-              <Link
-                href="/contact"
-                className="inline-flex items-center justify-center gap-2 px-5 py-2.5 bg-white text-[#110311] hover:bg-slate-100 text-[10px] font-bold uppercase tracking-wider rounded-sm transition-all shadow-sm w-full"
+              <button
+                onClick={() => setIsConsultationOpen(true)}
+                className="inline-flex items-center justify-center gap-2 px-5 py-2.5 bg-white text-[#110311] hover:bg-slate-100 text-[10px] font-bold uppercase tracking-wider rounded-sm transition-all shadow-sm w-full cursor-pointer"
               >
                 <PhoneCall className="w-3 h-3 text-[#c79d62]" />
-                Contacts
-              </Link>
+                Book Free Consultation
+              </button>
             </div>
 
-            {/* Testimonial Quote Bubble */}
-            <div className="space-y-4">
-              <div className="relative bg-white dark:bg-[#180618] border border-slate-200/50 dark:border-slate-800/50 p-6 rounded-lg shadow-sm">
-                <p className="text-xs text-slate-500 dark:text-slate-400 leading-relaxed italic pr-4 text-left">
-                  "Consulting WP really helped us achieve our financial goals. The slick presentation along with fantastic readability ensures that our financial standing is stable."
-                </p>
-                <div className="absolute right-4 bottom-3 text-amber-600/10 dark:text-amber-500/5 font-serif text-6xl select-none leading-none pointer-events-none">
-                  “
-                </div>
-              </div>
-              <div className="flex items-center gap-3.5 px-1">
-                <div className="w-10 h-10 rounded-full overflow-hidden bg-slate-200 border border-slate-300/50">
-                  <img
-                    src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=120&h=120&q=80"
-                    alt="Amanda Seyfried"
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                <div className="text-left">
-                  <h5 className="text-xs font-bold text-slate-900 dark:text-white">Amanda Seyfried</h5>
-                  <p className="text-[10px] text-slate-400 dark:text-slate-500 font-semibold uppercase tracking-wider">
-                    Sales & Marketing, Allen Ltd.
-                  </p>
-                </div>
-              </div>
-            </div>
+
 
           </div>
 
         </div>
       </div>
+      <BookConsultationModal isOpen={isConsultationOpen} onClose={() => setIsConsultationOpen(false)} />
     </div>
   );
 }

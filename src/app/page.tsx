@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import Link from "next/link";
 import { useApp } from "@/context/AppContext";
 import { motion, AnimatePresence } from "framer-motion";
@@ -37,11 +37,39 @@ export default function HomePage() {
   const { t, theme } = useApp();
   const [activeStep, setActiveStep] = useState(0);
   const [isConsultationOpen, setIsConsultationOpen] = useState(false);
+  const [activeReview, setActiveReview] = useState(0);
+
+  const testimonials = [
+    { name: "Dr. Vibha Narayan", text: "Good service and fast work they have done. Best suitable for the client. Very transparent way of working" },
+    { name: "Mr. Alok", text: "Great tax planning for salaried people. Recommended :) Timely & Professional" },
+    { name: "Dr. Vikas", text: "Efficient, Effective & Quick Services & Cost Effective. They understand your requirements well. Very reliable & trustworthy." },
+    { name: "Mr. Amit", text: "One stop shop for your Tax queries, excellent advisory provided by experts. Real and professional approach." },
+    { name: "Miss. Heena", text: "The services provided by them was Helpful and timely services!" },
+    { name: "Mr. Ashwin", text: "The service from Consultavenuee has been faultless. They give us the reassurance to know we are complying with the rules and regulations, the team is brilliant at getting back to us and sorting it out." },
+    { name: "Mr. Ajeet", text: "I only spoke over the phone, but there warm personality put me at ease. They explained how things worked and what I needed to do to get things started. Their customer service and kindness blew me away. Should my tax situation ever become more complicated, Consultavenuee will be my first call." },
+    { name: "Dr. Diya", text: "It's been a pleasure to work with Consultavenuee and the rest of the team at Complete Tax Solutions. They are always friendly, respond quickly, and explain complex tax matters clearly. Their year-round service is really great as well." },
+    { name: "Mr. Vijay", text: "We have worked with Consultavenuee on a number of projects. At all times they are professional, organised and totally unflappable" },
+    { name: "Mr. Kishore", text: "As a business Consultavenuee has been the perfect find for all of our accounting needs and business advice and support. No matter what the question, they always has the answers. They are always happy to help and understands that by investing time in start-up companies" },
+    { name: "Ms. Nitika", text: "Consultavenuee is highly professional, efficient and thorough in their work. We highly recommend working with them, as we are very happy with our results, with an improved understanding of trademarks and IP issues. The best part of the services is the excellent 'people skills', timeliness and comprehensiveness of responses, the willingness to provide time and information to educate your clients. Regards." },
+    { name: "Mr. Nilesh", text: "The service from Consultavenuee has been excellent and is faultless. They give us the reassurance to know we are complying with the rules and regulations and if we have any queries, the team is brilliant at getting back to us and sorting it out. Consultavenuee has taken all the hard work out of auto enrolment." },
+    { name: "Mr. Sourabh", text: "Consultavenuee service deals with all statutory requirements or a Right to Manage (RTM) Company. I would recommend using Consultavenuee for a reliable and cost effective source of independent advice." },
+    { name: "Dr. Chander", text: "Consultavenuee has been a revelation to our business. It has given us far more control of our financial information and for non-accountants; it is extremely easy to use. I would recommend consultavenuee to anyone looking to improve their business." },
+    { name: "Mr. Saughato Ray", text: "Consultavenuee exceeded our expectations. Their specialist team provided valuable support throughout the process of buying another business, advising on matters arising from their due diligence work and technical advice on the tax aspects." },
+    { name: "Mr. Ganesh Bhandure", text: "Consultavenuee looked in detail at my accounting needs and helped me choose the solution that is best for me. I am very pleased with the input I received from Consultavenuee and would recommend this service." },
+    { name: "Mr. Ketul Shah", text: "I should like to thank Consultavenuee for their recent diligent work and for honoring the quoted fee. I am also amazed at the tax strategy you have implemented." }
+  ];
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setActiveReview((prev) => (prev + 1) % testimonials.length);
+    }, 5000);
+    return () => clearInterval(timer);
+  }, [testimonials.length]);
 
   const journeySteps = [
-    { num: "01", title: "ASSESSMENT", image: "/we serve/assessment.png", icon: FileCheck, detailTitle: "Assessment", desc: "We evaluate your current compliance position, operational requirements, and potential risk areas to identify challenges, opportunities, and the most effective path forward." },
-    { num: "02", title: "ADVISORY", image: "/we serve/advise.png", icon: Calculator, detailTitle: "Advisory", desc: "We provide clear, practical, and result-oriented guidance tailored to your unique requirements. Our experts help you make informed decisions." },
-    { num: "03", title: "EXECUTION", image: "/we serve/execution.png", icon: Building, detailTitle: "Execution", desc: "Ideas create possibilities. Execution creates results. We implement every solution with precision, speed, and accountability." },
+    { num: "01", title: "ASSESSMENT", icon: FileCheck, detailTitle: "Assessment", desc: "We evaluate your current compliance position, operational requirements, and potential risk areas to identify challenges, opportunities, and the most effective path forward." },
+    { num: "02", title: "ADVISORY", icon: Calculator, detailTitle: "Advisory", desc: "We provide clear, practical, and result-oriented guidance tailored to your unique requirements. Our experts help you make informed decisions." },
+    { num: "03", title: "EXECUTION", icon: Building, detailTitle: "Execution", desc: "Ideas create possibilities. Execution creates results. We implement every solution with precision, speed, and accountability." },
     { num: "04", title: "COMPLIANCE", icon: ShieldAlert, detailTitle: "Compliance", desc: "Compliance is not a one-time activity. We provide continuous oversight and expert support to keep you ahead of regulatory requirements and potential risks." }
   ];
 
@@ -251,7 +279,7 @@ export default function HomePage() {
         <section className="py-20 bg-white dark:bg-[#180618] border-b border-slate-100 dark:border-slate-800/30">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
-              <h2 className="text-3xl uppercase sm:text-4xl font-extrabold text-[#210821] dark:text-white tracking-tight lowercase">
+              <h2 className="text-3xl uppercase sm:text-4xl font-extrabold text-[#c79d62] tracking-tight lowercase">
                 WE SERVED TO
               </h2>
               <div className="w-10 h-[3px] bg-[#c79d62] mx-auto mt-2 rounded" />
@@ -284,11 +312,11 @@ export default function HomePage() {
                         )}
                       </div>
                       <div className="flex-grow pt-1">
-                        <h3 className="text-base font-bold text-slate-900 dark:text-white tracking-tight leading-snug">
+                        <h3 className="text-base font-bold text-[#c79d62] tracking-tight leading-snug">
                           {item.title}
                         </h3>
                         <div className="w-10 h-[2px] bg-[#c79d62] mt-1 mb-2.5" />
-                        <p className="text-sm text-slate-600 dark:text-slate-350 leading-relaxed font-normal">
+                        <p className="text-sm text-white leading-relaxed font-normal">
                           {item.desc}
                         </p>
                       </div>
@@ -539,7 +567,7 @@ export default function HomePage() {
               <h2 className="text-3xl sm:text-4xl font-extrabold text-[#210821] dark:text-white mt-4 mb-4">
                 Our Advisory Journey
               </h2>
-              <p className="text-slate-500 dark:text-slate-400 max-w-xl mx-auto text-sm leading-relaxed font-normal">
+              <p className="text-white max-w-xl mx-auto text-sm leading-relaxed font-normal">
                 Our proven 4-step process helps businesses, housing societies, NRIs, and individuals navigate compliance requirements and achieve their goals with confidence.
               </p>
             </div>
@@ -580,22 +608,14 @@ export default function HomePage() {
                           : "bg-white dark:bg-[#1a0b1a] border-2 border-[#c79d62]/50 hover:border-[#c79d62] text-[#c79d62]"
                           }`}
                       >
-                        {step.image ? (
-                          <img
-                            src={step.image}
-                            alt={step.title}
-                            className="w-7 h-7 object-contain"
-                          />
-                        ) : (
-                          <Icon className={`h-6 w-6 transition-colors duration-300 ${isActive
-                            ? "text-white"
-                            : "text-[#c79d62]"
-                            }`} />
-                        )}
+                        <Icon className={`h-6 w-6 transition-colors duration-300 ${isActive
+                          ? "text-white"
+                          : "text-[#c79d62]"
+                          }`} />
                       </motion.div>
-                      <span className={`text-[10px] font-black tracking-wider transition-colors duration-300 ${isActive ? "text-[#c79d62]" : "text-slate-400 dark:text-slate-500"
+                      <span className={`text-[10px] font-black tracking-wider transition-colors duration-300 ${isActive ? "text-[#c79d62]" : "text-white/70"
                         }`}>{step.num}</span>
-                      <h3 className={`font-extrabold text-[10px] sm:text-[11px] tracking-widest uppercase transition-colors duration-300 mt-1 ${isActive ? "text-[#210821] dark:text-[#c79d62]" : "text-slate-400 dark:text-slate-500 group-hover:text-slate-650 dark:group-hover:text-slate-350"
+                      <h3 className={`font-extrabold text-[10px] sm:text-[11px] tracking-widest uppercase transition-colors duration-300 mt-1 ${isActive ? "text-[#c79d62]" : "text-white/70 group-hover:text-white"
                         }`}>{step.title}</h3>
                     </button>
                   );
@@ -618,7 +638,7 @@ export default function HomePage() {
                   <h3 className="font-extrabold text-xl text-[#210821] dark:text-white mb-3 tracking-tight">
                     0{activeStep + 1}. {journeySteps[activeStep].detailTitle}
                   </h3>
-                  <p className="text-sm text-slate-600 dark:text-slate-300 leading-relaxed font-normal">
+                  <p className="text-sm text-white leading-relaxed font-normal">
                     {journeySteps[activeStep].desc}
                   </p>
                 </motion.div>
@@ -626,6 +646,61 @@ export default function HomePage() {
             </div>
           </div>
         </section >
+
+        {/* CLIENT TESTIMONIALS SECTION */}
+        <section className="py-24 bg-slate-100 dark:bg-zinc-900/10 border-t border-b border-slate-200/50 dark:border-slate-800/50 text-center relative overflow-hidden">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="mb-12">
+              <span className="text-xs font-bold bg-[#c79d62]/10 text-[#c79d62] px-3.5 py-1.5 rounded-full border border-[#c79d62]/20 uppercase tracking-widest">
+                Testimonials
+              </span>
+              <h2 className="text-3xl sm:text-4xl font-extrabold text-[#210821] dark:text-white mt-4 mb-4">
+                What Our Clients Say
+              </h2>
+            </div>
+
+            <div className="relative min-h-[220px]">
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={activeReview}
+                  initial={{ opacity: 0, y: 15 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -15 }}
+                  transition={{ duration: 0.35, ease: "easeOut" }}
+                  className="relative max-w-2xl mx-auto p-10 rounded-[28px] bg-slate-200 dark:bg-[#2c2c30] border border-slate-300/50 dark:border-slate-800/80 shadow-2xl overflow-hidden min-h-[220px] flex flex-col justify-center text-center"
+                >
+                  <div className="absolute top-4 left-6 text-[#c79d62]/10 font-serif text-8xl select-none pointer-events-none">
+                    “
+                  </div>
+                  <p 
+                    className="text-sm sm:text-base text-white font-medium italic leading-relaxed mb-6 z-10"
+                    style={{ textShadow: "0px 1px 3px rgba(0, 0, 0, 0.9), 0px 2px 5px rgba(0, 0, 0, 0.7)" }}
+                  >
+                    "{testimonials[activeReview].text.trim()}"
+                  </p>
+                  <h4 
+                    className="text-xs font-black uppercase tracking-wider text-[#c79d62] z-10"
+                    style={{ textShadow: "0px 1px 2px rgba(0, 0, 0, 0.8)" }}
+                  >
+                    {testimonials[activeReview].name}
+                  </h4>
+                </motion.div>
+              </AnimatePresence>
+            </div>
+
+            {/* Pagination Dots */}
+            <div className="flex justify-center flex-wrap gap-2 mt-8 max-w-xl mx-auto">
+              {testimonials.map((_, idx) => (
+                <button
+                  key={idx}
+                  onClick={() => setActiveReview(idx)}
+                  className={`w-2 h-2 rounded-full transition-all duration-300 cursor-pointer ${activeReview === idx ? "bg-[#c79d62] w-5" : "bg-[#c79d62]/35 hover:bg-[#c79d62]/60"}`}
+                  aria-label={`Go to testimonial ${idx + 1}`}
+                />
+              ))}
+            </div>
+          </div>
+        </section>
 
 
 

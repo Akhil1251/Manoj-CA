@@ -29,14 +29,10 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
       setIsIntroLoading(false);
     }
 
-    // Check saved theme
-    const savedTheme = localStorage.getItem("ca_theme") as "light" | "dark" | null;
-    if (savedTheme) {
-      setTheme(savedTheme);
-      document.documentElement.classList.toggle("dark", savedTheme === "dark");
-    } else {
-      document.documentElement.classList.add("dark");
-    }
+    // Force dark theme
+    setTheme("dark");
+    document.documentElement.classList.add("dark");
+    localStorage.setItem("ca_theme", "dark");
 
     // Check saved lang
     const savedLang = localStorage.getItem("ca_lang") as Language | null;
@@ -65,14 +61,32 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
     triggerTransition(() => {
       setLanguageState(lang);
       localStorage.setItem("ca_lang", lang);
+
+      // Apply Google Translate cookie trans
+      const transValue = `/en/${lang}`;
+      document.cookie = `googtrans=${transValue}; path=/;`;
+      document.cookie = `googtrans=${transValue}; path=/; domain=${window.location.hostname};`;
+
+      if (lang === 'en') {
+        // Clear cookie to ensure English is restored properly
+        document.cookie = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+        document.cookie = `googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=${window.location.hostname};`;
+      }
+
+      // Trigger programmatic dynamic translation update if select element is present
+      const selectEl = document.querySelector('.goog-te-combo') as HTMLSelectElement;
+      if (selectEl) {
+        selectEl.value = lang;
+        selectEl.dispatchEvent(new Event('change'));
+      } else {
+        // Fallback: reload the page to let script process the cookie on start
+        window.location.reload();
+      }
     });
   };
 
   const toggleTheme = () => {
-    const nextTheme = theme === "dark" ? "light" : "dark";
-    setTheme(nextTheme);
-    localStorage.setItem("ca_theme", nextTheme);
-    document.documentElement.classList.toggle("dark", nextTheme === "dark");
+    // Theme is locked to dark mode
   };
 
   const t = translations[language];

@@ -3,8 +3,9 @@
 import React, { useState, useEffect, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 import { useApp } from "@/context/AppContext";
-import { Mail, Phone, MapPin, Calendar, Clock, Landmark, CheckCircle } from "lucide-react";
+import { Mail, Phone, MapPin, Calendar, Clock, Landmark, CheckCircle, ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 function ContactPageContent() {
   const { t } = useApp();
@@ -13,12 +14,38 @@ function ContactPageContent() {
     name: "",
     email: "",
     phone: "",
-    company: "",
-    turnover: "under_20l",
+    location: "",
     query: ""
   });
-  const [submitted, setSubmitted] = useState(false);
   const [activeOffice, setActiveOffice] = useState("mumbai");
+
+  const services = [
+    {
+      title: "Housing Society Advisory",
+      desc: "Society Compliance & Governance…",
+      href: "/services#society-management",
+    },
+    {
+      title: "Business Formation, Registration & Compliance",
+      desc: "Build. Comply. Grow…",
+      href: "/services#compliance-business-advisory",
+    },
+    {
+      title: "Tax & Litigation Services",
+      desc: "Taxation & Litigation Experts…",
+      href: "/services#taxation-regulatory-litigation",
+    },
+    {
+      title: "NRI Services",
+      desc: "NRI Tax & Property Solutions…",
+      href: "/services#nri-services",
+    },
+    {
+      title: "Senior Citizen Advisory Services",
+      desc: "Senior Citizen Support Services…",
+      href: "/services#senior-citizen-advisory",
+    },
+  ];
 
   useEffect(() => {
     const officeParam = searchParams.get("office");
@@ -75,7 +102,8 @@ function ContactPageContent() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
+    const message = `*📋 Consultation Request*%0A%0A*Name:* ${formData.name}%0A*Email:* ${formData.email}%0A*Phone:* ${formData.phone}%0A*Location:* ${formData.location || ""}%0A*Query/Services:* ${formData.query}`;
+    window.open(`https://wa.me/919076111021?text=${message}`, "_blank");
   };
 
   const currentOffice = offices.find(o => o.id === activeOffice) || offices[0];
@@ -196,180 +224,136 @@ function ContactPageContent() {
         </p>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-stretch">
-        {/* Left Column: Form */}
-        <div className="lg:col-span-7 glass-premium p-6 sm:p-10 rounded-3xl border border-slate-200/50 dark:border-slate-800/50">
-          {!submitted ? (
-            <form onSubmit={handleSubmit} className="space-y-6">
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <div>
-                  <label className="block text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400 mb-2">
-                    Your Name
-                  </label>
-                  <input
-                    type="text"
-                    required
-                    value={formData.name}
-                    onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                    className="w-full h-11 px-3.5 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 text-sm focus:ring-1 focus:ring-amber-500 outline-none"
-                    placeholder="e.g. Ramesh Kumar"
-                  />
-                </div>
-                <div>
-                  <label className="block text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400 mb-2">
-                    Email Address
-                  </label>
-                  <input
-                    type="email"
-                    required
-                    value={formData.email}
-                    onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                    className="w-full h-11 px-3.5 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 text-sm focus:ring-1 focus:ring-amber-500 outline-none"
-                    placeholder="name@company.com"
-                  />
-                </div>
-              </div>
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 border border-slate-200 dark:border-slate-800 rounded-2xl overflow-hidden shadow-2xl bg-white dark:bg-[#0f0a1a]">
+        {/* LEFT SIDE: Form */}
+        <div className="p-6 sm:p-8 border-r border-slate-100 dark:border-slate-800">
+          <h3 className="text-lg font-extrabold text-slate-900 dark:text-white mb-1">
+            Schedule Your Consultation
+          </h3>
+          <p className="text-xs text-slate-500 dark:text-slate-400 mb-6">
+            Fill in your details and we'll get back to you shortly.
+          </p>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <div>
-                  <label className="block text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400 mb-2">
-                    Phone Number
-                  </label>
-                  <input
-                    type="tel"
-                    required
-                    value={formData.phone}
-                    onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                    className="w-full h-11 px-3.5 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 text-sm focus:ring-1 focus:ring-amber-500 outline-none"
-                    placeholder="+91 90761 XXXXX"
-                  />
-                </div>
-                <div>
-                  <label className="block text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400 mb-2">
-                    Company / Entity
-                  </label>
-                  <input
-                    type="text"
-                    value={formData.company}
-                    onChange={(e) => setFormData({ ...formData, company: e.target.value })}
-                    className="w-full h-11 px-3.5 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 text-sm focus:ring-1 focus:ring-amber-500 outline-none"
-                    placeholder="e.g. FinTech Pvt Ltd"
-                  />
-                </div>
-              </div>
-
+          <form onSubmit={handleSubmit} className="space-y-4">
+            {/* Row 1: Name & Email */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
-                <label className="block text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400 mb-2">
-                  Annual Turnover Slabs
+                <label className="block text-[11px] font-bold text-slate-600 dark:text-slate-400 uppercase tracking-wider mb-1.5">
+                  Your Name
                 </label>
-                <select
-                  value={formData.turnover}
-                  onChange={(e) => setFormData({ ...formData, turnover: e.target.value })}
-                  className="w-full h-11 px-3.5 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 text-sm focus:ring-1 focus:ring-amber-500 outline-none"
-                >
-                  <option value="under_20l">Under ₹20 Lakhs (GST Exempt Limit)</option>
-                  <option value="20l_1cr">₹20 Lakhs - ₹1 Crore</option>
-                  <option value="1cr_5cr">₹1 Crore - ₹5 Crore (Tax Audit Threshold)</option>
-                  <option value="above_5cr">Above ₹5 Crore</option>
-                </select>
-              </div>
-
-              <div>
-                <label className="block text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400 mb-2">
-                  Explain your specific scenario / doubt
-                </label>
-                <textarea
+                <input
+                  type="text"
+                  name="name"
+                  value={formData.name}
+                  onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                   required
-                  rows={4}
-                  value={formData.query}
-                  onChange={(e) => setFormData({ ...formData, query: e.target.value })}
-                  className="w-full p-3.5 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 text-sm focus:ring-1 focus:ring-amber-500 outline-none resize-none"
-                  placeholder="Tell us what challenge you are facing (e.g. got income tax notice, vendor not uploading GST invoice...)"
+                  placeholder="Full Name"
+                  className="w-full px-4 py-3 rounded-lg bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-sm text-slate-900 dark:text-white placeholder:text-slate-400 focus:ring-2 focus:ring-amber-500 focus:border-transparent outline-none transition-all"
                 />
               </div>
-
-              <button
-                type="submit"
-                className="w-full h-12 bg-amber-600 hover:bg-amber-500 text-white rounded-xl font-bold shadow-lg shadow-amber-600/15 transition flex items-center justify-center gap-2"
-              >
-                <Calendar className="h-4.5 w-4.5" /> Book Consultation Slot
-              </button>
-            </form>
-          ) : (
-            <motion.div
-              initial={{ opacity: 0, scale: 0.95 }}
-              animate={{ opacity: 1, scale: 1 }}
-              className="text-center py-12 flex flex-col items-center justify-center h-full"
-            >
-              <div className="h-16 w-16 bg-emerald-500/10 text-emerald-500 rounded-full flex items-center justify-center mb-6 border border-emerald-500/20">
-                <CheckCircle className="h-8 w-8" />
+              <div>
+                <label className="block text-[11px] font-bold text-slate-600 dark:text-slate-400 uppercase tracking-wider mb-1.5">
+                  Email Address
+                </label>
+                <input
+                  type="email"
+                  name="email"
+                  value={formData.email}
+                  onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                  required
+                  placeholder="you@example.com"
+                  className="w-full px-4 py-3 rounded-lg bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-sm text-slate-900 dark:text-white placeholder:text-slate-400 focus:ring-2 focus:ring-amber-500 focus:border-transparent outline-none transition-all"
+                />
               </div>
-              <h2 className="text-2xl font-extrabold text-slate-900 dark:text-white mb-2">
-                Consultation Request Received!
-              </h2>
-              <p className="text-slate-500 dark:text-slate-400 text-sm max-w-sm mx-auto leading-relaxed mb-6">
-                Thanks, <strong>{formData.name}</strong>. An advisory expert has been assigned to review your query regarding <strong>{formData.company || "your business"}</strong>. We will call you within 4 business hours.
-              </p>
-              <button
-                onClick={() => setSubmitted(false)}
-                className="text-xs font-extrabold uppercase tracking-widest text-amber-600 dark:text-amber-400 hover:underline"
-              >
-                Submit another request
-              </button>
-            </motion.div>
-          )}
+            </div>
+
+            {/* Row 2: Phone & Location */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label className="block text-[11px] font-bold text-slate-600 dark:text-slate-400 uppercase tracking-wider mb-1.5">
+                  Phone Number
+                </label>
+                <input
+                  type="tel"
+                  name="phone"
+                  value={formData.phone}
+                  onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                  required
+                  placeholder="+91 XXXXX XXXXX"
+                  className="w-full px-4 py-3 rounded-lg bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-sm text-slate-900 dark:text-white placeholder:text-slate-400 focus:ring-2 focus:ring-amber-500 focus:border-transparent outline-none transition-all"
+                />
+              </div>
+              <div>
+                <label className="block text-[11px] font-bold text-slate-600 dark:text-slate-400 uppercase tracking-wider mb-1.5">
+                  Location
+                </label>
+                <input
+                  type="text"
+                  name="location"
+                  value={formData.location}
+                  onChange={(e) => setFormData({ ...formData, location: e.target.value })}
+                  placeholder="City, State"
+                  className="w-full px-4 py-3 rounded-lg bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-sm text-slate-900 dark:text-white placeholder:text-slate-400 focus:ring-2 focus:ring-amber-500 focus:border-transparent outline-none transition-all"
+                />
+              </div>
+            </div>
+
+            {/* Row 3: Query */}
+            <div>
+              <label className="block text-[11px] font-bold text-slate-600 dark:text-slate-400 uppercase tracking-wider mb-1.5">
+                Your Query / Services
+              </label>
+              <textarea
+                name="query"
+                value={formData.query}
+                onChange={(e) => setFormData({ ...formData, query: e.target.value })}
+                rows={4}
+                placeholder="Tell us about your requirements…"
+                className="w-full px-4 py-3 rounded-lg bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-sm text-slate-900 dark:text-white placeholder:text-slate-400 focus:ring-2 focus:ring-amber-500 focus:border-transparent outline-none transition-all resize-none"
+              />
+            </div>
+
+            {/* Submit */}
+            <button
+              type="submit"
+              className="w-full py-3.5 rounded-lg bg-gradient-to-r from-amber-600 to-amber-500 hover:from-amber-500 hover:to-amber-400 text-white font-extrabold text-sm uppercase tracking-widest shadow-lg shadow-amber-500/20 transition-all hover:scale-[1.01] active:scale-[0.99] cursor-pointer"
+            >
+              Book Consultation Slot
+            </button>
+          </form>
         </div>
 
-        {/* Right Column: Address Details */}
-        <div className="lg:col-span-5 flex flex-col gap-6 justify-between">
-          {/* Coordinates */}
-          <div className="glass p-6 rounded-3xl border border-slate-200/50 dark:border-slate-800/50 space-y-6">
-            <h3 className="text-lg font-bold text-zinc-900 dark:text-white">
-              Corporate Office Coordinates
-            </h3>
-            <div className="flex gap-4 items-start text-xs sm:text-sm text-zinc-600 dark:text-zinc-400">
-              <MapPin className="h-5 w-5 text-amber-500 shrink-0" />
-              <div>
-                <strong className="block text-zinc-800 dark:text-zinc-300 font-bold mb-1">
-                  {currentOffice.name}
-                </strong>
-                {currentOffice.address}
-              </div>
-            </div>
-            <div className="flex gap-4 items-start text-xs sm:text-sm text-zinc-600 dark:text-zinc-400">
-              <Mail className="h-5 w-5 text-amber-500 shrink-0" />
-              <div>
-                <strong className="block text-zinc-800 dark:text-zinc-300 font-bold mb-1">
-                  Client Support & Inquiries
-                </strong>
-                <a href={`mailto:${currentOffice.email}`} className="hover:text-amber-500 transition-colors">{currentOffice.email}</a>
-              </div>
-            </div>
-            <div className="flex gap-4 items-start text-xs sm:text-sm text-zinc-600 dark:text-zinc-400">
-              <Phone className="h-5 w-5 text-amber-500 shrink-0" />
-              <div>
-                <strong className="block text-zinc-800 dark:text-zinc-300 font-bold mb-1">
-                  Direct Line
-                </strong>
-                <span className="text-zinc-600 dark:text-zinc-400">{currentOffice.phone}</span>
-              </div>
-            </div>
-          </div>
+        {/* RIGHT SIDE: Services */}
+        <div className="p-6 sm:p-8 bg-slate-50/50 dark:bg-[#120a1e]">
+          <h3 className="text-lg font-extrabold text-slate-900 dark:text-white mb-1">
+            Our Services
+          </h3>
+          <p className="text-xs text-slate-500 dark:text-slate-400 mb-6">
+            Explore our expertise areas
+          </p>
 
-          {/* Operating hours */}
-          <div className="glass p-6 rounded-3xl border border-slate-200/50 dark:border-slate-800/50 flex gap-4 items-start">
-            <Clock className="h-5 w-5 text-amber-500 shrink-0" />
-            <div className="text-xs sm:text-sm text-zinc-600 dark:text-zinc-400">
-              <strong className="block text-zinc-800 dark:text-zinc-300 font-bold mb-1">
-                Consultation Hours
-              </strong>
-              Monday - Saturday: 09:30 AM - 06:30 PM (IST)
-              <span className="block mt-1 font-semibold text-amber-500">
-                ⚠️ Extended hours active during filing season.
-              </span>
-            </div>
+          <div className="space-y-3">
+            {services.map((service, idx) => (
+              <Link
+                key={idx}
+                href={service.href}
+                className="group flex items-center justify-between p-4 rounded-xl bg-white dark:bg-[#1a1030] border border-slate-100 dark:border-slate-800 hover:border-amber-500/50 dark:hover:border-amber-500/30 shadow-sm hover:shadow-md transition-all duration-200"
+              >
+                <div className="flex-1 min-w-0">
+                  <h4 className="text-sm font-bold text-slate-900 dark:text-white group-hover:text-amber-600 dark:group-hover:text-amber-400 transition-colors leading-snug">
+                    {service.title}
+                  </h4>
+                  <p className="text-xs text-slate-500 dark:text-slate-400 mt-0.5 leading-snug">
+                    {service.desc}{" "}
+                    <span className="text-amber-600 dark:text-amber-400 font-bold">
+                      Learn more
+                    </span>
+                  </p>
+                </div>
+                <ArrowRight className="w-4 h-4 text-slate-400 group-hover:text-amber-500 transition-colors flex-shrink-0 ml-3 group-hover:translate-x-1 transform duration-200" />
+              </Link>
+            ))}
           </div>
-
         </div>
       </div>
     </div>

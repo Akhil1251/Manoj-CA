@@ -22,6 +22,7 @@ import {
   BarChart3,
   ListTodo
 } from "lucide-react";
+import BookConsultationModal from "@/components/BookConsultationModal";
 
 export default function ServiceDetailPage() {
   const params = useParams();
@@ -117,6 +118,28 @@ export default function ServiceDetailPage() {
   // Expanded directory nodes
   const [openCategory, setOpenCategory] = useState<string | null>(parentCategoryId);
   const [openSub, setOpenSub] = useState<string | null>(parentSubId);
+  const [isConsultationOpen, setIsConsultationOpen] = useState(false);
+
+  // Helper to find all sub-service slugs in order
+  const getSubServiceSlugs = () => {
+    const list: string[] = [];
+    servicesData.forEach((tab) => {
+      tab.subServices.forEach((sub) => {
+        if (sub.subSubServices && sub.subSubServices.length > 0 && sub.id !== "society-formation" && tab.id !== "compliance-business-advisory") {
+          sub.subSubServices.forEach((sss) => {
+            list.push(sss.slug);
+          });
+        } else {
+          list.push(sub.id);
+        }
+      });
+    });
+    return list;
+  };
+
+  const subServiceSlugs = getSubServiceSlugs();
+  const currentIndex = subServiceSlugs.indexOf(slug) !== -1 ? subServiceSlugs.indexOf(slug) : subServiceSlugs.indexOf(parentSubId);
+  const nextSlug = currentIndex !== -1 ? subServiceSlugs[(currentIndex + 1) % subServiceSlugs.length] : "";
 
   // Reset checklist state when service changes
   useEffect(() => {
@@ -543,6 +566,8 @@ export default function ServiceDetailPage() {
   };
 
   const renderTimelineRoadmap = () => {
+    return null; // Commented out per user request
+    /*
     if (!steps || steps.length === 0) return null;
     return (
     <motion.div
@@ -638,6 +663,7 @@ export default function ServiceDetailPage() {
       </div>
     </motion.div>
   );
+  */
   };
 
   const renderDocumentChecklist = () => {
@@ -1063,6 +1089,7 @@ export default function ServiceDetailPage() {
         return (
           <>
             {renderHeroHeader()}
+            {isSubSub && (subSubCustomContent[slug] || foundService!.longDesc) && renderSubSubContent(true)}
             {renderDetailedSections()}
             {isSubSub && (
               <>
@@ -1126,6 +1153,18 @@ export default function ServiceDetailPage() {
           >
             Home
           </Link>
+          {nextSlug && (
+            <>
+              <span className="text-slate-300 dark:text-slate-800">|</span>
+              <Link
+                href={`/services/${nextSlug}`}
+                className="text-xs font-bold text-amber-500 hover:text-amber-400 transition-colors flex items-center gap-1"
+              >
+                <span>Next</span>
+                <span className="text-[10px]">➔</span>
+              </Link>
+            </>
+          )}
         </div>
 
         {/* Content Layout Grid */}
@@ -1231,21 +1270,22 @@ export default function ServiceDetailPage() {
               <div className="absolute top-0 right-0 w-24 h-24 bg-white/5 rounded-full blur-xl pointer-events-none" />
               <h4 className="text-base font-bold lowercase tracking-tight mb-2">how can we help you?</h4>
               <p className="text-xs text-white/80 leading-relaxed mb-6">
-                Contact us at the Consulting WP office nearest to you or submit a business inquiry online.
+                Looking for expert assistance with housing society matters, GST, Income Tax, ROC compliance, NRI services, or housing society matters? Contact ConsultAvenuee today.
               </p>
-              <Link
-                href="/contact"
-                className="inline-flex items-center justify-center gap-2 px-5 py-2.5 bg-white text-[#110311] hover:bg-slate-100 text-[10px] font-bold uppercase tracking-wider rounded-sm transition-all shadow-sm w-full"
+              <button
+                onClick={() => setIsConsultationOpen(true)}
+                className="inline-flex items-center justify-center gap-2 px-5 py-2.5 bg-white text-[#110311] hover:bg-slate-100 text-[10px] font-bold uppercase tracking-wider rounded-sm transition-all shadow-sm w-full cursor-pointer"
               >
                 <PhoneCall className="w-3 h-3 text-[#c79d62]" />
-                Contacts
-              </Link>
+                Book Free Consultation
+              </button>
             </div>
 
           </div>
 
         </div>
       </div>
+      <BookConsultationModal isOpen={isConsultationOpen} onClose={() => setIsConsultationOpen(false)} />
     </div>
   );
 }
