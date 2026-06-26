@@ -206,7 +206,7 @@ export default function ProblemDetailPage() {
 
   return (
     <div className="py-16 max-w-5xl mx-auto px-4 sm:px-6">
-      <Link href="/" className="text-amber-500 hover:underline flex items-center gap-2 mb-8 text-xs font-bold uppercase tracking-wider">
+      <Link href="/" className="sticky top-[72px] md:top-[80px] z-40 bg-[#fcfcfc]/95 dark:bg-[#120412]/95 backdrop-blur-md border-b border-slate-200/50 dark:border-slate-800/50 shadow-sm py-4 -mx-4 px-4 sm:-mx-6 sm:px-6 text-amber-500 hover:text-amber-600 transition-colors flex items-center gap-2 mb-8 text-xs font-bold uppercase tracking-wider">
         <ArrowLeft className="h-4 w-4" /> Back to Home Scenarios
       </Link>
 

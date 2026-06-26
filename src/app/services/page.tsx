@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { servicesData } from "@/data/servicesData";
 import { motion, AnimatePresence } from "framer-motion";
 import {
@@ -16,6 +17,7 @@ import {
 import BookConsultationModal from "@/components/BookConsultationModal";
 
 export default function ServicesPage() {
+  const router = useRouter();
   const [activeTab, setActiveTab] = useState(() => {
     if (typeof window !== "undefined") {
       const hash = window.location.hash.replace('#', '');
@@ -65,19 +67,26 @@ export default function ServicesPage() {
     <div className="bg-[#fcfcfc] dark:bg-[#120412] min-h-screen text-slate-800 dark:text-slate-200 transition-colors duration-300 pt-8 pb-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-        {/* Back to Home Button */}
-        <div className="mb-6 flex justify-start">
-          <Link
-            href="/"
-            className="inline-flex items-center gap-2 text-xs font-bold text-slate-500 hover:text-[#c79d62] dark:text-slate-400 transition-colors group"
+        {/* Navigation Back Bar */}
+        <div className="mb-8 flex items-center gap-3">
+          <button
+            onClick={() => window.history.length > 1 ? router.back() : router.push('/')}
+            className="inline-flex items-center gap-2 text-xs font-bold text-slate-500 hover:text-[#c79d62] dark:text-slate-400 transition-colors group cursor-pointer focus:outline-none"
           >
             <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
-            <span>Back to Home</span>
+            <span>Go Back</span>
+          </button>
+          <span className="text-slate-300 dark:text-slate-800">|</span>
+          <Link
+            href="/"
+            className="text-xs font-bold text-slate-500 hover:text-[#c79d62] dark:text-slate-400 transition-colors"
+          >
+            Home
           </Link>
         </div>
 
         {/* Responsive Navigation Tab Bar */}
-        <div className="w-full bg-[#c79d62] rounded-md overflow-hidden flex flex-col md:flex-row h-auto md:h-16 mb-6 shadow-md">
+        <div className="w-full bg-[#c79d62] rounded-md overflow-hidden flex flex-col md:flex-row h-auto md:h-16 mb-6 shadow-md sticky top-[72px] md:top-[80px] z-30 border border-slate-200/20 dark:border-slate-800/20">
           {servicesData.map((tab) => {
             const isActive = activeTab === tab.id;
             return (

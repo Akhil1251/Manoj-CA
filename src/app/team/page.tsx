@@ -69,8 +69,9 @@ export default function TeamPage() {
           <div className="absolute bottom-0 left-0 w-64 h-64 bg-blue-500 rounded-full mix-blend-screen filter blur-[100px] opacity-10"></div>
 
           <div className="relative z-10 flex flex-col items-center text-center">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-[#c29b62] via-[#e8c88f] to-[#c29b62] mb-8 tracking-tight">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-[#c29b62] via-[#e8c88f] to-[#c29b62] mb-8 tracking-tight pb-2">
               Founder's Message
+
             </h2>
 
             <div className="max-w-4xl space-y-6 text-gray-200 text-base md:text-[17px] leading-relaxed font-light">

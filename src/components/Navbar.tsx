@@ -476,7 +476,7 @@ export const Navbar: React.FC = () => {
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: 15 }}
                   transition={{ duration: 0.3 }}
-                  className="absolute left-6 right-6 top-full bg-white dark:bg-[#120412] border border-slate-200/60 dark:border-slate-800/60 shadow-2xl rounded-b-md z-[1000] overflow-hidden text-left"
+                  className="absolute left-6 right-6 top-full bg-white dark:bg-[#120412] border border-t-0 border-[#c79d62] shadow-[0_10px_40px_-10px_rgba(199,157,98,0.2)] rounded-b-md z-[1000] overflow-hidden text-left"
                   onMouseEnter={() => setActiveDropdown(activeDropdown)}
                 >
                   {activeDropdown === "services" ? (
@@ -640,26 +640,7 @@ export const Navbar: React.FC = () => {
                     </div>
                   )}
 
-                  {/* Unified Theme Banner */}
-                  <div className="bg-[#c79d62] text-white py-3.5 px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
-                    <div className="flex items-center gap-3.5">
-                      <div className="w-9 h-9 bg-slate-900/20 rounded-md flex items-center justify-center border border-white/10 shrink-0">
-                        <Calculator className="w-5 h-5 text-white" />
-                      </div>
-                      <div className="text-left leading-tight">
-                        <span className="text-[12px] font-bold tracking-tight block">
-                          {config.banner.text}
-                        </span>
-                      </div>
-                    </div>
-                    <Link
-                      href={config.banner.btnHref}
-                      onClick={() => setActiveDropdown(null)}
-                      className="px-5 py-2 bg-[#210821] hover:bg-[#110311] text-white text-[10px] font-bold uppercase tracking-wider rounded-full shadow-sm transition-all"
-                    >
-                      {config.banner.btnText}
-                    </Link>
-                  </div>
+
                 </motion.div>
               );
             })()}

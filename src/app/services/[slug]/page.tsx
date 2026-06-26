@@ -1138,7 +1138,7 @@ export default function ServiceDetailPage() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* Navigation Back Bar */}
-        <div className="mb-8 flex items-center gap-3">
+        <div className="mb-8 flex items-center gap-3 sticky top-[72px] md:top-[80px] z-40 py-4 -mx-4 px-4 sm:-mx-6 sm:px-6 lg:-mx-8 lg:px-8 bg-[#fcfcfc]/95 dark:bg-[#120412]/95 backdrop-blur-md border-b border-slate-200/50 dark:border-slate-800/50 shadow-sm">
           <button
             onClick={() => router.back()}
             className="inline-flex items-center gap-2 text-xs font-bold text-slate-500 hover:text-[#c79d62] dark:text-slate-400 transition-colors group cursor-pointer focus:outline-none"
