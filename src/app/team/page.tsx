@@ -131,7 +131,7 @@ export default function TeamPage() {
 
                 {/* Content */}
                 <div className="flex-1 flex flex-col justify-center pt-1 md:pt-2">
-                  <h3 className="text-2xl md:text-3xl font-bold text-[#081125] dark:text-white mb-2">
+                  <h3 className="text-2xl md:text-3xl font-bold text-[#c79d62] dark:text-[#c79d62] mb-2">
                     {member.name}
                   </h3>
                   <div className="text-gray-500 dark:text-gray-400 mb-5 flex flex-col gap-1" style={{ fontSize: "14px" }}>

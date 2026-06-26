@@ -103,7 +103,7 @@ export default function ServicesPage() {
 
           {/* LEFT COLUMN - SUB SERVICES GRID */}
           <div className="lg:col-span-9 space-y-8 text-left">
-            <h2 className="text-2xl font-black text-[#210821] dark:text-white tracking-tight capitalize mb-6 border-b border-slate-100 dark:border-slate-800 pb-3">
+            <h2 className="text-2xl font-black text-[#c79d62] dark:text-[#c79d62] tracking-tight capitalize mb-6 border-b border-slate-100 dark:border-slate-800 pb-3">
               {currentTabData.title}
             </h2>
 
@@ -142,7 +142,7 @@ export default function ServicesPage() {
                                 {subService.badge}
                               </span>
                             )}
-                            <h3 className="font-extrabold text-lg text-[#210821] dark:text-white leading-tight group-hover:text-[#c79d62] transition-colors">
+                            <h3 className="font-extrabold text-lg text-[#c79d62] dark:text-[#c79d62] leading-tight group-hover:text-[#a67d46] transition-colors">
                               {subService.title}
                             </h3>
                           </div>
@@ -205,7 +205,7 @@ export default function ServicesPage() {
                                 </span>
                               )}
                               <Link href={`/services/${subService.subSubServices && subService.subSubServices.length > 0 ? subService.subSubServices[0].slug : subService.id}`}>
-                                <h3 className="font-extrabold text-lg text-[#210821] dark:text-white leading-tight hover:text-[#c79d62] transition-colors cursor-pointer">
+                                <h3 className="font-extrabold text-lg text-[#c79d62] dark:text-[#c79d62] leading-tight hover:text-[#a67d46] transition-colors cursor-pointer">
                                   {subService.title}
                                 </h3>
                               </Link>
@@ -227,7 +227,7 @@ export default function ServicesPage() {
                                     <li key={idx}>
                                       <Link
                                         href={`/services/${subSub.slug}`}
-                                        className="text-[11px] font-extrabold text-slate-700 dark:text-slate-300 hover:text-[#c79d62] transition-colors block leading-tight"
+                                        className="text-[11px] font-extrabold text-[#c79d62] dark:text-[#c79d62] hover:text-[#a67d46] transition-colors block leading-tight"
                                       >
                                         {subSub.title}
                                       </Link>

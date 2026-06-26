@@ -1,6 +1,7 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
+import BookConsultationModal from "./BookConsultationModal";
 import { AppProvider, useApp } from "@/context/AppContext";
 import { Navbar } from "./Navbar";
 import { Footer } from "./Footer";
@@ -8,10 +9,12 @@ import { IntroLoader } from "./IntroLoader";
 import { LanguageThemeLoader } from "./LanguageThemeLoader";
 
 import { usePathname } from "next/navigation";
-
+import Link from "next/link";
+import { CalendarCheck } from "lucide-react";
 const LayoutContent: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const { isIntroLoading, isTransitioning, finishIntro, language } = useApp();
   const pathname = usePathname();
+  const [isConsultationOpen, setIsConsultationOpen] = useState(false);
 
   React.useEffect(() => {
     // 1. Define global callback for Google Translate initialization
@@ -93,6 +96,19 @@ const LayoutContent: React.FC<{ children: React.ReactNode }> = ({ children }) =>
     return <IntroLoader onComplete={finishIntro} />;
   }
 
+const FloatingBookConsultation = () => (
+  <button
+    onClick={() => setIsConsultationOpen(true)}
+    className="fixed bottom-24 right-6 z-50 flex items-center justify-center w-14 h-14 bg-amber-600 text-white rounded-full shadow-lg hover:bg-amber-700 hover:scale-110 transition-all duration-300 group cursor-pointer"
+    aria-label="Book Consultation"
+  >
+    <CalendarCheck className="w-7 h-7" />
+    <span className="absolute right-full mr-4 bg-[#0a122a] text-white text-xs font-bold px-3 py-1.5 rounded-lg whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none shadow-xl border border-slate-800">
+      Book Consultation
+    </span>
+  </button>
+);
+
 const FloatingWhatsApp = () => (
   <a
     href="https://wa.me/919076111021"
@@ -115,8 +131,10 @@ const FloatingWhatsApp = () => (
         {children}
       </main>
       <Footer />
+      <FloatingBookConsultation />
       <FloatingWhatsApp />
       <LanguageThemeLoader isVisible={isTransitioning} />
+      <BookConsultationModal isOpen={isConsultationOpen} onClose={() => setIsConsultationOpen(false)} />
     </>
   );
 };

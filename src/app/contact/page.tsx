@@ -119,12 +119,14 @@ function ContactPageContent() {
             <button
               key={office.id}
               onClick={() => setActiveOffice(office.id)}
-              className={`flex-1 py-5 text-sm sm:text-base font-extrabold tracking-wide transition-colors ${activeOffice === office.id
+              className={`flex-1 py-4 sm:py-5 text-[13px] sm:text-base font-extrabold tracking-wide transition-colors leading-tight sm:leading-normal ${activeOffice === office.id
                 ? "bg-[#0a122a] text-amber-500"
                 : "bg-[#cca774] text-slate-900 hover:bg-[#ba955f]"
                 }`}
             >
-              {office.name}
+              <span className="block sm:inline">{office.name.split(' ')[0]}</span>
+              <span className="hidden sm:inline"> </span>
+              <span className="block sm:inline">{office.name.split(' ')[1]}</span>
             </button>
           ))}
         </div>

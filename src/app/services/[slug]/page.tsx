@@ -343,12 +343,12 @@ export default function ServiceDetailPage() {
       >
         {!hideTitle && (
           <div className="border-b border-slate-200 dark:border-slate-800/80 pb-3">
-            <h2 className="text-2xl sm:text-3.5xl font-black text-[#210821] dark:text-white tracking-tight max-w-none">
+            <h2 className="text-2xl sm:text-3.5xl font-black text-[#c79d62] dark:text-[#c79d62] tracking-tight max-w-none">
               {title}
             </h2>
           </div>
         )}
-        <p className="text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed font-semibold whitespace-pre-line text-justify">
+        <p className="text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed font-semibold whitespace-pre-line text-left">
           {content}
         </p>
       </motion.div>
@@ -373,7 +373,7 @@ export default function ServiceDetailPage() {
           </Link>
           {parentCategoryId === "society-management" ? (
             <>
-              <h1 className="text-xl sm:text-3.5xl font-black text-[#210821] dark:text-white tracking-tight leading-tight max-w-none">
+              <h1 className="text-xl sm:text-3.5xl font-black text-[#c79d62] dark:text-[#c79d62] tracking-tight leading-tight max-w-none">
                 Your Trusted Partner for Housing Society Management & Compliance
               </h1>
               <p className="text-sm sm:text-base text-slate-500 dark:text-slate-400 leading-relaxed font-medium max-w-none whitespace-pre-line text-center">
@@ -388,7 +388,7 @@ export default function ServiceDetailPage() {
                 </p>
               )}
               <div className="w-full flex flex-col space-y-4 text-left mt-8">
-                <h1 className="text-xl sm:text-3.5xl font-black text-[#210821] dark:text-white tracking-tight leading-tight max-w-none border-b border-slate-200 dark:border-slate-800/80 pb-3">
+                <h1 className="text-xl sm:text-3.5xl font-black text-[#c79d62] dark:text-[#c79d62] tracking-tight leading-tight max-w-none border-b border-slate-200 dark:border-slate-800/80 pb-3">
                   {heroTitle}
                 </h1>
                 <div className="w-full text-left">
@@ -400,7 +400,7 @@ export default function ServiceDetailPage() {
             </>
           ) : (
             <div className="w-full flex flex-col space-y-4 text-left">
-              <h1 className="text-xl sm:text-3.5xl font-black text-[#210821] dark:text-white tracking-tight leading-tight max-w-none border-b border-slate-200 dark:border-slate-800/80 pb-3">
+              <h1 className="text-xl sm:text-3.5xl font-black text-[#c79d62] dark:text-[#c79d62] tracking-tight leading-tight max-w-none border-b border-slate-200 dark:border-slate-800/80 pb-3">
                 {heroTitle}
               </h1>
               <div className="w-full text-left">
@@ -748,7 +748,7 @@ export default function ServiceDetailPage() {
       <div className="space-y-16">
         {foundService!.sections && foundService!.sections.length > 0 && (
           <div className="border-b border-slate-200 dark:border-slate-800/80 pb-3 text-left">
-            <h3 className="text-xl sm:text-2.5xl font-black text-[#210821] dark:text-white tracking-tight">
+            <h3 className="text-xl sm:text-2.5xl font-black text-[#c79d62] dark:text-[#c79d62] tracking-tight">
               Our Services Includes
             </h3>
           </div>
@@ -759,11 +759,11 @@ export default function ServiceDetailPage() {
               <div key={groupIdx} id={subSub.slug} className="space-y-8 scroll-mt-24">
                 {/* Heading for this sub-service group */}
                 <div className="border-b border-slate-200 dark:border-slate-800/80 pb-3 text-left">
-                  <h3 className="text-xl sm:text-2.5xl font-black text-[#210821] dark:text-white tracking-tight">
+                  <h3 className="text-xl sm:text-2.5xl font-black text-[#c79d62] dark:text-[#c79d62] tracking-tight">
                     {subSub.title}
                   </h3>
                   {subSub.shortDesc && (
-                    <p className="text-sm text-slate-500 dark:text-slate-400 font-semibold mt-1">
+                    <p className="text-sm text-[#c79d62] dark:text-[#c79d62] font-semibold mt-1">
                       {subSub.shortDesc}
                     </p>
                   )}
@@ -821,7 +821,7 @@ export default function ServiceDetailPage() {
                 <React.Fragment key={idx}>
                   {section.groupHeader && (
                     <div className="pt-6 pb-2 -ml-8 sm:-ml-12 scroll-mt-24" id={section.groupHeader.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '')}>
-                      <h3 className="text-lg sm:text-xl font-black text-[#210821] dark:text-white border-l-4 border-[#c79d62] pl-3">
+                      <h3 className="text-lg sm:text-xl font-black text-[#c79d62] dark:text-[#c79d62] border-l-4 border-[#c79d62] pl-3">
                         {section.groupHeader}
                       </h3>
                     </div>
@@ -953,7 +953,7 @@ export default function ServiceDetailPage() {
         className="bg-white dark:bg-[#180618] border border-slate-100 dark:border-slate-800 p-8 rounded-3xl shadow-sm space-y-6 text-left"
       >
         <div className="border-b border-slate-100 dark:border-slate-800/80 pb-5">
-          <h3 className="text-lg font-black text-[#210821] dark:text-white tracking-tight flex items-center gap-2">
+          <h3 className="text-lg font-black text-[#c79d62] dark:text-[#c79d62] tracking-tight flex items-center gap-2">
             Frequently Asked Questions
           </h3>
         </div>
@@ -988,7 +988,7 @@ export default function ServiceDetailPage() {
               >
                 <button
                   onClick={() => setActiveFaq(isOpen ? null : idx)}
-                  className="w-full text-left p-5 flex items-center justify-between gap-4 font-bold text-sm text-[#210821] dark:text-white hover:bg-slate-100/50 dark:hover:bg-slate-900/20 transition-colors cursor-pointer"
+                  className="w-full text-left p-5 flex items-center justify-between gap-4 font-bold text-sm text-[#c79d62] dark:text-[#c79d62] hover:bg-slate-100/50 dark:hover:bg-slate-900/20 transition-colors cursor-pointer"
                 >
                   <span className="flex items-center gap-2">
                     <span className="text-[#c79d62] font-black shrink-0">{idx + 1}.</span>
@@ -1052,7 +1052,7 @@ export default function ServiceDetailPage() {
             {renderHeroHeader()}
             {isGroupedLayout ? renderSubSubContent() : (
               <div className="max-w-4xl mx-auto px-4 sm:px-6 mt-12 mb-12 flex flex-col space-y-4 text-left">
-                <h2 className="text-2xl sm:text-3.5xl font-black text-[#210821] dark:text-white tracking-tight leading-tight mb-2">
+                <h2 className="text-2xl sm:text-3.5xl font-black text-[#c79d62] dark:text-[#c79d62] tracking-tight leading-tight mb-2">
                   {foundService!.title}
                 </h2>
                 {foundService!.longDesc && (

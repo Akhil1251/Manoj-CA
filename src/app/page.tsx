@@ -280,7 +280,7 @@ export default function HomePage() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
               <h2 className="text-3xl uppercase sm:text-4xl font-extrabold text-[#c79d62] tracking-tight lowercase">
-                WE SERVED TO
+                WE SERVE TO
               </h2>
               <div className="w-10 h-[3px] bg-[#c79d62] mx-auto mt-2 rounded" />
             </div>
@@ -294,7 +294,7 @@ export default function HomePage() {
                   "SENIOR CITIZEN": "/we serve/senior.png",
                   "Charitable Trust": "/we serve/ngo.png",
                 };
-                
+
                 return industriesList.map((item, idx) => {
                   const IconComponent = item.icon;
                   const imgSrc = weServeIconMap[item.title];
@@ -302,10 +302,19 @@ export default function HomePage() {
                     <div key={idx} className="flex items-start gap-4 group">
                       <div className="flex-shrink-0 w-14 h-14 flex items-center justify-center transition-all duration-300 group-hover:scale-105">
                         {imgSrc ? (
-                          <img
-                            src={imgSrc}
-                            alt={item.title}
-                            className="w-12 h-12 object-contain"
+                          <div
+                            className="w-11 h-11 bg-[#c79d62]"
+                            style={{
+                              WebkitMaskImage: `url('${imgSrc}')`,
+                              maskImage: `url('${imgSrc}')`,
+                              WebkitMaskSize: "contain",
+                              maskSize: "contain",
+                              WebkitMaskRepeat: "no-repeat",
+                              maskRepeat: "no-repeat",
+                              WebkitMaskPosition: "center",
+                              maskPosition: "center",
+                            }}
+                            title={item.title}
                           />
                         ) : (
                           <IconComponent className="w-10 h-10 text-[#c79d62] dark:text-[#c79d62]" />
@@ -389,9 +398,8 @@ export default function HomePage() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.5, delay: idx * 0.05 }}
-                    className={`p-8 md:p-10 border border-[#c79d62] bg-black/20 hover:bg-black/50 transition-all duration-300 relative flex flex-col text-left items-start justify-start min-h-[340px] group ${
-                      idx < 3 ? "lg:col-span-2" : "lg:col-span-3"
-                    }`}
+                    className={`p-8 md:p-10 border border-[#c79d62] bg-black/20 hover:bg-black/50 transition-all duration-300 relative flex flex-col text-left items-start justify-start min-h-[340px] group ${idx < 3 ? "lg:col-span-2" : "lg:col-span-3"
+                      }`}
                   >
                     <div className="absolute top-5 left-5 right-5 md:top-8 md:left-8 md:right-8 flex items-center justify-between gap-3">
                       <span className="text-xs sm:text-sm font-extrabold text-[#c79d62] uppercase tracking-widest leading-tight text-left pr-4">
@@ -672,13 +680,13 @@ export default function HomePage() {
                   <div className="absolute top-4 left-6 text-[#c79d62]/10 font-serif text-8xl select-none pointer-events-none">
                     “
                   </div>
-                  <p 
+                  <p
                     className="text-sm sm:text-base text-white font-medium italic leading-relaxed mb-6 z-10"
                     style={{ textShadow: "0px 1px 3px rgba(0, 0, 0, 0.9), 0px 2px 5px rgba(0, 0, 0, 0.7)" }}
                   >
                     "{testimonials[activeReview].text.trim()}"
                   </p>
-                  <h4 
+                  <h4
                     className="text-xs font-black uppercase tracking-wider text-[#c79d62] z-10"
                     style={{ textShadow: "0px 1px 2px rgba(0, 0, 0, 0.8)" }}
                   >
@@ -724,7 +732,7 @@ export default function HomePage() {
                 href="/contact"
                 className="inline-flex h-14 items-center justify-center px-10 rounded-full bg-[#c79d62] hover:bg-[#a67d46] hover:scale-105 text-white font-extrabold shadow-[0_0_30px_rgba(199,157,98,0.2)] transition-all tracking-wide relative z-10"
               >
-                Schedule a Free Call
+                Book Free Consultation
               </Link>
             </div>
           </div>

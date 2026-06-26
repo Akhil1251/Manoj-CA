@@ -514,7 +514,7 @@ export const Navbar: React.FC = () => {
                           {columns.map((col, idx) => (
                             <div key={idx} className="space-y-5">
                               <a href={`/services#${col.id}`} onClick={() => setActiveDropdown(null)}>
-                                <h4 className="text-sm font-black uppercase tracking-widest text-[#210821] dark:text-[#c79d62] border-b-2 border-[#c79d62]/30 dark:border-slate-800/50 pb-2.5 hover:text-[#c79d62]/80 transition-colors cursor-pointer">
+                                <h4 className="text-sm font-black uppercase tracking-widest text-[#c79d62] border-b-2 border-[#c79d62]/30 dark:border-slate-800/50 pb-2.5 hover:text-[#a67d46] transition-colors cursor-pointer">
                                   {col.title}
                                 </h4>
                               </a>
@@ -524,7 +524,7 @@ export const Navbar: React.FC = () => {
                                     <Link
                                       href={`/services/${sub.id}`}
                                       onClick={() => setActiveDropdown(null)}
-                                      className="text-[11px] font-extrabold tracking-wide text-slate-800 dark:text-white/90 leading-snug cursor-pointer hover:text-[#c79d62] transition-colors capitalize flex items-center justify-between py-1 w-full"
+                                      className="text-[11px] font-extrabold tracking-wide text-[#c79d62] leading-snug cursor-pointer hover:text-[#a67d46] transition-colors capitalize flex items-center justify-between py-1 w-full"
                                     >
                                       <span>{sub.title}</span>
                                       {sub.subSubServices && sub.subSubServices.length > 0 && col.id !== "society-management" && sub.title !== "GST" && <ChevronRight className="w-3.5 h-3.5 shrink-0 ml-2 opacity-60 transition-transform duration-200 group-hover/sub:rotate-90" />}
@@ -538,7 +538,7 @@ export const Navbar: React.FC = () => {
                                               <Link
                                                 href={['income-tax', 'litigation-support'].includes(sub.id) ? `/services/${sub.id}#${subsub.slug}` : `/services/${subsub.slug}`}
                                                 onClick={() => setActiveDropdown(null)}
-                                                className="text-slate-600 dark:text-slate-200 hover:text-[#c79d62] transition-colors block capitalize font-bold leading-tight"
+                                                className="text-[#c79d62] hover:text-[#a67d46] transition-colors block capitalize font-bold leading-tight"
                                               >
                                                 {subsub.title}
                                               </Link>
@@ -555,7 +555,7 @@ export const Navbar: React.FC = () => {
 
                           {/* Spotlight column */}
                           <div className="space-y-5">
-                            <h4 className="text-sm font-black uppercase tracking-widest text-[#210821] dark:text-[#c79d62] border-b-2 border-[#c79d62]/30 dark:border-slate-800/50 pb-2.5">
+                            <h4 className="text-sm font-black uppercase tracking-widest text-[#c79d62] border-b-2 border-[#c79d62]/30 dark:border-slate-800/50 pb-2.5">
                               Spotlight
                             </h4>
                             <div className="relative h-40 rounded-lg overflow-hidden shadow-sm group border border-slate-200/40 dark:border-slate-800/40">
@@ -581,7 +581,7 @@ export const Navbar: React.FC = () => {
                     <div className="p-8 grid grid-cols-5 gap-8">
                       {config.columns.map((col, idx) => (
                         <div key={idx} className="space-y-4">
-                          <h4 className="text-xs font-black uppercase tracking-widest text-[#210821] dark:text-[#c79d62] border-b border-slate-100 dark:border-slate-800/50 pb-2">
+                          <h4 className="text-xs font-black uppercase tracking-widest text-[#c79d62] border-b border-slate-100 dark:border-slate-800/50 pb-2">
                             {col.title}
                           </h4>
                           <ul className="space-y-2.5 text-xs">
@@ -593,7 +593,7 @@ export const Navbar: React.FC = () => {
                                     if (link.subLinks) e.preventDefault();
                                     else setActiveDropdown(null);
                                   }}
-                                  className="text-slate-600 dark:text-slate-200 hover:text-[#c79d62] dark:hover:text-[#c79d62] transition-colors block font-bold capitalize flex items-center justify-between w-full"
+                                  className="text-[#c79d62] hover:text-[#a67d46] transition-colors block font-bold capitalize flex items-center justify-between w-full"
                                 >
                                   <span>{link.label}</span>
                                   {link.subLinks && <ChevronRight className="w-3.5 h-3.5 opacity-60" />}
@@ -603,7 +603,7 @@ export const Navbar: React.FC = () => {
                                     <ul className="space-y-2 text-xs">
                                       {link.subLinks.map((sub, sIdx) => (
                                         <li key={sIdx}>
-                                          <Link href={sub.href} onClick={() => setActiveDropdown(null)} className="text-slate-600 dark:text-slate-200 hover:text-[#c79d62] transition-colors block capitalize font-medium leading-snug">
+                                          <Link href={sub.href} onClick={() => setActiveDropdown(null)} className="text-[#c79d62] hover:text-[#a67d46] transition-colors block capitalize font-medium leading-snug">
                                             {sub.label}
                                           </Link>
                                         </li>
@@ -618,7 +618,7 @@ export const Navbar: React.FC = () => {
                       ))}
 
                       <div className="space-y-4">
-                        <h4 className="text-xs font-black uppercase tracking-widest text-[#210821] dark:text-[#c79d62] border-b border-slate-100 dark:border-slate-800/50 pb-2">
+                        <h4 className="text-xs font-black uppercase tracking-widest text-[#c79d62] border-b border-slate-100 dark:border-slate-800/50 pb-2">
                           Spotlight
                         </h4>
                         <div className="relative h-36 rounded-lg overflow-hidden shadow-sm group border border-slate-200/40 dark:border-slate-800/40">

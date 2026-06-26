@@ -10,7 +10,6 @@ interface FAQItem {
 }
 
 export default function FAQPage() {
-  const [searchTerm, setSearchTerm] = useState("");
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   const faqs: FAQItem[] = [
@@ -68,14 +67,6 @@ export default function FAQPage() {
     }
   ];
 
-  const filteredFaqs = faqs.filter((faq) => {
-    const term = searchTerm.toLowerCase();
-    return (
-      faq.question.toLowerCase().includes(term) ||
-      faq.answer.toLowerCase().includes(term)
-    );
-  });
-
   return (
     <div className="py-16 max-w-4xl mx-auto px-4 sm:px-6">
       {/* Title */}
@@ -91,22 +82,12 @@ export default function FAQPage() {
         </p>
       </div>
 
-      {/* Search Bar */}
-      <div className="relative mb-10">
-        <input
-          type="text"
-          value={searchTerm}
-          onChange={(e) => setSearchTerm(e.target.value)}
-          placeholder="Search questions or answers..."
-          className="w-full h-12 pl-12 pr-4 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 text-sm focus:ring-1 focus:ring-amber-500 outline-none"
-        />
-        <Search className="absolute left-4 top-4 h-5 w-5 text-slate-400" />
-      </div>
+
 
       {/* FAQs List */}
       <div className="space-y-4">
-        {filteredFaqs.length > 0 ? (
-          filteredFaqs.map((faq, idx) => {
+        {faqs.length > 0 ? (
+          faqs.map((faq, idx) => {
             const isOpen = openIndex === idx;
             return (
               <div
