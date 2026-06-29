@@ -12,6 +12,9 @@ export default function TeamPage() {
       name: "Manoj Kumar Keshri",
       role: "Founder & Chairman",
       credentials: "FCA, CS (I) Mini-MBA.",
+      linkedin: "https://www.linkedin.com/in/manoj-kumar-keshri-078822419",
+      phone: "+917045348228",
+      phoneDisplay: "+91 70453 48228",
       bioSnippet: "Manoj Kumar Keshri, a Fellow Chartered Accountant with over 34 +years of professional excellence, is the Founder & Chairman of ConsultAvenuee. He is a trusted advisor to Co-operative Housing Societies, SMEs, Start-ups, NRIs, HNIs, Senior Citizens, and businesses across Real Estate, FMCG, Hospitality, Healthcare, Media, and Sports sectors.",
       fullBio: "He is known for his practical approach and commitment to client success, he continues to guide businesses and institutions through an evolving regulatory and business landscape. His expertise in governance, regulatory compliance, and strategic advisory has helped organizations build strong foundations for sustainable growth and long-term success.",
       image: "/Team/Manoj.jpeg?v=2"
@@ -138,10 +141,27 @@ export default function TeamPage() {
                   <h3 className="text-2xl md:text-3xl font-bold text-[#c79d62] dark:text-[#c79d62] mb-2">
                     {member.name}
                   </h3>
-                  <div className="text-gray-500 dark:text-gray-400 mb-5 flex flex-col gap-1" style={{ fontSize: "14px" }}>
+                  <div className="text-gray-500 dark:text-gray-400 mb-4 flex flex-col gap-1" style={{ fontSize: "14px" }}>
                     <span>{member.role}</span>
                     {member.credentials && <span className="font-semibold text-gray-700 dark:text-gray-300">{member.credentials}</span>}
                   </div>
+
+                  {(member.linkedin || member.phone) && (
+                    <div className="flex items-center gap-5 mb-5 pb-4 border-b border-gray-100 dark:border-gray-800">
+                      {member.phone && (
+                        <a href={`tel:${member.phone}`} className="flex items-center gap-2 text-[13px] font-bold text-slate-700 dark:text-slate-300 hover:text-[#c29b62] transition-colors bg-slate-50 dark:bg-slate-900 px-3 py-1.5 rounded-full border border-slate-200 dark:border-slate-800">
+                          <svg className="w-3.5 h-3.5 text-[#c29b62]" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
+                          {member.phoneDisplay}
+                        </a>
+                      )}
+                      {member.linkedin && (
+                        <a href={member.linkedin} target="_blank" rel="noreferrer" className="flex items-center gap-2 text-[13px] font-bold text-slate-700 dark:text-slate-300 hover:text-[#c29b62] transition-colors bg-slate-50 dark:bg-slate-900 px-3 py-1.5 rounded-full border border-slate-200 dark:border-slate-800">
+                          <svg className="w-3.5 h-3.5 text-[#c29b62] fill-current" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" /></svg>
+                          LinkedIn
+                        </a>
+                      )}
+                    </div>
+                  )}
 
                   <div
                     className="text-gray-600 dark:text-white mb-6 max-w-4xl"
